@@ -2,17 +2,28 @@
 
    html, body { height:100%;}
 
+/* 해더 */
 #header{
 	position : fixed;
 	width:100%;
 	z-index: 3;
 }
 
+/* 사이드 네비게이션 */
 #snb{
 	position : relative;
 	z-index: 2;
 }
 
+/* 사이드 네비게이션 내부 box*/
+#snb #box_snb{
+	margin-top:-12px;
+	width:100%;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -20px rgba(0, 0, 0, 0.2);
+	height:300px;
+}
+
+/* 내용 */
 #content{
 	position : relative;
 	margin-top:-52px;
@@ -20,11 +31,92 @@
 	z-index: 1;
 }
 
+/* 푸터 */
 #footer{
 	position : relative;
 	z-index: 1;
 }
 
+/* label color */
+   .input-field label {
+     color: #000;
+     font-size: 15px;
+     padding-bottom: 1px;
+     top:0.4rem;
+   }
+   .input-field.col label{
+   	left:1px;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+     font-size: 12px;
+     padding-bottom: 2px;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+   
+   /*login_form*/
+    .login_form{
+   		padding : 10px;
+   		margin-bottom: 57px;
+    }
+	.login_form .input-field{
+		margin-top:30px;
+	}	
+	
+	/*사이드 내비게이션*/
+	#box_snb .title{
+		font-size: 20px;
+		font-weight: 500;
+		color:#03A9F4;
+		padding-top: 10px;
+		margin-bottom: -1px;
+	}
+	
+	/*사이드 네비게이션 버튼*/
+	.snbtn{
+		width:100%;
+		height:30px;
+		background-color:#03A9F4;
+		border: none;
+		border-left:solid 1px #fff;
+		color:#fff;
+	}
+	.snbtn:hover{
+		background-color:#4FC3F7;
+	}
+	.snbtn:focus{
+		background-color:#03A9F4;
+	}
+	/*
+    When creating your CSS selector,
+    change "brown" to something of your choosing
+    */
+    .waves-effect.waves-brown .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: #E1F5FE;
+    }
+	
+/* 반응형 */
 @media only screen and (max-width: 992px) {
   #content{
   	margin-left:0px;
