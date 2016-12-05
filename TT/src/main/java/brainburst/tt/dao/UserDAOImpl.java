@@ -1,7 +1,5 @@
 package brainburst.tt.dao;
 
-import org.apache.ibatis.session.SqlSession;
-
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.UserDTO;
 
@@ -12,14 +10,6 @@ public class UserDAOImpl implements UserDAO{
 	 * */
 	@Override
 	public UserDTO login(String email, String password) {
-		SqlSession sqlSession = null;
-		UserDTO userDto = null;
-		
-		try {
-			
-		} finally {
-			
-		}
 		return null;
 	}
 
