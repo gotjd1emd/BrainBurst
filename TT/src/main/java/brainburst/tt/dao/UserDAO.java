@@ -10,7 +10,7 @@ public interface UserDAO {
 	/**
 	 * 중복체크 조건
 	 * return 타입 : boolean
-	 * parameter 값 : email
+	 * parameter 값 : String
 	 * sql : select email from user_information where email = #{email}
 	 * 기능 : 
 	 * 		값이 존재하면 1  ==> 중복된 아이디 , 회원가입 불가
@@ -21,7 +21,7 @@ public interface UserDAO {
 	/**
 	 * Login 기능
 	 * return 타입 : UserDTO
-	 * parameter 값 : email, password
+	 * parameter 값 : String email, String passwords
 	 * sql : select email, nickname, phone, password, cash_Point, level, name, gender, birth_Date
 	 * 			from user_information
 	 * */
@@ -43,7 +43,7 @@ public interface UserDAO {
 	 * 추가 정보 입력 기능
 	 * return 타입 : int
 	 * parameter 값 : additionalInfoDTO
-	 * sql : insert into additional values (#{email}, #{accountPassword}, #{accountNumber}, #{identificationCard})
+	 * sql : insert into additional_info values (#{email}, #{accountPassword}, #{accountNumber}, #{identificationCard})
 	 * 기능 : 추가 정보 입력
 	 * 		1  ==> 기입완료
 	 * 		0  ==> 가입실패
@@ -53,7 +53,7 @@ public interface UserDAO {
 	/**
 	 * 정보 수정 전 비밀번호확인
 	 *  return : UserDTO
-	 *  parameterType : email, password
+	 *  parameterType : String email, String password
 	 *  sql : select email, password from user_information where email = #{email} and password = #{password}
 	 *  기능 : 
 	 *  	회원 탈퇴시, 회원정보 수정시,
@@ -66,7 +66,7 @@ public interface UserDAO {
 	/**
 	 * 회원탈퇴
 	 * return 타입 : int
-	 * parameterType : email, password
+	 * parameterType : String email, String password
 	 * sql : delete from user_information where email = #{email}
 	 * 기능 : 탈퇴 클릭시 password 확인 후 email에 해당하는 유저 정보삭제
 	 * 		1 ==> 탈퇴성공
@@ -84,9 +84,9 @@ public interface UserDAO {
 	public UserDTO userUpdate(UserDTO userDto);
 	
 	/**
-	 * 회원구독관리
-	 * return 타입 : void
-	 * parameterType : void
+	 * 회원구독목록
+	 * return 타입 : List<WebtoonDTO>
+	 * parameterType : String
 	 * sql : select webtoon_name, author, webtoon_state, webtoon_thumbnail
 	 * 		from subscription join webtoon
 	 * 		using (webtoon_code)
@@ -94,8 +94,30 @@ public interface UserDAO {
 	 * 기능 : 구독한 웹툰의 이름, 작가, 상태, 섬네일을 가져와 DTO로 저장 후 
 	 * 		List에 저장하여 return
 	 * */
-	public List<WebtoonDTO> userSubscription(String email);
-
+	public List<WebtoonDTO> showListSubscription(String email);
+	
+	/**
+	 * 구독하기
+	 * return 타입 : int
+	 * parameterType : String email, String webtoonCode
+	 * sql : insert into subscription values (#{email}, #{webtoonCode})
+	 * 기능 : 관심에 가는 웹툰에서 버튼을 클릭하여 구독하기
+	 * 		1 ==> 구독완료
+	 * 		0 ==> 구독실패
+	 * */
+	public int applySubscription(String email, String webtoonCode);
+	
+	/**
+	 * 구독삭제
+	 * return 타입 : int
+	 * parameterType : String email, String webtoonCode
+	 * sql : delete from subscription where email = #{email} and webtoon_code = #{webtoonCode}
+	 * 기능 : 해당 웹툰에서 구독 버튼 해체
+	 * 		1 ==> 삭제완료
+	 * 		0 ==> 삭제실패
+	 * */
+	public int deleteSubscription(String email, String webtoonCode);
+	
 	/**
 	 * 회원 T 내역
 	 * */
@@ -107,4 +129,5 @@ public interface UserDAO {
 	/**
 	 * 회원 작가 신청
 	 * */
+	
 }

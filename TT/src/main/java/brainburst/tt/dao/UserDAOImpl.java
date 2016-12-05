@@ -2,8 +2,6 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.AdditionalInfoDTO;
@@ -56,9 +54,21 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public List<WebtoonDTO> userSubscription(String email) {
+	public List<WebtoonDTO> showListSubscription(String email) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int applySubscription(String email, String webtoonCode) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteSubscription(String email, String webtoonCode) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 
