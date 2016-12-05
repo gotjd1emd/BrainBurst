@@ -17,7 +17,7 @@ public class UserController {
 	private UserService userService;
 	
 	/**
-	 * 로그인! 
+	 * 회원로그인! 
 	 * return 타입 : void
 	 * parameter Type : email, password, session
 	 */
@@ -39,4 +39,41 @@ public class UserController {
 		UserDTO userDto = userService.login(email, password);
 		session.setAttribute("userDto", userDto);
 	}
+	
+	/**
+	 * 회원탈퇴
+	 * return 타입 : void
+	 * parameterType : void
+	 * */
+	@RequestMapping("userDelete")
+	public void userDelete(){
+		
+	}
+	
+	/**
+	 * 회원정보수정
+	 * return 타입 : void
+	 * parameterType : void
+	 * */
+	@RequestMapping("userUpdate")
+	public void userUpdate(){
+		
+	}
+	
+	/**
+	 * 회원구독관리
+	 * */
+	
+	
+	/**
+	 * 회원 T 내역
+	 * */
+	
+	/**
+	 * 회원 T 충전
+	 * */
+	
+	/**
+	 * 회원 작가 신청
+	 * */
 }

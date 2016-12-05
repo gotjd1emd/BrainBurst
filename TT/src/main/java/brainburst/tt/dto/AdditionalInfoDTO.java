@@ -2,7 +2,7 @@ package brainburst.tt.dto;
 
 public class AdditionalInfoDTO {
 	private String email;
-	private String secondaryPassword;
+	private String accountPassword;
 	private String accountNumber;
 	private String identificationCard;
 	
@@ -12,7 +12,7 @@ public class AdditionalInfoDTO {
 
 	public AdditionalInfoDTO(String email, String secondaryPassword, String accountNumber, String identificationCard) {
 		this.email = email;
-		this.secondaryPassword = secondaryPassword;
+		this.accountPassword = secondaryPassword;
 		this.accountNumber = accountNumber;
 		this.identificationCard = identificationCard;
 		System.out.println("additionalInfoDTO 전체 생성자 호출");
@@ -27,11 +27,11 @@ public class AdditionalInfoDTO {
 	}
 
 	public String getSecondaryPassword() {
-		return secondaryPassword;
+		return accountPassword;
 	}
 
 	public void setSecondaryPassword(String secondaryPassword) {
-		this.secondaryPassword = secondaryPassword;
+		this.accountPassword = secondaryPassword;
 	}
 
 	public String getAccountNumber() {
