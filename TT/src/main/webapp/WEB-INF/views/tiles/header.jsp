@@ -12,10 +12,10 @@
 	
 	<title>TT</title>
 	<link rel="StyleSheet" href="<c:url value='/resources/css/materialize.css'/>" media="screen,projection">
-	<script src="<c:url value='/resources/js/jquery-1.11.2.js'/>"></script>
+	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 </head>
 <body>
-	<script type="text/javascript" src="/resources/js/materialize.min.js"></script>
+	<script type="text/javascript" src="<c:url value='/resources/js/materialize.min.js'/>"></script>
 	<nav>
 	    <div class="nav-wrapper">
 	      <a href="#" class="brand-logo">Logo</a>
