@@ -6,7 +6,7 @@
 	<!-- user 폴더가 안에 있는 view를 참조할 layout -->
 	<definition name="indexLayout" template="/WEB-INF/views/tiles/indexLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
-		<put-attribute name="snb" value="/WEB-INF/views/tiles/snb.jsp"/>
+		<put-attribute name="snb" value="/WEB-INF/views/tiles/navigation_side.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
 	</definition>
 	

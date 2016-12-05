@@ -11,14 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
 	<title>TT</title>
-	<link rel="StyleSheet" href="<c:url value='/resources/css/materialize.css'/>" media="screen,projection">
-	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
+	
 </head>
 <body>
 	<script type="text/javascript" src="<c:url value='/resources/js/materialize.min.js'/>"></script>
-	<nav>
+	<nav class="fixed">
 	    <div class="nav-wrapper">
-	      <a href="#" class="brand-logo">Logo</a>
+	      <a href="#" class="brand-logo center">Logo</a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	        <li><a href="sass.html">Sass</a></li>
 	        <li><a href="badges.html">Components</a></li>

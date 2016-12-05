@@ -2866,6 +2866,7 @@ ul.staggered-list li {
 }
 
 footer.page-footer {
+  padding-left:300px;
   margin-top: 20px;
   padding-top: 20px;
   background-color: #ee6e73;
@@ -4676,6 +4677,13 @@ small {
     left: 5%;
     bottom: 7%;
     max-width: 90%;
+    
+  }
+  footer.page-footer{
+  	padding-left: 0px;
+  }
+  #content{
+  	margin-left:0px;
   }
 }
 
@@ -6904,6 +6912,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 100%;
   height: calc(100% + 60px);
   height: -moz-calc(100%);
+  padding-top:80px;
   padding-bottom: 60px;
   background-color: #fff;
   z-index: 999;
