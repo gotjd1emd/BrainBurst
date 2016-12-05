@@ -23,6 +23,18 @@ public class UserController {
 	 */
 	@RequestMapping("login")
 	@ResponseBody
+	public void login(String email, String password, HttpSession session){
+		UserDTO userDto = userService.login(email, password);
+		session.setAttribute("userDto", userDto);
+	}
+
+	/**
+	 * 회원가입! 
+	 * return 타입 : void
+	 * parameter Type : email, password, session
+	 */
+	@RequestMapping("signUp")
+	@ResponseBody
 	public void signUp(String email, String password, HttpSession session){
 		UserDTO userDto = userService.login(email, password);
 		session.setAttribute("userDto", userDto);
