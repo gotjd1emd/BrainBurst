@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Mapper">
+	<!-- DB 컬럼명에 userDTO의 값 하나씩 대입 이름이 같으면 resultMap 생성하지 않아도 됨 -->
+	<resultMap type="userDTO" id="userDTO">
+		<id column="email" property="email"/>
+		<result column="nickname" property="nickname"/>
+		<result column="phone" property="phone"/>
+		<result column="password" property="password"/>
+		<result column="cash_point" property="cashPoint"/>
+		<result column="level" property="level"/>
+		<result column="name" property="name"/>
+		<result column="gender" property="gender"/>
+		<result column="birth_date" property="birthDate" />
+	</resultMap>
+
+	<!-- Login -->
+	<select id="login" resultMap="userDTO" parameterType="userDTO">
+		select email, nickname, phone, password, cash_Point, level, name, gender, birth_Date
+	 	from user_information
+	 	where email = #{email}
+	</select>
+	
+	<!-- signUp -->
+	<select id="signUp" parameterType="userDTO">
+		insert
+		into user_information values (#{email}, #{nickname}, #{phone}, #{password}, #{cashPoint},
+		#{level}, #{name}, #{gender}, #{birthDate})
+	</select>
+</mapper>
+
+
+
+
+
+
+
