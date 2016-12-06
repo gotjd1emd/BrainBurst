@@ -25,16 +25,14 @@ public class UserController {
 	 * parameter Type : email, password, session
 	 */
 	@RequestMapping("signUp")
-	@ResponseBody
 	public String signUp(String email, String password){
 		userDTO.setEmail(email);
 		userDTO.setPassword(password);
 		
 		if(userService.signUp(userDTO)==1){
-			return "tiles/sideNavSignUp";
+			return "/";
 		}
-		
-		return "tiles/sideNavNonMember";
+		return "signUpForm";
 	}
 
 	
@@ -44,7 +42,6 @@ public class UserController {
 	 * parameter Type : email, password, session
 	 */
 	@RequestMapping("login")
-	@ResponseBody
 	public void login(String email, String password, HttpSession session){
 		
 	}
