@@ -3,16 +3,28 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<!-- user 폴더가 안에 있는 view를 참조할 layout -->
-	<definition name="indexLayout" template="/WEB-INF/views/tiles/indexLayout.jsp">
+	<!-- main 폴더 안에 있는 view를 참조할 layout -->
+	<definition name="mainLayout" template="/WEB-INF/views/tiles/mainLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
-		<put-attribute name="snb" value="/WEB-INF/views/tiles/navigation_side.jsp"/>
+		<put-attribute name="snb_nonMember" value="/WEB-INF/views/tiles/sideNavNonMember.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
 	</definition>
 	
-	<!-- user -->
-	<definition name="*/*" extends="indexLayout">
-		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	<!-- signUp 폴더 안에 있는 view를 참조할 layout -->
+	<definition name="signUpLayout" template="/WEB-INF/views/tiles/signUpLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
+		<put-attribute name="snb_SignUp" value="/WEB-INF/views/tiles/sideNavSignUp.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
+	</definition>
+	
+	<!-- main-nonMember -->
+	<definition name="main/*" extends="mainLayout">
+		<put-attribute name="content" value="/WEB-INF/views/main/{1}.jsp"/>
+	</definition>
+	
+	<!-- join -->
+	<definition name="signUp/*" extends="signUpLayout">
+		<put-attribute name="content" value="/WEB-INF/views/signUp/acceptTerms.jsp"/>
 	</definition>
 	
 </tiles-definitions>

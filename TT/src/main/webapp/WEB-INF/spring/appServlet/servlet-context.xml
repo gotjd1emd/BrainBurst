@@ -24,7 +24,7 @@
 		<beans:property name="order" value="2"/>
 	</beans:bean>
 	
-	<context:component-scan base-package="brainburst.tt" />
+	<context:component-scan base-package="brainburst.tt"/>
 	
 	<!-- Tiles등록 -->
 	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -45,4 +45,16 @@
 		</beans:property>
 	</beans:bean>
 	
+	<!-- aop annotation -->
+	<aop:aspectj-autoproxy/>
+	
+	<!-- intercepter -->
+	<interceptors>
+		<beans:bean class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+			<beans:property name="cacheSeconds" value="0"/>
+			<beans:property name="useExpiresHeader" value="true"/>
+			<beans:property name="useCacheControlHeader" value="true"/>
+			<beans:property name="useCacheControlNoStore" value="true"/>
+		</beans:bean>
+	</interceptors>
 </beans:beans>

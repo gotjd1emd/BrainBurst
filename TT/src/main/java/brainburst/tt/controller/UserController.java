@@ -1,13 +1,14 @@
 package brainburst.tt.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.service.UserService;
 
 @Controller
@@ -15,6 +16,27 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+
+	private UserDTO userDTO;
+
+	/**
+	 * 회원가입! 
+	 * return 타입 : void
+	 * parameter Type : email, password, session
+	 */
+	@RequestMapping("signUp")
+	@ResponseBody
+	public String signUp(String email, String password){
+		userDTO.setEmail(email);
+		userDTO.setPassword(password);
+		
+		if(userService.signUp(userDTO)==1){
+			return "tiles/sideNavSignUp";
+		}
+		
+		return "tiles/sideNavNonMember";
+	}
+
 	
 	/**
 	 * 회원로그인! 
@@ -27,14 +49,13 @@ public class UserController {
 		
 	}
 
-	/**
-	 * 회원가입! 
-	 * return 타입 : void
-	 * parameter Type : email, password, session
-	 */
-	@RequestMapping("signUp")
-	@ResponseBody
-	public void signUp(String email, String password, HttpSession session){
+	 /* 회원 로그아웃!
+	 * */
+	@RequestMapping("logout")
+	public String logout(HttpServletRequest request){
+		request.getSession().invalidate();
+		return null;
+
 	}
 	
 	/**
@@ -43,7 +64,7 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userDelete")
-	public void userDelete(){
+	public void userDelete(HttpServletRequest request){
 		
 	}
 	
