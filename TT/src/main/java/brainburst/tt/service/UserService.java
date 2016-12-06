@@ -8,15 +8,6 @@ import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface UserService {
-	/**
-	 * 중복체크 조건
-	 * return 타입 : int
-	 * parameter 값 : String
-	 * 기능 : 
-	 * 		값이 존재하면 1  ==> 중복된 아이디 , 회원가입 불가
-	 * 		값이 없으면 0  ==>  중복체크 완료, 회원가입 가능
-	 * */
-	public int checkId(String email);
 
 	/**
 	 * Login 기능
@@ -61,18 +52,6 @@ public interface UserService {
 	 * 		0  ==> 가입실패
 	 * */
 	public int addtionalInfo(AdditionalInfoDTO additionalInfoDTO);
-	
-	/**
-	 * 정보 수정 전 비밀번호확인
-	 *  return : UserDTO
-	 *  parameterType : UserDTO
-	 *  기능 : 이메일과 비밀번호로 일치여부 확인
-	 *  	회원 탈퇴시, 회원정보 수정시,
-	 *		2차로 비밀번호 확인
-	 *		1 ==> 비밀 번호 일치
-	 *		0 ==> 불일치
-	 * */
-	public int userCheckByPassword(UserDTO userDTO);
 	
 	/**
 	 * 회원탈퇴

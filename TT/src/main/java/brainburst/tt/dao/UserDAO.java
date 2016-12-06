@@ -14,8 +14,8 @@ public interface UserDAO {
 	 * parameter 값 : String
 	 * sql : select email from user_information where email = #{email}
 	 * 기능 : 
-	 * 		값이 존재하면 1  ==> 중복된 아이디 , 회원가입 불가
-	 * 		값이 없으면 0  ==>  중복체크 완료, 회원가입 가능
+	 * 		값이 존재하면 0  ==> 중복된 아이디 , 회원가입 불가
+	 * 		값이 없으면 1  ==>  중복체크 완료, 회원가입 가능
 	 * */
 	public int checkId(String email);
 
@@ -57,7 +57,7 @@ public interface UserDAO {
 	 * 		1 ==> 가입완료
 	 * 		0 ==> 가입실패
 	 * */
-	public int signUp(UserDTO userDto);
+	public int signUp(UserDTO userDTO);
 
 	/**
 	 * 추가 정보 입력 기능
