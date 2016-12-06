@@ -17,7 +17,7 @@
 	<script>
 		$(function () {
 				$("#btn_join").click(function () {
-					alert("asd");
+					location.href="signUpForm";
 				})
 		})
 	</script>

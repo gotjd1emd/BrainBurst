@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,10 +30,10 @@ public class UserController {
 		userDTO.setPassword(password);
 		
 		if(userService.signUp(userDTO)==1){
-			return null;
+			return "tiles/sideNavSignUp";
 		}
 		
-		return null;
+		return "tiles/sideNavNonMember";
 	}
 	
 	/**
@@ -54,16 +53,6 @@ public class UserController {
 		System.out.println("UserController에서 userDTO를 Session에 저장완료");
 	}
 
-	/**
-	 * 회원가입! 
-	 * return 타입 : void
-	 * parameter Type : email, password, session
-	 */
-	@RequestMapping("signUp")
-	@ResponseBody
-	public void signUp(String email, String password, HttpSession session){
-		
-	}
 	 /* 회원 로그아웃!
 	 * */
 	@RequestMapping("logout")
@@ -79,7 +68,7 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userDelete")
-	public void userDelete(HttpRequest request){
+	public void userDelete(HttpServletRequest request){
 		
 	}
 	
