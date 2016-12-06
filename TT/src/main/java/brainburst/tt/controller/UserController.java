@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import brainburst.tt.dto.UserDTO;
 import brainburst.tt.service.UserService;
 
 @Controller
@@ -24,8 +23,7 @@ public class UserController {
 	@RequestMapping("login")
 	@ResponseBody
 	public void login(String email, String password, HttpSession session){
-		UserDTO userDto = userService.login(email, password);
-		session.setAttribute("userDto", userDto);
+		
 	}
 
 	/**
@@ -36,8 +34,6 @@ public class UserController {
 	@RequestMapping("signUp")
 	@ResponseBody
 	public void signUp(String email, String password, HttpSession session){
-		UserDTO userDto = userService.login(email, password);
-		session.setAttribute("userDto", userDto);
 	}
 	
 	/**
