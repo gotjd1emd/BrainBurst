@@ -17,20 +17,21 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	
 	@Autowired
 	private SqlSession sqlSession; 	
-	@Autowired
+
 	private ApplicationForPayWebtoonDTO applicationForPayWebtoonDTO;
 	
 	@Override
 	public UserDTO adminLogin(String email, String password) {
 	
-		Map<String, String> map = new HashMap<String, String>();
+		/*Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
 		map.put("password", password);
 		
-		UserDTO adminAccount	= sqlSession.selectOne("adminPayWebtoonMapper.adminLogin",map);
+		UserDTO adminAccount = sqlSession.selectOne("adminPayWebtoonMapper.adminLogin",map);
 		
-		return adminAccount;
+		return adminAccount;*/
 
+		return null;
 	
 	}
 		
@@ -39,9 +40,10 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	@Override
 	public List<ApplicationForPayWebtoonDTO> searchForPayWebtoonList() {
 		
-	 List<ApplicationForPayWebtoonDTO> forPayWebtoonlist = sqlSession.selectList("adminPayWebtoonMapper.searchForPayWebtoonList");
+	 /*List<ApplicationForPayWebtoonDTO> forPayWebtoonlist = sqlSession.selectList("adminPayWebtoonMapper.searchForPayWebtoonList");
 		
-		return forPayWebtoonlist;
+		return forPayWebtoonlist;*/
+		return null;
 	}
 
 }
