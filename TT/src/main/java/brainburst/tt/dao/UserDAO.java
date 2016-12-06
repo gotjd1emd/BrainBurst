@@ -10,7 +10,7 @@ import brainburst.tt.dto.WebtoonDTO;
 public interface UserDAO {
 	/**
 	 * 중복체크 조건
-	 * return 타입 : boolean
+	 * return 타입 : int
 	 * parameter 값 : String
 	 * sql : select email from user_information where email = #{email}
 	 * 기능 : 
@@ -28,6 +28,24 @@ public interface UserDAO {
 	 * 기능 : 이메일과 비밀번호로 체크
 	 * */
 	public UserDTO login(UserDTO userDTO);
+	
+	/**
+	 * 비밀번호찾기
+	 * return 타입 : String password
+	 * parameter 값 : UserDTO
+	 * sql : select password from user_information where email = #{email} and phone=#{phone} and name=#{name}
+	 * 기능 :  이메일, 전화번호, 이름으로 검색
+	 * */
+	public String findPassword(UserDTO userDTO);
+	
+	/**
+	 * 이메일(아이디)찾기
+	 * return 타입 : String email
+	 * parameter 값 : UserDTO
+	 * sql : select email from user_information where phone=#{phone} and name=#{name}
+	 * 기능 : 이름, 전화번호으로 검색
+	 * */
+	public String findEmail(UserDTO userDTO);
 	
 	/**
 	 * SignUp 기능 - 회원가입
@@ -127,7 +145,7 @@ public interface UserDAO {
 	 * 회원 T 내역
 	 * return 타입 : List<THistoryDTO>
 	 * parameterType : String email
-	 * sql : select date, cash_point, content, trade_state from T_history
+	 * sql : select account_day, cash_point, content, trade_state from T_history
 	 * 			where email=#{email}
 	 * 기능 : 회원 T 내역 전체 조회
 	 * */
@@ -152,4 +170,6 @@ public interface UserDAO {
 	 * 기능 : 일반 작가 신청시 유저의 level을 일반작가로 승급
 	 * */
 	public UserDTO applyAuthor(String email);
+	
+	
 }

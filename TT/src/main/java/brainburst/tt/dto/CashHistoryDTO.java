@@ -2,7 +2,7 @@ package brainburst.tt.dto;
 
 public class CashHistoryDTO {
 	private String email;
-	private String date;
+	private String accountDay;
 	private int cashPoint;
 	private String content;
 	private String tradeState;
@@ -13,7 +13,7 @@ public class CashHistoryDTO {
 
 	public CashHistoryDTO(String email, String date, int cashPoint, String content, String tradeState) {
 		this.email = email;
-		this.date = date;
+		this.accountDay = date;
 		this.cashPoint = cashPoint;
 		this.content = content;
 		this.tradeState = tradeState;
@@ -29,11 +29,11 @@ public class CashHistoryDTO {
 	}
 
 	public String getDate() {
-		return date;
+		return accountDay;
 	}
 
 	public void setDate(String date) {
-		this.date = date;
+		this.accountDay = date;
 	}
 
 	public int getCashPoint() {

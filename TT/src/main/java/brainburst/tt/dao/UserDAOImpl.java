@@ -90,5 +90,17 @@ public class UserDAOImpl implements UserDAO{
 		return null;
 	}
 
+	@Override
+	public String findPassword(UserDTO userDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String findEmail(UserDTO userDTO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
