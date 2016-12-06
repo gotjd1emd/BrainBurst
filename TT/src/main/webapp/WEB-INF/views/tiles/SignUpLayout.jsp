@@ -15,7 +15,7 @@
 	<style>
 	</style>
 	<script>
-		// Script
+
 	</script>
 </head>
 <body>
