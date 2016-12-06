@@ -1,7 +1,56 @@
 @CHARSET "EUC-KR";
 
+#btn-next{
+	float:right;
+	bottom: -30px;
+	height: 40px;
+	line-height: 40px;
+}
 
 .singUp_step{
 	margin-top:40px;
 	text-align: center;	
+}
+
+.signup_box{
+	width:100%;
+	height:550px;
+	border-radius : 20px;
+	padding : 20px;
+}
+
+.accept-terms-1{
+	margin-right:0.6%;
+}
+
+.accept-terms-1, .accept-terms-2{
+	width:49.7%;
+	height:250px;
+	display: inline-block;
+	float: right !important;
+}
+
+.accept-terms-content-1, .accept-terms-content-2{
+	width:100%;
+	height: 90%;
+	border: 1px solid #e2e2e2;
+	margin-bottom: 5px;
+}
+
+.accept-terms-content-3{
+	width:100%;
+	height: 90%;
+	border: 1px solid #e2e2e2;
+	margin-bottom: 5px;
+}
+
+.accept-terms-3{
+	width:95.5%;
+	height:150px;
+	display: block;
+	margin:2%;
+}
+
+.accept-terms-check{
+	display:inline;
 }
