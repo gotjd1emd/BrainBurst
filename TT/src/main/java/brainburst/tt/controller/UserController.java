@@ -18,12 +18,15 @@ public class UserController {
 	private UserService userService;
 	private UserDTO userDTO;
 
+	@RequestMapping("{url}")
+	public void moveUrl(){}
+	
 	/**
 	 * 회원가입! 
 	 * return 타입 : void
 	 * parameter Type : email, password, session
 	 */
-	@RequestMapping("signUp/*")
+	@RequestMapping("signUp")
 	@ResponseBody
 	public String signUp(String email, String password){
 		userDTO.setEmail(email);
