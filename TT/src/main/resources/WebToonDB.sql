@@ -80,8 +80,8 @@ drop table webtoon;
 CREATE TABLE apply_fund
 (
 	apply_fund_sequence   NUMBER  NOT NULL constraint apply_fund_sequence_pk primary key,
-	email                 VARCHAR2(30)  NOT NULL constraint email_fk references user_information(email),
-	webtoon_code          VARCHAR2(10)  NOT NULL constraint webtoon_code_fk references webtoon(webtoon_code),
+	email                 VARCHAR2(30)  NOT NULL constraint apply_fund_email_fk references user_information(email),
+	webtoon_code          VARCHAR2(10)  NOT NULL constraint apply_fund_webtoon_fk references webtoon(webtoon_code),
 	score                 NUMBER  NULL 
 );
 
@@ -102,8 +102,8 @@ values(a_f_seq.nextval)
 CREATE TABLE apply_paid
 (
 	apply_paid_sequence   NUMBER  NOT NULL constraint apply_paid_sequence_pk primary key,
-	email                 VARCHAR2(30)  NOT NULL constraint email_fk references user_information(email),
-	webtoon_code          VARCHAR2(10)  NOT NULL constraint webtoon_code_fk references webtoon(webtoon_code)
+	email                 VARCHAR2(30)  NOT NULL constraint apply_paid_email_fk references user_information(email),
+	webtoon_code          VARCHAR2(10)  NOT NULL constraint apply_paid_webtoon_fk references webtoon(webtoon_code)
 );
 
 create sequence a_p_seq 
@@ -176,7 +176,7 @@ CREATE TABLE fund_time_limit
 (
 	start_date            DATE  NOT NULL ,
 	due_date              DATE  NOT NULL ,
-	episode_sequence      NUMBER  NOT NULL constraint episode_sequence_fk references episode(episode_sequence) ,
+	episode_sequence      NUMBER  NOT NULL constraint time_limit_episode_fk references episode(episode_sequence) ,
 	constraint time_limit_episode_pk primary key(episode_sequence)
 );
 
