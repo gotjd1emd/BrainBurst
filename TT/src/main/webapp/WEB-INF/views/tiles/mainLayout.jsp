@@ -17,7 +17,7 @@
 	<script>
 		$(function () {
 				$("#btn_join").click(function () {
-					location.href="signUp/AcceptTerms.jsp";
+					location.href="signUpForm";
 				})
 		})
 	</script>

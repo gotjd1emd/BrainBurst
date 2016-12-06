@@ -39,7 +39,7 @@ public class HomeController {
 	@RequestMapping("signUpForm")
 	public String move(){
 		System.out.println("viewName으로 이동합니다.");
-		return "signUp/AcceptTerms";
+		return "signUp/acceptTerms";
 	}
 	
 }
