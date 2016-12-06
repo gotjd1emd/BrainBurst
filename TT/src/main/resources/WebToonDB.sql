@@ -269,3 +269,6 @@ create sequence recommend_seq
 drop sequence recommend_seq;
 
 drop table recommend;
+
+
+commit;

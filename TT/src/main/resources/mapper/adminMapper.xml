@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="adminPayWebtoonMapper">
+
+	<!-- 유료화 신청을 위한 resultMap -->
+	<resultMap type="applicationForPayWebtoonDTO" id="applicationForPayWebtoonDTO">
+		<id column="apply_paid_sequence" property="applyPaidSequence"/>
+		<result column="email" property="email"/>
+		<result column="webtoon_code" property="webtoonCode"/>
+		
+		<association property="userDTO"  javaType="userDTO">
+			<id column="email" property="email" />
+			<result column="name" property="name" />
+			<result column="phone" property="phone" />		
+		</association>
+			
+		<association property="webtoonDTO" javaType="webtoonDTO">
+			<id column="webtoon_code" property="webtoonCode"/>
+			<result column="webtoon_level"  property="webtoonLevel"/>
+			<result column="webtoon_name"  property="webtoonName"/>	
+		</association>
+		
+		<association property="categoryDTO" javaType="categoryDTO" >
+			<id column="category_code" property="categoryCode"/>
+			<result column="category_name" property="categoryName"/>	
+		</association>
+		
+	</resultMap>
+
+
+
+	<!-- 유료화 신청한 작품과 작가 정보 List -->
+	<select id="searchForPayWebtoonList" resultMap="applicationForPayWebtoonDTO">
+		select apply_paid_sequence,name, category_code,webtoon_level,webtoon_name 
+			from user_information join apply_paid  using(email) 
+								  join webtoon using(webtoon_code) 
+								  join category using (category_code)	
+	</select>
+	
+
+</mapper>

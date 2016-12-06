@@ -1,5 +1,8 @@
 package brainburst.tt.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AdditionalInfoDTO {
 	private String email;
 	private String accountPassword;

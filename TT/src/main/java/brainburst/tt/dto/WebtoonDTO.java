@@ -1,5 +1,8 @@
 package brainburst.tt.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class WebtoonDTO {
 	private String webtoonCode;
 	private String webtoonName;

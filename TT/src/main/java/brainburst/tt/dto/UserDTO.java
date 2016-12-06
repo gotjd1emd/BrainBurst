@@ -1,5 +1,8 @@
 package brainburst.tt.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserDTO {
 	
 	private String email;
@@ -14,7 +17,7 @@ public class UserDTO {
 	
 	public UserDTO() {
 		System.out.println("userDTO 기본 생성자 호출됨");
-	}
+	}	
 	
 	public UserDTO(String email, String nickname, String phone, String password, String cashPoint, String level,
 			String name, String gender, String birthDate) {
