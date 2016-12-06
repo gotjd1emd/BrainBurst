@@ -23,7 +23,7 @@
 	      </div><!-- login_form exit -->
 	      <div class="row">
 	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">로그인</button>
-	       		<button  id="btn_join" class="snbtn waves-effect waves-light col s6">회원가입</button>
+	       		<button  id="btn_singUp" class="snbtn waves-effect waves-light col s6">회원가입</button>
 	      </div>
 	    </form>  
       </div><!-- box_snd exit -->
