@@ -1,5 +1,6 @@
 package brainburst.tt.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +62,8 @@ public class UserController {
 	 /* 회원 로그아웃!
 	 * */
 	@RequestMapping("logout")
-	public String logout(HttpSession session){
-		session.invalidate();
+	public String logout(HttpServletRequest request){
+		request.getSession().invalidate();
 		return null;
 
 	}

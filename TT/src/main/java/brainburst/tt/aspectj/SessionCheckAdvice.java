@@ -9,10 +9,10 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect
+//@Aspect
 public class SessionCheckAdvice {
 	
-	@Around("execution(public * brainburst.tt.controller.*Controller.*(HttpServletRequest, ..))")
+	//@Around("execution(public * brainburst.tt.controller.*Controller.*(HttpServletRequest, ..))")
 	public Object around(ProceedingJoinPoint point) throws Throwable {
 		//session check
 		Object methodParam[] = point.getArgs();
