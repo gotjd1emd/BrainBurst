@@ -1,19 +1,62 @@
 @CHARSET "EUC-KR";
 
-   html, body { height:100%;}
-
 /* 해더 */
+
 #header{
 	position : fixed;
 	width:100%;
 	z-index: 3;
 }
+/*말풍선*/
+.bubble 
+{
+display:none;
+position: fixed;
+width: 265px;
+height: 300px;
+padding: 11px;
+background: #FFFFFF;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+z-index:5;
+top: 50px;
+right:5px;
+z-index:999;
+}
+
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 0 12px 14px;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+top: -14px;
+left: 228px;
+}
+
+/*검색 아이콘*/
+.icon_search{
+	margin-right:50px;
+	margin-left:25px;
+}
+
+#logo{
+	width:120px;
+}
+
 
 /* 사이드 네비게이션 */
 #snb{
 	position : relative;
 	z-index: 2;
 }
+
+
 
 /* 사이드 네비게이션 내부 box*/
 #snb #box_snb{
@@ -26,7 +69,7 @@
 /* 내용 */
 #content{
 	position : relative;
-	margin-top:-52px;
+	margin-top:-34px;
 	margin-left:300px;
 	z-index: 1;
 }
@@ -120,5 +163,17 @@
 @media only screen and (max-width: 992px) {
   #content{
   	margin-left:0px;
+  }
+  #category_mobile{
+  	display:none;
+  }
+  footer.page-footer{
+  	padding-left:0px;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  #category_mobile{
+  	display:none;
   }
 }

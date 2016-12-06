@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h1>Tests</h1>
-	
+	<h1 class="animated zoomIn">Example</h1>
 	<h1>Tests</h1>
 	
 	<h1>Tests</h1>

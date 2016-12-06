@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
     <ul id="slide-out" class="side-nav fixed z-depth-2">
-    
       <div id="box_snb">
       	<h5 class="title center">로그인</h5>
       	<form>
@@ -25,5 +24,5 @@
       <li><a href="#!">First Sidebar Link</a></li>
       <li><a href="#!">Second Sidebar Link</a></li>
     </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    
     
