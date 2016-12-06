@@ -12,6 +12,7 @@
 	<link rel="StyleSheet" href="<c:url value='/resources/css/materialize.css'/>" media="screen,projection">
 	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 	<link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
+	<link rel="styleSheet" href="<c:url value="/resources/css/signup.css"/>">
 	<style>
 	</style>
 	<script>
@@ -21,6 +22,7 @@
 <body>
 	<!-- HTML5 tiles main-->
 	<div id="container">
+	
 		<div id="header">
 			<tiles:insertAttribute name="header"/>
 		</div>

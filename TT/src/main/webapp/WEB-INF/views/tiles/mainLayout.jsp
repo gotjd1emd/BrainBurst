@@ -14,13 +14,6 @@
 	<link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
 	<style>
 	</style>
-	<script>
-		$(function () {
-				$("#btn_join").click(function () {
-					location.href="signUpForm";
-				})
-		})
-	</script>
 </head>
 <body>
 	<!-- HTML5 tiles main-->

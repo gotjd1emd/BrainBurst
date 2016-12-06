@@ -80,7 +80,8 @@ left: 228px;
 /* ³»¿ë */
 #content{
 	position : relative;
-	padding-top:80px;
+	padding-top:100px;
+	padding-left:320px;
 	z-index: 1;
 }
 
@@ -152,9 +153,10 @@ left: 228px;
 		border: none;
 		border-left:solid 1px #fff;
 		color:#fff;
+		line-height:33px;
 	}
 	.snbtn:hover{
-		background-color:#4FC3F7;
+		background-color:#4FC3F7 !important;
 	}
 	.snbtn:focus{
 		background-color:#03A9F4;
@@ -173,6 +175,7 @@ left: 228px;
 @media only screen and (max-width: 992px) {
   #content{
   	margin-left:0px;
+  	padding-left:10px;
   }
   #category_mobile{
   	display:none;

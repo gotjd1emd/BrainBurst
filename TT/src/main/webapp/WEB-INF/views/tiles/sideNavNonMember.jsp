@@ -23,7 +23,9 @@
 	      </div><!-- login_form exit -->
 	      <div class="row">
 	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">로그인</button>
-	       		<button  id="btn_singUp" class="snbtn waves-effect waves-light col s6">회원가입</button>
+	       		<a class=" waves-effect waves-light col s6 snbtn"
+	       		style="height: 30px;color: #fff;vertical-align: middle;line-height: 32px;text-align: center;"
+	       		href="<c:url value='/signUpForm'/>">회원가입</a>
 	      </div>
 	    </form>  
       </div><!-- box_snd exit -->
