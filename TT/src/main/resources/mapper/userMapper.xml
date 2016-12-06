@@ -22,14 +22,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="login" resultMap="userDTO" parameterType="userDTO">
 		select email, nickname, phone, password, cash_Point, level, name, gender, birth_Date
 	 	from user_information
-	 	where email = #{email}
+	 	where email=#{email} and password=#{password}
+	</select>
+	
+	<!-- checkId -->
+	<select id="checkId" resultMap="userDTO" parameterType="String">
+		select email 
+		from user_information 
+		where email = #{email}
 	</select>
 	
 	<!-- signUp -->
 	<select id="signUp" parameterType="userDTO">
-		insert
-		into user_information values (#{email}, #{nickname}, #{phone}, #{password}, #{cashPoint},
-		#{level}, #{name}, #{gender}, #{birthDate})
+		insert into user_information 
+		values ( #{email}, #{nickname}, #{phone}, #{password}, #{cashPoint}, #{level}, #{name}, #{gender}, #{birthDate} )
 	</select>
 </mapper>
 

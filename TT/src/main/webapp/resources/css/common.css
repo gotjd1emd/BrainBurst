@@ -7,6 +7,11 @@
 	width:100%;
 	z-index: 3;
 }
+
+.link{
+	width:10px;	
+}
+
 /*¸»Ç³¼±*/
 .bubble 
 {
@@ -119,7 +124,7 @@ left: 228px;
    /*login_form*/
     .login_form{
    		padding : 10px;
-   		margin-bottom: 57px;
+   		margin-bottom: -11px;
     }
 	.login_form .input-field{
 		margin-top:30px;

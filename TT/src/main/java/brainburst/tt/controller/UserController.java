@@ -15,6 +15,21 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	private UserDTO userDTO;
+
+	/**
+	 * 회원가입! 
+	 * return 타입 : void
+	 * parameter Type : email, password, session
+	 */
+	@RequestMapping("signUp")
+	@ResponseBody
+	public void signUp(String email, String password){
+		userDTO.setEmail(email);
+		userDTO.setPassword(password);
+		
+		userService.signUp(userDTO);
+	}
 	
 	/**
 	 * 회원로그인! 
@@ -24,20 +39,22 @@ public class UserController {
 	@RequestMapping("login")
 	@ResponseBody
 	public void login(String email, String password, HttpSession session){
-		UserDTO userDto = userService.login(email, password);
-		session.setAttribute("userDto", userDto);
+		userDTO.setEmail(email); 		//UserDTO에 이메일, 비밀번호 set
+		userDTO.setPassword(password);
+		
+		userDTO = userService.login(userDTO);
+		
+		session.setAttribute("userDTO", userDTO);
+		System.out.println("UserController에서 userDTO를 Session에 저장완료");
 	}
 
 	/**
-	 * 회원가입! 
-	 * return 타입 : void
-	 * parameter Type : email, password, session
-	 */
-	@RequestMapping("signUp")
-	@ResponseBody
-	public void signUp(String email, String password, HttpSession session){
-		UserDTO userDto = userService.login(email, password);
-		session.setAttribute("userDto", userDto);
+	 * 회원 로그아웃!
+	 * */
+	@RequestMapping("logout")
+	public String logout(HttpSession session){
+		session.invalidate();
+		return null;
 	}
 	
 	/**
