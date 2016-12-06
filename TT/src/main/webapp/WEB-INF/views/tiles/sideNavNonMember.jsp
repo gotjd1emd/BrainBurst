@@ -4,7 +4,7 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       <div id="box_snb">
       	<h5 class="title center">로그인</h5>
-      	<form>
+      	<form id="loginForm">
         <div class="login_form">
 	        <div class="input-field col">
 	          <input id="email" type="text" class="validate">
