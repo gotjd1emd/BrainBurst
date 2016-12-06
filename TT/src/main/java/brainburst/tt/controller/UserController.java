@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,11 +26,15 @@ public class UserController {
 	 */
 	@RequestMapping("signUp")
 	@ResponseBody
-	public void signUp(String email, String password){
+	public String signUp(String email, String password){
 		userDTO.setEmail(email);
 		userDTO.setPassword(password);
 		
-		userService.signUp(userDTO);
+		if(userService.signUp(userDTO)==1){
+			return null;
+		}
+		
+		return null;
 	}
 	
 	/**
@@ -74,7 +79,7 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userDelete")
-	public void userDelete(){
+	public void userDelete(HttpRequest request){
 		
 	}
 	
