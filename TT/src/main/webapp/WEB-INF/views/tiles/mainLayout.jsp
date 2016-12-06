@@ -15,9 +15,10 @@
 	<style>
 	</style>
 	<script>
-		$(function () {
-				$("#btn_join").click(function () {
-					location.href="signUp/AcceptTerms.jsp";
+	$(document).ready(function() {
+				$("#btn_join").on("click", function () {
+					alert("눌렸다아아q");
+					location.href="/signUpForm";
 				})
 		})
 	</script>

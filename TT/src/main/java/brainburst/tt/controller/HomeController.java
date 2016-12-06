@@ -31,9 +31,15 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
-		
+		model.addAttribute("serverTime", formattedDate);
+		System.out.println("home");
 		return "main/index";
+	}
+	
+	@RequestMapping("signUpForm")
+	public String move(){
+		System.out.println("viewName으로 이동합니다.");
+		return "signUp/AcceptTerms";
 	}
 	
 }
