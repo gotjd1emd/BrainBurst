@@ -7,12 +7,12 @@
       	<form>
         <div class="login_form">
 	        <div class="input-field col">
-	          <input id="email" type="text" class="validate">
-	          <label for="email">Email</label>
+	          <input id="email_login" type="text" class="validate" name="email">
+	          <label for="email_login">Email</label>
 	        </div>
 	        <div class="input-field col">
-	          <input id="password" type="password" class="validate">
-	          <label for="password">Password</label>
+	          <input id="password_login" type="password" class="validate" name="password">
+	          <label for="password_login">Password</label>
 	        </div>
 	        
 	        <div class="row">
@@ -23,7 +23,8 @@
 	      </div><!-- login_form exit -->
 	      <div class="row">
 	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">로그인</button>
-	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">회원가입</button>
+	       		
+	       		<button id="btn_join" class="snbtn waves-effect waves-light col s6" name="action">회원가입</button>
 	      </div>
 	    </form>  
       </div><!-- box_snd exit -->

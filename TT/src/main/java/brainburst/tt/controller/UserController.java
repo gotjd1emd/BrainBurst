@@ -34,6 +34,7 @@ public class UserController {
 	@RequestMapping("signUp")
 	@ResponseBody
 	public void signUp(String email, String password, HttpSession session){
+		
 	}
 	
 	/**
