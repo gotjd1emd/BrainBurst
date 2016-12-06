@@ -9,7 +9,7 @@ public interface WebtoonDAO {
 	/**
 	 * WEBTOON_LEVEL과 CATEGORY를 조건으로 조건에 맞는 웹툰목록가져오기
 	 */
-	List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String category);
+	List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode);
 	
 	/**
 	 * 입력된 keyword로 검색된 웹툰혹은 검색된 작가의 웹툰목록 가져오기
@@ -30,7 +30,7 @@ public interface WebtoonDAO {
 	/**
 	 * EPISODE_SEQUENCE에 해당하는 이미지를 로딩(리스트에 넣을때 IMAGE_INDEX순으로)
 	 */
-	List<String> selectImg(String epicsodeSequence);
+	List<String> selectImg(int epicsodeSequence);
 	
 	/**
 	 * 구독테이블에 레코드 추가.

@@ -53,7 +53,7 @@ drop table category
 
 
 --웹툰 정보 테이블
---level : 일반, 펀딩, 유료
+--level : 일반(free), 펀딩(punding), 유료(paid)
 --state : 연재, 휴재, 블라인드, 연재완료
 --penalty : green, yello, red
 CREATE TABLE webtoon
