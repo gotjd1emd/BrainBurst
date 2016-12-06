@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.AdditionalInfoDTO;
+import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -18,7 +19,7 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public UserDTO login(String email, String passwords) {
+	public UserDTO login(UserDTO userDTO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -36,19 +37,19 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public int userCheckByPassword(String email, String password) {
+	public int userCheckByPassword(UserDTO userDTO) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int userDelete(String email, String password) {
+	public int userDelete(UserDTO userDTO) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public UserDTO userUpdate(UserDTO userDto) {
+	public UserDTO userUpdate(UserDTO userDTO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -60,16 +61,34 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public int applySubscription(String email, String webtoonCode) {
+	public int applySubscription(WebtoonDTO webtoonDTO) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int deleteSubscription(String email, String webtoonCode) {
+	public int deleteSubscription(WebtoonDTO webtoonDTO) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
+	@Override
+	public List<CashHistoryDTO> showListCashHistory(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int CashCharge(int cashPoint) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public UserDTO applyAuthor(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
