@@ -13,11 +13,15 @@
 	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 	<link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
 	<style>
+		#container{
+			width:100%;
+		}
 	</style>
 	<script>
 		$(function () {
-				$("#btn_join").click(function () {
-					location.href="signUp/AcceptTerms.jsp";
+				$("#btn_singUp").click(function () {
+					alert("asd");
+					location.href="signUp/AcceptTerms";
 				})
 		})
 	</script>

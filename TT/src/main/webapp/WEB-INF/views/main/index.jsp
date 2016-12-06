@@ -15,7 +15,7 @@
 <body> 
 	<h1 class="animated zoomIn">Example</h1>
 	
-	<div class="card horizontal small top_card">
+	<div class="card horizontal top_card">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="<c:url value='/resources/img/sk.png'/>">
     </div>
