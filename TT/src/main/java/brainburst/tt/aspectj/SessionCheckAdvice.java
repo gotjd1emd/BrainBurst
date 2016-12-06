@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class SessionCheckAdvice {
 	
-	@Around("execution(public * brainburst.tt.controller.Webtoon*.*(..))")
+	@Around("execution(public * brainburst.tt.controller.*Controller.*(HttpServletRequest, ..))")
 	public Object around(ProceedingJoinPoint point) throws Throwable {
 		//session check
 		Object methodParam[] = point.getArgs();
