@@ -1,5 +1,8 @@
 package brainburst.tt.controller;
 
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class PundController {
 /**
 작가페이지의 펀딩웹툰탭 클릭할 때, 펀딩상태의 웹툰 목록, 

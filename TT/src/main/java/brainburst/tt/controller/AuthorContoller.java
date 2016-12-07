@@ -1,5 +1,8 @@
 package brainburst.tt.controller;
 
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class AuthorContoller {
 
 /**
@@ -7,7 +10,6 @@ public class AuthorContoller {
 자신의 웹툰페이지에서 상세보기 클릭시
 웹툰 정보가지고 상세보기페이지이동
 */
-???()
 
 /**
 마이페이지에서 작가페이지 클릭할때,
