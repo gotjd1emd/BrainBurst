@@ -2,9 +2,11 @@ package brainburst.tt.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import brainburst.tt.dto.UserDTO;
@@ -20,7 +22,10 @@ public class UserController {
 	private UserDTO userDTO;
 
 	@RequestMapping("{viewFolder}/{viewName}")
-	public String signUpMove(String viewFolder, String viewName){
+	public String signUpMove(
+			@PathVariable("viewFolder") String viewFolder, 
+			@PathVariable("viewName") String viewName){
+		
 		System.out.println(viewFolder+"/"+viewName+"로 이동합니다.");
 		return viewFolder+"/"+viewName;
 	}
