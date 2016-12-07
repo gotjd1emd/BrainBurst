@@ -12,4 +12,5 @@ public interface WebtoonService {
 	List<EpisodeDTO> selectAllEpisode(String webtoonCode);
 	List<String> selectImg(int episodeSequence);
 	int addSubscription(String email, String webtoonCode);
+	int setEpisodeNumber();
 }

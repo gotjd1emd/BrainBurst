@@ -43,4 +43,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public int setEpisodeNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

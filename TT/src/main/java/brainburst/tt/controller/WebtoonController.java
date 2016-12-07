@@ -1,5 +1,6 @@
 package brainburst.tt.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -69,9 +70,12 @@ public class WebtoonController {
 			type = "webtoon/author";
 		}
 		List<EpisodeDTO> list = webtoonService.selectAllEpisode(webtoonCode);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName(type);
 		//페이지이동후 webtoonCode를 자주 사용함으로 미리 request영역에 저장.
-		requset.setAttribute("webtoonCode", list.get(0).getWebtoonCode()); 
-		return new ModelAndView(type, "episodeList", list);
+		modelAndView.addObject("webtoonCode", webtoonCode);
+		modelAndView.addObject("episodeList", list);
+		return modelAndView;
 	}
 	/**
 	 * 에피소드보기
@@ -79,9 +83,14 @@ public class WebtoonController {
 	 * @return 해당에피소드의 이미지배열
 	 */
 	@RequestMapping("episodePage/{episodeSequence)}")
-	public ModelAndView selectImg(@PathVariable("episodePage") int episodeSequence) {
+	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodePage") int episodeSequence) {
 		List<String> list = webtoonService.selectImg(episodeSequence);
-		return new ModelAndView("webtoon/episode", "image", list);
+		int episodeNumber = webtoonService.setEpisodeNumber();
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("webtoon/episode");
+		modelAndView.addObject("image", list);
+		modelAndView.addObject("episodeNumber", episodeNumber);
+		return modelAndView;
 	}
 	
 	/**
@@ -91,26 +100,30 @@ public class WebtoonController {
 	 * @param request
 	 * @return 성공여부 1:성공 , 0:실패
 	 */
-	public int addSubscription(HttpServletRequest request) {
+	public void addSubscription(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		return webtoonService.addSubscription(email, webtoonCode);
+		if (webtoonService.addSubscription(email, webtoonCode)>0) {
+			//성공했을때 무언가...?
+		}
 	}
 	
 	/**
 	 * 추천하기
 	 * 추천하기 버튼 클릭, requset에 남아있는 해당 웹툰 코드와 session에 있는 사용자 email이용
-	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 구독목록 갱신
+	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 추천수변경
 	 * @return 성공여부 1:성공 , 0:실패 
 	 */
-	public int addRecommandation(HttpServletRequest request) {
+	public void addRecommandation(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		return webtoonService.addSubscription(email, webtoonCode);
+		if (webtoonService.addSubscription(email, webtoonCode)>0) {
+			//성공했을때 무언가...?
+		}
 	}
 
 	/**
@@ -139,8 +152,20 @@ public class WebtoonController {
 	전,다음화이동
 	request에 있는 webtoonCode, episode_number이용, 이전 episode_number의 내용을 가지고 페이지이동
 	*/
-	public String name() {
-		return null;
+	@SuppressWarnings("unchecked")
+	public String next(HttpServletRequest request) {
+		int episodeNumber = (Integer) request.getAttribute("episodeNumber");
+		int episodeSequence = 0;
+		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getAttribute("episodeList");
+		Iterator<EpisodeDTO> iterator= dto.iterator();
+		//에피소드DTO목록안에서 다음 에피소드넘버에 해당하는 에피소드 시퀸스를 찾기.
+		while (iterator.hasNext()) {
+			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
+			if (episodeDTO.getEpisodeNumber() == (episodeNumber+1)) {
+				episodeSequence = episodeDTO.getEpisodeSequence();
+			}
+		}
+		return "episodePage/{"+episodeSequence+"}";
 	}
 
 }
