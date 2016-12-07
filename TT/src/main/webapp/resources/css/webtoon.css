@@ -89,7 +89,17 @@
   background-color: #03A9F4;
 }
 
-.webtoon_title {
+.webtoon_title, .episode_thumbnail, .episode_chart {
 	width : 100px;
 	height : 100px;
+	margin : auto;
+	
+}
+
+.thumbnail, .chart{
+	height:100%;
+}
+
+.episode_chart {
+	margin-right:0;
 }
