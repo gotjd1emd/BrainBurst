@@ -37,4 +37,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public List<String> selectImg(int episodeSequence) {
 		return webtoonDAO.selectImg(episodeSequence);
 	}
+
+	@Override
+	public int addSubscription(String email, String webtoonCode) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

@@ -11,4 +11,5 @@ public interface WebtoonService {
 	Boolean checkNickname(String webtoonCode);
 	List<EpisodeDTO> selectAllEpisode(String webtoonCode);
 	List<String> selectImg(int episodeSequence);
+	int addSubscription(String email, String webtoonCode);
 }
