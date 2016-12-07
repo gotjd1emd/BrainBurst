@@ -29,7 +29,7 @@ public class WebtoonController {
 	@RequestMapping("/")
 	public ModelAndView mainPage() {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("punding", "all");
-		return new ModelAndView("main/index", "webtoonlist", list);
+		return new ModelAndView("main/index", "webtoonList", list);
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class WebtoonController {
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
-		return new ModelAndView("main/index", "webtoonlist", list);
+		return new ModelAndView("main/index", "webtoonList", list);
 	}
 	
 	/**
