@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 	
 	<div class="signup_box z-depth-2">
-		<form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
-			<div info-box>
+		 <form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
+			<div class="info-box">
 				<div class="input-field">
 		          <input id="email-signup" type="text" class="validate" name="mail">
 		          <label for="email-signup">이메일</label>
@@ -24,6 +24,7 @@
    				       <label for="password-checked-signup">비밀번호 확인</label>
      			    </div>
 			    </div>
+			    
 			    <div class="input-field">
 		          <input id="birthDate-signup" type="text" class="validate" name="birthDate">
 		          <label for="birthDate-signup">생년월일 - 주민번호 앞자리 입력</label>
