@@ -97,12 +97,16 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userUpdate")
-	public void userUpdate(){
+	public void userUpdate(UserDTO userDTO){
+		int result = userService.userUpdate(userDTO);
 		
+		if(result==1){
+			
+		}
 	}
 	
 	/**
-	 * 회원정보수정
+	 * 추가정보입력
 	 * return 타입 : void
 	 * parameterType : void
 	 * */

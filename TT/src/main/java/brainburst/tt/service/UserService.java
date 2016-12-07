@@ -70,7 +70,7 @@ public interface UserService {
 	 * parameterType :  UserDTO
 	 * 기능 : password 확인 후 email에 해당하는 유저 정보 수정 ( 닉네임, 패스워드, 전화번호 )
 	 * */
-	public UserDTO userUpdate(UserDTO userDTO);
+	public int userUpdate(UserDTO userDTO);
 	
 	/**
 	 * 회원구독목록

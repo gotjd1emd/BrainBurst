@@ -63,9 +63,8 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public UserDTO userUpdate(UserDTO userDTO) {
-		userDAO.userUpdate(userDTO);
-		return null;
+	public int userUpdate(UserDTO userDTO) {
+		return userDAO.userUpdate(userDTO);
 	}
 
 	@Override
