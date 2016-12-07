@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.service.UserService;
@@ -25,11 +24,8 @@ public class UserController {
 	 * parameter Type : email, password, session
 	 */
 	@RequestMapping("signUp")
-	public String signUp(String email, String password){
-		userDTO.setEmail(email);
-		userDTO.setPassword(password);
-		
-		if(userService.signUp(userDTO)==1){
+	public String signUp(String email){
+		if(userService.signUp(email)==1){
 			return "/";
 		}
 		return "signUpForm";

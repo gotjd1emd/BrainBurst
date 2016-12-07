@@ -16,7 +16,7 @@ public class AdministratorController {
 	ModelAndView searchForPayWebtoonList(){
 		
 		
-		return  null;
+		return  null;   
 	}*/
 	
 /*	@RequestMapping("adminLogin")
