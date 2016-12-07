@@ -11,6 +11,7 @@ import brainburst.tt.dto.UserDTO;
 import brainburst.tt.service.UserService;
 
 @Controller
+@RequestMapping("user")
 public class UserController {
 	
 	@Autowired
