@@ -35,8 +35,8 @@ public class UserDAOImpl implements UserDAO{
 
 	//회원가입
 	@Override
-	public int signUp(UserDTO userDTO) {
-		return sqlSession.insert("userMapper.signUp", userDTO);
+	public int signUp(String email) {
+		return sqlSession.insert("userMapper.signUp", email);
 	}
 
 	//로그인

@@ -21,14 +21,14 @@ public class UserServiceImpl implements UserService{
 		
 	//회원가입
 	@Override
-	public int signUp(UserDTO userDTO){
+	public int signUp(String email){
 		int result = 0;
 		// 아이디 체크 ( 중복체크 후 가입 가능 상태시 result에 1저장)
-		result = userDAO.checkId(userDTO.getEmail());
+		result = userDAO.checkId(email);
 		
 		if(result==1){
 			//회원가입 ( 완료시 result에 1저장)
-			result = userDAO.signUp(userDTO);
+			result = userDAO.signUp(email);
 		}
 		return result;
 	}

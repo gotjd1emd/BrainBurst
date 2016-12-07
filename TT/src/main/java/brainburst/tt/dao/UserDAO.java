@@ -50,14 +50,14 @@ public interface UserDAO {
 	/**
 	 * SignUp 기능 - 회원가입
 	 * return타입 : int
-	 * parameter 값 : UserDTO
+	 * parameter 값 : String
 	 * sql : insert into user_information values ( #{email}, #{nickname}, #{phone}, #{password},
 	 * 						#{cashPoint}, #{level}, #{name}, #{gender}, #{birthDate} )
 	 * 기능 :
 	 * 		1 ==> 가입완료
 	 * 		0 ==> 가입실패
 	 * */
-	public int signUp(UserDTO userDTO);
+	public int signUp(String email);
 
 	/**
 	 * 추가 정보 입력 기능
