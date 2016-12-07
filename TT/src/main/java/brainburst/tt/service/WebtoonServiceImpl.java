@@ -2,10 +2,13 @@ package brainburst.tt.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
+@Service
 public class WebtoonServiceImpl implements WebtoonService {
 	
 	private WebtoonDAO webtoonDAO;
