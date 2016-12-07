@@ -32,6 +32,18 @@
 		</div>
 	</div>
 	
+	<div class="z-depth-2">
+		<div class="col s3">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfiwDUBe5J0bSSnY_tkixhchUM539CKhd6-WGD1WpCrL37WxEY">
+		</div>
+		<div class="col s6">
+			3화-고수 <br><br>
+			추천 : 187
+		</div>
+		<div class="col s3">
+			<img src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+		</div>
+	</div>
 
 </body>
 </html>
