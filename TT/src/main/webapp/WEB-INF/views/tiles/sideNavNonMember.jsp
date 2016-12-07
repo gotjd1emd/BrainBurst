@@ -2,7 +2,12 @@
     pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <ul id="slide-out" class="side-nav fixed z-depth-2">
-      <div id="box_snb">
+      <c:choose>
+      <c:when test="${sessionScope.userDTO!=null}">
+		꺄하하하하ㅏ하하하하하하하하
+      </c:when>
+      <c:otherwise>
+      	<div id="box_snb">
       	<h5 class="title center">로그인</h5>
       	<form id="loginForm">
         <div class="login_form">
@@ -29,6 +34,8 @@
 	      </div>
 	    </form>  
       </div><!-- box_snd exit -->
+      </c:otherwise>
+      </c:choose>
     </ul>
     
     
