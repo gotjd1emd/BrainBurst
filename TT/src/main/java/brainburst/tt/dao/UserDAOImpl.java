@@ -50,6 +50,12 @@ public class UserDAOImpl implements UserDAO{
 	public int addtionalInfo(AdditionalInfoDTO additionalInfoDTO) {
 		return sqlSession.insert("userMapper.additionalInfo", additionalInfoDTO);
 	}
+	
+	//회원정보 가져오기
+	@Override
+	public UserDTO userInfoSelect(String email) {
+		return sqlSession.selectOne("userMapper.userInfoSelect", email);
+	}
 
 	//비밀번호찾기
 	@Override
@@ -116,6 +122,5 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }

@@ -63,8 +63,10 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public int userUpdate(UserDTO userDTO) {
-		return userDAO.userUpdate(userDTO);
+	public UserDTO userUpdate(UserDTO userDTO) {
+		int result = userDAO.userUpdate(userDTO);
+
+		return userDAO.userInfoSelect(userDTO.getEmail());
 	}
 
 	@Override

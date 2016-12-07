@@ -105,6 +105,16 @@ public interface UserDAO {
 	public int userUpdate(UserDTO userDTO);
 	
 	/**
+	 * 유저정보 가져오기
+	 * return 타입 : UserDto
+	 * parameterType : String
+	 * sql : select email, nickname, phone, password, cash_Point, level, name, gender, birth_Date
+	 * 			from user_information where email=#{email}
+	 * 기능 : password 확인 후 email에 해당하는 유저 정보 수정 ( 패스워드, 전화번호 )
+	 * */
+	public UserDTO userInfoSelect(String email);
+	
+	/**
 	 * 회원구독목록
 	 * return 타입 : List<WebtoonDTO>
 	 * parameterType : String

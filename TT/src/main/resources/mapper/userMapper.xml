@@ -63,11 +63,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into additional_info 
 		values (#{email}, #{accountPassword}, #{accountNumber}, #{identificationCard})
 	</insert>
+	
+	<!-- userInfoSelect -->
+	<select id="userInfoSelect" resultMap="userDTO" parameterType="String">
+		select email, nickname, phone, password, cash_Point, level, name, gender, birth_Date
+		from user_information 
+		where email=#{email}
+	</select>
 </mapper>
-
-
-
-
-
-
 

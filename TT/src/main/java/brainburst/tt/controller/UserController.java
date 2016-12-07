@@ -97,12 +97,12 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userUpdate")
-	public void userUpdate(UserDTO userDTO){
-		int result = userService.userUpdate(userDTO);
+	public String userUpdate(UserDTO userDTO, HttpSession session){
+		userDTO = userService.userUpdate(userDTO);
 		
-		if(result==1){
-			
-		}
+		session.setAttribute("userDTO", userDTO);
+
+		return "마이페이지";
 	}
 	
 	/**
