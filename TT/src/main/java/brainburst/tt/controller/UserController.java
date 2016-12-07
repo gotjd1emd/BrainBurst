@@ -37,7 +37,8 @@ public class UserController {
 	@RequestMapping("signedUp")
 	public String signUp(UserDTO userDTO){
 		if(userService.signUp(userDTO)==1){
-			return "/user/signUp/signedUp";
+			String url="/user/signUp/signedUp";
+			return url;
 		}
 		return "signUpForm";
 	}
