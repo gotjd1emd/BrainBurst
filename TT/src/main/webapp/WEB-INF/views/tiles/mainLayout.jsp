@@ -33,7 +33,6 @@
 	</script>
 </head>
 <body>
-<script type="text/javascript" src="<c:url value='/resources/js/materialize.min.js'/>"></script>
 	<!-- HTML5 tiles main-->
 	<div id="container">
 		<div id="header">
