@@ -36,13 +36,4 @@ public class HomeController {
 		return "main/index";
 	}
 	
-	@RequestMapping("{viewName}")
-	public void move(){
-		System.out.println("viewName으로 이동합니다.");
-	}
-	
-	@RequestMapping("signUpForm")
-	public String signUpMove(){
-		return "signUp/acceptTerms";
-	}
 }

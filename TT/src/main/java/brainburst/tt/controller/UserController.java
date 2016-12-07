@@ -19,6 +19,12 @@ public class UserController {
 
 	private UserDTO userDTO;
 
+	@RequestMapping("{viewFolder}/{viewName}")
+	public String signUpMove(String viewFolder, String viewName){
+		System.out.println(viewFolder+"/"+viewName+"로 이동합니다.");
+		return viewFolder+"/"+viewName;
+	}
+	
 	/**
 	 * 회원가입! 
 	 * return 타입 : void
@@ -37,10 +43,22 @@ public class UserController {
 	 * 회원로그인! 
 	 * return 타입 : void
 	 * parameter Type : email, password, session
+	 * 기능 :
+	 * 		로그인실패시 메인으로 돌아감!
+	 * 		성공시 회원메인으로 이동!
 	 */
 	@RequestMapping("login")
-	public void login(String email, String password, HttpSession session){
+	public String login(String email, String password, HttpSession session){
+		userDTO.setEmail(email);
+		userDTO.setPassword(password);
 		
+		userDTO = userService.login(userDTO);
+		
+		if(userDTO==null){
+			return "/"; 
+		}
+		session.setAttribute("userDTO", userDTO);
+		return "main/memberIndex";
 	}
 
 	 /* 회원 로그아웃!
