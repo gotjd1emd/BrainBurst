@@ -167,5 +167,20 @@ public class WebtoonController {
 		}
 		return "episodePage/{"+episodeSequence+"}";
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public String prev(HttpServletRequest request) {
+		int episodeNumber = (Integer) request.getAttribute("episodeNumber");
+		int episodeSequence = 0;
+		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getAttribute("episodeList");
+		Iterator<EpisodeDTO> iterator= dto.iterator();
+		//에피소드DTO목록안에서 다음 에피소드넘버에 해당하는 에피소드 시퀸스를 찾기.
+		while (iterator.hasNext()) {
+			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
+			if (episodeDTO.getEpisodeNumber() == (episodeNumber-1)) {
+				episodeSequence = episodeDTO.getEpisodeSequence();
+			}
+		}
+		return "episodePage/{"+episodeSequence+"}";
+	}
 }
