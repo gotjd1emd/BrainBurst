@@ -31,4 +31,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM WEBTOON
 		WHERE WEBTOON_NAME = %#{value}% OR AUTHOR = %#{value}%
 	</select>
+	
+	<!-- selectAllEpisode -->
+	<select id="selectAllEpisode" resultMap="webtoonDTO" parameterType="String">
+		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
+		FROM WEBTOON
+		WHERE WEBTOON_NAME = %#{value}% OR AUTHOR = %#{value}%
+	</select>
 </mapper>

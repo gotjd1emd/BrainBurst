@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
+@Repository
 public class WebtoonDAOImpl implements WebtoonDAO {
 	
 	private SqlSession sqlSession;
@@ -36,7 +38,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 
 	@Override
 	public List<EpisodeDTO> selectAllEpisode(String webtoonCode) {
-		return sqlSession.selectOne("webtoonMapper.checkNickname", webtoonCode);
+		return sqlSession.selectOne("webtoonMapper.selectAllEpisode", webtoonCode);
 	}
 
 	@Override
