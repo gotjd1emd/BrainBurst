@@ -130,6 +130,7 @@ left: 228px;
    
    /*login_form*/
     .login_form{
+    	height : 2rem;
    		padding : 10px;
    		margin-bottom: -11px;
     }
