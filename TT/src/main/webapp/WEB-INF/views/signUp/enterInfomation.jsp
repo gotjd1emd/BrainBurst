@@ -25,16 +25,16 @@
    				       <label for="password-checked-signup">비밀번호 확인</label>
      			    </div>
 			    </div>
-		        <input type="date" class="datepicker">
+		        <input type="date" class="datepicker" name="birthDate">
 		        <div class="input-field">
-		          <input id="last_name" type="text" class="validate">
-		          <label for="last_name">전화번호</label>
+		          <input id="phoneNumber-signup" type="text" class="validate" name="phoneNumber">
+		          <label for="phoneNumber-signup">전화번호</label>
 		        </div>
 		         <p>
-			      <input name="group1" type="radio" id="test1" checked/>
-			      <label for="test1">남자</label>
-			      <input name="group1" type="radio" id="test2" />
-			      <label for="test2">여자</label>
+			      <input name="gender" type="radio" id="man" checked/>
+			      <label for="man">남자</label>
+			      <input name="gender" type="radio" id="woman" />
+			      <label for="woman">여자</label>
 			    </p>
 			</div>
 		</form>
