@@ -101,6 +101,16 @@ public class UserController {
 	}
 	
 	/**
+	 * 회원정보수정
+	 * return 타입 : void
+	 * parameterType : void
+	 * */
+	@RequestMapping("userAdditionalInfo")
+	public void userAdditionalInfo(){
+		
+	}
+	
+	/**
 	 * 회원구독관리
 	 * */
 	

@@ -17,6 +17,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="gender" property="gender"/>
 		<result column="birth_date" property="birthDate" />
 	</resultMap>
+	
+	<resultMap type="additionalInfoDTO" id="additionalInfoDTO">
+		<id column="email" property="email"/>
+		<result column="account_Password" property="accountPassword"/>
+		<result column="account_Number" property="accountNumber"/>
+		<result column="identification_Card" property="identificationCard"/>
+	</resultMap>
 
 	<!-- Login -->
 	<select id="login" resultMap="userDTO" parameterType="userDTO">
@@ -50,6 +57,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		set phone=#{phone}, password={password}
 		where email=#{email}
 	</update>
+	
+	<!-- additionalInfo -->
+	<insert id="additionalInfo" parameterType="additionalInfoDTO">
+		insert into additional_info 
+		values (#{email}, #{accountPassword}, #{accountNumber}, #{identificationCard})
+	</insert>
 </mapper>
 
 

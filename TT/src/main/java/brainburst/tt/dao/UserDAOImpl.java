@@ -35,8 +35,8 @@ public class UserDAOImpl implements UserDAO{
 
 	//회원가입
 	@Override
-	public int signUp(String email) {
-		return sqlSession.insert("userMapper.signUp", email);
+	public int signUp(UserDTO userDTO) {
+		return sqlSession.insert("userMapper.signUp", userDTO);
 	}
 
 	//로그인
@@ -45,13 +45,13 @@ public class UserDAOImpl implements UserDAO{
 		return sqlSession.selectOne("userMapper.login", userDTO);
 	}
 
-
+	//추가정보입력
 	@Override
 	public int addtionalInfo(AdditionalInfoDTO additionalInfoDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.insert("userMapper.additionalInfo", additionalInfoDTO);
 	}
 
+	//비밀번호찾기
 	@Override
 	public int userCheckByPassword(UserDTO userDTO) {
 		// TODO Auto-generated method stub

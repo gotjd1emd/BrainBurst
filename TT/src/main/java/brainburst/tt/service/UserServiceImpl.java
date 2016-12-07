@@ -21,14 +21,14 @@ public class UserServiceImpl implements UserService{
 		
 	//회원가입
 	@Override
-	public int signUp(String email){
+	public int signUp(UserDTO userDTO){
 		int result = 0;
 		// 아이디 체크 ( 중복체크 후 가입 가능 상태시 result에 1저장)
-		result = userDAO.checkId(email);
+		result = userDAO.checkId(userDTO.getEmail());
 		
 		if(result==1){
 			//회원가입 ( 완료시 result에 1저장)
-			result = userDAO.signUp(email);
+			result = userDAO.signUp(userDTO);
 		}
 		return result;
 	}
@@ -58,8 +58,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int addtionalInfo(AdditionalInfoDTO additionalInfoDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+		return userDAO.addtionalInfo(additionalInfoDTO);
 	}
 
 

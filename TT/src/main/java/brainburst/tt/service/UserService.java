@@ -41,7 +41,7 @@ public interface UserService {
 	 * 		1 ==> 가입완료
 	 * 		0 ==> 가입실패
 	 * */
-	public int signUp(String email);
+	public int signUp(UserDTO userDTO);
 
 	/**
 	 * 추가 정보 입력 기능
