@@ -76,8 +76,8 @@ public class UserController {
 	
 	/**
 	 * È¸¿øÅ»Åğ
-	 * return Å¸ÀÔ : void
-	 * parameterType : void
+	 * return Å¸ÀÔ : String
+	 * parameterType : request
 	 * */
 	@RequestMapping("userDelete")
 	public String userDelete(HttpServletRequest request){
