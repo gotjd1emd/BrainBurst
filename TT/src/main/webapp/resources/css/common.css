@@ -21,9 +21,21 @@ html, body { margin:0; padding:0; height:100%; }
 	width:10px;	
 }
 
+.title-text{
+	text-align: center;
+}
+
 .top_card{
-	width:350px;
-	height:250px;
+	margin:30px;
+	display: inline-block;
+	left:10% !important;
+}
+
+.top3-card-list{
+}
+
+.img_element{
+	max-width: 60% !important;
 }
 
 /*¸»Ç³¼±*/
@@ -229,6 +241,15 @@ left: 228px;
   footer.page-footer{
   	padding-left:0px;
   }
+  .top_card{
+  	left : 0 !important;
+  }
+}
+
+@media only screen and (max-width: 1112px) {
+	.top_card{
+		
+	}
 }
 
 @media only screen and (min-width : 992px) {

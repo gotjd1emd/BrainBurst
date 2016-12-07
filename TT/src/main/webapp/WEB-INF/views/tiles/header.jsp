@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="<c:url value='/resources/js/materialize.min.js'/>"></script>
 	
 	<nav class="fixed">
-	    <div class="nav-wrapper">
+	    <div class="nav-wrapper z-depth-4">
 	      <a href="<c:url value='/'/>" class="brand-logo center"><img id="logo" src="<c:url value='/resources/img/TT_title.png'/>"></a>
 	      <a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <a href="#" data-activates="category_mobile" id="category_nav" class="button-collapse right"><i class="material-icons">apps</i></a>
