@@ -29,8 +29,6 @@
 	      </div>
 	    </form>  
       </div><!-- box_snd exit -->
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
     </ul>
     
     

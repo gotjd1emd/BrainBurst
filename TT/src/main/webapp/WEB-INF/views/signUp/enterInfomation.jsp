@@ -25,7 +25,10 @@
    				       <label for="password-checked-signup">비밀번호 확인</label>
      			    </div>
 			    </div>
-		        <input type="date" class="datepicker" name="birthDate">
+			    <div class="input-field">
+		          <input id="birthDate-signup" type="text" class="validate" name="birthDate">
+		          <label for="birthDate-signup"">생년월일 - 주민번호 앞자리 입력</label>
+		        </div>
 		        <div class="input-field">
 		          <input id="phoneNumber-signup" type="text" class="validate" name="phoneNumber">
 		          <label for="phoneNumber-signup">전화번호</label>
@@ -38,6 +41,5 @@
 			    </p>
 			</div>
 		</form>
-	
-		<a id="btn-next" class="waves-effect waves-light btn-large">다음</a>
+		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signUp/signedUp'/>">다음</a>
 	</div>
