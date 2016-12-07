@@ -57,17 +57,16 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	//유저삭제
+	@Override
+	public int userDelete(String email) {
+		return sqlSession.delete("userMapper.userDelete", email);
+ 	}
 
 	@Override
-	public int userDelete(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public UserDTO userUpdate(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+	public int userUpdate(UserDTO userDTO) {
+		return sqlSession.update("userMapper.userUpdate", userDTO);
 	}
 
 	@Override

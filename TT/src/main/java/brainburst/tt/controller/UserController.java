@@ -47,8 +47,8 @@ public class UserController {
 	 * return 타입 : void
 	 * parameter Type : email, password, session
 	 * 기능 :
-	 * 		로그인실패시 메인으로 돌아감!
-	 * 		성공시 회원메인으로 이동!
+	 * 		로그인실패시 메인으로 돌아감!	==>  "/"
+	 * 		성공시 회원메인으로 이동!		==> "main/memberIndex"
 	 */
 	@RequestMapping("login")
 	public String login(String email, String password, HttpSession session){
@@ -79,8 +79,15 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userDelete")
-	public void userDelete(HttpServletRequest request){
+	public String userDelete(HttpServletRequest request){
+		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
 		
+		int result = userService.userDelete(userDTO);
+		
+		if(result==1){
+			return "/";
+		}
+		return "main/memberIndex";
 	}
 	
 	/**

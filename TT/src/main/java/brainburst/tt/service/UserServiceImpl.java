@@ -52,20 +52,20 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+	public int userDelete(UserDTO userDTO) {
+		return userDAO.userDelete(userDTO.getEmail());
+	}
+
+	@Override
 	public int addtionalInfo(AdditionalInfoDTO additionalInfoDTO) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
-	public int userDelete(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public UserDTO userUpdate(UserDTO userDTO) {
-		// TODO Auto-generated method stub
+		userDAO.userUpdate(userDTO);
 		return null;
 	}
 

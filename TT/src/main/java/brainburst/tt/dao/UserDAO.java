@@ -93,16 +93,16 @@ public interface UserDAO {
 	 * 		1 ==> 탈퇴성공
 	 * 		0 ==> 탈퇴실패
 	 * */
-	public int userDelete(UserDTO userDTO);
+	public int userDelete(String email);
 	
 	/**
 	 * 회원정보수정
 	 * return 타입 : UserDto
 	 * parameterType :  UserDTO
-	 * sql : update user_information set nickname=#{nickname}, password=#{password}, phone=#{phone}
-	 * 기능 : password 확인 후 email에 해당하는 유저 정보 수정 ( 닉네임, 패스워드, 전화번호 )
+	 * sql : update user_information set password=#{password}, phone=#{phone}
+	 * 기능 : password 확인 후 email에 해당하는 유저 정보 수정 ( 패스워드, 전화번호 )
 	 * */
-	public UserDTO userUpdate(UserDTO userDTO);
+	public int userUpdate(UserDTO userDTO);
 	
 	/**
 	 * 회원구독목록

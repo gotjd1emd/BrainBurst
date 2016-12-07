@@ -33,10 +33,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- signUp -->
-	<select id="signUp" parameterType="userDTO">
+	<insert id="signUp" parameterType="userDTO">
 		insert into user_information 
 		values ( #{email}, #{nickname}, #{phone}, #{password}, #{cashPoint}, #{level}, #{name}, #{gender}, #{birthDate} )
-	</select>
+	</insert>
+	
+	<!-- userDelete -->
+	<delete id="userDelete" parameterType="String">
+		delete from user_information
+		where email = #{email}
+	</delete>
+	
+	<!-- uesrUpdate -->
+	<update id="userUpdate" parameterType="userDTO">
+		update user_information
+		set phone=#{phone}, password={password}
+		where email=#{email}
+	</update>
 </mapper>
 
 
