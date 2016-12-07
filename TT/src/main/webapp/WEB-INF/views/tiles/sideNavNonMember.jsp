@@ -6,11 +6,11 @@
       	<h5 class="title center">로그인</h5>
       	<form id="loginForm">
         <div class="login_form">
-	        <div class="input-field col">
+	        <div class="input-field login-field col">
 	          <input id="email" type="text" class="validate">
 	          <label for="email">Email</label>
 	        </div>
-	        <div class="input-field col">
+	        <div class="input-field login-field col">
 	          <input id="password" type="password" class="validate">
 	          <label for="password">Password</label>
 	        </div>

@@ -33,4 +33,5 @@
 			</div>
 		</div>
 		
+		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signUp/enterInfomation'/>">다음</a>
 	</div>

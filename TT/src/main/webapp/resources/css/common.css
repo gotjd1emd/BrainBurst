@@ -93,38 +93,38 @@ left: 228px;
 }
 
 /* label color */
-   .input-field label {
+   .login-field label {
      color: #000;
      font-size: 15px;
      padding-bottom: 1px;
      top:0.4rem;
    }
-   .input-field.col label{
+   .login-field.col label{
    	left:1px;
    }
    /* label focus color */
-   .input-field input[type=text]:focus + label {
+   .login-field input[type=text]:focus + label {
      color: #000;
      font-size: 12px;
      padding-bottom: 2px;
    }
    /* label underline focus color */
-   .input-field input[type=text]:focus {
+   .login-field input[type=text]:focus {
      border-bottom: 1px solid #000;
      box-shadow: 0 1px 0 0 #000;
    }
    /* valid color */
-   .input-field input[type=text].valid {
+   .login-field input[type=text].valid {
      border-bottom: 1px solid #000;
      box-shadow: 0 1px 0 0 #000;
    }
    /* invalid color */
-   .input-field input[type=text].invalid {
+   .login-field input[type=text].invalid {
      border-bottom: 1px solid #000;
      box-shadow: 0 1px 0 0 #000;
    }
    /* icon prefix focus color */
-   .input-field .prefix.active {
+   .login-field .prefix.active {
      color: #000;
    }
    
@@ -133,7 +133,7 @@ left: 228px;
    		padding : 10px;
    		margin-bottom: -11px;
     }
-	.login_form .input-field{
+	.login_form .login-field{
 		margin-top:30px;
 	}	
 	

@@ -24,7 +24,7 @@
 	
 	<!-- join -->
 	<definition name="signUp/*" extends="signUpLayout">
-		<put-attribute name="content" value="/WEB-INF/views/signUp/acceptTerms.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/signUp/{1}.jsp"/>
 	</definition>
 	
 </tiles-definitions>
