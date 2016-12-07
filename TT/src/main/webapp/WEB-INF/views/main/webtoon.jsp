@@ -6,29 +6,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
 </head>
 <body>
-	<div class="container">
+	<div class="z-depth-2">
 		<div class="row">
 			<div class="col s2">
-				그림
-			</div>
-			<div class="col s10">
-				
-			</div>
-		</div>
-		<div class="row">
-			<div class="navbar-fixed">
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<div class="nav-wrapper">
-					<ul class="tabs tabs-transparent">
-				    	<li class="tab"><a href="#test1">Test 1</a></li>
-				        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-				    </ul>
+				<div class="webtoon_title">
+					<img src="http://public.slidesharecdn.com/b/images/logo/linkedin-ss/SS_Logo_White_Large.png?6d1f7a78a6">
 				</div>
 			</div>
-			<div id="test1" class="col s12">Test 1</div>
-  			<div id="test2" class="col s12">Test 2</div>
+			<div class="col s10">
+				작가이름 <br>
+				줄거리
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+		   	<div class="col s12">
+		      <ul class="tabs">
+		        <li class="tab col s3 offset-s3"><a href="#test1">Test 1</a></li>
+		        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+		      </ul>
+		    </div>
 		</div>
 	</div>
 	
