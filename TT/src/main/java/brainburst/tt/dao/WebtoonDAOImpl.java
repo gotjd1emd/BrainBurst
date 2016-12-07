@@ -43,8 +43,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 
 	@Override
 	public List<String> selectImg(int epicsodeSequence) {
-		
-		return null;
+		return sqlSession.selectOne("webtoonMapper.selectImg", epicsodeSequence);
 	}
 
 	@Override

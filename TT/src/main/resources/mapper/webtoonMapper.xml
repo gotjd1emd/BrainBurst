@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- DB 컬럼명에 userDTO의 값 하나씩 대입 이름이 같으면 resultMap 생성하지 않아도 됨 -->
 	<resultMap type="webtoonDTO" id="webtoonDTO">
-		<id column="email" property="webtoonCode"/>
+		<id column="WEBTOON_CODE" property="webtoonCode"/>
 		<result column="WEBTOON_NAME" property="webtoonName"/>
 		<result column="WEBTOON_LEVEL" property="webtoonLevel"/>
 		<result column="WEBTOON_STATE" property="webtoonState"/>
@@ -18,6 +18,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="SUMMARY" property="summary" />
 	</resultMap>
 	
+	<resultMap type="episodeDTO" id="episodeDTO">
+		<id column="EPISODE_SEQUENCE" property="episodeSequence"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="EPISODE_NUMBER" property="episodeNumber"/>
+		<result column="HITS" property="hits"/>
+		<result column="RECOMMENDATION" property="recommendation"/>
+		<result column="UPLOAD_DATE" property="uploadDate"/>
+		<result column="EPISODE_TITLE" property="episodeTitle"/>
+		<result column="NICKNAME_WORD" property="nicknameWord"/>
+		<result column="THUMBNAIL" property="thumbnail"/>
+		<result column="FUNDCODE" property="fundCode"/>
+	</resultMap>
+
+	
 	<!-- selectWebtoonByLevel -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
 		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
@@ -27,15 +41,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- searchByKeyword -->
 	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="String">
-		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
+		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
 		WHERE WEBTOON_NAME = %#{value}% OR AUTHOR = %#{value}%
 	</select>
 	
 	<!-- selectAllEpisode -->
-	<select id="selectAllEpisode" resultMap="webtoonDTO" parameterType="String">
-		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
+	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="String">
+		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, NICKNAME_WORD, THUMBNAIL, FUNDCODE
 		FROM WEBTOON
-		WHERE WEBTOON_NAME = %#{value}% OR AUTHOR = %#{value}%
+		WHERE WEBTOON_CODE = #{value}
+	</select>
+	
+	<!-- selectImg -->
+	<select id="selectImg" resultMap="episodeDTO" parameterType="_int">
+		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, NICKNAME_WORD, THUMBNAIL, FUNDCODE
+		FROM WEBTOON
+		WHERE WEBTOON_CODE = #{value}
 	</select>
 </mapper>

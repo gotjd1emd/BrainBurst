@@ -77,4 +77,32 @@ public class WebtoonController {
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		return new ModelAndView("webtoon/episode", "image", list);
 	}
+	
+
+/**
+구독하기.
+구독하기 버튼 클릭하면 requset에 남아있는 해당 웹툰 코드와 session에 있는 사용자 email이용
+구독하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 구독목록 갱신
+*/
+/**
+추천하기 잠시보류.
+*/
+
+/**
+신고
+신고버튼클릭하면 request에 있는 epicsode_sequence와 webtoonCode, session에 있는 사용자 email이용
+신고 테이블에 해당 레코드 삽입
+@content : 신고내용
+*/
+
+	
+	/*
+	 * 목록으로 돌아가기
+	*/
+
+	/**
+	전,다음화이동
+	request에 있는 webtoonCode, episode_number이용, 이전 episode_number의 내용을 가지고 페이지이동
+	*/
+
 }
