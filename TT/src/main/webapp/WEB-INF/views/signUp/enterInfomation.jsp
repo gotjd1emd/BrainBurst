@@ -6,11 +6,11 @@
 		 <form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
 			<div class="info-box">
 				<div class="input-field">
-		          <input id="email-signup" type="text" class="validate" name="mail">
+		          <input id="email-signup" type="text" class="validate" name="email">
 		          <label for="email-signup">이메일</label>
 		        </div>
 		        <div class="input-field">
-		          <input id="name-signup" type="text" class="validate" name="name">
+		          <input id="name-signup" type="text" class="validate" name="nickname">
 		          <label for="name-signup"">이름</label>
 		        </div>
 		        
@@ -30,7 +30,7 @@
 		          <label for="birthDate-signup">생년월일 - 주민번호 앞자리 입력</label>
 		        </div>
 		        <div class="input-field">
-		          <input id="phoneNumber-signup" type="text" class="validate" name="phoneNumber">
+		          <input id="phoneNumber-signup" type="text" class="validate" name="phone">
 		          <label for="phoneNumber-signup">전화번호</label>
 		        </div>
 		         <p>

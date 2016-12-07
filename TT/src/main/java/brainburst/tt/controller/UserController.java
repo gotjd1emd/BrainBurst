@@ -35,8 +35,8 @@ public class UserController {
 	 * parameter Type : email, password, session
 	 */
 	@RequestMapping("signedUp")
-	public String signUp(String email){
-		if(userService.signUp(email)==1){
+	public String signUp(UserDTO userDTO){
+		if(userService.signUp(userDTO)==1){
 			return "/user/signUp/signedUp";
 		}
 		return "signUpForm";
