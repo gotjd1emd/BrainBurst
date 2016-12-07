@@ -34,14 +34,13 @@ public class UserController {
 	 * return 타입 : void
 	 * parameter Type : email, password, session
 	 */
-	@RequestMapping("signUp")
+	@RequestMapping("signedUp")
 	public String signUp(String email){
 		if(userService.signUp(email)==1){
-			return "/";
+			return "/user/signUp/signedUp";
 		}
 		return "signUpForm";
 	}
-
 	
 	/**
 	 * 회원로그인! 
