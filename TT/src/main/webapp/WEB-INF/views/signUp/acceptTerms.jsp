@@ -33,5 +33,4 @@
 			</div>
 		</div>
 		
-		<a id="btn-next" class="waves-effect waves-light btn-large">다음</a>
 	</div>
