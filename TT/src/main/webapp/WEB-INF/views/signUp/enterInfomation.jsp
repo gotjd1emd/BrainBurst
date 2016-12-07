@@ -41,5 +41,5 @@
 			    </p>
 			</div>
 		</form>
-		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signUp/signedUp'/>">다음</a>
+		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signedUp'/>">다음</a>
 	</div>
