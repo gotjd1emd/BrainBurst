@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 	
 	<div class="signup_box z-depth-2">
-		<form method="post" name="enterInfomationForm" action="<c:url='user/signedUp'/>">
+		<form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
 			<div info-box>
 				<div class="input-field">
 		          <input id="email-signup" type="text" class="validate" name="mail">
@@ -39,6 +39,6 @@
 			      <label for="woman">여자</label>
 			    </p>
 			</div>
-		<a href="javascript: document.senterInfomationForm.submit();" class="waves-effect waves-light btn-large">다음</a>
+		<button class="btn-large waves-effect waves-light" type="submit" name="action">다음</button>
 		</form>
 	</div>
