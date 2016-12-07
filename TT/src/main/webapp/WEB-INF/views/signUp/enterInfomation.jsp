@@ -3,8 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 	
 	<div class="signup_box z-depth-2">
-		
-		<form action="">
+		<form method="post" name="enterInfomationForm" action="<c:url='user/signedUp'/>">
 			<div info-box>
 				<div class="input-field">
 		          <input id="email-signup" type="text" class="validate" name="mail">
@@ -27,7 +26,7 @@
 			    </div>
 			    <div class="input-field">
 		          <input id="birthDate-signup" type="text" class="validate" name="birthDate">
-		          <label for="birthDate-signup"">생년월일 - 주민번호 앞자리 입력</label>
+		          <label for="birthDate-signup">생년월일 - 주민번호 앞자리 입력</label>
 		        </div>
 		        <div class="input-field">
 		          <input id="phoneNumber-signup" type="text" class="validate" name="phoneNumber">
@@ -40,6 +39,6 @@
 			      <label for="woman">여자</label>
 			    </p>
 			</div>
+		<a href="javascript: document.senterInfomationForm.submit();" class="waves-effect waves-light btn-large">다음</a>
 		</form>
-		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signedUp'/>">다음</a>
 	</div>
