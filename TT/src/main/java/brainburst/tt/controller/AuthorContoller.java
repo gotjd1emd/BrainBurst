@@ -54,7 +54,7 @@ USER_LEVEL(session에 있을가능성이 높음) 체크해서 작가일경우 자신의 연재중인 웹툰
 		String nickname = userDTO.getNickname();
 		//유저레벨이 독자가 아닐경우(펀딩작가, 작가인경우!) 작가페이지로이동.
 		if (!userLevel.equals("독자")) {
-			List<WebtoonDTO> list = authorService.getMyWebtoon(nickname);
+			List<WebtoonDTO> list = authorService.getSerializedWebtoon(nickname);
 			return new ModelAndView("author/authorDetail", "webtoonList", list);
 		} else {
 			//생성페이지로이동
@@ -62,14 +62,23 @@ USER_LEVEL(session에 있을가능성이 높음) 체크해서 작가일경우 자신의 연재중인 웹툰
 		}
 	}
 
+	/**
+	작가페이지의 마감된 웹툰탭 클릭할 때, 연재완료 상태의 웹툰목록 가지고 이동
+	*/
+	@RequestMapping("authorPage")
+	public ModelAndView concludedWebtoonPage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String nickname = userDTO.getNickname();
+		return null;
+	}
+	
 /**
 작가신청 버튼클릭시,
 UserController에 있음 보류.
 */
 
-/**
-작가페이지의 마감된 웹툰탭 클릭할 때, 연재완료 상태의 웹툰목록 가지고 이동
-*/
+
 
 /**
 작품등록
