@@ -77,13 +77,46 @@ left: 228px;
 }
 
 
-
 /* 사이드 네비게이션 내부 box*/
-#snb #box_snb{
+#box_snb-nonlogin, #box_snb-login{
 	margin-top:15px;
 	width:100%;
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -20px rgba(0, 0, 0, 0.2);
 	height:300px;
+}
+
+#box_snb-nonlogin{
+	padding-top:10px;
+}
+
+#box_snb-login{
+	padding-top:120px;
+}
+
+/*마이페이지, 로그아웃 사이 line*/
+.line{
+	height:20px;
+	width:1.5px;
+	margin-top:13px;
+	background-color: black;
+}
+
+.logout-snb{
+	text-align:right;
+}
+
+.a-button-nav{
+	padding-top: 10px;
+	padding-left: 20px;
+	margin-bottom : 5px;
+}
+
+.charge-btn{
+	height: 30px!important;
+	line-height: 30px!important;
+	width:100px;
+	padding:0!important;
+	margin: -2px!important;
 }
 
 /* 내용 */
@@ -141,8 +174,9 @@ left: 228px;
    /*login_form*/
     .login_form{
     	height : 2rem;
-   		padding : 10px;
    		margin-bottom: -11px;
+   		padding-left:10px;
+   		padding-right:10px;
     }
 	.login_form .login-field{
 		margin-top:30px;
