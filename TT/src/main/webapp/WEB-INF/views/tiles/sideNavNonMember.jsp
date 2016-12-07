@@ -16,7 +16,7 @@
 	        </div>
 	        
 	        <div class="row">
-	        	<a class="col s6 link">아이디 찾기</a>
+	        	<a class="col s6 link" href="<c:url value='/test/webtoon'/>">아이디 찾기</a>
 	        	<a class="col s6 link" href="<c:url value='/signUpForm'/>">비밀번호 찾기</a>
 	        </div>
 	        
