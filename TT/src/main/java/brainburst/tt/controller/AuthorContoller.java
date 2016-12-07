@@ -65,7 +65,7 @@ USER_LEVEL(session에 있을가능성이 높음) 체크해서 작가일경우 자신의 연재중인 웹툰
 	/**
 	작가페이지의 마감된 웹툰탭 클릭할 때, 연재완료 상태의 웹툰목록 가지고 이동
 	*/
-	@RequestMapping("authorPage")
+	@RequestMapping("authorPage2")
 	public ModelAndView concludedWebtoonPage(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
