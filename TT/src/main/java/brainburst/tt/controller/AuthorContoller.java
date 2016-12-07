@@ -41,17 +41,17 @@ USER_LEVEL(session에 있을가능성이 높음) 체크해서 작가일경우 자신의 연재중인 웹툰
 가지고 작가페이지 연재중인웹툰탭으로 이동(처음페이지)
 독자일경우 작가신청 페이지로이동
 */
-	@RequestMapping("")
-	public void letTheWorldBurn(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
-		//유저레벨이 독자가 아닐경우(펀딩작가, 작가인경우!) 작가페이지로이동.
-		if (!userDTO.getLevel().equals("독자")) {
-			
-		} else {
-			//생성페이지로이동
-		}
-	}
+//	@RequestMapping("")
+//	public void letTheWorldBurn(HttpServletRequest request) {
+//		HttpSession session = request.getSession();
+//		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+//		//유저레벨이 독자가 아닐경우(펀딩작가, 작가인경우!) 작가페이지로이동.
+//		if (!userDTO.getLevel().equals("독자")) {
+//			
+//		} else {
+//			//생성페이지로이동
+//		}
+//	}
 
 /**
 작가신청 버튼클릭시,
