@@ -11,7 +11,7 @@
 	      <a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <a href="#" data-activates="category_mobile" id="category_nav" class="button-collapse right"><i class="material-icons">apps</i></a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="sass.html">펀딩웹툰</a></li>
+	        <li><a href="<c:url value='/test/myWebtoon'/>">펀딩웹툰</a></li>
 	        <li><a href="badges.html">일반웹툰</a></li>
 	        <li><a href="collapsible.html">완결웹툰</a></li>
 	        <li><i class="material-icons icon_search">search</i></li>
