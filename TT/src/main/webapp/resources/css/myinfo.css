@@ -1,0 +1,29 @@
+@CHARSET "EUC-KR";
+
+#content-myInfo{
+	padding-top: 80px;
+	padding-left:300px;
+	padding
+}
+
+.tab-card-info{
+	margin-top: 10px;
+}
+
+.tab-myinfo{
+	padding:0px !important;
+}
+
+.tab-frame-myinfo{
+	margin-bottom: 50px;
+}
+
+.card-frame-myInfo{
+	width:100%;
+	border-radius: 20px;
+	padding:10px;
+}
+
+.subscribe-list{
+	border-radius: 10px;	
+}
