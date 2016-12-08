@@ -28,7 +28,7 @@ public class WebtoonController {
 	 */
 	@RequestMapping("/")
 	public ModelAndView mainPage() {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("punding", "all");
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("pund", "all");
 		return new ModelAndView("main/index", "webtoonList", list);
 	}
 
@@ -63,7 +63,7 @@ public class WebtoonController {
 	 * @return 사용자의 웹툰여부판단후 해당페이지로 검색된결과리턴
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
-	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") String webtoonCode) {
+	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		String type = "webtoon/reader";
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
 		if (webtoonService.checkNickname(webtoonCode)) {
@@ -82,14 +82,13 @@ public class WebtoonController {
 	 * @param episodeSequence 해당에피소드의 시퀸스
 	 * @return 해당에피소드의 이미지배열
 	 */
-	@RequestMapping("episodePage/{episodeSequence)}")
+	@RequestMapping("episodePage/{episodeSequence}")
 	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodePage") int episodeSequence) {
 		List<String> list = webtoonService.selectImg(episodeSequence);
-		int episodeNumber = webtoonService.setEpisodeNumber();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("image", list);
-		modelAndView.addObject("episodeNumber", episodeNumber);
+		modelAndView.addObject("episodeSequence", episodeSequence);
 		return modelAndView;
 	}
 	
@@ -105,7 +104,7 @@ public class WebtoonController {
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		if (webtoonService.addSubscription(email, webtoonCode)>0) {
+		if (webtoonService.addSubscription(email, webtoonCode) > 0) {
 			//성공했을때 무언가...?
 		}
 	}
@@ -120,8 +119,9 @@ public class WebtoonController {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
-		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		if (webtoonService.addSubscription(email, webtoonCode)>0) {
+		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
+		
+		if (webtoonService.addRecommend(email, episodeSequence) > 0) {
 			//성공했을때 무언가...?
 		}
 	}
@@ -133,8 +133,14 @@ public class WebtoonController {
 	 * @content : 신고내용
 	 * @return 성공여부 1:성공 , 0:실패 
 	 */
-	public int addReport() {
-		return 0;
+	public void addReport(HttpServletRequest request, String content) {
+		HttpSession session = request.getSession();
+		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
+		String email = dto.getEmail();
+		String webtoonCode = (String) request.getAttribute("webtoonCode");
+		if (webtoonService.addSubscription(email, webtoonCode)>0) {
+			//성공했을때 무언가...?
+		}
 	}
 	
 	/**
@@ -147,37 +153,29 @@ public class WebtoonController {
 		String webtoonCode = (String) request.getAttribute("webtoonCode");
 		return "webtoonPage/{"+webtoonCode+"}";
 	}
-
-	/**
-	전,다음화이동
-	request에 있는 webtoonCode, episode_number이용, 이전 episode_number의 내용을 가지고 페이지이동
-	*/
-	@SuppressWarnings("unchecked")
-	public String next(HttpServletRequest request) {
-		int episodeNumber = (Integer) request.getAttribute("episodeNumber");
-		int episodeSequence = 0;
-		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getAttribute("episodeList");
-		Iterator<EpisodeDTO> iterator= dto.iterator();
-		//에피소드DTO목록안에서 다음 에피소드넘버에 해당하는 에피소드 시퀸스를 찾기.
-		while (iterator.hasNext()) {
-			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
-			if (episodeDTO.getEpisodeNumber() == (episodeNumber+1)) {
-				episodeSequence = episodeDTO.getEpisodeSequence();
-			}
-		}
-		return "episodePage/{"+episodeSequence+"}";
-	}
 	
-	@SuppressWarnings("unchecked")
-	public String prev(HttpServletRequest request) {
+	/**
+	 * 이전,다음화 이동
+	 * @param direction [next]다음화, [prev]이전화
+	 * @return 웹툰에피소드목록보기로 이동
+	 */
+	@RequestMapping("{direction}")
+	public String prev(HttpServletRequest request, @PathVariable("direction") String direction) {
+		//뷰단에서 에피소드넘버를 인수로 받아온다.
+		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
 		int episodeNumber = (Integer) request.getAttribute("episodeNumber");
-		int episodeSequence = 0;
 		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getAttribute("episodeList");
 		Iterator<EpisodeDTO> iterator= dto.iterator();
+		//direction에 따라 다음화, 이전화 결정 찾을 에피소드번호를 더하거나 내린다.
+		if (direction.equals("next")) {
+			episodeNumber++;
+		} else {
+			episodeNumber--;
+		}
 		//에피소드DTO목록안에서 다음 에피소드넘버에 해당하는 에피소드 시퀸스를 찾기.
 		while (iterator.hasNext()) {
 			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
-			if (episodeDTO.getEpisodeNumber() == (episodeNumber-1)) {
+			if (episodeDTO.getEpisodeNumber() == (episodeNumber)) {
 				episodeSequence = episodeDTO.getEpisodeSequence();
 			}
 		}

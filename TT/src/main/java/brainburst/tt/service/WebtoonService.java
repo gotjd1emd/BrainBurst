@@ -6,11 +6,54 @@ import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface WebtoonService {
+	/**
+	 * WEBTOON_LEVEL과 CATEGORY를 조건으로 조건에 맞는 웹툰목록가져오기
+	 * @param webtoonLevel (free[일반], pund[펀딩], paid[유로화])
+	 * @param categoryCode (미정 수정요망)
+	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
+	 */
 	List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode);
+	
+	/**
+	 * keyword에 해당하는 웹툰 혹은 키워드에 해당하는 작가의 웹툰목록 가져오기
+	 * @param keyword 검색어
+	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
+	 */
 	List<WebtoonDTO> searchByKeyword(String keyword);
-	Boolean checkNickname(String webtoonCode);
-	List<EpisodeDTO> selectAllEpisode(String webtoonCode);
+	/**
+	 * 사용자가 연재한 웹툰인지 확인하기위한 닉네임체크
+	 * @param webtoonCode
+	 * @return
+	 */
+	Boolean checkNickname(int webtoonCode);
+	
+	/**
+	 * 해당 웹툰의 모든에피소드 불러오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	List<EpisodeDTO> selectAllEpisode(int webtoonCode);
+	
+	/**
+	 * 해당 에피소드의 이미지불러오기
+	 * @param episodeSequence
+	 * @return
+	 */
 	List<String> selectImg(int episodeSequence);
+	
+	/**
+	 * 구독하기
+	 * 추천하기 버튼 클릭, requset에 남아있는 해당 웹툰 코드와 session에 있는 사용자 email이용
+	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 추천수변경
+	 * @return 성공여부 1:성공 , 0:실패 
+	 */
 	int addSubscription(String email, String webtoonCode);
-	int setEpisodeNumber();
+	
+	/**
+	 * 추천하기
+	 * @param email
+	 * @param epicsodeSequence
+	 * @return
+	 */
+	int addRecommend(String email, int epicsodeSequence);
 }

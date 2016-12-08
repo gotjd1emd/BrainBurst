@@ -21,4 +21,9 @@ public class AuthorServiceImpl implements AuthorService {
 		return null;
 	}
 
+	@Override
+	public int addSeries(WebtoonDTO webtoonDTO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

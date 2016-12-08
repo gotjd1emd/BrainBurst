@@ -24,12 +24,12 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public Boolean checkNickname(String webtoonCode) {
+	public Boolean checkNickname(int webtoonCode) {
 		return webtoonDAO.checkNickname(webtoonCode);
 	}
 	
 	@Override
-	public List<EpisodeDTO> selectAllEpisode(String webtoonCode) {
+	public List<EpisodeDTO> selectAllEpisode(int webtoonCode) {
 		return webtoonDAO.selectAllEpisode(webtoonCode);
 	}
 
@@ -40,13 +40,11 @@ public class WebtoonServiceImpl implements WebtoonService {
 
 	@Override
 	public int addSubscription(String email, String webtoonCode) {
-		// TODO Auto-generated method stub
-		return 0;
+		return webtoonDAO.addSubscription(email, webtoonCode);
 	}
-
+	
 	@Override
-	public int setEpisodeNumber() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int addRecommend(String email, int epicsodeSequence) {
+		return webtoonDAO.addRecommend(email, epicsodeSequence);
 	}
 }

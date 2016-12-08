@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.WebtoonDTO;
+import oracle.net.aso.e;
 
 @Repository
 public class WebtoonDAOImpl implements WebtoonDAO {
@@ -29,7 +30,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public Boolean checkNickname(String webtoonCode) {
+	public Boolean checkNickname(int webtoonCode) {
 		if (sqlSession.selectOne("webtoonMapper.checkNickname", webtoonCode) != null) {
 			return true;
 		}
@@ -37,7 +38,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public List<EpisodeDTO> selectAllEpisode(String webtoonCode) {
+	public List<EpisodeDTO> selectAllEpisode(int webtoonCode) {
 		return sqlSession.selectOne("webtoonMapper.selectAllEpisode", webtoonCode);
 	}
 
@@ -48,14 +49,19 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 
 	@Override
 	public int addSubscription(String email, String webtoonCode) {
-		// TODO Auto-generated method stub
-		return 0;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("webtoonCode", webtoonCode);
+		return sqlSession.insert("webtoonMapper.addSubscription", map);
 	}
 
 	@Override
 	public int addRecommend(String email, int epicsodeSequence) {
-		// TODO Auto-generated method stub
-		return 0;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		//스트링으로 변경해서 넣었는데 오류발생시 수정요망
+		map.put("webtoonCode", Integer.toString(epicsodeSequence));
+		return sqlSession.insert("webtoonMapper.addSubscription", map);
 	}
 
 	@Override

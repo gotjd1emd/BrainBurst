@@ -82,13 +82,31 @@ UserController에 있음 보류.
 
 /**
 작품등록
+등록하면 정보값 가지고 웹툰테이블 생성
+이후 작가페이지의 연재중웹툰탭으로 이동
 */
-
+	public String addSeries(HttpServletRequest request) {
+		//뷰에서 보내는 웹툰정보
+		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
+		authorService.addSeries(webtoonDTO);
+		return "author/authorPage";
+	}
 /**
 작품수정
+수정후 해당 작품의 웹툰페이지로 이동
 */
-
+	public String updateSeries(HttpServletRequest request) {
+		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
+		String webtoonCode = webtoonDTO.getWebtoonCode();
+		authorService.addSeries(webtoonDTO);
+		return "webtoonPage/"+webtoonCode;
+	}
+	
 /**
 작품상태변경
 */
+	public String setSeriesState(HttpServletRequest request, String state) {
+		
+		return "author/authorPage";
+	}
 }

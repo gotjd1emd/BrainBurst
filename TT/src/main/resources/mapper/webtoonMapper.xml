@@ -5,7 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="webtoonMapper">
 
-	<!-- DB 컬럼명에 userDTO의 값 하나씩 대입 이름이 같으면 resultMap 생성하지 않아도 됨 -->
 	<resultMap type="webtoonDTO" id="webtoonDTO">
 		<id column="WEBTOON_CODE" property="webtoonCode"/>
 		<result column="WEBTOON_NAME" property="webtoonName"/>
@@ -30,7 +29,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="THUMBNAIL" property="thumbnail"/>
 		<result column="FUNDCODE" property="fundCode"/>
 	</resultMap>
-
 	
 	<!-- selectWebtoonByLevel -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
@@ -59,4 +57,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM WEBTOON
 		WHERE WEBTOON_CODE = #{value}
 	</select>
+	
+	<!-- addSubscription -->
+	<insert id="addSubscription" parameterType="map">
+		INSERT INTO SUBSCRIPTION (EMAIL, WEBTOON_CODE) 
+		VALUES (#{email}, #{webtoonCode}) 
+	</insert>
 </mapper>
