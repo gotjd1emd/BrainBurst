@@ -17,14 +17,26 @@
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
 	</definition>
 	
+	<!-- myInfo 폴더 안에 있는 view를 참조할 layout -->
+	<definition name="myInfoLayout" template="/WEB-INF/views/tiles/myInfoLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
+		<put-attribute name="snb_Info" value="/WEB-INF/views/tiles/sideNavInfo.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
+	</definition>
+	
 	<!-- main-nonMember -->
 	<definition name="main/*" extends="mainLayout">
 		<put-attribute name="content" value="/WEB-INF/views/main/{1}.jsp"/>
 	</definition>
 	
-	<!-- join -->
+	<!-- signUp -->
 	<definition name="signUp/*" extends="signUpLayout">
 		<put-attribute name="content" value="/WEB-INF/views/signUp/{1}.jsp"/>
+	</definition>
+	
+	<!-- myInfo -->
+	<definition name="myInfo/*" extends="myInfoLayout">
+		<put-attribute name="content" value="/WEB-INF/views/myInfo/{1}.jsp"/>
 	</definition>
 	
 </tiles-definitions>

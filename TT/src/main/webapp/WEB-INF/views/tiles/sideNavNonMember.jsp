@@ -4,13 +4,13 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       
       <c:choose>
-      <c:when test="${sessionScope.userDTO!=null}">
+      <c:when test="${sessionScope.userDTO==null}">
       <div id="box_snb-login">
 		<h5 class="center-align">-닉네임-</h5>
 		<h6 class="center-align">email@gmail.com</h6>
 		
 		<div class="row a-button-nav">
-			<a class="col s5">마이페이지</a>
+			<a class="col s5" href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
 			<div class="col s1">
 				<div class="line"></div>
 			</div>
