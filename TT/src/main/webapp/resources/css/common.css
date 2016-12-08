@@ -31,8 +31,23 @@ html, body { margin:0; padding:0; height:100%; }
 	left:10% !important;
 }
 
-.top3-card-list{
+.webtoon_card{
+	margin:30px;
+	display: inline-block;
+	left:2% !important;
+	height:200px !important;
 }
+
+.webtoon_card-font{
+	padding-right:0px !important;
+	padding-left:3px !important;
+	padding-top:2px !important;
+}
+
+.webtoon_card-icon{
+	padding-top:12px !important;	
+}
+
 
 .img_element{
 	max-width: 60% !important;
