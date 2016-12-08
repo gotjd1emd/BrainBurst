@@ -13,4 +13,10 @@ public class TestController {
 		return "main/webtoon";
 	}
 	
+	@RequestMapping("episode/{episodeSequence}")
+	public String episode() {
+		
+		return "main/episode";
+	}
+	
 }

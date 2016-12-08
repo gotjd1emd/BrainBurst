@@ -21,6 +21,15 @@
 				줄거리
 			</div>
 		</div>
+		<hr>
+		<div class="row">
+		   	<div class="col s12">
+		      <ul class="tabs">
+		        <li class="tab col s6 m12 l3 offset-l3"><a href="#test1">목록</a></li>
+		        <li class="tab col s6 m12 l3"><a class="active" href="#test2">웹툰 정보</a></li>
+		      </ul>
+		    </div>
+		</div>
 	</div>
 	
 	<c:forEach var="episode" items="${episodeList }" >
