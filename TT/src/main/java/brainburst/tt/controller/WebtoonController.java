@@ -20,6 +20,7 @@ import brainburst.tt.service.WebtoonService;
 @Controller
 @RequestMapping("webtoon")
 public class WebtoonController {
+	
 	@Autowired
 	private WebtoonService webtoonService;
 	
