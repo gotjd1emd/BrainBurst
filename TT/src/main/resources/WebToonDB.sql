@@ -283,14 +283,13 @@ drop table recommend;
 
 select * from tab;
 
-
 ---------------------------------------------------------------------
 
 
 
 drop table recommend;
-drop table subscription;
 drop table fund_time_limit;
+drop table subscription;
 drop table apply_paid;
 drop table apply_fund;
 drop table pay_history;
