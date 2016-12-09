@@ -17,7 +17,7 @@
 		<hr>
 		<div class="row tPoint-printing-snb">
 			<h6 class="col s6">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
-			<a class="waves-effect waves-light btn charge-btn col s6">충전</a>
+			<a class="waves-effect waves-light btn charge-btn col s6" href="<c:url value='/user/util/payment'/>">충전</a>
 		</div>
 	  </div>
 	  

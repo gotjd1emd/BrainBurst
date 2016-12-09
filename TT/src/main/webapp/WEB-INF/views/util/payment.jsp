@@ -47,6 +47,7 @@
 	</script>
 </head>
 <body>
+	<form method="post" action="">
 	<!-- HTML5 -->
 	<div class="card-frame-payment z-depth-1">
 		<div class="center"><h5>T 충전</h5></div>
@@ -145,5 +146,6 @@
 		  	<a class="waves-effect waves-light btn" href="<c:url value='/user/main/index'/>">취소</a>
 		  </div>
       </div>
+      </form>
 </body>
 </html>
