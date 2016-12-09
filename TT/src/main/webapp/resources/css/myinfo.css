@@ -81,3 +81,11 @@
 .mini-floating{
 	margin-top: -5px;
 }
+
+#modal2{
+	z-index: 9999 !important;
+}
+
+.modal-content-funding{
+	height:500px;
+}

@@ -24,6 +24,13 @@
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
 	</definition>
 	
+	<!-- main 폴더 안에 있는 view를 참조할 layout -->
+	<definition name="paymentLayout" template="/WEB-INF/views/tiles/mainLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>
+		<put-attribute name="snb_nonMember" value="/WEB-INF/views/tiles/sideNavNonMember.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"/>
+	</definition>
+	
 	<!-- main-nonMember -->
 	<definition name="main/*" extends="mainLayout">
 		<put-attribute name="content" value="/WEB-INF/views/main/{1}.jsp"/>
