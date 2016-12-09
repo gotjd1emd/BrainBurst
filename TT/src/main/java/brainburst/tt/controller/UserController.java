@@ -61,7 +61,7 @@ public class UserController {
 		System.out.println(userDTO);
 		
 		if(userDTO==null){
-			return "/"; 
+			return "main/index"; 
 		}
 		session.setAttribute("userDTO", userDTO);
 		
@@ -103,6 +103,10 @@ public class UserController {
 	 * */
 	@RequestMapping("userUpdate")
 	public String userUpdate(UserDTO userDTO, HttpSession session, HttpServletRequest request){
+		if(userDTO.getPassword()==""||userDTO.getPhone()==""){
+			System.out.println("변경값 없으므로 수정 취소");
+			return "myInfo/mypage";
+		}
 		UserDTO userDTO2 = new UserDTO();
 		userDTO2 = (UserDTO)request.getSession().getAttribute("userDTO");
 		
