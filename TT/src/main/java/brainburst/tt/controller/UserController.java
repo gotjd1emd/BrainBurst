@@ -66,7 +66,7 @@ public class UserController {
 		session.setAttribute("userDTO", userDTO);
 		
 		System.out.println(session.getAttribute("userDTO"));
-		return "main/memberIndex";
+		return "main/index";
 	}
 
 	 /* 회원 로그아웃!
@@ -76,7 +76,7 @@ public class UserController {
 		request.getSession().invalidate();
 		System.out.println("session정보 초기화");
 		
-		return "/";
+		return "main/index";
 	}
 	
 	/**
