@@ -87,7 +87,7 @@ public class UserController {
 	@RequestMapping("userDelete")
 	public String userDelete(HttpServletRequest request){
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
-		
+
 		int result = userService.userDelete(userDTO);
 		
 		if(result==1){
@@ -102,12 +102,20 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userUpdate")
-	public String userUpdate(UserDTO userDTO, HttpSession session){
+	public String userUpdate(UserDTO userDTO, HttpSession session, HttpServletRequest request){
+		UserDTO userDTO2 = new UserDTO();
+		userDTO2 = (UserDTO)request.getSession().getAttribute("userDTO");
+		
+		userDTO.setEmail(userDTO2.getEmail());
+
+		System.out.println(userDTO);
+		
 		userDTO = userService.userUpdate(userDTO);
+		System.out.println("수정완료.  전화번호 ==> "+userDTO.getPhone());
 		
 		session.setAttribute("userDTO", userDTO);
 
-		return "마이페이지";
+		return "myInfo/mypage";
 	}
 	
 	/**

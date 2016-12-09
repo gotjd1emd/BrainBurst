@@ -25,50 +25,53 @@
     <div id="myInfoModify" class="col s12 tab-card-info">
 		<div class="card-frame-myInfo z-depth-1">
 				<div class="row">
-	    <form class="col s12">
+	    <form class="col s12" method="post" action="<c:url value='/user/userUpdate'/>">
+	    <div class="row">
+	        <div class="input-field col s12">
+	          <input id="name-myinfo" type="text" class="validate" name="email" value="${sessionScope.userDTO.email}" disabled>
+	          <label for="name-myinfo">이메일</label>
+	        </div>
+	      </div>
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <input id="name-myinfo" type="text" class="validate">
+	          <input id="name-myinfo" type="text" class="validate" value="${sessionScope.userDTO.nickname}" disabled>
 	          <label for="name-myinfo">닉네임</label>
 	        </div>
 	      </div>
-	      <div class="row">
-	        <div class="input-field col s6">
-	          <input id="password-myinfo" type="password" class="validate">
-	          <label for="password-myinfo">비밀번호</label>
-	        </div>
-	        
-	        <div class="input-field col s6">
-	          <input id="password-checked-myinfo" type="password" class="validate">
-	          <label for="password-checked-myinfo">비밀번호 확인</label>
+	       <div class="row">
+	        <div class="input-field col s12">
+	          <input id="name-myinfo" type="text" class="validate" value="${sessionScope.userDTO.name}" disabled>
+	          <label for="name-myinfo">이름</label>
 	        </div>
 	      </div>
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <input id="birthDate-myinfo" type="text" class="validate">
+	          <input id="name-myinfo" type="text" class="validate" name=password placeholder="현재 비밀번호 : ${sessionScope.userDTO.password}">
+	          <label for="name-myinfo">비밀번호</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="birthDate-myinfo" type="text" class="validate" value="${sessionScope.userDTO.birthDate}" disabled>
 	          <label for="birthDate-myinfo">생년월일</label>
 	        </div>
 	      </div>
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <input id="telno-myinfo" type="text" class="validate">
+	          <input id="telno-myinfo" type="text" class="validate" name="phone" placeholder="현재 전화번호 : ${sessionScope.userDTO.phone}">
 	          <label for="telno-myinfo">전화번호</label>
 	        </div>
 	      </div>
 	      
 	      <div class="row">
-	        <p class="col s6">
-		      <input name="gender" type="radio" id="man-myinfo" />
-		      <label for="man-myinfo">남자</label>
-		    </p>
-		    <p class="col s6">
-		      <input name="gender" type="radio" id="woman-myinfo" />
-		      <label for="woman-myinfo">여자</label>
-		    </p>
+	        <div class="input-field col s12">
+	          <input id="telno-myinfo" type="text" class="validate" value="${sessionScope.userDTO.gender}" disabled>
+	          <label for="telno-myinfo">성별</label>
+	        </div>
 	      </div>
+	      
 	      <div class="center">
-		      <button class="btn waves-effect waves-light" type="submit" name="action">수정하기
-			  </button>
+		      <button class="btn waves-effect waves-light" type="submit" name="action">수정하기</button>
 	      </div>
 	    </form>
 	  </div>

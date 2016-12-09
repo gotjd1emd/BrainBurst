@@ -55,7 +55,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- uesrUpdate -->
 	<update id="userUpdate" parameterType="userDTO">
 		update user_information
-		set phone=#{phone}, password={password}
+		set phone=#{phone}, password=#{password}
 		where email=#{email}
 	</update>
 	
