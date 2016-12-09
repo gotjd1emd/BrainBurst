@@ -142,7 +142,7 @@
 		  </div>
 		  <div class="center">
 		  	<button class="btn waves-effect waves-light" type="submit" name="action">결제요청</button>
-		  	<a class="waves-effect waves-light btn">취소</a>
+		  	<a class="waves-effect waves-light btn" href="<c:url value='/user/main/index'/>">취소</a>
 		  </div>
       </div>
 </body>
