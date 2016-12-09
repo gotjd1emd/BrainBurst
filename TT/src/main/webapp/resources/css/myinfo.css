@@ -30,3 +30,33 @@
 .t-change{
 	text-align: center;
 }
+
+.title-div{
+	text-align: center;
+}
+
+.input-infomation-inline{
+	display:inline-block;
+	width:100%;
+}
+
+.img-preview{
+	width:100px;
+	height:100px;
+	border: 1px solid red;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.author-management-card{
+	height:500px;	
+	padding: 30px;
+}
+
+.account-number-field{
+	margin:13px;
+}
+
+.author-management-uploadbtn{
+	margin-top: 145px;
+}
