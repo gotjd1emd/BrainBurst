@@ -16,3 +16,33 @@
 p {
 	color: #03A9F4;
 }
+
+.file-field {
+	margin-top: 0px;
+}
+
+.side-nav button.btn, .side-nav button.btn-large, .side-nav button.btn-large, .side-nav button.btn-flat, .side-nav button.btn-floating {
+  margin: 10px 15px;
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+}
+
+.side-nav button.btn, .side-nav button.btn-large, .side-nav button.btn-large, .side-nav button.btn-floating {
+  color: #fff;
+}
+
+.side-nav button.btn-flat {
+  color: #343434;
+}
+
+.side-nav button.btn:hover, .side-nav button.btn-large:hover, .side-nav button.btn-large:hover {
+  background-color: #2bbbad;
+}
+
+.side-nav button.btn-floating:hover {
+  background-color: #26a69a;
+}

@@ -9,10 +9,35 @@
 <link rel="StyleSheet" href="<c:url value='/resources/css/modifyWebtoon.css'/>">
 <script type="text/javascript">
 	$(function() {
-		$('#thumbnail').on("change", function(){
+		var count = 1;
+		$('#thumbnail').on("change", function() {
 			readURL(this);
 		});
+		
+		$('.image-file').on("change", "input[type=file]", function() {
+			var size = fileSize(this).toFixed(2)+"KB";
+			var index = "#"+$(this).attr("name");
+			$(index).val(size);
+		});
+		
+		$('#add').on("click", function() {
+			if(count < 10) {
+				var str = "<div class='file-field input-field'>";
+				str += "<input type='file' name='index"+count+"'>";
+				str += "<div class='file-path-wrapper'>";
+				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
+				str += "</div></div>";
+				$('div.image-file').append(str);
+				
+				str = "<input id='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				$('div.image-file-size').append(str);
+				count++;
+			}else {
+				alert("이미지 파일은 10개까지 올릴 수 있습니다.");
+			}
+		});
 	});
+	
 	
 	function readURL(input) {
 		if (input.files && input.files[0]) {
@@ -23,11 +48,25 @@
 			}
 			
 			reader.readAsDataURL(input.files[0]);
+			var fileSize = input.files[0].size/1024;
+			
+			$('#thumbnail-preview').val(fileSize.toFixed(2)+"KB");
 		}
+	}
+	
+	function fileSize(input) {
+		var fileSize = input.files[0].size/1024;
+		
+		return fileSize;
 	}
 </script>
 </head>
 <body>
+	<div class="fixed-action-btn">
+		<button class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
+			<i class="material-icons">mode_edit</i>
+		</button>
+    </div>
 	<div class="z-depth-2">
 		<div class="row">
 			<div class="col s2">
@@ -82,25 +121,25 @@
 		</div>
 		
 		<div class="row">
-			<div class="input-field col s6">
-				<div class="file-field input-field">
-					<div class="btn">
-						<span>File</span> <input type="file" multiple>
-					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text" placeholder="Upload one or more files">
-					</div>
-				</div>
+			<div class="col s6">
+				<p class="flow-text">그림 이미지를 등록해주세요.</p>
+				<a class="waves-effect waves-light btn" id="add">Image Add</a>
 			</div>
 		</div>
 		
 		<div class="row">
-			<ul class="collection">
-				<li class="collection-item">Alvin</li>
-				<li class="collection-item">Alvin</li>
-				<li class="collection-item">Alvin</li>
-				<li class="collection-item">Alvin</li>
-			</ul>
+			<div class="input-field col s3 image-file">
+				
+				<div class="file-field input-field">
+					<input type="file" name="index0">
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" placeholder="이미지 파일을 추가해주세요.">
+					</div>
+				</div>
+			</div>
+			<div class="input-field col s3 image-file-size">
+				<input id="index0" type="text" class="validate" name="image-size0" placeholder="이미지 크기" readonly>
+			</div>
 		</div>
 	</div>
 </body>
