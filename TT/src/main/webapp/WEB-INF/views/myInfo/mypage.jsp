@@ -81,7 +81,7 @@
     	<div class="card-frame-myInfo z-depth-1">
 			<ul class="collection subscribe-list">
 			    <li class="collection-item avatar">
-			      <img src="images/yuna.jpg" alt="" class="circle">
+			      <img src='<c:url value="/resource/images/yuna.jpg"/>' alt="" class="circle">
 			      <span class="title">Title</span>
 			      <p>First Line <br>
 			         Second Line
