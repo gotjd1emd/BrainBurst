@@ -60,3 +60,24 @@
 .author-management-uploadbtn{
 	margin-top: 145px;
 }
+
+/*연재중인 웹툰 플로팅 버튼*/
+.publish-webtoon-floating{
+	width : 70px !important;
+	height : 70px !important;
+}
+
+/*대표 플로팅 버튼의 아이콘*/
+.first-icon{
+	line-height: 70px !important;	
+}
+
+.btn-floating{
+	width:60px;
+	height:60px;
+	line-height: 75px;
+}
+
+.mini-floating{
+	margin-top: -5px;
+}

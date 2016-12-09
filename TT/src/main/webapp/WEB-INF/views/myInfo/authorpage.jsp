@@ -25,6 +25,18 @@
       </ul>
     </div>
     <div id="publish-webtoon" class="col s12 tab-card-info">
+    
+	  <div class="fixed-action-btn horizontal click-to-toggle">
+	    <a class="btn-floating btn-large red publish-webtoon-floating">
+	      <i class="material-icons first-icon">menu</i>
+	    </a>
+	    <ul>
+	      <li><a class="btn-floating green mini-floating tooltipped" data-position="top" data-delay="50" data-tooltip="펀딩 작품 신청"><i class="material-icons">data_usage</i></a></li>
+	      <li><a class="btn-floating yellow darken-1 mini-floating tooltipped"  data-position="top" data-delay="50" data-tooltip="작품 상태 처리"><i class="material-icons">priority_high</i></a></li>
+	      <li><a class="btn-floating red mini-floating tooltipped"  data-position="top" data-delay="50" data-tooltip="작품 등록"><i class="material-icons">publish</i></a></li>
+	    </ul>
+	  </div>
+	  
 		<div class="card-frame-myInfo z-depth-1">
 				<div class="row">
 				  <div class="card col s12 m24 l3 top_card hoverable">
@@ -111,6 +123,11 @@
 		</div>
     </div>
     <div id="completed-webtoon" class="col s12 tab-card-info">
+    			
+    			<div class="fixed-action-btn horizontal click-to-toggle">
+				    <a class="btn-floating red publish-webtoon-floating tooltipped" data-position="top" data-delay="50" data-tooltip="유료화 신청"><i class="material-icons first-icon">attach_money</i></a>
+				  </div>
+    
     			<div class="card-frame-myInfo z-depth-1">
 				<div class="row">
 				  <div class="card col s12 m24 l3 top_card hoverable">
