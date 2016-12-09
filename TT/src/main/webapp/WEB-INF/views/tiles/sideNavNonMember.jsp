@@ -4,7 +4,7 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       
       <c:choose>
-      <c:when test="${sessionScope.userDTO!=null}">
+      <c:when test="${sessionScope.userDTO==null}">
       <div id="box_snb-login">
 		<h5 class="center-align">- ${sessionScope.userDTO.nickname} -</h5>
 		<h6 class="center-align">${sessionScope.userDTO.email}</h6>
@@ -20,7 +20,7 @@
 		<hr>
 		<div class="row tPoint-printing-snb">
 			<h6 class="col s6">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
-			<a class="waves-effect waves-light btn charge-btn col s6">충전</a>
+			<a class="waves-effect waves-light btn charge-btn col s6" href="<c:url value='/user/util/payment'/>">충전</a>
 		</div>
 	  </div>
       </c:when>
