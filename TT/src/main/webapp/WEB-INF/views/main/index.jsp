@@ -17,7 +17,7 @@
 	<div class="row">
 	  <div class="card col s12 m24 l3 top_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
@@ -30,7 +30,7 @@
 	  </div>
 	  <div class="card col s12 m24 l3 top_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
@@ -43,7 +43,7 @@
 	  </div>
 	  <div class="card col s12 m24 l3 top_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
@@ -60,7 +60,7 @@
 	<div class="row">
 	  <div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content webtoon_card-font">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right webtoon_card-icon">more_vert</i></span>
@@ -72,7 +72,7 @@
 	  </div>
       	  <div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content webtoon_card-font">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right webtoon_card-icon">more_vert</i></span>
@@ -84,7 +84,7 @@
 	  </div>
 	  	  <div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content webtoon_card-font">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right webtoon_card-icon">more_vert</i></span>
@@ -96,7 +96,7 @@
 	  </div>
 	  	  <div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content webtoon_card-font">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right webtoon_card-icon">more_vert</i></span>
@@ -108,7 +108,7 @@
 	  </div>
 	  	  <div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
-	      <img src="<c:url value='resources/img/sk.png'/>">
+	      <img src="<c:url value='/resources/img/sk.png'/>">
 	    </div>
 	    <div class="card-content webtoon_card-font">
 	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right webtoon_card-icon">more_vert</i></span>
