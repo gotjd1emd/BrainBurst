@@ -10,8 +10,12 @@
 		          <label for="email-signup">이메일</label>
 		        </div>
 		        <div class="input-field">
+		          <input id="name-signup" type="text" class="validate" name="name">
+		          <label for="name-signup">이름</label>
+		        </div>
+		        <div class="input-field">
 		          <input id="name-signup" type="text" class="validate" name="nickname">
-		          <label for="name-signup"">이름</label>
+		          <label for="name-signup">닉네임</label>
 		        </div>
 		        
 		        <div class="row">
@@ -34,9 +38,9 @@
 		          <label for="phoneNumber-signup">전화번호</label>
 		        </div>
 		         <p>
-			      <input name="gender" type="radio" id="man" checked/>
+			      <input name="gender" type="radio" id="man" value="man" checked/>
 			      <label for="man">남자</label>
-			      <input name="gender" type="radio" id="woman" />
+			      <input name="gender" type="radio" id="woman" value="woman"/>
 			      <label for="woman">여자</label>
 			    </p>
 			</div>

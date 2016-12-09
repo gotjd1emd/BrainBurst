@@ -17,7 +17,7 @@ public interface UserDAO {
 	 * 		값이 존재하면 0  ==> 중복된 아이디 , 회원가입 불가
 	 * 		값이 없으면 1  ==>  중복체크 완료, 회원가입 가능
 	 * */
-	public int checkId(String email);
+	public UserDTO checkId(String email);
 
 	/**
 	 * Login 기능

@@ -104,4 +104,11 @@ public class UserDTO {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
+
+	@Override
+	public String toString() {
+		return "UserDTO [email=" + email + ", nickname=" + nickname + ", phone=" + phone + ", password=" + password
+				+ ", cashPoint=" + cashPoint + ", level=" + level + ", name=" + name + ", gender=" + gender
+				+ ", birthDate=" + birthDate + "]";
+	}
 }

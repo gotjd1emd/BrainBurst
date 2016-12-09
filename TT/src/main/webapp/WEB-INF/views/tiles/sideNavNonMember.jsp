@@ -19,7 +19,7 @@
 		
 		<hr>
 		<div class="row tPoint-printing-snb">
-			<h6 class="col s6">보유중인 T : 50T</h6>
+			<h6 class="col s6">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
 			<a class="waves-effect waves-light btn charge-btn col s6">충전</a>
 		</div>
 	  </div>
@@ -48,7 +48,7 @@
 	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">로그인</button>
 	       		<a class=" waves-effect waves-light col s6 snbtn"
 	       		style="height: 30px;color: #fff;vertical-align: middle;line-height: 32px;text-align: center;"
-	       		href="<c:url value='user/signUp/acceptTerms'/>">회원가입</a>
+	       		href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a>
 	      </div>
 	    </form>
 	  </div>

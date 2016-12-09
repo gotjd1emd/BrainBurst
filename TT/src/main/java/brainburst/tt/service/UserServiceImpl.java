@@ -18,18 +18,15 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserDAO userDAO;
-		
+
 	//회원가입
 	@Override
 	public int signUp(UserDTO userDTO){
 		int result = 0;
+		System.out.println("중복체크할 email : "+userDTO.getEmail());
 		// 아이디 체크 ( 중복체크 후 가입 가능 상태시 result에 1저장)
-		result = userDAO.checkId(userDTO.getEmail());
-		
-		System.out.println("중복체크완료");
-		
-		if(result==1){
-			//회원가입 ( 완료시 result에 1저장)
+		if(userDAO.checkId(userDTO.getEmail())==null){
+			System.out.println("중복체크 후 결과 : "+userDTO.getEmail());
 			result = userDAO.signUp(userDTO);
 		}
 		return result;

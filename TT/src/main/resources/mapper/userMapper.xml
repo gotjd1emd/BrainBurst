@@ -42,7 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- signUp -->
 	<insert id="signUp" parameterType="userDTO">
-		insert into user_information 
+		insert into user_information (email, nickname, phone, password, name, gender, birth_date) 
 		values ( #{email}, #{nickname}, #{phone}, #{password}, #{name}, #{gender}, #{birthDate} )
 	</insert>
 	

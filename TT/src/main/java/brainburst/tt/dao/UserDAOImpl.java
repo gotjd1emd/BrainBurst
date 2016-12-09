@@ -21,21 +21,14 @@ public class UserDAOImpl implements UserDAO{
 	
 	//아이디 중복체크
 	@Override
-	public int checkId(String email) {
-		int result = 0;
-		
-		userDTO = sqlSession.selectOne("userMapper.checkId", email);
-		
-		if(userDTO != null){
-			result = 1;
-		}
-		
-		return result;
+	public UserDTO checkId(String email) {
+		return sqlSession.selectOne("userMapper.checkId", email);
 	}
 
 	//회원가입
 	@Override
 	public int signUp(UserDTO userDTO) {
+		System.out.println(userDTO);
 		return sqlSession.insert("userMapper.signUp", userDTO);
 	}
 
