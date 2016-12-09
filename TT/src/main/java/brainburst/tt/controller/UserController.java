@@ -52,16 +52,20 @@ public class UserController {
 	 * 		성공시 회원메인으로 이동!		==> "main/memberIndex"
 	 */
 	@RequestMapping("login")
-	public String login(String email, String password, HttpSession session){
-		userDTO.setEmail(email);
-		userDTO.setPassword(password);
-		
+	public String login(UserDTO userDTO, HttpSession session){
+		System.out.println("email : "+userDTO.getEmail());
+		System.out.println("password : "+userDTO.getPassword());
+
 		userDTO = userService.login(userDTO);
+		
+		System.out.println(userDTO);
 		
 		if(userDTO==null){
 			return "/"; 
 		}
 		session.setAttribute("userDTO", userDTO);
+		
+		System.out.println(session.getAttribute("userDTO"));
 		return "main/memberIndex";
 	}
 
@@ -70,8 +74,9 @@ public class UserController {
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest request){
 		request.getSession().invalidate();
-		return null;
-
+		System.out.println("session정보 초기화");
+		
+		return "/";
 	}
 	
 	/**

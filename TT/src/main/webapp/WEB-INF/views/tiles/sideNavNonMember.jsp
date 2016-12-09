@@ -4,17 +4,17 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       
       <c:choose>
-      <c:when test="${sessionScope.userDTO==null}">
+      <c:when test="${sessionScope.userDTO!=null}">
       <div id="box_snb-login">
-		<h5 class="center-align">-닉네임-</h5>
-		<h6 class="center-align">email@gmail.com</h6>
+		<h5 class="center-align">- ${sessionScope.userDTO.nickname} -</h5>
+		<h6 class="center-align">${sessionScope.userDTO.email}</h6>
 		
 		<div class="row a-button-nav">
 			<a class="col s5" href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
 			<div class="col s1">
 				<div class="line"></div>
 			</div>
-			<a class="logout-snb col s5">로그아웃</a>
+			<a class="logout-snb col s5" href="<c:url value='/user/logout'/>">로그아웃</a>
 		</div>
 		
 		<hr>
@@ -27,14 +27,14 @@
       <c:otherwise>
       <div id="box_snb-nonlogin">
       	<h5 class="title center">로그인</h5>
-      	<form id="loginForm">
+      	<form id="loginForm" action="<c:url value='/user/login'/>" method="post">
         <div class="login_form">
 	        <div class="input-field login-field col">
-	          <input id="email" type="text" class="validate">
+	          <input id="email" type="text" class="validate" name="email">
 	          <label for="email">Email</label>
 	        </div>
 	        <div class="input-field login-field col">
-	          <input id="password" type="password" class="validate">
+	          <input id="password" type="password" class="validate" name="password">
 	          <label for="password">Password</label>
 	        </div>
 	        
