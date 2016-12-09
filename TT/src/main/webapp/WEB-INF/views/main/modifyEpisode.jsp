@@ -12,6 +12,7 @@
 		var count = 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);
+			$('#thumbnail-text').hide();
 		});
 		
 		$('.image-file').on("change", "input[type=file]", function() {
@@ -108,8 +109,8 @@
 			<div class="col s2">
 				<div class="preview">
 				<div class="inner">
-					<p class="flow-text">썸네일 미리보기 </p>
-					<img id="preview-image" src="#"/>
+					<p class="flow-text" id="thumbnail-text">썸네일 미리보기 </p>
+					<img id="preview-image" src=""/>
 				</div>
 				</div>
 			</div>
