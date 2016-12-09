@@ -51,12 +51,20 @@
 				<label for="nickname-word">작가의 말</label>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="input-field col s6">
-				<input id="thumbnail" type="file" class="validate" name="thumbnail">
-				<label for="thumbnail">썸네일 이미지를 등록하세요.</label>
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>File</span> <input id="thumbnail" type="file" name="thumbnail">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text">
+					</div>
+				</div>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="col s2">
 				<div class="preview">
@@ -68,9 +76,31 @@
 			</div>
 			<div class="col s4">
 				<p class="flow-text">썸네일 미리보기 이미지입니다.</p>
-				<input id="thumbnail-preview" type="text" class="validate" name="thumbnail-preview">
+				<input id="thumbnail-preview" type="text" class="validate" name="thumbnail-preview" readonly>
 				<label for="thumbnail-preview"></label>
 			</div>
+		</div>
+		
+		<div class="row">
+			<div class="input-field col s6">
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>File</span> <input type="file" multiple>
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" placeholder="Upload one or more files">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<ul class="collection">
+				<li class="collection-item">Alvin</li>
+				<li class="collection-item">Alvin</li>
+				<li class="collection-item">Alvin</li>
+				<li class="collection-item">Alvin</li>
+			</ul>
 		</div>
 	</div>
 </body>
