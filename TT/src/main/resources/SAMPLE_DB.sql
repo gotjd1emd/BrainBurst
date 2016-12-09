@@ -226,7 +226,7 @@ values (fund_seq.nextval,3000,10,5);
 
 	--  	
 	--insert (start_date,due_date,episode_sequence) values ()
-	
+	insert webtoon_
 	
 
 	
