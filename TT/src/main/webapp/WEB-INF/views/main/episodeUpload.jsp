@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
 <link rel="StyleSheet" href="<c:url value='/resources/css/modifyWebtoon.css'/>">
 <script type="text/javascript">
 	$(function() {
@@ -13,6 +14,7 @@
 		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
+			
 		});
 		
 		$('.image-file').on("change", "input[type=file]", function() {
