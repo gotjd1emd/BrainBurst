@@ -10,7 +10,23 @@ html, body { margin:0; padding:0; height:100%; }
 #header{
 	position : fixed;
 	width:100%;
-	z-index: 3;
+	z-index:9998;
+}
+
+.search-nav{
+	position: absolute;
+	z-index: 9999;
+	opacity: 0;
+	display: none;
+}
+
+@-webkit-keyframes example {
+    .search-nav{opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    .search-nav{opacity: 1;}
 }
 
 #footer{
