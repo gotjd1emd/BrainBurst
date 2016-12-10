@@ -39,8 +39,8 @@
 	        </div>
 	        
 	        <div class="row">
-	        	<a class="col s6 link" href="<c:url value='/test/myWebtoon'/>">아이디 찾기</a>
-	        	<a class="col s6 link" href="<c:url value='/signUpForm'/>">비밀번호 찾기</a>
+	        	<a class="col s6 link" href="#idfind-modal">아이디 찾기</a>
+	        	<a class="col s6 link" href="#pwdfind-modal">비밀번호 찾기</a>
 	        </div>
 	        
 	      </div><!-- login_form exit -->
@@ -57,4 +57,27 @@
       </div><!-- box_snd exit -->
     </ul>
     
+    <!-- modal -->
     
+  <!-- 아이디 찾기 Modal Structure -->
+  <div id="idfind-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>아이디 찾기</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>  
+    <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
+
+  <!-- 비밀번호 찾기 Modal Structure -->
+  <div id="pwdfind-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>비밀번호 찾기</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>  

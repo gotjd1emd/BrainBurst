@@ -9,6 +9,7 @@
 <link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
 </head>
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
+
 	<div class="z-depth-2">
 		<div class="row">
 			<div class="col s2">
@@ -24,7 +25,7 @@
 			<div class="col s1">
 				<br><br><br><br>
 				<div class="right">
-					<a href="#">
+					<a href="#report-modal">
 						<div class="report">
 							<i class="material-icons">priority_high</i>
 						</div>
@@ -58,3 +59,15 @@
 	</div>
 </body>
 </html>
+
+	<!-- modal -->
+	  <!-- Modal Structure -->
+	  <div id="report-modal" class="modal modal-fixed-footer">
+	    <div class="modal-content">
+	      <h4>신고</h4>
+	      <p>A bunch of text</p>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+	    </div>
+	  </div>
