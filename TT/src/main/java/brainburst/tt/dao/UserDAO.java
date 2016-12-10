@@ -164,14 +164,21 @@ public interface UserDAO {
 	/**
 	 * 회원 T 충전
 	 * return 타입 : int
-	 * parameter Type : int cashPoint
+	 * parameter Type : userDTO
 	 * sql : update user_information set cash_point = #{cashPoint}+#{plusCashPoint}
 	 * 기능 : 현재 T 포인트와 입력받은 T 포인트를 합한 값을  cashPoint로 받아 update 시킨다
 	 * 		1 ==> 충전완료
 	 * 		2 ==> 충전실패
 	 * */
-	public int CashCharge(int cashPoint);
+	public int CashCharge(UserDTO userDTO);
 	
+	/**
+	 * T History insert
+	 * return 타입 : int
+	 * parameter Type : cashHistoryDTO
+	 * sql : insert into cash_history values (#{email}, sysdate, #{cashPoint}, #{content}, #{tradeState})
+	 * */
+	public int CashHistoryInsert(CashHistoryDTO cashHistoryDTO);
 	/**
 	 * 회원 작가 신청
 	 * return 타입 : UserDTO

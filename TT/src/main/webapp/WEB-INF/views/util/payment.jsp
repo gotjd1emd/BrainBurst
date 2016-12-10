@@ -47,7 +47,7 @@
 	</script>
 </head>
 <body>
-	<form method="post" action="">
+	<form method="post" action='<c:url value="/user/cashCharge"/>'>
 	<!-- HTML5 -->
 	<div class="card-frame-payment z-depth-1">
 		<div class="center"><h5>T 충전</h5></div>
@@ -60,42 +60,42 @@
 	        <tbody>
 	          <tr>
 	            <td>
-				<input name="tPayment" type="radio" id="t20" />
+				<input name="tPayment" type="radio" id="t20" value="20"/>
 				<label for="t20">20T</label>
 				</td>
 	            <td>5,000원</td>
 	          </tr>
 	          <tr>
 	            <td>
-	            <input name="tPayment" type="radio" id="t40" />
+	            <input name="tPayment" type="radio" id="t40" value="40"/>
 				<label for="t40">40T</label>
 				</td>
 	            <td>10,000원</td>
 	          </tr>
 	          <tr>
 	            <td>
-	            <input name="tPayment" type="radio" id="t80" />
+	            <input name="tPayment" type="radio" id="t80" value="80"/>
 				<label for="t80">80T</label>
 				</td>
 	            <td>20,000원</td>
 	          </tr>
 	          <tr>
 	            <td>
-	            <input name="tPayment" type="radio" id="t160" />
+	            <input name="tPayment" type="radio" id="t160" value="160"/>
 				<label for="t160">160T</label>
 				</td>
 	            <td>40,000원</td>
 	          </tr>
 	          <tr>
 	            <td>
-	            <input name="tPayment" type="radio" id="t280" />
+	            <input name="tPayment" type="radio" id="t280" value="280"/>
 				<label for="t280">280T</label>
 				</td>
 	            <td>70,000원</td>
 	          </tr>
 	          <tr>
 	            <td>
-	            <input name="tPayment" type="radio" id="t400" />
+	            <input name="tPayment" type="radio" id="t400" value="400"/>
 				<label for="t400">400T</label>
 				</td>
 	            <td>100,000원</td>

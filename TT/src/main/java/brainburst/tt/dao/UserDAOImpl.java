@@ -91,11 +91,18 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	//T 충전
 	@Override
-	public int CashCharge(int cashPoint) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int CashCharge(UserDTO userDTO) {
+		System.out.println("cashCharge직전");
+		return sqlSession.update("userMapper.cashCharge", userDTO);
+	}
+
+	//CashHistory insert
+	@Override
+	public int CashHistoryInsert(CashHistoryDTO cashHistoryDTO) {
+		return sqlSession.insert("userMapper.cashHistoryInsert", cashHistoryDTO);
 	}
 
 	@Override

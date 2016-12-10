@@ -31,12 +31,12 @@ public class CashHistoryDTO {
 		this.email = email;
 	}
 
-	public String getDate() {
+	public String getAccountDay() {
 		return accountDay;
 	}
 
-	public void setDate(String date) {
-		this.accountDay = date;
+	public void setAccountDay(String accountDay) {
+		this.accountDay = accountDay;
 	}
 
 	public int getCashPoint() {

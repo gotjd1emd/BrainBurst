@@ -1,6 +1,7 @@
 -- sample DB 
 select * from webtoon;
 select * from user_information;
+update user_information set cash_point = 160 where email='tu12@naver.com'
 
 
 --1 user info

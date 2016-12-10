@@ -25,6 +25,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="account_Number" property="accountNumber"/>
 		<result column="identification_Card" property="identificationCard"/>
 	</resultMap>
+	
+	<resultMap type="cashHistoryDTO" id="cashHistoryMap">
+		<id column="email" property="email"/>
+		<result column="account_day" property="accountDay"/>
+		<result column="cash_point" property="cashPoint"/>
+		<result column="content" property="content"/>
+		<result column="trade_state" property="tradeState"/>
+	</resultMap>
 
 	<!-- Login -->
 	<select id="login" resultMap="userMap" parameterType="userDTO">
@@ -71,5 +79,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from user_information 
 		where email=#{email}
 	</select>
+	
+	<!-- cashCharge -->
+	<update id="cashCharge" parameterType="userDTO">
+		update user_information 
+		set cash_point = #{cashPoint}
+		where email=#{email}
+	</update>
+	
+	<!-- cashHistoryInsert -->
+	<insert id="cashHistoryInsert" parameterType="cashHistoryDTO">
+		insert into cash_history values (#{email}, 'sysdate', #{cashPoint}, #{content}, #{tradeState})
+	</insert>
 </mapper>
 

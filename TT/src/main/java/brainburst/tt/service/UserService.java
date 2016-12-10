@@ -119,7 +119,7 @@ public interface UserService {
 	 * 		1 ==> 충전완료
 	 * 		2 ==> 충전실패
 	 * */
-	public int CashCharge(int cashPoint);
+	public int CashCharge(UserDTO userDTO, CashHistoryDTO cashHistoryDTO);
 	
 	/**
 	 * 회원 작가 신청

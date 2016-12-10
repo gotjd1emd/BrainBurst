@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserDTO userUpdate(UserDTO userDTO) {
-		int result = userDAO.userUpdate(userDTO);
+		userDAO.userUpdate(userDTO);
 
 		return userDAO.userInfoSelect(userDTO.getEmail());
 	}
@@ -92,10 +92,12 @@ public class UserServiceImpl implements UserService{
 		return null;
 	}
 
+	//T충전하기
 	@Override
-	public int CashCharge(int cashPoint) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int CashCharge(UserDTO userDTO, CashHistoryDTO cashHistoryDTO) {
+		userDAO.CashCharge(userDTO);
+		System.out.println("충전완료");
+		return userDAO.CashHistoryInsert(cashHistoryDTO);
 	}
 
 	@Override

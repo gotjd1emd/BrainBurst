@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.service.UserService;
 
@@ -19,6 +20,7 @@ public class UserController {
 	private UserService userService;
 
 	private UserDTO userDTO;
+	private CashHistoryDTO cashHistoryDTO;
 
 	@RequestMapping("{viewFolder}/{viewName}")
 	public String signUpMove(
@@ -138,8 +140,44 @@ public class UserController {
 	
 	
 	/**
-	 * 회원 T 내역
+	 * 회원 T 충전 + 내역 업데이트
+	 * session에서 현재 T값을 가져와서 충전량과 합산
+	 * DTO에 저장 후 DB업데이트
+	 * session값 update
 	 * */
+	@RequestMapping("cashCharge")
+	public String CashCharge(int tPayment, HttpServletRequest request, HttpSession session) {
+		System.out.println("충전 T량 : "+tPayment);
+		
+		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
+		
+		System.out.println(userDTO);
+		String email = userDTO.getEmail();
+		int cash = Integer.parseInt(userDTO.getCashPoint());
+		
+		System.out.println(email);
+		
+		String cashPoint = (cash + tPayment)+"t";
+		
+		userDTO.setCashPoint(cashPoint);
+		System.out.println("충전후 잔량 : "+cashPoint);
+		
+		cashHistoryDTO = new CashHistoryDTO();
+		cashHistoryDTO.setEmail(email);
+		cashHistoryDTO.setCashPoint(cash + tPayment);
+		cashHistoryDTO.setContent(tPayment+"T");
+		cashHistoryDTO.setTradeState("충전");
+		
+		System.out.println("cashHistoryDTO 저장완료");
+		
+		if(userService.CashCharge(userDTO, cashHistoryDTO)==1){
+			session.setAttribute("userDTO", userDTO);
+			System.out.println(userDTO);
+			System.out.println("session 업데이트완료");
+		}
+		
+		return "main/index";
+	}
 	
 	/**
 	 * 회원 T 충전
