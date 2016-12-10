@@ -206,48 +206,40 @@
 	        </thead>
 	
 	        <tbody>
-	          <tr>
-	            <td>Alvin</td>
-	            <td>Eclair</td>
-	            <td>$0.87</td>
-	            <td>$0.87</td>
-	          </tr>
-	          <tr>
-	            <td>Alan</td>
-	            <td>Jellybean</td>
-	            <td>$3.76</td>
-	            <td>$0.87</td>
-	          </tr>
-	          <tr>
-	            <td>Jonathan</td>
-	            <td>Lollipop</td>
-	            <td>$0.87</td>
-	            <td>$7.00</td>
-	          </tr>
-	          	          <tr>
-	            <td>Jonathan</td>
-	            <td>Lollipop</td>
-	            <td>$7.00</td>
-	            <td>$0.87</td>
-	          </tr>
-	          	          <tr>
-	            <td>Jonathan</td>
-	            <td>Lollipop</td>
-	            <td>$7.00</td>
-	            <td>$0.87</td>
-	          </tr>
-	          	          <tr>
-	            <td>Jonathan</td>
-	            <td>Lollipop</td>
-	            <td>$0.87</td>
-	            <td>$7.00</td>
-	          </tr>
-	          	          <tr>
-	            <td>Jonathan</td>
-	            <td>Lollipop</td>
-	            <td>$7.00</td>
-	            <td>$0.87</td>
-	          </tr>
+	        
+	          <c:choose>
+    <c:when test="${empty requestScope.historyList}">
+	<tr>
+        <td colspan="5">
+            <p align="center"><b><span style="font-size:9pt;">등록된 상품이 없습니다.</span></b></p>
+        </td>
+    </tr>
+    </c:when>
+    <c:otherwise>
+	<c:forEach items="${requestScope.historyList}" var="cashHistoryDto">
+		    <tr>
+		        <td bgcolor="">
+		            <p align="center"><span style="font-size:9pt;">
+		            ${cashHistoryDto.accountDay}</span></p>
+		        </td>
+		        <td bgcolor="">
+					<p><span style="font-size:9pt;">
+					  ${cashHistoryDto.cashPoint}
+					</span></p>
+		        </td>
+		        <td bgcolor="">
+		            <p align="center"><span style="font-size:9pt;">
+		            ${cashHistoryDto.content}</span></p>
+		        </td>
+		         
+		         <td bgcolor="">
+		            <p align="center"><span style="font-size:9pt;">
+		            ${cashHistoryDto.tradeState}</span></p>
+		        </td>
+		    </tr>
+    </c:forEach>
+	</c:otherwise>
+    </c:choose>
 	        </tbody>
 	      </table>
 		</div>

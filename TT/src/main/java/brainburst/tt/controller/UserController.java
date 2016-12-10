@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
@@ -187,11 +188,15 @@ public class UserController {
 	 * */
 	@RequestMapping("THistoryList")
 	@ResponseBody
-	public List<CashHistoryDTO> THistoryList(HttpServletRequest request){
+	public ModelAndView THistoryList(HttpServletRequest request){
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
-		userService.showListCashHistory(userDTO.getEmail());
+		List<CashHistoryDTO> historyList = userService.showListCashHistory(userDTO.getEmail());
 		
-		return null;
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("historyList", historyList);
+		
+		request.setAttribute("historyList", historyList);
+		return mv;
 	}
 	/**
 	 * 회원 T 충전

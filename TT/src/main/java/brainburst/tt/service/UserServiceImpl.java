@@ -88,8 +88,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<CashHistoryDTO> showListCashHistory(String email) {
-		userDAO.showListCashHistory(email);
-		return null;
+		return userDAO.showListCashHistory(email);
 	}
 
 	//T충전하기
