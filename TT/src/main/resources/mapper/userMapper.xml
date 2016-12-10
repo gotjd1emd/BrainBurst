@@ -38,14 +38,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="login" resultMap="userMap" parameterType="userDTO">
 		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_date 
 		from user_information 
-		where email=#{email} and password=#{password}
+		where email = #{email} and password = #{password}
 	</select>
 	
 	<!-- checkId -->
 	<select id="checkId" resultMap="userMap" parameterType="String">
 		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_date
 		from user_information 
-		where email=#{email}
+		where email = #{email}
 	</select>
 	
 	<!-- signUp -->
@@ -63,8 +63,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- uesrUpdate -->
 	<update id="userUpdate" parameterType="userDTO">
 		update user_information
-		set phone=#{phone}, password=#{password}
-		where email=#{email}
+		set phone = #{phone}, password = #{password}
+		where email = #{email}
 	</update>
 	
 	<!-- additionalInfo -->
@@ -77,19 +77,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="userInfoSelect" resultMap="userMap" parameterType="String">
 		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_Date
 		from user_information 
-		where email=#{email}
+		where email = #{email}
 	</select>
 	
 	<!-- cashCharge -->
 	<update id="cashCharge" parameterType="userDTO">
 		update user_information 
 		set cash_point = #{cashPoint}
-		where email=#{email}
+		where email = #{email}
 	</update>
 	
 	<!-- cashHistoryInsert -->
 	<insert id="cashHistoryInsert" parameterType="cashHistoryDTO">
-		insert into cash_history values (#{email}, 'sysdate', #{cashPoint}, #{content}, #{tradeState})
+		insert into cash_history(cash_history_sequence, account_day, email, cash_point, content, trade_state) 
+		values (cash_history_seq.nextval, sysdate, #{email}, #{cashPoint}, #{content}, #{tradeState})
 	</insert>
 </mapper>
 

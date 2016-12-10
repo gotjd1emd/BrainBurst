@@ -153,18 +153,18 @@ public class UserController {
 		
 		System.out.println(userDTO);
 		String email = userDTO.getEmail();
-		int cash = Integer.parseInt(userDTO.getCashPoint());
+		int cash = userDTO.getCashPoint();
 		
 		System.out.println(email);
 		
-		String cashPoint = (cash + tPayment)+"t";
+		int cashPoint = cash + tPayment;
 		
 		userDTO.setCashPoint(cashPoint);
 		System.out.println("충전후 잔량 : "+cashPoint);
 		
 		cashHistoryDTO = new CashHistoryDTO();
 		cashHistoryDTO.setEmail(email);
-		cashHistoryDTO.setCashPoint(cash + tPayment);
+		cashHistoryDTO.setCashPoint(tPayment);
 		cashHistoryDTO.setContent(tPayment+"T");
 		cashHistoryDTO.setTradeState("충전");
 		

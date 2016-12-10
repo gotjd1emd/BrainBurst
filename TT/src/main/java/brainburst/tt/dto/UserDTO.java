@@ -9,7 +9,7 @@ public class UserDTO {
 	private String nickname;
 	private String phone;
 	private String password;
-	private String cashPoint;
+	private int cashPoint;
 	private String level;
 	private String name;
 	private String gender;
@@ -19,7 +19,7 @@ public class UserDTO {
 		System.out.println("userDTO 기본 생성자 호출됨");
 	}	
 	
-	public UserDTO(String email, String nickname, String phone, String password, String cashPoint, String level,
+	public UserDTO(String email, String nickname, String phone, String password, int cashPoint, String level,
 			String name, String gender, String birthDate) {
 		this.email = email;
 		this.nickname = nickname;
@@ -65,11 +65,11 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public String getCashPoint() {
+	public int getCashPoint() {
 		return cashPoint;
 	}
 	
-	public void setCashPoint(String cashPoint) {
+	public void setCashPoint(int cashPoint) {
 		this.cashPoint = cashPoint;
 	}
 	
