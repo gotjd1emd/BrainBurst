@@ -4,7 +4,7 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       
       <c:choose>
-      <c:when test="${sessionScope.userDTO!=null}">
+      <c:when test="${sessionScope.userDTO==null}">
       <div id="box_snb-login">
 		<h5 class="center-align">- ${sessionScope.userDTO.nickname} -</h5>
 		<h6 class="center-align">${sessionScope.userDTO.email}</h6>
