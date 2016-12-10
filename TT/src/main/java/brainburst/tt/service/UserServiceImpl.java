@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<CashHistoryDTO> showListCashHistory(String email) {
-		// TODO Auto-generated method stub
+		userDAO.showListCashHistory(email);
 		return null;
 	}
 

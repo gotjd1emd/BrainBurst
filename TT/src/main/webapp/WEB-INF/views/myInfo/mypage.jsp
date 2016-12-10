@@ -10,7 +10,21 @@
 		/* Style */
 	</style>
 	<script>
-		// Script
+	$(document).ready(function() {
+		$("#getHistory").click(function() {
+			$.ajax({
+				url : "/user/THistoryList",
+				type : "post",
+				dataType : "json",
+				success : function(result) {
+
+				},
+				error : function(err) {
+					
+				}
+			})
+		})
+	})
 	</script>
 </head>
 <body>
@@ -19,7 +33,7 @@
       <ul class="tabs center z-depth-2">
         <li class="tab col s2 offset-l3"><a class="active" href="#myInfoModify">내정보 수정</a></li>
         <li class="tab col s2"><a href="#subscriptionManagement">구독관리</a></li>
-        <li class="tab col s2"><a href="#Tbreakdown">T내역</a></li>
+        <li class="tab col s2"><a href="#THistory" id="getHistory">T내역</a></li>
       </ul>
     </div>
     <div id="myInfoModify" class="col s12 tab-card-info">
@@ -179,7 +193,7 @@
 			  </ul>
 		</div>
     </div>
-    <div id="Tbreakdown" class="col s12 tab-card-info">
+    <div id="THistory" class="col s12 tab-card-info">
    	 <div class="card-frame-myInfo z-depth-1">
     	<table class="striped">
 	        <thead>

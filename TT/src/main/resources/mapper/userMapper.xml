@@ -92,5 +92,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into cash_history(cash_history_sequence, account_day, email, cash_point, content, trade_state) 
 		values (cash_history_seq.nextval, sysdate, #{email}, #{cashPoint}, #{content}, #{tradeState})
 	</insert>
+	
+	<!-- THistoryList -->
+	<select id="THistoryList" resultMap="" parameterType="email">
+		select account_day, cash_point, content, trade_state from T_history where email=#{email}
+	</select>
 </mapper>
 

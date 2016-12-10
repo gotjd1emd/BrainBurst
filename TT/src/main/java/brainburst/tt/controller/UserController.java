@@ -1,5 +1,7 @@
 package brainburst.tt.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
@@ -179,6 +182,17 @@ public class UserController {
 		return "main/index";
 	}
 	
+	/**
+	 * 회원 T 내역 조회
+	 * */
+	@RequestMapping("THistoryList")
+	@ResponseBody
+	public List<CashHistoryDTO> THistoryList(HttpServletRequest request){
+		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
+		userService.showListCashHistory(userDTO.getEmail());
+		
+		return null;
+	}
 	/**
 	 * 회원 T 충전
 	 * */

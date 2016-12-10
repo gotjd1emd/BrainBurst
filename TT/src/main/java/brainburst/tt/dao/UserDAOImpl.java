@@ -88,7 +88,7 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public List<CashHistoryDTO> showListCashHistory(String email) {
-		// TODO Auto-generated method stub
+		sqlSession.selectList("userMapper.THistoryList", email);
 		return null;
 	}
 	
