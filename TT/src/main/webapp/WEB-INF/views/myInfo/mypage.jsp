@@ -10,14 +10,52 @@
 		/* Style */
 	</style>
 	<script>
-	$(document).ready(function() {
+	$("document").ready(function(){
 		$("#getHistory").click(function() {
 			$.ajax({
+		
 				url : "/user/THistoryList",
 				type : "post",
 				dataType : "json",
 				success : function(result) {
-
+					var htmlcode = "<thead><tr>"+
+						"<th data-field='date'>날짜</th>"+
+						"<th data-field='price'>금액</th>"+
+						"<th data-field='content'>내용</th>"+
+						"<th data-field='state'>사용경로</th>"+
+						"</tr></thead>";		
+					
+						htmlcode+="<tbody>"+
+							"<c:choose>"+
+								"<c:when test='"+${empty requestScope.historyList}+"'>"+
+									"<tr>"+
+										"<td colspan='5'>"+
+											"<p align=' center'><b><span style='font-size:9pt;'>등록된 상품이 없습니다.</span></b></p>"+
+										"</td>"+
+									"</tr>"+
+	    						"</c:when>"+
+		    					"<c:otherwise>"+
+			    					"<c:forEach items='"+${requestScope.historyList}+"' var='cashHistoryDto'>"+
+			    						"<tr>"+
+			    							"<td>"+
+			    								"<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.accountDay}+"'/></span></p>"+
+					        				"</td>"+
+					        				"<td bgcolor="">"+
+												"<p><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.cashPoint}+"'/></span></p>"+
+											"</td>"+
+									        "<td bgcolor="">"+
+									            "<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.content}+"'/></span></p>"+
+									        "</td>"+
+									        "<td bgcolor=''>"+
+									            "<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.tradeState}+"'/></span></p>"+
+									        "</td>"+
+									    "</tr>"+
+							    	"</c:forEach>"+
+								"</c:otherwise>"+
+							"</c:choose>"+
+						"</tbody>";
+						
+					$('#cashListTable').html(htmlcode);
 				},
 				error : function(err) {
 					
@@ -195,53 +233,8 @@
     </div>
     <div id="THistory" class="col s12 tab-card-info">
    	 <div class="card-frame-myInfo z-depth-1">
-    	<table class="striped">
-	        <thead>
-	          <tr>
-	              <th data-field="id">날짜</th>
-	              <th data-field="name">금액</th>
-	              <th data-field="price">내용</th>
-	              <th data-field="price">사용경로</th>
-	          </tr>
-	        </thead>
-	
-	        <tbody>
-	        
-	          <c:choose>
-    <c:when test="${empty requestScope.historyList}">
-	<tr>
-        <td colspan="5">
-            <p align="center"><b><span style="font-size:9pt;">등록된 상품이 없습니다.</span></b></p>
-        </td>
-    </tr>
-    </c:when>
-    <c:otherwise>
-	<c:forEach items="${requestScope.historyList}" var="cashHistoryDto">
-		    <tr>
-		        <td bgcolor="">
-		            <p align="center"><span style="font-size:9pt;">
-		            ${cashHistoryDto.accountDay}</span></p>
-		        </td>
-		        <td bgcolor="">
-					<p><span style="font-size:9pt;">
-					  ${cashHistoryDto.cashPoint}
-					</span></p>
-		        </td>
-		        <td bgcolor="">
-		            <p align="center"><span style="font-size:9pt;">
-		            ${cashHistoryDto.content}</span></p>
-		        </td>
-		         
-		         <td bgcolor="">
-		            <p align="center"><span style="font-size:9pt;">
-		            ${cashHistoryDto.tradeState}</span></p>
-		        </td>
-		    </tr>
-    </c:forEach>
-	</c:otherwise>
-    </c:choose>
-	        </tbody>
-	      </table>
+    	<table class="striped" id="cashListTable">
+    	</table>
 		</div>
     </div>
   </div>
