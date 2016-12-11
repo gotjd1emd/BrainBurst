@@ -26,7 +26,8 @@
       </ul>
     </div>
     <div id="publish-webtoon" class="col s12 tab-card-info">
-      
+      <c:choose>
+	  <c:when test="${sessionScope.webtoonDTO==null}">
       <!-- 플로팅 버튼 -->
 	  <div class="fixed-action-btn horizontal click-to-toggle">
 	    <a class="btn-floating btn-large red publish-webtoon-floating">
@@ -44,7 +45,6 @@
 	  </div><!-- floating button div tag close -->
 	  
 		<div class="card-frame-myInfo z-depth-1">
-				  
 				    <!-- Modal Structure -->
 				  <div id="funding-webtoon-modal" class="modal">
 				    <div class="modal-content modal-content-funding">
@@ -201,6 +201,13 @@
 				  </div>
 				</div>
 		</div>
+		</c:when>
+			<c:otherwise>
+				<div class="card-frame-myInfo-default z-depth-1 center">
+					<i class="material-icons">add</i>
+				</div>
+			</c:otherwise>
+		</c:choose>
     </div>
     <div id="completed-webtoon" class="col s12 tab-card-info">
     			
