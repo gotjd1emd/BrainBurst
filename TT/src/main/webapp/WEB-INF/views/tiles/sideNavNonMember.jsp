@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
-    <ul id="slide-out" class="side-nav fixed z-depth-2">
+    <ul id="slide-out" class="side-nav fixed z-depth-3">
       <c:choose>
       
       <c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
@@ -31,7 +31,7 @@
       </c:when>
       <c:otherwise>
       <div id="box_snb-nonlogin">
-      	<h5 class="title center">로그인</h5>
+      	<h5 class="title center white-text color-400">WELCOME BACK</h5>
       	<form id="loginForm" action="<c:url value='/user/login'/>" method="post">
         <div class="login_form">
 	        <div class="input-field login-field col">
@@ -42,21 +42,13 @@
 	          <input id="password" type="password" class="validate" name="password">
 	          <label for="password">Password</label>
 	        </div>
-	        
-	        <div class="row">
-	        	<a class="col s6 link" href="#idfind-modal">아이디 찾기</a>
-	        	<a class="col s6 link" href="#pwdfind-modal">비밀번호 찾기</a>
-	        </div>
-	        
+	        <div class="center"><button class="snbtn waves-effect waves-light col s6 color-400 z-depth-1" type="submit" name="action">로그인</button></div>
 	      </div><!-- login_form exit -->
-	      <div class="row">
-	       		<button class="snbtn waves-effect waves-light col s6" type="submit" name="action">로그인</button>
-	       		<a class=" waves-effect waves-light col s6 snbtn"
-	       		style="height: 30px;color: #fff;vertical-align: middle;line-height: 32px;text-align: center;"
-	       		href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a>
-	      </div>
 	    </form>
 	  </div>
+	  <li class="center"><a href="#idfind-modal">아이디 찾기</a></li>
+	  <li class="center"><a href="#pwdfind-modal">비밀번호 찾기</a></li>
+	  <li class="center"><a href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a></li>
       </c:otherwise>
       </c:choose>
       </div> <!-- box_snd exit -->
