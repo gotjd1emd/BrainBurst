@@ -6,7 +6,7 @@
       <c:choose>
       
       <c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
-      	<a class="col s5" href="<c:url value='/controller/user/admin/adminPage'/>">관리자페이지</a>
+      	<a class="col s5" href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a>
       </c:when>
       <c:when test="${sessionScope.userDTO!=null}">
       <div id="box_snb-login">
