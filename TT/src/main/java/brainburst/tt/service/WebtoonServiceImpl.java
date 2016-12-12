@@ -2,6 +2,7 @@ package brainburst.tt.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import brainburst.tt.dao.WebtoonDAO;
@@ -10,7 +11,7 @@ import brainburst.tt.dto.WebtoonDTO;
 
 @Service
 public class WebtoonServiceImpl implements WebtoonService {
-	
+	@Autowired
 	private WebtoonDAO webtoonDAO;
 
 	@Override

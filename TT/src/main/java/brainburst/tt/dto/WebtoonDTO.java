@@ -10,7 +10,7 @@ public class WebtoonDTO {
 	private String webtoonState;
 	private String categoryCode;
 	private String penalty;
-	private String author;
+	private String nickname;
 	private int fundingPeriod;
 	private String summary;
 	
@@ -26,7 +26,7 @@ public class WebtoonDTO {
 		this.webtoonState = webtoonState;
 		this.categoryCode = categoryCode;
 		this.penalty = penalty;
-		this.author = author;
+		this.nickname = author;
 		this.fundingPeriod = fundingPeriod;
 		this.summary = summary;
 		System.out.println("webtoonDTO 전체 생성자 호출");
@@ -81,11 +81,11 @@ public class WebtoonDTO {
 	}
 
 	public String getAuthor() {
-		return author;
+		return nickname;
 	}
 
 	public void setAuthor(String author) {
-		this.author = author;
+		this.nickname = author;
 	}
 
 	public int getFundingPeriod() {

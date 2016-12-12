@@ -23,15 +23,15 @@ public class WebtoonController {
 	
 	@Autowired
 	private WebtoonService webtoonService;
-	
-	/**
-	 * 메인페이지이동
-	 */
-	@RequestMapping("/")
-	public ModelAndView mainPage() {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("pund", "all");
-		return new ModelAndView("main/index", "webtoonList", list);
-	}
+//	HomeController로 이동됨. 12/12	
+//	/**
+//	 * 메인페이지이동
+//	 */
+//	@RequestMapping("/")
+//	public ModelAndView mainPage() {
+//		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("pund", "all");
+//		return new ModelAndView("main/index", "webtoonList", list);
+//	}
 
 	/**
 	 * 카테고리별 이동

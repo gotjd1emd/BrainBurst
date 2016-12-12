@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="WEBTOON_STATE" property="webtoonState"/>
 		<result column="CATEGORY_CODE" property="categoryCode"/>
 		<result column="PENALTY" property="penalty"/>
-		<result column="AUTHOR" property="author"/>
+		<result column="NICKNAME" property="nickname"/>
 		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
 		<result column="SUMMARY" property="summary" />
 	</resultMap>
@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectWebtoonByLevel -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
-		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
+		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
 		WHERE WEBTOON_STATE = #{webtoonLevel} AND CATEGORY_CODE = #{categoryCode}
 	</select>
