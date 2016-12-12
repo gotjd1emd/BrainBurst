@@ -3,7 +3,7 @@
 #content-myInfo{
 	padding-top: 80px;
 	padding-left:300px;
-	padding
+	padding-bottom: 20px;
 }
 
 .tab-card-info{
@@ -109,4 +109,10 @@
 
 .title-text{
 	margin-top: 0px;	
+}
+
+.file-field{
+	margin: 0;	
+}
+
 }
