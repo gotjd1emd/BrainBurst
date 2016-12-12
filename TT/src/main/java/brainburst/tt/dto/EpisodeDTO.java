@@ -11,7 +11,7 @@ public class EpisodeDTO {
 	int recommendation;
 	String uploadDate;
 	String episodeTitle;
-	String nicknameWord;
+	String authorword;
 	String thumbnail;
 	int fundCode;
 	public EpisodeDTO() {
@@ -27,7 +27,7 @@ public class EpisodeDTO {
 		this.recommendation = recommendation;
 		this.uploadDate = uploadDate;
 		this.episodeTitle = episodeTitle;
-		this.nicknameWord = nicknameWord;
+		this.authorword = nicknameWord;
 		this.thumbnail = thumbnail;
 		this.fundCode = fundCode;
 	}
@@ -75,10 +75,10 @@ public class EpisodeDTO {
 		this.episodeTitle = episodeTitle;
 	}
 	public String getNicknameWord() {
-		return nicknameWord;
+		return authorword;
 	}
-	public void setNicknameWord(String nicknameWord) {
-		this.nicknameWord = nicknameWord;
+	public void setNicknameWord(String authorword) {
+		this.authorword = authorword;
 	}
 	public String getThumbnail() {
 		return thumbnail;

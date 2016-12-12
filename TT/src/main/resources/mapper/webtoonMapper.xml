@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="RECOMMENDATION" property="recommendation"/>
 		<result column="UPLOAD_DATE" property="uploadDate"/>
 		<result column="EPISODE_TITLE" property="episodeTitle"/>
-		<result column="NICKNAME_WORD" property="nicknameWord"/>
+		<result column="AUTHOR_WORD" property="authorword"/>
 		<result column="THUMBNAIL" property="thumbnail"/>
 		<result column="FUNDCODE" property="fundCode"/>
 	</resultMap>
@@ -46,14 +46,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectAllEpisode -->
 	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="String">
-		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, NICKNAME_WORD, THUMBNAIL, FUNDCODE
+		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUNDCODE
 		FROM WEBTOON
 		WHERE WEBTOON_CODE = #{value}
 	</select>
 	
 	<!-- selectImg -->
 	<select id="selectImg" resultMap="episodeDTO" parameterType="_int">
-		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, NICKNAME_WORD, THUMBNAIL, FUNDCODE
+		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUNDCODE
 		FROM WEBTOON
 		WHERE WEBTOON_CODE = #{value}
 	</select>
