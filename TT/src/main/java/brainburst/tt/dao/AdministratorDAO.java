@@ -15,19 +15,18 @@ public interface AdministratorDAO {
 	 * email,password, name
 	 * 
 	 * */
-	UserDTO adminLogin(String email, String password);
+	public UserDTO adminLogin(String email, String password);
 	
 	
 	/**
 	 * 유료화 신청 관리
 	 * */
-	List<ApplicationForPayWebtoonDTO> searchForPayWebtoonList();
+	public List<ApplicationForPayWebtoonDTO> searchForPayWebtoonList();
 	
 	
 	/**
 	 * 유료화 신청 update
 	 * */
-
 	
 
 	/**
