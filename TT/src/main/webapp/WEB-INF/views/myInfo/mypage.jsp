@@ -20,19 +20,19 @@
 				success : function(result) {
 					var htmlcode = "";
 					if(result==null) {
-						htmlcode = "<tr><td colspan='5'><p align='center'><b><span style='font-size:9pt;'>"
-									+"등록된 상품이 없습니다.</span></b></p></td></tr>";
+						htmlcode = "<tr><td colspan='5'><p align='center'><b>"
+									+"등록된 상품이 없습니다.</b></p></td></tr>";
 						alert("t내역 없음");
 					}else {
 						$.each(result, function(index, item) {
-							htmlcode += "<tr><td bgcolor=''><p><span style='font-size:9pt;'>"
-			            		+item.accountDay+"</span></p></td>";
-			            	htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
-				            	+item.cashPoint+"</span></p></td>";
-				            htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
-				            	+item.content+"</span></p></td>";
-				            htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
-				            	+item.tradeState+"</span></p></td></tr>";
+							htmlcode += "<tr><td>"
+			            		+item.accountDay+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.cashPoint+"</td>";
+				            htmlcode += "<td>"
+				            	+item.content+"</td>";
+				            htmlcode += "<td>"
+				            	+item.tradeState+"</td></tr>";
 				            alert("result : " + result);
 						});
 					}
