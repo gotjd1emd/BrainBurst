@@ -17,10 +17,11 @@
 			<a class="logout-snb col s5" href="<c:url value='/user/logout'/>">로그아웃</a>
 		</div>
 		
-		<hr>
+		<hr class="line-nav">
+		
 		<div class="row tPoint-printing-snb">
-			<h6 class="col s6">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
-			<a class="waves-effect waves-light btn charge-btn col s6" href="<c:url value='/user/util/payment'/>">충전</a>
+			<h6 class="col s8">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
+			<a class="waves-effect waves-light btn charge-btn col s4" href="<c:url value='/user/util/payment'/>">충전</a>
 		</div>
 	  </div>
       </c:when>
@@ -67,13 +68,13 @@
 		<p></p>
 		
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s8">
 				<input id="name-myinfo" type="text" class="validate" name="name">
 				<label for="name-myinfo">이름</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12">
+			<div class="input-field col s4">
 				<input id="name-myinfo" type="text" class="validate" name="phone">
 				<label for="name-myinfo">전화번호</label>
 			</div>
@@ -84,8 +85,6 @@
     </div>
     </form>
   </div>  
-    <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-
   <!-- 비밀번호 찾기 Modal Structure -->
   <div id="pwdfind-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
