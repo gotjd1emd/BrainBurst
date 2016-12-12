@@ -14,8 +14,7 @@ public class AdministratorController {
 	private AdministratorService administratorService;
 	
 	@RequestMapping("adminLogin")
-	public void adminLogin(String email,String password,HttpSession session){
-		
+	public void adminLogin(String email, String password, HttpSession session){
 		administratorService.adminLogin(email, password);
 	}
 }
