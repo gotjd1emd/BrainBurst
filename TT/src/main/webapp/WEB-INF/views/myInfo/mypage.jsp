@@ -12,7 +12,6 @@
 	<script>
 	$(function(){
 		$("#getHistory").click(function() {
-			alert("T내역 click");
 			$.ajax({
 				url : "/controller/user/THistoryList",
 				type : "get",
@@ -22,7 +21,6 @@
 					if(result==null) {
 						htmlcode = "<tr><td colspan='5'><p align='center'><b>"
 									+"등록된 상품이 없습니다.</b></p></td></tr>";
-						alert("t내역 없음");
 					}else {
 						$.each(result, function(index, item) {
 							htmlcode += "<tr><td>"
@@ -33,7 +31,6 @@
 				            	+item.content+"</td>";
 				            htmlcode += "<td>"
 				            	+item.tradeState+"</td></tr>";
-				            alert("result : " + result);
 						});
 					}
 					$("#tHistory").append(htmlcode);
