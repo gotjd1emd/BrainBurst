@@ -71,7 +71,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- addSubscription -->
 	<insert id="addSubscription" parameterType="map">
-		INSERT INTO SUBSCRIPTION (EMAIL, WEBTOON_CODE) 
-		VALUES (#{email}, #{webtoonCode}) 
+		INSERT INTO SUBSCRIPTION (SUBSCRIPTION_SEQUENCE, EMAIL, WEBTOON_CODE) 
+		VALUES (SUBSCRIPTION_SEQ.NEXTVAL, #{email}, #{webtoonCode})
 	</insert>
 </mapper>
