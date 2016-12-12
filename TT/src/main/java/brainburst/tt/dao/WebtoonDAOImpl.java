@@ -26,6 +26,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 
 	@Override
 	public List<WebtoonDTO> searchByKeyword(String keyword) {
+		keyword = "%"+keyword+"%";
 		return sqlSession.selectList("webtoonMapper.searchByKeyword", keyword);
 	}
 

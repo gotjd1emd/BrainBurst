@@ -35,17 +35,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
 		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
-		WHERE WEBTOON_STATE = #{webtoonLevel} 
-		<if test="#{categoryCode} != all">
-			AND CATEGORY_CODE = #{categoryCode}
+		WHERE WEBTOON_LEVEL = #{webtoonLevel}
+		<if test="categoryCode != null">
+		AND CATEGORY_CODE = #{categoryCode}
 		</if>
 	</select>
 	
 	<!-- searchByKeyword -->
 	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="String">
-		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, AUTHOR, FUNDING_PERIOD, SUMMARY
+		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
-		WHERE WEBTOON_NAME = %#{value}% OR AUTHOR = %#{value}%
+		WHERE WEBTOON_NAME = %#{value}% OR NICKNAME = %#{value}%
 	</select>
 	
 	<!-- selectAllEpisode -->

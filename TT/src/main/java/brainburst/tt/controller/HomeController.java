@@ -23,9 +23,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home() {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("pund", "all");
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("ÆÝµù", null);
 		System.out.println(list);
 		return new ModelAndView("main/index", "webtoonList", list);
 	}
-	
 }
