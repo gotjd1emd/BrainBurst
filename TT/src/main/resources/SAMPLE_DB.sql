@@ -176,9 +176,3 @@ values (fund_seq.nextval,3000,10,5);
 
 	
 --delete from webtoon;
-
-
-
-
-
-
