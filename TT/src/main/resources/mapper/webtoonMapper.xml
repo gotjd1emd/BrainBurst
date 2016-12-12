@@ -30,6 +30,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
+	<resultMap type="imageDTO" id="imageDTO">
+		<id column="IMAGE_INDEX" property="imageIndex"/>
+		<result column="EPISODE_SEQUENCE" property="episodeSequence"/>
+		<result column="FILE_NAME" property="fileName"/>
+	</resultMap>
+	
 	<!-- selectWebtoonByLevel -->
 	<!-- 카테고리코드가 'all'일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
@@ -42,28 +48,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- searchByKeyword -->
-	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="String">
+	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="string">
 		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
 		WHERE WEBTOON_NAME LIKE #{value} OR NICKNAME LIKE #{value}
 	</select>
 		
 	<!-- checkNickname -->
-	<select id="checkNickname" resultType="String" parameterType="String">
+	<select id="checkNickname" resultType="string" parameterType="string">
 		SELECT NICKNAME
 		FROM WEBTOON
 		WHERE WEBTOON_CODE = #{value}
 	</select>
 	
 	<!-- selectAllEpisode -->
-	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="String">
+	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="string">
 		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE
 		FROM EPISODE
 		WHERE WEBTOON_CODE = #{value}
 	</select>
 	
 	<!-- selectImg -->
-	<select id="selectImg" resultType="String" parameterType="_int">
+	<select id="selectImg" resultType="string" parameterType="string">
 		SELECT FILE_NAME
 		FROM IMAGE
 		WHERE EPISODE_SEQUENCE = #{value}

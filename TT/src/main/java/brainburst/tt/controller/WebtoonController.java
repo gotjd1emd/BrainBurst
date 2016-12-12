@@ -92,7 +92,7 @@ public class WebtoonController {
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
-		modelAndView.addObject("image", list);
+		modelAndView.addObject("imageList", list);
 		modelAndView.addObject("episodeSequence", episodeSequence);
 		return modelAndView;
 	}
