@@ -27,7 +27,7 @@ public interface AdministratorDAO {
 	/**
 	 * 유료화 신청 update
 	 * */
-	
+
 	
 
 	/**
