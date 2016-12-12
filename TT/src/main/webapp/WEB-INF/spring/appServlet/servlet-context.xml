@@ -26,6 +26,16 @@
 	
 	<context:component-scan base-package="brainburst.tt"/>
 	
+	<!-- jsonView Bean등록 -->
+	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<beans:property name="order" value="0"/>
+	</beans:bean>
+	
+	<!-- jsonView -->
+	<beans:bean class="net.sf.json.spring.web.servlet.view.JsonView" id="jsonView">
+		<beans:property name="contentType" value="text/html;charset=utf-8"/>
+	</beans:bean>
+	
 	<!-- Tiles등록 -->
 	<beans:bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>

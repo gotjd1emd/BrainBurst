@@ -188,15 +188,15 @@ public class UserController {
 	 * */
 	@RequestMapping("THistoryList")
 	@ResponseBody
-	public ModelAndView THistoryList(HttpServletRequest request){
+	public List<CashHistoryDTO> THistoryList(HttpServletRequest request){
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
 		List<CashHistoryDTO> historyList = userService.showListCashHistory(userDTO.getEmail());
+		System.out.println("THistoryList method from UserController");
+		//ModelAndView mv = new ModelAndView();
+		//mv.addObject("historyList", historyList);
 		
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("historyList", historyList);
-		
-		request.setAttribute("historyList", historyList);
-		return mv;
+		//request.setAttribute("historyList", historyList);
+		return historyList;
 	}
 	/**
 	 * 회원 T 충전

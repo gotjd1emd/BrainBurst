@@ -4,61 +4,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=EUTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
 	<style>
 		/* Style */
 	</style>
 	<script>
-	$("document").ready(function(){
+	$(function(){
 		$("#getHistory").click(function() {
+			alert("T내역 click");
 			$.ajax({
-		
-				url : "/user/THistoryList",
-				type : "post",
+				url : "/controller/user/THistoryList",
+				type : "get",
 				dataType : "json",
 				success : function(result) {
-					var htmlcode = "<thead><tr>"+
-						"<th data-field='date'>날짜</th>"+
-						"<th data-field='price'>금액</th>"+
-						"<th data-field='content'>내용</th>"+
-						"<th data-field='state'>사용경로</th>"+
-						"</tr></thead>";		
-					
-						htmlcode+="<tbody>"+
-							"<c:choose>"+
-								"<c:when test='"+${empty requestScope.historyList}+"'>"+
-									"<tr>"+
-										"<td colspan='5'>"+
-											"<p align=' center'><b><span style='font-size:9pt;'>등록된 상품이 없습니다.</span></b></p>"+
-										"</td>"+
-									"</tr>"+
-	    						"</c:when>"+
-		    					"<c:otherwise>"+
-			    					"<c:forEach items='"+${requestScope.historyList}+"' var='cashHistoryDto'>"+
-			    						"<tr>"+
-			    							"<td>"+
-			    								"<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.accountDay}+"'/></span></p>"+
-					        				"</td>"+
-					        				"<td bgcolor="">"+
-												"<p><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.cashPoint}+"'/></span></p>"+
-											"</td>"+
-									        "<td bgcolor="">"+
-									            "<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.content}+"'/></span></p>"+
-									        "</td>"+
-									        "<td bgcolor=''>"+
-									            "<p align='center'><span style='font-size:9pt;'><c:out value='"+${cashHistoryDto.tradeState}+"'/></span></p>"+
-									        "</td>"+
-									    "</tr>"+
-							    	"</c:forEach>"+
-								"</c:otherwise>"+
-							"</c:choose>"+
-						"</tbody>";
-						
-					$('#cashListTable').html(htmlcode);
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='5'><p align='center'><b><span style='font-size:9pt;'>"
+									+"등록된 상품이 없습니다.</span></b></p></td></tr>";
+						alert("t내역 없음");
+					}else {
+						$.each(result, function(index, item) {
+							htmlcode += "<tr><td bgcolor=''><p><span style='font-size:9pt;'>"
+			            		+item.accountDay+"</span></p></td>";
+			            	htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
+				            	+item.cashPoint+"</span></p></td>";
+				            htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
+				            	+item.content+"</span></p></td>";
+				            htmlcode += "<td bgcolor=''><p><span style='font-size:9pt;'>"
+				            	+item.tradeState+"</span></p></td></tr>";
+				            alert("result : " + result);
+						});
+					}
+					$("#tHistory").append(htmlcode);
 				},
 				error : function(err) {
-					
+					alert("err");
 				}
 			})
 		})
@@ -233,8 +214,16 @@
     </div>
     <div id="THistory" class="col s12 tab-card-info">
    	 <div class="card-frame-myInfo z-depth-1">
-    	<table class="striped" id="cashListTable">
-    	</table>
+    		<table class="striped" id="tHistory">
+	        <thead>
+	          <tr>
+	              <th data-field="id">날짜</th>
+	              <th data-field="name">금액</th>
+	              <th data-field="price">내용</th>
+	              <th data-field="price">사용경로</th>
+	          </tr>
+	        </thead>
+	      </table>
 		</div>
     </div>
   </div>
