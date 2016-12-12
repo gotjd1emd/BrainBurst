@@ -1,10 +1,13 @@
 package brainburst.tt.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import brainburst.tt.dao.AdministratorDAO;
 import brainburst.tt.dto.UserDTO;
+import brainburst.tt.dto.WebtoonDTO;
 
 @Service
 public class AdministratorServiceImpl implements AdministratorService{
@@ -13,8 +16,19 @@ public class AdministratorServiceImpl implements AdministratorService{
 	private AdministratorDAO administratorDAO;
 	
 	@Override
-	public UserDTO adminLogin(String email, String password) {
-		return administratorDAO.adminLogin(email, password);
+	public List<UserDTO> userManage() {
+		System.out.println("userList Service");
+		List<UserDTO> userList = administratorDAO.userManage();
+		return userList;
+	}
+
+	@Override
+	public List<WebtoonDTO> webtoonManage() {
+		List<WebtoonDTO> webtoonList = administratorDAO.webtoonManage();
+		
+		System.out.println("Service webtoonList : "+webtoonList);
+
+		return webtoonList;
 	}
 
 }

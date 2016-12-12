@@ -1,31 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<table>
+<table id="webtoonManageList">
 	<thead>
 		<tr>
-			<th data-field="id">Name</th>
-			<th data-field="name">Item Name</th>
-			<th data-field="price">Item Price</th>
+			<th data-field="webtoonName">웹툰이름</th>
+			<th data-field="webtoonLevel">작품등급</th>
+			<th data-field="webtoonState">연재상태</th>
+			<th data-field="categoryName">장르</th>
+			<th data-field="penalty">경고상태</th>
+			<th data-field="author">작가명</th>
+			<th data-field="fundingPeriod">펀딩주기</th>
 		</tr>
 	</thead>
-
 	<tbody>
-		<tr>
-			<td>Alvin</td>
-			<td>Eclair</td>
-			<td>$0.87</td>
-		</tr>
-		<tr>
-			<td>Alan</td>
-			<td>Jellybean</td>
-			<td>$3.76</td>
-		</tr>
-		<tr>
-			<td>Jonathan</td>
-			<td>Lollipop</td>
-			<td>$7.00</td>
-		</tr>
+
 	</tbody>
 </table>
 

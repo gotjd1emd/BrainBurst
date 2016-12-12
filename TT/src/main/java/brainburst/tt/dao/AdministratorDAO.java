@@ -2,70 +2,27 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
-import brainburst.tt.dto.ApplicationForPayWebtoonDTO;
 import brainburst.tt.dto.UserDTO;
+import brainburst.tt.dto.WebtoonDTO;
 
 
 
 public interface AdministratorDAO {
 
-	
 	/**
-	 * admin 로그인 (보류)
-	 * email,password, name
-	 * 
+	 * 관리자 페이지 유저관리
+	 * return type : List<UserDTO>
+	 * parameter Type : 없음
+	 * sql : select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_date from user_information 
 	 * */
-	public UserDTO adminLogin(String email, String password);
+	public List<UserDTO> userManage();
 	
 	
 	/**
-	 * 유료화 신청 관리
+	 * 관리자 페이지 웹툰관리
+	 * return type : list<WebtoonDTO>
+	 * sql : SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_name, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY 
+	 * FROM join WEBTOON and category using(category_code)
 	 * */
-	public List<ApplicationForPayWebtoonDTO> searchForPayWebtoonList();
-	
-	
-	/**
-	 * 유료화 신청 update
-	 * */
-	
-
-	/**
-	 * 웹툰 관리 list
-	 * */
-
-	
-	
-	/**
-	 * 웹툰 상태 신청 관리 
-	 * 		(연재, 휴재, 블라인드, 연재완료)	 
-	 * */
-
-	
-	/**
-	 * 
-	 * 웹툰 상태 update 
-	 * 
-	 * */	
-	
-	
-	/**
-	 * 신고 목록 list 출력
-	 * */	
-	
-	
-	/**
-	 *신고관리(처리) update 
-	 * 
-
-	 * */
-	
-	
-	/**
-	 * 회계처리(이 달 의 총 충전 T, 금액) 
-	 * */
-	
-	/**
-	 * 회계처리(달 별 누계 )
-	 * 
-	 * */
+	public List<WebtoonDTO> webtoonManage();
 }

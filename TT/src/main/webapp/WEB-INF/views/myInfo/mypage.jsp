@@ -33,6 +33,7 @@
 				            	+item.tradeState+"</td></tr>";
 						});
 					}
+					$("tbody").empty();
 					$("#tHistory").append(htmlcode);
 				},
 				error : function(err) {
@@ -41,7 +42,7 @@
 			})
 		})
 	})
-	</script>
+</script>
 </head>
 <body>
 	<div class="row tab-frame-myinfo">

@@ -14,6 +14,8 @@ public class WebtoonDTO {
 	private int fundingPeriod;
 	private String summary;
 	
+	private CategoryDTO categoryDTO;
+	
 	public WebtoonDTO() {
 		System.out.println("webtoonDTO 기본 생성자 호출");
 	}
@@ -30,6 +32,39 @@ public class WebtoonDTO {
 		this.fundingPeriod = fundingPeriod;
 		this.summary = summary;
 		System.out.println("webtoonDTO 전체 생성자 호출");
+	}
+	
+	
+	
+	public WebtoonDTO(String webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
+			String categoryCode, String penalty, String nickname, int fundingPeriod, String summary,
+			CategoryDTO categoryDTO) {
+		this.webtoonCode = webtoonCode;
+		this.webtoonName = webtoonName;
+		this.webtoonLevel = webtoonLevel;
+		this.webtoonState = webtoonState;
+		this.categoryCode = categoryCode;
+		this.penalty = penalty;
+		this.nickname = nickname;
+		this.fundingPeriod = fundingPeriod;
+		this.summary = summary;
+		this.categoryDTO = categoryDTO;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public CategoryDTO getCategoryDTO() {
+		return categoryDTO;
+	}
+
+	public void setCategoryDTO(CategoryDTO categoryDTO) {
+		this.categoryDTO = categoryDTO;
 	}
 
 	public String getWebtoonCode() {
@@ -102,5 +137,13 @@ public class WebtoonDTO {
 
 	public void setSummary(String summary) {
 		this.summary = summary;
+	}
+
+	@Override
+	public String toString() {
+		return "WebtoonDTO [webtoonCode=" + webtoonCode + ", webtoonName=" + webtoonName + ", webtoonLevel="
+				+ webtoonLevel + ", webtoonState=" + webtoonState + ", categoryCode=" + categoryCode + ", penalty="
+				+ penalty + ", nickname=" + nickname + ", fundingPeriod=" + fundingPeriod + ", summary=" + summary
+				+ ", categoryDTO=" + categoryDTO + "]";
 	}
 }

@@ -1,20 +1,40 @@
 package brainburst.tt.controller;
 
-import javax.servlet.http.HttpSession;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import brainburst.tt.dto.UserDTO;
+import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AdministratorService;
 
 @Controller
 @RequestMapping("admin")
 public class AdministratorController {
 	
+	@Autowired
 	private AdministratorService administratorService;
 	
-	@RequestMapping("adminLogin")
-	public void adminLogin(String email, String password, HttpSession session){
-		administratorService.adminLogin(email, password);
+	@RequestMapping("userManage")
+	@ResponseBody
+	public List<UserDTO> userManage(){
+		System.out.println("adminController ¿Ô´Ù!");
+		List<UserDTO> userList = administratorService.userManage();
+		
+		System.out.println(userList);
+		return userList;
+	}
+	
+	@RequestMapping("webtoonManage")
+	@ResponseBody
+	public List<WebtoonDTO> webtoonManage(){
+		System.out.println("webtoonManage");
+		List<WebtoonDTO> webtoonList = administratorService.webtoonManage();
+		
+		System.out.println("webtoonList : "+webtoonList);
+		return webtoonList;
 	}
 }

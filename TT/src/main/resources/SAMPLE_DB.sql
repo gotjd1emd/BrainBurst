@@ -173,6 +173,11 @@ values (fund_seq.nextval,3000,10,5);
 	--insert (start_date,due_date,episode_sequence) values ()
 	insert webtoon_
 	
+	commit;
 
+	
+	SELECT w.WEBTOON_NAME, w.WEBTOON_LEVEL, w.WEBTOON_STATE, w.category_code, c.CATEGORY_name, w.PENALTY, w.NICKNAME, w.FUNDING_PERIOD, w.SUMMARY 
+		FROM WEBTOON w join category c 
+		on (w.category_code = c.category_code)
 	
 --delete from webtoon;

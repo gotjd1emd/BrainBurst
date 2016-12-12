@@ -1,31 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<table>
+
+<table class="striped" id="userManageList">
 	<thead>
 		<tr>
-			<th data-field="id">Name</th>
-			<th data-field="name">Item Name</th>
-			<th data-field="price">Item Price</th>
+			<th data-field="email">이메일</th>
+			<th data-field="nickName">닉네임</th>
+			<th data-field="phone">전화번호</th>
+			<th data-field="phone">비밀번호</th>
+			<th data-field="cashPoint">T 잔액</th>
+			<th data-field="level">레벨</th>
+			<th data-field="name">이름</th>
+			<th data-field="gender">성별</th>
+			<th data-field="birthDate">생년월일</th>
 		</tr>
 	</thead>
-
 	<tbody>
-		<tr>
-			<td>Alvin</td>
-			<td>Eclair</td>
-			<td>$0.87</td>
-		</tr>
-		<tr>
-			<td>Alan</td>
-			<td>Jellybean</td>
-			<td>$3.76</td>
-		</tr>
-		<tr>
-			<td>Jonathan</td>
-			<td>Lollipop</td>
-			<td>$7.00</td>
-		</tr>
+
 	</tbody>
 </table>
 
