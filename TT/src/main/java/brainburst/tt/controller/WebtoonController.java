@@ -139,9 +139,9 @@ public class WebtoonController {
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		if (webtoonService.addSubscription(email, webtoonCode)>0) {
-			//성공했을때 무언가...?
-		}
+//		if () {
+//			//성공했을때 무언가...?
+//		}
 	}
 	
 	/**

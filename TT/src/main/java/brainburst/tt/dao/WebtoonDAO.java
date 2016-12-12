@@ -60,5 +60,5 @@ public interface WebtoonDAO {
 	 * @param epicsodeSequence 해당에피소드의 에피소드시퀸스
 	 * @return INSERT성공여부 1:성공 0:실패
 	 */
-	int addReport(String email, String webtoonCode, int epicsodeSequence);
+	int addReport(String content, String email, String webtoonCode, int epicsodeSequence);
 }

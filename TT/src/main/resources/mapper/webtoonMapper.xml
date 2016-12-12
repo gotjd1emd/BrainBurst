@@ -31,10 +31,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<!-- selectWebtoonByLevel -->
+	<!-- 카테고리코드가 'all'일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
 		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
 		FROM WEBTOON
-		WHERE WEBTOON_STATE = #{webtoonLevel} AND CATEGORY_CODE = #{categoryCode}
+		WHERE WEBTOON_STATE = #{webtoonLevel} 
+		<if test="#{categoryCode} != all">
+			AND CATEGORY_CODE = #{categoryCode}
+		</if>
 	</select>
 	
 	<!-- searchByKeyword -->

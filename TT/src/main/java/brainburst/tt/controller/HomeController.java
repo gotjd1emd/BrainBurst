@@ -18,6 +18,7 @@ public class HomeController {
 	/**
 	 * 메인화면, 홈버튼을 눌렀을때
 	 * 카테고리에 상관없이 펀딩웹툰리스트를 불러온다.
+	 * 맵퍼에서 카테고리값이 'all'일경우 웹툰상태값으로만 검색.
 	 * @return
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)

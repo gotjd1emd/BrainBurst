@@ -65,9 +65,13 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public int addReport(String email, String webtoonCode, int epicsodeSequence) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int addReport(String content, String email, String webtoonCode, int epicsodeSequence) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("content", content);
+		map.put("email", email);
+		map.put("webtoonCode", webtoonCode);
+		map.put("epicsodeSequence", Integer.toString(epicsodeSequence));
+		return sqlSession.insert("webtoonMapper.addReport", map);
 	}
 
 }
