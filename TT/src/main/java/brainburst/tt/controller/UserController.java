@@ -77,8 +77,6 @@ public class UserController {
 		
 		if(userDTO==null){
 			return "main/index"; 
-		}else if(userDTO.getEmail().equals("admin@naver.com")){
-			return "admin/adminPage";
 		}
 		session.setAttribute("userDTO", userDTO);
 		
