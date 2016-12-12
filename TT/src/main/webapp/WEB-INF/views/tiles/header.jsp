@@ -53,13 +53,13 @@
 	      </form>
 	    </div>
 	</nav>
-	<nav class="fixed">
-	    <div class="nav-wrapper z-depth-4">
+	<nav class="header-box">
+	    <div class="nav-wrapper z-depth-2">
 	      <a href="<c:url value='/'/>" class="brand-logo center"><img id="logo" src="<c:url value='/resources/img/TT_title.png'/>"></a>
 	      <a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <a href="#" class="button-collapse right"><i class="material-icons search-btn">search</i></a>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="<c:url value='/user/webtoon/webtoon'/>">펀딩웹툰</a></li>
+	        <li><a href="<c:url value='/user/webtoon/myWebtoon'/>">펀딩웹툰</a></li>
 	        <li><a href="badges.html">일반웹툰</a></li>
 	        <li><a href="collapsible.html">완결웹툰</a></li>
 	        <li><i class="material-icons icon_search search-btn">search</i></li>

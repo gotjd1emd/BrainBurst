@@ -41,6 +41,32 @@
 
 	<!-- modal -->
 	<!-- Modal Structure -->
+	<div id="paid-modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>유료화</h4>
+			<p>A bunch of text</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!"
+				class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+		</div>
+	</div>
+
+	<!-- modal -->
+	<!-- Modal Structure -->
+	<div id="funding-modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>펀딩</h4>
+			<p>A bunch of text</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!"
+				class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+		</div>
+	</div>
+
+	<!-- modal -->
+	<!-- Modal Structure -->
 	<div id="report-modal" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>신고</h4>

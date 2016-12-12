@@ -1,5 +1,49 @@
 @CHARSET "EUC-KR";
 
+#content{
+	padding-top: 45px;
+	padding-left:300px;
+	padding-right: 0px;
+}
+
+#footer{
+	margin:0	
+}
+
+#episode-list{
+	padding: 20px;
+	padding-top: 0px;
+}
+
+#webtoon-info{
+	padding: 20px;
+	padding-top: 0px;
+}
+
+.webtoon-name, .webtoon-title{
+	display: inline-block;
+}
+
+.webtoon-name{
+	vertical-align: top;
+}
+
+.title-box{
+	margin-bottom:10px; 
+}
+
+.webtoon-title{
+	width: 100px;
+	height: 100px;
+	margin: 15px;
+}
+
+.webtoon-title img{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+}
+
 .tabs {
   position: relative;
   overflow-x: auto;
@@ -89,19 +133,36 @@
   background-color: #03A9F4;
 }
 
-.webtoon_title, .episode_thumbnail, .episode_chart {
-	width : 100px;
-	height : 100px;
-	margin : auto;
+.webtoon-title, .episode_thumbnail, .episode_chart {
+	display: inline-block;
 	
 }
 
-.thumbnail, .chart{
-	height:100%;
+.chart{
+	height:80px;
 }
 
 .episode_chart {
-	margin-right:0;
+	margin-right:12px;
+	margin-top:12px;
+	float: right;
+}
+
+.episode_text{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.episode_thumbnail{
+	margin-left: 7px;
+	margin-top: 7px;
+	margin-right: 10px;
+}
+
+.thumbnail{
+	width: 90px;
+	height: 90px;
+	border-radius: 10px;
 }
 
 blockquote {
@@ -118,4 +179,26 @@ p{
 	border:solid red 1px;
 	background-color:red;
 	color:#fff;	
+}
+
+.episode-curtain{
+	background-color:black;
+	position: absolute;
+	width: 1011px;
+	height: 103px;
+	opacity: 0.5;
+	border-radius: 15px;
+}
+
+.episode-box{
+	border-radius: 15px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.lock{
+	margin-top: 25px;
+	color: white;
+	font-size: 50px;
 }
