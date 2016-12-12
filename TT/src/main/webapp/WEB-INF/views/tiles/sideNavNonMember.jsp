@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
     <ul id="slide-out" class="side-nav fixed z-depth-2">
-      
       <c:choose>
       <c:when test="${sessionScope.userDTO!=null}">
       <div id="box_snb-login">
@@ -54,20 +54,35 @@
 	  </div>
       </c:otherwise>
       </c:choose>
-      </div><!-- box_snd exit -->
+      </div> <!-- box_snd exit -->
     </ul>
     
     <!-- modal -->
     
   <!-- 아이디 찾기 Modal Structure -->
   <div id="idfind-modal" class="modal modal-fixed-footer">
+    <form method="post" action="/user/findEmail">
     <div class="modal-content">
-      <h4>아이디 찾기</h4>
-      <p>A bunch of text</p>
-    </div>
+		<h4>이메일(아이디) 찾기</h4>
+		<p></p>
+		
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-myinfo" type="text" class="validate" name="name">
+				<label for="name-myinfo">이름</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-myinfo" type="text" class="validate" name="phone">
+				<label for="name-myinfo">전화번호</label>
+			</div>
+		</div>
+	</div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">찾기</button>
     </div>
+    </form>
   </div>  
     <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
 
@@ -75,7 +90,25 @@
   <div id="pwdfind-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>비밀번호 찾기</h4>
-      <p>A bunch of text</p>
+      <p></p>
+      <div class="row">
+			<div class="input-field col s12">
+				<input id="name-myinfo" type="email" class="validate">
+				<label for="name-myinfo">이메일</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-myinfo" type="text" class="validate">
+				<label for="name-myinfo">이름</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name-myinfo" type="text" class="validate">
+				<label for="name-myinfo">전화번호</label>
+			</div>
+		</div>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>

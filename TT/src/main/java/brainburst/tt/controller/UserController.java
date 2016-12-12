@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
@@ -75,7 +74,8 @@ public class UserController {
 		return "main/index";
 	}
 
-	 /* 회원 로그아웃!
+	 /* 
+	  * 회원 로그아웃!
 	 * */
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest request){
@@ -155,7 +155,7 @@ public class UserController {
 		
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
 		
-		System.out.println(userDTO);
+		System.out.println(userDTO); 
 		String email = userDTO.getEmail();
 		int cash = userDTO.getCashPoint();
 		
@@ -192,10 +192,7 @@ public class UserController {
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
 		List<CashHistoryDTO> historyList = userService.showListCashHistory(userDTO.getEmail());
 		System.out.println("THistoryList method from UserController");
-		//ModelAndView mv = new ModelAndView();
-		//mv.addObject("historyList", historyList);
-		
-		//request.setAttribute("historyList", historyList);
+
 		return historyList;
 	}
 	/**
@@ -206,5 +203,12 @@ public class UserController {
 	 * 회원 작가 신청
 	 * */
 	
-	
+	/**
+	 * 이메일 ( 아이디 ) 찾기
+	 * */
+	@RequestMapping("findEmail")
+	@ResponseBody
+	public String findEmail(UserDTO userDTO){
+		return userService.findEmail(userDTO);
+	}
 }

@@ -97,5 +97,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="THistoryList" resultMap="cashHistoryMap" parameterType="String">
 		select account_day, cash_point, content, trade_state from cash_history where email=#{email}
 	</select>
+	
+	<!-- findEmail -->
+	<select id="findEmail" resultType="string" parameterType="userDTO">
+		select email from user_information where email=${email}
+	</select>
 </mapper>
-

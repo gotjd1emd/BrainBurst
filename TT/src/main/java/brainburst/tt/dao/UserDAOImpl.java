@@ -118,8 +118,7 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public String findEmail(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("userMapper.findEmail", userDTO);
 	}
 
 }

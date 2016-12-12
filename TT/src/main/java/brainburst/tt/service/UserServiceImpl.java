@@ -39,13 +39,12 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public String findPassword(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+	public String findEmail(UserDTO userDTO) {
+		return userDAO.findEmail(userDTO);
 	}
 	
 	@Override
-	public String findEmail(UserDTO userDTO) {
+	public String findPassword(UserDTO userDTO) {
 		// TODO Auto-generated method stub
 		return null;
 	}
