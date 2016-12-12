@@ -1,0 +1,57 @@
+@CHARSET "EUC-KR";
+
+.color-50{
+	background-color: #FFEBEE;	
+}
+
+.color-100{
+	background-color: #FFCDD2;	
+}
+
+.color-200{
+	background-color: #EF9A9A;	
+}
+
+.color-300{
+	background-color: #E57373;	
+}
+
+.color-400{
+	background-color: #EF5350;	
+}
+
+.color-500{
+	background-color: #F44336;	
+}
+
+.color-600{
+	background-color: #E53935;	
+}
+
+.color-700{
+	background-color: #D32F2F;	
+}
+
+.color-800{
+	background-color: #C62828;	
+}
+
+.color-900{
+	background-color: #B71C1C;	
+}
+
+.color-A100{
+	background-color: #FF8A80;	
+}
+
+.color-A200{
+	background-color: #FF5252;	
+}
+
+.color-A400{
+	background-color: #FF1744;	
+}
+
+.color-A700{
+	background-color: #D50000;	
+}
