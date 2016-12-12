@@ -9,7 +9,6 @@ public class TestController {
 
 	@RequestMapping("webtoon")
 	public String aa() {
-		
 		return "main/webtoon";
 	}
 	
@@ -21,14 +20,11 @@ public class TestController {
 	
 	@RequestMapping("episode/{episodeSequence}")
 	public String episode() {
-		
-		return "main/episode";
+		return "webtoon/episode";
 	}
 	
 	@RequestMapping("modifyEpisode/{episodeSequence}")
 	public String modifyEpisode() {
-		
-		return "main/modifyEpisode";
+		return "webtoon/modifyEpisode";
 	}
-	
 }

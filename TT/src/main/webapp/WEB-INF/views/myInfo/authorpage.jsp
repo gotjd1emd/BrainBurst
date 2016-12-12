@@ -28,7 +28,7 @@
 		</div>
 		<div id="publish-webtoon" class="col s12 tab-card-info">
 			<c:choose>
-				<c:when test="${sessionScope.webtoonDTO==null}">
+				<c:when test="${requestScope.webtoonDTO!=null}">
 					<!-- 플로팅 버튼 -->
 					<div class="fixed-action-btn horizontal click-to-toggle">
 						<a class="btn-floating btn-large red publish-webtoon-floating">
