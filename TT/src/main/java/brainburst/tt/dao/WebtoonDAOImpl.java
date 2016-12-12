@@ -31,8 +31,8 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public Boolean checkNickname(int webtoonCode) {
-		if (sqlSession.selectOne("webtoonMapper.checkNickname", webtoonCode) != null) {
+	public Boolean checkNickname(int webtoonCode, String nickname) {
+		if (sqlSession.selectOne("webtoonMapper.checkNickname", webtoonCode).equals(nickname)) {
 			return true;
 		}
 		return false;
@@ -40,12 +40,12 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 
 	@Override
 	public List<EpisodeDTO> selectAllEpisode(int webtoonCode) {
-		return sqlSession.selectOne("webtoonMapper.selectAllEpisode", webtoonCode);
+		return sqlSession.selectList("webtoonMapper.selectAllEpisode", webtoonCode);
 	}
 
 	@Override
 	public List<String> selectImg(int epicsodeSequence) {
-		return sqlSession.selectOne("webtoonMapper.selectImg", epicsodeSequence);
+		return sqlSession.selectList("webtoonMapper.selectImg", Integer.toString(epicsodeSequence));
 	}
 
 	@Override

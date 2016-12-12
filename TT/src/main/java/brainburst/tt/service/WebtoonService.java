@@ -25,7 +25,7 @@ public interface WebtoonService {
 	 * @param webtoonCode
 	 * @return
 	 */
-	Boolean checkNickname(int webtoonCode);
+	Boolean checkNickname(int webtoonCode, String nickname);
 	
 	/**
 	 * 해당 웹툰의 모든에피소드 불러오기

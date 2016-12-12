@@ -40,7 +40,7 @@ public class WebtoonController {
 	 * @return 검색된 결과 
 	 */
 	@RequestMapping("{webtoonLevel}/{category}")
-	public ModelAndView concludedWebtoonByCategory(
+	public ModelAndView selectWebtoonByLevel(
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
@@ -65,9 +65,12 @@ public class WebtoonController {
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
+		HttpSession session = requset.getSession();
+		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
+		String nickname = dto.getNickname();
 		String type = "webtoon/reader";
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
-		if (webtoonService.checkNickname(webtoonCode)) {
+		if (webtoonService.checkNickname(webtoonCode, nickname)) {
 			type = "webtoon/author";
 		}
 		List<EpisodeDTO> list = webtoonService.selectAllEpisode(webtoonCode);
@@ -78,6 +81,7 @@ public class WebtoonController {
 		modelAndView.addObject("episodeList", list);
 		return modelAndView;
 	}
+	
 	/**
 	 * 에피소드보기
 	 * @param episodeSequence 해당에피소드의 시퀸스

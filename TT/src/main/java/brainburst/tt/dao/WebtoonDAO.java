@@ -25,7 +25,7 @@ public interface WebtoonDAO {
 	 * WEBTOON_CODE에 해당하는 NICKNAME조회후 사용자와 일치여부 리턴
 	 * @return 일치하면 true, 불일치하면 false
 	 */
-	Boolean checkNickname(int webtoonCode);
+	Boolean checkNickname(int webtoonCode, String nickname);
 
 	/**
 	 * WEBTOON_CODE에 해당하는 모든 에피소드와 펀딩중인 화 가져오기(펀딩중인화 찾기 생각해볼것...)

@@ -25,8 +25,8 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public Boolean checkNickname(int webtoonCode) {
-		return webtoonDAO.checkNickname(webtoonCode);
+	public Boolean checkNickname(int webtoonCode, String nickname) {
+		return webtoonDAO.checkNickname(webtoonCode, nickname);
 	}
 	
 	@Override

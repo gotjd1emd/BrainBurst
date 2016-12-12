@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import brainburst.tt.dto.WebtoonDTO;
+import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.service.WebtoonService;
 
 @Controller
@@ -23,8 +23,12 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home() {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("ÆÝµù", null);
+		List<String> list = webtoonService.selectImg(1);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("main/index");
+		modelAndView.addObject("image", list);
+		modelAndView.addObject("episodeSequence", 1);
 		System.out.println(list);
-		return new ModelAndView("main/index", "webtoonList", list);
+		return modelAndView;
 	}
 }
