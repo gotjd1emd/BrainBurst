@@ -39,8 +39,8 @@ delete from webtoon;
 -- webtoon webtoon-state : 연재
 
 insert into webtoon
-(webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.NEXTVAL,'순정만화','일반','serial','A','green','설현',null,'아재와 학생의 some',null);
+(webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code, nickname, funding_period, summary, webtoon_thumbnail)
+values (1,'순정만화','일반','serial','A', '설현', 1, '아재와 학생의 some', null);
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
@@ -145,85 +145,29 @@ values (fund_seq.nextval,3000,10,5);
 --episode 회차별 정보 
 
 	-- fundingWebtoon episode 추가 2,4, 8,9,10
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,1,110,150,'2016-03-02 ',2,'아파트-아파트-1','작가의말',null);
+	insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+			recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+	values (1, 1, 1, 0, 0, '2016-03-02 ', 'no.1 - elevator', '작가의말 엘레베이터에서?', null, null);
 	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,2,10,20,'2016-03-09',2,'아파트-아파트-2','작가의말',null);
+	insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+			recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+	values (2, 1, 2, 0, 0, '2016-03-09 ', 'no.2 -necktie', '작가의말 넥타이 털림', null, null);
 	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,3,20,20,'2016-03-16',2,'아파트-아파트-3','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,4,30,30,'2016-03-22',2,'아파트-아파트-4','작가의말',4);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,5,40,40,'2016-03-29',2,'아파트-아파트-5','작가의말',5);
-
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,1,150,150,'2016-03-30',4,'타이밍-순간의 틈-1','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,2,150,150,'2016-04-6',4,'타이밍-순간의 틈-2','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,3,150,150,'2016-04-13',4,'타이밍-순간의 틈-3','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,4,150,150,'2016-04-20',4,'타이밍-순간의 틈-4','작가의말',4);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,5,150,150,'2016-04-27',4,'타이밍-10분-1','작가의말',5);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,1,150,150,'2016-04-28',8,'어게인-어게인-1','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,2,150,150,'2016-05-5',8,'어게인-어게인-2','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,3,150,150,'2016-05-12',8,'어게인-어게인-3','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,4,150,150,'2016-05-19',8,'어게인-어게인-4','작가의말',4);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,5,150,150,'2016-05-26',8,'어게인-어게인-5','작가의말',5);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,1,150,150,'2016-05-27',9,'그러든가-1','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,2,150,150,'2016-06-03',9,'그러든가-2','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,3,150,150,'2016-06-10',9,'그러든가-3','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,4,150,150,'2016-06-17',9,'그러든가-4','작가의말',4);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,5,150,150,'2016-06-24',9,'그러든가-5','작가의말',5);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,1,150,150,'2016-06-25',10,'조명가게-버스정류장-1','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,2,150,150,'2016-07-02',10,'조명가게-버스정류장-2','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,3,150,150,'2016-07-09',10,'조명가게-버스정류장-3','작가의말',null);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,4,150,150,'2016-07-16',10,'조명가게-버스정류장-4','작가의말',4);
-	
-	insert into episode (episode_sequence,episode_number,hits,recommendation,upload_date,webtoon_code,episode_title,author_word,fund_code)	
-	values (episode_seq.NEXTVAL,5,150,150,'2016-07-23',10,'조명가게-버스정류장-5','작가의말',5);
+	insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+			recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+	values (3, 1, 3, 0, 0, '2016-03-16 ', 'no.3 - present', '작가의말 선물?', null, null);
 	
 	
 	-- *** image 테이블 보류 
 	--insert into image (image_index,episode_sequence,file_name) values ()
+	insert into image(image_index, episode_sequence, file_name) 
+	values(1, 1, '/01.romance comics/no.1 - elevator.jpg');
 	
+	insert into image(image_index, episode_sequence, file_name) 
+	values(1, 2, '/01.romance comics/no.2 -necktie.jpg');
+	
+	insert into image(image_index, episode_sequence, file_name) 
+	values(1, 3, '/01.romance comics/no.3 - present.jpg');
 
 	--  	
 	--insert (start_date,due_date,episode_sequence) values ()
