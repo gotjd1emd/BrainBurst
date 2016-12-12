@@ -14,7 +14,6 @@ public class TestController {
 	
 	@RequestMapping("myWebtoon")
 	public String bb() {
-		
 		return "main/myWebtoon";
 	}
 	

@@ -17,6 +17,7 @@
 	media="screen,projection">
 <script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 <link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
+<link rel="styleSheet" href="<c:url value='/resources/css/admin.css'/>">
 <style>
 </style>
 <script>
@@ -44,7 +45,7 @@
 		<div id="snb">
 			<tiles:insertAttribute name="snb_nonMember" />
 		</div>
-		<div id="content">
+		<div id="content-admin">
 			<tiles:insertAttribute name="content" />
 		</div>
 		<div id="footer">

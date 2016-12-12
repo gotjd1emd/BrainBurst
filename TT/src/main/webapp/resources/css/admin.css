@@ -1,0 +1,13 @@
+@CHARSET "EUC-KR";
+
+#content-admin{
+	min-height: 100%;
+	position: relative;
+	padding-top: 80px;
+	padding-left: 300px;
+	padding-right: 0px;
+}
+
+.tab-admin{
+	padding: 0 !important;	
+}
