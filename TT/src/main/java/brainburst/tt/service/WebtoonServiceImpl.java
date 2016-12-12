@@ -40,7 +40,7 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public int addSubscription(String email, String webtoonCode) {
+	public int addSubscription(String email, int webtoonCode) {
 		return webtoonDAO.addSubscription(email, webtoonCode);
 	}
 	

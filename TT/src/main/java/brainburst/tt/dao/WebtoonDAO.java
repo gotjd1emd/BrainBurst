@@ -43,7 +43,7 @@ public interface WebtoonDAO {
 	 * @param webtoonCode 해당웹툰코드
 	 * @return INSERT성공여부 1:성공, 0:실패
 	 */
-	int addSubscription(String email ,String webtoonCode);
+	int addSubscription(String email ,int webtoonCode);
 	
 	/**
 	 * 추천테이블에 레코드추가.

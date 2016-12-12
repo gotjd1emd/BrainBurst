@@ -49,10 +49,10 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public int addSubscription(String email, String webtoonCode) {
+	public int addSubscription(String email, int webtoonCode) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
-		map.put("webtoonCode", webtoonCode);
+		map.put("webtoonCode", Integer.toString(webtoonCode));
 		return sqlSession.insert("webtoonMapper.addSubscription", map);
 	}
 
