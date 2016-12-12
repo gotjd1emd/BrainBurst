@@ -3,6 +3,7 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+
 	<!-- main 폴더 안에 있는 view를 참조할 layout -->
 	<definition name="mainLayout" template="/WEB-INF/views/tiles/mainLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"/>

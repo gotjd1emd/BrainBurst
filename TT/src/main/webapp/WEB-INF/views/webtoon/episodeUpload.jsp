@@ -14,7 +14,6 @@
 		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
-			
 		});
 		
 		$('.image-file').on("change", "input[type=file]", function() {

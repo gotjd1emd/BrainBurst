@@ -1,9 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       <c:choose>
+      
+      <c:when test="${sessionScope.userDTO.email==admin@naver.com}">
+      	<a class="col s5" href="<c:url value='/controller/user/admin/adminPage'/>">관리자페이지</a>
+      </c:when>
       <c:when test="${sessionScope.userDTO!=null}">
       <div id="box_snb-login">
 		<h5 class="center-align">- ${sessionScope.userDTO.nickname} -</h5>

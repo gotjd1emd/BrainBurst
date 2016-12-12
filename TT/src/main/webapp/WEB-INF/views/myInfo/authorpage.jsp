@@ -28,7 +28,7 @@
 		</div>
 		<div id="publish-webtoon" class="col s12 tab-card-info">
 			<c:choose>
-				<c:when test="${requestScope.webtoonDTO!=null}">
+				<c:when test="${requestScope.webtoonDTO==null}">
 					<!-- 플로팅 버튼 -->
 					<div class="fixed-action-btn horizontal click-to-toggle">
 						<a class="btn-floating btn-large red publish-webtoon-floating">
@@ -49,7 +49,7 @@
 							<!-- 웹툰 등록 플로팅 버튼 -->
 							<li><a class="btn-floating red mini-floating tooltipped"
 								data-position="top" data-delay="50" data-tooltip="웹툰 등록"
-								href="#"><i class="material-icons">publish</i></a></li>
+								href='/controller/user/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
 						</ul>
 					</div>
 					<!-- floating button div tag close -->
