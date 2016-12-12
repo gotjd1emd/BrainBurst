@@ -60,7 +60,6 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public int addRecommend(String email, int epicsodeSequence) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
-		//스트링으로 변경해서 넣었는데 오류발생시 수정요망
 		map.put("webtoonCode", Integer.toString(epicsodeSequence));
 		return sqlSession.insert("webtoonMapper.addSubscription", map);
 	}

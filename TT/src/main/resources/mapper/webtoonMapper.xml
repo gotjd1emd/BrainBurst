@@ -74,4 +74,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO SUBSCRIPTION (SUBSCRIPTION_SEQUENCE, EMAIL, WEBTOON_CODE) 
 		VALUES (SUBSCRIPTION_SEQ.NEXTVAL, #{email}, #{webtoonCode})
 	</insert>
+	
+	<!-- addRecommend -->
+	<insert id="addRecommend" parameterType="map">
+		INSERT INTO RECOMMEND (SUBSCRIPTION_SEQUENCE, EMAIL, WEBTOON_CODE) 
+		VALUES (RECOMMEND_SEQ.NEXTVAL, #{email}, #{epicsodeSequence})
+	</insert>
 </mapper>
