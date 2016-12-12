@@ -30,6 +30,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
+	<resultMap type="reportDTO" id="reportDTO">
+		<id column="REPORT_SEQUENCE" property="reportSequence"/>
+		<result column="CONTENT" property="content"/>
+		<result column="EMAIL" property="email"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+	</resultMap>
+	
 	<!-- selectWebtoonByLevel -->
 	<!-- 카테고리코드가 'all'일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
@@ -79,5 +86,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addRecommend" parameterType="map">
 		INSERT INTO RECOMMEND (SUBSCRIPTION_SEQUENCE, EMAIL, WEBTOON_CODE) 
 		VALUES (RECOMMEND_SEQ.NEXTVAL, #{email}, #{epicsodeSequence})
+	</insert>
+	
+	<!-- addReport -->
+	<insert id="addReport" parameterType="reportDTO">
+		INSERT INTO REPORT (REPORT_SEQUENCE, EMAIL, WEBTOON_CODE, CONTENT, EPISODE_SEQUENCE) 
+		VALUES (REPORT_SEQ.NEXTVAL, #{email}, #{webtoonCode}, #{content}, #{epicsodeSequence})
 	</insert>
 </mapper>

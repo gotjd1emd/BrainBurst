@@ -3,6 +3,7 @@ package brainburst.tt.service;
 import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface WebtoonService {
@@ -56,4 +57,11 @@ public interface WebtoonService {
 	 * @return
 	 */
 	int addRecommend(String email, int epicsodeSequence);
+	
+	/**
+	 * ³Ê´Ô ¸®Æý!
+	 * @param reportDTO
+	 * @return
+	 */
+	int addReport(ReportDTO reportDTO);
 }

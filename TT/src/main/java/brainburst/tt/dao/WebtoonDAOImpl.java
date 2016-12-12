@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Repository
@@ -65,13 +66,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public int addReport(String content, String email, String webtoonCode, int epicsodeSequence) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("content", content);
-		map.put("email", email);
-		map.put("webtoonCode", webtoonCode);
-		map.put("epicsodeSequence", Integer.toString(epicsodeSequence));
-		return sqlSession.insert("webtoonMapper.addReport", map);
+	public int addReport(ReportDTO reportDTO) {
+		return sqlSession.insert("webtoonMapper.addSubscription", reportDTO);
 	}
-
 }

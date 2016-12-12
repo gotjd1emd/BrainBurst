@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.WebtoonService;
@@ -142,10 +143,12 @@ public class WebtoonController {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
-		String webtoonCode = (String) request.getAttribute("webtoonCode");
-//		if () {
-//			//성공했을때 무언가...?
-//		}
+		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
+		int webtoonCode = (Integer) request.getAttribute("webtoonCode");
+		ReportDTO reportDTO = new ReportDTO(content, email, webtoonCode, episodeSequence);
+		if (webtoonService.addReport(reportDTO) > 0) {
+			//성공했을때 무언가...?
+		}
 	}
 	
 	/**

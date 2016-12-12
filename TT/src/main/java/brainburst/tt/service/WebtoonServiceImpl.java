@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
@@ -47,5 +48,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 	@Override
 	public int addRecommend(String email, int epicsodeSequence) {
 		return webtoonDAO.addRecommend(email, epicsodeSequence);
+	}
+
+	@Override
+	public int addReport(ReportDTO reportDTO) {
+		return webtoonDAO.addReport(reportDTO);
 	}
 }

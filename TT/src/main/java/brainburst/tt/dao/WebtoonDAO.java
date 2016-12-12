@@ -3,6 +3,7 @@ package brainburst.tt.dao;
 import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface WebtoonDAO {
@@ -60,5 +61,5 @@ public interface WebtoonDAO {
 	 * @param epicsodeSequence 해당에피소드의 에피소드시퀸스
 	 * @return INSERT성공여부 1:성공 0:실패
 	 */
-	int addReport(String content, String email, String webtoonCode, int epicsodeSequence);
+	int addReport(ReportDTO reportDTO);
 }
