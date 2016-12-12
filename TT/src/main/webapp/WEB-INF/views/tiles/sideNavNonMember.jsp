@@ -5,7 +5,7 @@
     <ul id="slide-out" class="side-nav fixed z-depth-2">
       <c:choose>
       
-      <c:when test="${sessionScope.userDTO.email==admin@naver.com}">
+      <c:when test="${sessionScope.userDTO.email=='admin@naver.com'}">
       	<a class="col s5" href="<c:url value='/controller/user/admin/adminPage'/>">관리자페이지</a>
       </c:when>
       <c:when test="${sessionScope.userDTO!=null}">

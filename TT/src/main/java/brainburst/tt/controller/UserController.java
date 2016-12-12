@@ -34,6 +34,16 @@ public class UserController {
 		return viewFolder+"/"+viewName;
 	}
 	
+	@RequestMapping("{viewFolder}/{viewName}/{fileName}")
+	public String signUpMove(
+			@PathVariable("viewFolder") String viewFolder, 
+			@PathVariable("viewName") String viewName,
+			@PathVariable("fileName") String fileName){
+		
+		System.out.println(viewFolder+"/"+viewName+"로 이동합니다.");
+		return viewFolder+"/"+viewName+"/"+fileName;
+	}
+	
 	/**
 	 * 회원가입! 
 	 * return 타입 : void
