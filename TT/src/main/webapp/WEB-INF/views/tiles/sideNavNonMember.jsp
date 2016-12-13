@@ -42,7 +42,7 @@
 							<label for="email">Email</label>
 						</div>
 						<div class="input-field login-field col">
-							<input id="password" type="password" class="validate"
+							<input id="password" type="password"
 								name="password"> <label for="password">Password</label>
 						</div>
 						<div class="center">
@@ -54,9 +54,8 @@
 					<!-- login_form exit -->
 				</form>
 			</div>
-			<li class="center"><a href="#id-pwd-quarter-modal">EMAIL / PASSWORD 찾기</a></li>
-			<li class="center"><a
-				href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a></li>
+			<li class="center login-category"><a href="#id-pwd-quarter-modal">EMAIL / PASSWORD 찾기</a></li>
+			<li class="center login-category"><a href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a></li>
 		</c:otherwise>
 	</c:choose>
 	</div>
@@ -120,8 +119,7 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button type="submit"
-				class="modal-action modal-close waves-effect waves-green btn-flat">찾기</button>
+			<button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">찾기</button>
 		</div>
 	</form>
 </div>

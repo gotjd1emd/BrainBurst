@@ -237,6 +237,27 @@ left: 228px;
      border-bottom: 1px solid #6e6e6e;
      box-shadow: 0 1px 0 0 #6e6e6e;
    }
+   
+      .login-field input[type=password]:focus + label {
+     color: #6e6e6e;
+     font-size: 12px;
+     padding-bottom: 2px;
+   }
+   /* label underline focus color */
+   .login-field input[type=password]:focus {
+     border-bottom: 1px solid #6e6e6e;
+     box-shadow: 0 1px 0 0 #6e6e6e;
+   }
+   /* valid color */
+   .login-field input[type=password].valid {
+     border-bottom: 1px solid #6e6e6e;
+     box-shadow: 0 1px 0 0 #6e6e6e;
+   }
+   /* invalid color */
+   .login-field input[type=password].invalid {
+     border-bottom: 1px solid #6e6e6e;
+     box-shadow: 0 1px 0 0 #6e6e6e;
+   }
    /* icon prefix focus color */
    .login-field .prefix.active {
      color: #000;
@@ -293,6 +314,11 @@ left: 228px;
 	.modal-top{
 		z-index: 9999 !important;
 		top:15% !important;
+	}
+	
+	.login-category a{
+		font-size: 12px;
+		color: #6e6e6e;
 	}
 	
 /*modal id*/
