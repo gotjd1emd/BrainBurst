@@ -37,15 +37,12 @@
 		</div>
 	</div>
 </div>
-
+<c:forEach var="item" items="imageList">
 <div class="center">
 	<img alt="webtoon"
-		src="<c:url value='/resources/img/webtoonKangpull.jpg'/>">
+		src="c:webtoon\action\예고편.jpg">
 </div>
-<div class="center">
-	<img alt="webtoon"
-		src="<c:url value='/resources/img/webtoonKangpull.jpg'/>">
-</div>
+</c:forEach>
 
 <div class="z-depth-2">
 	<div>작가의말 : abcd</div>

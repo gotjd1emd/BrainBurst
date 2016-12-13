@@ -2,6 +2,7 @@ package brainburst.tt.controller;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -35,15 +36,10 @@ public class WebtoonController {
 	public String selectWebtoonByLevel(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
-		System.out.println("리스트찾기작동!");
-		System.out.println(webtoonLevel);
-		System.out.println(category);
 		if (category.equals("all")) {
 			category = null;
 		}
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
-		System.out.println("이후값"+category);
-		System.out.println("12"+list);
 		session.setAttribute("webtoonList", list);
 		return "main/index";
 	}
@@ -68,11 +64,14 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
-		String nickname = dto.getNickname();
-		String type = "webtoon/reader";
+		String nickname = "GUEST";
+		if (dto!=null) {
+			nickname = dto.getNickname();
+		}
+		String type = "webtoon/webtoon";
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
 		if (webtoonService.checkNickname(webtoonCode, nickname)) {
-			type = "webtoon/author";
+			type = "webtoon/myWebtoon";
 		}
 		List<EpisodeDTO> list = webtoonService.selectAllEpisode(webtoonCode);
 		ModelAndView modelAndView = new ModelAndView();
@@ -80,6 +79,7 @@ public class WebtoonController {
 		//페이지이동후 webtoonCode를 자주 사용함으로 미리 request영역에 저장.
 		modelAndView.addObject("webtoonCode", webtoonCode);
 		modelAndView.addObject("episodeList", list);
+		System.out.println(list);
 		return modelAndView;
 	}
 	
@@ -88,13 +88,20 @@ public class WebtoonController {
 	 * @param episodeSequence 해당에피소드의 시퀸스
 	 * @return 해당에피소드의 이미지배열
 	 */
-	@RequestMapping("episodePage/{episodeSequence}")
-	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodePage") int episodeSequence) {
+	@RequestMapping("episodePage/{episodeValue}")
+	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeValue") String episodeValue) {
+		StringTokenizer stringTokenizer = new StringTokenizer(episodeValue, "and");
+		int episodeSequence = Integer.parseInt(stringTokenizer.nextToken());
+		int episodeNumber = Integer.parseInt(stringTokenizer.nextToken());
+		System.out.println(episodeSequence);
+		System.out.println(episodeNumber);
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("imageList", list);
+		System.out.println(list);
 		modelAndView.addObject("episodeSequence", episodeSequence);
+		modelAndView.addObject("episodeNumber", episodeNumber);
 		return modelAndView;
 	}
 	

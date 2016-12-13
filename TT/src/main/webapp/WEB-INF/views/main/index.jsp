@@ -10,7 +10,11 @@
 		/* Style */
 	</style>
 	<script>
-	
+		$(function() {
+			$("img").click(function() {
+				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
+			})
+		})
 	</script>
 </head>
 <body> 
