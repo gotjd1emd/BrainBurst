@@ -189,7 +189,13 @@ drop table image;
 
 
 --펀딩 시작과 마감시간
-
+CREATE TABLE fund_time_limit
+(
+   start_date            DATE  NOT NULL ,
+   due_date              DATE  NOT NULL ,
+   episode_sequence      NUMBER  NOT NULL constraint time_limit_episode_fk references episode(episode_sequence) on delete cascade ,
+   constraint time_limit_episode_pk primary key(episode_sequence)
+);
 
 
 drop table fund_time_limit;
