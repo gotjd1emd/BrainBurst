@@ -38,13 +38,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<!-- selectWebtoonByLevel -->
-	<!-- 카테고리코드가 'all'일경우 웹툰상태값으로만 검색한다. -->
+	<!-- 카테고리코드가 null일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
-		SELECT WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
-		FROM WEBTOON
+		SELECT W.WEBTOON_CODE, W.WEBTOON_NAME, W.WEBTOON_LEVEL, W.WEBTOON_STATE, W.CATEGORY_CODE, W.PENALTY, W.NICKNAME, W.FUNDING_PERIOD, W.SUMMARY 
+		,(SELECT SUM(HITS) FROM EPISODE WHERE WEBTOON_CODE = W.WEBTOON_CODE) AS HIT
+		FROM WEBTOON W
 		WHERE WEBTOON_LEVEL = #{webtoonLevel}
 		<if test="categoryCode != null">
 		AND CATEGORY_CODE = #{categoryCode}
+		ORDER BY HIT
 		</if>
 	</select>
 	
