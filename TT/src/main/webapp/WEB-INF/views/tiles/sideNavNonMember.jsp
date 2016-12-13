@@ -38,10 +38,12 @@
 					method="post">
 					<div class="login_form">
 						<div class="input-field login-field col email-field">
+							<i class="material-icons prefix login-form-icon">perm_identity</i>
 							<input id="email" type="text" class="validate" name="email">
 							<label for="email">Email</label>
 						</div>
 						<div class="input-field login-field col">
+							<i class="material-icons prefix login-form-icon">lock_open</i>
 							<input id="password" type="password"
 								name="password"> <label for="password">Password</label>
 						</div>

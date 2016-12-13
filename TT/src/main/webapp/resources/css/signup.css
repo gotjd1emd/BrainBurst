@@ -17,6 +17,12 @@
 	height:580px;
 	border-radius : 20px;
 	padding : 20px;
+	margin-bottom: 50px;
+}
+
+.next-btn{
+	float: right;
+	top: -40px;	
 }
 
 .accept-terms-1{
@@ -53,4 +59,14 @@
 
 .accept-terms-check{
 	display:inline;
+}
+
+.signup-done-icon{
+		margin-top:10px;
+		padding-top:10px;
+		display: none;
+}
+
+.nav_category{
+	vertical-align: super;
 }

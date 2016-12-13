@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
-	
+	<!-- 진행 순서도(카테고리)를 위한 hidden태그 -->
+	<input type="hidden" name="navCategory" value="2">
 	<div class="signup_box z-depth-2">
 		 <form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
 			<div class="info-box">
@@ -44,6 +45,6 @@
 			      <label for="woman">여자</label>
 			    </p>
 			</div>
-		<button class="btn-large waves-effect waves-light" type="submit" name="action">다음</button>
+		<button class="btn-large waves-effect waves-light next-btn" type="submit" name="action">다음</button>
 		</form>
 	</div>
