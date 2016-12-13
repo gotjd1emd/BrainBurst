@@ -25,4 +25,9 @@ public interface AdministratorService {
 	 * ∞Ë¡§ »ﬁ∏’
 	 * */
 	public int userSnow(String email);
+	
+	/**
+	 * ∞Ë¡§ ≥Ï¿Ã±‚
+	 * */
+	public int userMelt(String email);
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,9 +39,27 @@ public class AdministratorController {
 		return webtoonList;
 	}
 	
-	@RequestMapping("userSnow")
+	@RequestMapping("userSnow/{email:.+}")
 	@ResponseBody
-	public int userSnow(String email){
-		return administratorService.userSnow(email);
+	public int userSnow(
+		@PathVariable("email") String email){ 
+		String emailT =  email.trim();
+		
+		System.out.println(emailT);
+		
+		int result = administratorService.userSnow(emailT);
+		return result;
+	}
+	
+	@RequestMapping("userMelt/{email:.+}")
+	@ResponseBody
+	public int userMelt(
+		@PathVariable("email") String email){ 
+		String emailT =  email.trim();
+		
+		System.out.println(emailT);
+		
+		int result = administratorService.userMelt(emailT);
+		return result;
 	}
 }

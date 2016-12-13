@@ -30,4 +30,9 @@ public interface AdministratorDAO {
 	 * userSnow하기
 	 * */
 	public int userSnow(String email);
+	
+	/**
+	 * userMelt하기
+	 * */
+	public int userMelt(String email);
 }

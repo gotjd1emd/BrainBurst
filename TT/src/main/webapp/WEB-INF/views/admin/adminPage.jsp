@@ -4,24 +4,44 @@
 <script>
 	$(function(){
 		
+		/*유저 휴먼 처리*/
 		$(document).on("click", "#snow", function(){
 			var email = $(this).parents().parents().children().first().text();
 			$.ajax({
-				url : "/controller/admin/userSnow",
+				url : "/controller/admin/userSnow/"+email,
 				type : "get",
-				data : email,
 				dataType : "json",
 				success : function(result) {
 					if(result==1){
 						alert("수정완료");
-						location.href="/controller/admin/userManage";
+						location.href="#userManagement";
 					}
 				},
 				error : function(err) {
-				
+					alert("err")
 				}
 			})
 		});
+		
+		/*유저 일반유저로 돌리기*/
+		$(document).on("click", "#melt", function(){
+			var email = $(this).parents().parents().children().first().text();
+			$.ajax({
+				url : "/controller/admin/userMelt/"+email,
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					if(result==1){
+						alert("수정완료");
+						location.href="#userManagement";
+					}
+				},
+				error : function(err) {
+					alert("err")
+				}
+			})
+		});
+		
 		
 		/* 
 			유저 관리 페이지 ( 유저 전체 출력 )
@@ -57,7 +77,7 @@
 				            htmlcode += "<td>"
 				            	+item.birthDate+"</td>";
 				            if(item.level=='휴먼'){
-					            htmlcode += "<td><input type='button' id='snow' value='녹이기'/></td>";				            	
+					            htmlcode += "<td><input type='button' id='melt' value='녹이기'/></td>";				            	
 				            }else{
 					            htmlcode += "<td><input type='button' id='snow' value='얼리기'/></td>";
 				            }

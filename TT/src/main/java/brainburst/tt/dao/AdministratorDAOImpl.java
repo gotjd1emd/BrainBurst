@@ -28,6 +28,12 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 
 	@Override
 	public int userSnow(String email) {
+		System.out.println("userSnowDAO¿‘¥œ¥Ÿ");
 		return sqlSession.update("adminMapper.userSnow", email);
+	}
+
+	@Override
+	public int userMelt(String email) {
+		return sqlSession.update("adminMapper.userMelt", email);
 	} 	
 }

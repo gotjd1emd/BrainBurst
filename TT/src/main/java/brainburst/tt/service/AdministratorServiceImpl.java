@@ -36,4 +36,9 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return administratorDAO.userSnow(email);
 	}
 
+	@Override
+	public int userMelt(String email) {
+		return administratorDAO.userMelt(email);
+	}
+
 }
