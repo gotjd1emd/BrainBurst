@@ -31,10 +31,10 @@ public class AdministratorController {
 	@RequestMapping("webtoonManage")
 	@ResponseBody
 	public List<WebtoonDTO> webtoonManage(){
-		System.out.println("webtoonManage");
+		System.out.println("webtoonManage ¿Ô´Ù");
 		List<WebtoonDTO> webtoonList = administratorService.webtoonManage();
 		
-		System.out.println("webtoonList : "+webtoonList);
+		System.out.println("webtoonList : "+webtoonList.size());
 		return webtoonList;
 	}
 }
