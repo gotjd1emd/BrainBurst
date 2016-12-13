@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script>
+
 	$(function(){
 		
 		/*유저 휴먼 처리*/
@@ -14,7 +15,7 @@
 				success : function(result) {
 					if(result==1){
 						alert("수정완료");
-						location.href="#userManagement";
+						window.location.reload();
 					}
 				},
 				error : function(err) {
@@ -33,7 +34,7 @@
 				success : function(result) {
 					if(result==1){
 						alert("수정완료");
-						location.href="#userManagement";
+						window.location.reload();
 					}
 				},
 				error : function(err) {
