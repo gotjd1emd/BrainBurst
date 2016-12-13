@@ -13,7 +13,8 @@ public class WebtoonDTO {
 	private String nickname;
 	private int fundingPeriod;
 	private String summary;
-	
+	private String webtoonThumbnail;
+
 	private CategoryDTO categoryDTO;
 	
 	public WebtoonDTO() {
@@ -138,12 +139,19 @@ public class WebtoonDTO {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
+	public String getWebtoonThumbnail() {
+		return webtoonThumbnail;
+	}
+	public void setWebtoonThumbnail(String webtoonThumbnail) {
+		this.webtoonThumbnail = webtoonThumbnail;
+	}
+
 
 	@Override
 	public String toString() {
 		return "WebtoonDTO [webtoonCode=" + webtoonCode + ", webtoonName=" + webtoonName + ", webtoonLevel="
 				+ webtoonLevel + ", webtoonState=" + webtoonState + ", categoryCode=" + categoryCode + ", penalty="
 				+ penalty + ", nickname=" + nickname + ", fundingPeriod=" + fundingPeriod + ", summary=" + summary
-				+ ", categoryDTO=" + categoryDTO + "]";
+				+", webtoonThumbnail="+ webtoonThumbnail +", categoryDTO=" + categoryDTO + "]";
 	}
 }
