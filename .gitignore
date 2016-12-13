@@ -69,3 +69,6 @@ local.properties
 
 # STS (Spring Tool Suite)
 .springBeans
+
+# webtoon image
+webtoon/
