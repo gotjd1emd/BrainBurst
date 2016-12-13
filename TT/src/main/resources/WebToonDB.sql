@@ -20,7 +20,7 @@ values('test@google.com', 'test123', '1234', '010-114-1114', '메르시', '여자', '
 
 select * from USER_INFORMATION
 
-drop table user_iformation;
+drop table user_information;
 
 --작가페이지 개설시 추가정보 기입
 CREATE TABLE additional_info
@@ -78,7 +78,7 @@ create sequence webtoon_seq
 	increment by 1 
 	nocache;
 
-drop squence webtoon_seq;	
+drop sequence webtoon_seq;	
 	
 insert into webtoon(webtoon_code, webtoon_name, category_code, nickname, funding_period, summary, webtoon_thumbnail) 
 values('AAA', '더미1', 'A', 'test123', 1, null, 'thumbnail')
