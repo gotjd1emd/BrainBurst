@@ -49,12 +49,12 @@
 					<div class="login_form">
 						<div class="input-field login-field col email-field">
 							<i class="material-icons prefix login-form-icon">perm_identity</i>
-							<input id="email" type="text" class="validate" name="email">
+							<input id="email" type="text" class="validate snb-login-form" name="email">
 							<label for="email">Email</label>
 						</div>
 						<div class="input-field login-field col">
 							<i class="material-icons prefix login-form-icon">lock_open</i>
-							<input id="password" type="password"
+							<input id="password" type="password" class="snb-login-form"
 								name="password"> <label for="password">Password</label>
 						</div>
 						<div class="center">

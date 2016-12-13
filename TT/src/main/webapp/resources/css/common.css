@@ -163,7 +163,7 @@ left: 228px;
 #box_snb-nonlogin, #box_snb-login{
 	margin-top:15px;
 	width:100%;
-	height:330px;
+	height:290px;
 }
 
 #box_snb-nonlogin{
@@ -224,7 +224,7 @@ left: 228px;
      color: #6e6e6e;
      font-size: 15px;
      padding-bottom: 1px;
-     top:0.4rem;
+     top:1rem;
    }
    .login-field.col label{
    	left:1px;
@@ -301,9 +301,9 @@ left: 228px;
 	
 	/*사이드 네비게이션 버튼*/
 	.snbtn{
-		width:240px;
+		width:200px;
 		height:40px;
-		top:15px;
+		top:10px;
 		background-color:#03A9F4;
 		border: none;
 		border-left:solid 1px #fff;
@@ -344,7 +344,7 @@ left: 228px;
 		border-radius: 50%;
 		display: table;
 		margin-top: 30px;
-		margin-left: 105px;
+		margin-left: 85px;
 	}
 	
 	.profile-icon h5{
@@ -406,6 +406,19 @@ left: 228px;
 	margin-top: 30px;
 }
 
+.snb-login-form{
+	margin-bottom: 10px !important;
+}
+
+.sign-out-btn{
+	margin-top: 315px !important;
+}
+
+.sign-out-btn a{
+	font-size: 12px !important;
+	color: #6e6e6e !important;
+}
+
 /* 반응형 */
 @media only screen and (max-width: 992px) {
   #content{
@@ -432,5 +445,16 @@ left: 228px;
 @media only screen and (min-width : 992px) {
   #category_mobile{
   	display:none;
+  }
+}
+
+/*header 반응형*/
+@media only screen and (min-width: 601px) {
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 60px;
+    line-height: 60px;
+  }
+  .navbar-fixed {
+    height: 60px;
   }
 }
