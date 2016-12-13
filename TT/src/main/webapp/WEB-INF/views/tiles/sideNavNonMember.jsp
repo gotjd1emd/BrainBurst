@@ -8,7 +8,7 @@
 
 		<c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
 			<li class="farst-li center"><a href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a></li>
-			<li class="center"><a href="<c:url value=''/>">로그아웃</a></li>
+			<li class="center"><a href="<c:url value='/user/logout'/>">로그아웃</a></li>
 		</c:when>
 		<c:when test="${sessionScope.userDTO!=null}">
 		<script>
