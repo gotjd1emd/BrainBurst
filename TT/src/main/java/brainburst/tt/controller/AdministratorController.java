@@ -1,6 +1,8 @@
 package brainburst.tt.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,25 +43,27 @@ public class AdministratorController {
 	
 	@RequestMapping("userSnow/{email:.+}")
 	@ResponseBody
-	public int userSnow(
+	public String userSnow(
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
 		System.out.println(emailT);
 		
 		int result = administratorService.userSnow(emailT);
-		return result;
+		
+		return result+"";
 	}
 	
 	@RequestMapping("userMelt/{email:.+}")
 	@ResponseBody
-	public int userMelt(
+	public String userMelt(
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
 		System.out.println(emailT);
 		
 		int result = administratorService.userMelt(emailT);
-		return result;
+		
+		return result+"";
 	}
 }

@@ -9,8 +9,8 @@
 			var email = $(this).parents().parents().children().first().text();
 			$.ajax({
 				url : "/controller/admin/userSnow/"+email,
-				type : "get",
-				dataType : "json",
+				type : "post",
+				dataType : "text",
 				success : function(result) {
 					if(result==1){
 						alert("수정완료");
@@ -28,8 +28,8 @@
 			var email = $(this).parents().parents().children().first().text();
 			$.ajax({
 				url : "/controller/admin/userMelt/"+email,
-				type : "get",
-				dataType : "json",
+				type : "post",
+				dataType : "text",
 				success : function(result) {
 					if(result==1){
 						alert("수정완료");

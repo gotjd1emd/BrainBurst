@@ -48,14 +48,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- userSnow -->
-	<update id="userSnow" parameterType="String">
+	<update id="userSnow" parameterType="string">
 		update user_information
 		set user_level = '휴먼'
 		where email = #{email}
 	</update>
 	
 	<!-- userMelt -->
-	<update id="userMelt" parameterType="String">
+	<update id="userMelt" parameterType="string">
 		update user_information
 		set user_level = '독자'
 		where email = #{email}
