@@ -1,7 +1,26 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<script>
+	$(function(){
+		$("#searchEmail").click(function(){
+			$.ajax({
+				url : "/controller/user/findEmail",
+				type : "post",
+				dataType : "json",
+				success : function(result) {
+					 var email = result;
+					 $("#inputDiv").css("display","none");
+					 $("resultDiv").css("display","block");
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		})		
+	})
+</script>
 
 <ul id="slide-out" class="side-nav fixed z-depth-3">
 	<c:choose>
@@ -111,7 +130,8 @@
 
 <!-- 아이디 찾기 Modal Structure -->
 <div id="idfind-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post" action="/user/findEmail">
+	<form method="post">
+	<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 			<h5>이메일 찾기</h5>
 		</div>
@@ -131,10 +151,22 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">찾기</button>
+			<button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat"  id="searchEmail">찾기</button>
 		</div>
+		</div>
+		
+			<div class="modal-content" id="resultDiv" style="display:none">
+				<div class="modal-content">
+					<p>검색 결과 입니다</p>
+
+				</div>
+				<div class="modal-footer">
+					<button type="reset" class="modal-action modal-close waves-effect waves-green btn-flat">확인</button>
+				</div>
+			</div>
 	</form>
 </div>
+
 <!-- 비밀번호 찾기 Modal Structure -->
 <div id="pwdfind-modal" class="modal modal-fixed-footer modal-top">
 	<div class="modal-title color-500 white-text z-depth-1">

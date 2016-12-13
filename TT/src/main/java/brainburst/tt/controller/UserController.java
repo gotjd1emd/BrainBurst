@@ -219,6 +219,7 @@ public class UserController {
 	@RequestMapping("findEmail")
 	@ResponseBody
 	public String findEmail(UserDTO userDTO){
+		System.out.println("findEmail 컨트롤로 이동");
 		return userService.findEmail(userDTO);
 	}
 }
