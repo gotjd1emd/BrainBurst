@@ -10,22 +10,31 @@
 			<a class="col s5" href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a>
 		</c:when>
 		<c:when test="${sessionScope.userDTO!=null}">
-			<div id="box_snb-login">
-				<h5 class="center-align">- ${sessionScope.userDTO.nickname} -</h5>
-				<h6 class="center-align">${sessionScope.userDTO.email}</h6>
+		<script>
+			$(function () {
+				var nickname = "${sessionScope.userDTO.nickname}";
+				nickname = nickname.substring(0, 1);
+				$("#nickname").html(nickname);
+			})
+		</script>
+			<div id="box_snb-login" class="z-depth-1">
+				<div class="center profile-icon color-A200">
+					<h5 id="nickname"></h5>
+				</div>
+				<h6 class="center-align white-text">${sessionScope.userDTO.email}</h6>
 
 				<div class="row a-button-nav">
-					<a class="col s5" href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
+					<a class="col s5 white-text" href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
 					<div class="col s1">
-						<div class="line"></div>
+						<div class="line white"></div>
 					</div>
-					<a class="logout-snb col s5" href="<c:url value='/user/logout'/>">로그아웃</a>
+					<a class="logout-snb col s5 white-text" href="<c:url value='/user/logout'/>">로그아웃</a>
 				</div>
 
 				<hr class="line-nav">
 
 				<div class="row tPoint-printing-snb">
-					<h6 class="col s8">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
+					<h6 class="col s8 white-text">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
 					<a class="waves-effect waves-light btn charge-btn col s4"
 						href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>

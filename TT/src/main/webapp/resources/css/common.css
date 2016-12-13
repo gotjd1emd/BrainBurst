@@ -29,7 +29,7 @@ input[type=text]::-ms-clear { display: none !important; }
 }
 
 .line-nav{
-	margin-top: 25px;
+	margin-bottom: 15px;
 }
 
 .search-nav{
@@ -163,16 +163,18 @@ left: 228px;
 #box_snb-nonlogin, #box_snb-login{
 	margin-top:15px;
 	width:100%;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -20px rgba(0, 0, 0, 0.2);
 	height:330px;
 }
 
 #box_snb-nonlogin{
 	padding-top:0px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 1px -20px rgba(0, 0, 0, 0.2);
 }
 
 #box_snb-login{
-	padding-top:100px;
+	padding-top:10px;
+	background-color: #4A148C;
+	height: 285px;
 }
 
 /*마이페이지, 로그아웃 사이 line*/
@@ -335,6 +337,21 @@ left: 228px;
 		color: #6e6e6e;
 	}
 	
+	.profile-icon{
+		width:90px;
+		height:90px;
+		color:white;
+		border-radius: 50%;
+		display: table;
+		margin-top: 30px;
+		margin-left: 105px;
+	}
+	
+	.profile-icon h5{
+		 display: table-cell; vertical-align: middle;
+		 font-size: 3rem;
+	}
+	
 /*modal id*/
 #id-pwd-quarter-modal{
 	height: 270px;	
@@ -374,6 +391,15 @@ left: 228px;
 .modal-title h5{
 	padding: 10px;
 	margin: 0;
+}
+
+.tPoint-printing-snb{
+	padding-right: 10px;
+	padding-left: 5px;
+}
+
+.tPoint-printing-snb h6{
+	margin-top: 5px;
 }
 
 /* 반응형 */
