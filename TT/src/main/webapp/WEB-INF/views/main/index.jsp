@@ -10,6 +10,7 @@
 		/* Style */
 	</style>
 	<script>
+	
 	</script>
 </head>
 <body> 
@@ -18,7 +19,7 @@
 		<c:forEach var="item" items="${webtoonList}" end="2">
 			<div class="card col s12 m24 l3 top_card hoverable">
 				<div class="card-image waves-effect waves-block waves-light">
-				 <img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
+				 <img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}" name="${item.webtoonCode}">
 				</div>
 				<div class="card-content">
 					<span class="card-title activator grey-text text-darken-4">${item.webtoonName}<i class="material-icons right">more_vert</i></span>

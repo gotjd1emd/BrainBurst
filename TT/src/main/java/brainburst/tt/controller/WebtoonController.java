@@ -24,16 +24,7 @@ public class WebtoonController {
 	
 	@Autowired
 	private WebtoonService webtoonService;
-//	HomeController로 이동됨. 12/12	
-//	/**
-//	 * 메인페이지이동
-//	 */
-//	@RequestMapping("/")
-//	public ModelAndView mainPage() {
-//		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("펀딩", null);
-//		return new ModelAndView("main/index", "webtoonList", list);
-//	}
-
+	
 	/**
 	 * 카테고리별 이동
 	 * @param webtoonLevel 웹툰등급(일반, 펀딩, 유료)
@@ -41,11 +32,20 @@ public class WebtoonController {
 	 * @return 검색된 결과 
 	 */
 	@RequestMapping("{webtoonLevel}/{category}")
-	public ModelAndView selectWebtoonByLevel(
+	public String selectWebtoonByLevel(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
+		System.out.println("리스트찾기작동!");
+		System.out.println(webtoonLevel);
+		System.out.println(category);
+		if (category.equals("all")) {
+			category = null;
+		}
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
-		return new ModelAndView("main/index", "webtoonList", list);
+		System.out.println("이후값"+category);
+		System.out.println("12"+list);
+		session.setAttribute("webtoonList", list);
+		return "main/index";
 	}
 	
 	/**

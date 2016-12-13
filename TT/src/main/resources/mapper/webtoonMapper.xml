@@ -47,8 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE WEBTOON_LEVEL = #{webtoonLevel}
 		<if test="categoryCode != null">
 		AND CATEGORY_CODE = #{categoryCode}
-		ORDER BY HIT
 		</if>
+		ORDER BY HIT
 	</select>
 	
 	<!-- searchByKeyword -->

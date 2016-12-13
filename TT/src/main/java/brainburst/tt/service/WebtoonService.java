@@ -9,7 +9,7 @@ import brainburst.tt.dto.WebtoonDTO;
 public interface WebtoonService {
 	/**
 	 * WEBTOON_LEVEL과 CATEGORY를 조건으로 조건에 맞는 웹툰목록가져오기
-	 * @param webtoonLevel (free[일반], pund[펀딩], paid[유로화])
+	 * @param webtoonLevel (free[일반], fund[펀딩], paid[유로화])
 	 * @param categoryCode (미정 수정요망)
 	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
 	 */
