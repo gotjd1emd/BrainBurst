@@ -32,6 +32,7 @@ values ('minah@naver.com','minah','새마을금고','444555666777','identification5.j
 delete from webtoon 
 
 select * from webtoon;
+
 select * from category;
 
 delete from webtoon;

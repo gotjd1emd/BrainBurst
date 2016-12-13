@@ -4,9 +4,6 @@ select * from user_information;
 
 delete * from user_information where email ='test@google.com';
 
-insert into user_information 
-(email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
-values ('lion@naver.com','라이언','lion','01023233434',0,'독자','박경호','남','9810001');
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
@@ -54,7 +51,7 @@ values ('dahyeon@gmail.com','다현','dahyeon','01088997788',1000,'독자','김다현',
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
-values ('girlfriend@hanmail.net','유주','girfriend','01034112211',3000,'독자','최유나','남','880127');
+values ('girlfriend@hanmail.net','유주','girfriend','01034112211',3000,'독자','최유나','남','971004');
 
 
 insert into user_information 
@@ -99,5 +96,4 @@ values ('minah@naver.com','민아','minah','01099335577',11000,'펀딩작가','방민아'
 
 commit;
 
-select * from user_information
-
+select * from user_information;

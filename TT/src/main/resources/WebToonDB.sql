@@ -20,7 +20,7 @@ values('test@google.com', 'test123', '1234', '010-114-1114', '메르시', '여자', '
 
 select * from USER_INFORMATION
 
-drop table user_information;
+drop table user_iformation;
 
 --작가페이지 개설시 추가정보 기입
 CREATE TABLE additional_info
@@ -36,7 +36,7 @@ CREATE TABLE additional_info
 insert into additional_info(email, account_password, account_number, identification_card) 
 values('test@google.com', '123456', '1002-022-123456', '신분증이미지주소')
 
-select * from additional_info
+select * from additional_info;
 
 drop table additional_info
 
@@ -56,14 +56,14 @@ drop table category
 
 
 --웹툰 정보 테이블
---level : 일반(free), 펀딩(punding), 유료(paid)
+--level : 일반(free), 펀딩(fund), 유료(paid) 영어올 사용 
 --state : 연재, 휴재, 블라인드, 연재완료
 --penalty : green, yello, red
 CREATE TABLE webtoon
 (
 	webtoon_code          NUMBER  NOT NULL constraint webtoon_code_pk primary key,
 	webtoon_name          VARCHAR2(50)  NOT NULL ,
-	webtoon_level         VARCHAR2(10)  default '일반' ,
+	webtoon_level         VARCHAR2(10)  default 'free' ,
 	webtoon_state         VARCHAR2(10)  default '연재' ,
 	category_code         VARCHAR2(10)  NOT NULL constraint webtoon_category_fk references category(category_code) on delete cascade,
 	penalty               VARCHAR2(10)  default 'green',
@@ -78,12 +78,15 @@ create sequence webtoon_seq
 	increment by 1 
 	nocache;
 
+drop squence webtoon_seq;	
+	
 insert into webtoon(webtoon_code, webtoon_name, category_code, nickname, funding_period, summary, webtoon_thumbnail) 
 values('AAA', '더미1', 'A', 'test123', 1, null, 'thumbnail')
 
 drop table webtoon;
 
-select * from webtoon;
+
+select * from webtoon order by webtoon_code;
 --펀딩 웹툰 신청 테이블
 CREATE TABLE apply_fund
 (
@@ -160,6 +163,7 @@ CREATE TABLE episode
 	thumbnail             VARCHAR2(100)  NULL ,
 	fund_code			  NUMBER  NULL constraint episode_fund_code_fk references fund(fund_code) on delete cascade
 );
+
 
 create sequence episode_seq 
 	start with 1
