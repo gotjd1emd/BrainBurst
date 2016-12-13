@@ -26,6 +26,19 @@ html, body { margin:0; padding:0; height:100%; }
 	z-index: 9999;
 	opacity: 0;
 	display: none;
+	background-color: red !important;
+}
+
+/*search bar*/
+.input-field input[type=search]:focus{
+	background-color: #FF5252 !important;
+	color:white !important;
+}
+
+.input-field input[type=search]:focus + label i,
+.input-field input[type=search]:focus ~ .mdi-navigation-close,
+.input-field input[type=search]:focus ~ .material-icons {
+  color: white;
 }
 
 @-webkit-keyframes example {

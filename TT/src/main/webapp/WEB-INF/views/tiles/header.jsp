@@ -23,11 +23,13 @@
 			$(".search-btn").click(function(){
 				$(".search-nav").css("display", "block");
 				$(".search-nav").css("opacity", "1");
+				$("#search").val("");
 				$("#search").focus();
 			})
 			$("#search-close-btn").click(function(){
-				$(".search-nav").css("display", "none");
-				$(".search-nav").css("opacity", "0");
+				$('#search-modal').modal('close');
+				/* $(".search-nav").css("display", "none");
+				$(".search-nav").css("opacity", "0"); */
 			})
 			$("#search").blur(function () {
 				$(".search-nav").css("display", "none");
