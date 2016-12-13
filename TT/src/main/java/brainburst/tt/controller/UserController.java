@@ -77,6 +77,8 @@ public class UserController {
 		
 		if(userDTO==null){
 			return "main/index"; 
+		}else if(userDTO.getLevel().equals("휴먼")){
+			return "main/index";
 		}
 		session.setAttribute("userDTO", userDTO);
 		
@@ -220,6 +222,9 @@ public class UserController {
 	@ResponseBody
 	public String findEmail(UserDTO userDTO){
 		System.out.println("findEmail 컨트롤로 이동");
-		return userService.findEmail(userDTO);
+		System.out.println(userDTO);
+		String email = userService.findEmail(userDTO);
+		System.out.println(email);
+		return email;
 	}
 }

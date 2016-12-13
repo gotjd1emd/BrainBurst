@@ -8,14 +8,19 @@
 			$.ajax({
 				url : "/controller/user/findEmail",
 				type : "post",
-				dataType : "json",
+				data : ({
+				  name : $("#name-myinfo").val(),
+				  phone : $("#phone-myinfo").val()
+				}),
+				dataType : "text",
 				success : function(result) {
 					 var email = result;
-					 $("#inputDiv").css("display","none");
-					 $("resultDiv").css("display","block");
+					 if(email != null){
+						 alert(email);
+					 }
 				},
 				error : function(err) {
-					alert("err");
+					alert("없는 계정 정보");
 				}
 			})
 		})		
@@ -73,8 +78,8 @@
 						</div>
 						<div class="input-field login-field col">
 							<i class="material-icons prefix login-form-icon">lock_open</i>
-							<input id="password" type="password" class="snb-login-form"
-								name="password"> <label for="password">Password</label>
+							<input id="password" type="password" class="snb-login-form" name="password"> 
+							<label for="password">Password</label>
 						</div>
 						<div class="center">
 							<button
@@ -106,7 +111,7 @@
 </script>
 <!-- id / password 찾기 -->
 <div id="id-pwd-quarter-modal" class="modal modal-fixed-footer">
-	<form method="post" action="/user/findEmail">
+	<form method="post" id="findEmail">
 		<div class="modal-title color-500 white-text z-depth-1">
 			<h5>항목 선택</h5>
 		</div>
@@ -145,25 +150,15 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s8">
-					<input id="name-myinfo" type="text" class="validate" name="phone">
+					<input id="phone-myinfo" type="text" class="validate" name="phone">
 					<label for="name-myinfo">전화번호</label>
 				</div>
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat"  id="searchEmail">찾기</button>
+			<button class="modal-action modal-close waves-effect waves-green btn-flat" id="searchEmail">찾기</button>
 		</div>
 		</div>
-		
-			<div class="modal-content" id="resultDiv" style="display:none">
-				<div class="modal-content">
-					<p>검색 결과 입니다</p>
-
-				</div>
-				<div class="modal-footer">
-					<button type="reset" class="modal-action modal-close waves-effect waves-green btn-flat">확인</button>
-				</div>
-			</div>
 	</form>
 </div>
 

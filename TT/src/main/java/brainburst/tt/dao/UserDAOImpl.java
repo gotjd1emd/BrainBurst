@@ -118,7 +118,8 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public String findEmail(UserDTO userDTO) {
-		return sqlSession.selectOne("userMapper.findEmail", userDTO);
+		String email = sqlSession.selectOne("userMapper.findEmail", userDTO);
+		System.out.println(email);
+		return email;
 	}
-
 }
