@@ -57,7 +57,7 @@
 			</div>
 
 			<div class="center">
-				<button class="btn waves-effect waves-light" type="submit"
+				<button class="btn waves-effect waves-light color-400" type="submit"
 					name="action">수정하기</button>
 			</div>
 		</form>

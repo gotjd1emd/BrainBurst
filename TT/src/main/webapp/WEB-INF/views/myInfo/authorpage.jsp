@@ -31,23 +31,23 @@
 				<c:when test="${requestScope.webtoonDTO==null}">
 					<!-- 플로팅 버튼 -->
 					<div class="fixed-action-btn horizontal click-to-toggle">
-						<a class="btn-floating btn-large red publish-webtoon-floating">
+						<a class="btn-floating btn-large red publish-webtoon-floating purple">
 							<i class="material-icons first-icon">menu</i>
 						</a>
 						<ul>
 							<!-- 펀딩 웹툰 신청 플로팅 버튼 -->
 							<li><a id="funding-webtoon-floating-btn"
-								class="btn-floating green mini-floating tooltipped"
+								class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="펀딩 웹툰 신청"
 								href="#funding-webtoon-modal"><i class="material-icons">data_usage</i></a></li>
 
 							<!-- 웹툰 상태 처리 플로팅 버튼 -->
 							<li><a
-								class="btn-floating yellow darken-1 mini-floating tooltipped"
+								class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="웹툰 상태 처리"
 								href="#webtoon-state-modal"><i class="material-icons">priority_high</i></a></li>
 							<!-- 웹툰 등록 플로팅 버튼 -->
-							<li><a class="btn-floating red mini-floating tooltipped"
+							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="웹툰 등록"
 								href='/controller/user/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
 						</ul>
