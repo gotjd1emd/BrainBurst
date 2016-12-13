@@ -39,9 +39,9 @@
 </div>
 <c:forEach var="item" items="imageList">
 <div class="center">
-	<img alt="webtoon"
-		src="c:webtoon\action\예고편.jpg">
+	<img alt="webtoon" src="c:webtoon/action/예고편.jpg">
 </div>
+<img src="c:">
 </c:forEach>
 
 <div class="z-depth-2">

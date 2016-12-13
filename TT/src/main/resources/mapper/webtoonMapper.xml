@@ -96,4 +96,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO REPORT (REPORT_SEQUENCE, EMAIL, WEBTOON_CODE, CONTENT, EPISODE_SEQUENCE) 
 		VALUES (REPORT_SEQ.NEXTVAL, #{email}, #{webtoonCode}, #{content}, #{epicsodeSequence})
 	</insert>
+	
+	<!-- selecltWebtoonDTO -->
 </mapper>

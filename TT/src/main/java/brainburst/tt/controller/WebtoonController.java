@@ -76,9 +76,10 @@ public class WebtoonController {
 		List<EpisodeDTO> list = webtoonService.selectAllEpisode(webtoonCode);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName(type);
-		//페이지이동후 webtoonCode를 자주 사용함으로 미리 request영역에 저장.
+		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonCode", webtoonCode);
 		modelAndView.addObject("episodeList", list);
+//		session.setAttribute("episodeList", list);
 		System.out.println(list);
 		return modelAndView;
 	}
@@ -88,20 +89,23 @@ public class WebtoonController {
 	 * @param episodeSequence 해당에피소드의 시퀸스
 	 * @return 해당에피소드의 이미지배열
 	 */
-	@RequestMapping("episodePage/{episodeValue}")
-	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeValue") String episodeValue) {
-		StringTokenizer stringTokenizer = new StringTokenizer(episodeValue, "and");
-		int episodeSequence = Integer.parseInt(stringTokenizer.nextToken());
-		int episodeNumber = Integer.parseInt(stringTokenizer.nextToken());
-		System.out.println(episodeSequence);
-		System.out.println(episodeNumber);
+	@RequestMapping("episodePage/{episodeSequence}")
+	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeValue") int episodeSequence) {
+		List<EpisodeDTO> dtos = (List<EpisodeDTO>) requset.getAttribute("episodeList");
+		EpisodeDTO dto = null;
+		Iterator<EpisodeDTO> iterator = dtos.iterator();
+		while (iterator.hasNext()) {
+			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
+			if (episodeDTO.getEpisodeSequence()==episodeSequence) {
+				dto = episodeDTO;
+				break;
+			}
+		}
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("imageList", list);
-		System.out.println(list);
-		modelAndView.addObject("episodeSequence", episodeSequence);
-		modelAndView.addObject("episodeNumber", episodeNumber);
+		modelAndView.addObject("episodeDTO", dto);
 		return modelAndView;
 	}
 	
