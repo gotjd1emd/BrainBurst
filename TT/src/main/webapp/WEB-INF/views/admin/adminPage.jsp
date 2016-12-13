@@ -30,7 +30,7 @@
 				            htmlcode += "<td>"
 				            	+item.cashPoint+"</td>";
 				            htmlcode += "<td>"
-				            	+item.userLevel+"</td>";
+				            	+item.level+"</td>";
 				            htmlcode += "<td>"
 				            	+item.name+"</td>";
 				            htmlcode += "<td>"
@@ -60,7 +60,7 @@
 				success : function(result) {
 					var htmlcode = "";
 					if(result==null) {
-						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+						htmlcode = "<tr><td colspan='7'><p align='center'><b>"
 									+"등록된 상품이 없습니다.</b></p></td></tr>";
 					}else {
 						$.each(result, function(index, item) {
@@ -71,7 +71,7 @@
 				            htmlcode += "<td>"
 					            +item.webtoonState+"</td>";
 				            htmlcode += "<td>"
-				            	+item.categoryName+"</td>";
+				            	+item.categoryDTO.categoryName+"</td>";
 				            htmlcode += "<td>"
 				            	+item.penalty+"</td>";
 				            htmlcode += "<td>"

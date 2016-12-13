@@ -17,11 +17,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="gender" property="gender"/>
 		<result column="birth_date" property="birthDate" />
 	</resultMap>
-	
-	<resultMap type="categoryDTO" id="categoryMap">
-			<id column="category_Code" property="categoryCode"/>
-			<result column="category_Name" property="categoryName"/>
-	</resultMap>
 		
 	<resultMap type="webtoonDTO" id="webtoonMap">
 		<id column="WEBTOON_CODE" property="webtoonCode"/>
@@ -34,7 +29,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
 		<result column="SUMMARY" property="summary" />
 
-		<collection property="categoryDTO" resultMap="categoryMap"/>
+		<association property="categoryDTO" javaType="categoryDTO">
+			<id column="category_Code" property="categoryCode"/>
+			<result column="category_Name" property="categoryName"/>
+		</association>
 	</resultMap>
 
 	<!-- userManage -->
@@ -44,8 +42,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- webtoonManage -->
 	<select id="webtoonManage" resultMap="webtoonMap">
-		SELECT w.WEBTOON_NAME, w.WEBTOON_LEVEL, w.WEBTOON_STATE, w.category_code, c.CATEGORY_name, w.PENALTY, w.NICKNAME, w.FUNDING_PERIOD, w.SUMMARY 
+		SELECT w.WEBTOON_CODE, w.WEBTOON_NAME, w.WEBTOON_LEVEL, w.WEBTOON_STATE, c.category_code, c.CATEGORY_name, w.PENALTY, w.NICKNAME, w.FUNDING_PERIOD, w.SUMMARY 
 		FROM WEBTOON w join category c 
-		on (w.category_code = c.category_code)
+		ON (w.category_code = c.category_code)
 	</select>
 </mapper>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<table id="webtoonManageList">
+<table class="striped" id="webtoonManageList">
 	<thead>
 		<tr>
 			<th data-field="webtoonName">웹툰이름</th>
