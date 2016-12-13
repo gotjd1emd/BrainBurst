@@ -236,7 +236,7 @@ left: 228px;
    		padding-left:10px;
    		padding-right:10px;
     }
-	.login_form .login-field{
+	.email-field{
 		margin-top:30px;
 	}	
 	
@@ -252,8 +252,8 @@ left: 228px;
 	/*사이드 네비게이션 버튼*/
 	.snbtn{
 		width:240px;
-		height:35px;
-		top:10px;
+		height:40px;
+		top:15px;
 		background-color:#03A9F4;
 		border: none;
 		border-left:solid 1px #fff;
@@ -277,11 +277,52 @@ left: 228px;
       background-color: #E1F5FE;
     }
 	
-	.modal{
+	.modal-top{
 		z-index: 9999 !important;
 		top:15% !important;
 	}
 	
+/*modal id*/
+#id-pwd-quarter-modal{
+	height: 270px;	
+	overflow: hidden;
+	top: 30% !important;
+}	
+
+#idfind-modal{
+	height: 380px;
+	overflow: hidden;
+	top: 25% !important;
+}
+
+#pwdfind-modal{
+	height: 430px;
+	overflow: heidden;
+	top: 25% !important;
+}
+
+/*modal class*/
+.id-pwd-find-form{
+	margin-top: 30px;	
+}
+
+.modal{
+	border-radius: 10px;
+}
+
+.modal-content p{
+	padding-top: 0px;
+}
+
+.modal-title{
+	width: 100%;
+}
+
+.modal-title h5{
+	padding: 10px;
+	margin: 0;
+}
+
 /* 반응형 */
 @media only screen and (max-width: 992px) {
   #content{
