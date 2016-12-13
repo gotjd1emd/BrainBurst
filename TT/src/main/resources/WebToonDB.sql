@@ -50,21 +50,23 @@ CREATE TABLE category
 insert into category(category_code, category_name) 
 values('A', '로맨스');
 
+ 
+
 select * from category;
 
 drop table category
 
 
 --웹툰 정보 테이블
---level : 일반(free), 펀딩(fund), 유료(paid) 영어올 사용 
---state : 연재, 휴재, 블라인드, 연재완료
+--level : 일반(free), 펀딩(punding), 유료(paid)
+--state : 연재, 휴재, 블라인드, 연재완료 ( serial , pause, blind, complete
 --penalty : green, yello, red
 CREATE TABLE webtoon
 (
 	webtoon_code          NUMBER  NOT NULL constraint webtoon_code_pk primary key,
 	webtoon_name          VARCHAR2(50)  NOT NULL ,
 	webtoon_level         VARCHAR2(10)  default 'free' ,
-	webtoon_state         VARCHAR2(10)  default '연재' ,
+	webtoon_state         VARCHAR2(10)  default 'serial' ,
 	category_code         VARCHAR2(10)  NOT NULL constraint webtoon_category_fk references category(category_code) on delete cascade,
 	penalty               VARCHAR2(10)  default 'green',
 	nickname               VARCHAR2(30)  NOT NULL constraint webtoon_nickname_fk references user_information(nickname),
@@ -164,7 +166,6 @@ CREATE TABLE episode
 	fund_code			  NUMBER  NULL constraint episode_fund_code_fk references fund(fund_code) on delete cascade
 );
 
-
 create sequence episode_seq 
 	start with 1
 	increment by 1 
@@ -186,14 +187,9 @@ CREATE TABLE image
 
 drop table image;
 
+
 --펀딩 시작과 마감시간
-CREATE TABLE fund_time_limit
-(
-	start_date            DATE  NOT NULL ,
-	due_date              DATE  NOT NULL ,
-	episode_sequence      NUMBER  NOT NULL constraint time_limit_episode_fk references episode(episode_sequence) on delete cascade ,
-	constraint time_limit_episode_pk primary key(episode_sequence)
-);
+
 
 
 drop table fund_time_limit;
@@ -295,10 +291,10 @@ drop table recommend;
 drop table fund_time_limit;
 drop table subscription;
 drop table apply_paid;
-drop table apply_fund;
 drop table pay_history;
 drop table cash_history;
 drop table image;
+drop table apply_fund;
 drop table additional_info;
 drop table report;
 drop table fund;
@@ -307,5 +303,5 @@ drop table episode;
 drop table webtoon;
 drop table user_information;
 
-
+select * from tab;
 commit;

@@ -800,189 +800,192 @@ insert into episode (episode_sequence, webtoon_code, episode_number, hits,
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
 values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2011-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', null, null);
 
-
+--select * from episode where webtoon_code=2 order by episode_sequence;
 
 --------------------- c:/webtoon/sf/어게인 이미지 모두 다  예고편 포함 59개   -----------------------------------------------------------------------------
+--delete From image;
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 1, '/webtoon/sf/예고편.jpg');
+values(1, 47, '/webtoon/sf/예고편.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 2, '/webtoon/sf/제1화 - 1부 어게인 1화_01.jpg');
+values(1, 48, '/webtoon/sf/제1화 - 1부 어게인 1화_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 3, '/webtoon/sf/제1화 - 1부 어게인 1화_02.jpg');
+values(1, 49, '/webtoon/sf/제1화 - 1부 어게인 1화_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 4, '/webtoon/sf/제1화 - 1부 어게인 1화_03.jpg');
+values(1, 50, '/webtoon/sf/제1화 - 1부 어게인 1화_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 5, '/webtoon/sf/제1화 - 1부 어게인 1화_04.jpg');
+values(1, 51, '/webtoon/sf/제1화 - 1부 어게인 1화_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 6, '/webtoon/sf/제1화 - 1부 어게인 1화_05.jpg');
+values(1, 52, '/webtoon/sf/제1화 - 1부 어게인 1화_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 7, '/webtoon/sf/제1화 - 1부 어게인 1화_06.jpg');
+values(1, 53, '/webtoon/sf/제1화 - 1부 어게인 1화_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 8, '/webtoon/sf/제1화 - 1부 어게인 1화_07.jpg');
+values(1, 54, '/webtoon/sf/제1화 - 1부 어게인 1화_07.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 9, '/webtoon/sf/제1화 - 1부 어게인 1화_08.jpg');
+values(1, 55, '/webtoon/sf/제1화 - 1부 어게인 1화_08.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 10, '/webtoon/sf/제1화 - 1부 어게인 1화_09.jpg');
+values(1, 56, '/webtoon/sf/제1화 - 1부 어게인 1화_09.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 11, '/webtoon/sf/제1화 - 1부 어게인 1화_10.jpg');
+values(1, 57, '/webtoon/sf/제1화 - 1부 어게인 1화_10.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 12, '/webtoon/sf/제2화 - 1부 어게인 2화_01.jpg');
+values(1, 58, '/webtoon/sf/제2화 - 1부 어게인 2화_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 13, '/webtoon/sf/제2화 - 1부 어게인 2화_02.jpg');
+values(1, 59, '/webtoon/sf/제2화 - 1부 어게인 2화_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 14, '/webtoon/sf/제2화 - 1부 어게인 2화_03.jpg');
+values(1, 60, '/webtoon/sf/제2화 - 1부 어게인 2화_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 15, '/webtoon/sf/제2화 - 1부 어게인 2화_04.jpg');
+values(1, 61, '/webtoon/sf/제2화 - 1부 어게인 2화_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 16, '/webtoon/sf/제2화 - 1부 어게인 2화_05.jpg');
+values(1, 62, '/webtoon/sf/제2화 - 1부 어게인 2화_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 17, '/webtoon/sf/제2화 - 1부 어게인 2화_06.jpg');
+values(1, 63, '/webtoon/sf/제2화 - 1부 어게인 2화_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 18, '/webtoon/sf/제2화 - 1부 어게인 2화_07.jpg');
+values(1, 64, '/webtoon/sf/제2화 - 1부 어게인 2화_07.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 19, '/webtoon/sf/제2화 - 1부 어게인 2화_08.jpg');
+values(1, 65, '/webtoon/sf/제2화 - 1부 어게인 2화_08.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 20, '/webtoon/sf/제2화 - 1부 어게인 2화_09.jpg');
+values(1, 66, '/webtoon/sf/제2화 - 1부 어게인 2화_09.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 21, '/webtoon/sf/제2화 - 1부 어게인 2화_10.jpg');
+values(1, 67, '/webtoon/sf/제2화 - 1부 어게인 2화_10.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 22, '/webtoon/sf/제2화 - 1부 어게인 2화_11.jpg');
+values(1, 68, '/webtoon/sf/제2화 - 1부 어게인 2화_11.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 23, '/webtoon/sf/제2화 - 1부 어게인 2화_12.jpg');
+values(1, 69, '/webtoon/sf/제2화 - 1부 어게인 2화_12.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 24, '/webtoon/sf/제2화 - 1부 어게인 2화_13.jpg');
+values(1, 70, '/webtoon/sf/제2화 - 1부 어게인 2화_13.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 25, '/webtoon/sf/제2화 - 1부 어게인 2화_14.jpg');
+values(1, 71, '/webtoon/sf/제2화 - 1부 어게인 2화_14.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 26, '/webtoon/sf/제2화 - 1부 어게인 2화_15.jpg');
+values(1, 72, '/webtoon/sf/제2화 - 1부 어게인 2화_15.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 27, '/webtoon/sf/제2화 - 1부 어게인 2화_16.jpg');
+values(1, 73, '/webtoon/sf/제2화 - 1부 어게인 2화_16.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 28, '/webtoon/sf/제2화 - 1부 어게인 2화_17.jpg');
+values(1, 74, '/webtoon/sf/제2화 - 1부 어게인 2화_17.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 29, '/webtoon/sf/제2화 - 1부 어게인 2화_18.jpg');
+values(1, 75, '/webtoon/sf/제2화 - 1부 어게인 2화_18.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 30, '/webtoon/sf/제3화 - 1부 어게인 3화_01.jpg');
+values(1, 76, '/webtoon/sf/제3화 - 1부 어게인 3화_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 31, '/webtoon/sf/제3화 - 1부 어게인 3화_02.jpg');
+values(1, 77, '/webtoon/sf/제3화 - 1부 어게인 3화_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 32, '/webtoon/sf/제3화 - 1부 어게인 3화_03.jpg');
+values(1, 78, '/webtoon/sf/제3화 - 1부 어게인 3화_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 33, '/webtoon/sf/제3화 - 1부 어게인 3화_04.jpg');
+values(1, 79, '/webtoon/sf/제3화 - 1부 어게인 3화_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 34, '/webtoon/sf/제3화 - 1부 어게인 3화_05.jpg');
+values(1, 80, '/webtoon/sf/제3화 - 1부 어게인 3화_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 35, '/webtoon/sf/제3화 - 1부 어게인 3화_06.jpg');
+values(1, 81, '/webtoon/sf/제3화 - 1부 어게인 3화_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 36, '/webtoon/sf/제3화 - 1부 어게인 3화_07.jpg');
+values(1, 82, '/webtoon/sf/제3화 - 1부 어게인 3화_07.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 37, '/webtoon/sf/제3화 - 1부 어게인 3화_08.jpg');
+values(1, 83, '/webtoon/sf/제3화 - 1부 어게인 3화_08.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 38, '/webtoon/sf/제3화 - 1부 어게인 3화_09.jpg');
+values(1, 84, '/webtoon/sf/제3화 - 1부 어게인 3화_09.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 39, '/webtoon/sf/제3화 - 1부 어게인 3화_10.jpg');
+values(1, 85, '/webtoon/sf/제3화 - 1부 어게인 3화_10.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 40, '/webtoon/sf/제4화 - 1부 어게인 4화_01.jpg');
+values(1, 86, '/webtoon/sf/제4화 - 1부 어게인 4화_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 41, '/webtoon/sf/제4화 - 1부 어게인 4화_02.jpg');
+values(1, 87, '/webtoon/sf/제4화 - 1부 어게인 4화_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 42, '/webtoon/sf/제4화 - 1부 어게인 4화_03.jpg');
+values(1, 88, '/webtoon/sf/제4화 - 1부 어게인 4화_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 43, '/webtoon/sf/제4화 - 1부 어게인 4화_04.jpg');
+values(1, 89, '/webtoon/sf/제4화 - 1부 어게인 4화_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 44, '/webtoon/sf/제4화 - 1부 어게인 4화_05.jpg');
+values(1, 90, '/webtoon/sf/제4화 - 1부 어게인 4화_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 45, '/webtoon/sf/제4화 - 1부 어게인 4화_06.jpg');
+values(1, 91, '/webtoon/sf/제4화 - 1부 어게인 4화_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 46, '/webtoon/sf/제4화 - 1부 어게인 4화_07.jpg');
+values(1, 92, '/webtoon/sf/제4화 - 1부 어게인 4화_07.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 47, '/webtoon/sf/제4화 - 1부 어게인 4화_08.jpg');
+values(1, 93, '/webtoon/sf/제4화 - 1부 어게인 4화_08.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 48, '/webtoon/sf/제4화 - 1부 어게인 4화_09.jpg');
+values(1, 94, '/webtoon/sf/제4화 - 1부 어게인 4화_09.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 49, '/webtoon/sf/제5화 - 1부 어게인 5화_01.jpg');
+values(1, 95, '/webtoon/sf/제5화 - 1부 어게인 5화_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 50, '/webtoon/sf/제5화 - 1부 어게인 5화_02.jpg');
+values(1, 96, '/webtoon/sf/제5화 - 1부 어게인 5화_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 51, '/webtoon/sf/제5화 - 1부 어게인 5화_03.jpg');
+values(1, 97, '/webtoon/sf/제5화 - 1부 어게인 5화_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 52, '/webtoon/sf/제5화 - 1부 어게인 5화_04.jpg');
+values(1, 98, '/webtoon/sf/제5화 - 1부 어게인 5화_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 53, '/webtoon/sf/제5화 - 1부 어게인 5화_05.jpg');
+values(1, 99, '/webtoon/sf/제5화 - 1부 어게인 5화_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 54, '/webtoon/sf/제5화 - 1부 어게인 5화_06.jpg');
+values(1, 100, '/webtoon/sf/제5화 - 1부 어게인 5화_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 55, '/webtoon/sf/제5화 - 1부 어게인 5화_07.jpg');
+values(1, 101, '/webtoon/sf/제5화 - 1부 어게인 5화_07.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 56, '/webtoon/sf/제5화 - 1부 어게인 5화_08.jpg');
+values(1, 102, '/webtoon/sf/제5화 - 1부 어게인 5화_08.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 57, '/webtoon/sf/제5화 - 1부 어게인 5화_09.jpg');
+values(1, 103, '/webtoon/sf/제5화 - 1부 어게인 5화_09.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 58, '/webtoon/sf/제5화 - 1부 어게인 5화_10.jpg');
+values(1, 104, '/webtoon/sf/제5화 - 1부 어게인 5화_10.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 59, '/webtoon/sf/제5화 - 1부 어게인 5화_11.jpg');
+values(1, 105, '/webtoon/sf/제5화 - 1부 어게인 5화_11.jpg');
 
 
-select * from image;
+
+commit;
+--select * from image;
 
 --delete from image;
 --select * from image;
