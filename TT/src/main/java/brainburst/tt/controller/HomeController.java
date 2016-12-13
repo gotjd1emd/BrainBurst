@@ -23,7 +23,7 @@ public class HomeController {
 	 */
 	@RequestMapping("/")
 	public String home(HttpSession session) {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("fund", null);
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null);
 		session.setAttribute("webtoonList", list);
 		return "main/index";
 	}
