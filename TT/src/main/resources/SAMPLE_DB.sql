@@ -45,7 +45,7 @@ values (1,'순정만화','일반','serial','A', '설현', 1, '아재와 학생의 some', null)
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'아파트','펀딩','serial ','B','green','민아',7,'아파트 괴담',null);
+values (webtoon_seq.nextval,'아파트','fund','serial ','B','green','민아',7,'아파트 괴담',null);
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
@@ -53,7 +53,7 @@ values (webtoon_seq.nextval,'바보','유료','serial','C','green','민아',null,'아재
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'조명가게','펀딩','serial','F','green','민아',14,null,null);
+values (webtoon_seq.nextval,'조명가게','fund','serial','F','green','민아',14,null,null);
 
 
 
@@ -74,15 +74,15 @@ values (webtoon_seq.nextval,'그대를 사랑합니다','일반','pause','F','green','민아
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'이웃사람','펀딩','complete','D','green','민아',7,null,null);
+values (webtoon_seq.nextval,'이웃사람','fund','complete','D','green','민아',7,null,null);
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'어게인','펀딩','complete','E','green','민아',7,null,null);
+values (webtoon_seq.nextval,'어게인','fund','complete','E','green','민아',7,null,null);
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'당신의 모든 순간','펀딩','complete','F','green','민아',14,null,null);
+values (webtoon_seq.nextval,'당신의 모든 순간','fund','complete','F','green','민아',14,null,null);
 
 
 --delete from webtoon; 
