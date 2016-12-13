@@ -2,10 +2,11 @@ package brainburst.tt.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.WebtoonDTO;
@@ -21,11 +22,10 @@ public class HomeController {
 	 * 맵퍼에서 카테고리값이 'all'일경우 웹툰상태값으로만 검색.
 	 * @return
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home() {
+	@RequestMapping("/")
+	public String home(HttpSession session) {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("펀딩", null);
-		System.out.println(list.size());
-		System.out.println(list);
-		return new ModelAndView("main/index", "webtoonList", list);
+		session.setAttribute("webtoonList", list);
+		return "main/index";
 	}
 }

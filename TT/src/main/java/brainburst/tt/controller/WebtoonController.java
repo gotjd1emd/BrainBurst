@@ -30,7 +30,7 @@ public class WebtoonController {
 //	 */
 //	@RequestMapping("/")
 //	public ModelAndView mainPage() {
-//		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("pund", "all");
+//		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("ÆÝµù", null);
 //		return new ModelAndView("main/index", "webtoonList", list);
 //	}
 

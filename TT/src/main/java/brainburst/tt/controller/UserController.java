@@ -89,8 +89,8 @@ public class UserController {
 	 * */
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest request){
-		request.getSession().invalidate();
-		System.out.println("session정보 초기화");
+		request.getSession().removeAttribute("userDTO");
+		System.out.println("session정보, userDTO 초기화");
 		
 		return "main/index";
 	}
