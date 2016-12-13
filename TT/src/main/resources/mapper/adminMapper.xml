@@ -46,4 +46,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM WEBTOON w join category c 
 		ON (w.category_code = c.category_code)
 	</select>
+	
+	<!-- userSnow -->
+	<update id="userSnow" parameterType="string">
+		update user_information
+		set user_level = "휴먼"
+		where email = #{email}
+	</update>
 </mapper>

@@ -24,5 +24,10 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	@Override
 	public List<WebtoonDTO> webtoonManage() {
 		return sqlSession.selectList("adminMapper.webtoonManage");
+	}
+
+	@Override
+	public int userSnow(String email) {
+		return sqlSession.update("adminMapper.userSnow", email);
 	} 	
 }

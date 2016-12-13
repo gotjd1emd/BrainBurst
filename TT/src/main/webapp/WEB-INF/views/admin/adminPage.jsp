@@ -4,6 +4,25 @@
 <script>
 	$(function(){
 		
+		$(document).on("click", "#snow", function(){
+			var email = $(this).parents().parents().children().first().text();
+			$.ajax({
+				url : "/controller/admin/userSnow",
+				type : "get",
+				data : email,
+				dataType : "json",
+				success : function(result) {
+					if(result==1){
+						alert("수정완료");
+						location.href="/controller/admin/userManage";
+					}
+				},
+				error : function(err) {
+				
+				}
+			})
+		});
+		
 		/* 
 			유저 관리 페이지 ( 유저 전체 출력 )
 		*/
@@ -36,7 +55,13 @@
 				            htmlcode += "<td>"
 				            	+item.gender+"</td>";
 				            htmlcode += "<td>"
-				            	+item.birthDate+"</td></tr>";
+				            	+item.birthDate+"</td>";
+				            if(item.level=='휴먼'){
+					            htmlcode += "<td><input type='button' id='snow' value='녹이기'/></td>";				            	
+				            }else{
+					            htmlcode += "<td><input type='button' id='snow' value='얼리기'/></td>";
+				            }
+				            htmlcode += "</tr>";
 						});
 					}
 					$("tbody").empty();

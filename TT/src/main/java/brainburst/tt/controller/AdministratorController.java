@@ -37,4 +37,10 @@ public class AdministratorController {
 		System.out.println("webtoonList : "+webtoonList.size());
 		return webtoonList;
 	}
+	
+	@RequestMapping("userSnow")
+	@ResponseBody
+	public int userSnow(String email){
+		return administratorService.userSnow(email);
+	}
 }

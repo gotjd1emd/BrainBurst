@@ -20,4 +20,9 @@ public interface AdministratorService {
 	 * parameter type : 없음
 	 * */
 	public List<WebtoonDTO> webtoonManage();
+	
+	/**
+	 * 계정 휴먼
+	 * */
+	public int userSnow(String email);
 }

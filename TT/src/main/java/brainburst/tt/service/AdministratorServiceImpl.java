@@ -31,4 +31,9 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return webtoonList;
 	}
 
+	@Override
+	public int userSnow(String email) {
+		return administratorDAO.userSnow(email);
+	}
+
 }

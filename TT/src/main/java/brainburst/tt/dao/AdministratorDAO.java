@@ -25,4 +25,9 @@ public interface AdministratorDAO {
 	 * FROM join WEBTOON and category using(category_code)
 	 * */
 	public List<WebtoonDTO> webtoonManage();
+	
+	/**
+	 * userSnow«œ±‚
+	 * */
+	public int userSnow(String email);
 }
