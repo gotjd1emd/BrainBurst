@@ -2,6 +2,51 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script>
+var table = 
+	$.ajax({
+		url : "/controller/admin/userManage",
+		type : "get",
+		dataType : "json",
+		success : function(result) {
+			var htmlcode = "";
+			if(result==null) {
+				htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+							+"등록된 상품이 없습니다.</b></p></td></tr>";
+			}else {
+				$.each(result, function(index, item) {
+					htmlcode += "<tr><td>"
+	            		+item.email+"</td>";
+	            	htmlcode += "<td>"
+		            	+item.nickname+"</td>";
+		            htmlcode += "<td>"
+		            	+item.phone+"</td>";
+		            htmlcode += "<td>"
+			            +item.password+"</td>";
+		            htmlcode += "<td>"
+		            	+item.cashPoint+"</td>";
+		            htmlcode += "<td>"
+		            	+item.level+"</td>";
+		            htmlcode += "<td>"
+		            	+item.name+"</td>";
+		            htmlcode += "<td>"
+		            	+item.gender+"</td>";
+		            htmlcode += "<td>"
+		            	+item.birthDate+"</td>";
+		            if(item.level=='휴먼'){
+			            htmlcode += "<td><input type='button' id='melt' value='녹이기'/></td>";				            	
+		            }else{
+			            htmlcode += "<td><input type='button' id='snow' value='얼리기'/></td>";
+		            }
+		            htmlcode += "</tr>";
+				});
+			}
+			$("tbody").empty();
+			$("#userManageList").append(htmlcode);
+		},
+		error : function(err) {
+			alert("err");
+		}
+	})
 
 	$(function(){
 		
