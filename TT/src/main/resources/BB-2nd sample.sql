@@ -31,7 +31,7 @@ commit;
 
 -- webtoon 타이틀 + 제목 
 
-
+insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
 values (1,'아파트','free','serial','A','green', '설현', null, '아파트에서..?!', null);
 
