@@ -173,7 +173,7 @@ left: 228px;
 
 #box_snb-login{
 	padding-top:10px;
-	background-color: #4A148C;
+	background-color: #4E342E;
 	height: 285px;
 }
 
@@ -400,6 +400,10 @@ left: 228px;
 
 .tPoint-printing-snb h6{
 	margin-top: 5px;
+}
+
+.farst-li{
+	margin-top: 30px;
 }
 
 /* ¹ÝÀÀÇü */

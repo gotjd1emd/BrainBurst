@@ -7,7 +7,8 @@
 	<c:choose>
 
 		<c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
-			<a class="col s5" href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a>
+			<li class="farst-li center"><a href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a></li>
+			<li class="center"><a href="<c:url value=''/>">로그아웃</a></li>
 		</c:when>
 		<c:when test="${sessionScope.userDTO!=null}">
 		<script>
@@ -35,7 +36,7 @@
 
 				<div class="row tPoint-printing-snb">
 					<h6 class="col s8 white-text">보유중인 T : ${sessionScope.userDTO.cashPoint}T</h6>
-					<a class="waves-effect waves-light btn charge-btn col s4"
+					<a class="waves-effect waves-light btn charge-btn col s4 color-500"
 						href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>
 			</div>
