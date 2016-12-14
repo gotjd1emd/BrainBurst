@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<script>
 		$(function() {
-			$("#episode-list").find(".row").on("click", (function() {
+			$(".episode-list").find(".row").on("click", (function() {
 				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
 			}));
 		})
@@ -23,7 +23,7 @@
 	</div>
 	
 	<c:forEach var="episode" items="${episodeList}">
-	<div class="z-depth-2">
+	<div class="z-depth-2 episode-list">
 		<div class="row">
 			<div class="col s2 episode_thumbnail">
 				<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
