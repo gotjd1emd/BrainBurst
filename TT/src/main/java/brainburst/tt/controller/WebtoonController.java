@@ -78,7 +78,7 @@ public class WebtoonController {
 		modelAndView.setViewName(type);
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonCode", webtoonCode);
-		modelAndView.addObject("episodeList", list);
+		session.setAttribute("episodeList", list);
 		return modelAndView;
 	}
 	
@@ -88,16 +88,34 @@ public class WebtoonController {
 	 * @return 해당에피소드의 이미지배열
 	 */
 	@RequestMapping("episodePage/{episodeSequence}")
-	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeSequence") int episodeSequence) {
-		List<String> list = webtoonService.selectImg(episodeSequence);
+	public ModelAndView selectImg(HttpServletRequest request, @PathVariable("episodeSequence") int episodeSequence) {
 		WebtoonDTO webtoonDTO = webtoonService.selecltWebtoonByCode(episodeSequence);
-		System.out.println("94번째줄"+webtoonDTO);
 		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
+		List<String> list = webtoonService.selectImg(episodeSequence);
+		List<EpisodeDTO> episodeList = (List<EpisodeDTO>) request.getSession().getAttribute("episodeList");
+		int episodeNumber = episodeDTO.getEpisodeNumber();
+		int prevEpisodeSequence = 0;
+		int nextepisodeSequence = 0;
+		Iterator<EpisodeDTO> iterator = episodeList.iterator();
+		while (iterator.hasNext()) {
+			EpisodeDTO dto = (EpisodeDTO) iterator.next();
+			if (dto.getEpisodeNumber() == (episodeNumber-1)) {
+				prevEpisodeSequence = dto.getEpisodeSequence();
+			} else if (dto.getEpisodeNumber() == (episodeNumber+1)) {
+				nextepisodeSequence = dto.getEpisodeSequence();
+			}
+		}
+		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("imageList", list);
 		modelAndView.addObject("episodeDTO", episodeDTO);
 		modelAndView.addObject("webtoonDTO", webtoonDTO);
+		modelAndView.addObject("prevEpisodeSequence", prevEpisodeSequence);
+		modelAndView.addObject("nextepisodeSequence", nextepisodeSequence);
+		System.out.println(episodeNumber);
+		System.out.println(prevEpisodeSequence);
+		System.out.println(nextepisodeSequence);
 		return modelAndView;
 	}
 	
@@ -162,12 +180,12 @@ public class WebtoonController {
 	 * @param direction [next]다음화, [prev]이전화
 	 * @return 웹툰에피소드목록보기로 이동
 	 */
-	@RequestMapping("{direction}")
-	public String prev(HttpServletRequest request, @PathVariable("direction") String direction) {
-		//뷰단에서 에피소드넘버를 인수로 받아온다.
-		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
-		int episodeNumber = (Integer) request.getAttribute("episodeNumber");
-		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getAttribute("episodeList");
+	@RequestMapping("{direction}/{episodeSequence}/{episodeNumber}")
+	public void prev(HttpServletRequest request, 
+			@PathVariable("direction") String direction,
+			@PathVariable("episodeSequence") int episodeSequence,
+			@PathVariable("episodeNumber") int episodeNumber) {
+		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getSession().getAttribute("episodeList");
 		Iterator<EpisodeDTO> iterator= dto.iterator();
 		//direction에 따라 다음화, 이전화 결정 찾을 에피소드번호를 더하거나 내린다.
 		if (direction.equals("next")) {
@@ -182,6 +200,6 @@ public class WebtoonController {
 				episodeSequence = episodeDTO.getEpisodeSequence();
 			}
 		}
-		return "episodePage/{"+episodeSequence+"}";
+		System.out.println("186 :"+episodeSequence);
 	}
 }

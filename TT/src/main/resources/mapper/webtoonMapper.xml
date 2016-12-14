@@ -106,7 +106,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectNumsBySequence -->
 	<select id="selectNumsBySequence" resultMap="episodeDTO" parameterType="string">
-		SELECT EPISODE_SEQUENCE, HITS, RECOMMENDATION, AUTHOR_WORD
+		SELECT EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, AUTHOR_WORD
 		FROM EPISODE
 		WHERE EPISODE_SEQUENCE= #{value}
 	</select>
