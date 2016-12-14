@@ -151,11 +151,6 @@ public class UserController {
 	}
 	
 	/**
-	 * 회원구독관리
-	 * */
-	
-	
-	/**
 	 * 회원 T 충전 + 내역 업데이트
 	 * session에서 현재 T값을 가져와서 충전량과 합산
 	 * DTO에 저장 후 DB업데이트
@@ -207,14 +202,7 @@ public class UserController {
 
 		return historyList;
 	}
-	/**
-	 * 회원 T 충전
-	 * */
-	
-	/**
-	 * 회원 작가 신청
-	 * */
-	
+
 	/**
 	 * 이메일 ( 아이디 ) 찾기
 	 * */
@@ -241,4 +229,14 @@ public class UserController {
 		return email;
 	}
 
+	
+	/**
+	 * 회원 작가 신청
+	 * */
+
+	
+	/**
+	 * 회원구독관리
+	 * */
+	
 }

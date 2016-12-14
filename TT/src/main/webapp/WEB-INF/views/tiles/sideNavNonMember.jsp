@@ -100,94 +100,74 @@
 			</div>
 			<div class="scription-box">
 				<ul>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
-					<li><a
-						class="waves-effect waves-light scription-btn hoverable">
-							<div>
-								<img class="circle responsive-img"
-									style="width: 40px; height: 40px;" alt="썸네일"
-									src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>">
-							</div>
-							<div>
-								<span>webtoon-title</span><br> <span class="author-name">author-name</span>
-							</div>
-					</a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
+				<li><a class="waves-effect waves-light scription-btn hoverable">
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
+				<div><span>webtoon-title</span><br>
+				<span class="author-name">author-name</span></div></a></li>
 				</ul>
 			</div>
 		</c:when>
