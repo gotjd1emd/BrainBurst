@@ -46,8 +46,8 @@
 </head>
 <body>
 	<div class="row tab-frame-myinfo">
-		<div class="col s12 tab-myinfo">
-			<ul class="tabs center z-depth-2">
+		<div class="col s12 tab-myinfo grey darken-3">
+			<ul class="tabs center z-depth-2 grey darken-3">
 				<li class="tab col s2 offset-l3"><a class="active"
 					href="#myInfoModify">내정보 수정</a></li>
 				<li class="tab col s2"><a href="#subscriptionManagement">구독관리</a></li>

@@ -17,8 +17,8 @@
 </head>
 <body>
 	<div class="row tab-frame-myinfo">
-		<div class="col s12 tab-myinfo">
-			<ul class="tabs center z-depth-2">
+		<div class="col s12 tab-myinfo grey darken-3">
+			<ul class="tabs center z-depth-2 grey darken-3">
 				<li class="tab col s2 offset-l2"><a class="active"
 					href="#publish-webtoon">연재중인 웹툰</a></li>
 				<li class="tab col s2"><a href="#completed-webtoon">완결된 웹툰</a></li>
