@@ -3,12 +3,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Modal Structure -->
-<div id="paid-webtoon-modal" class="modal">
-	<div class="modal-content modal-content-funding">
-		<div style="text-align: center;">
-			<h5>유료화 신청</h5>
-		</div>
-
+<div id="paid-webtoon-modal" class="modal modal-fixed-footer modal-top">
+	<form method="post">
+		<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+				<h5>유료화 신청</h5>
+			</div>
+			<div class="modal-content modal-content-funding">
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
@@ -31,4 +32,6 @@
 			class="modal-action modal-close waves-effect waves-green btn-flat"
 			type="submit" name="action">신청</button>
 	</div>
+	</div>
+	</form>
 </div>

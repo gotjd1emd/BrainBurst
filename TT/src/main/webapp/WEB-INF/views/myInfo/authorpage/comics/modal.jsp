@@ -3,12 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!-- Modal Structure -->
-<div id="funding-webtoon-modal" class="modal">
-	<div class="modal-content modal-content-funding">
-		<div style="text-align: center;">
-			<h5>펀딩 신청 관리</h5>
-		</div>
 
+<!-- 아이디 찾기 Modal Structure -->
+<div id="funding-webtoon-modal" class="modal modal-fixed-footer modal-top">
+	<form method="post">
+		<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+				<h5>펀딩 웹툰 신청</h5>
+			</div>
+			<div class="modal-content modal-content-funding">
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
@@ -28,7 +31,7 @@
 		<div class="webtoon-score-description">
 			- 80점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
 		</div>
-
+	
 	</div>
 	<div class="modal-footer">
 		<a href="#!"
@@ -37,15 +40,18 @@
 			class="modal-action modal-close waves-effect waves-green btn-flat"
 			type="submit" name="action">신청</button>
 	</div>
+	</div>
+	</form>
 </div>
 
 <!-- Modal Structure -->
-<div id="webtoon-state-modal" class="modal">
-	<div class="modal-content modal-content-funding">
-		<div style="text-align: center;">
-			<h5>웹툰 상태 처리</h5>
-		</div>
-
+<div id="webtoon-state-modal" class="modal modal-fixed-footer modal-top">
+	<form method="post">
+		<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+				<h5>웹툰 상태 처리</h5>
+			</div>
+			<div class="modal-content modal-content-funding">
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
@@ -78,4 +84,6 @@
 			class="modal-action modal-close waves-effect waves-green btn-flat"
 			type="submit" name="action">적용</button>
 	</div>
+	</div>
+	</form>
 </div>
