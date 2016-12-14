@@ -60,9 +60,13 @@
 	<img alt="webtoon" src="<c:url value='/resources/'/>${item}">
 </div>
 </c:forEach>
-<a href="/controller/webtoon/prev/${episodeDTO.episodeSequence}/${episodeDTO.episodeNumber}">이전화</a><br>
+<c:if test="${prevEpisodeSequence != 0}">
+<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}">이전화</a><br>
+</c:if>
 <a href="/controller/webtoon/webtoonPage/${webtoonDTO.webtoonCode}">목록으로</a><br>
-<a href="/controller/webtoon/next/${episodeDTO.episodeSequence}/${episodeDTO.episodeNumber}">다음화</a>
+<c:if test="${nextepisodeSequence != 0}">
+<a href="/controller/webtoon/episodePage/${nextepisodeSequence}">다음화</a>
+</c:if>
 
 <div class="z-depth-2">
 	<div>작가의말 : ${episodeDTO.authorword}</div>
