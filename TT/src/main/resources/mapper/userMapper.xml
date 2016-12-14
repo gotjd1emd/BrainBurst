@@ -33,6 +33,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="content" property="content"/>
 		<result column="trade_state" property="tradeState"/>
 	</resultMap>
+	
+	<resultMap type="webtoonDTO" id="webtoonMap">
+		<id column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="WEBTOON_NAME" property="webtoonName"/>
+		<result column="WEBTOON_LEVEL" property="webtoonLevel"/>
+		<result column="WEBTOON_STATE" property="webtoonState"/>
+		<result column="CATEGORY_CODE" property="categoryCode"/>
+		<result column="PENALTY" property="penalty"/>
+		<result column="NICKNAME" property="nickname"/>
+		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
+		<result column="SUMMARY" property="summary" />
+		<result column="WEBTOON_THUMBNAIL" property="webtoonThumbnail"/>
+	</resultMap>	
 
 	<!-- Login -->
 	<select id="login" resultMap="userMap" parameterType="userDTO">
@@ -106,5 +119,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- findPassword -->
 	<select id="findPassword" resultType="string" parameterType="userDTO">
 		select password from user_information where name=#{name} and phone=#{phone} and email=#{email}
+	</select>
+	
+	<!-- showListSubscription -->
+	<select id="showListSubscription" resultMap="webtoonMap" parameterType="string">
+		select w.webtoon_name, w.nickname, w.webtoon_thumbnail 
+		from subscription s join webtoon w 
+		on (s.webtoon_code = w.webtoon_code) 
+		where email=#{email}
 	</select>
 </mapper>

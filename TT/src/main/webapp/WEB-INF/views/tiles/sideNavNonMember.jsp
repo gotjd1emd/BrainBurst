@@ -52,6 +52,21 @@
 				}
 			})
 		})
+		
+		/* 구독 관리 */
+		$("#slide-out").load(function(){
+			$.ajax({
+				url : "/controller/user/subScription",
+				type : "post",
+				dataType : "text",
+				success : function(result) {
+					alert(result);
+				},
+				error : function(err) {
+					alert("없는 계정 정보");
+				}
+			})	
+		})
 	})
 </script>
 
@@ -59,8 +74,7 @@
 	<c:choose>
 
 		<c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
-			<li class="farst-li center"><a
-				href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a></li>
+			<li class="farst-li center"><a href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a></li>
 			<li class="center"><a href="<c:url value='/user/logout'/>">로그아웃</a></li>
 		</c:when>
 		<c:when test="${sessionScope.userDTO!=null}">
@@ -72,30 +86,25 @@
 				})
 			</script>
 			<div id="box_snb-login" class="z-depth-1">
-				<h6 class="title center white-text color-400">Try make your
-					Throng</h6>
+				<h6 class="title center white-text color-400">Try make your Throng</h6>
 				<div class="center profile-icon color-A200">
 					<h5 id="nickname"></h5>
 				</div>
 				<h6 class="center-align white-text">${sessionScope.userDTO.email}</h6>
 
 				<div class="row a-button-nav">
-					<a class="col s5 white-text"
-						href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
+					<a class="col s5 white-text" href="<c:url value='/user/myInfo/mypage'/>">마이페이지</a>
 					<div class="col s1">
 						<div class="line white"></div>
 					</div>
-					<a class="logout-snb col s5 white-text"
-						href="<c:url value='/user/logout'/>">로그아웃</a>
+					<a class="logout-snb col s5 white-text" href="<c:url value='/user/logout'/>">로그아웃</a>
 				</div>
 
 				<hr class="line-nav">
 
 				<div class="row tPoint-printing-snb">
-					<h6 class="col s8 white-text">보유 T :
-						${sessionScope.userDTO.cashPoint}T</h6>
-					<a class="waves-effect waves-light btn charge-btn col s4 color-500"
-						href="<c:url value='/user/util/payment'/>">충전</a>
+					<h6 class="col s8 white-text">보유 T : ${sessionScope.userDTO.cashPoint}T</h6>
+					<a class="waves-effect waves-light btn charge-btn col s4 color-500" href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>
 			</div>
 			<div class="scription-box">
@@ -104,70 +113,7 @@
 				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
 				<div><span>webtoon-title</span><br>
 				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
+				
 				</ul>
 			</div>
 		</c:when>
@@ -175,32 +121,29 @@
 			<div id="box_snb-nonlogin">
 				<h6 class="title center white-text color-400">Try make your
 					Throng</h6>
-				<form id="loginForm" action="<c:url value='/user/login'/>"
-					method="post">
+				<form id="loginForm" action="<c:url value='/user/login'/>" method="post">
 					<div class="login_form">
 						<div class="input-field login-field col email-field">
 							<i class="material-icons prefix login-form-icon">perm_identity</i>
-							<input id="email" type="text" class="validate snb-login-form"
-								name="email" autocomplete=off> <label for="email">Email</label>
+							<input id="email" type="text" class="validate snb-login-form" name="email" autocomplete=off> 
+							<label for="email">Email</label>
 						</div>
 						<div class="input-field login-field col">
-							<i class="material-icons prefix login-form-icon">lock_open</i> <input
-								id="password" type="password" class="snb-login-form"
-								name="password"> <label for="password">Password</label>
+							<i class="material-icons prefix login-form-icon">lock_open</i> 
+							<input id="password" type="password" class="snb-login-form" name="password"> 
+							<label for="password">Password</label>
 						</div>
 						<div class="center">
-							<button
-								class="snbtn waves-effect waves-light col s6 color-400 z-depth-1"
-								type="submit" name="action">로그인</button>
+							<button class="snbtn waves-effect waves-light col s6 color-400 z-depth-1" type="submit" name="action">로그인</button>
 						</div>
 					</div>
 					<!-- login_form exit -->
 				</form>
 			</div>
-			<li class="center login-category"><a
-				href="#id-pwd-quarter-modal">EMAIL / PASSWORD 찾기</a></li>
-			<li class="center login-category"><a
-				href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a></li>
+			<li class="center login-category">
+			<a href="#id-pwd-quarter-modal">EMAIL / PASSWORD 찾기</a></li>
+			<li class="center login-category">
+			<a href="<c:url value='/user/signUp/acceptTerms'/>">회원가입</a></li>
 		</c:otherwise>
 	</c:choose>
 	</div>
@@ -229,13 +172,10 @@
 
 			<div class="row id-pwd-find-form">
 				<div class="col s6 center">
-					<a id="email-find-btn"
-						class="waves-effect waves-light btn color-400"
-						href="#idfind-modal">이메일 찾기</a>
+					<a id="email-find-btn" class="waves-effect waves-light btn color-400" href="#idfind-modal">이메일 찾기</a>
 				</div>
 				<div class="col s6 center">
-					<a id="pwd-find-btn" class="waves-effect waves-light btn color-400"
-						href="#pwdfind-modal">비밀번호 찾기</a>
+					<a id="pwd-find-btn" class="waves-effect waves-light btn color-400" href="#pwdfind-modal">비밀번호 찾기</a>
 				</div>
 			</div>
 		</div>
@@ -256,21 +196,20 @@
 				<p>이름과 전화번호를 입력해 주세요</p>
 				<div class="row">
 					<div class="input-field col s8">
-						<input id="name-myinfo" type="text" class="validate" name="name"
-							autocomplete=off> <label for="name-myinfo">이름</label>
+						<input id="name-myinfo" type="text" class="validate" name="name" autocomplete=off> 
+						<label for="name-myinfo">이름</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s8">
-						<input id="phone-myinfo" type="text" class="validate" name="phone"
-							maxlength="11" autocomplete=off> <label for="name-myinfo">전화번호</label>
+						<input id="phone-myinfo" type="text" class="validate" name="phone" maxlength="11" autocomplete=off> 
+						<label for="name-myinfo">전화번호</label>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button
-					class="modal-action modal-close waves-effect waves-green btn-flat"
-					id="searchEmail">찾기</button>
+					class="modal-action modal-close waves-effect waves-green btn-flat" id="searchEmail">찾기</button>
 			</div>
 		</div>
 	</form>
@@ -286,28 +225,26 @@
 			<p></p>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="email-myinfo" type="email" class="validate" name="email"
-						autocomplete=off> <label for="email-myinfo">이메일</label>
+					<input id="email-myinfo" type="email" class="validate" name="email" autocomplete=off>
+					<label for="email-myinfo">이메일</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="name-myinfo" type="text" class="validate" name="name"
-						autocomplete=off> <label for="name-myinfo">이름</label>
+					<input id="name-myinfo" type="text" class="validate" name="name" autocomplete=off> 
+					<label for="name-myinfo">이름</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="phone-myinfo" type="text" class="validate" name="phone"
-						maxlength="11 " autocomplete=off> <label
-						for="phone-myinfo">전화번호</label>
+					<input id="phone-myinfo" type="text" class="validate" name="phone" maxlength="11 " autocomplete=off> 
+					<label for="phone-myinfo">전화번호</label>
 				</div>
 			</div>
 		</div>
 		<div class="modal-footer">
 			<button
-				class="modal-action modal-close waves-effect waves-green btn-flat"
-				id="searchPassword">찾기</button>
+				class="modal-action modal-close waves-effect waves-green btn-flat" id="searchPassword">찾기</button>
 		</div>
 	</form>
 </div>

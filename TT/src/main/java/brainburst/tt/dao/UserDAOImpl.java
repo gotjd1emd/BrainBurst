@@ -70,8 +70,7 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public List<WebtoonDTO> showListSubscription(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("userMapper.showListSubscription", email);
 	}
 
 	@Override

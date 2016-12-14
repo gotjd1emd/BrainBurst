@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
+import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.UserService;
 
 @Controller
@@ -83,6 +84,7 @@ public class UserController {
 		session.setAttribute("userDTO", userDTO);
 		
 		System.out.println(session.getAttribute("userDTO"));
+		
 		return "main/index";
 	}
 
@@ -238,5 +240,15 @@ public class UserController {
 	/**
 	 * 회원구독관리
 	 * */
+	@RequestMapping("subScription")
+	@ResponseBody
+	public List<WebtoonDTO> showListSubscription(HttpServletRequest request){
+		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
+		System.out.println("찾을 이메일 : "+userDTO.getEmail());
+		
+		List<WebtoonDTO> subScriptionList = userService.showListSubscription(userDTO.getEmail());
+		
+		return subScriptionList;
+	}
 	
 }

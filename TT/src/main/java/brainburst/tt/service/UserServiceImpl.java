@@ -68,13 +68,12 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<WebtoonDTO> showListSubscription(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDAO.showListSubscription(email);
 	}
 
 	@Override
 	public int applySubscription(WebtoonDTO webtoonDTO) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
@@ -102,5 +101,6 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 	
 }
