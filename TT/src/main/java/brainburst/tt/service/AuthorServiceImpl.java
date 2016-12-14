@@ -16,7 +16,7 @@ public class AuthorServiceImpl implements AuthorService {
 	
 	@Override
 	public List<WebtoonDTO> getSerialWebtoon(String nickname) {
-		return authorDAO.getMyWebtoon(nickname);
+		return authorDAO.getMyWebtoon(nickname, "serial");
 	}
 
 	@Override

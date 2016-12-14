@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<script>
+		$(function() {
+			$("img").on("click", (function() {
+				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
+			}));
+		})
+	</script>
 	<div class="row">
 			<c:forEach var="item" items="${webtoonList}" end="2">
 			<div class="card col s12 m24 l3 top_card hoverable">
