@@ -53,18 +53,19 @@ public class AuthorContoller {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		String userLevel = userDTO.getLevel();
 		String nickname = userDTO.getNickname();
-		String viewName = "madeAuthorPage";
+		String viewName = "authorpage2";
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("nickname", nickname);
-		
 		//유저레벨이 독자가 아닐경우(펀딩작가, 작가인경우!) 작가페이지로이동.
 		if (!userLevel.equals("독자")) {
 			//사용자의 닉네임으로 연제중인 웹툰목록 가져오기
+			System.out.println("닉네임:"+nickname);
 			List<WebtoonDTO> list = authorService.getSerialWebtoon(nickname);
-			modelAndView.addObject("webtoonList", list);
+			System.out.println(list);
+			session.setAttribute("webtoonList", list);
 			//이동할 뷰이름 변경
-			viewName = "author/authorDetail";
+			viewName = "myInfo/authorpage";
 		}
 		modelAndView.setViewName(viewName);
 		return modelAndView;
