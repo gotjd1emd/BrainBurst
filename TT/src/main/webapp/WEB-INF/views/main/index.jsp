@@ -40,7 +40,7 @@
 	<h5 class="animated zoomIn title-text">인기 웹툰</h5>
 	<div class="row">
 	 	<c:forEach var="item" items="${webtoonList}" begin="3">
-   <div class="card small col l2 webtoon_card hoverable">
+   	<div class="card small col l2 webtoon_card hoverable">
 	    <div class="card-image waves-effect waves-block waves-light">
 	      <img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 	    </div>

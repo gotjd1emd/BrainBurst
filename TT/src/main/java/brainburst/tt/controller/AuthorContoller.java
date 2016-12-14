@@ -78,11 +78,11 @@ public class AuthorContoller {
 		return new ModelAndView("author/completeList", "webtoonList", list);
 	}
 
-/**
-작품등록
-등록하면 정보값 가지고 웹툰테이블 생성
-이후 작가페이지의 연재중웹툰탭으로 이동
-*/
+	/**
+	작품등록
+	등록하면 정보값 가지고 웹툰테이블 생성
+	이후 작가페이지의 연재중웹툰탭으로 이동
+	*/
 	public String addSeries(HttpServletRequest request) {
 		//뷰에서 보내는 웹툰정보
 		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
