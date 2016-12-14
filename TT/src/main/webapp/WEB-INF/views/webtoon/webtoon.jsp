@@ -17,7 +17,7 @@
 			</div>
 			<div class="col s10">
 				${webtoonDTO.nickname} <br>
-				${webtoonDTO.summary}111${webtoonDTO.webtoonThumbnail}
+				${webtoonDTO.summary}
 			</div>
 		</div>
 	</div>
