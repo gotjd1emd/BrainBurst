@@ -115,4 +115,12 @@
 	margin: 0;	
 }
 
-}
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #ff5252;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom:1px solid #ff5252;
+	box-shadow:0 1px 0 0 #ff5252;
+   }
