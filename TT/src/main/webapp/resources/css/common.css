@@ -2,6 +2,26 @@
 
 html, body { margin:0; padding:0; height:100%; }
 
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -174,6 +194,7 @@ left: 228px;
 
 .side-nav{
 	background-color: #616161;	
+	overflow: hidden;
 }
 
 /* 사이드 네비게이션 내부 box*/
@@ -192,6 +213,59 @@ left: 228px;
 #box_snb-login{
 	background-color: #424242 ;
 	height: 340px;
+}
+
+.scription-box{
+	margin-bottom: 55px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 395px;
+	-ms-overflow-style: none;
+	
+}
+.scription-btn{
+	background-color:#424242 !important;
+	width:230px;
+	margin-left: 10px;
+	height:50px !important;
+	line-height: 20px !important;
+	padding-top: 5px !important; 
+	border-radius: 30px;
+	margin-bottom: 10px;
+	
+	scrollbar-3dLight-Color: white;
+	scrollbar-arrow-color: white; 
+	scrollbar-base-color: white; 
+	scrollbar-Face-Color: white; 
+	scrollbar-Track-Color: white; 
+	scrollbar-DarkShadow-Color: white; 
+	scrollbar-Highlight-Color: white; 
+	scrollbar-Shadow-Color: white;
+}
+
+.scription-box::-webkit-scrollbar {width: 0px; height: 0px; border: 0; }
+
+.scription-btn:FIRST-CHILD{
+	margin-top: 10px;
+}
+
+.scription-btn:hover{
+	background-color:#212121 !important;
+}
+
+.scription-btn div{
+	display: inline-block;
+	color: white;
+	font-weight: 400;
+}
+
+.author-name{
+	font-weight: 300;
+}
+
+.scription-btn div:FIRST-CHILD{
+	vertical-align:top;
+	margin-left: -25px;
 }
 
 /*마이페이지, 로그아웃 사이 line*/
@@ -423,6 +497,7 @@ left: 228px;
 .tPoint-printing-snb{
 	padding-right: 10px;
 	padding-left: 5px;
+	margin-bottom:25px;
 }
 
 .tPoint-printing-snb h6{
@@ -474,6 +549,7 @@ left: 228px;
 a.active{
 	color: #fff !important;
 }
+
 
 
 /* 반응형 */
