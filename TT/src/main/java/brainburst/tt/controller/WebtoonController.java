@@ -174,32 +174,4 @@ public class WebtoonController {
 			//성공했을때 무언가...?
 		}
 	}
-
-	/**
-	 * 이전,다음화 이동
-	 * @param direction [next]다음화, [prev]이전화
-	 * @return 웹툰에피소드목록보기로 이동
-	 */
-	@RequestMapping("{direction}/{episodeSequence}/{episodeNumber}")
-	public void prev(HttpServletRequest request, 
-			@PathVariable("direction") String direction,
-			@PathVariable("episodeSequence") int episodeSequence,
-			@PathVariable("episodeNumber") int episodeNumber) {
-		List<EpisodeDTO> dto = (List<EpisodeDTO>) request.getSession().getAttribute("episodeList");
-		Iterator<EpisodeDTO> iterator= dto.iterator();
-		//direction에 따라 다음화, 이전화 결정 찾을 에피소드번호를 더하거나 내린다.
-		if (direction.equals("next")) {
-			episodeNumber++;
-		} else {
-			episodeNumber--;
-		}
-		//에피소드DTO목록안에서 다음 에피소드넘버에 해당하는 에피소드 시퀸스를 찾기.
-		while (iterator.hasNext()) {
-			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
-			if (episodeDTO.getEpisodeNumber() == (episodeNumber)) {
-				episodeSequence = episodeDTO.getEpisodeSequence();
-			}
-		}
-		System.out.println("186 :"+episodeSequence);
-	}
 }
