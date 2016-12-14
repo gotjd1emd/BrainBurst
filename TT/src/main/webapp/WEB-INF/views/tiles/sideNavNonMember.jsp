@@ -23,7 +23,29 @@
 					alert("없는 계정 정보");
 				}
 			})
-		})		
+		})	
+		
+		$("#searchPassword").click(function(){
+			$.ajax({
+				url : "/controller/user/findPassword",
+				type : "post",
+				data : ({
+					email : $("#email-myinfo").val(),
+					name : $("#name-myinfo").val(),
+					phone : $("#phone-myinfo").val()
+				}),
+				dataType : "text",
+				success : function(result) {
+					 var password = result;
+					 if(password != null){
+						 alert(password);
+					 }
+				},
+				error : function(err) {
+					alert("없는 계정 정보");
+				}
+			})
+		})	
 	})
 </script>
 
@@ -204,9 +226,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button
-					class="modal-action modal-close waves-effect waves-green btn-flat"
-					id="searchEmail">찾기</button>
+				<button class="modal-action modal-close waves-effect waves-green btn-flat" id="searchEmail">찾기</button>
 			</div>
 		</div>
 	</form>
@@ -214,32 +234,33 @@
 
 <!-- 비밀번호 찾기 Modal Structure -->
 <div id="pwdfind-modal" class="modal modal-fixed-footer modal-top">
+<form method="post">
 	<div class="modal-title color-500 white-text z-depth-1">
-		<h5>이메일 찾기</h5>
+		<h5>비밀번호 찾기</h5>
 	</div>
 	<div class="modal-content">
 		<p></p>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="name-myinfo" type="email" class="validate"> <label
-					for="name-myinfo">이메일</label>
+				<input id="email-myinfo" type="email" class="validate" name="email">
+				<label for="email-myinfo">이메일</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="name-myinfo" type="text" class="validate"> <label
-					for="name-myinfo">이름</label>
+				<input id="name-myinfo" type="text" class="validate" name="name"> 
+				<label for="name-myinfo">이름</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
-				<input id="name-myinfo" type="text" class="validate"> <label
-					for="name-myinfo">전화번호</label>
+				<input id="phone-myinfo" type="text" class="validate" name="phone"> 
+				<label for="phone-myinfo">전화번호</label>
 			</div>
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="#!"
-			class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+		<button class="modal-action modal-close waves-effect waves-green btn-flat"id="searchPassword">찾기</button>
 	</div>
+	</form>
 </div>
