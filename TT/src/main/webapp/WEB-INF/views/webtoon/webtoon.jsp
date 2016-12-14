@@ -26,7 +26,7 @@
 	<div class="z-depth-2">
 		<div class="row">
 			<div class="col s2 episode_thumbnail">
-				<img class="thumbnail" name="${episode.episodeSequence}and${episode.episodeNumber}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
+				<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 			</div>
 			<div class="col s6">
 				${episode.episodeTitle} <br><br>
