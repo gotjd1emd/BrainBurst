@@ -80,11 +80,12 @@
 		<hr>
 		<div class="row">
 		   	<div class="col s12">
-		        <p class="flow-text">웹툰 수정</p>
+		        <p class="flow-text">웹툰 업로드</p>
 		    </div>
 		</div>
 		
 		<hr>
+		<form method="post" action="<c:url value='/author/epsodeUpload'/>" encType="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s6">
 				<input id="episode-title" type="text" class="validate" name="episodeTitle"> 
@@ -105,7 +106,7 @@
 					<div class="input-field col s6 image-file">
 
 						<div class="file-field input-field">
-							<input type="file" name="index0">
+							<input type="file" name="image0">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
 									placeholder="이미지 파일을 추가해주세요.">
@@ -147,12 +148,13 @@
 				</div>
 				
 				<div class="row">
-					<button class="btn waves-effect waves-light" type="submit" name="action">수정하기
+					<button class="btn waves-effect waves-light" type="submit" name="action">업로드하기
 					</button>
 					<a class="waves-effect waves-light btn">돌아가기</a>
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
