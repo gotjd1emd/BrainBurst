@@ -63,5 +63,17 @@ public interface WebtoonDAO {
 	 */
 	int addReport(ReportDTO reportDTO);
 	
-	WebtoonDTO selecltWebtoonByCode(String webtoonCode);
+	/**
+	 * 에피소드시퀸스로 해당 에피소드의 웹툰 DTO찾아옴
+	 * @param episodeSequence
+	 * @return
+	 */
+	WebtoonDTO selecltWebtoonByCode(int episodeSequence);
+	
+	/**
+	 * 에피소드 시퀸스로 해당 에피소드의 조회수, 추천수, 작가의 말 찾아옴
+	 * @param episodeSequence
+	 * @return
+	 */
+	EpisodeDTO selectNumsBySequence(int episodeSequence);
 }

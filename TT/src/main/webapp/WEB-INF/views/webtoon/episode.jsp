@@ -13,7 +13,7 @@
 		</div>
 
 		<div class="col s8">
-			웹툰 이름 <br> 웹툰 작가
+			${webtoonDTO.webtoonName}<br>${webtoonDTO.nickname}
 		</div>
 		<div class="col s1">
 			<br>
@@ -31,7 +31,7 @@
 		<div class="col s1">
 			<blockquote>
 				<p class="flow-text">
-					추 천<br>:5K
+					추 천<br>:${episodeDTO.recommendation}
 				</p>
 			</blockquote>
 		</div>
@@ -46,9 +46,9 @@
 </c:forEach>
 
 <div class="z-depth-2">
-	<div>작가의말 : abcd</div>
+	<div>작가의말 : ${episodeDTO.authorword}</div>
 	<div class="center">
-		<p class="flow-text">추천수 : 5k</p>
+		<p class="flow-text">추천수 : ${episodeDTO.recommendation}</p>
 	</div>
 	<div class="center">
 		<button class="btn waves-effect waves-light" type="submit"

@@ -78,7 +78,6 @@ public class WebtoonController {
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonCode", webtoonCode);
 		modelAndView.addObject("episodeList", list);
-//		session.setAttribute("episodeList", list);
 		System.out.println(list);
 		return modelAndView;
 	}
@@ -91,11 +90,14 @@ public class WebtoonController {
 	@RequestMapping("episodePage/{episodeSequence}")
 	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeSequence") int episodeSequence) {
 		List<String> list = webtoonService.selectImg(episodeSequence);
+		WebtoonDTO webtoonDTO = webtoonService.selecltWebtoonByCode(episodeSequence);
+		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("imageList", list);
-		System.out.println(list);
-		modelAndView.addObject("episodeSequence", episodeSequence);
+		modelAndView.addObject("episodeDTO", episodeDTO);
+		modelAndView.addObject("webtoonDTO", webtoonDTO);
+		System.out.println(episodeDTO.getAuthorword());
 		return modelAndView;
 	}
 	

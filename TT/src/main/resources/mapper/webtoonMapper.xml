@@ -97,10 +97,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (REPORT_SEQ.NEXTVAL, #{email}, #{webtoonCode}, #{content}, #{epicsodeSequence})
 	</insert>
 	
-	<!-- selecltWebtoonByCode -->
-	<select id="selecltWebtoonByCode" resultType="webtoonDTO" parameterType="string">
-		SELECT SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
+	<!-- selectWebtoonByCode -->
+	<select id="selectWebtoonByCode" resultMap="webtoonDTO" parameterType="string">
+		SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
 		FROM WEBTOON
-		WHERE WEBTOON_CODE = #{value}
+		WHERE WEBTOON_CODE = (SELECT WEBTOON_CODE FROM EPISODE WHERE EPISODE_SEQUENCE= #{value})
+	</select>
+	
+	<!-- selectNumsBySequence -->
+	<select id="selectNumsBySequence" resultMap="episodeDTO" parameterType="string">
+		SELECT HITS, RECOMMENDATION, AUTHOR_WORD
+		FROM EPISODE
+		WHERE EPISODE_SEQUENCE= #{value}
 	</select>
 </mapper>
