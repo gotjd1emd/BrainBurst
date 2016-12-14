@@ -31,16 +31,10 @@
 </head>
 <body>
 	<div class="row tab-frame-myinfo">
-<<<<<<< HEAD
 		<div class="col s12 tab-myinfo grey darken-3">
 			<ul class="tabs center z-depth-2 grey darken-3">
 				<li class="tab col s2 offset-l2"><a class="active"
 					href="#publish-webtoon">연재중인 웹툰</a></li>
-=======
-		<div class="col s12 tab-myinfo">
-			<ul class="tabs center z-depth-2">
-				<li class="tab col s2 offset-l2"><a class="active" href="#publish-webtoon" id="serialWebtoon">연재중인 웹툰</a></li>
->>>>>>> origin/master
 				<li class="tab col s2"><a href="#completed-webtoon">완결된 웹툰</a></li>
 				<li class="tab col s2"><a href="#funding-management">펀딩 관리</a></li>
 				<li class="tab col s2"><a href="#author-management">작가 관리</a></li>

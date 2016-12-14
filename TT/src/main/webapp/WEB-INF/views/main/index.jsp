@@ -106,8 +106,6 @@
 		
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 	<hr>
 	<h5 class="animated zoomIn title-text">인기 웹툰</h5>
 	<div class="row">
@@ -126,9 +124,6 @@
 	  </div>
 	  </c:forEach>
     </div>        
-	
-	
 	<hr>
->>>>>>> origin/master
 </body>
 </html>
