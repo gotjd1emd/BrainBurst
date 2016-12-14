@@ -31,7 +31,6 @@ public class EpisodeDTO {
 		this.thumbnail = thumbnail;
 		this.fundCode = fundCode;
 	}
-	
 	public int getEpisodeSequence() {
 		return episodeSequence;
 	}
@@ -74,10 +73,10 @@ public class EpisodeDTO {
 	public void setEpisodeTitle(String episodeTitle) {
 		this.episodeTitle = episodeTitle;
 	}
-	public String getNicknameWord() {
+	public String getAuthorword() {
 		return authorword;
 	}
-	public void setNicknameWord(String authorword) {
+	public void setAuthorword(String authorword) {
 		this.authorword = authorword;
 	}
 	public String getThumbnail() {
@@ -92,5 +91,4 @@ public class EpisodeDTO {
 	public void setFundCode(int fundCode) {
 		this.fundCode = fundCode;
 	}
-	
 }

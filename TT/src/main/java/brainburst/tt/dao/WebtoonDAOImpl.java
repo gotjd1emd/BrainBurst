@@ -71,7 +71,13 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public WebtoonDTO selecltWebtoonByCode(String webtoonCode) {
-		return sqlSession.selectOne("webtoonMapper.selecltWebtoonByCode", webtoonCode);
+	public WebtoonDTO selecltWebtoonByCode(int episodeSequence) {
+		return sqlSession.selectOne("webtoonMapper.selectWebtoonByCode", episodeSequence);
 	}
+
+	@Override
+	public EpisodeDTO selectNumsBySequence(int episodeSequence) {
+		return sqlSession.selectOne("webtoonMapper.selectNumsBySequence", episodeSequence);
+	}
+	
 }

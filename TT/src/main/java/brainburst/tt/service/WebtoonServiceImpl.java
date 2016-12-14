@@ -54,4 +54,15 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public int addReport(ReportDTO reportDTO) {
 		return webtoonDAO.addReport(reportDTO);
 	}
+
+	@Override
+	public WebtoonDTO selecltWebtoonByCode(int episodeSequence) {
+		return webtoonDAO.selecltWebtoonByCode(episodeSequence);
+	}
+
+	@Override
+	public EpisodeDTO selectNumsBySequence(int episodeSequence) {
+		return webtoonDAO.selectNumsBySequence(episodeSequence);
+	}
+	
 }
