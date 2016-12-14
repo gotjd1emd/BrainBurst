@@ -364,15 +364,15 @@ select * from webtoon;
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (1,'아파트','free','serial','A','green', '설현', null, '아파트에서..?!', '/webtoon/thumbNail_webtoon/19.jpg');
+values (1,'아파트','free','serial','A','green', '설현', null, '아파트에서..?!', '/webtoon/webtoonThumbnail/19.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (2,'어게인','funding','serial ','B','green','민아',7,'아파트 괴담','/webtoon/thumbNail_webtoon/20.jpg');
+values (2,'어게인','funding','serial ','B','green','민아',7,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!', '/webtoon/thumbNail_webtoon/21.jpg');
+values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!', '/webtoon/webtoonThumbnail/21.jpg');
 
 --
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -383,186 +383,186 @@ values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!',
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 1, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 2, 0, 0, '2016-03-02 ', '제1화 - 아파트_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/2.jpg', null);
+values (episode_seq.NEXTVAL, 1, 2, 0, 0, '2016-03-02 ', '제1화 - 아파트_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/2.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 3, 0, 0, '2016-03-02 ', '제1화 - 아파트_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/3.jpg', null);
+values (episode_seq.NEXTVAL, 1, 3, 0, 0, '2016-03-02 ', '제1화 - 아파트_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/3.jpg', null);
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 4, 0, 0, '2016-03-02 ', '제1화 - 아파트_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/4.jpg', null);
+values (episode_seq.NEXTVAL, 1, 4, 0, 0, '2016-03-02 ', '제1화 - 아파트_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/4.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 5, 0, 0, '2016-03-02 ', '제1화 - 아파트_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/5.jpg', null);
+values (episode_seq.NEXTVAL, 1, 5, 0, 0, '2016-03-02 ', '제1화 - 아파트_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/5.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 6, 0, 0, '2016-03-02 ', '제1화 - 아파트_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/6.jpg', null);
+values (episode_seq.NEXTVAL, 1, 6, 0, 0, '2016-03-02 ', '제1화 - 아파트_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/6.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 7, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/7.jpg', null);
+values (episode_seq.NEXTVAL, 1, 7, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/7.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 8, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/8.jpg', null);
+values (episode_seq.NEXTVAL, 1, 8, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/8.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 9, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/9.jpg', null);
+values (episode_seq.NEXTVAL, 1, 9, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/9.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 10, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/10.jpg', null);
+values (episode_seq.NEXTVAL, 1, 10, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/10.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 11, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/11.jpg', null);
+values (episode_seq.NEXTVAL, 1, 11, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/11.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 12, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/12.jpg',null);
+values (episode_seq.NEXTVAL, 1, 12, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/12.jpg',null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 13, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/13.jpg', null);
+values (episode_seq.NEXTVAL, 1, 13, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/13.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 14, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/14.jpg', null);
+values (episode_seq.NEXTVAL, 1, 14, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/14.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 15, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/15.jpg', null);
+values (episode_seq.NEXTVAL, 1, 15, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/15.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 16, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/16.jpg', null);
+values (episode_seq.NEXTVAL, 1, 16, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/16.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 17, 0, 0, '2016-03-02 ', '제6화 - 복도에서_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/17.jpg', null);
+values (episode_seq.NEXTVAL, 1, 17, 0, 0, '2016-03-02 ', '제6화 - 복도에서_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/17.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 18, 0, 0, '2016-03-02 ', '제6화 - 복도에서_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/18.jpg', null);
+values (episode_seq.NEXTVAL, 1, 18, 0, 0, '2016-03-02 ', '제6화 - 복도에서_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/18.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 19, 0, 0, '2016-03-02 ', '제6화 - 복도에서_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 1, 19, 0, 0, '2016-03-02 ', '제6화 - 복도에서_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 20, 0, 0, '2016-03-02 ', '제6화 - 복도에서_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/2.jpg', null);
+values (episode_seq.NEXTVAL, 1, 20, 0, 0, '2016-03-02 ', '제6화 - 복도에서_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/2.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 21, 0, 0, '2016-03-02 ', '제6화 - 복도에서_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/3.jpg', null);
+values (episode_seq.NEXTVAL, 1, 21, 0, 0, '2016-03-02 ', '제6화 - 복도에서_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/3.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 22, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/4.jpg', null);
+values (episode_seq.NEXTVAL, 1, 22, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/4.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 23, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/5.jpg', null);
+values (episode_seq.NEXTVAL, 1, 23, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/5.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 24, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/6.jpg', null);
+values (episode_seq.NEXTVAL, 1, 24, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/6.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 25, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/7.jpg', null);
+values (episode_seq.NEXTVAL, 1, 25, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/7.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 26, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/8.jpg', null);
+values (episode_seq.NEXTVAL, 1, 26, 0, 0, '2016-03-02 ', '제7화 - 옆집 여자_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/8.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 27, 0, 0, '2016-03-02 ', '제8화 - 귀신_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/9.jpg', null);
+values (episode_seq.NEXTVAL, 1, 27, 0, 0, '2016-03-02 ', '제8화 - 귀신_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/9.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 28, 0, 0, '2016-03-02 ', '제8화 - 귀신_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/10.jpg', null);
+values (episode_seq.NEXTVAL, 1, 28, 0, 0, '2016-03-02 ', '제8화 - 귀신_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/10.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 29, 0, 0, '2016-03-02 ', '제8화 - 귀신_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/11.jpg', null);
+values (episode_seq.NEXTVAL, 1, 29, 0, 0, '2016-03-02 ', '제8화 - 귀신_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/11.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 30, 0, 0, '2016-03-02 ', '제8화 - 귀신_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/12.jpg', null);
+values (episode_seq.NEXTVAL, 1, 30, 0, 0, '2016-03-02 ', '제8화 - 귀신_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/12.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 31, 0, 0, '2016-03-02 ', '제8화 - 귀신_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/13.jpg', null);
+values (episode_seq.NEXTVAL, 1, 31, 0, 0, '2016-03-02 ', '제8화 - 귀신_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/13.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 32, 0, 0, '2016-03-02 ', '제8화 - 귀신_6', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/14.jpg', null);
+values (episode_seq.NEXTVAL, 1, 32, 0, 0, '2016-03-02 ', '제8화 - 귀신_6', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/14.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 33, 0, 0, '2016-03-02 ', '제8화 - 귀신_7', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/15.jpg', null);
+values (episode_seq.NEXTVAL, 1, 33, 0, 0, '2016-03-02 ', '제8화 - 귀신_7', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/15.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 34, 0, 0, '2016-03-02 ', '제8화 - 귀신_8', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/16.jpg', null);
+values (episode_seq.NEXTVAL, 1, 34, 0, 0, '2016-03-02 ', '제8화 - 귀신_8', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/16.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 35, 0, 0, '2016-03-02 ', '제8화 - 귀신_9', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/17.jpg', null);
+values (episode_seq.NEXTVAL, 1, 35, 0, 0, '2016-03-02 ', '제8화 - 귀신_9', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/17.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 36, 0, 0, '2016-03-02 ', '제8화 - 귀신_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/18.jpg', null);
+values (episode_seq.NEXTVAL, 1, 36, 0, 0, '2016-03-02 ', '제8화 - 귀신_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/18.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 37, 0, 0, '2016-03-02 ', '제8화 - 귀신_11', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 1, 37, 0, 0, '2016-03-02 ', '제8화 - 귀신_11', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 38, 0, 0, '2016-03-02 ', '제8화 - 귀신_12', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/2.jpg', null);
+values (episode_seq.NEXTVAL, 1, 38, 0, 0, '2016-03-02 ', '제8화 - 귀신_12', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/2.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 39, 0, 0, '2016-03-02 ', '제8화 - 귀신_13', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/3.jpg', null);
+values (episode_seq.NEXTVAL, 1, 39, 0, 0, '2016-03-02 ', '제8화 - 귀신_13', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/3.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 40, 0, 0, '2016-03-02 ', '제8화 - 귀신_14', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/4.jpg', null);
+values (episode_seq.NEXTVAL, 1, 40, 0, 0, '2016-03-02 ', '제8화 - 귀신_14', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/4.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 41, 0, 0, '2016-03-02 ', '제8화 - 귀신_15', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/5.jpg', null);
+values (episode_seq.NEXTVAL, 1, 41, 0, 0, '2016-03-02 ', '제8화 - 귀신_15', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/5.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 42, 0, 0, '2016-03-02 ', '제8화 - 귀신_16', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/6.jpg', null);
+values (episode_seq.NEXTVAL, 1, 42, 0, 0, '2016-03-02 ', '제8화 - 귀신_16', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/6.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 43, 0, 0, '2016-03-02 ', '제8화 - 귀신_17', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/7.jpg', null);
+values (episode_seq.NEXTVAL, 1, 43, 0, 0, '2016-03-02 ', '제8화 - 귀신_17', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/7.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 44, 0, 0, '2016-03-02 ', '제8화 - 귀신_18', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/8.jpg', null);
+values (episode_seq.NEXTVAL, 1, 44, 0, 0, '2016-03-02 ', '제8화 - 귀신_18', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/8.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 45, 0, 0, '2016-03-02 ', '제8화 - 귀신_19', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/9.jpg', null);
+values (episode_seq.NEXTVAL, 1, 45, 0, 0, '2016-03-02 ', '제8화 - 귀신_19', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/9.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 46, 0, 0, '2016-03-02 ', '제8화 - 귀신_20', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/10.jpg', null);
+values (episode_seq.NEXTVAL, 1, 46, 0, 0, '2016-03-02 ', '제8화 - 귀신_20', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/10.jpg', null);
 
 --insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 --recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -897,244 +897,244 @@ select * from fund;
 --------------------------------------** fund webtoon-----------------------------------------------------------------------------------------------------------------
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 1, 0, 0, '2011-01-01', '예고편', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 2, 1, 0, 0, '2011-01-01', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 2, 0, 0, '2011-01-08', '제1화 - 1부 어게인 1화_01', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 2, 2, 0, 0, '2011-01-08', '제1화 - 1부 어게인 1화_01', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 3, 0, 0, '2011-01-15', '제1화 - 1부 어게인 1화_02', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 2, 3, 0, 0, '2011-01-15', '제1화 - 1부 어게인 1화_02', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 4, 0, 0, '2011-01-22', '제1화 - 1부 어게인 1화_03', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 2, 4, 0, 0, '2011-01-22', '제1화 - 1부 어게인 1화_03', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 5, 0, 0, '2011-01-29', '제1화 - 1부 어게인 1화_04', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 2, 5, 0, 0, '2011-01-29', '제1화 - 1부 어게인 1화_04', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 6, 0, 0, '2011-02-05', '제1화 - 1부 어게인 1화_05', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 1);
+values (episode_seq.NEXTVAL, 2, 6, 0, 0, '2011-02-05', '제1화 - 1부 어게인 1화_05', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 1);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 7, 0, 0, '2011-02-12', '제1화 - 1부 어게인 1화_06', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 2);
+values (episode_seq.NEXTVAL, 2, 7, 0, 0, '2011-02-12', '제1화 - 1부 어게인 1화_06', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 2);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 8, 0, 0, '2011-02-19', '제1화 - 1부 어게인 1화_07', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 3);
+values (episode_seq.NEXTVAL, 2, 8, 0, 0, '2011-02-19', '제1화 - 1부 어게인 1화_07', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 3);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 9, 0, 0, '2011-02-26', '제1화 - 1부 어게인 1화_08', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 4);
+values (episode_seq.NEXTVAL, 2, 9, 0, 0, '2011-02-26', '제1화 - 1부 어게인 1화_08', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 4);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 10, 0, 0, '2011-03-04', '제1화 - 1부 어게인 1화_09', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 5);
+values (episode_seq.NEXTVAL, 2, 10, 0, 0, '2011-03-04', '제1화 - 1부 어게인 1화_09', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 5);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 11, 0, 0, '2011-03-11', '제1화 - 1부 어게인 1화_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 6);
+values (episode_seq.NEXTVAL, 2, 11, 0, 0, '2011-03-11', '제1화 - 1부 어게인 1화_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 6);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 12, 0, 0, '2011-03-18', '제2화 - 1부 어게인 2화_01', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 7);
+values (episode_seq.NEXTVAL, 2, 12, 0, 0, '2011-03-18', '제2화 - 1부 어게인 2화_01', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 7);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 13, 0, 0, '2011-03-25', '제2화 - 1부 어게인 2화_02', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 8);
+values (episode_seq.NEXTVAL, 2, 13, 0, 0, '2011-03-25', '제2화 - 1부 어게인 2화_02', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 8);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 14, 0, 0, '2011-04-01', '제2화 - 1부 어게인 2화_03', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 9);
+values (episode_seq.NEXTVAL, 2, 14, 0, 0, '2011-04-01', '제2화 - 1부 어게인 2화_03', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 9);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 15, 0, 0, '2011-04-08', '제2화 - 1부 어게인 2화_04', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 10);
+values (episode_seq.NEXTVAL, 2, 15, 0, 0, '2011-04-08', '제2화 - 1부 어게인 2화_04', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 10);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 16, 0, 0, '2011-04-15', '제2화 - 1부 어게인 2화_06', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 11);
+values (episode_seq.NEXTVAL, 2, 16, 0, 0, '2011-04-15', '제2화 - 1부 어게인 2화_06', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 11);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 17, 0, 0, '2011-04-22', '제2화 - 1부 어게인 2화_07', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 12);
+values (episode_seq.NEXTVAL, 2, 17, 0, 0, '2011-04-22', '제2화 - 1부 어게인 2화_07', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 12);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 18, 0, 0, '2011-04-29', '제2화 - 1부 어게인 2화_08', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 13);
+values (episode_seq.NEXTVAL, 2, 18, 0, 0, '2011-04-29', '제2화 - 1부 어게인 2화_08', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 13);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 19, 0, 0, '2011-05-06', '제2화 - 1부 어게인 2화_09', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 14);
-
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 20, 0, 0, '2011-05-13', '제2화 - 1부 어게인 2화_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 15);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 21, 0, 0, '2011-05-20', '제2화 - 1부 어게인 2화_11', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 16);
+values (episode_seq.NEXTVAL, 2, 19, 0, 0, '2011-05-06', '제2화 - 1부 어게인 2화_09', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 14);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 22, 0, 0, '2011-05-27', '제2화 - 1부 어게인 2화_12', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 17);
+values (episode_seq.NEXTVAL, 2, 20, 0, 0, '2011-05-13', '제2화 - 1부 어게인 2화_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 15);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 21, 0, 0, '2011-05-20', '제2화 - 1부 어게인 2화_11', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 16);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 23, 0, 0, '2011-06-03', '제2화 - 1부 어게인 2화_13', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 18);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 24, 0, 0, '2011-06-10', '제2화 - 1부 어게인 2화_14', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 19);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 25, 0, 0, '2011-06-17', '제2화 - 1부 어게인 2화_15', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 20);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 26, 0, 0, '2011-06-23', '제2화 - 1부 어게인 2화_16', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 21);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 27, 0, 0, '2011-06-30', '제2화 - 1부 어게인 2화_17', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 22);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 28, 0, 0, '2011-07-07', '제2화 - 1부 어게인 2화_18', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 23);
+values (episode_seq.NEXTVAL, 2, 22, 0, 0, '2011-05-27', '제2화 - 1부 어게인 2화_12', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 17);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 29, 0, 0, '2011-07-09', '제3화 - 1부 어게인 3화_01', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 24);
+values (episode_seq.NEXTVAL, 2, 23, 0, 0, '2011-06-03', '제2화 - 1부 어게인 2화_13', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 18);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 30, 0, 0, '2011-07-16', '제3화 - 1부 어게인 3화_02', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 25);
+values (episode_seq.NEXTVAL, 2, 24, 0, 0, '2011-06-10', '제2화 - 1부 어게인 2화_14', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 19);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 25, 0, 0, '2011-06-17', '제2화 - 1부 어게인 2화_15', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 20);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 26, 0, 0, '2011-06-23', '제2화 - 1부 어게인 2화_16', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 21);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 27, 0, 0, '2011-06-30', '제2화 - 1부 어게인 2화_17', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 22);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 28, 0, 0, '2011-07-07', '제2화 - 1부 어게인 2화_18', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 23);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 31, 0, 0, '2011-07-23', '제3화 - 1부 어게인 3화_03', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 26);
+values (episode_seq.NEXTVAL, 2, 29, 0, 0, '2011-07-09', '제3화 - 1부 어게인 3화_01', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 24);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 32, 0, 0, '2011-07-30', '제3화 - 1부 어게인 3화_04', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 27);
+values (episode_seq.NEXTVAL, 2, 30, 0, 0, '2011-07-16', '제3화 - 1부 어게인 3화_02', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 25);
+
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 33, 0, 0, '2011-08-05', '제3화 - 1부 어게인 3화_05', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 28);
+values (episode_seq.NEXTVAL, 2, 31, 0, 0, '2011-07-23', '제3화 - 1부 어게인 3화_03', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 26);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 34, 0, 0, '2011-08-12', '제3화 - 1부 어게인 3화_06', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 29);
+values (episode_seq.NEXTVAL, 2, 32, 0, 0, '2011-07-30', '제3화 - 1부 어게인 3화_04', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 27);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 35, 0, 0, '2011-08-19', '제3화 - 1부 어게인 3화_07', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 30);
+values (episode_seq.NEXTVAL, 2, 33, 0, 0, '2011-08-05', '제3화 - 1부 어게인 3화_05', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 28);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 36, 0, 0, '2011-08-26', '제3화 - 1부 어게인 3화_08', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 31);
+values (episode_seq.NEXTVAL, 2, 34, 0, 0, '2011-08-12', '제3화 - 1부 어게인 3화_06', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 29);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 37, 0, 0, '2011-09-02', '제3화 - 1부 어게인 3화_09', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 32);
+values (episode_seq.NEXTVAL, 2, 35, 0, 0, '2011-08-19', '제3화 - 1부 어게인 3화_07', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 30);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 38, 0, 0, '2011-09-09', '제3화 - 1부 어게인 3화_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 33);
+values (episode_seq.NEXTVAL, 2, 36, 0, 0, '2011-08-26', '제3화 - 1부 어게인 3화_08', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 31);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 39, 0, 0, '2011-09-16', '제4화 - 1부 어게인 4화_01', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 34);
+values (episode_seq.NEXTVAL, 2, 37, 0, 0, '2011-09-02', '제3화 - 1부 어게인 3화_09', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 32);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 40, 0, 0, '2011-09-22', '제4화 - 1부 어게인 4화_02', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 35);
+values (episode_seq.NEXTVAL, 2, 38, 0, 0, '2011-09-09', '제3화 - 1부 어게인 3화_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 33);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 41, 0, 0, '2011-09-29', '제4화 - 1부 어게인 4화_03', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 36);
+values (episode_seq.NEXTVAL, 2, 39, 0, 0, '2011-09-16', '제4화 - 1부 어게인 4화_01', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 34);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 42, 0, 0, '2011-10-06', '제4화 - 1부 어게인 4화_04', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 37);
+values (episode_seq.NEXTVAL, 2, 40, 0, 0, '2011-09-22', '제4화 - 1부 어게인 4화_02', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 35);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 43, 0, 0, '2011-10-13', '제4화 - 1부 어게인 4화_05', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 38);
+values (episode_seq.NEXTVAL, 2, 41, 0, 0, '2011-09-29', '제4화 - 1부 어게인 4화_03', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 36);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 44, 0, 0, '2011-10-20', '제4화 - 1부 어게인 4화_06', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 39);
+values (episode_seq.NEXTVAL, 2, 42, 0, 0, '2011-10-06', '제4화 - 1부 어게인 4화_04', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 37);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 45, 0, 0, '2011-10-27', '제4화 - 1부 어게인 4화_07', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 40);
+values (episode_seq.NEXTVAL, 2, 43, 0, 0, '2011-10-13', '제4화 - 1부 어게인 4화_05', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 38);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 46, 0, 0, '2011-11-03', '제4화 - 1부 어게인 4화_08', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 41);
+values (episode_seq.NEXTVAL, 2, 44, 0, 0, '2011-10-20', '제4화 - 1부 어게인 4화_06', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 39);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 47, 0, 0, '2011-11-10', '제4화 - 1부 어게인 4화_09', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 42);
+values (episode_seq.NEXTVAL, 2, 45, 0, 0, '2011-10-27', '제4화 - 1부 어게인 4화_07', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 40);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 48, 0, 0, '2011-11-17', '제4화 - 1부 어게인 4화_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 43);
+values (episode_seq.NEXTVAL, 2, 46, 0, 0, '2011-11-03', '제4화 - 1부 어게인 4화_08', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 41);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 49, 0, 0, '2011-11-24', '제5화 - 1부 어게인 5화_1', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 44);
+values (episode_seq.NEXTVAL, 2, 47, 0, 0, '2011-11-10', '제4화 - 1부 어게인 4화_09', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 42);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 50, 0, 0, '2011-12-02', '제5화 - 1부 어게인 5화_2', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 45);
+values (episode_seq.NEXTVAL, 2, 48, 0, 0, '2011-11-17', '제4화 - 1부 어게인 4화_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 43);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 51, 0, 0, '2011-12-09', '제5화 - 1부 어게인 5화_3', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 46);
+values (episode_seq.NEXTVAL, 2, 49, 0, 0, '2011-11-24', '제5화 - 1부 어게인 5화_1', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 44);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 52, 0, 0, '2011-12-16', '제5화 - 1부 어게인 5화_4', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 47);
+values (episode_seq.NEXTVAL, 2, 50, 0, 0, '2011-12-02', '제5화 - 1부 어게인 5화_2', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 45);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 53, 0, 0, '2011-12-23', '제5화 - 1부 어게인 5화_5', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 48);
+values (episode_seq.NEXTVAL, 2, 51, 0, 0, '2011-12-09', '제5화 - 1부 어게인 5화_3', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 46);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 54, 0, 0, '2011-12-30', '제5화 - 1부 어게인 5화_6', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 49);
+values (episode_seq.NEXTVAL, 2, 52, 0, 0, '2011-12-16', '제5화 - 1부 어게인 5화_4', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 47);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 55, 0, 0, '2012-01-06 ', '제5화 - 1부 어게인 5화_7', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 50);
+values (episode_seq.NEXTVAL, 2, 53, 0, 0, '2011-12-23', '제5화 - 1부 어게인 5화_5', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 48);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 56, 0, 0, '2012-01-13', '제5화 - 1부 어게인 5화_8', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 51);
+values (episode_seq.NEXTVAL, 2, 54, 0, 0, '2011-12-30', '제5화 - 1부 어게인 5화_6', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 49);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 57, 0, 0, '2012-01-20', '제5화 - 1부 어게인 5화_9', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 52);
+values (episode_seq.NEXTVAL, 2, 55, 0, 0, '2012-01-06 ', '제5화 - 1부 어게인 5화_7', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 50);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 58, 0, 0, '2012-01-27', '제5화 - 1부 어게인 5화_10', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 53);
+values (episode_seq.NEXTVAL, 2, 56, 0, 0, '2012-01-13', '제5화 - 1부 어게인 5화_8', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 51);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2012-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', '/webtoon/thumbNail_episode/1.jpg', 54);
+values (episode_seq.NEXTVAL, 2, 57, 0, 0, '2012-01-20', '제5화 - 1부 어게인 5화_9', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 52);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 58, 0, 0, '2012-01-27', '제5화 - 1부 어게인 5화_10', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 53);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2012-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', 54);
 
 --select * from episode where webtoon_code=2 order by episode_sequence;
 
@@ -1330,7 +1330,7 @@ values(1, 105, '/webtoon/sf/제5화 - 1부 어게인 5화_11.jpg');
 
 --insert into webtoon
 --(webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
---values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!', /webtoon/thumbNail_webtoon/21.jpg);
+--values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!', /webtoon/webtoonThumbnail/21.jpg);
 
 
 ---------웹툰 26년의 펀딩 ------------------------------
@@ -1719,519 +1719,519 @@ select * from episode;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 1, 0, 0, '2009-01-01', '예고편', '인트로', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 3, 1, 0, 0, '2009-01-01', '예고편', '인트로', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 2, 0, 0, '2009-01-08', '26년을 이야기한다-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 3, 2, 0, 0, '2009-01-08', '26년을 이야기한다-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 3, 0, 0, '2009-01-15', '26년을 이야기한다-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 3, 3, 0, 0, '2009-01-15', '26년을 이야기한다-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 4, 0, 0, '2009-01-22', '26년을 이야기한다-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 3, 4, 0, 0, '2009-01-22', '26년을 이야기한다-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 5, 0, 0, '2009-01-29', '제1화 그 죽음을 기억하라-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', null);
+values (episode_seq.NEXTVAL, 3, 5, 0, 0, '2009-01-29', '제1화 그 죽음을 기억하라-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 6, 0, 0, '2009-02-05', '제1화 그 죽음을 기억하라-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 55);
+values (episode_seq.NEXTVAL, 3, 6, 0, 0, '2009-02-05', '제1화 그 죽음을 기억하라-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 55);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 7, 0, 0, '2009-02-12', '제2화 단절되지 않는 아픔-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 56);
+values (episode_seq.NEXTVAL, 3, 7, 0, 0, '2009-02-12', '제2화 단절되지 않는 아픔-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 56);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 8, 0, 0, '2009-02-19', '제2화 단절되지 않는 아픔-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 57);
+values (episode_seq.NEXTVAL, 3, 8, 0, 0, '2009-02-19', '제2화 단절되지 않는 아픔-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 57);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 9, 0, 0, '2009-02-26', '제2화 단절되지 않는 아픔-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 58);
+values (episode_seq.NEXTVAL, 3, 9, 0, 0, '2009-02-26', '제2화 단절되지 않는 아픔-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 58);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 10, 0, 0, '2009-03-05', '제2화 단절되지 않는 아픔-4', '작가의말 26년이야', '/webtoon/thumbNail_episode/1.jpg', 59);
+values (episode_seq.NEXTVAL, 3, 10, 0, 0, '2009-03-05', '제2화 단절되지 않는 아픔-4', '작가의말 26년이야', '/webtoon/episodeThumbnail/1.jpg', 59);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 11, 0, 0, '2009-03-12', '제3화 상처는 깊은 흉터를 남긴다-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 60);
+values (episode_seq.NEXTVAL, 3, 11, 0, 0, '2009-03-12', '제3화 상처는 깊은 흉터를 남긴다-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 60);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 12, 0, 0, '2009-03-19', '제3화 상처는 깊은 흉터를 남긴다-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 61);
+values (episode_seq.NEXTVAL, 3, 12, 0, 0, '2009-03-19', '제3화 상처는 깊은 흉터를 남긴다-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 61);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 13, 0, 0, '2009-03-26', '제3화 상처는 깊은 흉터를 남긴다-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 62);
+values (episode_seq.NEXTVAL, 3, 13, 0, 0, '2009-03-26', '제3화 상처는 깊은 흉터를 남긴다-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 62);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 14, 0, 0, '2009-04-02', '제3화 상처는 깊은 흉터를 남긴다-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 63);
+values (episode_seq.NEXTVAL, 3, 14, 0, 0, '2009-04-02', '제3화 상처는 깊은 흉터를 남긴다-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 63);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 15, 0, 0, '2009-04-09', '제4화 일어서는 사람들-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 64);
+values (episode_seq.NEXTVAL, 3, 15, 0, 0, '2009-04-09', '제4화 일어서는 사람들-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 64);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 16, 0, 0, '2009-04-16', '제4화 일어서는 사람들-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 65);
+values (episode_seq.NEXTVAL, 3, 16, 0, 0, '2009-04-16', '제4화 일어서는 사람들-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 65);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 17, 0, 0, '2009-04-23', '제4화 일어서는 사람들-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 66);
+values (episode_seq.NEXTVAL, 3, 17, 0, 0, '2009-04-23', '제4화 일어서는 사람들-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 66);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 18, 0, 0, '2009-04-30', '제4화 일어서는 사람들-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 67);
+values (episode_seq.NEXTVAL, 3, 18, 0, 0, '2009-04-30', '제4화 일어서는 사람들-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 67);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 19, 0, 0, '2009-05-07', '제5화 길 위에 서다-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 68);
+values (episode_seq.NEXTVAL, 3, 19, 0, 0, '2009-05-07', '제5화 길 위에 서다-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 68);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 20, 0, 0, '2009-05-14', '제5화 길 위에 서다-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 69);
+values (episode_seq.NEXTVAL, 3, 20, 0, 0, '2009-05-14', '제5화 길 위에 서다-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 69);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 21, 0, 0, '2009-05-21', '제5화 길 위에 서다-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 70);
+values (episode_seq.NEXTVAL, 3, 21, 0, 0, '2009-05-21', '제5화 길 위에 서다-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 70);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 22, 0, 0, '2009-05-28', '제6화 죽은 사람이 산 사람에게-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 71);
+values (episode_seq.NEXTVAL, 3, 22, 0, 0, '2009-05-28', '제6화 죽은 사람이 산 사람에게-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 71);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 23, 0, 0, '2009-06-04', '제6화 죽은 사람이 산 사람에게-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 72);
+values (episode_seq.NEXTVAL, 3, 23, 0, 0, '2009-06-04', '제6화 죽은 사람이 산 사람에게-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 72);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 24, 0, 0, '2009-06-11', '제6화 죽은 사람이 산 사람에게-3', '26년이야?', '/webtoon/thumbNail_episode/1.jpg', 73);
+values (episode_seq.NEXTVAL, 3, 24, 0, 0, '2009-06-11', '제6화 죽은 사람이 산 사람에게-3', '26년이야?', '/webtoon/episodeThumbnail/1.jpg', 73);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 25, 0, 0, '2009-06-18', '제6화 죽은 사람이 산 사람에게-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 74);
+values (episode_seq.NEXTVAL, 3, 25, 0, 0, '2009-06-18', '제6화 죽은 사람이 산 사람에게-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 74);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 26, 0, 0, '2009-06-25', '제7화 시대에 휩쓸린 사람들-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 75);
+values (episode_seq.NEXTVAL, 3, 26, 0, 0, '2009-06-25', '제7화 시대에 휩쓸린 사람들-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 75);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 27, 0, 0, '2009-07-02', '제7화 시대에 휩쓸린 사람들-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 76);
+values (episode_seq.NEXTVAL, 3, 27, 0, 0, '2009-07-02', '제7화 시대에 휩쓸린 사람들-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 76);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 28, 0, 0, '2009-07-09', '제7화 시대에 휩쓸린 사람들-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 77);
+values (episode_seq.NEXTVAL, 3, 28, 0, 0, '2009-07-09', '제7화 시대에 휩쓸린 사람들-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 77);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 29, 0, 0, '2009-07-16', '제7화 시대에 휩쓸린 사람들-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 78);
+values (episode_seq.NEXTVAL, 3, 29, 0, 0, '2009-07-16', '제7화 시대에 휩쓸린 사람들-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 78);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 30, 0, 0, '2009-07-23', '제7화 시대에 휩쓸린 사람들-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 79);
+values (episode_seq.NEXTVAL, 3, 30, 0, 0, '2009-07-23', '제7화 시대에 휩쓸린 사람들-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 79);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 31, 0, 0, '2009-07-30', '제7화 시대에 휩쓸린 사람들-6', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 80);
+values (episode_seq.NEXTVAL, 3, 31, 0, 0, '2009-07-30', '제7화 시대에 휩쓸린 사람들-6', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 80);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 32, 0, 0, '2009-08-06', '제9화 사람과 사람과 사람들-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 81);
+values (episode_seq.NEXTVAL, 3, 32, 0, 0, '2009-08-06', '제9화 사람과 사람과 사람들-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 81);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 33, 0, 0, '2009-08-13', '제9화 사람과 사람과 사람들-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 82);
+values (episode_seq.NEXTVAL, 3, 33, 0, 0, '2009-08-13', '제9화 사람과 사람과 사람들-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 82);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 34, 0, 0, '2009-08-20', '제9화 사람과 사람과 사람들-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 83);
+values (episode_seq.NEXTVAL, 3, 34, 0, 0, '2009-08-20', '제9화 사람과 사람과 사람들-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 83);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 35, 0, 0, '2009-08-27', '제10화 가슴에 돋는 칼로 슬픔을-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 84);
+values (episode_seq.NEXTVAL, 3, 35, 0, 0, '2009-08-27', '제10화 가슴에 돋는 칼로 슬픔을-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 84);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 36, 0, 0, '2009-09-03', '제10화 가슴에 돋는 칼로 슬픔을-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 85);
+values (episode_seq.NEXTVAL, 3, 36, 0, 0, '2009-09-03', '제10화 가슴에 돋는 칼로 슬픔을-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 85);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 37, 0, 0, '2009-09-10', '제10화가슴에 돋는 칼로 슬픔을-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 86);
+values (episode_seq.NEXTVAL, 3, 37, 0, 0, '2009-09-10', '제10화가슴에 돋는 칼로 슬픔을-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 86);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 38, 0, 0, '2009-09-17', '제10화 가슴에 돋는 칼로 슬픔을-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 87);
+values (episode_seq.NEXTVAL, 3, 38, 0, 0, '2009-09-17', '제10화 가슴에 돋는 칼로 슬픔을-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 87);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 39, 0, 0, '2009-09-23', '제11화 도발-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 88);
+values (episode_seq.NEXTVAL, 3, 39, 0, 0, '2009-09-23', '제11화 도발-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 88);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 40, 0, 0, '2009-09-30', '제11화 도발-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 89);
+values (episode_seq.NEXTVAL, 3, 40, 0, 0, '2009-09-30', '제11화 도발-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 89);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 41, 0, 0, '2009-10-07', '제11화 도발-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 90);
+values (episode_seq.NEXTVAL, 3, 41, 0, 0, '2009-10-07', '제11화 도발-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 90);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 42, 0, 0, '2009-10-15', '제11화 도발-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 91);
+values (episode_seq.NEXTVAL, 3, 42, 0, 0, '2009-10-15', '제11화 도발-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 91);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 43, 0, 0, '2009-10-22', '제11화 도발-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 92);
+values (episode_seq.NEXTVAL, 3, 43, 0, 0, '2009-10-22', '제11화 도발-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 92);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 44, 0, 0, '2009-10-29', '제12화 좁혀드는 시선-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 93);
+values (episode_seq.NEXTVAL, 3, 44, 0, 0, '2009-10-29', '제12화 좁혀드는 시선-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 93);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 45, 0, 0, '2009-11-05', '제12화 좁혀드는 시선-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 94);
+values (episode_seq.NEXTVAL, 3, 45, 0, 0, '2009-11-05', '제12화 좁혀드는 시선-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 94);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 46, 0, 0, '2009-11-12', '제12화 좁혀드는 시선-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 95);
+values (episode_seq.NEXTVAL, 3, 46, 0, 0, '2009-11-12', '제12화 좁혀드는 시선-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 95);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 47, 0, 0, '2009-11-19', '제12화 좁혀드는 시선-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 96);
+values (episode_seq.NEXTVAL, 3, 47, 0, 0, '2009-11-19', '제12화 좁혀드는 시선-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 96);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 48, 0, 0, '2009-11-26', '제13화 작용과 반작용-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 97);
+values (episode_seq.NEXTVAL, 3, 48, 0, 0, '2009-11-26', '제13화 작용과 반작용-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 97);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 49, 0, 0, '2009-12-03', '제13화 작용과 반작용-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 98);
+values (episode_seq.NEXTVAL, 3, 49, 0, 0, '2009-12-03', '제13화 작용과 반작용-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 98);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 50, 0, 0, '2009-12-10', '제13화 작용과 반작용-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 99);
+values (episode_seq.NEXTVAL, 3, 50, 0, 0, '2009-12-10', '제13화 작용과 반작용-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 99);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 51, 0, 0, '2009-12-17', '제14화 햇빛 쏟아지는 거리-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 100);
+values (episode_seq.NEXTVAL, 3, 51, 0, 0, '2009-12-17', '제14화 햇빛 쏟아지는 거리-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 100);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 52, 0, 0, '2009-12-23', '제14화 햇빛 쏟아지는 거리-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 101);
+values (episode_seq.NEXTVAL, 3, 52, 0, 0, '2009-12-23', '제14화 햇빛 쏟아지는 거리-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 101);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 53, 0, 0, '2009-12-30', '제14화 햇빛 쏟아지는 거리-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 102);
+values (episode_seq.NEXTVAL, 3, 53, 0, 0, '2009-12-30', '제14화 햇빛 쏟아지는 거리-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 102);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 54, 0, 0, '2010-01-06', '제14화 햇빛 쏟아지는 거리-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 103);
+values (episode_seq.NEXTVAL, 3, 54, 0, 0, '2010-01-06', '제14화 햇빛 쏟아지는 거리-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 103);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 55, 0, 0, '2010-01-13', '제15화 되돌아오는 진실-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 104);
+values (episode_seq.NEXTVAL, 3, 55, 0, 0, '2010-01-13', '제15화 되돌아오는 진실-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 104);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 56, 0, 0, '2010-01-20', '제15화 되돌아오는 진실-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 105);
+values (episode_seq.NEXTVAL, 3, 56, 0, 0, '2010-01-20', '제15화 되돌아오는 진실-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 105);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 57, 0, 0, '2010-01-27', '제15화 되돌아오는 진실-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 106);
+values (episode_seq.NEXTVAL, 3, 57, 0, 0, '2010-01-27', '제15화 되돌아오는 진실-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 106);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 58, 0, 0, '2010-02-03', '제15화 되돌아오는 진실-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 107);
+values (episode_seq.NEXTVAL, 3, 58, 0, 0, '2010-02-03', '제15화 되돌아오는 진실-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 107);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 59, 0, 0, '2010-02-10', '제16화 또 다른 계획-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 108);
+values (episode_seq.NEXTVAL, 3, 59, 0, 0, '2010-02-10', '제16화 또 다른 계획-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 108);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 60, 0, 0, '2010-02-17', '제16화 또 다른 계획-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 109);
+values (episode_seq.NEXTVAL, 3, 60, 0, 0, '2010-02-17', '제16화 또 다른 계획-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 109);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 61, 0, 0, '2010-02-24', '제16화 또 다른 계획-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 110);
+values (episode_seq.NEXTVAL, 3, 61, 0, 0, '2010-02-24', '제16화 또 다른 계획-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 110);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 62, 0, 0, '2010-03-03', '제16화 또 다른 계획-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 111);
+values (episode_seq.NEXTVAL, 3, 62, 0, 0, '2010-03-03', '제16화 또 다른 계획-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 111);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 63, 0, 0, '2010-03-10', '제16화 또 다른 계획-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 112);
+values (episode_seq.NEXTVAL, 3, 63, 0, 0, '2010-03-10', '제16화 또 다른 계획-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 112);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 64, 0, 0, '2010-03-17', '제17화 가능과 불가능-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 113);
+values (episode_seq.NEXTVAL, 3, 64, 0, 0, '2010-03-17', '제17화 가능과 불가능-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 113);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 65, 0, 0, '2010-03-24', '제17화 가능과 불가능-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 114);
+values (episode_seq.NEXTVAL, 3, 65, 0, 0, '2010-03-24', '제17화 가능과 불가능-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 114);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 66, 0, 0, '2010-03-31', '제17화 가능과 불가능-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 115);
+values (episode_seq.NEXTVAL, 3, 66, 0, 0, '2010-03-31', '제17화 가능과 불가능-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 115);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 67, 0, 0, '2010-04-07', '제18화 빨간 신호등-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 116);
+values (episode_seq.NEXTVAL, 3, 67, 0, 0, '2010-04-07', '제18화 빨간 신호등-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 116);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 68, 0, 0, '2010-04-14', '제18화 빨간 신호등-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 117);
+values (episode_seq.NEXTVAL, 3, 68, 0, 0, '2010-04-14', '제18화 빨간 신호등-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 117);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 69, 0, 0, '2010-04-21', '제18화 빨간 신호등-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 118);
+values (episode_seq.NEXTVAL, 3, 69, 0, 0, '2010-04-21', '제18화 빨간 신호등-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 118);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 70, 0, 0, '2010-04-28', '제18화 빨간 신호등-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 119);
+values (episode_seq.NEXTVAL, 3, 70, 0, 0, '2010-04-28', '제18화 빨간 신호등-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 119);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 71, 0, 0, '2010-05-05', '제18화 빨간 신호등-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 120);
+values (episode_seq.NEXTVAL, 3, 71, 0, 0, '2010-05-05', '제18화 빨간 신호등-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 120);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 72, 0, 0, '2010-05-12', '제19화 시대는 아직도 아프다-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 121);
+values (episode_seq.NEXTVAL, 3, 72, 0, 0, '2010-05-12', '제19화 시대는 아직도 아프다-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 121);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 73, 0, 0, '2010-05-19', '제19화 시대는 아직도 아프다-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 122);
+values (episode_seq.NEXTVAL, 3, 73, 0, 0, '2010-05-19', '제19화 시대는 아직도 아프다-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 122);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 74, 0, 0, '2010-05-26', '제19화 시대는 아직도 아프다-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 123);
+values (episode_seq.NEXTVAL, 3, 74, 0, 0, '2010-05-26', '제19화 시대는 아직도 아프다-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 123);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 75, 0, 0, '2010-06-03', '제19화 시대는 아직도 아프다-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 124);
+values (episode_seq.NEXTVAL, 3, 75, 0, 0, '2010-06-03', '제19화 시대는 아직도 아프다-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 124);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 76, 0, 0, '2010-06-10', '제19화 시대는 아직도 아프다-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 125);
+values (episode_seq.NEXTVAL, 3, 76, 0, 0, '2010-06-10', '제19화 시대는 아직도 아프다-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 125);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 77, 0, 0, '2010-06-17', '제20화 그렇지만 다시 일어나-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 126);
+values (episode_seq.NEXTVAL, 3, 77, 0, 0, '2010-06-17', '제20화 그렇지만 다시 일어나-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 126);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 78, 0, 0, '2010-06-24', '제20화 그렇지만 다시 일어나-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 127);
+values (episode_seq.NEXTVAL, 3, 78, 0, 0, '2010-06-24', '제20화 그렇지만 다시 일어나-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 127);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 79, 0, 0, '2010-07-31', '제20화 그렇지만 다시 일어나-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 128);
+values (episode_seq.NEXTVAL, 3, 79, 0, 0, '2010-07-31', '제20화 그렇지만 다시 일어나-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 128);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 80, 0, 0, '2010-08-07', '제20화 그렇지만 다시 일어나-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 129);
+values (episode_seq.NEXTVAL, 3, 80, 0, 0, '2010-08-07', '제20화 그렇지만 다시 일어나-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 129);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 81, 0, 0, '2010-08-15', '제20화 그렇지만 다시 일어나-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 130);
+values (episode_seq.NEXTVAL, 3, 81, 0, 0, '2010-08-15', '제20화 그렇지만 다시 일어나-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 130);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 82, 0, 0, '2010-08-22', '제21화 등 뒤의 시선-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 131);
+values (episode_seq.NEXTVAL, 3, 82, 0, 0, '2010-08-22', '제21화 등 뒤의 시선-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 131);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 83, 0, 0, '2010-08-29', '제21화 등 뒤의 시선-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 132);
+values (episode_seq.NEXTVAL, 3, 83, 0, 0, '2010-08-29', '제21화 등 뒤의 시선-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 132);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 84, 0, 0, '2010-09-05', '제21화 등 뒤의 시선-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 133);
+values (episode_seq.NEXTVAL, 3, 84, 0, 0, '2010-09-05', '제21화 등 뒤의 시선-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 133);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 85, 0, 0, '2010-09-12', '제21화 등 뒤의 시선-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 134);
+values (episode_seq.NEXTVAL, 3, 85, 0, 0, '2010-09-12', '제21화 등 뒤의 시선-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 134);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 86, 0, 0, '2010-09-19', '제22화 늦게 오는 봄-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 135);
+values (episode_seq.NEXTVAL, 3, 86, 0, 0, '2010-09-19', '제22화 늦게 오는 봄-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 135);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 87, 0, 0, '2010-09-26', '제22화 늦게 오는 봄-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 136);
+values (episode_seq.NEXTVAL, 3, 87, 0, 0, '2010-09-26', '제22화 늦게 오는 봄-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 136);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 88, 0, 0, '2010-10-03', '제22화 늦게 오는 봄-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 137);
+values (episode_seq.NEXTVAL, 3, 88, 0, 0, '2010-10-03', '제22화 늦게 오는 봄-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 137);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 89, 0, 0, '2010-10-10', '제22화 늦게 오는 봄-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 138);
+values (episode_seq.NEXTVAL, 3, 89, 0, 0, '2010-10-10', '제22화 늦게 오는 봄-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 138);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 90, 0, 0, '2010-10-17', '제22화 늦게 오는 봄-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 139);
+values (episode_seq.NEXTVAL, 3, 90, 0, 0, '2010-10-17', '제22화 늦게 오는 봄-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 139);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 91, 0, 0, '2010-10-24', '제23화 어제 죽은 내일-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 140);
+values (episode_seq.NEXTVAL, 3, 91, 0, 0, '2010-10-24', '제23화 어제 죽은 내일-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 140);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 92, 0, 0, '2010-10-31', '제23화 어제 죽은 내일-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 141);
+values (episode_seq.NEXTVAL, 3, 92, 0, 0, '2010-10-31', '제23화 어제 죽은 내일-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 141);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 93, 0, 0, '2010-11-07', '제23화 어제 죽은 내일-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 142);
+values (episode_seq.NEXTVAL, 3, 93, 0, 0, '2010-11-07', '제23화 어제 죽은 내일-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 142);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 94, 0, 0, '2010-11-14', '제24화 오늘을 사는 사람들-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 143);
+values (episode_seq.NEXTVAL, 3, 94, 0, 0, '2010-11-14', '제24화 오늘을 사는 사람들-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 143);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 95, 0, 0, '2010-11-21', '제24화 오늘을 사는 사람들-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 144);
+values (episode_seq.NEXTVAL, 3, 95, 0, 0, '2010-11-21', '제24화 오늘을 사는 사람들-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 144);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 96, 0, 0, '2010-11-28', '제25화 그대 그날을 기억하는가-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 145);
+values (episode_seq.NEXTVAL, 3, 96, 0, 0, '2010-11-28', '제25화 그대 그날을 기억하는가-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 145);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 97, 0, 0, '2010-12-05', '제25화 그대 그날을 기억하는가-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 146);
+values (episode_seq.NEXTVAL, 3, 97, 0, 0, '2010-12-05', '제25화 그대 그날을 기억하는가-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 146);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 98, 0, 0, '2010-12-12', '제25화 그대 그날을 기억하는가-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 147);
+values (episode_seq.NEXTVAL, 3, 98, 0, 0, '2010-12-12', '제25화 그대 그날을 기억하는가-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 147);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 99, 0, 0, '2010-12-19', '제25화 그대 그날을 기억하는가-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 148);
+values (episode_seq.NEXTVAL, 3, 99, 0, 0, '2010-12-19', '제25화 그대 그날을 기억하는가-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 148);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 100, 0, 0, '2010-12-26', '제25화 그대 그날을 기억하는가-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 149);
+values (episode_seq.NEXTVAL, 3, 100, 0, 0, '2010-12-26', '제25화 그대 그날을 기억하는가-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 149);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 101, 0, 0, '2011-01-02', '제25화 그대 그날을 기억하는가-6', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 150);
+values (episode_seq.NEXTVAL, 3, 101, 0, 0, '2011-01-02', '제25화 그대 그날을 기억하는가-6', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 150);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 102, 0, 0, '2011-01-09', '제25화 그대 그날을 기억하는가-7', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 151);
+values (episode_seq.NEXTVAL, 3, 102, 0, 0, '2011-01-09', '제25화 그대 그날을 기억하는가-7', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 151);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 103, 0, 0, '2011-01-16', '제26화 서럽다 뉘 말하는가-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 152);
+values (episode_seq.NEXTVAL, 3, 103, 0, 0, '2011-01-16', '제26화 서럽다 뉘 말하는가-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 152);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 104, 0, 0, '2011-01-23', '제26화 서럽다 뉘 말하는가-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 153);
+values (episode_seq.NEXTVAL, 3, 104, 0, 0, '2011-01-23', '제26화 서럽다 뉘 말하는가-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 153);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 105, 0, 0, '2011-01-30', '제26화 서럽다 뉘 말하는가-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 154);
+values (episode_seq.NEXTVAL, 3, 105, 0, 0, '2011-01-30', '제26화 서럽다 뉘 말하는가-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 154);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	 
-values (episode_seq.NEXTVAL, 3, 106, 0, 0, '2011-02-06', '제26화 서럽다 뉘 말하는가-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 155);
+values (episode_seq.NEXTVAL, 3, 106, 0, 0, '2011-02-06', '제26화 서럽다 뉘 말하는가-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 155);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 107, 0, 0, '2011-02-13', '제26화 서럽다 뉘 말하는가-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 156);
+values (episode_seq.NEXTVAL, 3, 107, 0, 0, '2011-02-13', '제26화 서럽다 뉘 말하는가-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 156);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 108, 0, 0, '2011-02-20', '제26화 서럽다 뉘 말하는가-6', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 157);
+values (episode_seq.NEXTVAL, 3, 108, 0, 0, '2011-02-20', '제26화 서럽다 뉘 말하는가-6', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 157);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 109, 0, 0, '2011-02-27', '제26화 서럽다 뉘 말하는가-7', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 158);
+values (episode_seq.NEXTVAL, 3, 109, 0, 0, '2011-02-27', '제26화 서럽다 뉘 말하는가-7', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 158);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 110, 0, 0, '2011-03-06', '제27화 돌아오지 않는 봄-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 159);
+values (episode_seq.NEXTVAL, 3, 110, 0, 0, '2011-03-06', '제27화 돌아오지 않는 봄-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 159);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 111, 0, 0, '2011-03-13', '제27화 돌아오지 않는 봄-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 160);
+values (episode_seq.NEXTVAL, 3, 111, 0, 0, '2011-03-13', '제27화 돌아오지 않는 봄-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 160);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 112, 0, 0, '2011-03-20', '제27화 돌아오지 않는 봄-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 161);
+values (episode_seq.NEXTVAL, 3, 112, 0, 0, '2011-03-20', '제27화 돌아오지 않는 봄-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 161);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 113, 0, 0, '2011-03-27', '제27화 돌아오지 않는 봄-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 162);
+values (episode_seq.NEXTVAL, 3, 113, 0, 0, '2011-03-27', '제27화 돌아오지 않는 봄-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 162);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 114, 0, 0, '2011-04-03', '제27화 돌아오지 않는 봄-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 163);
+values (episode_seq.NEXTVAL, 3, 114, 0, 0, '2011-04-03', '제27화 돌아오지 않는 봄-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 163);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 115, 0, 0, '2011-04-10', '제27화 돌아오지 않는 봄-6', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 164);
+values (episode_seq.NEXTVAL, 3, 115, 0, 0, '2011-04-10', '제27화 돌아오지 않는 봄-6', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 164);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 116, 0, 0, '2011-04-17', '제27화 돌아오지 않는 봄-7', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 165);
+values (episode_seq.NEXTVAL, 3, 116, 0, 0, '2011-04-17', '제27화 돌아오지 않는 봄-7', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 165);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 117, 0, 0, '2011-04-24', '제28화 마른 잎 다시 살아나-1', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 166);
+values (episode_seq.NEXTVAL, 3, 117, 0, 0, '2011-04-24', '제28화 마른 잎 다시 살아나-1', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 166);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 118, 0, 0, '2011-05-01', '제28화 마른 잎 다시 살아나-2', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 167);
+values (episode_seq.NEXTVAL, 3, 118, 0, 0, '2011-05-01', '제28화 마른 잎 다시 살아나-2', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 167);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 119, 0, 0, '2011-05-08', '제28화 마른 잎 다시 살아나-3', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 168);
+values (episode_seq.NEXTVAL, 3, 119, 0, 0, '2011-05-08', '제28화 마른 잎 다시 살아나-3', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 168);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 120, 0, 0, '2011-05-15', '제28화 마른 잎 다시 살아나-4', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 169);
+values (episode_seq.NEXTVAL, 3, 120, 0, 0, '2011-05-15', '제28화 마른 잎 다시 살아나-4', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 169);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 121, 0, 0, '2011-05-22', '제28화 마른 잎 다시 살아나-5', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 170);
+values (episode_seq.NEXTVAL, 3, 121, 0, 0, '2011-05-22', '제28화 마른 잎 다시 살아나-5', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 170);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 122, 0, 0, '2011-05-29', '제28화 마른 잎 다시 살아나-6', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 171);
+values (episode_seq.NEXTVAL, 3, 122, 0, 0, '2011-05-29', '제28화 마른 잎 다시 살아나-6', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 171);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 123, 0, 0, '2011-06-05', '제28화 마른 잎 다시 살아나-7', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 172);
+values (episode_seq.NEXTVAL, 3, 123, 0, 0, '2011-06-05', '제28화 마른 잎 다시 살아나-7', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 172);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 124, 0, 0, '2011-06-12', '제28화 마른 잎 다시 살아나-8', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 173);
+values (episode_seq.NEXTVAL, 3, 124, 0, 0, '2011-06-12', '제28화 마른 잎 다시 살아나-8', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 173);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 125, 0, 0, '2011-06-19', '제28화 마른 잎 다시 살아나-9', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 174);
+values (episode_seq.NEXTVAL, 3, 125, 0, 0, '2011-06-19', '제28화 마른 잎 다시 살아나-9', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 174);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 126, 0, 0, '2011-06-26', '제28화 마른 잎 다시 살아나-10', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 175);
+values (episode_seq.NEXTVAL, 3, 126, 0, 0, '2011-06-26', '제28화 마른 잎 다시 살아나-10', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 175);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 127, 0, 0, '2011-07-03', '제28화 마른 잎 다시 살아나-11', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 176);
+values (episode_seq.NEXTVAL, 3, 127, 0, 0, '2011-07-03', '제28화 마른 잎 다시 살아나-11', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 176);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 128, 0, 0, '2011-07-10', '제28화 마른 잎 다시 살아나-12', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 177);
+values (episode_seq.NEXTVAL, 3, 128, 0, 0, '2011-07-10', '제28화 마른 잎 다시 살아나-12', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 177);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 129, 0, 0, '2011-07-17', '제28화 마른 잎 다시 살아나-13', '26년이야', '/webtoon/thumbNail_episode/1.jpg', 178);
+values (episode_seq.NEXTVAL, 3, 129, 0, 0, '2011-07-17', '제28화 마른 잎 다시 살아나-13', '26년이야', '/webtoon/episodeThumbnail/1.jpg', 178);
 
 
 --------table image 
@@ -2648,6 +2648,11 @@ values(1, 233, '/webtoon/fantasy/제28화 마른 잎 다시 살아나_12.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
 values(1, 234, '/webtoon/fantasy/제28화 마른 잎 다시 살아나_13.jpg');
+
+
+
+
+
 
 
 
