@@ -27,7 +27,7 @@
 	})
 </script>
 
-<ul id="slide-out" class="side-nav fixed z-depth-3">
+<ul id="slide-out" class="side-nav fixed z-depth-2">
 	<c:choose>
 
 		<c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
@@ -73,7 +73,7 @@
 					<div class="login_form">
 						<div class="input-field login-field col email-field">
 							<i class="material-icons prefix login-form-icon">perm_identity</i>
-							<input id="email" type="text" class="validate snb-login-form" name="email">
+							<input id="email" type="text" class="validate snb-login-form" name="email" autocomplete=off>
 							<label for="email">Email</label>
 						</div>
 						<div class="input-field login-field col">
