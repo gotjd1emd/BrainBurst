@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WebtoonDTO {
-	private String webtoonCode;
+	private int webtoonCode;
 	private String webtoonName;
 	private String webtoonLevel;
 	private String webtoonState;
@@ -21,7 +21,7 @@ public class WebtoonDTO {
 		System.out.println("webtoonDTO 기본 생성자 호출");
 	}
 
-	public WebtoonDTO(String webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
+	public WebtoonDTO(int webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
 			String categoryCode, String penalty, String author, int fundingPeriod, String summary) {
 		this.webtoonCode = webtoonCode;
 		this.webtoonName = webtoonName;
@@ -37,7 +37,7 @@ public class WebtoonDTO {
 	
 	
 	
-	public WebtoonDTO(String webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
+	public WebtoonDTO(int webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
 			String categoryCode, String penalty, String nickname, int fundingPeriod, String summary,
 			CategoryDTO categoryDTO) {
 		this.webtoonCode = webtoonCode;
@@ -68,11 +68,11 @@ public class WebtoonDTO {
 		this.categoryDTO = categoryDTO;
 	}
 
-	public String getWebtoonCode() {
+	public int getWebtoonCode() {
 		return webtoonCode;
 	}
 
-	public void setWebtoonCode(String webtoonCode) {
+	public void setWebtoonCode(int webtoonCode) {
 		this.webtoonCode = webtoonCode;
 	}
 

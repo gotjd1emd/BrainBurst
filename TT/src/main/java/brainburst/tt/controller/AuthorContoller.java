@@ -28,13 +28,13 @@ public class AuthorContoller {
 	 */
 	@RequestMapping("showDetail")
 	public ModelAndView showDetail(HttpServletRequest request) {
-		String webtoonCode = (String) request.getAttribute("webtoonCode");
+		int webtoonCode = (Integer) request.getAttribute("webtoonCode");
 		List<WebtoonDTO> list = (List<WebtoonDTO>) request.getAttribute("webtoonList");
 		WebtoonDTO dto = null;
 		Iterator<WebtoonDTO> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			WebtoonDTO webtoonDTO = (WebtoonDTO) iterator.next();
-			if (webtoonDTO.getWebtoonCode().equals(webtoonCode)) {
+			if (webtoonDTO.getWebtoonCode()==webtoonCode) {
 				dto = webtoonDTO;
 				break;
 			}
@@ -96,7 +96,7 @@ public class AuthorContoller {
 */
 	public String updateSeries(HttpServletRequest request) {
 		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
-		String webtoonCode = webtoonDTO.getWebtoonCode();
+		int webtoonCode = webtoonDTO.getWebtoonCode();
 		authorService.updateSeries(webtoonDTO);
 		return "webtoonPage/"+webtoonCode;
 	}

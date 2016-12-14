@@ -91,6 +91,7 @@ public class WebtoonController {
 	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeSequence") int episodeSequence) {
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		WebtoonDTO webtoonDTO = webtoonService.selecltWebtoonByCode(episodeSequence);
+		System.out.println("94번째줄"+webtoonDTO);
 		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
@@ -155,18 +156,7 @@ public class WebtoonController {
 			//성공했을때 무언가...?
 		}
 	}
-	
-	/**
-	 * 에피소드 목록으로 돌아가기
-	 * 목록으로 버튼 클릭, 웹툰에피소드페이지로 이동
-	 * @return 웹툰에피소드목록보기로 이동
-	 */
-	@RequestMapping("list")
-	public String backToList(HttpServletRequest request) {
-		String webtoonCode = (String) request.getAttribute("webtoonCode");
-		return "webtoonPage/{"+webtoonCode+"}";
-	}
-	
+
 	/**
 	 * 이전,다음화 이동
 	 * @param direction [next]다음화, [prev]이전화

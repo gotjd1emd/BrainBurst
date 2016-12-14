@@ -58,10 +58,9 @@
 <c:forEach var="item" items="${imageList}">
 <div class="center">
 	<img alt="webtoon" src="<c:url value='/resources/'/>${item}">
-	
 </div>
-<img src="c:">
 </c:forEach>
+<a href="/controller/webtoon/episodePage/">이전화</a><br><a href="/controller/webtoon/webtoonPage/${webtoonDTO.webtoonCode}">목록으로</a><br><a href="">다음화</a>
 
 <div class="z-depth-2">
 	<div>작가의말 : ${episodeDTO.authorword}</div>
