@@ -7,7 +7,7 @@
 		 <form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
 			<div class="info-box">
 				<div class="input-field">
-		          <input id="email-signup" type="text" class="validate" name="email">
+		          <input id="email-signup" type="email" class="validate" name="email">
 		          <label for="email-signup">이메일</label>
 		        </div>
 		        <div class="input-field">
@@ -35,7 +35,7 @@
 		          <label for="birthDate-signup">생년월일 - 주민번호 앞자리 입력</label>
 		        </div>
 		        <div class="input-field">
-		          <input id="phoneNumber-signup" type="text" class="validate" name="phone">
+		          <input id="phoneNumber-signup" type="text" class="validate" name="phone" placeholder=" '-'를 제외한 11자리를 입력해주세요 " size="11">
 		          <label for="phoneNumber-signup">전화번호</label>
 		        </div>
 		         <p>
