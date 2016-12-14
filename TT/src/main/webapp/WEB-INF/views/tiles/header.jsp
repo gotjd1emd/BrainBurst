@@ -27,14 +27,22 @@
 				$("#search").focus();
 			})
 			$("#search-close-btn").click(function(){
+				$(".search-nav").css("display", "none");
+				$(".search-nav").css("opacity", "0");
 				$('#search-modal').modal('close');
 				/* $(".search-nav").css("display", "none");
 				$(".search-nav").css("opacity", "0"); */
 			})
-			$("#search").blur(function () {
-				$(".search-nav").css("display", "none");
-				$(".search-nav").css("opacity", "0");
-			})
+			
+			  $('#search-modal').modal({
+			      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+			      },
+			      complete: function() {
+			    	  $(".search-nav").css("display", "none");
+					  $(".search-nav").css("opacity", "0");
+			      } // Callback for Modal close
+			    }
+			  );
 			
 			$("#search").keypress(function(event) { 
 			    if (event.keyCode == 13){
@@ -69,7 +77,7 @@
 	    </div>
  	 </nav>
   <div id="search-modal" class="modal bottom-sheet" style="top:auto !important">
-    <div class="modal-content">
+    <div class="modal-content search-modal-content">
       <h4>Modal Header</h4>
       <p>A bunch of text</p>
     </div>

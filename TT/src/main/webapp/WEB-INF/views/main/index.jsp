@@ -38,7 +38,7 @@
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" end="2">
 						<div class="card col s12 m24 l3 top_card hoverable">
-							<div class="card-image waves-effect waves-block waves-light">
+							<div class="card-image card-image-box waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}">
 							</div>

@@ -84,6 +84,12 @@ input[type=text]::-ms-clear { display: none !important; }
 	margin:30px;
 	display: inline-block;
 	left:10% !important;
+	padding: 0 !important;
+}
+
+.card-image-box{
+	height: 0 !important;
+	padding-bottom: 90% !important;
 }
 
 .webtoon_card{
@@ -144,6 +150,14 @@ left: 228px;
 .icon_search{
 	margin-right:50px;
 	margin-left:25px;
+}
+
+#search-modal{
+		
+}
+
+.search-modal-content{
+		height: 400px;
 }
 
 #logo{
