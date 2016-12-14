@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -90,10 +91,11 @@ public class AuthorContoller {
 		authorService.addSeries(webtoonDTO, episodeDTO);
 		return "author/authorPage";
 	}
-/**
-작품수정
-수정후 해당 작품의 웹툰페이지로 이동
-*/
+	
+	/**
+	작품수정
+	수정후 해당 작품의 웹툰페이지로 이동
+	*/
 	public String updateSeries(HttpServletRequest request) {
 		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
 		int webtoonCode = webtoonDTO.getWebtoonCode();
@@ -110,6 +112,7 @@ public class AuthorContoller {
 		authorService.setSeriesState(webtoonCode, state);
 		return "author/authorPage";
 	}
+	
 	/**
 	 * 에피소드업로드
 	 */
@@ -120,4 +123,9 @@ public class AuthorContoller {
 	/**
 	 * 에피소드 수정
 	 */
+	@RequestMapping("modifyEpisode/{episodeSequence}")
+	public String modifyEpsode(HttpServletRequest request, @PathVariable int episodeSequence) {
+		
+		return "webtoon/modifyEpisode";
+	}
 }

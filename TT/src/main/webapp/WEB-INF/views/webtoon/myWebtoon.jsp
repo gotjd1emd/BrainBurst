@@ -2,10 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<script>
-		$(function() {
-			$("img").click(function() {
-				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).attr("name"));
-			})
+		$(function() {	
+			$("#episode-list").find(".row").on("click", (function() {
+				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
+			}));
+			
+			$("#webtoon-info").find(".row").on("click", (function() {
+				$(location).attr('href',"/controller/author/modifyEpisode/"+$(this).find('img').attr("name"));
+			}));
 		})
 	</script>
 	<div class="z-depth-2">
