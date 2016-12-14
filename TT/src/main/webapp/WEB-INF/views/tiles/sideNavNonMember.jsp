@@ -43,6 +43,7 @@
 			})
 		</script>
 			<div id="box_snb-login" class="z-depth-1">
+				<h5 class="title center white-text color-400">WELCOME BACK</h5>
 				<div class="center profile-icon color-A200">
 					<h5 id="nickname"></h5>
 				</div>
@@ -67,7 +68,7 @@
 		</c:when>
 		<c:otherwise>
 			<div id="box_snb-nonlogin">
-				<h5 class="title center white-text color-400">WELCOME BACK</h5>
+				<h6 class="title center white-text color-400">Try make your Throng</h6>
 				<form id="loginForm" action="<c:url value='/user/login'/>"
 					method="post">
 					<div class="login_form">
