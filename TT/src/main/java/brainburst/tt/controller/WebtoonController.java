@@ -64,6 +64,15 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
+		List<WebtoonDTO> webtoonDTOs = (List<WebtoonDTO>) session.getAttribute("webtoonList");
+		WebtoonDTO webtoonDTO = null;
+		Iterator<WebtoonDTO> iterator = webtoonDTOs.iterator();
+		while (iterator.hasNext()) {
+			WebtoonDTO webtoon = (WebtoonDTO) iterator.next();
+			if (webtoon.getWebtoonCode()==webtoonCode) {
+				webtoonDTO = webtoon;
+			}
+		}
 		String nickname = "GUEST";
 		if (dto!=null) {
 			nickname = dto.getNickname();
@@ -77,7 +86,7 @@ public class WebtoonController {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName(type);
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
-		modelAndView.addObject("webtoonCode", webtoonCode);
+		modelAndView.addObject("webtoonDTO", webtoonDTO);
 		session.setAttribute("episodeList", list);
 		return modelAndView;
 	}
@@ -93,6 +102,7 @@ public class WebtoonController {
 		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		List<EpisodeDTO> episodeList = (List<EpisodeDTO>) request.getSession().getAttribute("episodeList");
+		System.out.println(episodeList);
 		int episodeNumber = episodeDTO.getEpisodeNumber();
 		int prevEpisodeSequence = 0;
 		int nextepisodeSequence = 0;
