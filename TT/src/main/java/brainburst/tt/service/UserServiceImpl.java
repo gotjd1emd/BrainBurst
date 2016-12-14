@@ -45,8 +45,7 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public String findPassword(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDAO.findPassword(userDTO);
 	}
 
 	@Override

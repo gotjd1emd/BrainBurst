@@ -112,8 +112,8 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public String findPassword(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		return null;
+		String password = sqlSession.selectOne("userMapper.findPassword", userDTO);
+		return password;
 	}
 
 	@Override

@@ -102,4 +102,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findEmail" resultType="string" parameterType="userDTO">
 		select email from user_information where name=#{name} and phone=#{phone}
 	</select>
+	
+	<!-- findPassword -->
+	<select id="findPassword" resultType="string" parameterType="userDTO">
+		select password from user_information where name=#{name} and phone=#{phone} and email=#{email}
+	</select>
 </mapper>

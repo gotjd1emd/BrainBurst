@@ -86,9 +86,9 @@ public class UserController {
 		return "main/index";
 	}
 
-	 /* 
+	 /** 
 	  * 회원 로그아웃!
-	 * */
+	  * */
 	@RequestMapping("logout")
 	public String logout(HttpServletRequest request){
 		request.getSession().removeAttribute("userDTO");
@@ -227,4 +227,18 @@ public class UserController {
 		System.out.println(email);
 		return email;
 	}
+	
+	/**
+	 * 비밀번호 찾기
+	 * */
+	@RequestMapping("findPassword")
+	@ResponseBody
+	public String findPassword(UserDTO userDTO){
+		System.out.println("findEmail 컨트롤로 이동");
+		System.out.println(userDTO);
+		String email = userService.findPassword(userDTO);
+		System.out.println(email);
+		return email;
+	}
+
 }
