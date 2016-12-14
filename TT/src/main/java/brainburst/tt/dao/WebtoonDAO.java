@@ -76,4 +76,19 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	EpisodeDTO selectNumsBySequence(int episodeSequence);
+	
+	/**
+	 * 에피소드 시퀸스에 해당하는 에피소드의 추천수증가.
+	 * @param episodeSequence
+	 * @return
+	 */
+	int updateRecommendation(int episodeSequence);
+	
+	/**
+	 * 추천테이블에 추천햇는지 여부확인
+	 * @param email
+	 * @param episodeSequence
+	 * @return
+	 */
+	Boolean isRecommended(String email, int episodeSequence);
 }

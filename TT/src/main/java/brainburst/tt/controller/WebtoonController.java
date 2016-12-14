@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
@@ -78,7 +79,6 @@ public class WebtoonController {
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonCode", webtoonCode);
 		modelAndView.addObject("episodeList", list);
-		System.out.println(list);
 		return modelAndView;
 	}
 	
@@ -97,7 +97,6 @@ public class WebtoonController {
 		modelAndView.addObject("imageList", list);
 		modelAndView.addObject("episodeDTO", episodeDTO);
 		modelAndView.addObject("webtoonDTO", webtoonDTO);
-		System.out.println(episodeDTO.getAuthorword());
 		return modelAndView;
 	}
 	
@@ -123,16 +122,19 @@ public class WebtoonController {
 	 * 추천하기 버튼 클릭, requset에 남아있는 해당 웹툰 코드와 session에 있는 사용자 email이용
 	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 추천수변경
 	 * @return 성공여부 1:성공 , 0:실패 
+	 * @throws Exception 
 	 */
-	public void addRecommandation(HttpServletRequest request) {
+	@RequestMapping("recommandation/{episodeSequence}")
+	@ResponseBody
+	public String addRecommandation(HttpServletRequest request, @PathVariable("episodeSequence") int episodeSequence) throws Exception {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
-		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
-		
-		if (webtoonService.addRecommend(email, episodeSequence) > 0) {
-			//성공했을때 무언가...?
+		int i = webtoonService.addRecommend(email, episodeSequence);
+		if (i<0) {
+			throw new Exception();
 		}
+		return Integer.toString(i);
 	}
 
 	/**

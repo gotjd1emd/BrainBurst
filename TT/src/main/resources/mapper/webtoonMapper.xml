@@ -87,7 +87,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- addRecommend -->
 	<insert id="addRecommend" parameterType="map">
-		INSERT INTO RECOMMEND (SUBSCRIPTION_SEQUENCE, EMAIL, WEBTOON_CODE) 
+		INSERT INTO RECOMMEND (RECOMMEND_SEQUENCE, EMAIL, EPISODE_SEQUENCE) 
 		VALUES (RECOMMEND_SEQ.NEXTVAL, #{email}, #{epicsodeSequence})
 	</insert>
 	
@@ -106,8 +106,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectNumsBySequence -->
 	<select id="selectNumsBySequence" resultMap="episodeDTO" parameterType="string">
-		SELECT HITS, RECOMMENDATION, AUTHOR_WORD
+		SELECT EPISODE_SEQUENCE, HITS, RECOMMENDATION, AUTHOR_WORD
 		FROM EPISODE
 		WHERE EPISODE_SEQUENCE= #{value}
+	</select>
+	
+	<!-- updateRecommendation -->
+	<update id="updateRecommendation" parameterType="string">
+		UPDATE EPISODE SET RECOMMENDATION = (RECOMMENDATION+1) 
+		WHERE EPISODE_SEQUENCE = #{value}
+	</update>
+	
+	<!-- isRecommended -->
+	<select id="isRecommended" resultType="string" parameterType="map">
+		SELECT RECOMMEND_SEQUENCE FROM RECOMMEND 
+		WHERE EPISODE_SEQUENCE = #{episodeSequence} AND EMAIL = #{email}
 	</select>
 </mapper>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
@@ -11,6 +12,7 @@ import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
+@Transactional
 public class WebtoonServiceImpl implements WebtoonService {
 	@Autowired
 	private WebtoonDAO webtoonDAO;
@@ -47,7 +49,12 @@ public class WebtoonServiceImpl implements WebtoonService {
 	
 	@Override
 	public int addRecommend(String email, int epicsodeSequence) {
-		return webtoonDAO.addRecommend(email, epicsodeSequence);
+		if (webtoonDAO.isRecommended(email, epicsodeSequence)) {
+			webtoonDAO.addRecommend(email, epicsodeSequence);
+			webtoonDAO.updateRecommendation(epicsodeSequence);
+			return webtoonDAO.selectNumsBySequence(epicsodeSequence).getRecommendation();
+		}
+		return -1;
 	}
 
 	@Override

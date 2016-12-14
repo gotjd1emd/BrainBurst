@@ -1,7 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+	<script>
+		$(function() {
+			$("#rmd").click(function() {
+				var episodeSequence = $("input[type=hidden]").val();
+				$.ajax({
+					url : "/controller/webtoon/recommandation/"+episodeSequence,
+					type : "get",
+					dataType : "text",
+					success : function(result) {
+						$("#val01").html("추 천<br>:"+result)
+						$("#val02").html("추천수 : "+result)
+					},
+					error : function() {
+						alert("추천은 한번만 가능합니다.")
+					}
+				})
+			})
+		})
+	</script>
 
 <div class="z-depth-2">
 	<div class="row">
@@ -30,7 +48,7 @@
 		</div>
 		<div class="col s1">
 			<blockquote>
-				<p class="flow-text">
+				<p class="flow-text" id="val01">
 					추 천<br>:${episodeDTO.recommendation}
 				</p>
 			</blockquote>
@@ -48,10 +66,11 @@
 <div class="z-depth-2">
 	<div>작가의말 : ${episodeDTO.authorword}</div>
 	<div class="center">
-		<p class="flow-text">추천수 : ${episodeDTO.recommendation}</p>
+		<p class="flow-text" id="val02">추천수 : ${episodeDTO.recommendation}</p>
 	</div>
 	<div class="center">
 		<button class="btn waves-effect waves-light" type="submit"
-			name="action">추천 하기</button>
+			name="action" id="rmd">추천 하기</button>
+		<input type="hidden" value="${episodeDTO.episodeSequence}">
 	</div>
 </div>

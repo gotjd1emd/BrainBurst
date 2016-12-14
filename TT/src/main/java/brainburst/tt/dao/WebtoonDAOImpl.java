@@ -61,8 +61,8 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public int addRecommend(String email, int epicsodeSequence) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
-		map.put("webtoonCode", Integer.toString(epicsodeSequence));
-		return sqlSession.insert("webtoonMapper.addSubscription", map);
+		map.put("epicsodeSequence", Integer.toString(epicsodeSequence));
+		return sqlSession.insert("webtoonMapper.addRecommend", map);
 	}
 
 	@Override
@@ -78,6 +78,22 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	@Override
 	public EpisodeDTO selectNumsBySequence(int episodeSequence) {
 		return sqlSession.selectOne("webtoonMapper.selectNumsBySequence", episodeSequence);
+	}
+
+	@Override
+	public int updateRecommendation(int episodeSequence) {
+		return sqlSession.update("webtoonMapper.updateRecommendation", episodeSequence);
+	}
+
+	@Override
+	public Boolean isRecommended(String email, int episodeSequence) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("episodeSequence", Integer.toString(episodeSequence));
+		if (sqlSession.selectOne("webtoonMapper.isRecommended", map)==null) {
+			return true;
+		}
+		return false;
 	}
 	
 }
