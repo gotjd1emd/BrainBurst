@@ -2,7 +2,6 @@ package brainburst.tt.controller;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -90,22 +89,13 @@ public class WebtoonController {
 	 * @return 해당에피소드의 이미지배열
 	 */
 	@RequestMapping("episodePage/{episodeSequence}")
-	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeValue") int episodeSequence) {
-		List<EpisodeDTO> dtos = (List<EpisodeDTO>) requset.getAttribute("episodeList");
-		EpisodeDTO dto = null;
-		Iterator<EpisodeDTO> iterator = dtos.iterator();
-		while (iterator.hasNext()) {
-			EpisodeDTO episodeDTO = (EpisodeDTO) iterator.next();
-			if (episodeDTO.getEpisodeSequence()==episodeSequence) {
-				dto = episodeDTO;
-				break;
-			}
-		}
+	public ModelAndView selectImg(HttpServletRequest requset, @PathVariable("episodeSequence") int episodeSequence) {
 		List<String> list = webtoonService.selectImg(episodeSequence);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("webtoon/episode");
 		modelAndView.addObject("imageList", list);
-		modelAndView.addObject("episodeDTO", dto);
+		System.out.println(list);
+		modelAndView.addObject("episodeSequence", episodeSequence);
 		return modelAndView;
 	}
 	
