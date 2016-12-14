@@ -25,6 +25,7 @@
 	<div class="row">
 		<div class="col s2">
 			<div class="webtoon_title">
+				<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 			</div>
 		</div>
 
