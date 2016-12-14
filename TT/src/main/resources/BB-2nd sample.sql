@@ -90,7 +90,7 @@ values (episode_seq.NEXTVAL, 1, 11, 0, 0, '2016-03-02 ', '제2화 - 그 남자의 시선
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 1, 12, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_1', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 1, 12, 0, 0, '2016-03-02 ', '제3화 - 누군가 날 부르고 있다_1', '작가의말 엘레베이터에서?', null,null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -581,224 +581,224 @@ values (episode_seq.NEXTVAL, 2, 5, 0, 0, '2011-01-29', '제1화 - 1부 어게인 1화_0
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 6, 0, 0, '2011-02-05', '제1화 - 1부 어게인 1화_05', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 6, 0, 0, '2011-02-05', '제1화 - 1부 어게인 1화_05', '작가의말 엘레베이터에서?', null, 1);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 7, 0, 0, '2011-02-12', '제1화 - 1부 어게인 1화_06', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 7, 0, 0, '2011-02-12', '제1화 - 1부 어게인 1화_06', '작가의말 엘레베이터에서?', null, 2);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 8, 0, 0, '2011-02-19', '제1화 - 1부 어게인 1화_07', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 8, 0, 0, '2011-02-19', '제1화 - 1부 어게인 1화_07', '작가의말 엘레베이터에서?', null, 3);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 9, 0, 0, '2011-02-26', '제1화 - 1부 어게인 1화_08', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 9, 0, 0, '2011-02-26', '제1화 - 1부 어게인 1화_08', '작가의말 엘레베이터에서?', null, 4);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 10, 0, 0, '2011-03-04', '제1화 - 1부 어게인 1화_09', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 10, 0, 0, '2011-03-04', '제1화 - 1부 어게인 1화_09', '작가의말 엘레베이터에서?', null, 5);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 11, 0, 0, '2011-03-11', '제1화 - 1부 어게인 1화_10', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 11, 0, 0, '2011-03-11', '제1화 - 1부 어게인 1화_10', '작가의말 엘레베이터에서?', null, 6);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 12, 0, 0, '2011-03-18', '제2화 - 1부 어게인 2화_01', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 12, 0, 0, '2011-03-18', '제2화 - 1부 어게인 2화_01', '작가의말 엘레베이터에서?', null, 7);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 13, 0, 0, '2011-03-25', '제2화 - 1부 어게인 2화_02', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 13, 0, 0, '2011-03-25', '제2화 - 1부 어게인 2화_02', '작가의말 엘레베이터에서?', null, 8);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 14, 0, 0, '2011-04-01', '제2화 - 1부 어게인 2화_03', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 14, 0, 0, '2011-04-01', '제2화 - 1부 어게인 2화_03', '작가의말 엘레베이터에서?', null, 9);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 15, 0, 0, '2011-04-08', '제2화 - 1부 어게인 2화_04', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 15, 0, 0, '2011-04-08', '제2화 - 1부 어게인 2화_04', '작가의말 엘레베이터에서?', null, 10);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 16, 0, 0, '2011-04-15', '제2화 - 1부 어게인 2화_06', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 16, 0, 0, '2011-04-15', '제2화 - 1부 어게인 2화_06', '작가의말 엘레베이터에서?', null, 11);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 17, 0, 0, '2011-04-22', '제2화 - 1부 어게인 2화_07', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 17, 0, 0, '2011-04-22', '제2화 - 1부 어게인 2화_07', '작가의말 엘레베이터에서?', null, 12);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 18, 0, 0, '2011-04-29', '제2화 - 1부 어게인 2화_08', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 18, 0, 0, '2011-04-29', '제2화 - 1부 어게인 2화_08', '작가의말 엘레베이터에서?', null, 13);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 19, 0, 0, '2011-05-06', '제2화 - 1부 어게인 2화_09', '작가의말 엘레베이터에서?', null, null);
-
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 20, 0, 0, '2011-05-13', '제2화 - 1부 어게인 2화_10', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 21, 0, 0, '2011-05-20', '제2화 - 1부 어게인 2화_11', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 19, 0, 0, '2011-05-06', '제2화 - 1부 어게인 2화_09', '작가의말 엘레베이터에서?', null, 14);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 22, 0, 0, '2011-05-27', '제2화 - 1부 어게인 2화_12', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 20, 0, 0, '2011-05-13', '제2화 - 1부 어게인 2화_10', '작가의말 엘레베이터에서?', null, 15);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 21, 0, 0, '2011-05-20', '제2화 - 1부 어게인 2화_11', '작가의말 엘레베이터에서?', null, 16);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 23, 0, 0, '2011-06-03', '제2화 - 1부 어게인 2화_13', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 24, 0, 0, '2011-06-10', '제2화 - 1부 어게인 2화_14', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 25, 0, 0, '2011-06-17', '제2화 - 1부 어게인 2화_15', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 26, 0, 0, '2011-06-23', '제2화 - 1부 어게인 2화_16', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 27, 0, 0, '2011-06-30', '제2화 - 1부 어게인 2화_17', '작가의말 엘레베이터에서?', null, null);
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 28, 0, 0, '2011-07-07', '제2화 - 1부 어게인 2화_18', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 22, 0, 0, '2011-05-27', '제2화 - 1부 어게인 2화_12', '작가의말 엘레베이터에서?', null, 17);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 29, 0, 0, '2011-07-09', '제3화 - 1부 어게인 3화_01', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 23, 0, 0, '2011-06-03', '제2화 - 1부 어게인 2화_13', '작가의말 엘레베이터에서?', null, 18);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 30, 0, 0, '2011-07-16', '제3화 - 1부 어게인 3화_02', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 24, 0, 0, '2011-06-10', '제2화 - 1부 어게인 2화_14', '작가의말 엘레베이터에서?', null, 19);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 25, 0, 0, '2011-06-17', '제2화 - 1부 어게인 2화_15', '작가의말 엘레베이터에서?', null, 20);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 26, 0, 0, '2011-06-23', '제2화 - 1부 어게인 2화_16', '작가의말 엘레베이터에서?', null, 21);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 27, 0, 0, '2011-06-30', '제2화 - 1부 어게인 2화_17', '작가의말 엘레베이터에서?', null, 22);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 28, 0, 0, '2011-07-07', '제2화 - 1부 어게인 2화_18', '작가의말 엘레베이터에서?', null, 23);
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 31, 0, 0, '2011-07-23', '제3화 - 1부 어게인 3화_03', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 29, 0, 0, '2011-07-09', '제3화 - 1부 어게인 3화_01', '작가의말 엘레베이터에서?', null, 24);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 32, 0, 0, '2011-07-30', '제3화 - 1부 어게인 3화_04', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 30, 0, 0, '2011-07-16', '제3화 - 1부 어게인 3화_02', '작가의말 엘레베이터에서?', null, 25);
+
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 33, 0, 0, '2011-08-05', '제3화 - 1부 어게인 3화_05', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 31, 0, 0, '2011-07-23', '제3화 - 1부 어게인 3화_03', '작가의말 엘레베이터에서?', null, 26);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 34, 0, 0, '2011-08-12', '제3화 - 1부 어게인 3화_06', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 32, 0, 0, '2011-07-30', '제3화 - 1부 어게인 3화_04', '작가의말 엘레베이터에서?', null, 27);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 35, 0, 0, '2011-08-19', '제3화 - 1부 어게인 3화_07', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 33, 0, 0, '2011-08-05', '제3화 - 1부 어게인 3화_05', '작가의말 엘레베이터에서?', null, 28);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 36, 0, 0, '2011-08-26', '제3화 - 1부 어게인 3화_08', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 34, 0, 0, '2011-08-12', '제3화 - 1부 어게인 3화_06', '작가의말 엘레베이터에서?', null, 29);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 37, 0, 0, '2011-09-02', '제3화 - 1부 어게인 3화_09', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 35, 0, 0, '2011-08-19', '제3화 - 1부 어게인 3화_07', '작가의말 엘레베이터에서?', null, 30);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 38, 0, 0, '2011-09-09', '제3화 - 1부 어게인 3화_10', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 36, 0, 0, '2011-08-26', '제3화 - 1부 어게인 3화_08', '작가의말 엘레베이터에서?', null, 31);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 39, 0, 0, '2011-09-16', '제4화 - 1부 어게인 4화_01', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 37, 0, 0, '2011-09-02', '제3화 - 1부 어게인 3화_09', '작가의말 엘레베이터에서?', null, 32);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 40, 0, 0, '2011-09-22', '제4화 - 1부 어게인 4화_02', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 38, 0, 0, '2011-09-09', '제3화 - 1부 어게인 3화_10', '작가의말 엘레베이터에서?', null, 33);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 41, 0, 0, '2011-09-29', '제4화 - 1부 어게인 4화_03', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 39, 0, 0, '2011-09-16', '제4화 - 1부 어게인 4화_01', '작가의말 엘레베이터에서?', null, 34);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 42, 0, 0, '2011-10-06', '제4화 - 1부 어게인 4화_04', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 40, 0, 0, '2011-09-22', '제4화 - 1부 어게인 4화_02', '작가의말 엘레베이터에서?', null, 35);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 43, 0, 0, '2011-10-13', '제4화 - 1부 어게인 4화_05', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 41, 0, 0, '2011-09-29', '제4화 - 1부 어게인 4화_03', '작가의말 엘레베이터에서?', null, 36);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 44, 0, 0, '2011-10-20', '제4화 - 1부 어게인 4화_06', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 42, 0, 0, '2011-10-06', '제4화 - 1부 어게인 4화_04', '작가의말 엘레베이터에서?', null, 37);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 45, 0, 0, '2011-10-27', '제4화 - 1부 어게인 4화_07', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 43, 0, 0, '2011-10-13', '제4화 - 1부 어게인 4화_05', '작가의말 엘레베이터에서?', null, 38);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 46, 0, 0, '2011-11-03', '제4화 - 1부 어게인 4화_08', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 44, 0, 0, '2011-10-20', '제4화 - 1부 어게인 4화_06', '작가의말 엘레베이터에서?', null, 39);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 47, 0, 0, '2011-11-10', '제4화 - 1부 어게인 4화_09', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 45, 0, 0, '2011-10-27', '제4화 - 1부 어게인 4화_07', '작가의말 엘레베이터에서?', null, 40);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 48, 0, 0, '2011-11-17', '제4화 - 1부 어게인 4화_10', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 46, 0, 0, '2011-11-03', '제4화 - 1부 어게인 4화_08', '작가의말 엘레베이터에서?', null, 41);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 49, 0, 0, '2011-11-24', '제5화 - 1부 어게인 5화_1', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 47, 0, 0, '2011-11-10', '제4화 - 1부 어게인 4화_09', '작가의말 엘레베이터에서?', null, 42);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 50, 0, 0, '2011-12-02', '제5화 - 1부 어게인 5화_2', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 48, 0, 0, '2011-11-17', '제4화 - 1부 어게인 4화_10', '작가의말 엘레베이터에서?', null, 43);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 51, 0, 0, '2011-12-09', '제5화 - 1부 어게인 5화_3', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 49, 0, 0, '2011-11-24', '제5화 - 1부 어게인 5화_1', '작가의말 엘레베이터에서?', null, 44);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 52, 0, 0, '2011-12-16', '제5화 - 1부 어게인 5화_4', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 50, 0, 0, '2011-12-02', '제5화 - 1부 어게인 5화_2', '작가의말 엘레베이터에서?', null, 45);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 53, 0, 0, '2011-12-23', '제5화 - 1부 어게인 5화_5', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 51, 0, 0, '2011-12-09', '제5화 - 1부 어게인 5화_3', '작가의말 엘레베이터에서?', null, 46);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 54, 0, 0, '2011-12-30', '제5화 - 1부 어게인 5화_6', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 52, 0, 0, '2011-12-16', '제5화 - 1부 어게인 5화_4', '작가의말 엘레베이터에서?', null, 47);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 55, 0, 0, '2012-01-06 ', '제5화 - 1부 어게인 5화_7', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 53, 0, 0, '2011-12-23', '제5화 - 1부 어게인 5화_5', '작가의말 엘레베이터에서?', null, 48);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 56, 0, 0, '2012-01-13', '제5화 - 1부 어게인 5화_8', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 54, 0, 0, '2011-12-30', '제5화 - 1부 어게인 5화_6', '작가의말 엘레베이터에서?', null, 49);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 57, 0, 0, '2012-01-20', '제5화 - 1부 어게인 5화_9', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 55, 0, 0, '2012-01-06 ', '제5화 - 1부 어게인 5화_7', '작가의말 엘레베이터에서?', null, 50);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 58, 0, 0, '2011-01-27', '제5화 - 1부 어게인 5화_10', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 56, 0, 0, '2012-01-13', '제5화 - 1부 어게인 5화_8', '작가의말 엘레베이터에서?', null, 51);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2011-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', null, null);
+values (episode_seq.NEXTVAL, 2, 57, 0, 0, '2012-01-20', '제5화 - 1부 어게인 5화_9', '작가의말 엘레베이터에서?', null, 52);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 58, 0, 0, '2011-01-27', '제5화 - 1부 어게인 5화_10', '작가의말 엘레베이터에서?', null, 53);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2011-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', null, 54);
 
 --select * from episode where webtoon_code=2 order by episode_sequence;
 

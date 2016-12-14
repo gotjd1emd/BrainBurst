@@ -58,7 +58,7 @@ drop table category
 
 
 --웹툰 정보 테이블
---level : 일반(free), 펀딩(punding), 유료(paid)
+--level : 일반(free), 펀딩(funding), 유료(paid)
 --state : 연재, 휴재, 블라인드, 연재완료 ( serial , pause, blind, complete
 --penalty : green, yello, red
 CREATE TABLE webtoon
@@ -80,7 +80,7 @@ create sequence webtoon_seq
 	increment by 1 
 	nocache;
 
-drop sequence webtoon_seq;	
+drop squence webtoon_seq;	
 	
 insert into webtoon(webtoon_code, webtoon_name, category_code, nickname, funding_period, summary, webtoon_thumbnail) 
 values('AAA', '더미1', 'A', 'test123', 1, null, 'thumbnail')
