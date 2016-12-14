@@ -62,4 +62,6 @@ public interface WebtoonDAO {
 	 * @return INSERT성공여부 1:성공 0:실패
 	 */
 	int addReport(ReportDTO reportDTO);
+	
+	WebtoonDTO selecltWebtoonByCode(String webtoonCode);
 }

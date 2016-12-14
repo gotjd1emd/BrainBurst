@@ -69,4 +69,9 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public int addReport(ReportDTO reportDTO) {
 		return sqlSession.insert("webtoonMapper.addSubscription", reportDTO);
 	}
+
+	@Override
+	public WebtoonDTO selecltWebtoonByCode(String webtoonCode) {
+		return sqlSession.selectOne("webtoonMapper.selecltWebtoonByCode", webtoonCode);
+	}
 }
