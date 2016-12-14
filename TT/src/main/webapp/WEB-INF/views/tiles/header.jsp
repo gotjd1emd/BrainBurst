@@ -56,7 +56,7 @@
 	    </div>
 	</nav>
 	<nav class="header-box">
-	    <div class="nav-wrapper z-depth-2 color-500">
+	    <div class="nav-wrapper z-depth-3 color-500">
 	      <a href="<c:url value='/'/>" class="brand-logo center">T T</a>
 	      <a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <a href="#" class="button-collapse right"><i class="material-icons search-btn">search</i></a>
