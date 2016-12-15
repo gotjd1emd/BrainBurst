@@ -9,21 +9,66 @@
 
 .signup-content{
 	padding-top: 80px !important;
-	padding-left: 270px !important;
+	padding-left: 20px !important;
 	padding-right: 20px !important;
 }
 
-.singUp_step{
+[type="checkbox"].filled-in:checked + label:after{
+	border : 2px solid #F44336;
+	background-color: #F44336;
+}
+
+.signup-number-circle{
+	width:25px;
+	height:25px;
+	display:inline-block;
+	border-radius: 50%;
+	background-color: #F44336;
+	text-align: center;
+	line-height:25px;
+	color: white;
+	margin-left: 20px;
+}
+
+.signup-checking{
+	font-size: 10px;
+}
+
+.signup-line{
+	width:20%;
+	height:1.5px;
+	display: inline-block;
+	background-color: #F44336;
+	vertical-align: middle;
+}
+
+.signup-text{
+	color: #F44336;
+	margin-right: 20px;
+}
+
+.signup_step{
 	margin-top:40px;
 	text-align: center;	
+}
+
+.signup-steper{
+	width:100%;
+	height:70px;
+	padding:22px;
+	border-radius: 3px;
+	margin-bottom: 4px;
+	background-color: white;
+	text-align: center;
 }
 
 .signup_box{
 	width:100%;
 	height:580px;
-	border-radius : 20px;
+	border-radius :3px;
 	padding : 20px;
 	margin-bottom: 50px;
+	background-color: white;
 }
 
 .next-btn{

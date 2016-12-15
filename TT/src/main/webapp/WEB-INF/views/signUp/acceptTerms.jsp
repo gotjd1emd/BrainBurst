@@ -3,7 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 	<!-- 진행 순서도(카테고리)를 위한 hidden태그 -->
 	<input type="hidden" name="navCategory" value="1">
-	<div class="signup_box z-depth-2">
+	<div class="signup-steper z-depth-1">
+		<div class="signup-number-circle">1</div>
+		<span class="signup-text">약관동의</span>
+		<div class="signup-line" style="background-color: #BDBDBD"></div>
+		<div class="signup-number-circle" style="background-color: #BDBDBD">2</div>
+		<span class="signup-text" style="color:#BDBDBD">정보입력</span>
+		<div class="signup-line" style="background-color: #BDBDBD"></div>
+		<div class="signup-number-circle" style="background-color: #BDBDBD">3</div>
+		<span class="signup-text" style="color:#BDBDBD">완료</span>
+	</div>
+	<div class="signup_box z-depth-1">
 		<div class="row accept-terms-box">
 			<div class="accept-terms-1 col right-align">
 				<div class="accept-terms-content-1 left-align">
@@ -34,5 +44,5 @@
 			</div>
 		</div>
 		
-		<a id="btn-next" class="waves-effect waves-light btn-large" href="<c:url value='/user/signUp/enterInfomation'/>">다음</a>
+		<a id="btn-next" class="waves-effect waves-light btn-large color-500" href="<c:url value='/user/signUp/enterInfomation'/>">다음</a>
 	</div>

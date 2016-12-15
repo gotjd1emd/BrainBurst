@@ -55,6 +55,7 @@ input[type=text]::-ms-clear { display: none !important; }
 
 /*container*/
 #container{
+	background-color: #FAFAFA;
 }
 
 /* ÇØ´õ */
