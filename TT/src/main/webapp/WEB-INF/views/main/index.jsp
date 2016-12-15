@@ -16,13 +16,13 @@
 			})
 			$(document).on("click", ".scription-a-index", function(){
 				var webtoonCode = $(this).attr("name")
-				$(this).css("color", "#FF4436");
+				$(this).css("color", "#FF4436");  
 				$.ajax({
 					url : "/controller/webtoon/subscription/"+webtoonCode,
 					type : "get",
-					dataType : "text",
+					dataType : "json",
 					success : function(result) {
-						
+						$(".scription-box")
 					},
 					error : function() {
 						alert("추천은 한번만 가능합니다.")
