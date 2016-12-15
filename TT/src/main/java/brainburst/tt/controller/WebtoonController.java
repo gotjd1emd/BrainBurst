@@ -135,15 +135,21 @@ public class WebtoonController {
 	 * 구독하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 구독목록 갱신
 	 * @param request
 	 * @return 성공여부 1:성공 , 0:실패
+	 * @throws Exception 
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public int addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) {
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) throws Exception {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
-		webtoonService.addSubscription(email, webtoonCode);
-		return webtoonCode;
+		List<WebtoonDTO> subScriptionList = webtoonService.addSubscription(email, webtoonCode);
+		if (subScriptionList != null) {
+			session.setAttribute("subScriptionList", subScriptionList);
+		} else {
+			throw new Exception();
+		}
+		return subScriptionList;
 	}
 	
 	/**

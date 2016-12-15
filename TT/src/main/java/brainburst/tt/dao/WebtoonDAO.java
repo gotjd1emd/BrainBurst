@@ -91,4 +91,12 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	Boolean isRecommended(String email, int episodeSequence);
+	
+	/**
+	 * 구독여부확인
+	 * @param email
+	 * @param webtoonCode
+	 * @return
+	 */
+	Boolean isSubscription(String email, int webtoonCode);
 }

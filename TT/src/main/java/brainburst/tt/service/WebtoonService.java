@@ -48,7 +48,7 @@ public interface WebtoonService {
 	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 추천수변경
 	 * @return 성공여부 1:성공 , 0:실패 
 	 */
-	int addSubscription(String email, int webtoonCode);
+	List<WebtoonDTO> addSubscription(String email, int webtoonCode);
 	
 	/**
 	 * 추천하기

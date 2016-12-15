@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ReportDTO;
@@ -16,6 +17,8 @@ import brainburst.tt.dto.WebtoonDTO;
 public class WebtoonServiceImpl implements WebtoonService {
 	@Autowired
 	private WebtoonDAO webtoonDAO;
+	@Autowired
+	private UserDAO userDAO;
 
 	@Override
 	public List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode) {
@@ -43,8 +46,12 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public int addSubscription(String email, int webtoonCode) {
-		return webtoonDAO.addSubscription(email, webtoonCode);
+	public List<WebtoonDTO> addSubscription(String email, int webtoonCode) {
+		if (webtoonDAO.isSubscription(email, webtoonCode)) {
+			webtoonDAO.addSubscription(email, webtoonCode);
+			return userDAO.showListSubscription(email);
+		}
+		return null;
 	}
 	
 	@Override
