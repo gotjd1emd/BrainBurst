@@ -49,4 +49,9 @@ public class AuthorServiceImpl implements AuthorService {
 		authorDAO.madeAuthorPage(userDTO);
 		return authorDAO.updateUserInfo(userDTO);
 	}
+	
+	@Override
+	public String selectCategoryName(String webtoonCode) {
+		return authorDAO.selectCategoryName(webtoonCode);
+	}
 }

@@ -40,7 +40,7 @@
 	<div class="z-depth-2 episode-list">
 		<div class="row">
 			<div class="col s2 episode_thumbnail">
-				<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
+				<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${episode.thumbnail}">
 			</div>
 			<div class="col s6">
 				${episode.episodeTitle} <br><br>

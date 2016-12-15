@@ -139,17 +139,19 @@ public class WebtoonController {
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) throws Exception {
+	public int addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) throws Exception {
+		System.out.println("143:¿€µø.");
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		List<WebtoonDTO> subScriptionList = webtoonService.addSubscription(email, webtoonCode);
+		System.out.println("148:"+subScriptionList);
 		if (subScriptionList != null) {
 			session.setAttribute("subScriptionList", subScriptionList);
 		} else {
 			throw new Exception();
 		}
-		return subScriptionList;
+		return 1;
 	}
 	
 	/**

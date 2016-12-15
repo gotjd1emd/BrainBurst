@@ -220,9 +220,3 @@ create sequence recommend_seq
 -- sequence drop(delete )
 
 commit;
-
-
-
-
-
-

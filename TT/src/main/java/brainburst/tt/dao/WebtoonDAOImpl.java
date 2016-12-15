@@ -106,4 +106,5 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		}
 		return false;
 	}
+	
 }

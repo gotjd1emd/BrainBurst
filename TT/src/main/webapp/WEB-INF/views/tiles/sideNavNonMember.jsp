@@ -79,7 +79,6 @@
 			$('#pwd-not-find-modal').modal('close');
 			$('#pwdfind-modal').modal('open');
 		})
-		
 	})
 </script>
 
@@ -136,7 +135,7 @@
 							<li><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
-										src="<c:url value='/resources/webtoon/webtoonThumbnail/${item.webtoonThumbnail}'/>">
+										src="<c:url value='/resources${item.webtoonThumbnail}'/>">
 								</div>
 								<div>
 									<span>${item.webtoonName}</span><br>

@@ -78,4 +78,5 @@ public interface WebtoonService {
 	 * @return
 	 */
 	EpisodeDTO selectNumsBySequence(int episodeSequence);
+	
 }

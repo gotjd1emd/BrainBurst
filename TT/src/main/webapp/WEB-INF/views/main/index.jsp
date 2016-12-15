@@ -14,9 +14,20 @@
 			$("img").click(function() {
 				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 			})
-			$("#scription-card-btn").on("click", function () {
-				alert("asd");
-				$("#scription-card-btn").css("color", "#FF4436");
+			$(document).on("click", ".scription-a-index", function(){
+				var webtoonCode = $(this).attr("name")
+				$(this).css("color", "#FF4436");
+				$.ajax({
+					url : "/controller/webtoon/subscription/"+webtoonCode,
+					type : "get",
+					dataType : "text",
+					success : function(result) {
+						
+					},
+					error : function() {
+						alert("추천은 한번만 가능합니다.")
+					}
+				})
 			})
 		})
 	</script>
@@ -51,7 +62,7 @@
 								<i class="material-icons right">more_vert</i></span>
 								<p>
 									<a href="#">${item.nickname}</a>
-									<i id="scription-card-btn" class="material-icons scription-a-index">grade</i>
+									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
 								</p>
 							</div>
 							<div class="card-reveal">
