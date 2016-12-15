@@ -22,7 +22,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("webtoonLevel", webtoonLevel);
 		map.put("categoryCode", categoryCode);
-		map.put("eamil", email);
+		map.put("email", email);
 		return sqlSession.selectList("webtoonMapper.selectWebtoonByLevel", map);
 	}
 
