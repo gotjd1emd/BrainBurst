@@ -155,10 +155,13 @@ public class AuthorContoller {
 		int index = 0;
 		for(int i = 0; i < images.size(); i++) {
 			if(images.get(i).getSize() != 0) {
-				imageList.add(new ImageDTO(index++, -1, ""));
+				imageList.add(new ImageDTO(index++, -1, path+categoryName+"/"+images.get(i).getOriginalFilename()));
 			}
 		}
 		System.out.println("image index : " + imageList.size());
+		
+		int result = authorService.episodeUpload(episodeDTO, imageList);
+		
 		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
 	}
 	

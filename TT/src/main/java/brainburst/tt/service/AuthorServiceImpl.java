@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import brainburst.tt.dao.AuthorDAO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -53,5 +54,11 @@ public class AuthorServiceImpl implements AuthorService {
 	@Override
 	public String selectCategoryName(String webtoonCode) {
 		return authorDAO.selectCategoryName(webtoonCode);
+	}
+	
+	@Override
+	public int episodeUpload(EpisodeDTO episodeDTO, List<ImageDTO> imageList) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

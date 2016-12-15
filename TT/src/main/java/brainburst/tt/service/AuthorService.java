@@ -3,6 +3,7 @@ package brainburst.tt.service;
 import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -57,4 +58,12 @@ public interface AuthorService {
 	 * Category Name 가져오기
 	 */
 	String selectCategoryName(String webtoonCode);
+	
+	/**
+	 * 에피소드 업로드
+	 * @param episodeDTO
+	 * @param imageList
+	 * @return
+	 */
+	int episodeUpload(EpisodeDTO episodeDTO, List<ImageDTO> imageList);
 }

@@ -36,4 +36,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE CATEGORY_CODE = (SELECT CATEGORY_CODE FROM WEBTOON 
 								WHERE WEBTOON_CODE = #{value}) 
 	</select>
+	
+	<!-- episodeUpload -->
+	<insert id="episodeUpload" parameterType="webtoonDTO">
+		INSERT INTO EPISODE(EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, WEBTOON_CODE,
+							EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE) 
+		VALUES(EPISODE_SEQ.NEXTVAL, #{episodeNumber}, 0, 0, sysdate, #{webtoonCode}, #{episodeTitle}, #{authorWord},
+				#{thumbnail}, null)
+	</insert>
+	
+	<!-- episodeImageUpload -->
+	<insert id="episodeImageUpload" parameterType="imageDTO">
+		INSERT INTO IMAGE(IMAGE_INDEX, EPISODE_SEQUENCE, FILE_NAME) 
+		VALUES(#{imageIndex}, #{episodeSequence}, #{fileName})
+	</insert>
 </mapper>
