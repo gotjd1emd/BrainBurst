@@ -2,6 +2,7 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface AuthorDAO {
@@ -18,5 +19,12 @@ public interface AuthorDAO {
 	 * @param email
 	 * @return
 	 */
-	int madeAuthorPage(String email);
+	int madeAuthorPage(UserDTO dto);
+	
+	/**
+	 * 유저정보갱신
+	 * @param email
+	 * @return
+	 */
+	UserDTO updateUserInfo(UserDTO dto);
 }

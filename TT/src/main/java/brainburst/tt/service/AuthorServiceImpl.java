@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 
 import brainburst.tt.dao.AuthorDAO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
 	@Autowired
-	private AuthorDAO authorDAO;  
+	private AuthorDAO authorDAO;
 	
 	@Override
 	public List<WebtoonDTO> getSerialWebtoon(String nickname) {
@@ -44,7 +45,8 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 
 	@Override
-	public int madeAuthorPage(String email) {
-		return authorDAO.madeAuthorPage(email); 
+	public UserDTO madeAuthorPage(UserDTO userDTO) {
+		authorDAO.madeAuthorPage(userDTO);
+		return authorDAO.updateUserInfo(userDTO);
 	}
 }

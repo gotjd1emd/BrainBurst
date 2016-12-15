@@ -156,11 +156,13 @@ public class AuthorContoller {
 	 * 작가페이지만들기
 	 * @return
 	 */
+	@RequestMapping("madeAuthorPage")
 	public String madeAuthorPage(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
-		String email = userDTO.getEmail();
-		authorService.madeAuthorPage(email);
+		session.setAttribute("userDTO", authorService.madeAuthorPage(userDTO));
+		List<WebtoonDTO> list = authorService.getSerialWebtoon(userDTO.getNickname());
+		session.setAttribute("webtoonList", list);
 		return "myInfo/authorpage";
 	}
 }

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Repository
@@ -24,7 +25,12 @@ public class AuthorDAOImpl implements AuthorDAO {
 	}
 
 	@Override
-	public int madeAuthorPage(String email) {
-		return sqlSession.update("authorMapper.madeAuthorPage", email);
+	public int madeAuthorPage(UserDTO userDTO) {
+		return sqlSession.update("authorMapper.madeAuthorPage", userDTO.getEmail());
+	}
+
+	@Override
+	public UserDTO updateUserInfo(UserDTO userDTO) {
+		return sqlSession.selectOne("userMapper.login", userDTO);
 	}
 }

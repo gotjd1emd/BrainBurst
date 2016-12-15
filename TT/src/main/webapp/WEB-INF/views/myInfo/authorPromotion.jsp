@@ -12,7 +12,7 @@
 	<p>펀딩 신청 </p>
 	<p>펀딩 작가의 경우 환전 시스템 제공 </p> 
 	
-	<a class="waves-effect waves-light btn">작가 신청</a>
+	<a class="waves-effect waves-light btn" href="/controller/author/madeAuthorPage">작가 신청</a>
 	
 </div>
 
