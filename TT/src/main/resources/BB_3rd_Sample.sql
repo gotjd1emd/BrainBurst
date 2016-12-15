@@ -364,15 +364,15 @@ select * from webtoon;
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (1,'아파트','free','serial','A','green', '설현', null, '아파트에서..?!', '/webtoon/webtoonThumbnail/19.jpg');
+values (1,'아파트','free','serial','A','green', '설현', 0, '아파트에서..?!', '/webtoon/webtoonThumbnail/19.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (2,'어게인','funding','serial','B','green','민아',7,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
+values (2,'어게인','funding','serial','B','green','민아',1,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!', '/webtoon/webtoonThumbnail/21.jpg');
+values (3,'26년','funding','complete','C','green', '병재', 1, 'For 26years..?!', '/webtoon/webtoonThumbnail/21.jpg');
 
 --
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -380,6 +380,7 @@ values (3,'26년','funding','complete','C','green', '병재', 7, 'For 26years..?!',
 --
 --DELETE FROM EPISODE WHERE EPISODE_SEQUENCE = 1
 --SELECT * FROM EPISODE;
+select * from episode;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -564,18 +565,7 @@ insert into episode (episode_sequence, webtoon_code, episode_number, hits,
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
 values (episode_seq.NEXTVAL, 1, 46, 0, 0, '2016-03-02 ', '제8화 - 귀신_20', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/10.jpg', null);
 
---insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
---recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
---values (1, 1, 47, 0, 0, '2016-03-02 ', '1_Apartment2', '작가의말 엘레베이터에서?', null, null);
---insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
---recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
---values (1, 1, 48, 0, 0, '2016-03-02 ', '1_Apartment3', '작가의말 엘레베이터에서?', null, null);
---
---insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
---recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
---values (1, 1, 49, 0, 0, '2016-03-02 ', '1_Apartment4', '작가의말 엘레베이터에서?', null, null);
 
-select * from episode order by episode_sequence
 
 --회차 별 image '아파트' 넣기 \webtoon\action
 
@@ -718,7 +708,7 @@ insert into image(image_index, episode_sequence, file_name)
 values(1, 46, '/webtoon/action/제8화 - 귀신_20.jpg');
 
 
-select * from episode;
+--select * from episode;
 commit;
 
 
@@ -891,7 +881,7 @@ values (fund_seq.nextval,3000,2,59);
 
 
 
-select * from fund;
+--select * from fund;
 
 
 --------------------------------------** fund webtoon-----------------------------------------------------------------------------------------------------------------
@@ -1335,7 +1325,7 @@ values(1, 105, '/webtoon/sf/제5화 - 1부 어게인 5화_11.jpg');
 
 ---------웹툰 26년의 펀딩 ------------------------------
 
-select * from fund order by fund_code;
+--select * from fund order by fund_code;
 
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
@@ -1712,10 +1702,9 @@ values (fund_seq.nextval,3000,3,128);
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
 values (fund_seq.nextval,3000,3,129);
 
-select * from fund;
+--select * from fund;
 --------------------------------------------------------------------------------------------
-
-select * from episode;
+--select * from episode;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -2238,9 +2227,6 @@ values (episode_seq.NEXTVAL, 3, 129, 0, 0, '2011-07-17', '제28화 마른 잎 다시 살
   --- 26년 회차 이미지 
 ---C:/webtoon/fantasy/
 
---select * from episode where episode_sequence>105 order by episode_sequence;
---select * from image; 
-
 insert into image(image_index, episode_sequence, file_name) 
 values(1, 106, '/webtoon/fantasy/26년을 이야기한다-1.jpg');
 
@@ -2650,9 +2636,7 @@ insert into image(image_index, episode_sequence, file_name)
 values(1, 234, '/webtoon/fantasy/제28화 마른 잎 다시 살아나_13.jpg');
 
 
-
-
-
+commit;
 
 
 
