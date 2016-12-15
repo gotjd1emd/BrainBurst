@@ -25,13 +25,13 @@
 		$('#add').on("click", function() {
 			if(count < 10) {
 				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' name='index"+count+"'>";
+				str += "<input type='file' name='image["+count+"]'>";
 				str += "<div class='file-path-wrapper'>";
 				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
 				str += "</div></div>";
 				$('div.image-file').append(str);
 				
-				str = "<input id='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				str = "<input id='image["+count+"]' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
@@ -80,20 +80,20 @@
 		<hr>
 		<div class="row">
 		   	<div class="col s12">
-		        <p class="flow-text">웹툰 업로드</p>
+		        <p class="flow-text">웹툰 업로드 ${webtoonCode }</p>
 		    </div>
 		</div>
 		
 		<hr>
-		<form method="post" action="<c:url value='/author/epsodeUpload'/>" encType="multipart/form-data">
+		<form method="post" action="<c:url value='/author/episodeUpload'/>" encType="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s6">
 				<input id="episode-title" type="text" class="validate" name="episodeTitle"> 
 				<label for="episode-title">에피소드 제목</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="nickname-word" type="text" class="validate" name="nicknameWord"> 
-				<label for="nickname-word">작가의 말</label>
+				<input id="author-word" type="text" class="validate" name="authorWord"> 
+				<label for="author-word">작가의 말</label>
 			</div>
 		</div>
 		
@@ -106,7 +106,7 @@
 					<div class="input-field col s6 image-file">
 
 						<div class="file-field input-field">
-							<input type="file" name="image0">
+							<input type="file" name="image[0]">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
 									placeholder="이미지 파일을 추가해주세요.">
@@ -114,7 +114,7 @@
 						</div>
 					</div>
 					<div class="input-field col s6 image-file-size">
-						<input id="index0" type="text" class="validate" name="image-size0"
+						<input id="image[0]" type="text" class="validate" name="image-size0"
 							placeholder="이미지 크기" readonly>
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 			<div class="input-field col s6">
 				<div class="file-field input-field">
 					<div class="btn">
-						<span>File</span> <input id="thumbnail" type="file" name="thumbnail">
+						<span>File</span> <input id="thumbnail" type="file" name="thumbnailFile">
 					</div>
 					<div class="file-path-wrapper">
 						<input class="file-path validate" type="text">

@@ -1,24 +1,32 @@
 package brainburst.tt.dto;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class EpisodeDTO {
-	int episodeSequence;
-	String webtoonCode;
-	int episodeNumber;
-	int hits;
-	int recommendation;
-	String uploadDate;
-	String episodeTitle;
-	String authorword;
-	String thumbnail;
-	int fundCode;
+	private int episodeSequence;
+	private String webtoonCode;
+	private int episodeNumber;
+	private int hits;
+	private int recommendation;
+	private String uploadDate;
+	private String episodeTitle;
+	private String authorWord;
+	private String thumbnail;
+	private int fundCode;
+	
+	private MultipartFile thumbnailFile;
+	//private List<ImageDTO> image;
+	private List<MultipartFile> image;
+	
 	public EpisodeDTO() {
 		System.out.println("EpisodeDTO 기본 생성자 호출");
 	}
 	public EpisodeDTO(int episodeSequence, String webtoonCode, int episodeNumber, int hits, int recommendation,
-			String uploadDate, String episodeTitle, String nicknameWord, String thumbnail, int fundCode) {
+			String uploadDate, String episodeTitle, String authorWord, String thumbnail, int fundCode) {
 		System.out.println("EpisodeDTO 전체 생성자 호출");
 		this.episodeSequence = episodeSequence;
 		this.webtoonCode = webtoonCode;
@@ -27,7 +35,7 @@ public class EpisodeDTO {
 		this.recommendation = recommendation;
 		this.uploadDate = uploadDate;
 		this.episodeTitle = episodeTitle;
-		this.authorword = nicknameWord;
+		this.authorWord = authorWord;
 		this.thumbnail = thumbnail;
 		this.fundCode = fundCode;
 	}
@@ -73,11 +81,11 @@ public class EpisodeDTO {
 	public void setEpisodeTitle(String episodeTitle) {
 		this.episodeTitle = episodeTitle;
 	}
-	public String getAuthorword() {
-		return authorword;
+	public String getAuthorWord() {
+		return authorWord;
 	}
-	public void setAuthorword(String authorword) {
-		this.authorword = authorword;
+	public void setAuthorWord(String authorWord) {
+		this.authorWord = authorWord;
 	}
 	public String getThumbnail() {
 		return thumbnail;
@@ -90,5 +98,21 @@ public class EpisodeDTO {
 	}
 	public void setFundCode(int fundCode) {
 		this.fundCode = fundCode;
+	}
+	
+	public MultipartFile getThumbnailFile() {
+		return thumbnailFile;
+	}
+	
+	public void setThumbnailFile(MultipartFile thumbnailFile) {
+		this.thumbnailFile = thumbnailFile;
+	}
+	
+	public List<MultipartFile> getImage() {
+		return image;
+	}
+
+	public void setImage(List<MultipartFile> image) {
+		this.image = image;
 	}
 }

@@ -7,15 +7,19 @@
 				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
 			}));
 			
-			$("#webtoon-info").find(".row").on("click", (function() {
+			/* $("#webtoon-info").find(".row").on("click", (function() {
 				$(location).attr('href',"/controller/author/modifyEpisode/"+$(this).find('img').attr("name"));
+			})); */
+			
+			$("#webtoon-info").find(".row").on("click", (function() {
+				$(location).attr('href',"/controller/author/episodeUploadPage/"+$(".webtoon_title").attr("name"));
 			}));
 		})
 	</script>
 	<div class="z-depth-2">
 		<div class="row">
 			<div class="col s2">
-				<div class="webtoon_title">
+				<div class="webtoon_title" name="${webtoonDTO.webtoonCode}">
 					<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 				</div>
 			</div>

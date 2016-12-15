@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AuthorService;
@@ -53,7 +55,7 @@ public class AuthorContoller {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		String userLevel = userDTO.getLevel();
 		String nickname = userDTO.getNickname();
-		String viewName = "authorpage2";
+		String viewName = "myInfo/authorPromotion";
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("nickname", nickname);
@@ -115,10 +117,30 @@ public class AuthorContoller {
 	}
 	
 	/**
+	 * 에피소드업로드 페이지 이동
+	 */
+	@RequestMapping("episodeUploadPage/{webtoonCode}")
+	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") String webtoonCode) {
+		
+		System.out.println("webtoonCode : " + webtoonCode);
+		request.setAttribute("webtoonCode", webtoonCode);
+		return "webtoon/episodeUpload";
+	}
+	
+	/**
 	 * 에피소드업로드
 	 */
-	public void uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) {
+	@RequestMapping("episodeUpload")
+	public String uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) {
+		List<MultipartFile> images = episodeDTO.getImage();
 		
+		System.out.println("episode title : " + episodeDTO.getEpisodeTitle());
+		System.out.println("author word : " + episodeDTO.getAuthorWord());
+		System.out.println("episode thumbnail : " + episodeDTO.getThumbnailFile().getOriginalFilename());
+		System.out.println("images : " + images.size());
+		System.out.println("image names1" + images.get(0).getOriginalFilename());
+		System.out.println("image names2" + images.get(1).getOriginalFilename());
+		return "forword:/";
 	}
 	
 	/**
