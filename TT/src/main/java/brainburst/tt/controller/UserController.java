@@ -89,6 +89,7 @@ public class UserController {
 		
 		List<WebtoonDTO> subScriptionList = userService.showListSubscription(userDTO.getEmail());
 		session.setAttribute("subScriptionList", subScriptionList);
+		System.out.println(subScriptionList);
 		
 		return "main/index";
 	}

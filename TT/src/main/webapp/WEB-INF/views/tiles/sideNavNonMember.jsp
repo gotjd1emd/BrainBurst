@@ -95,12 +95,25 @@
 			</div>
 			<div class="scription-box">
 				<ul>
-				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
-						src="<c:url value='/resources/webtoon/webtoonThumbnail/${sessionScope.subScriptionList.webtoonDTO.thumbnail}'/>"></div>
-				<div><span>${sessionScope.subScriptionList.webtoonDTO.webtoonName}</span><br>
-				<span class="author-name">${sessionScope.subScriptionList.webtoonDTO.nickname}</span></div></a></li>
-				
+				<c:choose>
+					<c:when test="${sessionScope.subScriptionList eq ''}">
+						<li>구독해주세요</li>
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="item" items="${sessionScope.subScriptionList.webtoonDTO}">
+							<li><a class="waves-effect waves-light scription-btn hoverable">
+								<div>
+									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
+										src="<c:url value='/resources/webtoon/webtoonThumbnail/${item.webtoonThumbnail}'/>">
+								</div>
+								<div>
+									<span>${item.webtoonName}</span><br>
+									<span class="author-name">${item.nickname}</span>
+								</div>
+							</a></li>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>		
 				</ul>
 			</div>
 		</c:when>
