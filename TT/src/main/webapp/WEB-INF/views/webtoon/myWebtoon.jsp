@@ -73,6 +73,7 @@
 	</div>
 
 <div id="webtoon-info">
+	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
 	<c:forEach var="episode" items="${episodeList }">
 		<div class="z-depth-2">
 			<div class="row">

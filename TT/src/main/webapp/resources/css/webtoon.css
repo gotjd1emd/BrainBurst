@@ -171,10 +171,6 @@ blockquote {
   border-left: 5px solid #03A9F4;
 }
 
-p{
-	color: #03A9F4;
-}
-
 .report {
 	border:solid red 1px;
 	background-color:red;
@@ -209,4 +205,16 @@ p{
 	margin-top: 175px;
 	margin-right: 10px;
 	color:#212121;
+}
+
+#episode-upload{
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	width: 70px;
+	height: 70px;
+}
+
+#episode-upload-icon{
+	line-height: 70px;
 }
