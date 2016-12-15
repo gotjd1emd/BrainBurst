@@ -53,20 +53,6 @@
 			})
 		})
 		
-		/* 구독 관리 */
-		$("#slide-out").load(function(){
-			$.ajax({
-				url : "/controller/user/subScription",
-				type : "post",
-				dataType : "text",
-				success : function(result) {
-					alert(result);
-				},
-				error : function(err) {
-					alert("없는 계정 정보");
-				}
-			})	
-		})
 	})
 </script>
 
@@ -110,17 +96,17 @@
 			<div class="scription-box">
 				<ul>
 				<li><a class="waves-effect waves-light scription-btn hoverable">
-				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" src="<c:url value='/resources/webtoon/webtoonThumbnail/1.jpg'/>"></div>
-				<div><span>webtoon-title</span><br>
-				<span class="author-name">author-name</span></div></a></li>
+				<div><img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
+						src="<c:url value='/resources/webtoon/webtoonThumbnail/${sessionScope.subScriptionList.webtoonDTO.thumbnail}'/>"></div>
+				<div><span>${sessionScope.subScriptionList.webtoonDTO.webtoonName}</span><br>
+				<span class="author-name">${sessionScope.subScriptionList.webtoonDTO.nickname}</span></div></a></li>
 				
 				</ul>
 			</div>
 		</c:when>
 		<c:otherwise>
 			<div id="box_snb-nonlogin">
-				<h6 class="title center white-text color-400">Try make your
-					Throng</h6>
+				<h6 class="title center white-text color-400">Try make your Throng</h6>
 				<form id="loginForm" action="<c:url value='/user/login'/>" method="post">
 					<div class="login_form">
 						<div class="input-field login-field col email-field">

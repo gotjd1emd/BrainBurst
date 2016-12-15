@@ -85,6 +85,11 @@ public class UserController {
 		
 		System.out.println(session.getAttribute("userDTO"));
 		
+		System.out.println("찾을 이메일 : "+userDTO.getEmail());
+		
+		List<WebtoonDTO> subScriptionList = userService.showListSubscription(userDTO.getEmail());
+		session.setAttribute("subScriptionList", subScriptionList);
+		
 		return "main/index";
 	}
 
@@ -235,20 +240,5 @@ public class UserController {
 	/**
 	 * 회원 작가 신청
 	 * */
-
-	
-	/**
-	 * 회원구독관리
-	 * */
-	@RequestMapping("subScription")
-	@ResponseBody
-	public List<WebtoonDTO> showListSubscription(HttpServletRequest request){
-		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
-		System.out.println("찾을 이메일 : "+userDTO.getEmail());
-		
-		List<WebtoonDTO> subScriptionList = userService.showListSubscription(userDTO.getEmail());
-		
-		return subScriptionList;
-	}
 	
 }
