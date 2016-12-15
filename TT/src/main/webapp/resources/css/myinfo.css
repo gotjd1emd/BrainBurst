@@ -42,6 +42,10 @@
 	text-align: center;
 }
 
+.title-div h5{
+	margin-bottom: 60px !important;
+}
+
 .input-infomation-inline{
 	display:inline-block;
 	width:100%;
@@ -56,7 +60,7 @@
 }
 
 .author-management-card{
-	height:500px;	
+	height:560px;	
 	padding: 30px;
 }
 
@@ -65,7 +69,11 @@
 }
 
 .author-management-uploadbtn{
-	margin-top: 145px;
+	margin-top: 90px;
+}
+
+.author-management-context p{
+	text-align: center;
 }
 
 /*연재중인 웹툰 플로팅 버튼*/
