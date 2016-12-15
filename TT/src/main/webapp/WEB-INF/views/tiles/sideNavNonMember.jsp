@@ -86,8 +86,8 @@
 	<c:choose>
 
 		<c:when test="${sessionScope.userDTO.email eq 'admin@naver.com'}">
-			<li class="farst-li center"><a href="<c:url value='/user/admin/adminPage'/>">관리자페이지</a></li>
-			<li class="center"><a href="<c:url value='/user/logout'/>">로그아웃</a></li>
+			<li class="farst-li center "><a href="<c:url value='/user/admin/adminPage'/>" class="white-text">관리자페이지</a></li>
+			<li class="center"><a href="<c:url value='/user/logout'/>" class="white-text">로그아웃</a></li>
 		</c:when>
 		<c:when test="${sessionScope.userDTO!=null}">
 			<script>
@@ -150,7 +150,7 @@
 		</c:when>
 		<c:otherwise>
 			<div id="box_snb-nonlogin">
-				<h6 class="title center white-text color-400">Try make your Throng</h6>
+				<h6 class="title center white-text color-400 z-depth-1">Try make your Throng</h6>
 				<form id="loginForm" action="<c:url value='/user/login'/>" method="post">
 					<div class="login_form">
 						<div class="input-field login-field col email-field">
@@ -164,7 +164,7 @@
 							<label for="password">Password</label>
 						</div>
 						<div class="center">
-							<button class="snbtn waves-effect waves-light col s6 color-400 z-depth-1" type="submit" name="action">로그인</button>
+							<button class="snbtn waves-effect waves-light col s6 color-400 z-depth-1 hoverable" type="submit" name="action">로그인</button>
 						</div>
 					</div>
 					<!-- login_form exit -->

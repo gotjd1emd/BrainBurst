@@ -184,7 +184,7 @@ var table =
 </script>
 <div class="row tab-frame-myinfo">
 	<div class="col s12 tab-admin">
-		<ul class="tabs center z-depth-2">
+		<ul class="tabs center z-depth-2" style="background-color:#424242">
 			<li class="tab col offset-l1 s2"><a href="#accounting" id="accountingShow">회계</a></li>
 			<li class="tab col s2"><a href="#userManagement" id="userManage">유저 관리</a></li>
 			<li class="tab col s2"><a href="#webtoonManagement" id="webtoonManage">웹툰 관리</a></li>

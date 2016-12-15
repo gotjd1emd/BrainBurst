@@ -11,7 +11,7 @@
 	</script>
 	<div id="box_snb-login" class="z-depth-1">
 	
-				<h6 class="title center white-text color-400">Try make your
+				<h6 class="title center white-text color-400 z-depth-1">Try make your
 					Throng</h6>
 				<div class="center profile-icon color-A200">
 					<h5 id="nickname"></h5>
