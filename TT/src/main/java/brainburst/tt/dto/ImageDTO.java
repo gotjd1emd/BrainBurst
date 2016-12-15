@@ -1,26 +1,22 @@
 package brainburst.tt.dto;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
-import org.springframework.web.multipart.MultipartFile;
-
+@Component
 public class ImageDTO {
 	private int imageIndex;
 	private int episodeSequence;
 	private String fileName;
 	
-	private MultipartFile image;
-	
 	public ImageDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ImageDTO(int imageIndex, int episodeSequence, String fileName, MultipartFile image) {
+	public ImageDTO(int imageIndex, int episodeSequence, String fileName) {
 		super();
 		this.imageIndex = imageIndex;
 		this.episodeSequence = episodeSequence;
 		this.fileName = fileName;
-		this.image = image;
 	}
 
 	public int getImageIndex() {
@@ -47,12 +43,4 @@ public class ImageDTO {
 		this.fileName = fileName;
 	}
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	
 }
