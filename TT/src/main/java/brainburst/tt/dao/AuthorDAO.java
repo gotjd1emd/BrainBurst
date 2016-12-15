@@ -12,4 +12,11 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	List<WebtoonDTO> getMyWebtoon(String nickname, String webtoonState);
+	
+	/**
+	 * 작가페이지만들기
+	 * @param email
+	 * @return
+	 */
+	int madeAuthorPage(String email);
 }

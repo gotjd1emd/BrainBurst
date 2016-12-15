@@ -44,4 +44,11 @@ public interface AuthorService {
 	 * @return 성공여부 1:성공 0:실패
 	 */
 	int setSeriesState (String webtoonCode, String state);
+	
+	/**
+	 * 작가페이지만들기
+	 * @param email
+	 * @return
+	 */
+	int madeAuthorPage (String email);
 }

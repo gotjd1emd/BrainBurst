@@ -151,4 +151,16 @@ public class AuthorContoller {
 		
 		return "webtoon/modifyEpisode";
 	}
+	
+	/**
+	 * 작가페이지만들기
+	 * @return
+	 */
+	public String madeAuthorPage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String email = userDTO.getEmail();
+		authorService.madeAuthorPage(email);
+		return "myInfo/authorpage";
+	}
 }

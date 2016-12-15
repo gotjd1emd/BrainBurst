@@ -43,5 +43,8 @@ public class AuthorServiceImpl implements AuthorService {
 		return 0;
 	}
 
-
+	@Override
+	public int madeAuthorPage(String email) {
+		return authorDAO.madeAuthorPage(email); 
+	}
 }

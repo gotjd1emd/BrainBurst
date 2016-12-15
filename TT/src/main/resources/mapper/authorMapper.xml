@@ -23,4 +23,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE NICKNAME = #{nickname}
 		AND WEBTOON_STATE = #{webtoonState}
 	</select>
+	
+	<!-- madeAuthorPage -->
+	<update id="madeAuthorPage" parameterType="string">
+		UPDATE USER_INFORMATION SET USER_LEVEL = '작가' 
+		WHERE EMAIL = #{value}
+	</update>
 </mapper>

@@ -23,4 +23,8 @@ public class AuthorDAOImpl implements AuthorDAO {
 		return sqlSession.selectList("authorMapper.getMyWebtoon", map);
 	}
 
+	@Override
+	public int madeAuthorPage(String email) {
+		return sqlSession.update("authorMapper.madeAuthorPage", email);
+	}
 }
