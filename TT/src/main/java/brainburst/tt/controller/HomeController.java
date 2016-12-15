@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.WebtoonService;
 
@@ -23,7 +24,14 @@ public class HomeController {
 	 */
 	@RequestMapping("/")
 	public String home(HttpSession session) {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null);
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String email = null;
+		if (userDTO!=null) {
+			email = userDTO.getEmail();
+		}
+		System.out.println(email);
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null, email);
+		System.out.println(list);
 		session.setAttribute("webtoonList", list);
 		return "main/index";
 	}

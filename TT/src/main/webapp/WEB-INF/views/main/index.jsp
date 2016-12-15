@@ -63,6 +63,7 @@
 								<p>
 									<a href="#">${item.nickname}</a>
 									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
+									${item.subscriptionSequence}
 								</p>
 							</div>
 							<div class="card-reveal">

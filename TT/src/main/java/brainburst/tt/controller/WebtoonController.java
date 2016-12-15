@@ -36,10 +36,11 @@ public class WebtoonController {
 	public String selectWebtoonByLevel(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		if (category.equals("all")) {
 			category = null;
 		}
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, userDTO.getEmail());
 		session.setAttribute("webtoonList", list);
 		return "main/index";
 	}
@@ -140,12 +141,10 @@ public class WebtoonController {
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
 	public int addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) throws Exception {
-		System.out.println("143:¿€µø.");
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
 		List<WebtoonDTO> subScriptionList = webtoonService.addSubscription(email, webtoonCode);
-		System.out.println("148:"+subScriptionList);
 		if (subScriptionList != null) {
 			session.setAttribute("subScriptionList", subScriptionList);
 		} else {

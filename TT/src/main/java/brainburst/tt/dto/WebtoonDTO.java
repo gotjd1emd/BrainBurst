@@ -14,6 +14,14 @@ public class WebtoonDTO {
 	private int fundingPeriod;
 	private String summary;
 	private String webtoonThumbnail;
+	
+	private int subscriptionSequence;
+	public int getSubscriptionSequence() {
+		return subscriptionSequence;
+	}
+	public void setSubscriptionSequence(int subscriptionSequence) {
+		this.subscriptionSequence = subscriptionSequence;
+	}
 
 	private CategoryDTO categoryDTO;
 	
@@ -152,6 +160,23 @@ public class WebtoonDTO {
 		return "WebtoonDTO [webtoonCode=" + webtoonCode + ", webtoonName=" + webtoonName + ", webtoonLevel="
 				+ webtoonLevel + ", webtoonState=" + webtoonState + ", categoryCode=" + categoryCode + ", penalty="
 				+ penalty + ", nickname=" + nickname + ", fundingPeriod=" + fundingPeriod + ", summary=" + summary
-				+", webtoonThumbnail="+ webtoonThumbnail +", categoryDTO=" + categoryDTO + "]";
+				+", webtoonThumbnail="+ webtoonThumbnail +", categoryDTO=" + categoryDTO +",subscriptionSequence :"+subscriptionSequence+"]";
+	}
+	public WebtoonDTO(int webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
+			String categoryCode, String penalty, String nickname, int fundingPeriod, String summary,
+			String webtoonThumbnail, int subscriptionSequence, CategoryDTO categoryDTO) {
+		super();
+		this.webtoonCode = webtoonCode;
+		this.webtoonName = webtoonName;
+		this.webtoonLevel = webtoonLevel;
+		this.webtoonState = webtoonState;
+		this.categoryCode = categoryCode;
+		this.penalty = penalty;
+		this.nickname = nickname;
+		this.fundingPeriod = fundingPeriod;
+		this.summary = summary;
+		this.webtoonThumbnail = webtoonThumbnail;
+		this.subscriptionSequence = subscriptionSequence;
+		this.categoryDTO = categoryDTO;
 	}
 }
