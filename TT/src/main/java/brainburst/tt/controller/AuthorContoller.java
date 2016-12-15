@@ -19,12 +19,14 @@ import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AuthorService;
+import brainburst.tt.service.WebtoonService;
 
 @Controller
 @RequestMapping("author")
 public class AuthorContoller {
 	@Autowired
 	private AuthorService authorService;
+
 	/**
 	 * 작품상세보기
 	 * 작가가 자신의 웹툰보기 페이지에서 상세보기를 누를경우 작품정보를 가지고 해당페이지로 이동.
@@ -138,14 +140,9 @@ public class AuthorContoller {
 	public String uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) {
 		List<MultipartFile> images = episodeDTO.getImage();
 		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
-		System.out.println("episode Number : " + episodeDTO.getEpisodeNumber());
-		System.out.println("webtoon Code : " + episodeDTO.getWebtoonCode());
-		System.out.println("episode title : " + episodeDTO.getEpisodeTitle());
-		System.out.println("author word : " + episodeDTO.getAuthorWord());
-		System.out.println("episode thumbnail : " + episodeDTO.getThumbnailFile().getOriginalFilename());
-		System.out.println("images : " + images.size());
-		System.out.println("image names1" + images.get(0).getOriginalFilename());
 		
+		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
+		System.out.println("categoryName: " + categoryName);
 		String path = request.getSession().getServletContext().getRealPath("/");
 		path += "/resources/webtoon/";
 		
@@ -161,7 +158,8 @@ public class AuthorContoller {
 				imageList.add(new ImageDTO(index++, -1, ""));
 			}
 		}
-		return "redirect:webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
+		System.out.println("image index : " + imageList.size());
+		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
 	}
 	
 	/**

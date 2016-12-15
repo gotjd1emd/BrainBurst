@@ -29,4 +29,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE USER_INFORMATION SET USER_LEVEL = '작가' 
 		WHERE EMAIL = #{value}
 	</update>
+	
+	<!-- selectCategoryName -->
+	<select id="categoryName" resultType="string" parameterType="string">
+		SELECT CATEGORY_NAME FROM CATEGORY 
+		WHERE CATEGORY_CODE = (SELECT CATEGORY_CODE FROM WEBTOON 
+								WHERE WEBTOON_CODE = #{value}) 
+	</select>
 </mapper>

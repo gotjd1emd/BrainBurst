@@ -27,4 +27,11 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	UserDTO updateUserInfo(UserDTO dto);
+	
+	/**
+	 * 카테고리이름 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	String selectCategoryName(String webtoonCode);
 }

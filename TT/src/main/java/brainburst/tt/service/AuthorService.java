@@ -52,4 +52,9 @@ public interface AuthorService {
 	 * @return
 	 */
 	UserDTO madeAuthorPage (UserDTO userDTO);
+	
+	/**
+	 * Category Name 가져오기
+	 */
+	String selectCategoryName(String webtoonCode);
 }

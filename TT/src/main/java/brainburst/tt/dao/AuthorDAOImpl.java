@@ -33,4 +33,9 @@ public class AuthorDAOImpl implements AuthorDAO {
 	public UserDTO updateUserInfo(UserDTO userDTO) {
 		return sqlSession.selectOne("userMapper.login", userDTO);
 	}
+	
+	@Override
+	public String selectCategoryName(String webtoonCode) {
+		return sqlSession.selectOne("authorMapper.categoryName", webtoonCode);
+	}
 }

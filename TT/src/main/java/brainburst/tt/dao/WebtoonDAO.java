@@ -99,4 +99,5 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	Boolean isSubscription(String email, int webtoonCode);
+
 }
