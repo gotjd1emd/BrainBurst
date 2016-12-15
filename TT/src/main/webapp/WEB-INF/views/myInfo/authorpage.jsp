@@ -40,9 +40,10 @@
 				<li class="tab col s2"><a href="#author-management">작가 관리</a></li>
 			</ul>
 		</div>
+		<!-- 연재중 웹툰 tab -->
 		<div id="publish-webtoon" class="col s12 tab-card-info">
 			<c:choose>
-				<c:when test="${requestScope.webtoonDTO.email!=sessionScope.userDTO.email}">
+				<c:when test="${!empty sessionScope.webtoonList}">
 					<!-- 플로팅 버튼 -->
 					<div class="fixed-action-btn horizontal click-to-toggle">
 						<a class="btn-floating btn-large red publish-webtoon-floating purple">
@@ -78,6 +79,8 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
+		
+		<!-- 완결된 웹툰 tab -->
 		<div id="completed-webtoon" class="col s12 tab-card-info">
 
 			<div class="fixed-action-btn horizontal click-to-toggle">
