@@ -79,7 +79,6 @@
 			$('#pwd-not-find-modal').modal('close');
 			$('#pwdfind-modal').modal('open');
 		})
-		
 	})
 </script>
 
