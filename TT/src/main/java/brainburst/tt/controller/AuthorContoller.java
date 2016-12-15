@@ -1,5 +1,6 @@
 package brainburst.tt.controller;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -119,11 +120,14 @@ public class AuthorContoller {
 	/**
 	 * 에피소드업로드 페이지 이동
 	 */
-	@RequestMapping("episodeUploadPage/{webtoonCode}")
-	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") String webtoonCode) {
+	@RequestMapping("episodeUploadPage/{webtoonCode}/{episodeNumber}")
+	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") String webtoonCode, 
+			@PathVariable("episodeNumber") int episodeNumber) {
 		
 		System.out.println("webtoonCode : " + webtoonCode);
+		System.out.println("episodeNumber : " + episodeNumber);
 		request.setAttribute("webtoonCode", webtoonCode);
+		request.setAttribute("episodeNumber", episodeNumber);
 		return "webtoon/episodeUpload";
 	}
 	
@@ -133,14 +137,31 @@ public class AuthorContoller {
 	@RequestMapping("episodeUpload")
 	public String uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) {
 		List<MultipartFile> images = episodeDTO.getImage();
-		
+		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
+		System.out.println("episode Number : " + episodeDTO.getEpisodeNumber());
+		System.out.println("webtoon Code : " + episodeDTO.getWebtoonCode());
 		System.out.println("episode title : " + episodeDTO.getEpisodeTitle());
 		System.out.println("author word : " + episodeDTO.getAuthorWord());
 		System.out.println("episode thumbnail : " + episodeDTO.getThumbnailFile().getOriginalFilename());
 		System.out.println("images : " + images.size());
 		System.out.println("image names1" + images.get(0).getOriginalFilename());
-		System.out.println("image names2" + images.get(1).getOriginalFilename());
-		return "forword:/";
+		
+		String path = request.getSession().getServletContext().getRealPath("/");
+		path += "/resources/webtoon/";
+		
+		if(episodeDTO.getThumbnailFile().getSize() == 0) {
+			episodeDTO.setThumbnail(null);
+		}else {
+			episodeDTO.setThumbnail(path + "episodeThumbnail/"
+						+ episodeDTO.getThumbnailFile().getOriginalFilename());
+		}
+		int index = 0;
+		for(int i = 0; i < images.size(); i++) {
+			if(images.get(i).getSize() != 0) {
+				imageList.add(new ImageDTO(index++, -1, ""));
+			}
+		}
+		return "redirect:webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
 	}
 	
 	/**

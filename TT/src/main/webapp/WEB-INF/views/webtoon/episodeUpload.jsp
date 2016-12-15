@@ -148,6 +148,8 @@
 				</div>
 				
 				<div class="row">
+					<input type="hidden" value="${requestScope.webtoonCode }" name="webtoonCode"/>
+					<input type="hidden" value="${requestScope.episodeNumber }" name="episodeNumber"/>
 					<button class="btn waves-effect waves-light" type="submit" name="action">업로드하기
 					</button>
 					<a class="waves-effect waves-light btn">돌아가기</a>

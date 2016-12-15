@@ -21,16 +21,30 @@
 				dataType : "text",
 				success : function(result) {
 					var email = result;
-					if (email != null) {
-						alert(email);
+					if (email != "") {
+						$("#idfind-modal").modal('close');
+						$("#idfinded-modal").modal('open');
+						$("#find-email-h5").html(email);
+					}else{
+						$('#idfind-modal').modal('close');
+						$('#id-not-find-modal').modal('open');
 					}
 				},
 				error : function(err) {
-					alert("없는 계정 정보");
+					//이메일을 찾지 못했을 경우 이메일을 찾지 못한 모달 페이지로 이동
+					$('#idfind-modal').modal('close');
+					$('#id-not-find-modal').modal('open');
 				}
 			})
 		})
-
+		
+		/*이메일 다시 찾기*/
+		$("#researchEmail").click(function () {
+			$('#id-not-find-modal').modal('close');
+			$('#idfind-modal').modal('open');
+		})
+		
+		/*비밀번호 찾기*/
 		$("#searchPassword").click(function() {
 			$.ajax({
 				url : "/controller/user/findPassword",
@@ -43,14 +57,27 @@
 				dataType : "text",
 				success : function(result) {
 					var password = result;
-					if (password != null) {
-						alert(password);
+					if (password != "") {
+						$("#pwdfind-modal").modal('close');
+						$("#pwdfinded-modal").modal('open');
+						$("#find-pwd-h5").html(password);
+					}else{
+						$('#pwdfind-modal').modal('close');
+						$('#pwd-not-find-modal').modal('open');
 					}
 				},
 				error : function(err) {
-					alert("없는 계정 정보");
+					//이메일을 찾지 못했을 경우 이메일을 찾지 못한 모달 페이지로 이동
+					$('#pwdfind-modal').modal('close');
+					$('#pwd-not-find-modal').modal('open');
 				}
 			})
+		})
+		
+		/*이메일 다시 찾기*/
+		$("#researchPwd").click(function () {
+			$('#pwd-not-find-modal').modal('close');
+			$('#pwdfind-modal').modal('open');
 		})
 		
 	})
@@ -191,7 +218,6 @@
 
 <!-- 아이디 찾기 Modal Structure -->
 <div id="idfind-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post">
 		<div id="inputDiv">
 			<div class="modal-title color-500 white-text z-depth-1">
 				<h5>이메일 찾기</h5>
@@ -212,16 +238,47 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button
-					class="modal-action modal-close waves-effect waves-green btn-flat" id="searchEmail">찾기</button>
+				<button class="modal-action waves-effect waves-green btn-flat" id="searchEmail">찾기</button>
+				<a class="modal-action modal-close waves-effect waves-green btn-flat">취소</a>
 			</div>
 		</div>
-	</form>
+</div>
+
+<!-- 못찾았다. Modal Structure -->
+<div id="id-not-find-modal" class="modal modal-fixed-footer modal-top">
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>이메일 찾기</h5>
+			</div>
+			<div class="modal-content">
+				<p>해당 정보에 대한 이메일을 찾지 못했습니다.</p>
+				<p>오타가 났는지 확인을 해주시고, 다시 이메일을 찾으시려면 하단 이메일 찾기 버튼을 클릭해 주세요</p>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+				<button class="modal-action waves-effect waves-green btn-flat" id="researchEmail">이메일 찾기</button>
+			</div>
+		</div>
+</div>
+
+<!-- 찾았다. Modal Structure -->
+<div id="idfinded-modal" class="modal modal-fixed-footer modal-top">
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>이메일 찾기</h5>
+			</div>
+			<div class="modal-content">
+				<h5 id="find-email-h5"></h5>
+				<p>입력하신 정보와 일치하는 이메일을 찾았습니다!</p>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat">완료</a>
+			</div>
+		</div>
 </div>
 
 <!-- 비밀번호 찾기 Modal Structure -->
 <div id="pwdfind-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post">
 		<div class="modal-title color-500 white-text z-depth-1">
 			<h5>비밀번호 찾기</h5>
 		</div>
@@ -250,5 +307,37 @@
 			<button
 				class="modal-action modal-close waves-effect waves-green btn-flat" id="searchPassword">찾기</button>
 		</div>
-	</form>
+</div>
+
+<!-- 못찾았다. Modal Structure -->
+<div id="pwd-not-find-modal" class="modal modal-fixed-footer modal-top">
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>비밀번호 찾기</h5>
+			</div>
+			<div class="modal-content">
+				<p>해당 정보에 대한 비밀번호를 찾지 못했습니다.</p>
+				<p>오타가 났는지 확인을 해주시고, 다시 비밀번호를 찾으시려면 하단 비밀번호 찾기 버튼을 클릭해 주세요</p>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+				<button class="modal-action waves-effect waves-green btn-flat" id="researchPwd">비밀번호 찾기</button>
+			</div>
+		</div>
+</div>
+
+<!-- 찾았다. Modal Structure -->
+<div id="pwdfinded-modal" class="modal modal-fixed-footer modal-top">
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>비밀번호 찾기</h5>
+			</div>
+			<div class="modal-content">
+				<h5 id="find-pwd-h5"></h5>
+				<p>입력하신 정보와 일치하는 비밀번호를 찾았습니다!</p>
+			</div>
+			<div class="modal-footer">
+				<a class="modal-action modal-close waves-effect waves-green btn-flat">완료</a>
+			</div>
+		</div>
 </div>

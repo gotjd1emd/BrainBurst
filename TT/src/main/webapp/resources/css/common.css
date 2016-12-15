@@ -92,6 +92,8 @@ input[type=text]::-ms-clear { display: none !important; }
   color: white;
 }
 
+
+
 @-webkit-keyframes example {
     .search-nav{opacity: 1;}
 }
@@ -514,6 +516,36 @@ left: 228px;
 	overflow: heidden;
 	top: 25% !important;
 }
+
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #FF8A80;
+     font-size: 12px;
+     padding-bottom: 2px;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #FF8A80;
+     box-shadow: 0 1px 0 0 #FF8A80;
+     color:#FF8A80;
+   }
+
+	/* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #FF8A80;
+     font-size: 12px;
+     padding-bottom: 2px;
+   }
+   /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #FF8A80;
+     box-shadow: 0 1px 0 0 #FF8A80;
+     color:#FF8A80;
+   }
+   .input-field input[type=email].invalid{
+     border-bottom: 1px solid #4CAF50;
+     box-shadow: 0 1px 0 0 #4CAF50;
+   }
 
 /*modal class*/
 .id-pwd-find-form{

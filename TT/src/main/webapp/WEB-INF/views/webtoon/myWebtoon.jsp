@@ -12,8 +12,22 @@
 			})); */
 			
 			$("#webtoon-info").find(".row").on("click", (function() {
-				$(location).attr('href',"/controller/author/episodeUploadPage/"+$(".webtoon_title").attr("name"));
+				var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text()*1+1;
+				$(location).attr('href',"/controller/author/episodeUploadPage/"+$(".webtoon_title").attr("name")+"/"+episodeNumber);
 			}));
+			
+			$("#scription-btn").click(function () {
+				//컬러 바꾸기
+				/*
+				구독 안되어 있을 때 색상 코드 : #424242
+				구독 되어 있을 때 색상 코드 : #F44336
+				*/
+				$("#scription-btn").css("color", "#F44336");
+				
+				$.ajax({
+					
+				})	
+			})
 		})
 	</script>
 	<div class="z-depth-2">
@@ -27,6 +41,7 @@
 				${webtoonDTO.nickname} <br>
 				${webtoonDTO.summary}
 			</div>
+			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 		<div class="row">
 			<div class="col s12">
@@ -46,9 +61,8 @@
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 				</div>
 				<div class="col s6">
-					${episode.episodeTitle} <br><br>
+					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}
-					
 				</div>
 				<div class="col s4 episode_chart">
 					<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
