@@ -368,7 +368,7 @@ values (1,'아파트','free','serial','A','green', '설현', null, '아파트에서..?!', 
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (2,'어게인','funding','serial ','B','green','민아',7,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
+values (2,'어게인','funding','serial','B','green','민아',7,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
