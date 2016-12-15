@@ -6,6 +6,19 @@
 			$(".episode-list").find(".row").on("click", (function() {
 				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
 			}));
+			
+			$("#scription-btn").click(function () {
+				//컬러 바꾸기
+				/*
+				구독 안되어 있을 때 색상 코드 : #424242
+				구독 되어 있을 때 색상 코드 : #F44336
+				*/
+				$("#scription-btn").css("color", "#F44336");
+				
+				$.ajax({
+					
+				})	
+			})
 		})
 	</script>
 	<div class="z-depth-2">
@@ -19,6 +32,7 @@
 				${webtoonDTO.nickname} <br>
 				${webtoonDTO.summary}
 			</div>
+		<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
 	
