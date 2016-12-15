@@ -96,11 +96,15 @@
 			<div class="scription-box">
 				<ul>
 				<c:choose>
-					<c:when test="${sessionScope.subScriptionList eq ''}">
-						<li>구독해주세요</li>
+					<c:when test="${empty sessionScope.subScriptionList}">
+						<li>
+							<div class="row a-button-nav">
+								구독해주세요
+							</div>
+						</li>
 					</c:when>
 					<c:otherwise>
-						<c:forEach var="item" items="${sessionScope.subScriptionList.webtoonDTO}">
+						<c:forEach var="item" items="${sessionScope.subScriptionList}">
 							<li><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
