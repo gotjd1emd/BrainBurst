@@ -68,7 +68,7 @@
 </c:if>
 
 <div class="z-depth-2">
-	<div>작가의말 : ${episodeDTO.authorword}</div>
+	<div>작가의말 : ${episodeDTO.authorWord}</div>
 	<div class="center">
 		<p class="flow-text" id="val02">추천수 : ${episodeDTO.recommendation}</p>
 	</div>
