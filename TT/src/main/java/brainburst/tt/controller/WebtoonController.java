@@ -136,14 +136,14 @@ public class WebtoonController {
 	 * @param request
 	 * @return 성공여부 1:성공 , 0:실패
 	 */
-	public void addSubscription(HttpServletRequest request) {
+	@RequestMapping("subscription/{webtoonCode}")
+	@ResponseBody
+	public int addSubscription(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = request.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String email = dto.getEmail();
-		int webtoonCode = (Integer) request.getAttribute("webtoonCode");
-		if (webtoonService.addSubscription(email, webtoonCode) > 0) {
-			//성공했을때 무언가...?
-		}
+		webtoonService.addSubscription(email, webtoonCode);
+		return webtoonCode;
 	}
 	
 	/**

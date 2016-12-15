@@ -123,4 +123,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT RECOMMEND_SEQUENCE FROM RECOMMEND 
 		WHERE EPISODE_SEQUENCE = #{episodeSequence} AND EMAIL = #{email}
 	</select>
+	
+	<!-- isSubscription -->
+	<select id="isRecommended" resultType="string" parameterType="map">
+		SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION 
+		WHERE SUBSCRIPTION_SEQUENCE = #{episodeSequence} AND EMAIL = #{email}
+	</select>
 </mapper>
