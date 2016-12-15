@@ -98,8 +98,9 @@
 				<c:choose>
 					<c:when test="${empty sessionScope.subScriptionList}">
 						<li>
-							<div class="row a-button-nav">
-								구독해주세요
+							<div id="nullscription" class="row a-button-nav">
+								<i class="material-icons none-scription-icon">book</i>
+								<p class="none-scription-text">구독된 웹툰이 없습니다.</p>
 							</div>
 						</li>
 					</c:when>

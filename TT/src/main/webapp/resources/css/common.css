@@ -295,6 +295,22 @@ left: 228px;
 	margin-left: -25px;
 }
 
+#nullscription{
+	color:#E0E0E0;
+}
+
+.none-scription-icon{
+	margin-top: 60%;
+	font-size: 70px;
+	margin-left: 70px;	
+}
+
+.none-scription-text{
+	margin: 0 !important;
+	margin-left: 25px !important;
+	margin-top: -15px !important;
+}
+
 /*마이페이지, 로그아웃 사이 line*/
 .line{
 	height:20px;
