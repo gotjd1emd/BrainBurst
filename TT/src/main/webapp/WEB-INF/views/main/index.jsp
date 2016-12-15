@@ -14,6 +14,10 @@
 			$("img").click(function() {
 				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 			})
+			$("#scription-card-btn").on("click", function () {
+				alert("asd");
+				$("#scription-card-btn").css("color", "#FF4436");
+			})
 		})
 	</script>
 </head>
@@ -43,15 +47,16 @@
 									name="${item.webtoonCode}">
 							</div>
 							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}<i
-									class="material-icons right">more_vert</i></span>
+								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
+								<i class="material-icons right">more_vert</i></span>
 								<p>
 									<a href="#">${item.nickname}</a>
+									<i id="scription-card-btn" class="material-icons scription-a-index">grade</i>
 								</p>
 							</div>
 							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}<i
-									class="material-icons right">close</i></span>
+								<span class="card-title grey-text text-darken-4">${item.webtoonName}
+								<i class="material-icons right">close</i></span>
 								<p>${item.summary}</p>
 							</div>
 						</div>
@@ -66,12 +71,12 @@
 								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 							</div>
 							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}<i
-									class="material-icons right webtoon_card-icon">more_vert</i></span>
+								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
+								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
 							</div>
 							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}<i
-									class="material-icons right">close</i></span>
+								<span class="card-title grey-text text-darken-4">${item.webtoonName}
+								<i class="material-icons right">close</i></span>
 								<p>${item.summary}</p>
 							</div>
 						</div>
