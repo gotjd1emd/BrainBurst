@@ -31,31 +31,30 @@
 		})
 	</script>
 	<div class="z-depth-2">
-		<div class="row">
-			<div class="col s2">
-				<div class="webtoon_title" name="${webtoonDTO.webtoonCode}">
+		<div class="row title-box">
+			<div class="col s4 webtoon-title-row">
+				<div class="webtoon-title" name="${webtoonDTO.webtoonCode}">
 					<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 				</div>
 			</div>
-			<div class="col s10">
+			<div class="col s8">
 				${webtoonDTO.nickname} <br>
 				${webtoonDTO.summary}
 			</div>
 			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
-		<div class="row">
+	</div>
+		<div class="row tab-row">
 			<div class="col s12">
-				<ul class="tabs">
-					<li class="tab col s6 m12 l3 offset-l3"><a class="active"
-						href="#episode-list">목록</a></li>
+				<ul class="tabs mywebtoon-tab">
+					<li class="tab col s6 m12 l3 offset-l3"><a class="active" href="#episode-list">목록</a></li>
 					<li class="tab col s6 m12 l3"><a href="#webtoon-info">웹툰 정보</a></li>
 				</ul>
 			</div>
 		</div>
-	</div>
-	<div id="episode-list">
+	<div id="episode-list" class="z-depth-1">
 	<c:forEach var="episode" items="${episodeList }">
-		<div class="z-depth-2">
+		<div class="z-depth-1 hoverable">
 			<div class="row">
 				<div class="col s2 episode_thumbnail">
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
