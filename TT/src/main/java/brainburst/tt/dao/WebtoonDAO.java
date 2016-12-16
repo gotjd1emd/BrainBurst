@@ -99,5 +99,10 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	Boolean isSubscription(String email, int webtoonCode);
-
+	
+	/**
+	 * 조회수증가
+	 * @param episodeSequence
+	 */
+	void increaseHits (int episodeSequence);
 }

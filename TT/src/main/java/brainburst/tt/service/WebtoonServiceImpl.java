@@ -42,6 +42,7 @@ public class WebtoonServiceImpl implements WebtoonService {
 
 	@Override
 	public List<String> selectImg(int episodeSequence) {
+		webtoonDAO.increaseHits(episodeSequence);
 		return webtoonDAO.selectImg(episodeSequence);
 	}
 

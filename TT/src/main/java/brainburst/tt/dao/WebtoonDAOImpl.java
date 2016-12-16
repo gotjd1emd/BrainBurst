@@ -107,5 +107,9 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		}
 		return true;
 	}
-	
+
+	@Override
+	public void increaseHits(int episodeSequence) {
+		sqlSession.update("webtoonMapper.increaseHits", episodeSequence);
+	}
 }

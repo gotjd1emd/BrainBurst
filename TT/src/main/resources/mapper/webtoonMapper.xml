@@ -134,4 +134,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION 
 		WHERE WEBTOON_CODE = #{webtoonCode} AND EMAIL = #{email}
 	</select>
+	
+	<!-- 조회수증가 -->
+	<update id="increaseHits" parameterType="string">
+		UPDATE EPISODE SET HITS = HITS+1 WHERE EPISODE_SEQUENCE = #{value}
+	</update>
 </mapper>
