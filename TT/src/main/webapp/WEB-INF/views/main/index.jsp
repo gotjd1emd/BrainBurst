@@ -14,15 +14,17 @@
 			$("img").click(function() {
 				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 			})
-			$(document).on("click", ".scription-a-index", function(){
-				var webtoonCode = $(this).attr("name")
-				$(this).css("color", "#FF4436");  
+			
+			$(document).on("click", "#scription-card-btn", function(){
 				$.ajax({
-					url : "/controller/webtoon/subscription/"+webtoonCode,
+					url : "/controller/webtoon/subscription",
 					type : "get",
+					data : ({
+						webtoonCode : $(this).attr("name")
+					}),
 					dataType : "json",
 					success : function(result) {
-						$(".scription-box")
+						$(this).css("color", "#FF4436");  
 					},
 					error : function() {
 						alert("추천은 한번만 가능합니다.")
@@ -60,9 +62,9 @@
 							<div class="card-content">
 								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
 								<i class="material-icons right">more_vert</i></span>
-								<p>
+								<p id="ss">
 									<a href="#">${item.nickname}</a>
-									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
+									<i id="scription-card-btn" class="material-icons scription-a-index">grade</i>
 									${item.subscriptionSequence}
 								</p>
 							</div>
@@ -70,7 +72,7 @@
 								<span class="card-title grey-text text-darken-4">${item.webtoonName}
 								<i class="material-icons right">close</i></span>
 								<p>${item.summary}</p>
-							</div>
+							</div>   
 						</div>
 					</c:forEach>
 				</div>
@@ -78,7 +80,7 @@
 				<h5 class="animated zoomIn title-text">인기 웹툰</h5>
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" begin="3">
-						<div class="card small col l2 webtoon_card hoverable">
+						<div class="card col s12 m24 l2 top_card hoverable">
 							<div class="card-image waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 							</div>

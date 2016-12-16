@@ -23,6 +23,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		map.put("webtoonLevel", webtoonLevel);
 		map.put("categoryCode", categoryCode);
 		map.put("email", email);
+		System.out.println(webtoonLevel + " / "+categoryCode+" / "+email);
 		return sqlSession.selectList("webtoonMapper.selectWebtoonByLevel", map);
 	}
 
@@ -91,10 +92,10 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
 		map.put("episodeSequence", Integer.toString(episodeSequence));
-		if (sqlSession.selectOne("webtoonMapper.isRecommended", map)==null) {
-			return true;
+		if (sqlSession.selectOne("webtoonMapper.isRecommended", map)!=null) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	@Override
