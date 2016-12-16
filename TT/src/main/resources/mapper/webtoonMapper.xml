@@ -43,13 +43,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 카테고리코드가 null일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
       SELECT W.WEBTOON_CODE, W.WEBTOON_NAME, W.WEBTOON_LEVEL, W.WEBTOON_STATE, W.CATEGORY_CODE, W.PENALTY, W.NICKNAME,
-      W.FUNDING_PERIOD, W.SUMMARY, W.WEBTOON_THUMBNAIL, (SELECT SUM(HITS) FROM EPISODE WHERE WEBTOON_CODE = W.WEBTOON_CODE) AS HITS
-      FROM WEBTOON W
-      WHERE WEBTOON_LEVEL = #{webtoonLevel}
-      <if test="categoryCode != null">
-      AND CATEGORY_CODE = #{categoryCode}
+      W.FUNDING_PERIOD, W.SUMMARY, W.WEBTOON_THUMBNAIL
+      <if test="email != null">
+      ,(SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION WHERE EMAIL = #{email} AND WEBTOON_CODE = W.WEBTOON_CODE) AS SEBSCRIPTION_SEQUENCE
       </if>
-      ORDER BY HITS
+      FROM WEBTOON W join (SELECT WEBTOON_CODE, SUM(HITS) AS HITS FROM EPISODE GROUP BY WEBTOON_CODE) E
+      on(W.WEBTOON_CODE = E.WEBTOON_CODE)
+      WHERE LOWER(WEBTOON_LEVEL) = LOWER(#{webtoonLevel})
+      <if test="categoryCode != null">
+      AND LOWER(CATEGORY_CODE) = LOWER(#{categoryCode})
+      </if>
+      ORDER BY E.HITS
    </select>
 	
 	<!-- searchByKeyword -->
