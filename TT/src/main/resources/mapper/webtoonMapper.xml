@@ -112,7 +112,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectNumsBySequence -->
 	<select id="selectNumsBySequence" resultMap="episodeDTO" parameterType="string">
-		SELECT EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, AUTHOR_WORD
+		SELECT EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, AUTHOR_WORD,
+				UPLOAD_DATE, WEBTOON_CODE, EPISODE_TITLE, THUMBNAIL, FUND_CODE
 		FROM EPISODE
 		WHERE EPISODE_SEQUENCE= #{value}
 	</select>
@@ -139,4 +140,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="increaseHits" parameterType="string">
 		UPDATE EPISODE SET HITS = HITS+1 WHERE EPISODE_SEQUENCE = #{value}
 	</update>
+	
+	<!-- 웹툰코드에 해당하는 웹툰정보 가져오기 -->
+	<select id="selectWebtoon" resultMap="webtoonDTO" parameterType="_int">
+		SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, 
+			CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL 
+		FROM WEBTOON
+		WHERE WEBTOON_CODE = #{value}
+	</select>
 </mapper>

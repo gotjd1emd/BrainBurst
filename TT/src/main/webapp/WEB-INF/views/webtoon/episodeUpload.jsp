@@ -67,12 +67,12 @@
 		<div class="row">
 			<div class="col s2">
 				<div class="webtoon_title">
-					<img src="http://public.slidesharecdn.com/b/images/logo/linkedin-ss/SS_Logo_White_Large.png?6d1f7a78a6">
+					<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 				</div>
 			</div>
 			<div class="col s10">
-				작가이름 <br>
-				줄거리
+				${webtoonDTO.nickname} <br>
+				${webtoonDTO.summary}
 			</div>
 		</div>
 		
@@ -147,7 +147,7 @@
 				</div>
 				
 				<div class="row">
-					<input type="hidden" value="${requestScope.webtoonCode }" name="webtoonCode"/>
+					<input type="hidden" value="${webtoonDTO.webtoonCode }" name="webtoonCode"/>
 					<input type="hidden" value="${requestScope.episodeNumber }" name="episodeNumber"/>
 					<button class="btn waves-effect waves-light" type="submit" name="action">업로드하기
 					</button>

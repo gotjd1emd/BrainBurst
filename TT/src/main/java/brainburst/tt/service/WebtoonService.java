@@ -79,4 +79,11 @@ public interface WebtoonService {
 	 */
 	EpisodeDTO selectNumsBySequence(int episodeSequence);
 	
+	/**
+	 * 웹툰 코드에 해당하는 웹툰 정보 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	WebtoonDTO selectWebtoon(int webtoonCode);
+	
 }

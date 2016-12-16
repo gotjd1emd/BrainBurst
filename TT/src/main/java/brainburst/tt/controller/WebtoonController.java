@@ -215,4 +215,27 @@ public class WebtoonController {
 			//성공했을때 무언가...?
 		}
 	}
+	
+	/**
+	 * 에피소드업로드 페이지 이동
+	 */
+	@RequestMapping("episodeUploadPage/{webtoonCode}/{episodeNumber}")
+	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode, 
+			@PathVariable("episodeNumber") int episodeNumber) {
+		
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
+
+		request.setAttribute("webtoonDTO", webtoonDTO);
+		request.setAttribute("episodeNumber", episodeNumber);
+		return "webtoon/episodeUpload";
+	}
+	
+	/**
+	 * 에피소드 수정
+	 */
+	@RequestMapping("modifyEpisode/{episodeSequence}")
+	public String modifyEpsode(HttpServletRequest request, @PathVariable int episodeSequence) {
+		
+		return "webtoon/modifyEpisode";
+	}
 }

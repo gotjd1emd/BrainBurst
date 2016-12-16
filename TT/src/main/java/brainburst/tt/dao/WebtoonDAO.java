@@ -105,4 +105,11 @@ public interface WebtoonDAO {
 	 * @param episodeSequence
 	 */
 	void increaseHits (int episodeSequence);
+	
+	/**
+	 * 웹툰 코드에 해당하는 웹툰 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	WebtoonDTO selectWebtoon(int webtoonCode);
 }

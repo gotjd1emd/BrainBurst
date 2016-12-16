@@ -14,18 +14,18 @@
 				var height = $(".title-box").height();
 				$(".title-content-box").height(height);
 			})
-			
+			/*에피소드 보기*/
 			$("#episode-list").find(".row").on("click", (function() {
 				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
 			}));
-			
+			/*에피소드 수정*/
 			$("#webtoon-info").find(".row").on("click", (function() {
-				$(location).attr('href',"/controller/author/modifyEpisode/"+$(this).find('img').attr("name"));
+				$(location).attr('href',"/controller/webtoon/modifyEpisode/"+$(this).find('img').attr("name"));
 			}));
-			
+			/*에피소드 업로드*/
 			$("#episode-upload").on("click", (function() {
 				var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text()*1+1;
-				$(location).attr('href',"/controller/author/episodeUploadPage/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber);
+				$(location).attr('href',"/controller/webtoon/episodeUploadPage/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber);
 			}));
 			
 			$("#scription-btn").click(function () {

@@ -120,20 +120,6 @@ public class AuthorContoller {
 	}
 	
 	/**
-	 * 에피소드업로드 페이지 이동
-	 */
-	@RequestMapping("episodeUploadPage/{webtoonCode}/{episodeNumber}")
-	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") String webtoonCode, 
-			@PathVariable("episodeNumber") int episodeNumber) {
-		
-		System.out.println("webtoonCode : " + webtoonCode);
-		System.out.println("episodeNumber : " + episodeNumber);
-		request.setAttribute("webtoonCode", webtoonCode);
-		request.setAttribute("episodeNumber", episodeNumber);
-		return "webtoon/episodeUpload";
-	}
-	
-	/**
 	 * 에피소드업로드
 	 */
 	@RequestMapping("episodeUpload")
@@ -168,15 +154,6 @@ public class AuthorContoller {
 		authorService.episodeUpload(episodeDTO, imageList);
 		
 		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
-	}
-	
-	/**
-	 * 에피소드 수정
-	 */
-	@RequestMapping("modifyEpisode/{episodeSequence}")
-	public String modifyEpsode(HttpServletRequest request, @PathVariable int episodeSequence) {
-		
-		return "webtoon/modifyEpisode";
 	}
 	
 	/**

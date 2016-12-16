@@ -79,5 +79,9 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public EpisodeDTO selectNumsBySequence(int episodeSequence) {
 		return webtoonDAO.selectNumsBySequence(episodeSequence);
 	}
-
+	
+	@Override
+	public WebtoonDTO selectWebtoon(int webtoonCode) {
+		return webtoonDAO.selectWebtoon(webtoonCode);
+	}
 }
