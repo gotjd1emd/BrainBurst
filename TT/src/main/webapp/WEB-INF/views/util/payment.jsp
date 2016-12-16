@@ -47,6 +47,7 @@
 	</script>
 </head>
 <body>
+	<input id="header-title" type="hidden" value="T 충전">
 	<form method="post" action='<c:url value="/user/cashCharge"/>'>
 	<!-- HTML5 -->
 	<div class="card-frame-payment z-depth-1">

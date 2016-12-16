@@ -219,7 +219,7 @@ left: 228px;
 /* 사이드 네비게이션 */
 #snb{
 	position : relative;
-	z-index: 2;
+	z-index: 99;
 }
 
 .side-nav{
@@ -350,7 +350,7 @@ left: 228px;
 	padding-top:60px;
 	padding-left:250px;
 	padding-right:0px;
-	z-index: 1;
+	z-index: 4;
 	background-color:#FAFAFA;
 }
 

@@ -258,7 +258,29 @@ blockquote {
 	line-height: 70px;
 }
 
+/*remote contoller*/
+.remote-box{
+	right:20px;
+	bottom:20px;
+	position:fixed;
+	width:150px;
+	height:130px;	
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.remote-btn{
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.remote-row{
+	width:99%;
+	margin-bottom: 0px;
+}
+
 /*webtoon upload css*/
 .file-field {
 	margin-top: 0px;
 }
+

@@ -20,52 +20,37 @@
 			})
 		})
 	</script>
-
-<div class="z-depth-2">
-	<div class="row">
-		<div class="col s2">
-			<div class="webtoon_title">
-				<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
+	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">
+	<div class="row title-box z-depth-1">
+	<div class="col s3 webtoon-sumbnail-box">
+		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
+	</div>
+	<div class="title-content-box">
+		<div class="row" style="margin: 0">
+			<div class="col s4 webtoon-title-row">
+				
 			</div>
-		</div>
-
-		<div class="col s8">
-			${webtoonDTO.webtoonName}<br>${webtoonDTO.nickname}
-		</div>
-		<div class="col s1">
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="right">
-				<a href="#report-modal">
-					<div class="report">
-						<i class="material-icons">priority_high</i>
-					</div>
-				</a>
+			<div class="col s8">
+				<p class="">${webtoonDTO.nickname}<p>
+				<p>${webtoonDTO.summary}</p>
 			</div>
-		</div>
-		<div class="col s1">
-			<blockquote>
-				<p class="flow-text" id="val01">
-					추 천<br>:${episodeDTO.recommendation}
-				</p>
-			</blockquote>
+			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
-</div>
+	</div>
+		<div class="row tab-row  z-depth-1">
+			<div class="col s12">
+				<ul class="tabs mywebtoon-tab">
+					<li class="tab col s6 m12 l4 offset-l4"><a class="active" href="#episode-list">${episodeDTO.episodeNumber}화</a></li>
+				</ul>
+			</div>
+		</div>
+
 <c:forEach var="item" items="${imageList}">
 <div class="center">
 	<img alt="webtoon" src="<c:url value='/resources/'/>${item}">
 </div>
 </c:forEach>
-<c:if test="${prevEpisodeSequence != 0}">
-<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}">이전화</a><br>
-</c:if>
-<a href="/controller/webtoon/webtoonPage/${webtoonDTO.webtoonCode}">목록으로</a><br>
-<c:if test="${nextepisodeSequence != 0}">
-<a href="/controller/webtoon/episodePage/${nextepisodeSequence}">다음화</a>
-</c:if>
 
 <div class="z-depth-2">
 	<div>작가의말 : ${episodeDTO.authorWord}</div>
@@ -77,4 +62,33 @@
 			name="action" id="rmd">추천 하기</button>
 		<input type="hidden" value="${episodeDTO.episodeSequence}">
 	</div>
+</div>
+
+<div class="z-depth-3 remote-box grey lighten-1">
+	<div class="row remote-row">
+		<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}" class="col s4 offset-s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">keyboard_arrow_up</i></a>
+	</div>
+	<div class="row remote-row">
+	<c:choose>
+		<c:when test="${prevEpisodeSequence != 0}">
+			<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}" class="col s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">keyboard_arrow_left</i></a>
+		</c:when>
+		<c:otherwise>
+			<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}" class="col s4 waves-effect waves-light btn remote-btn color-500 disabled"><i class="material-icons">keyboard_arrow_left</i></a>
+		</c:otherwise>
+	</c:choose>
+	<a href="/controller/webtoon/webtoonPage/${webtoonDTO.webtoonCode}" class="col s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">toc</i></a>
+	<c:choose>
+		<c:when test="${nextepisodeSequence != 0}">
+			<a href="/controller/webtoon/episodePage/${nextepisodeSequence}" class="col s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">keyboard_arrow_right</i></a>
+		</c:when>
+		<c:otherwise>
+			<a href="/controller/webtoon/episodePage/${nextepisodeSequence}" class="col s4 waves-effect waves-light btn remote-btn color-500 disabled"><i class="material-icons">keyboard_arrow_right</i></a>
+		</c:otherwise>
+	</c:choose>
+	</div>
+	<div class="row">
+		<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}" class="col s4 offset-s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">keyboard_arrow_down</i></a>
+	</div>
+	
 </div>
