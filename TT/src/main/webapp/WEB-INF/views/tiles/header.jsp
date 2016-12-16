@@ -16,8 +16,23 @@
 </script>
 
 <script>
+		$(document).ready(function () {
+			if($("#header-title").val()=='웹툰'){
+				var link =  document.location.href;
+				console.log(link);
+				if(link=='http://localhost:8000/controller/' || link=="http://localhost:8000/controller/webtoon/funding/all"){
+					$(".brand-logo").html("펀딩 웹툰");
+				}else if(link=="http://localhost:8000/controller/webtoon/free/all"){
+					$(".brand-logo").html("일반 웹툰");
+				}else if(link=="http://localhost:8000/controller/webtoon/paid/all"){
+					$(".brand-logo").html("완결 웹툰");
+				}
+			}else{
+				$(".brand-logo").html($("#header-title").val());
+			}
+		})
 		$(function () {
-			$(".brand-logo").html($("#header-title").val());
+			
 			$('.modal').modal({
 		      dismissible: true, // Modal can be dismissed by clicking outside of the modal
 		      opacity: .5, // Opacity of modal background
@@ -77,7 +92,7 @@
 </nav>
 <nav class="header-box">
 	<div class="nav-wrapper z-depth-3 color-500">
-		<a href="<c:url value='/'/>" class="brand-logo center tooltipped" style="font-size: 25px" data-position="bottom" data-delay="50" data-tooltip="웹툰 페이지 바로가기">웹툰</a>
+		<a href="<c:url value='/'/>" class="brand-logo center tooltipped" style="font-size: 25px" data-position="bottom" data-delay="50" data-tooltip="웹툰 페이지 바로가기"></a>
 		<a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 		<a href="#" class="button-collapse right"><i class="material-icons search-btn">search</i></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
