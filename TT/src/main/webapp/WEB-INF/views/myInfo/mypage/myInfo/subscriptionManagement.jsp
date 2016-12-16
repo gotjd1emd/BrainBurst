@@ -3,79 +3,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="card-frame-myInfo z-depth-1">
 	<ul class="collection subscribe-list">
-		<li class="collection-item avatar"><img
-			src='<c:url value="/resource/images/yuna.jpg"/>' alt=""
-			class="circle"> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle">folder</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle green">insert_chart</i> <span
-			class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar"><i
-			class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
-			<p>
-				First Line <br> Second Line
-			</p> <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
+		<c:choose>
+				<c:when test="${empty sessionScope.subScriptionList}">
+					구독 목록이 없습니다.
+				</c:when>
+				<c:otherwise>
+					<c:forEach var="item" items="${subScriptionList}">
+						<li class="collection-item avatar">
+						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle">
+						 <span class="title">${item.webtoonName}</span>
+							<p>
+								${item.nickname} <br> Second Line
+							</p> <a href="#!" class="secondary-content"><i class="material-icons" name="${item.webtoonCode}" id="delSubScription">grade</i></a>
+						</li>
+					</c:forEach>
+				</c:otherwise>
+		</c:choose>
 	</ul>
 </div>

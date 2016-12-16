@@ -123,7 +123,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- showListSubscription -->
 	<select id="showListSubscription" resultMap="webtoonMap" parameterType="string">
-		select w.webtoon_name, w.nickname, w.webtoon_thumbnail 
+		select w.webtoon_code, w.webtoon_name, w.nickname, w.webtoon_thumbnail 
 		from subscription s join webtoon w 
 		on (s.webtoon_code = w.webtoon_code) 
 		where email=#{email}

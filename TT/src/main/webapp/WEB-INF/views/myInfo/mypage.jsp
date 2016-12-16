@@ -10,7 +10,10 @@
 /* Style */
 </style>
 <script>
-	$(function(){
+	$(function(){ 
+		$(".secondary-content :first-child").click(function() {
+			alert($(this).attr("name"));
+		})
 		$("#getHistory").click(function() {
 			$.ajax({
 				url : "/controller/user/THistoryList",
