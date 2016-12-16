@@ -99,31 +99,31 @@ commit;
 ----
 
 insert into category (category_code, category_name)
-values ('A','액션');
+values ('A','action');
 
 insert into category (category_code, category_name)
-values ('B','SF');
+values ('B','sf');
 
 insert into category (category_code, category_name)
-values ('C','판타지');
+values ('C','fantasy');
 
 insert into category (category_code, category_name)
-values ('D','드라마');
+values ('D','drama');
 
 insert into category (category_code, category_name)
-values ('E','스릴러');
+values ('E','thriller');
 
 insert into category (category_code, category_name)
-values ('F','일상');
+values ('F','life');
 
 insert into category (category_code, category_name)
-values ('G','개그');
+values ('G','gag');
 
 insert into category (category_code, category_name)
-values ('H','성인');
+values ('H','adult');
 
 insert into category (category_code, category_name)
-values ('I','기타');
+values ('I','etc');
 
 
 
