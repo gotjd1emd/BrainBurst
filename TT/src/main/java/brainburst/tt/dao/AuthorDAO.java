@@ -2,6 +2,8 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
+import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -34,4 +36,26 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	String selectCategoryName(String webtoonCode);
+	
+	/**
+	 * 에피소드 업로드
+	 * @param episodeDTO
+	 * @return
+	 */
+	int episodeUpload(EpisodeDTO episodeDTO);
+	
+	/**
+	 * 업로드한 에피소드 시퀀스넘버 가져오기
+	 * @param webtoonCode
+	 * @param episodeNumber
+	 * @return
+	 */
+	int selectEpisodeSequence(String webtoonCode, int episodeNumber);
+	
+	/**
+	 * 에피소드 이미지 저장
+	 * @param imageDTO
+	 * @return
+	 */
+	int insertEpisodeImage(ImageDTO imageDTO);
 }

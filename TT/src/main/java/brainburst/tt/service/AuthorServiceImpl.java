@@ -58,7 +58,15 @@ public class AuthorServiceImpl implements AuthorService {
 	
 	@Override
 	public int episodeUpload(EpisodeDTO episodeDTO, List<ImageDTO> imageList) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		result = authorDAO.episodeUpload(episodeDTO);
+		int episodeSequence = authorDAO.selectEpisodeSequence(episodeDTO.getWebtoonCode(), episodeDTO.getEpisodeNumber());
+		
+		for(ImageDTO image : imageList) {
+			image.setEpisodeSequence(episodeSequence);
+			result = authorDAO.insertEpisodeImage(image);
+		}
+		
+		return result;
 	}
 }

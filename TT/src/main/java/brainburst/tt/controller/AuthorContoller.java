@@ -1,5 +1,6 @@
 package brainburst.tt.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -19,7 +20,6 @@ import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AuthorService;
-import brainburst.tt.service.WebtoonService;
 
 @Controller
 @RequestMapping("author")
@@ -137,7 +137,7 @@ public class AuthorContoller {
 	 * 에피소드업로드
 	 */
 	@RequestMapping("episodeUpload")
-	public String uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) {
+	public String uploadEpisode(HttpServletRequest request, EpisodeDTO episodeDTO) throws Exception {
 		List<MultipartFile> images = episodeDTO.getImage();
 		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
 		
@@ -150,17 +150,20 @@ public class AuthorContoller {
 			episodeDTO.setThumbnail(null);
 		}else {
 			episodeDTO.setThumbnail(path + "episodeThumbnail/"
-						+ episodeDTO.getThumbnailFile().getOriginalFilename());
+						+ episodeDTO.getThumbnailFile().getName());
+			episodeDTO.getThumbnailFile().transferTo(new File(episodeDTO.getThumbnail()));
 		}
 		int index = 0;
 		for(int i = 0; i < images.size(); i++) {
 			if(images.get(i).getSize() != 0) {
-				imageList.add(new ImageDTO(index++, -1, path+categoryName+"/"+images.get(i).getOriginalFilename()));
+				imageList.add(new ImageDTO(index++, -1, path+categoryName+"/"+images.get(i).getName()));
+				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getName()));
 			}
 		}
+
 		System.out.println("image index : " + imageList.size());
 		
-		int result = authorService.episodeUpload(episodeDTO, imageList);
+		authorService.episodeUpload(episodeDTO, imageList);
 		
 		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
 	}

@@ -45,6 +45,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				#{thumbnail}, null)
 	</insert>
 	
+	<!-- selectEpisodeSequence -->
+	<select id="episodeSequence" resultType="_int" parameterType="map">
+		SELECT EPISODE_SEQUENCE FROM EPISODE WHERE WEBTOON_CODE = #{webtoonCode} AND EPISODE_NUMBER = #{episodeNumber}
+	</select>
+	
 	<!-- episodeImageUpload -->
 	<insert id="episodeImageUpload" parameterType="imageDTO">
 		INSERT INTO IMAGE(IMAGE_INDEX, EPISODE_SEQUENCE, FILE_NAME) 
