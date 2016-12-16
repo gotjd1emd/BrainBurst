@@ -30,6 +30,7 @@
 </script>
 </head>
 <body>
+	<input id="header-title" type="hidden" value="작가페이지">
 	<div class="row tab-frame-myinfo">
 		<div class="col s12 tab-myinfo grey darken-3">
 			<ul class="tabs center z-depth-2 grey darken-3">
