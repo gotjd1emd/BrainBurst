@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
-/* Style */
+
 </style>
 <script>
 		$(function() {
@@ -220,7 +220,7 @@
 									name="${item.webtoonCode}">
 							</div>
 							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
+								<span class="card-title activator grey-text text-darken-4" style="font-size:18px; font-weight: 500;">${item.webtoonName}
 								<i class="material-icons right">more_vert</i></span>
 								<p id="ss">
 									<a href="#">${item.nickname}</a>
@@ -240,15 +240,28 @@
 				</div>
 				<hr>
 				<h5 class="title-text animated fadeInDown">인기 웹툰</h5>
-				<div class="row">
-					<c:forEach var="item" items="${webtoonList}" begin="3">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
+					<c:forEach var="item" items="${webtoonList}" varStatus="status">
+						<c:choose>
+							<c:when test="${status.index==0}">
+								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 10%;">
+							</c:when>
+							<c:when test="${status.index mod 6==0}">
+								</div>
+								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 10%;">
+							</c:when>
+							<c:otherwise>
+							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
 							<div class="card-image waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
 							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
+							<div class="card-content">
+								<span class="card-title activator grey-text text-darken-4" style="font-size:18px; font-weight:500;">${item.webtoonName}
+								<i class="material-icons right">more_vert</i></span>
+								<p id="ss">
+									<a href="#">${item.nickname}</a>
+									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
+									${item.subscriptionSequence}
+								</p>
 							</div>
 							<div class="card-reveal">
 								<span class="card-title grey-text text-darken-4">${item.webtoonName}
@@ -256,8 +269,9 @@
 								<p>${item.summary}</p>
 							</div>
 						</div>
+							</c:otherwise>
+						</c:choose>
 					</c:forEach>
-				</div>
 		</div>
 		<div id="action" class="col s11">
 			<div class="row">
