@@ -101,11 +101,11 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public Boolean isSubscription(String email, int webtoonCode) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
-		map.put("episodeSequence", Integer.toString(webtoonCode));
-		if (sqlSession.selectOne("webtoonMapper.isRecommended", map)==null) {
-			return true;
+		map.put("webtoonCode", Integer.toString(webtoonCode));
+		if (sqlSession.selectOne("webtoonMapper.isSubscription", map)!=null) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
 }

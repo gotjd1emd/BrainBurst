@@ -130,7 +130,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- isSubscription -->
-	<select id="isSubscription" resultType="Int" parameterType="map">
+	<select id="isSubscription" resultType="string" parameterType="map">
 		SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION 
 		WHERE WEBTOON_CODE = #{webtoonCode} AND EMAIL = #{email}
 	</select>
