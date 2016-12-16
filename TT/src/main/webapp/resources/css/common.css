@@ -247,15 +247,18 @@ left: 228px;
 
 .scription-box{
 	margin-bottom: 55px;
-	overflow-y: scroll;
+	overflow:auto;
 	overflow-x: hidden;
-	height: 119%;
 	-ms-overflow-style: none;
-	
 }
+
+.scription-ul{
+	display: block;
+}
+
 .scription-btn{
 	background-color:#424242 !important;
-	width:230px;
+	width:210px;
 	margin-left: 10px;
 	height:50px !important;
 	line-height: 20px !important;

@@ -5,6 +5,13 @@
 <script>
 	$(function() {
 		
+		var height = $( window ).height() - 400;
+		$(".scription-box").css("height", height);
+		
+		$(".scription-box").mCustomScrollbar({
+		    axis:"y" // horizontal scrollbar
+		});
+		
 		$(window).resize(function name() {
 			var height = $( window ).height() - 400;
 			$(".scription-box").css("height", height);
@@ -119,8 +126,8 @@
 					<a class="waves-effect waves-light btn charge-btn col s4 color-500" href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>
 			</div>
-			<div class="scription-box">
-				<ul>
+			<div class="scription-box mCustomScrollbar" data-mcs-theme="dark-thin">
+				<ul class="scription-ul">
 				<c:choose>
 					<c:when test="${empty sessionScope.subScriptionList}">
 						<li>
