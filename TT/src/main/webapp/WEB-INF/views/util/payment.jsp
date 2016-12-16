@@ -142,8 +142,8 @@
      		 </div>
 		  </div>
 		  <div class="center">
-		  	<button class="btn waves-effect waves-light" type="submit" name="action">결제요청</button>
-		  	<a class="waves-effect waves-light btn" href="<c:url value='/user/main/index'/>">취소</a>
+		  	<button class="btn waves-effect waves-light color-500" type="submit" name="action">결제요청</button>
+		  	<a class="waves-effect waves-light btn color-500" href="<c:url value='/user/main/index'/>">취소</a>
 		  </div>
       </div>
       </form>
