@@ -142,15 +142,15 @@ select * from webtoon;
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (1,'아파트','free','serial','A','green', '설현', 0, '아파트에서..?!', '/webtoon/webtoonThumbnail/19.jpg');
+values (webtoon_seq.nextval,'아파트','free','serial','A','green', '설현', 0, '아파트에서..?!', '/webtoon/webtoonThumbnail/19.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period,summary, webtoon_thumbnail)
-values (2,'어게인','funding','serial','B','green','민아',1,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
+values (webtoon_seq.nextval,'어게인','funding','serial','B','green','민아',1,'아파트 괴담','/webtoon/webtoonThumbnail/20.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (3,'26년','funding','complete','C','green', '병재', 1, 'For 26years..?!', '/webtoon/webtoonThumbnail/21.jpg');
+values (webtoon_seq.nextval,'26년','funding','complete','C','green', '병재', 1, 'For 26years..?!', '/webtoon/webtoonThumbnail/21.jpg');
 
 --
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -2419,7 +2419,7 @@ values(1, 234, '/webtoon/fantasy/제28화 마른 잎 다시 살아나_13.jpg');
   --1. webtoon 정보
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (4,'바보','funding','complete','D','green', '고은', 1, '바보-?!', '/webtoon/webtoonThumbnail/1.jpg');
+values (webtoon_seq.nextval,'바보','funding','complete','D','green', '고은', 1, '바보-?!', '/webtoon/webtoonThumbnail/1.jpg');
 
 
 
@@ -2563,7 +2563,7 @@ values(1, 244, '/webtoon/drama/제10화 - 시선.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (5,'당신의 모든 순간','free','serial','D','green', '우리', 0, '작가의 말 - 당신의 모든 순간', '/webtoon/webtoonThumbnail/2.jpg');
+values (webtoon_seq.nextval,'당신의 모든 순간','free','serial','D','green', '우리', 0, '작가의 말 - 당신의 모든 순간', '/webtoon/webtoonThumbnail/2.jpg');
 
 
 
@@ -2685,7 +2685,7 @@ values(1, 254, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_03.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (6,'이웃사람','funding','serial','F','green', '혜리', 1, '이웃사람-?!', '/webtoon/webtoonThumbnail/3.jpg');
+values (webtoon_seq.nextval,'이웃사람','funding','serial','F','green', '혜리', 1, '이웃사람-?!', '/webtoon/webtoonThumbnail/3.jpg');
 
 
 
@@ -2808,7 +2808,7 @@ values(1, 264, '/webtoon/life/제2화 - 손님_04.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (7,'그대를 사랑합니다','funding','serial','G','green', '재이', 1, '그대 사랑합니다', '/webtoon/webtoonThumbnail/6.jpg');
+values (webtoon_seq.nextval,'그대를 사랑합니다','funding','serial','G','green', '재이', 1, '그대 사랑합니다', '/webtoon/webtoonThumbnail/6.jpg');
 
 
 
@@ -2931,7 +2931,7 @@ values(1, 274, '/webtoon/gag/제2화 - 언덕길_3.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (8,'순정 만화','funding','serial','H','green', '혜리', 1, '어렴풋이', '/webtoon/webtoonThumbnail/4.jpg');
+values (webtoon_seq.nextval,'순정 만화','funding','serial','H','green', '혜리', 1, '어렴풋이', '/webtoon/webtoonThumbnail/4.jpg');
 
 
 --insert 순정만화 funding 회차;

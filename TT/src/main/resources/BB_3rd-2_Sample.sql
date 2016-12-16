@@ -1,15 +1,3 @@
---SELECT * FROM EPISODE WHERE WEBTOON_CODE = 4
-
-
---1. ÀÏ¹Ý free ÀÛÇ° ³Ö±â
-
--- webtoon_level = free,funding,paid, 
--- webtoon_state = blind,complete,pause,serial 
-
---SELECT * FROM USER_INFORMATION WHERE USER_LEVEL != 'µ¶ÀÚ' ORDER BY USER_LEVEL;
---SELECT * FROM WEBTOON ORDER BY WEBTOON_CODE;
---select * from web
-
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
@@ -442,7 +430,7 @@ values (webtoon_seq.nextval,'¾î´Ï¾ð µµÄì','funding','serial','H','green', 'º´Àç'
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'¶¢','funding','serial','I','green', 'º´Àç', 1, '¶¢', '/webtoon/webtoonThumbnail/127.jpg');
+values (webtoon_seq.nextval,'¶¢','funding','serial','I','green', '°ü¸®', 1, '¶¢', '/webtoon/webtoonThumbnail/127.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
