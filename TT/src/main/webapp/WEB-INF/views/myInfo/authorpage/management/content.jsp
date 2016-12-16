@@ -36,7 +36,7 @@
 	
 	<div class="author-management-context">
 		<p>펀딩 작가가 되기 위해선 꼭 작성을 해야합니다.</p>
-		<p>위 개인정보는 T 환전 시 사용되는 정보이며 환전 의외에 사용되지 않습니다.</p>
+		<p>위 개인정보는 T 환전 시 사용되는 정보이며 환전시스템 외에 사용되지 않습니다.</p>
 	</div>
 	
 	<div class="title-div">

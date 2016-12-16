@@ -1,9 +1,11 @@
 @CHARSET "EUC-KR";
 
 #content-box{
+	text-align:center;
 	margin:20px;
 	border-radius: 20px;
 	width: 97%;
-	padding:20px;
+	padding:100px;
+	background-color: white;
 }
 

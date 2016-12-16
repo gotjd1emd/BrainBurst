@@ -21,35 +21,39 @@
 			})
 		})
 	</script>
-	<div class="z-depth-2">
-		<div class="row">
-			<div class="col s2">
-				<div class="webtoon_title">
-					<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
-				</div>
-			</div>
-			<div class="col s10">
-				${webtoonDTO.nickname} <br>
-				${webtoonDTO.summary}
-			</div>
-		<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
-		</div>
+	<div class="row title-box z-depth-1">
+	<div class="col s3 webtoon-sumbnail-box">
+		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 	</div>
-	
-	<c:forEach var="episode" items="${episodeList}">
-	<div class="z-depth-2 episode-list">
-		<div class="row">
-			<div class="col s2 episode_thumbnail">
-				<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>/${episode.thumbnail}">
-			</div>
-			<div class="col s6">
-				${episode.episodeTitle} <br><br>
-				추천 : ${episode.recommendation}
+	<div class="title-content-box">
+		<div class="row" style="margin: 0">
+			<div class="col s4 webtoon-title-row">
 				
 			</div>
-			<div class="col s4 episode_chart">
-				<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+			<div class="col s8">
+				<p class="">${webtoonDTO.nickname}<p>
+				<p>${webtoonDTO.summary}</p>
 			</div>
+			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
+	</div>
+	
+		<div id="episode-list" class="z-depth-1 episode-list">
+	<c:forEach var="episode" items="${episodeList }">
+		<div class="z-depth-1 hoverable radius">
+			<div class="row radius">
+				<div class="episode_thumbnail">
+					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
+				</div>
+				<div class="col s5 episode-content">
+					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
+					추천 : ${episode.recommendation}
+				</div>
+				<div class="col s4 episode_chart">
+					<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+				</div>
+			</div>
+		</div>
 	</c:forEach>
+	</div>
