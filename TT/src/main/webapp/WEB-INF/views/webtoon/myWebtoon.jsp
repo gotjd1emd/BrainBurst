@@ -30,16 +30,16 @@
 			})
 		})
 	</script>
-	<div class="z-depth-2">
-		<div class="row title-box">
+	<div class="z-depth-2 title-box">
+		<div class="row" style="margin: 0">
 			<div class="col s4 webtoon-title-row">
 				<div class="webtoon-title" name="${webtoonDTO.webtoonCode}">
 					<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 				</div>
 			</div>
 			<div class="col s8">
-				${webtoonDTO.nickname} <br>
-				${webtoonDTO.summary}
+				<p class="">${webtoonDTO.nickname}<p>
+				<p>${webtoonDTO.summary}</p>
 			</div>
 			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>

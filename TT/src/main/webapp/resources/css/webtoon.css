@@ -7,7 +7,12 @@
 }
 
 .title-box{
-	margin-bottom: 0px;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+.webtoon-sumbnail-box{
+	
 }
 
 .webtoon-title-row{
