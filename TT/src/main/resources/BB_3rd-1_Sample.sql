@@ -2525,34 +2525,34 @@ values (episode_seq.NEXTVAL, 4, 10, 0, 0, '2014-03-05', '제10화 - 시선', '작가의
 select* from image;
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 235, '/webtoon/fantasy/제1화 - 동네.jpg_13.jpg');
+values(1, 235, '/webtoon/drama/제1화 - 동네.jpg_13.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 236, '/webtoon/fantasy/제2화 - 귀가.jpg');
+values(1, 236, '/webtoon/drama/제2화 - 귀가.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 237, '/webtoon/fantasy/제3화 - 별.jpg');
+values(1, 237, '/webtoon/drama/제3화 - 별.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 238, '/webtoon/fantasy/제4화 - 카페.jpg');
+values(1, 238, '/webtoon/drama/제4화 - 카페.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 239, '/webtoon/fantasy/제5화 - 신발.jpg');
+values(1, 239, '/webtoon/drama/제5화 - 신발.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 240, '/webtoon/fantasy/제6화 - 친구.jpg');
+values(1, 240, '/webtoon/drama/제6화 - 친구.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 241, '/webtoon/fantasy/제7화 - 토스트.jpg');
+values(1, 241, '/webtoon/drama/제7화 - 토스트.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 242, '/webtoon/fantasy/제8화 - 커피.jpg');
+values(1, 242, '/webtoon/drama/제8화 - 커피.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 243, '/webtoon/fantasy/제9화 - 사진.jpg');
+values(1, 243, '/webtoon/drama/제9화 - 사진.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 244, '/webtoon/fantasy/제10화 - 시선.jpg');
+values(1, 244, '/webtoon/drama/제10화 - 시선.jpg');
 
 --select * from category;
 
