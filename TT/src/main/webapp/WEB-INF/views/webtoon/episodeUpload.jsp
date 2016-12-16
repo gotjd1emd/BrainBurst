@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
-<link rel="StyleSheet" href="<c:url value='/resources/css/modifyWebtoon.css'/>">
 <script type="text/javascript">
 	$(function() {
 		var count = 1;
@@ -80,7 +79,7 @@
 		<hr>
 		<div class="row">
 		   	<div class="col s12">
-		        <p class="flow-text">웹툰 업로드 ${webtoonCode }</p>
+		        <h5>에피소드 업로드</h5>
 		    </div>
 		</div>
 		
@@ -99,7 +98,7 @@
 		
 		<div class="row">
 			<div class="col s6">
-				<p class="flow-text">그림 이미지를 등록해주세요.</p>
+				<p class="">그림 이미지를 등록해주세요.</p>
 				<a class="waves-effect waves-light btn" id="add">Image Add</a>
 
 				<div class="row">
@@ -134,13 +133,13 @@
 					<div class="col s4">
 						<div class="preview">
 							<div class="inner">
-								<p class="flow-text" id="thumbnail-text">썸네일 미리보기</p>
+								<p class="" id="thumbnail-text">썸네일 미리보기</p>
 								<img id='preview-image' src='' />
 							</div>
 						</div>
 					</div>
 					<div class="col s8">
-						<p class="flow-text">썸네일 미리보기 이미지입니다.</p>
+						<p class="">썸네일 미리보기 이미지입니다.</p>
 						<input id="thumbnail-preview" type="text" class="validate"
 							name="thumbnail-preview" readonly> <label
 							for="thumbnail-preview"></label>

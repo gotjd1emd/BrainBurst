@@ -17,8 +17,7 @@
 	media="screen,projection">
 <script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 <link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
-<link rel="StyleSheet"
-	href="<c:url value='/resources/css/webtoon.css'/>">
+<link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
 <style>
 </style>
 <script>
