@@ -21,8 +21,8 @@ public class WebtoonServiceImpl implements WebtoonService {
 	private UserDAO userDAO;
 
 	@Override
-	public List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode, String email) {
-		return webtoonDAO.selectWebtoonByLevel(webtoonLevel, categoryCode, email);
+	public List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode) {
+		return webtoonDAO.selectWebtoonByLevel(webtoonLevel, categoryCode);
 	}
 
 	@Override

@@ -44,9 +44,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
       SELECT W.WEBTOON_CODE, W.WEBTOON_NAME, W.WEBTOON_LEVEL, W.WEBTOON_STATE, W.CATEGORY_CODE, W.PENALTY, W.NICKNAME,
       W.FUNDING_PERIOD, W.SUMMARY, W.WEBTOON_THUMBNAIL, (SELECT SUM(HITS) FROM EPISODE WHERE WEBTOON_CODE = W.WEBTOON_CODE) AS HITS
-      <if test="email != null">
-      ,(SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION WHERE EMAIL = #{email} AND WEBTOON_CODE = W.WEBTOON_CODE) AS SEBSCRIPTION_SEQUENCE
-      </if>
       FROM WEBTOON W
       WHERE WEBTOON_LEVEL = #{webtoonLevel}
       <if test="categoryCode != null">

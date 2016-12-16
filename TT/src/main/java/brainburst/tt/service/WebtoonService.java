@@ -13,7 +13,7 @@ public interface WebtoonService {
 	 * @param categoryCode (미정 수정요망)
 	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
 	 */
-	List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode, String email);
+	List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode);
 	
 	/**
 	 * keyword에 해당하는 웹툰 혹은 키워드에 해당하는 작가의 웹툰목록 가져오기

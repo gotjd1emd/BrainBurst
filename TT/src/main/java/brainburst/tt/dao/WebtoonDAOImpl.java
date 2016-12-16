@@ -18,12 +18,10 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode, String email) {
+	public List<WebtoonDTO> selectWebtoonByLevel(String webtoonLevel, String categoryCode) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("webtoonLevel", webtoonLevel);
 		map.put("categoryCode", categoryCode);
-		map.put("email", email);
-		System.out.println(webtoonLevel + " / "+categoryCode+" / "+email);
 		return sqlSession.selectList("webtoonMapper.selectWebtoonByLevel", map);
 	}
 
