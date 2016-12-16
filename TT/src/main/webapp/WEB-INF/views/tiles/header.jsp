@@ -77,7 +77,7 @@
 </nav>
 <nav class="header-box">
 	<div class="nav-wrapper z-depth-3 color-500">
-		<a href="<c:url value='/'/>" class="brand-logo center">T T</a>
+		<a href="<c:url value='/'/>" class="brand-logo center tooltipped" style="font-size: 25px" data-position="bottom" data-delay="50" data-tooltip="웹툰 페이지 바로가기">웹툰</a>
 		<a href="#" data-activates="slide-out" id="menu_nav" class="button-collapse"><i class="material-icons">menu</i></a>
 		<a href="#" class="button-collapse right"><i class="material-icons search-btn">search</i></a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">

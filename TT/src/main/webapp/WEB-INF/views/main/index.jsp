@@ -181,6 +181,7 @@
 	</script>
 </head>
 <body>
+	<input id="header-title" type="hidden" value="웹툰">
 	<div class="row">
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">
 			<ul class="tabs grey darken-3">
