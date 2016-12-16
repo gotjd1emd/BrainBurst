@@ -17,20 +17,20 @@
 		
 		$('.image-file').on("change", "input[type=file]", function() {
 			var size = fileSize(this).toFixed(2)+"KB";
-			var index = "#"+$(this).attr("name");
+			var index = "input[name="+$(this).attr("id")+"]";
 			$(index).val(size);
 		});
 		
 		$('#add').on("click", function() {
 			if(count < 10) {
 				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' name='index"+count+"'>";
+				str += "<input type='file' id='index"+count+"' name='image["+count+"]'>";
 				str += "<div class='file-path-wrapper'>";
 				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
 				str += "</div></div>";
 				$('div.image-file').append(str);
 				
-				str = "<input id='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				str = "<input name='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
@@ -79,32 +79,33 @@
 		<hr>
 		<div class="row">
 		   	<div class="col s12">
-		        <p class="flow-text">웹툰 수정</p>
+		        <h5>에피소드 수정</h5>
 		    </div>
 		</div>
 		
 		<hr>
+		<form method="post" action="<c:url value='/author/episodeUpload'/>" encType="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s6">
 				<input id="episode-title" type="text" class="validate" name="episodeTitle"> 
 				<label for="episode-title">에피소드 제목</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="nickname-word" type="text" class="validate" name="nicknameWord"> 
-				<label for="nickname-word">작가의 말</label>
+				<input id="author-word" type="text" class="validate" name="authorWord"> 
+				<label for="author-word">작가의 말</label>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col s6">
-				<p class="flow-text">그림 이미지를 등록해주세요.</p>
+				<p class="">그림 이미지를 등록해주세요.</p>
 				<a class="waves-effect waves-light btn" id="add">Image Add</a>
 
 				<div class="row">
 					<div class="input-field col s6 image-file">
 
 						<div class="file-field input-field">
-							<input type="file" name="index0">
+							<input type="file" id="index0" name="image[0]">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
 									placeholder="이미지 파일을 추가해주세요.">
@@ -112,7 +113,7 @@
 						</div>
 					</div>
 					<div class="input-field col s6 image-file-size">
-						<input id="index0" type="text" class="validate" name="image-size0"
+						<input name="index0" type="text" class="validate" 
 							placeholder="이미지 크기" readonly>
 					</div>
 				</div>
@@ -121,7 +122,7 @@
 			<div class="input-field col s6">
 				<div class="file-field input-field">
 					<div class="btn">
-						<span>File</span> <input id="thumbnail" type="file" name="thumbnail">
+						<span>File</span> <input id="thumbnail" type="file" name="thumbnailFile">
 					</div>
 					<div class="file-path-wrapper">
 						<input class="file-path validate" type="text">
@@ -132,13 +133,13 @@
 					<div class="col s4">
 						<div class="preview">
 							<div class="inner">
-								<p class="flow-text" id="thumbnail-text">썸네일 미리보기</p>
+								<p class="" id="thumbnail-text">썸네일 미리보기</p>
 								<img id='preview-image' src='' />
 							</div>
 						</div>
 					</div>
 					<div class="col s8">
-						<p class="flow-text">썸네일 미리보기 이미지입니다.</p>
+						<p class="">썸네일 미리보기 이미지입니다.</p>
 						<input id="thumbnail-preview" type="text" class="validate"
 							name="thumbnail-preview" readonly> <label
 							for="thumbnail-preview"></label>
@@ -146,12 +147,15 @@
 				</div>
 				
 				<div class="row">
-					<button class="btn waves-effect waves-light" type="submit" name="action">수정하기
+					<input type="hidden" value="${requestScope.webtoonCode }" name="webtoonCode"/>
+					<input type="hidden" value="${requestScope.episodeNumber }" name="episodeNumber"/>
+					<button class="btn waves-effect waves-light" type="submit" name="action">업로드하기
 					</button>
 					<a class="waves-effect waves-light btn">돌아가기</a>
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 </body>
 </html>

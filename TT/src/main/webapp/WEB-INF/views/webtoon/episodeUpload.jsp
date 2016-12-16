@@ -17,20 +17,20 @@
 		
 		$('.image-file').on("change", "input[type=file]", function() {
 			var size = fileSize(this).toFixed(2)+"KB";
-			var index = "#"+$(this).attr("name");
+			var index = "input[name="+$(this).attr("id")+"]";
 			$(index).val(size);
 		});
 		
 		$('#add').on("click", function() {
 			if(count < 10) {
 				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' name='image["+count+"]'>";
+				str += "<input type='file' id='index"+count+"' name='image["+count+"]'>";
 				str += "<div class='file-path-wrapper'>";
 				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
 				str += "</div></div>";
 				$('div.image-file').append(str);
 				
-				str = "<input id='image["+count+"]' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				str = "<input name='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
@@ -105,7 +105,7 @@
 					<div class="input-field col s6 image-file">
 
 						<div class="file-field input-field">
-							<input type="file" name="image[0]">
+							<input type="file" id="index0" name="image[0]">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
 									placeholder="이미지 파일을 추가해주세요.">
@@ -113,7 +113,7 @@
 						</div>
 					</div>
 					<div class="input-field col s6 image-file-size">
-						<input id="image[0]" type="text" class="validate" name="image-size0"
+						<input name="index0" type="text" class="validate" 
 							placeholder="이미지 크기" readonly>
 					</div>
 				</div>
