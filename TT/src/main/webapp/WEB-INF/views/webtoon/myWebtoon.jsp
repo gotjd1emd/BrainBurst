@@ -42,6 +42,7 @@
 			})
 		})
 	</script>
+	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode}">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
@@ -68,9 +69,9 @@
 				</ul>
 			</div>
 		</div>
-	<div id="episode-list" class="z-depth-1 episode-list">
+	<div id="episode-list" class="episode-list">
 	<c:forEach var="episode" items="${episodeList }">
-		<div class="z-depth-1 hoverable radius">
+		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
@@ -87,10 +88,10 @@
 	</c:forEach>
 	</div>
 
-<div id="webtoon-info" class="z-depth-1 episode-list">
+<div id="webtoon-info" class="episode-list">
 	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
 		<c:forEach var="episode" items="${episodeList }">
-		<div class="z-depth-1 hoverable radius">
+		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
