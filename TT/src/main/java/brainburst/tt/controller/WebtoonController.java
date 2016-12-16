@@ -51,6 +51,19 @@ public class WebtoonController {
 		return "main/index";
 	}
 	
+	@RequestMapping("webtoonLevelR/{webtoonLevel}/{category}")
+	@ResponseBody
+	public void selectWebtoonByLevelR(HttpSession session, 
+			@PathVariable("webtoonLevel") String webtoonLevel, 
+			@PathVariable("category") String category) {
+		System.out.println("selectWebtoonByLevelR로 왔다");
+		System.out.println("catogory_code : " + category);
+		System.out.println("webtoonLevel : " + webtoonLevel);
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
+		System.out.println(list.size());
+		session.setAttribute("webtoonList", list);
+	}
+	
 	/**
 	 * 검색
 	 * @param keyword 검색어
@@ -144,7 +157,7 @@ public class WebtoonController {
 	 * @return 성공여부 1:성공 , 0:실패
 	 * @throws Exception 
 	 */
-	@RequestMapping("subscription")
+	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
 	public int addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode) throws Exception {
 		System.out.println("들림?");
