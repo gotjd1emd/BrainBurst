@@ -19,11 +19,11 @@
 				$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
 			}));
 			
-			/* $("#webtoon-info").find(".row").on("click", (function() {
-				$(location).attr('href',"/controller/author/modifyEpisode/"+$(this).find('img').attr("name"));
-			})); */
-			
 			$("#webtoon-info").find(".row").on("click", (function() {
+				$(location).attr('href',"/controller/author/modifyEpisode/"+$(this).find('img').attr("name"));
+			}));
+			
+			$("#episode-upload").on("click", (function() {
 				var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text()*1+1;
 				$(location).attr('href',"/controller/author/episodeUploadPage/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber);
 			}));

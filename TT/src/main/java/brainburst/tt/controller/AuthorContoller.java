@@ -144,20 +144,22 @@ public class AuthorContoller {
 		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
 		System.out.println("categoryName: " + categoryName);
 		String path = request.getSession().getServletContext().getRealPath("/");
-		path += "/resources/webtoon/";
+		String dbPath = "/webtoon/";
+		path += "/resources" + dbPath;
 		
 		if(episodeDTO.getThumbnailFile().getSize() == 0) {
 			episodeDTO.setThumbnail(null);
 		}else {
-			episodeDTO.setThumbnail(path + "episodeThumbnail/"
-						+ episodeDTO.getThumbnailFile().getName());
-			episodeDTO.getThumbnailFile().transferTo(new File(episodeDTO.getThumbnail()));
+			episodeDTO.setThumbnail(dbPath + "episodeThumbnail/"
+						+ episodeDTO.getThumbnailFile().getOriginalFilename());
+			episodeDTO.getThumbnailFile().transferTo(new File(path + "episodeThumbnail/"
+					+ episodeDTO.getThumbnailFile().getOriginalFilename()));
 		}
 		int index = 0;
 		for(int i = 0; i < images.size(); i++) {
 			if(images.get(i).getSize() != 0) {
-				imageList.add(new ImageDTO(index++, -1, path+categoryName+"/"+images.get(i).getName()));
-				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getName()));
+				imageList.add(new ImageDTO(index++, -1, dbPath+categoryName+"/"+images.get(i).getOriginalFilename()));
+				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getOriginalFilename()));
 			}
 		}
 
