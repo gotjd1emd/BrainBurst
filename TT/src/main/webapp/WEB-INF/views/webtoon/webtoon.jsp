@@ -21,6 +21,7 @@
 			})
 		})
 	</script>
+	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<div class="row title-box z-depth-1">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
@@ -38,10 +39,16 @@
 		</div>
 	</div>
 	</div>
-	
-		<div id="episode-list" class="z-depth-1 episode-list">
+		<div class="row tab-row  z-depth-1">
+			<div class="col s12">
+				<ul class="tabs mywebtoon-tab">
+					<li class="tab col s6 m12 l4 offset-l4"><a class="active" href="#episode-list">웹툰 목록</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="episode-list" class="episode-list">
 	<c:forEach var="episode" items="${episodeList }">
-		<div class="z-depth-1 hoverable radius">
+		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
