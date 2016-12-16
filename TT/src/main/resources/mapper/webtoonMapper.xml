@@ -53,7 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       <if test="categoryCode != null">
       AND LOWER(CATEGORY_CODE) = LOWER(#{categoryCode})
       </if>
-      ORDER BY E.HITS
+      ORDER BY E.HITS desc
    </select>
 	
 	<!-- searchByKeyword -->
