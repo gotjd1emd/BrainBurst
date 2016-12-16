@@ -77,9 +77,9 @@ public class UserController {
 		System.out.println(userDTO);
 		
 		if(userDTO==null){
-			return "main/index"; 
+			return "main/index"; //추후 익셉션 로그인 오류 페이지
 		}else if(userDTO.getLevel().equals("휴먼")){
-			return "main/index";
+			return "main/index"; //추후 익셉션 
 		}
 		session.setAttribute("userDTO", userDTO);
 		
