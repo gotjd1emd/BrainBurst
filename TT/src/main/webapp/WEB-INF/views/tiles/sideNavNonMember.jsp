@@ -139,7 +139,7 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="item" items="${sessionScope.subScriptionList}">
-							<li><a class="waves-effect waves-light scription-btn hoverable">
+							<li id="subScriptionList"><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
 										src="<c:url value='/resources${item.webtoonThumbnail}'/>">

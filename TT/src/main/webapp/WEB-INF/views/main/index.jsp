@@ -153,12 +153,22 @@
 			})
 			
 			$(document).on("click", "#scription-card-btn", function(){
+				$(this).css("color", "#FF4436");
 				$.ajax({
-					url : "/controller/webtoon/subscription"+$(this).attr("name"),
+					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
 					type : "get",
 					dataType : "json",
 					success : function(result) {
-						$(this).css("color", "#FF4436");  
+						$("#subScriptionList").empty();
+						$.each(result, function(index, item) {
+							$("#subScriptionList").append("<a class='waves-effect waves-light scription-btn hoverable'><div>"+
+									"<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일'"+
+									"src='<c:url value='/resources${item.webtoonThumbnail}'/>'>"+
+									"</div><div>"+
+									"<span>${item.webtoonName}</span><br>"+		
+									"<span class='author-name'>${item.nickname}</span>"+		
+									"</div></a>");
+						});
 					},
 					error : function() {
 						alert("추천은 한번만 가능합니다.")
