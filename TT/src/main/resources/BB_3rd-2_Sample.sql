@@ -442,7 +442,7 @@ values (webtoon_seq.nextval,'¾î´Ï¾ð µµÄì','funding','serial','H','green', 'º´Àç'
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'¶¢','funding','serial','I','green', '°ü¸®', 1, '¶¢', '/webtoon/webtoonThumbnail/127.jpg');
+values (webtoon_seq.nextval,'¶¢','funding','serial','I','green', 'º´Àç', 1, '¶¢', '/webtoon/webtoonThumbnail/127.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
