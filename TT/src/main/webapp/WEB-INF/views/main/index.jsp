@@ -159,20 +159,21 @@
 					type : "post",
 					dataType : "json",
 					success : function(result) {
-						var htmlcode = "";
-						alert(result.webtoon.webtoonThumbnail);
-						$.each(result, function(index, item) {
-							alert(result);
-							htmlcode +="<ul class='scription-ul' id='subScriptionList'>";
-							htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-							htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-							htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
-							htmlcode +="</div><div>";
-							htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-							htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
-							htmlcode +="</div></a></li><ul>"
-						});
-						alert(result);
+						if(result!=null){
+							var htmlcode = "";
+							alert(result.webtoon.webtoonThumbnail);
+							$.each(result, function(index, item) {
+								alert(result);
+								htmlcode +="<ul class='scription-ul' id='subScriptionList'>";
+								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+								htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+								htmlcode +="</div><div>";
+								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+								htmlcode +="</div></a></li><ul>"
+							});
+						}
 						$("#subScriptionList").empty();
 						$("#scriptionListDiv").append(htmlCode);
 					},

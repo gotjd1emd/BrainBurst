@@ -127,7 +127,7 @@ public class WebtoonController {
 		WebtoonDTO webtoonDTO = webtoonService.selecltWebtoonByCode(episodeSequence);
 		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
 		List<String> list = webtoonService.selectImg(episodeSequence);
-		List<EpisodeDTO> episodeList = (List<EpisodeDTO>) request.getSession().getAttribute("episodeList");
+		List<EpisodeDTO> episodeList = (List<EpisodeDTO>)request.getSession().getAttribute("episodeList");
 		System.out.println(episodeList);
 		int episodeNumber = episodeDTO.getEpisodeNumber();
 		int prevEpisodeSequence = 0;
@@ -165,20 +165,16 @@ public class WebtoonController {
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode) throws Exception {
-		System.out.println("들림?");
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode){
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
-		System.out.println("가저온 email : "+email);
-		System.out.println(webtoonCode);
-		List<WebtoonDTO> subScriptionList = webtoonService.addSubscription(email, webtoonCode);
-		System.out.println(subScriptionList);
-		if (subScriptionList != null) {
-			session.setAttribute("subScriptionList", subScriptionList);
-		} else {
-			throw new Exception();
+		System.out.println("가저온 email : "+email + "webtoonCode" + webtoonCode);
+		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, webtoonCode);
+		System.out.println(scriptionList);
+		if (scriptionList != null) {
+			session.setAttribute("subScriptionList", scriptionList);
 		}
-		return subScriptionList;
+		return scriptionList;
 	}
 	
 	/**
