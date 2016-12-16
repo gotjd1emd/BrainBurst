@@ -24,7 +24,12 @@ public class HomeController {
 	 */
 	@RequestMapping("/")
 	public String home(HttpSession session) {
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null);
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String email = null;
+		if (userDTO!=null) {
+			email = userDTO.getEmail();
+		}
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null, email);
 		session.setAttribute("webtoonList", list);
 		return "main/index";
 	}
