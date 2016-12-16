@@ -156,22 +156,28 @@
 				$(this).css("color", "#FF4436");
 				$.ajax({
 					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
-					type : "get",
+					type : "post",
 					dataType : "json",
 					success : function(result) {
-						$("#subScriptionList").empty();
+						var htmlcode = "";
+						alert(result.webtoon.webtoonThumbnail);
 						$.each(result, function(index, item) {
-							$("#subScriptionList").append("<a class='waves-effect waves-light scription-btn hoverable'><div>"+
-									"<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일'"+
-									"src='<c:url value='/resources${item.webtoonThumbnail}'/>'>"+
-									"</div><div>"+
-									"<span>${item.webtoonName}</span><br>"+		
-									"<span class='author-name'>${item.nickname}</span>"+		
-									"</div></a>");
+							alert(result);
+							htmlcode +="<ul class='scription-ul' id='subScriptionList'>";
+							htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+							htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+							htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+							htmlcode +="</div><div>";
+							htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+							htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+							htmlcode +="</div></a></li><ul>"
 						});
+						alert(result);
+						$("#subScriptionList").empty();
+						$("#scriptionListDiv").append(htmlCode);
 					},
 					error : function() {
-						alert("추천은 한번만 가능합니다.")
+						alert("이미 구독하였습니다.")
 					}
 				})
 			})

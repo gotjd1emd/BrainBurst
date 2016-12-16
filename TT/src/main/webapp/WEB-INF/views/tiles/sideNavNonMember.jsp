@@ -126,8 +126,8 @@
 					<a class="waves-effect waves-light btn charge-btn col s4 color-500" href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>
 			</div>
-			<div class="scription-box mCustomScrollbar" data-mcs-theme="dark-thin">
-				<ul class="scription-ul">
+			<div class="scription-box mCustomScrollbar" data-mcs-theme="dark-thin" id="scriptionList">
+				<ul class="scription-ul" id="subScriptionList">
 				<c:choose>
 					<c:when test="${empty sessionScope.subScriptionList}">
 						<li>
@@ -139,7 +139,7 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="item" items="${sessionScope.subScriptionList}">
-							<li id="subScriptionList"><a class="waves-effect waves-light scription-btn hoverable">
+							<li><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
 										src="<c:url value='/resources${item.webtoonThumbnail}'/>">

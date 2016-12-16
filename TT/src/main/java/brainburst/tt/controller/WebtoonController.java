@@ -165,11 +165,12 @@ public class WebtoonController {
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public int addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode) throws Exception {
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode) throws Exception {
 		System.out.println("들림?");
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
 		System.out.println("가저온 email : "+email);
+		System.out.println(webtoonCode);
 		List<WebtoonDTO> subScriptionList = webtoonService.addSubscription(email, webtoonCode);
 		System.out.println(subScriptionList);
 		if (subScriptionList != null) {
@@ -177,7 +178,7 @@ public class WebtoonController {
 		} else {
 			throw new Exception();
 		}
-		return 1;
+		return subScriptionList;
 	}
 	
 	/**
