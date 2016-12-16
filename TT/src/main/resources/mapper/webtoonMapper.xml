@@ -83,6 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT FILE_NAME
 		FROM IMAGE
 		WHERE EPISODE_SEQUENCE = #{value}
+		ORDER BY IMAGE_INDEX ASC;
 	</select>
 	
 	<!-- addSubscription -->
@@ -148,4 +149,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM WEBTOON
 		WHERE WEBTOON_CODE = #{value}
 	</select>
+	
 </mapper>

@@ -1,6 +1,7 @@
 package brainburst.tt.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -83,5 +84,13 @@ public class WebtoonServiceImpl implements WebtoonService {
 	@Override
 	public WebtoonDTO selectWebtoon(int webtoonCode) {
 		return webtoonDAO.selectWebtoon(webtoonCode);
+	}
+	
+	@Override
+	public Map<String, Object> modifyEpisodePage(int episodeSequence) {
+		WebtoonDTO webtoonDTO = webtoonDAO.selecltWebtoonByCode(episodeSequence);
+		List<String> imageList = webtoonDAO.selectImg(episodeSequence);
+		EpisodeDTO episodeDTO = webtoonDAO.selectNumsBySequence(episodeSequence);
+		return null;
 	}
 }

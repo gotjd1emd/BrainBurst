@@ -71,7 +71,7 @@ public interface WebtoonDAO {
 	WebtoonDTO selecltWebtoonByCode(int episodeSequence);
 	
 	/**
-	 * 에피소드 시퀸스로 해당 에피소드의 조회수, 추천수, 작가의 말 찾아옴
+	 * 에피소드 시퀸스로 해당 에피소드를 가져온다.
 	 * @param episodeSequence
 	 * @return
 	 */

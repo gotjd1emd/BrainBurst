@@ -232,10 +232,10 @@ public class WebtoonController {
 	}
 	
 	/**
-	 * 에피소드 수정
+	 * 에피소드 수정 페이지 이동
 	 */
 	@RequestMapping("modifyEpisode/{episodeSequence}")
-	public String modifyEpsode(HttpServletRequest request, @PathVariable int episodeSequence) {
+	public String modifyEpsodePage(HttpServletRequest request, @PathVariable int episodeSequence) {
 		
 		return "webtoon/modifyEpisode";
 	}

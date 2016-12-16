@@ -1,6 +1,7 @@
 package brainburst.tt.service;
 
 import java.util.List;
+import java.util.Map;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ReportDTO;
@@ -85,5 +86,12 @@ public interface WebtoonService {
 	 * @return
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode);
+	
+	/**
+	 * 에피소드 수정페이지로 이동
+	 * @param episodeSquence
+	 * @return
+	 */
+	Map<String, Object> modifyEpisodePage(int episodeSequence);
 	
 }
