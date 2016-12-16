@@ -56,10 +56,16 @@ public class WebtoonController {
 	public void selectWebtoonByLevelR(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String email = null;
+		
+		if(userDTO != null) {
+			email = userDTO.getEmail();
+		}
 		System.out.println("selectWebtoonByLevelR·Î ¿Ô´Ù");
 		System.out.println("catogory_code : " + category);
 		System.out.println("webtoonLevel : " + webtoonLevel);
-		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category);
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
 		System.out.println(list.size());
 		session.setAttribute("webtoonList", list);
 	}
