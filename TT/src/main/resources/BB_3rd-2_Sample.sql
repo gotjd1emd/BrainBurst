@@ -624,6 +624,337 @@ values (webtoon_seq.nextval,'기억들','paid','complete','B','green', '혜리',  1, 
  commit;
 
 
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 40, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 41, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 42, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 43, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 44, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 45, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 46, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 47, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 48, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 49, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 50, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 51, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 52, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 53, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 54, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 55, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 56, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 57, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 58, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 59, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 60, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 61, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 62, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 63, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 64, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 65, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 66, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 67, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 68, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 69, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 70, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 71, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 72, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 73, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 74, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 75, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 76, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 77, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 78, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 79, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 80, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 81, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 82, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 83, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 84, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 85, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 86, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 87, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 88, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 89, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 90, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 91, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 92, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 93, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 94, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 95, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 96, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 97, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 98, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 99, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 100, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 101, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 102, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 103, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 104, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 105, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 106, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 107, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 108, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 109, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 110, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 111, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 112, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 113, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 114, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 115, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 116, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 117, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 118, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 119, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 120, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 121, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
+
+INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 122, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
 
 
