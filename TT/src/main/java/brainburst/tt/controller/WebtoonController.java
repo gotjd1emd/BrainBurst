@@ -53,7 +53,7 @@ public class WebtoonController {
 	
 	@RequestMapping("webtoonLevelR/{webtoonLevel}/{category}")
 	@ResponseBody
-	public void selectWebtoonByLevelR(HttpSession session, 
+	public List<WebtoonDTO> selectWebtoonByLevelR(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
@@ -68,6 +68,7 @@ public class WebtoonController {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
 		System.out.println(list.size());
 		session.setAttribute("webtoonList", list);
+		return list;
 	}
 	
 	/**
