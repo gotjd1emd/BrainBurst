@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 
 <link rel="styleSheet" href="<c:url value='/resources/css/authorPromotion.css'/>">
-
+<input id="header-title" type="hidden" value="작가 신청">
 <div id="content-box" class="z-depth-1">
 	<p>작가 페이지를 이용하기 위해 작가 신청을 해주세요!</p>
 	

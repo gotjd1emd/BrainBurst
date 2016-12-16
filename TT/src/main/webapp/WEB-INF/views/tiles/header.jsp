@@ -26,6 +26,8 @@
 					$(".brand-logo").html("일반 웹툰");
 				}else if(link=="http://localhost:8000/controller/webtoon/paid/all"){
 					$(".brand-logo").html("완결 웹툰");
+				}else{
+					$(".brand-logo").html("펀딩 웹툰");
 				}
 			}else{
 				$(".brand-logo").html($("#header-title").val());
