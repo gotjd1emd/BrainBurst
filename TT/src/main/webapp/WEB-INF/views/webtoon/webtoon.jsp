@@ -19,23 +19,73 @@
 					
 				})	
 			})
+			
+			
+			$(document).on("click", "#scription-card-btn", function(){
+				$(this).css("color", "#FF4436");
+				$.ajax({
+					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
+					type : "post",
+					dataType : "json",
+					success : function(result) {
+						$("#subScriptionList").empty();
+							$.each(result, function(index, item) {
+								var htmlcode = "";
+								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+								htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+								htmlcode +="</div><div>";
+								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+								htmlcode +="</div></a></li>"
+								$("#subScriptionList").append(htmlcode);
+							});
+					},
+					error : function() {
+						alert("이미 구독하였습니다.")
+					}
+				})
+			})
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
-	<div class="row title-box z-depth-1">
+	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 	</div>
-	<div class="title-content-box">
+	<div class="title-content-box" style="width: 875px; height: 296px;">
 		<div class="row" style="margin: 0">
 			<div class="col s4 webtoon-title-row">
 				
 			</div>
-			<div class="col s8">
-				<p class="">${webtoonDTO.nickname}<p>
-				<p>${webtoonDTO.summary}</p>
+			<div class="col s9">
+			<c:choose>
+				<c:when test="${webtoonDTO.webtoonLevel == 'funding'}">
+					<c:if test="${webtoonDTO.webtoonState == 'serial'}">
+						<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">펀딩 웹툰  /  연재중</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
+						<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">펀딩 웹툰  /  완결</div>
+					</c:if>
+				</c:when>
+				<c:when test="${webtoonDTO.webtoonLevel == 'free'}">
+					<c:if test="${webtoonDTO.webtoonState == 'serial'}">
+						<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">일반 웹툰  /  연재중</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
+						<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">일반 웹툰  /  완결</div>
+					</c:if>
+				</c:when>
+				<c:when test="${webtoonDTO.webtoonLevel == 'paid'}">
+					<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">유료 웹툰</div>
+				</c:when>
+			</c:choose>
+				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
+				<i id="scription-card-btn" class="material-icons" 
+					name="${item.webtoonCode}" style="margin-left:0.3%;margin-top:0.3%;position:absolute;font-size:75%;">grade</i></p>
+				<div style="color: coral;font-size: 20px;margin-top: -5%;margin-bottom: 8%;">${webtoonDTO.nickname}</div>
+				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
-			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
 	</div>

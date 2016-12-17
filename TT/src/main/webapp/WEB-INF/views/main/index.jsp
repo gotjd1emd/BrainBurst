@@ -227,9 +227,7 @@
 							<div class="card-content"style="margin: 0%;padding: 2% 5% 0% 5% !important;">
 								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
 								</span>
-								<span>
 								<i class="material-icons right" style="margin-top:3%!important;">more_vert</i>
-								</span>
 								<span id="ss" style="padding-left: 4%;">
 									<a href="#"> ${item.nickname}</a>
 									<i id="scription-card-btn" class="material-icons scription-a-index" 
@@ -279,9 +277,7 @@
 										</span>
 									</c:otherwise>
 								</c:choose>
-								<span>
 								<i class="material-icons right" style="margin-top:6%!important;">more_vert</i>
-								</span>
 								<span id="ss" style="padding-left: 4%;">
 									<i id="scription-card-btn" class="material-icons scription-a-index" 
 										name="${item.webtoonCode}" style="margin-top:1%!important;">grade

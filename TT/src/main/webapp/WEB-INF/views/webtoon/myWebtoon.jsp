@@ -40,6 +40,34 @@
 					
 				})	
 			})
+			
+			
+			$(document).on("click", "#scription-card-btn", function(){
+				$(this).css("color", "#FF4436");
+				$.ajax({
+					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
+					type : "post",
+					dataType : "json",
+					success : function(result) {
+						$("#subScriptionList").empty();
+							$.each(result, function(index, item) {
+								var htmlcode = "";
+								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+								htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+								htmlcode +="</div><div>";
+								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+								htmlcode +="</div></a></li>"
+								$("#subScriptionList").append(htmlcode);
+							});
+					},
+					error : function() {
+						alert("이미 구독하였습니다.")
+					}
+				})
+			})
+			
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
@@ -53,11 +81,14 @@
 			<div class="col s4 webtoon-title-row">
 				
 			</div>
-			<div class="col s8">
-				<p class="">${webtoonDTO.nickname}<p>
-				<p>${webtoonDTO.summary}</p>
+			<div class="col s9">
+				<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">MY WEBTOON</div>
+				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
+				<i id="scription-card-btn" class="material-icons" 
+					name="${item.webtoonCode}" style="margin-left:0.3%;margin-top:0.3%;position:absolute;font-size:75%;">grade</i></p>
+				<div style="color: coral;font-size: 20px;margin-top: -5%;margin-bottom: 8%;">${webtoonDTO.nickname}</div>
+				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
-			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
 	</div>

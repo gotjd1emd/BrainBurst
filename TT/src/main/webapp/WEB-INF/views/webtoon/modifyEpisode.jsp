@@ -71,7 +71,7 @@
 				</div>
 			</div>
 			<div class="col s10">
-				작가이름 <br>
+				작가이름 ${webtoonDTO.webtoonName} <br>
 				줄거리
 			</div>
 		</div>
