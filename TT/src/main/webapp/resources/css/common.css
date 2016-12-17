@@ -359,6 +359,9 @@ left: 228px;
 	position : relative;
 	z-index: 1;
 }
+footer.page-footer{
+	padding-left: 250px !important;
+}
 
 /* label color */
    .login-field label {

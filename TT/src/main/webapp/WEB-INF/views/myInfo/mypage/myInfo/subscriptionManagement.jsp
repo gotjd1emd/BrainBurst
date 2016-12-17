@@ -9,12 +9,12 @@
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="item" items="${subScriptionList}">
-						<li class="collection-item avatar">
-						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle">
-						 <span class="title">${item.webtoonName}</span>
+						<li class="collection-item avatar scription-collection">
+						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle scription-title-img">
+						 <span class="scription-title">${item.webtoonName}</span>
 							<p>
 								${item.nickname} <br> Second Line
-							</p> <a href="#!" class="secondary-content"><i class="material-icons" name="${item.webtoonCode}" id="delSubScription">grade</i></a>
+							</p> <a href="#!" class="secondary-content"><i class="material-icons text-color-500" name="${item.webtoonCode}" id="delSubScription">grade</i></a>
 						</li>
 					</c:forEach>
 				</c:otherwise>

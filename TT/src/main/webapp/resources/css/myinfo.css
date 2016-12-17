@@ -22,6 +22,7 @@
 	width:100%;
 	border-radius: 20px;
 	padding:10px;
+	background-color: white;
 }
 
 .card-frame-myInfo-default{
@@ -132,3 +133,12 @@
      border-bottom:1px solid #ff5252;
 	box-shadow:0 1px 0 0 #ff5252;
    }
+
+.scription-title-img{
+	width: 70px !important;
+	height:70px !important;
+}
+
+.scription-collection{
+	padding-left: 100px !important;
+}
