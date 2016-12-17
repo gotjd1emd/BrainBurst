@@ -123,9 +123,13 @@ var table =
 				            htmlcode += "<td>"
 				            	+item.birthDate+"</td>";
 				            if(item.level=='휴먼'){
-					            htmlcode += "<td><input type='button' id='melt' value='녹이기'/></td>";				            	
+					            htmlcode += "<td><input type='button'";
+					            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
+					            htmlcode += "style='margin-top: -20%;height: 17%;' id='melt' value='녹이기'/></td>";				            	
 				            }else{
-					            htmlcode += "<td><input type='button' id='snow' value='얼리기'/></td>";
+				            	htmlcode += "<td><input type='button'";
+					            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
+					            htmlcode += "style='margin-top: -20%;height: 17%;' id='melt' value='얼리기'/></td>";
 				            }
 				            htmlcode += "</tr>";
 						});

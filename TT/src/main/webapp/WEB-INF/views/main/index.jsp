@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 </style>
 <script>
 		$(function() {
+			
 			$("#actionA").click(function(){
 				$.ajax({
 					url : "/controller/webtoon/webtoonLevelR/funding/a",
@@ -210,36 +212,44 @@
 				<li class="tab col s1"><a href="#etc" id="etcA">기타</a></li>
 			</ul>
 		</div>
+		<!-- 
+			Top 3 웹툰 보여주는 영역
+		 -->
 		<div id="top" class="col s12">
-				<h3 class="animated fadeInDown title-text">웹툰 TOP3</h3>
+				<h4 class="animated fadeInDown title-text" style="font-family:fantasy; margin-bottom:30px;">BEST 3 WEBTOON</h4>
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" end="2">
-						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown">
+						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:30%!important;margin:0% 6% 0% -5% !important">
 							<div class="card-image card-image-box waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}">
 							</div>
-							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4" style="font-size:18px; font-weight: 500;">${item.webtoonName}
-								<i class="material-icons right">more_vert</i></span>
-								<p id="ss">
-									<a href="#">${item.nickname}</a>
-									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
-									${item.subscriptionSequence}
-								</p>
+							<div class="card-content"style="margin: 0%;padding: 2% 5% 0% 5% !important;">
+								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
+								</span>
+								<span>
+								<i class="material-icons right" style="margin-top:3%!important;">more_vert</i>
+								</span>
+								<span id="ss" style="padding-left: 4%;">
+									<a href="#"> ${item.nickname}</a>
+									<i id="scription-card-btn" class="material-icons scription-a-index" 
+										name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+									</i>
+								</span>
 							</div>
 							<div class="card-reveal">
 								<span class="card-title grey-text text-darken-4">${item.webtoonName}
 								<i class="material-icons right">close</i></span>
 								<p>${item.summary}</p>
 							</div>   
-							
-							
 						</div>
 					</c:forEach>
 				</div>
 				<hr>
-				<h5 class="title-text animated fadeInDown">인기 웹툰</h5>
+				<!--
+					인기 웹툰 보여주는 영역
+				  -->
+				<h5 class="title-text animated fadeInDown" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
 					<c:forEach var="item" items="${webtoonList}" varStatus="status">
 						<c:choose>
 							<c:when test="${status.index==0}">
@@ -250,29 +260,48 @@
 								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 10%;">
 							</c:when>
 							<c:otherwise>
-							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
+							
+							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown" style="width:17%!important;margin:1% 1% 1% 0% !important">
+								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom: 110%!important;">
+								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
+									name="${item.webtoonCode}">
 							</div>
-							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4" style="font-size:18px; font-weight:500;">${item.webtoonName}
-								<i class="material-icons right">more_vert</i></span>
-								<p id="ss">
-									<a href="#">${item.nickname}</a>
-									<i id="scription-card-btn" class="material-icons scription-a-index" name="${item.webtoonCode}">grade</i>
-									${item.subscriptionSequence}
-								</p>
+							<div class="card-content"style="height: 45px!important;margin: 0%;padding: 0% 2% 0% 5% !important;">
+								<c:choose>
+									<c:when test="${fn:length(item.webtoonName) <= 7}">
+										<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+										${item.webtoonName}
+										</span>
+									</c:when>
+									<c:otherwise>
+										<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+										${fn:substring(item.webtoonName,0,5)}...
+										</span>
+									</c:otherwise>
+								</c:choose>
+								<span>
+								<i class="material-icons right" style="margin-top:6%!important;">more_vert</i>
+								</span>
+								<span id="ss" style="padding-left: 4%;">
+									<i id="scription-card-btn" class="material-icons scription-a-index" 
+										name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+									</i>
+								</span>
 							</div>
 							<div class="card-reveal">
 								<span class="card-title grey-text text-darken-4">${item.webtoonName}
 								<i class="material-icons right">close</i></span>
 								<p>${item.summary}</p>
+							</div>   
 							</div>
-						</div>
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>
 		</div>
+		
+		<!-- 
+			액션카테고리 웹툰 보여주는 영역
+		 -->
 		<div id="action" class="col s11">
 			<div class="row">
 			<c:choose>
