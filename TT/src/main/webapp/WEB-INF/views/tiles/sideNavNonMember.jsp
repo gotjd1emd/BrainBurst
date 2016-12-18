@@ -86,6 +86,12 @@
 			$('#pwd-not-find-modal').modal('close');
 			$('#pwdfind-modal').modal('open');
 		})
+		
+		/* 구독목록 클릭시 웹툰이동 */
+		$("#scriptionList").click(function() {
+			alert($("li div img").attr("name"))
+				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$("li div img").attr("name"));
+			})
 	})
 </script>
 
@@ -139,10 +145,10 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="item" items="${sessionScope.subScriptionList}">
-							<li><a class="waves-effect waves-light scription-btn hoverable">
+							<li id="scriptionList""><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
-										src="<c:url value='/resources${item.webtoonThumbnail}'/>">
+										src="<c:url value='/resources${item.webtoonThumbnail}'/>"  name="${item.webtoonCode}">
 								</div>
 								<div>
 									<span>${item.webtoonName}</span><br>

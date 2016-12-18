@@ -221,8 +221,7 @@
 					<c:forEach var="item" items="${webtoonList}" end="2">
 						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:30%!important;margin:0% 6% 0% -5% !important">
 							<div class="card-image card-image-box waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
-									name="${item.webtoonCode}">
+								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}">
 							</div>
 							<div class="card-content"style="margin: 0%;padding: 2% 5% 0% 5% !important;">
 								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
