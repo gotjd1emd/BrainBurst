@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="StyleSheet" href="<c:url value='/resources/css/modifyWebtoon.css'/>">
 <script type="text/javascript">
 	$(function() {
 		var count = 1;
@@ -63,28 +62,38 @@
 </script>
 </head>
 <body>
-	<div class="z-depth-2">
-		<div class="row">
-			<div class="col s2">
-				<div class="webtoon_title">
-					<img src="http://public.slidesharecdn.com/b/images/logo/linkedin-ss/SS_Logo_White_Large.png?6d1f7a78a6">
-				</div>
+		<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
+	<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode}">
+	<div class="row title-box">
+	<div class="col s3 webtoon-sumbnail-box">
+		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
+	</div>
+	<div class="title-content-box">
+		<div class="row" style="margin: 0">
+			<div class="col s4 webtoon-title-row">
+				
 			</div>
-			<div class="col s10">
-				작가이름 ${webtoonDTO.webtoonName} <br>
-				줄거리
+			<div class="col s9">
+				<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">MY WEBTOON</div>
+				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
+				<i id="scription-card-btn" class="material-icons" 
+					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
+				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
 		</div>
-		
-		<hr>
-		<div class="row">
-		   	<div class="col s12">
-		        <h5>에피소드 수정</h5>
-		    </div>
+	</div>
+	</div>
+	<div class="row tab-row  z-depth-1">
+		<div class="col s12">
+			<ul class="tabs mywebtoon-tab">
+				<li class="tab col s6 m12 l4 offset-l4"><a class="active" href="#episode-list">에피소드 수정</a></li>
+			</ul>
 		</div>
-		
-		<hr>
-		<form method="post" action="<c:url value='/author/episodeUpload'/>" encType="multipart/form-data">
+	</div>
+	<div class="z-depth-2 episode-upload-content">
+
+		<form method="post" action="<c:url value='/author/modifyEpisode'/>" encType="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s6">
 				<input id="episode-title" type="text" class="validate" name="episodeTitle"> 
@@ -99,7 +108,7 @@
 		<div class="row">
 			<div class="col s6">
 				<p class="">그림 이미지를 등록해주세요.</p>
-				<a class="waves-effect waves-light btn" id="add">Image Add</a>
+				<a class="waves-effect waves-light btn color-500" id="add">이미지 추가</a>
 
 				<div class="row">
 					<div class="input-field col s6 image-file">
@@ -121,7 +130,7 @@
 		
 			<div class="input-field col s6">
 				<div class="file-field input-field">
-					<div class="btn">
+					<div class="btn color-500">
 						<span>File</span> <input id="thumbnail" type="file" name="thumbnailFile">
 					</div>
 					<div class="file-path-wrapper">
@@ -129,7 +138,7 @@
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row thumbnail-box">
 					<div class="col s4">
 						<div class="preview">
 							<div class="inner">
@@ -146,12 +155,12 @@
 					</div>
 				</div>
 				
-				<div class="row">
-					<input type="hidden" value="${requestScope.webtoonCode }" name="webtoonCode"/>
+				<div class="row btn-box">
+					<input type="hidden" value="${webtoonDTO.webtoonCode }" name="webtoonCode"/>
 					<input type="hidden" value="${requestScope.episodeNumber }" name="episodeNumber"/>
-					<button class="btn waves-effect waves-light" type="submit" name="action">업로드하기
+					<button class="btn waves-effect waves-light color-500" type="submit" name="action">수정하기
 					</button>
-					<a class="waves-effect waves-light btn">돌아가기</a>
+					<a class="waves-effect waves-light btn color-500">돌아가기</a>
 				</div>
 			</div>
 		</div>
