@@ -41,7 +41,7 @@
 		<div id="snb">
 			<tiles:insertAttribute name="snb_nonMember"/>
 		</div>
-		<div id="content">
+		<div id="content" style="padding-bottom: 5px;">
 			<tiles:insertAttribute name="content"/>
 		</div>
 		<div id="footer">

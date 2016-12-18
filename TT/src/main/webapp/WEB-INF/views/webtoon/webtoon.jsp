@@ -53,7 +53,7 @@
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 	</div>
-	<div class="title-content-box" style="width: 875px; height: 296px;">
+	<div class="title-content-box col s8" style="height: 296px;">
 		<div class="row" style="margin: 0">
 			<div class="col s4 webtoon-title-row">
 				

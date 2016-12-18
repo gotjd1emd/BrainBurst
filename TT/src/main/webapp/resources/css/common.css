@@ -349,6 +349,7 @@ left: 228px;
 
 /* ³»¿ë */
 #content{
+	margin-bottom:-50px;
 	min-height:100%;
 	position : relative;
 	padding-top:60px;
@@ -356,6 +357,10 @@ left: 228px;
 	padding-right:0px;
 	z-index: 4;
 	background-color:#FAFAFA;
+}
+
+#content-myInfo{
+	margin-bottom: -50px;
 }
 
 /* ÇªÅÍ */
