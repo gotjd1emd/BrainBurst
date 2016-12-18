@@ -219,11 +219,11 @@
 				<h4 class="animated fadeInDown title-text" style="font-family:fantasy; margin-bottom:30px;">BEST 3 WEBTOON</h4>
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" end="2">
-						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:30%!important;margin:0% 6% 0% -5% !important">
+						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:370px!important;margin:-10px 70px 0px -57px !important">
 							<div class="card-image card-image-box waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}">
 							</div>
-							<div class="card-content"style="margin: 0%;padding: 2% 5% 0% 5% !important;">
+							<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
 								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
 								</span>
 								<i class="material-icons right" style="margin-top:3%!important;">more_vert</i>
@@ -247,23 +247,24 @@
 					인기 웹툰 보여주는 영역
 				  -->
 				<h5 class="title-text animated fadeInDown" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
+				<div>
+							<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
 					<c:forEach var="item" items="${webtoonList}" varStatus="status">
-						<c:choose>
+						<%-- <c:choose>
 							<c:when test="${status.index==0}">
-								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 10%;">
+								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
 							</c:when>
 							<c:when test="${status.index mod 6==0}">
 								</div>
-								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 10%;">
+								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
 							</c:when>
-							<c:otherwise>
-							
-							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown" style="width:17%!important;margin:1% 1% 1% 0% !important">
-								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom: 110%!important;">
+							<c:otherwise> --%>
+							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
+								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}">
 							</div>
-							<div class="card-content"style="height: 45px!important;margin: 0%;padding: 0% 2% 0% 5% !important;">
+							<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 								<c:choose>
 									<c:when test="${fn:length(item.webtoonName) <= 7}">
 										<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
@@ -289,9 +290,11 @@
 								<p>${item.summary}</p>
 							</div>   
 							</div>
-							</c:otherwise>
-						</c:choose>
+<%-- 							</c:otherwise>
+						</c:choose> --%>
 					</c:forEach>
+				</div>
+			</div>
 		</div>
 		
 		<!-- 

@@ -132,7 +132,7 @@
 					<a class="waves-effect waves-light btn charge-btn col s4 color-500" href="<c:url value='/user/util/payment'/>">충전</a>
 				</div>
 			</div>
-			<div class="scription-box mCustomScrollbar" data-mcs-theme="dark-thin" id="scriptionList">
+			<div class="scription-box mCustomScrollbar" data-mcs-theme="dark-thin" id="scriptionList" >
 				<ul class="scription-ul" id="subScriptionList">
 				<c:choose>
 					<c:when test="${empty sessionScope.subScriptionList}">
