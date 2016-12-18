@@ -82,11 +82,11 @@
 				
 			</div>
 			<div class="col s9">
-				<div style="color: aquamarine;margin-bottom:-7%;margin-top:5%;">MY WEBTOON</div>
+				<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">MY WEBTOON</div>
 				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
 				<i id="scription-card-btn" class="material-icons" 
-					name="${item.webtoonCode}" style="margin-left:0.3%;margin-top:0.3%;position:absolute;font-size:75%;">grade</i></p>
-				<div style="color: coral;font-size: 20px;margin-top: -5%;margin-bottom: 8%;">${webtoonDTO.nickname}</div>
+					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
 				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
 		</div>

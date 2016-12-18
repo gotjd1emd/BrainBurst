@@ -89,9 +89,8 @@
 		
 		/* 구독목록 클릭시 웹툰이동 */
 		$("#scriptionList").click(function() {
-			alert($("li div img").attr("name"))
-				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$("li div img").attr("name"));
-			})
+			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$("li div img").attr("name"));
+		})
 	})
 </script>
 
