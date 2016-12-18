@@ -35,7 +35,7 @@
 </head>
 <body>
 	<!-- HTML5 tiles main-->
-	<div id="container">
+	<div id="container" style="min-height: 100%">
 		<div id="header">
 			<tiles:insertAttribute name="header"/>
 		</div>
@@ -45,10 +45,9 @@
 		<div id="content-myInfo">
 			<tiles:insertAttribute name="content"/>
 		</div>
-		<div id="footer">
-			<tiles:insertAttribute name="footer"/>
-		</div>
 	</div>
-	<div>
+	<div id="footer">
+			<tiles:insertAttribute name="footer"/>
+	</div>
 </body>
 </html>
