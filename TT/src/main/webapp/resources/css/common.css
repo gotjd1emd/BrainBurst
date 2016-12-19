@@ -56,6 +56,13 @@ input:-webkit-autofill:active {
 }
 input[type=text]::-ms-clear { display: none !important; }
 
+.preloader-css{
+	position: fixed;
+	left: 47%;
+	top: 45%;
+	z-index: 9999;
+}
+
 /*container*/
 #container{
 	background-color: #FAFAFA;

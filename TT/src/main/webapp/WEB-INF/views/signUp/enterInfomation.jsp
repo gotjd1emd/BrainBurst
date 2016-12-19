@@ -55,7 +55,7 @@
 			      <label for="woman">여자</label>
 			    </p>
 			</div>
-		<button class="btn-large waves-effect waves-light next-btn color-500" type="submit" name="action">다음</button>
-		<button class="btn-large waves-effect waves-light next-btn color-500" type="submit" name="action">이전</button>
+		<button class="btn waves-effect waves-light next-btn color-500" type="submit" name="action">다음</button>
+		<a class="btn waves-effect waves-light next-btn color-500" href="/controller/user/signUp/acceptTerms">이전</a>
 		</form>
 	</div>
