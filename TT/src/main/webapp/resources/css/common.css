@@ -655,11 +655,14 @@ a.active{
   	margin-left:10px;
   	padding-left:10px;
   }
+  #content-myInfo{
+  	padding-left: 0px !important;
+  }
   #category_mobile{
   	display:none;
   }
   footer.page-footer{
-  	padding-left:0px;
+  	padding-left:0px !important;
   }
   .top_card{
   	left : 0 !important;
@@ -681,10 +684,14 @@ a.active{
 /*header ¹ÝÀÀÇü*/
 @media only screen and (min-width: 601px) {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 60px;
-    line-height: 60px;
+    height: 60px !important;
+    line-height: 60px !important;
   }
   .navbar-fixed {
-    height: 60px;
+    height: 60px !important;
+  }
+  .header-box{
+  	height: 60px !important;
+    line-height: 60px !important;
   }
 }
