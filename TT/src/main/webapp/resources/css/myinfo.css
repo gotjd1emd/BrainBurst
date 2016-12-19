@@ -25,6 +25,10 @@
 	background-color: white;
 }
 
+.modify-row{
+	margin-top: 50px;
+}
+
 .card-frame-myInfo-default{
 	width:100%;
 	border-radius: 20px;

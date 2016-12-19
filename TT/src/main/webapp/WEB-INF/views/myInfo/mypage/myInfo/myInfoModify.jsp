@@ -5,7 +5,7 @@
 	<div class="row">
 		<form class="col s12" method="post"
 			action="<c:url value='/user/userUpdate'/>">
-			<div class="row">
+			<div class="row modify-row">
 				<div class="input-field col s12">
 					<input id="name-myinfo" type="text" class="validate" name="email"
 						value="${sessionScope.userDTO.email}" disabled> <label

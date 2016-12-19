@@ -86,9 +86,9 @@
 								var htmlcode = "";
 								htmlcode +="<a class='collection-item avatar' href='#'>"
 								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
-								htmlcode +="<span class='title'>"+item.webtoonName+"</span>"
-								htmlcode +="<p>"+item.nickname+"</p>"
-								htmlcode +="<span href='#!' class='secondary-content'><i class='material-icons'>grade</i></span></a>"
+								htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
+								htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"
+								htmlcode +="<span href='#!' class='secondary-content text-color-500'><i class='material-icons'>grade</i></span></a>"
 								$(".collection").append(htmlcode); 
 							});
 						},
@@ -108,7 +108,7 @@
 	<div class="nav-wrapper">
 		<form onsubmit="return false;" method="post">
 			<div class="input-field">
-				<input id="search" type="search" required>
+				<input id="search" type="search" required  autocomplete="off">
 				<label for="search"> <i class="material-icons">search</i> </label>
 				<i id="search-close-btn" class="material-icons">close</i>
 			</div>
@@ -135,7 +135,7 @@
 		<div class="collection">
 			<a class="collection-item avatar" href="#">
 				<img src="<c:url value='/resources${webtoonDTO.webtoonThumbnail}'/>" alt="" class="circle">
-				<span class="title">Title</span>
+				<span>Title</span>
 				<p> First Line</p>
 				<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>
 			</a>
