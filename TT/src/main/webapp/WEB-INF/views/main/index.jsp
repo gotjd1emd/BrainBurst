@@ -20,20 +20,22 @@
 					dataType : "json",
 					success : function(result) {
 						$("#action").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#action").append(htmlcode); 
+							htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+							htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+							htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+							htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+							if (item.webtoonName.length <= 7) {
+								htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+							} else {
+								htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'></span>"	
+							}
+							htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+							htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+							htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div></div>"
 						});
+						$("#action").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
