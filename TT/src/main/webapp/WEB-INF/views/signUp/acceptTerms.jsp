@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 	<!-- 진행 순서도(카테고리)를 위한 hidden태그 -->
+	<input id="header-title" type="hidden" value="약관동의">
 	<input type="hidden" name="navCategory" value="1">
 	<div class="signup-steper z-depth-1">
 		<div class="signup-number-circle">1</div>
