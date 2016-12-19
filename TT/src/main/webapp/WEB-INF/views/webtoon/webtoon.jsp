@@ -9,6 +9,8 @@
 	<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
+	<!-- Sparkline -->
+	<script src="<c:url value='/resources/js/jquery.sparkline.min.js'/>"></script>
 <script>
 	<!-- chart script -->
 	  $(function () {
@@ -78,9 +80,7 @@
 
 	    /* SPARKLINE DOCUMENTATION EXAMPLES http://omnipotent.net/jquery.sparkline/#s-about */
 	    drawDocSparklines();
-	    drawMouseSpeedDemo();
 
-	  });
 	  function drawDocSparklines() {
 
 	    // Bar + line composite charts
@@ -160,9 +160,9 @@
 					alert("이미 구독하였습니다.")
 				}
 			})
+		})
 	})
 </script>
-
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
