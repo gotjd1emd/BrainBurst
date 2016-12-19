@@ -5,5 +5,5 @@
 	<i class="material-icons author-icon">add_to_photos</i>
 	<p>등록된 작가님의 웹툰이 없습니다.</p>
 	<p>웹툰을 연재해 보세요!</p>
-	<a class="waves-effect waves-light btn color-500">웹툰 등록</a>
+	<a class="waves-effect waves-light btn color-500" href='/controller/user/myInfo/webtoonUpload'>웹툰 등록</a>
 </div>

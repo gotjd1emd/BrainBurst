@@ -182,6 +182,9 @@
 					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
 						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">펀딩 웹툰  /  완결</div>
 					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'pause'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  휴재</div>
+					</c:if>
 				</c:when>
 				<c:when test="${webtoonDTO.webtoonLevel == 'free'}">
 					<c:if test="${webtoonDTO.webtoonState == 'serial'}">
@@ -189,6 +192,9 @@
 					</c:if>
 					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
 						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  완결</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'pause'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  휴재</div>
 					</c:if>
 				</c:when>
 				<c:when test="${webtoonDTO.webtoonLevel == 'paid'}">

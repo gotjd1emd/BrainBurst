@@ -21,7 +21,7 @@
 				dataType : "json",
 				success : function(result) {
 					var htmlcode = "";
-					if(result==null) {
+					if(result=="") {
 						htmlcode = "<tr><td colspan='5'><p align='center'><b>"
 									+"등록된 상품이 없습니다.</b></p></td></tr>";
 					}else {
