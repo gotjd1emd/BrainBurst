@@ -188,7 +188,7 @@
 					type : "get",
 					dataType : "json",
 					success : function(result) {
-						$("##gag").empty();
+						$("#gag").empty();
 						$.each(result, function(index, item) {
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
@@ -201,7 +201,7 @@
 							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right'>close</i></span>"
 							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("##gag").append(htmlcode); 
+							$("#gag").append(htmlcode); 
 						});
 					},
 					error : function() {
