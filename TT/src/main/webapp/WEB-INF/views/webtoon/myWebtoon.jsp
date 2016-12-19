@@ -121,7 +121,7 @@
 
 <div id="webtoon-info" class="episode-list">
 	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
-		<c:forEach var="episode" items="${episodeList }">
+		<c:forEach var="episode" items="${episodeList }">  
 		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
