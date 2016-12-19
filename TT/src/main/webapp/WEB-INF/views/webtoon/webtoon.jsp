@@ -223,7 +223,7 @@
 					추천 : ${episode.recommendation}
 				</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-	                  <input type="text" class="knob" value="${episode.episodeNumber}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+	                  <input type="text" class="knob" value="${episode.hits}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 	                </div>
 				</div>
 		</div>
