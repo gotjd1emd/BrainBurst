@@ -11,7 +11,7 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="StyleSheet" href="<c:url value='/resources/css/animate.css'/>">
 	<link rel="StyleSheet" href="<c:url value='/resources/css/materialize.css'/>" media="screen,projection">
-	<script src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>"></script>
+	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 	<link rel="styleSheet" href="<c:url value='/resources/css/common.css'/>">
 	<link rel="styleSheet" href="<c:url value='/resources/css/myinfo.css'/>">
 	<style>
