@@ -62,7 +62,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<if test="email != null">
       	,(SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION WHERE EMAIL = #{email} AND WEBTOON_CODE = W.WEBTOON_CODE) AS SEBSCRIPTION_SEQUENCE
       	</if>
-		FROM WEBTOON
+		FROM WEBTOON W
 		WHERE WEBTOON_NAME LIKE #{keyword} OR NICKNAME LIKE #{keyword}
 	</select>
 		
