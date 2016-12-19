@@ -21,6 +21,7 @@
 					success : function(result) {
 						$("#action").empty();
 						var htmlcode = "";
+						htmlcode+="<div class='row'>";
 						$.each(result, function(index, item) {
 							htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
 							htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
@@ -33,6 +34,8 @@
 							}
 							htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 							htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+							htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+							htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
 							htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div></div>"
 						});
 						$("#action").append(htmlcode); 
