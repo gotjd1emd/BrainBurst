@@ -76,6 +76,26 @@
 			    if (event.keyCode == 13){
 			    	$('#search-modal').modal('open');
 			    	$(".search-ward").html($("#search").val());
+			    	$.ajax({
+						url : "/controller/webtoon/search/"+$("#search").val(),
+						type : "post",
+						dataType : "json",
+						success : function(result) {
+							$(".collection").empty()
+							$.each(result, function(index, item) {
+								var htmlcode = "";
+								htmlcode +="<a class='collection-item avatar' href='#'>"
+								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle'>"
+								htmlcode +="<span class='title'>"+item.webtoonName+"</span>"
+								htmlcode +="<p>"+item.nickname+"</p>"
+								htmlcode +="<span href='#!' class='secondary-content'><i class='material-icons'>grade</i></span></a>"
+								$(".collection").append(htmlcode); 
+							});
+						},
+						error : function(err) {
+							alert("검색기능오류")
+						}
+					})
 			    }    
 			});
 		})
@@ -111,25 +131,7 @@
 		<h4 class="search-ward">검색어</h4>
 		<div class="collection">
 			<a class="collection-item avatar" href="#">
-			<img src="<c:url value='/resources${webtoonDTO.webtoonThumbnail}'/>" alt="" class="circle">
-			<span class="title">Title</span>
-				<p> First Line</p>
-				<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>
-			</a>
-			<a class="collection-item avatar" href="#">
-			<i class="material-icons circle">folder</i>
-			<span class="title">Title</span>
-				<p> First Line</p>
-				<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>
-			</a>
-			<a class="collection-item avatar" href="#">
-				<i class="material-icons circle green">insert_chart</i>
-				<span class="title">Title</span>
-				<p> First Line</p>
-				<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>
-			</a>
-			<a class="collection-item avatar" href="#">
-				<i class="material-icons circle red">play_arrow</i>
+				<img src="<c:url value='/resources${webtoonDTO.webtoonThumbnail}'/>" alt="" class="circle">
 				<span class="title">Title</span>
 				<p> First Line</p>
 				<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>

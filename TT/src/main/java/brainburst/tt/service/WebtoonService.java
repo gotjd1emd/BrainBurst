@@ -21,7 +21,7 @@ public interface WebtoonService {
 	 * @param keyword 검색어
 	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
 	 */
-	List<WebtoonDTO> searchByKeyword(String keyword);
+	List<WebtoonDTO> searchByKeyword(String keyword, String email);
 	/**
 	 * 사용자가 연재한 웹툰인지 확인하기위한 닉네임체크
 	 * @param webtoonCode

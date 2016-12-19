@@ -28,8 +28,8 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> searchByKeyword(String keyword) {
-		return webtoonDAO.searchByKeyword(keyword);
+	public List<WebtoonDTO> searchByKeyword(String keyword, String email) {
+		return webtoonDAO.searchByKeyword(keyword, email);
 	}
 
 	@Override

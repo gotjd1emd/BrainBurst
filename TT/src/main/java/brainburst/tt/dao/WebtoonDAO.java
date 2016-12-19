@@ -20,7 +20,7 @@ public interface WebtoonDAO {
 	 * @param keyword 검색어
 	 * @return 검색된 웹툰들의 DTO가 담긴 리스트
 	 */
-	List<WebtoonDTO> searchByKeyword(String keyword);
+	List<WebtoonDTO> searchByKeyword(String keyword, String email);
 	
 	/**
 	 * WEBTOON_CODE에 해당하는 NICKNAME조회후 사용자와 일치여부 리턴

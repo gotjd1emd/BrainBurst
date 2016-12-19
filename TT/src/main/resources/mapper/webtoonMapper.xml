@@ -57,10 +57,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    </select>
 	
 	<!-- searchByKeyword -->
-	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="string">
-		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY
+	<select id="searchByKeyword" resultMap="webtoonDTO" parameterType="map">
+		SELECT WEBTOON_NAME, WEBTOON_CODE, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
+		<if test="email != null">
+      	,(SELECT SUBSCRIPTION_SEQUENCE FROM SUBSCRIPTION WHERE EMAIL = #{email} AND WEBTOON_CODE = W.WEBTOON_CODE) AS SEBSCRIPTION_SEQUENCE
+      	</if>
 		FROM WEBTOON
-		WHERE WEBTOON_NAME LIKE #{value} OR NICKNAME LIKE #{value}
+		WHERE WEBTOON_NAME LIKE #{keyword} OR NICKNAME LIKE #{keyword}
 	</select>
 		
 	<!-- checkNickname -->

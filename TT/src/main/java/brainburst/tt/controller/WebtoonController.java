@@ -79,8 +79,16 @@ public class WebtoonController {
 	 * @return 검색된 결과
 	 */
 	@RequestMapping("search/{keyword}")
-	public List<WebtoonDTO> searchByKeyword(@PathVariable("keyword") String keyword) {
-		List<WebtoonDTO> list = webtoonService.searchByKeyword(keyword);
+	@ResponseBody
+	public List<WebtoonDTO> searchByKeyword(HttpSession session, @PathVariable("keyword") String keyword) {
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		String email = null;
+		if(userDTO != null) {
+			email = userDTO.getEmail();
+		}
+		List<WebtoonDTO> list = webtoonService.searchByKeyword(keyword, email);
+		System.out.println(list);
+		System.out.println(list.size());
 		return list;
 	}
 	
