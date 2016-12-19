@@ -58,4 +58,25 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	int insertEpisodeImage(ImageDTO imageDTO);
+	
+	/**
+	 * 에피소드 테이블 수정
+	 * @param episodeDTO
+	 * @return
+	 */
+	int modifyEpisode(EpisodeDTO episodeDTO);
+	
+	/**
+	 * 에피소드 이미지 수정
+	 * @param imageDTO
+	 * @return
+	 */
+	int modifyImage(ImageDTO imageDTO);
+	
+	/**
+	 * 에피소드 이미지 삭제
+	 * @param imageDTO
+	 * @return
+	 */
+	int deleteImage(ImageDTO imageDTO);
 }

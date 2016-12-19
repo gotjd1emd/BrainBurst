@@ -2,8 +2,10 @@ package brainburst.tt.controller;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -162,10 +164,12 @@ public class AuthorContoller {
 	 */
 	@RequestMapping("modifyEpisode")
 	public String modifyEpisode(HttpServletRequest request, 
-			EpisodeDTO episodeDTO, String[] imageSize, String imageListSize) throws Exception {
+			EpisodeDTO episodeDTO, String[] imageSize, int imageListSize) throws Exception {
+		
 		List<MultipartFile> images = episodeDTO.getImage();
 		List<ImageDTO> modifyImageList = new ArrayList<ImageDTO>();
 		List<ImageDTO> addImageList = new ArrayList<ImageDTO>();
+		List<ImageDTO> deleteImageList = new ArrayList<ImageDTO>();
 		
 		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
 		String path = request.getSession().getServletContext().getRealPath("/");
@@ -177,20 +181,50 @@ public class AuthorContoller {
 		}else {
 			episodeDTO.setThumbnail(dbPath + "episodeThumbnail/"
 						+ episodeDTO.getThumbnailFile().getOriginalFilename());
-			//episodeDTO.getThumbnailFile().transferTo(new File(path + "episodeThumbnail/"
-			//		+ episodeDTO.getThumbnailFile().getOriginalFilename()));
+			episodeDTO.getThumbnailFile().transferTo(new File(path + "episodeThumbnail/"
+					+ episodeDTO.getThumbnailFile().getOriginalFilename()));
 		}
 		
+		int count = 0;
 		for(int i = 0; i < images.size(); i++) {
 			if(images.get(i).getSize() != 0) {
+				if(imageListSize > i) {
+					modifyImageList.add(new ImageDTO(count++, episodeDTO.getEpisodeSequence(), 
+							dbPath+categoryName+"/"+images.get(i).getOriginalFilename()));
+				}else {
+					addImageList.add(new ImageDTO(count++, episodeDTO.getEpisodeSequence(), 
+							dbPath+categoryName+"/"+images.get(i).getOriginalFilename()));
+				}
+				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getOriginalFilename()));
 				System.out.println("image name["+i+"] : " + images.get(i).getOriginalFilename());
 				System.out.println(("image size["+i+"] : " + imageSize[i]));
-			}else if(imageSize[i]!=null) {
-				System.out.println(("image size["+i+"] not null : " + imageSize[i]));
-			}else {
+			}else if(imageSize[i].equals("")) {
 				System.out.println(("image size["+i+"] null : " + imageSize[i]));
+			}else {
+				count++;
+				System.out.println(("image size["+i+"] not null : " + imageSize[i]));
 			}
 		}
+		
+		for(int i = count; i < imageListSize; i++) {
+			deleteImageList.add(new ImageDTO(i, episodeDTO.getEpisodeSequence(), null));
+		}
+		
+		Map<String, List<ImageDTO>> imageList = new HashMap<String, List<ImageDTO>>();
+		imageList.put("modifyImageList", modifyImageList);
+		imageList.put("addImageList", addImageList);
+		imageList.put("deleteImageList", deleteImageList);
+		
+		int result = authorService.modifyEpisode(episodeDTO, imageList);
+		for(ImageDTO img : modifyImageList) {
+			System.out.println("modifyimage index : " + img.getImageIndex());
+			System.out.println("modifyimage name : " + img.getFileName());
+		}
+		for(ImageDTO img : addImageList) {
+			System.out.println("addimage index : " + img.getImageIndex());
+			System.out.println("addimage name : " + img.getFileName());
+		}
+		System.out.println("수정결과 : " + result);
 		
 		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
 	}

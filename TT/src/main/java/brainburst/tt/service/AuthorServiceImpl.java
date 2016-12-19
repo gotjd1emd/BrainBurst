@@ -1,6 +1,7 @@
 package brainburst.tt.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,26 @@ public class AuthorServiceImpl implements AuthorService {
 		for(ImageDTO image : imageList) {
 			image.setEpisodeSequence(episodeSequence);
 			result = authorDAO.insertEpisodeImage(image);
+		}
+		
+		return result;
+	}
+	
+	@Override
+	public int modifyEpisode(EpisodeDTO episodeDTO, Map<String, List<ImageDTO>> imageList) {
+		int result = 0;
+		result = authorDAO.modifyEpisode(episodeDTO);
+		
+		for(ImageDTO image : imageList.get("modifyImageList")) {
+			result = authorDAO.modifyImage(image);
+		}
+		
+		for(ImageDTO image : imageList.get("addImageList")) {
+			result = authorDAO.insertEpisodeImage(image);
+		}
+		
+		for(ImageDTO image : imageList.get("deleteImageList")) {
+			result = authorDAO.deleteImage(image);
 		}
 		
 		return result;

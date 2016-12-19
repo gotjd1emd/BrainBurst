@@ -1,6 +1,7 @@
 package brainburst.tt.service;
 
 import java.util.List;
+import java.util.Map;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ImageDTO;
@@ -66,4 +67,12 @@ public interface AuthorService {
 	 * @return
 	 */
 	int episodeUpload(EpisodeDTO episodeDTO, List<ImageDTO> imageList);
+	
+	/**
+	 * 에피소드 수정
+	 * @param episodeDTO
+	 * @param imageList
+	 * @return
+	 */
+	int modifyEpisode(EpisodeDTO episodeDTO, Map<String, List<ImageDTO>> imageList);
 }

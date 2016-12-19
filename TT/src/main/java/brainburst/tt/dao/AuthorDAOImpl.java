@@ -59,4 +59,19 @@ public class AuthorDAOImpl implements AuthorDAO {
 	public int insertEpisodeImage(ImageDTO imageDTO) {
 		return sqlSession.insert("authorMapper.episodeImageUpload", imageDTO);
 	}
+	
+	@Override
+	public int modifyEpisode(EpisodeDTO episodeDTO) {
+		return sqlSession.update("authorMapper.modifyEpisode", episodeDTO);
+	}
+	
+	@Override
+	public int modifyImage(ImageDTO imageDTO) {
+		return sqlSession.update("authorMapper.modifyImage", imageDTO);
+	}
+	
+	@Override
+	public int deleteImage(ImageDTO imageDTO) {
+		return sqlSession.delete("authorMapper.deleteImage", imageDTO);
+	}
 }

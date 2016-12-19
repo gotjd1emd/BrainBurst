@@ -55,4 +55,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO IMAGE(IMAGE_INDEX, EPISODE_SEQUENCE, FILE_NAME) 
 		VALUES(#{imageIndex}, #{episodeSequence}, #{fileName})
 	</insert>
+	
+	<!-- modifyEpisode -->
+	<update id="modifyEpisode" parameterType="episodeDTO">
+		UPDATE EPISODE SET EPISODE_TITLE = #{episodeTitle}, AUTHOR_WORD = #{authorWord}
+		<if test="thumbnail != null">
+		, THUMBNAIL = #{thumbnail}
+		</if>
+		WHERE EPISODE_SEQUENCE = #{episodeSequence}
+	</update>
+	
+	<!-- modifyImage -->
+	<update id="modifyImage" parameterType="imageDTO">
+		UPDATE IMAGE SET FILE_NAME = #{fileName} WHERE IMAGE_INDEX = #{imageIndex} and EPISODE_SEQUENCE = #{episodeSequence}
+	</update>
+	
+	<!-- deleteImage -->
+	<delete id="deleteImage" parameterType="imageDTO">
+		DELETE FROM IMAGE WHERE IMAGE_INDEX = #{imageIndex} and EPISODE_SEQUENCE = #{episodeSequence}
+	</delete>
 </mapper>
