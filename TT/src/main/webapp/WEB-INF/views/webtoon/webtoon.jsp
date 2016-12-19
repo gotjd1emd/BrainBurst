@@ -104,13 +104,132 @@
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 				</div>
 				<div class="col s5 episode-content">
-					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
+					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}
 				</div>
-				<div class="col s4 episode_chart">
-					<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+	                  <input type="text" class="knob" value="${episode.episodeNumber}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+	                </div>
 				</div>
-			</div>
 		</div>
 	</c:forEach>
 	</div>
+	
+	
+	
+	
+	<!-- jQuery 2.2.3 -->
+<script src="<c:url value='/resources/js/jquery-2.2.3.min.js'/>"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
+<!-- jQuery Knob -->
+<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
+	
+<!-- chart script -->
+<script>
+  $(function () {
+    /* jQueryKnob */
+
+    $(".knob").knob({
+      /*change : function (value) {
+       //console.log("change : " + value);
+       },
+       release : function (value) {
+       console.log("release : " + value);
+       },
+       cancel : function () {
+       console.log("cancel : " + this.value);
+       },*/
+      draw: function () {
+
+        // "tron" case
+        if (this.$.data('skin') == 'tron') {
+
+          var a = this.angle(this.cv)  // Angle
+              , sa = this.startAngle          // Previous start angle
+              , sat = this.startAngle         // Start angle
+              , ea                            // Previous end angle
+              , eat = sat + a                 // End angle
+              , r = true;
+
+          this.g.lineWidth = this.lineWidth;
+
+          this.o.cursor
+          && (sat = eat - 0.3)
+          && (eat = eat + 0.3);
+
+          if (this.o.displayPrevious) {
+            ea = this.startAngle + this.angle(this.value);
+            this.o.cursor
+            && (sa = ea - 0.3)
+            && (ea = ea + 0.3);
+            this.g.beginPath();
+            this.g.strokeStyle = this.previousColor;
+            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+            this.g.stroke();
+          }
+
+          this.g.beginPath();
+          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+          this.g.stroke();
+
+          this.g.lineWidth = 2;
+          this.g.beginPath();
+          this.g.strokeStyle = this.o.fgColor;
+          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+          this.g.stroke();
+
+          return false;
+        }
+      }
+    });
+    /* END JQUERY KNOB */
+
+    //INITIALIZE SPARKLINE CHARTS
+    $(".sparkline").each(function () {
+      var $this = $(this);
+      $this.sparkline('html', $this.data());
+    });
+
+    /* SPARKLINE DOCUMENTATION EXAMPLES http://omnipotent.net/jquery.sparkline/#s-about */
+    drawDocSparklines();
+    drawMouseSpeedDemo();
+
+  });
+  function drawDocSparklines() {
+
+    // Bar + line composite charts
+    $('#compositebar').sparkline('html', {type: 'bar', barColor: '#aaf'});
+    $('#compositebar').sparkline([4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7],
+        {composite: true, fillColor: false, lineColor: 'red'});
+
+
+    // Line charts taking their values from the tag
+    $('.sparkline-1').sparkline();
+
+    // Larger line charts for the docs
+    $('.largeline').sparkline('html',
+        {type: 'line', height: '2.5em', width: '4em'});
+
+    // Customized line chart
+    $('#linecustom').sparkline('html',
+        {
+          height: '1.5em', width: '8em', lineColor: '#f00', fillColor: '#ffa',
+          minSpotColor: false, maxSpotColor: false, spotColor: '#77f', spotRadius: 3
+        });
+
+    // Bar charts using inline values
+    $('.sparkbar').sparkline('html', {type: 'bar'});
+
+    $('.barformat').sparkline([1, 3, 5, 3, 8], {
+      type: 'bar',
+      tooltipFormat: '{{value:levels}} - {{value}}',
+      tooltipValueLookups: {
+        levels: $.range_map({':2': 'Low', '3:6': 'Medium', '7:': 'High'})
+      }
+    });
+  }
+</script>
