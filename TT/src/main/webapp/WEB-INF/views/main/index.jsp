@@ -330,9 +330,9 @@
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon'>
 							</div>
 							<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
-								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
+								<span style="font-size:22px; font-weight:500;">${item.webtoonName}
 								</span>
-								<i class="material-icons right" style="margin-top:3%!important;">more_vert</i>
+								<span class="card-title activator grey-text text-darken-4" ><i class="material-icons right" style="margin-top:3%!important;">more_vert</i></span>
 								<span id="ss" style="padding-left: 4%;">
 									<a href="#"> ${item.nickname}</a>
 									<i id="scription-card-btn" class="material-icons scription-a-index" 

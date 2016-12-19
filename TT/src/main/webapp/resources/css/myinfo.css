@@ -147,3 +147,13 @@
 .scription-collection{
 	padding-left: 100px !important;
 }
+
+.webtoon-upload-btn-div{
+	text-align: end;
+	padding-right: 20px;	
+}
+
+#preview-image{
+	width: 100px;
+	height:100px;
+}

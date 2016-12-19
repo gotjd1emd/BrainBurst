@@ -66,6 +66,10 @@
 							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="웹툰 등록"
 								href='/controller/user/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
+								<!-- 웹툰 등록 플로팅 버튼 -->
+							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
+								data-position="top" data-delay="50" data-tooltip="웹툰 수정"
+								href='#webtoon-modify-modal'><i class="material-icons">autorenew</i></a></li>
 						</ul>
 					</div>
 					<!-- floating button div tag close -->

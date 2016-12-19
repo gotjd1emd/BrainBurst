@@ -14,31 +14,6 @@
 			var index = "#image\\["+$(this).attr("name").substr(6,1)+"\\]";
 			$(index).val(size);
 		});
-		
-		$('#add').on("click", function() {
-			if(count < 10) {
-				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' name='image["+count+"]'>";
-				str += "<div class='file-path-wrapper'>";
-				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
-				str += "</div></div>";
-				$('div.image-file').append(str);
-				
-				str = "<input id='image["+count+"]' name='imageSize' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
-				$('div.image-file-size').append(str);
-				count++;
-			}else {
-				alert("이미지 파일은 10개까지 올릴 수 있습니다.");
-			}
-		});
-		
-		$("#delete").on("click", function() {
-			if(count > 0) {
-				$(".image-file").children(":last").remove();
-				$(".image-file-size").children(":last").remove();
-				count--;
-			}
-		});
 	});
 	
 	
@@ -106,41 +81,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-<hr>
-<div class="row">
-	<div class="col s6">
-		<div class="input-field">
-			<input id="episode-title" type="text" class="validate"
-				name="episodeTitle"> <label for="episode-title">에피소드 제목</label>
-		</div>
-				<div class="input-field">
-			<input id="author-word" type="text" class="validate"
-				name="author-word"> <label for="author-word">작가의 말</label>
-		</div>
-	</div>
-	<div class="col s6">
-		<p>그림 이미지를 등록해주세요.</p>
-		<a class="waves-effect waves-light btn color-500" id="add">이미지 추가</a>
-		<a class="waves-effect waves-light btn color-500" id="delete">이미지 삭제</a>
-		<div class="row">
-			<div class="input-field col s6 image-file">
-
-				<div class="file-field input-field">
-					<input type="file" name="image[0]">
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text"
-							placeholder="이미지 파일을 추가해주세요.">
-					</div>
-				</div>
-			</div>
-			<div class="input-field col s6 image-file-size">
-				<input id="image[0]" name="imageSize" type="text" class="validate"
-					placeholder="이미지 크기" readonly>
-			</div>
-		</div>
-	</div>
-
 </div>
 <div class="webtoon-upload-btn-div" style="margin-bottom: 50px;">
 	<button class="btn waves-effect waves-light color-500" type="submit" name="action">웹툰 업로드

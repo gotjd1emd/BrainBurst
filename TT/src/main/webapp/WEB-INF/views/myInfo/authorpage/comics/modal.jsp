@@ -87,3 +87,31 @@
 	</div>
 	</form>
 </div>
+
+<!-- Modal Structure -->
+<div id="webtoon-modify-modal" class="modal modal-fixed-footer modal-top">
+	<form method="post">
+		<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+				<h5>웹툰 상태 처리</h5>
+			</div>
+			<div class="modal-content modal-content-funding">
+		<div class="input-field col s12">
+			<select>
+				<option value="" disabled selected>웹툰 선택</option>
+				<option value="1">졸라맨의 모험</option>
+				<option value="2">마음의 소리</option>
+				<option value="3">썸툰</option>
+			</select> <label>펀딩 신청할 웹툰 선택</label>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#!"
+			class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+		<button
+			class="modal-action modal-close waves-effect waves-green btn-flat"
+			type="submit" name="action">수정하기</button>
+	</div>
+	</div>
+	</form>
+</div>
