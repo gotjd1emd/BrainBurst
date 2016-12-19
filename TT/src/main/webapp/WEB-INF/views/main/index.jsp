@@ -296,7 +296,7 @@
 </head>
 <body>
 	<input id="header-title" type="hidden" value="웹툰">
-	 <a class="btn-floating btn-large waves-effect waves-light red category-btn" href="#category-modal"><i class="material-icons">menu</i></a>
+	 <a id="category-modal-floating" class="btn-floating btn-large waves-effect waves-light red category-btn" href="#category-modal"><i class="material-icons">menu</i></a>
 	   <!-- Modal Structure -->
 	<div class="row category-row">
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">

@@ -674,6 +674,9 @@ a.active{
   	.category-tab-index{
   	display: none;
   	}
+   #category-modal-floating{
+  	display:block;
+  }
 }
 
 @media only screen and (max-width: 1112px) {
@@ -688,6 +691,9 @@ a.active{
   }
   .ccategory-tab-index{
   	display: block;
+  }
+  #category-modal-floating{
+  	display:none;
   }
 }
 
