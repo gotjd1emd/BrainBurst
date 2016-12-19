@@ -5,7 +5,7 @@
 <script>
 	$(function() {
 		
-		var height = $( window ).height() - 400;
+		var height = $( window ).height() - 370;
 		$(".scription-box").css("height", height);
 		
 		$(".scription-box").mCustomScrollbar({
@@ -13,7 +13,7 @@
 		});
 		
 		$(window).resize(function name() {
-			var height = $( window ).height() - 400;
+			var height = $( window ).height() - 370;
 			$(".scription-box").css("height", height);
 		})
 		
