@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
-import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -101,15 +100,7 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
-		List<WebtoonDTO> webtoonDTOs = (List<WebtoonDTO>) session.getAttribute("webtoonList");
-		WebtoonDTO webtoonDTO = null;
-		Iterator<WebtoonDTO> iterator = webtoonDTOs.iterator();
-		while (iterator.hasNext()) {
-			WebtoonDTO webtoon = (WebtoonDTO) iterator.next();
-			if (webtoon.getWebtoonCode()==webtoonCode) {
-				webtoonDTO = webtoon;
-			}
-		}
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
 		String nickname = "GUEST";
 		if (dto!=null) {
 			nickname = dto.getNickname();
