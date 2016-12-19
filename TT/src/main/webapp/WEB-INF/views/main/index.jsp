@@ -11,8 +11,8 @@
 
 </style>
 <script>
+
 		$(function() {
-			
 			$("#actionA").click(function(){
 				$.ajax({
 					url : "/controller/webtoon/webtoonLevelR/funding/a",
@@ -21,23 +21,30 @@
 					success : function(result) {
 						$("#action").empty();
 						var htmlcode = "";
-						htmlcode+="<div class='row'>";
 						$.each(result, function(index, item) {
-							htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-							htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-							htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-							if (item.webtoonName.length <= 7) {
-								htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-							} else {
-								htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'></span>"	
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
 							}
-							htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-							htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-							htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
-							htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div></div>"
 						});
+						htmlcode+="</div>";
 						$("#action").append(htmlcode); 
 					},
 					error : function() {
@@ -53,20 +60,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#sf").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#sf").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#sf").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -82,20 +101,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#fantasy").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#fantasy").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#fantasy").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -110,20 +141,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#drame").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#drame").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#drame").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -138,20 +181,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#thriller").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#thriller").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#thriller").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -166,20 +221,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#dailyLife").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#dailyLife").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#dailyLife").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -194,20 +261,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#gag").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#gag").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#gag").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -222,20 +301,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#adult").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#adult").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#adult").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -250,20 +341,32 @@
 					dataType : "json",
 					success : function(result) {
 						$("#etc").empty();
+						var htmlcode = "";
 						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
-							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-							htmlcode +="<div class='card-content webtoon_card-font'>"
-							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
-							htmlcode +="<div class='card-reveal'>"
-							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
-							htmlcode +="<i class='material-icons right'>close</i></span>"
-							htmlcode +="<p>"+item.summary+"</p></div></div>"
-							$("#etc").append(htmlcode); 
+							if(index==0){
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
+							}else if(index%6==0){
+								htmlcode+="</div>";
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
+							}else{
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
+								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
+								if (item.webtoonName.length <= 7) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								} else {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+								}
+								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
+								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
+								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+							}
 						});
+						htmlcode+="</div>";
+						$("#etc").append(htmlcode); 
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -322,10 +425,10 @@
 			Top 3 웹툰 보여주는 영역
 		 -->
 		<div id="top" class="col s12">
-				<h4 class="animated fadeInDown title-text" style="font-family:fantasy; margin-bottom:30px;">BEST 3 WEBTOON</h4>
+				<h4 class="animated title-text" style="font-family:fantasy; margin-bottom:30px;">BEST 3 WEBTOON</h4>
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" end="2">
-						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:370px!important;margin:-10px 70px 0px -57px !important">
+						<div class="card col s12 m24 l3 top_card hoverable animated" style="width:370px!important;margin:-10px 70px 0px -57px !important">
 							<div class="card-image card-image-box waves-effect waves-block waves-light">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon'>
 							</div>
@@ -352,20 +455,10 @@
 				<!--
 					인기 웹툰 보여주는 영역
 				  -->
-				<h5 class="title-text animated fadeInDown" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
-				<div>
-							<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
+				<h5 class="title-text animated" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
+				<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;">
 					<c:forEach var="item" items="${webtoonList}" varStatus="status">
-						<%-- <c:choose>
-							<c:when test="${status.index==0}">
-								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
-							</c:when>
-							<c:when test="${status.index mod 6==0}">
-								</div>
-								<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right: 128px;">
-							</c:when>
-							<c:otherwise> --%>
-							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
+							<div class="card col s12 m24 l2 top_card hoverable animated" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
 								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}" id='gowebtoon'>
@@ -396,244 +489,54 @@
 								<p>${item.summary}</p>
 							</div>   
 							</div>
-<%-- 							</c:otherwise>
-						</c:choose> --%>
 					</c:forEach>
-				</div>
 			</div>
 		</div>
 		
 		<!-- 
 			액션카테고리 웹툰 보여주는 영역
 		 -->
-		<div id="action" class="col s11">
-			<div class="row">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
-			</div>
+		<div id="action" class="col s12">
+			
 		</div>
-		<div id="sf" class="col s11">
-			<div class="row">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
-				</div>	
+		
+		<!-- sf -->
+		<div id="sf" class="col s12">
+			
 		</div>
-		<div id="drame" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		<!-- drame -->
+		<div id="drame" class="col s12">
+
 		</div>
-		<div id="fantasy" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- fantasy -->
+		<div id="fantasy" class="col s12">
+			
 		</div>
-		<div id="thriller" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- thriller -->
+		<div id="thriller" class="col s12">
+			
 		</div>
-		<div id="dailyLife" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- dailyLife -->
+		<div id="dailyLife" class="col s12">
+			
 		</div>
-		<div id="gag" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- gag -->
+		<div id="gag" class="col s12">
+			
 		</div>
-		<div id="adult" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- adult -->
+		<div id="adult" class="col s12">
+			
 		</div>
-		<div id="etc" class="col s11">
-			<c:choose>
-				<c:when test="${empty sessionScope.webtoonList}">
-					해당 웹툰이 없습니다.
-				</c:when>
-				<c:otherwise>
-					<c:forEach var="item" items="${webtoonList}">
-						<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown">
-							<div class="card-image waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources/'/>/${item.webtoonThumbnail}">
-							</div>
-							<div class="card-content webtoon_card-font">
-								<span class="card-title activator grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right webtoon_card-icon">more_vert</i></span>
-							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
-								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
-							</div>
-						</div>
-					</c:forEach>
-				</c:otherwise>
-				</c:choose>
+		
+		<!-- etc -->
+		<div id="etc" class="col s12">
+			
 		</div>
 	</div>
 </body>
