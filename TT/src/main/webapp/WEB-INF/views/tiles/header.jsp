@@ -85,7 +85,7 @@
 							$.each(result, function(index, item) {
 								var htmlcode = "";
 								htmlcode +="<a class='collection-item avatar' href='#'>"
-								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+">"
+								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
 								htmlcode +="<span class='title'>"+item.webtoonName+"</span>"
 								htmlcode +="<p>"+item.nickname+"</p>"
 								htmlcode +="<span href='#!' class='secondary-content'><i class='material-icons'>grade</i></span></a>"
@@ -98,7 +98,7 @@
 					})
 			    }    
 			});
-			$(document).on("click", "img", function(){
+			$(document).on("click", "#gowebtoon", function(){
 				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 			})
 		})

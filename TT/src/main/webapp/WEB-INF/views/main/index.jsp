@@ -24,7 +24,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -52,7 +52,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -81,7 +81,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -109,7 +109,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -137,7 +137,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -165,7 +165,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -193,7 +193,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -221,7 +221,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -249,7 +249,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -320,7 +320,7 @@
 					<c:forEach var="item" items="${webtoonList}" end="2">
 						<div class="card col s12 m24 l3 top_card hoverable animated fadeInDown" style="width:370px!important;margin:-10px 70px 0px -57px !important">
 							<div class="card-image card-image-box waves-effect waves-block waves-light">
-								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}">
+								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon'>
 							</div>
 							<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
 								<span class="card-title activator grey-text text-darken-4" style="font-size:22px; font-weight:500;">${item.webtoonName}
@@ -361,7 +361,7 @@
 							<div class="card col s12 m24 l2 top_card hoverable animated fadeInDown" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
 								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
-									name="${item.webtoonCode}">
+									name="${item.webtoonCode}" id='gowebtoon'>
 							</div>
 							<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 								<c:choose>
