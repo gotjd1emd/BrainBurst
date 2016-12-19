@@ -9,7 +9,7 @@
 <link rel="StyleSheet" href="<c:url value='/resources/css/webtoon.css'/>">
 <script type="text/javascript">
 	$(function() {
-		var count = 1;
+		var count = $("input[type=file]").length - 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
@@ -17,24 +17,32 @@
 		
 		$('.image-file').on("change", "input[type=file]", function() {
 			var size = fileSize(this).toFixed(2)+"KB";
-			var index = "input[name="+$(this).attr("id")+"]";
+			var index = "#image\\["+$(this).attr("name").substr(6,1)+"\\]";
 			$(index).val(size);
 		});
 		
 		$('#add').on("click", function() {
 			if(count < 10) {
 				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' id='index"+count+"' name='image["+count+"]'>";
+				str += "<input type='file' name='image["+count+"]'>";
 				str += "<div class='file-path-wrapper'>";
 				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
 				str += "</div></div>";
 				$('div.image-file').append(str);
 				
-				str = "<input name='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				str = "<input id='image["+count+"]' name='imageSize' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
 				alert("이미지 파일은 10개까지 올릴 수 있습니다.");
+			}
+		});
+		
+		$("#delete").on("click", function() {
+			if(count > 0) {
+				$(".image-file").children(":last").remove();
+				$(".image-file-size").children(":last").remove();
+				count--;
 			}
 		});
 	});
@@ -105,12 +113,12 @@
 			<div class="col s6">
 				<p class="">그림 이미지를 등록해주세요.</p>
 				<a class="waves-effect waves-light btn color-500" id="add">이미지 추가</a>
-
+				<a class="waves-effect waves-light btn color-500" id="delete">이미지 삭제</a>
 				<div class="row">
 					<div class="input-field col s6 image-file">
 
 						<div class="file-field input-field">
-							<input type="file" id="index0" name="image[0]">
+							<input type="file" name="image[0]">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
 									placeholder="이미지 파일을 추가해주세요.">
@@ -118,7 +126,7 @@
 						</div>
 					</div>
 					<div class="input-field col s6 image-file-size">
-						<input name="index0" type="text" class="validate" 
+						<input name="image[0]" type="text" class="validate" 
 							placeholder="이미지 크기" readonly>
 					</div>
 				</div>
