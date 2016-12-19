@@ -24,7 +24,7 @@
 							var htmlcode = "";
 							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
 							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
-							htmlcode +="<img src='/resources"+item.webtoonThumbnail+"'></div>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
 							htmlcode +="<div class='card-content webtoon_card-font'>"
 							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
 							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
@@ -42,13 +42,26 @@
 			})
 			
 			$("#sfA").click(function(){
-				alert("dsf");
 				$.ajax({
 					url : "/controller/webtoon/webtoonLevelR/funding/b",
 					type : "get",
 					dataType : "json",
 					success : function(result) {
-						alert("action입니다.")
+						$("#sfA").empty();
+						$.each(result, function(index, item) {
+							var htmlcode = "";
+							htmlcode +="<div class='card col s12 m24 l2 top_card hoverable animated fadeInDown'>"
+							htmlcode +="<div class='card-image waves-effect waves-block waves-light'>"
+							htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"'></div>"
+							htmlcode +="<div class='card-content webtoon_card-font'>"
+							htmlcode +="<span class='card-title activator grey-text text-darken-4'>"+item.webtoonName
+							htmlcode +="<i class='material-icons right webtoon_card-icon'>more_vert</i></span></div>"
+							htmlcode +="<div class='card-reveal'>"
+							htmlcode +="<span class='card-title grey-text text-darken-4'>"+item.webtoonName
+							htmlcode +="<i class='material-icons right'>close</i></span>"
+							htmlcode +="<p>"+item.summary+"</p></div></div>"
+							$("#action").append(htmlcode); 
+						});
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -161,12 +174,7 @@
 					}
 				})
 			})
-			
-			
-			$("img").click(function() {
-				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
-			})
-			
+
 			$(document).on("click", "#scription-card-btn", function(){
 				$(this).css("color", "#FF4436");
 				$.ajax({
