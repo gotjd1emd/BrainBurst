@@ -296,10 +296,12 @@
 </head>
 <body>
 	<input id="header-title" type="hidden" value="웹툰">
-	<div class="row">
+	 <a class="btn-floating btn-large waves-effect waves-light red category-btn" href="#category-modal"><i class="material-icons">menu</i></a>
+	   <!-- Modal Structure -->
+	<div class="row category-row">
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">
 			<ul class="tabs grey darken-3">
-				<li class="tab col s1 offset-s1"><a href="#top">TOP</a></li>
+				<li class="tab col s1 offset-l1"><a href="#top">TOP</a></li>
 				<li class="tab col s1"><a href="#action" id="actionA">액션</a></li>
 				<li class="tab col s1"><a href="#sf" id="sfA">SF</a></li>
 				<li class="tab col s1"><a href="#fantasy" class="tabcss" id="fantasyA">판타지</a></li>

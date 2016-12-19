@@ -48,6 +48,22 @@
 			<tiles:insertAttribute name="footer"/>
 		</div>
 	</div>
-	<div>
+		<div id="category-modal" class="modal bottom-sheet">
+    	<div class="modal-content" style="height:280px">
+      		<h5>카테고리</h5>
+      		<p>
+				<a class="waves-effect waves-light btn color-500">TOP</a>
+				<a class="waves-effect waves-light btn color-500">액션</a>
+				<a class="waves-effect waves-light btn color-500">SF</a>
+				<a class="waves-effect waves-light btn color-500">판타지</a>
+				<a class="waves-effect waves-light btn color-500">드라마</a>
+				<a class="waves-effect waves-light btn color-500">스릴러</a>
+				<a class="waves-effect waves-light btn color-500">일상</a>
+				<a class="waves-effect waves-light btn color-500">개그</a>
+				<a class="waves-effect waves-light btn color-500">성인</a>
+				<a class="waves-effect waves-light btn color-500">기타</a>
+			</p>
+    	</div>
+    </div>
 </body>
 </html>

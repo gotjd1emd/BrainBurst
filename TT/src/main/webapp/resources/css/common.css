@@ -647,7 +647,11 @@ a.active{
 	color: #fff !important;
 }
 
-
+.category-btn{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
 
 /* ¹ÝÀÀÇü */
 @media only screen and (max-width: 992px) {
@@ -667,6 +671,9 @@ a.active{
   .top_card{
   	left : 0 !important;
   }
+  	.category-tab-index{
+  	display: none;
+  	}
 }
 
 @media only screen and (max-width: 1112px) {
@@ -678,6 +685,9 @@ a.active{
 @media only screen and (min-width : 992px) {
   #category_mobile{
   	display:none;
+  }
+  .ccategory-tab-index{
+  	display: block;
   }
 }
 
