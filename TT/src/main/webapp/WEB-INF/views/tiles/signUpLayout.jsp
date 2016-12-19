@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=EUTF-8">
-	<title>Insert title here</title>
+	<title>Try make your Throng</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="StyleSheet" href="<c:url value='/resources/css/animate.css'/>">
 	<link rel="StyleSheet" href="<c:url value='/resources/css/materialize.css'/>" media="screen,projection">
