@@ -88,8 +88,8 @@
 		})
 		
 		/* 구독목록 클릭시 웹툰이동 */
-		$("#scriptionList").click(function() {
-			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$("li div img").attr("name"));
+		$(document).on("click", "#whoru", function(){
+			alert("?!")
 		})
 	})
 </script>
@@ -144,10 +144,10 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="item" items="${sessionScope.subScriptionList}">
-							<li id="scriptionList"><a class="waves-effect waves-light scription-btn hoverable">
+							<li id="gowebtoon" name="${item.webtoonCode}"><a class="waves-effect waves-light scription-btn hoverable">
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
-										src="<c:url value='/resources${item.webtoonThumbnail}'/>"  name="${item.webtoonCode}">
+										src="<c:url value='/resources${item.webtoonThumbnail}'/>">
 								</div>
 								<div>
 									<span>${item.webtoonName}</span><br>
