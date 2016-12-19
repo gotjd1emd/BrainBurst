@@ -101,9 +101,9 @@ public class WebtoonServiceImpl implements WebtoonService {
 			imageList.set(i, path[path.length-1]);
 		}
 		
-		if(webtoonDTO.getWebtoonThumbnail() != null) {
-			String[] path = webtoonDTO.getWebtoonThumbnail().split("/");
-			webtoonDTO.setWebtoonThumbnail(path[path.length-1]);
+		if(episodeDTO.getThumbnail() != null) {
+			String[] path = episodeDTO.getThumbnail().split("/");
+			episodeDTO.setThumbnail(path[path.length-1]);
 		}
 		
 		map.put("webtoonDTO", webtoonDTO);

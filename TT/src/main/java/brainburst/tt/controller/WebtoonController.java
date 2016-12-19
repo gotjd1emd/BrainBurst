@@ -253,7 +253,7 @@ public class WebtoonController {
 		request.setAttribute("episodeDTO", (EpisodeDTO)map.get("episodeDTO"));
 		request.setAttribute("imageList", imageList);
 		request.setAttribute("thumbnailPath", (String)map.get("thumbnailPath"));
-		request.setAttribute("imageSize", imageList.size());
+		request.setAttribute("imageListSize", imageList.size());
 		
 		for(String str : (List<String>)map.get("imageList")) {
 			System.out.println("image Path : " + str);

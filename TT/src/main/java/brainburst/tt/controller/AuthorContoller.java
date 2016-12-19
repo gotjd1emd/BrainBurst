@@ -157,6 +157,45 @@ public class AuthorContoller {
 	}
 	
 	/**
+	 * 에피소드 수정
+	 * @return
+	 */
+	@RequestMapping("modifyEpisode")
+	public String modifyEpisode(HttpServletRequest request, 
+			EpisodeDTO episodeDTO, String[] imageSize, String imageListSize) throws Exception {
+		List<MultipartFile> images = episodeDTO.getImage();
+		List<ImageDTO> modifyImageList = new ArrayList<ImageDTO>();
+		List<ImageDTO> addImageList = new ArrayList<ImageDTO>();
+		
+		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
+		String path = request.getSession().getServletContext().getRealPath("/");
+		String dbPath = "/webtoon/";
+		path += "/resources" + dbPath;
+		
+		if(episodeDTO.getThumbnailFile().getSize() == 0) {
+			episodeDTO.setThumbnail(null);
+		}else {
+			episodeDTO.setThumbnail(dbPath + "episodeThumbnail/"
+						+ episodeDTO.getThumbnailFile().getOriginalFilename());
+			//episodeDTO.getThumbnailFile().transferTo(new File(path + "episodeThumbnail/"
+			//		+ episodeDTO.getThumbnailFile().getOriginalFilename()));
+		}
+		
+		for(int i = 0; i < images.size(); i++) {
+			if(images.get(i).getSize() != 0) {
+				System.out.println("image name["+i+"] : " + images.get(i).getOriginalFilename());
+				System.out.println(("image size["+i+"] : " + imageSize[i]));
+			}else if(imageSize[i]!=null) {
+				System.out.println(("image size["+i+"] not null : " + imageSize[i]));
+			}else {
+				System.out.println(("image size["+i+"] null : " + imageSize[i]));
+			}
+		}
+		
+		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
+	}
+	
+	/**
 	 * 작가페이지만들기
 	 * @return
 	 */

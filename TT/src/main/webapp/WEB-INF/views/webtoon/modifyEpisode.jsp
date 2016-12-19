@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
-		var count = 1;
+		var count = $("input[type=file]").length - 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
@@ -16,24 +16,32 @@
 		
 		$('.image-file').on("change", "input[type=file]", function() {
 			var size = fileSize(this).toFixed(2)+"KB";
-			var index = "input[name="+$(this).attr("id")+"]";
+			var index = "#image\\["+$(this).attr("name").substr(6,1)+"\\]";
 			$(index).val(size);
 		});
 		
 		$('#add').on("click", function() {
 			if(count < 10) {
 				var str = "<div class='file-field input-field'>";
-				str += "<input type='file' id='index"+count+"' name='image["+count+"]'>";
+				str += "<input type='file' name='image["+count+"]'>";
 				str += "<div class='file-path-wrapper'>";
 				str += "<input class='file-path validate' type='text' placeholder='이미지 파일을 추가해주세요.'>";
 				str += "</div></div>";
 				$('div.image-file').append(str);
 				
-				str = "<input name='index"+count+"' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
+				str = "<input id='image["+count+"]' name='imageSize' type='text' class='validate' placeholder='이미지 크기' readonly>"; 
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
 				alert("이미지 파일은 10개까지 올릴 수 있습니다.");
+			}
+		});
+		
+		$("#delete").on("click", function() {
+			if(count > 0) {
+				$(".image-file").children(":last").remove();
+				$(".image-file-size").children(":last").remove();
+				count--;
 			}
 		});
 	});
@@ -62,8 +70,7 @@
 </script>
 </head>
 <body>
-		<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
-	<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode}">
+	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
@@ -96,11 +103,11 @@
 		<form method="post" action="<c:url value='/author/modifyEpisode'/>" encType="multipart/form-data">
 		<div class="row">
 			<div class="input-field col s6">
-				<input id="episode-title" type="text" class="validate" name="episodeTitle"> 
+				<input id="episode-title" type="text" class="validate" name="episodeTitle" value="${episodeDTO.episodeTitle }"> 
 				<label for="episode-title">에피소드 제목</label>
 			</div>
 			<div class="input-field col s6">
-				<input id="author-word" type="text" class="validate" name="authorWord"> 
+				<input id="author-word" type="text" class="validate" name="authorWord" value="${episodeDTO.authorWord }"> 
 				<label for="author-word">작가의 말</label>
 			</div>
 		</div>
@@ -109,21 +116,24 @@
 			<div class="col s6">
 				<p class="">그림 이미지를 등록해주세요.</p>
 				<a class="waves-effect waves-light btn color-500" id="add">이미지 추가</a>
-
+				<a class="waves-effect waves-light btn color-500" id="delete">이미지 삭제</a>
 				<div class="row">
 					<div class="input-field col s6 image-file">
-
+						<c:forEach var="image" items="${imageList }" varStatus="status">
 						<div class="file-field input-field">
-							<input type="file" id="index0" name="image[0]">
+							<input type="file" name="image[${status.index }]">
 							<div class="file-path-wrapper">
 								<input class="file-path validate" type="text"
-									placeholder="이미지 파일을 추가해주세요.">
+									placeholder="이미지 파일을 추가해주세요." value="${image }">
 							</div>
 						</div>
+						</c:forEach>
 					</div>
-					<div class="input-field col s6 image-file-size">
-						<input name="index0" type="text" class="validate" 
-							placeholder="이미지 크기" readonly>
+					<div class="input-field col s3 image-file-size">
+						<c:forEach var="image" items="${imageList }" varStatus="status">
+						<input id="image[${status.index }]" name="imageSize" type="text" class="validate" 
+							placeholder="이미지 크기" value="${status.count }번째 이미지" readonly>
+						</c:forEach>
 					</div>
 				</div>
 			</div>
@@ -134,7 +144,7 @@
 						<span>File</span> <input id="thumbnail" type="file" name="thumbnailFile">
 					</div>
 					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text">
+						<input class="file-path validate" type="text" value="${episodeDTO.thumbnail }">
 					</div>
 				</div>
 
@@ -143,7 +153,7 @@
 						<div class="preview">
 							<div class="inner">
 								<p class="" id="thumbnail-text">썸네일 미리보기</p>
-								<img id='preview-image' src='' />
+								<img id='preview-image' src='<c:url value="/resources"/>${thumbnailPath }' />
 							</div>
 						</div>
 					</div>
@@ -157,7 +167,9 @@
 				
 				<div class="row btn-box">
 					<input type="hidden" value="${webtoonDTO.webtoonCode }" name="webtoonCode"/>
-					<input type="hidden" value="${requestScope.episodeNumber }" name="episodeNumber"/>
+					<input type="hidden" value="${episodeDTO.episodeSequence }" name="episodeSequence"/>
+					<input type="hidden" value="${episodeDTO.episodeNumber }" name="episodeNumber"/>
+					<input type="hidden" value="${imageListSize }" name="imageListSize"/>
 					<button class="btn waves-effect waves-light color-500" type="submit" name="action">수정하기
 					</button>
 					<a class="waves-effect waves-light btn color-500">돌아가기</a>
