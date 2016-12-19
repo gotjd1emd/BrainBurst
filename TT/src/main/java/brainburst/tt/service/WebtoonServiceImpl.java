@@ -1,5 +1,6 @@
 package brainburst.tt.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -88,9 +89,28 @@ public class WebtoonServiceImpl implements WebtoonService {
 	
 	@Override
 	public Map<String, Object> modifyEpisodePage(int episodeSequence) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		
 		WebtoonDTO webtoonDTO = webtoonDAO.selecltWebtoonByCode(episodeSequence);
-		List<String> imageList = webtoonDAO.selectImg(episodeSequence);
 		EpisodeDTO episodeDTO = webtoonDAO.selectNumsBySequence(episodeSequence);
-		return null;
+		List<String> imageList = webtoonDAO.selectImg(episodeSequence);
+		String thumbnailPath = episodeDTO.getThumbnail();
+		
+		for(int i = 0; i < imageList.size(); i++) {
+			String[] path = imageList.get(i).split("/");
+			imageList.set(i, path[path.length-1]);
+		}
+		
+		if(webtoonDTO.getWebtoonThumbnail() != null) {
+			String[] path = webtoonDTO.getWebtoonThumbnail().split("/");
+			webtoonDTO.setWebtoonThumbnail(path[path.length-1]);
+		}
+		
+		map.put("webtoonDTO", webtoonDTO);
+		map.put("imageList", imageList);
+		map.put("episodeDTO", episodeDTO);
+		map.put("thumbnailPath", thumbnailPath);
+		
+		return map;
 	}
 }

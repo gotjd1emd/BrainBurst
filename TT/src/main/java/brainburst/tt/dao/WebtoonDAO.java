@@ -36,7 +36,7 @@ public interface WebtoonDAO {
 	/**
 	 * EPISODE_SEQUENCE에 해당하는 이미지를 로딩(리스트에 넣을때 IMAGE_INDEX순으로)
 	 */
-	List<String> selectImg(int epicsodeSequence);
+	List<String> selectImg(int episodeSequence);
 	
 	/**
 	 * 구독테이블에 레코드 추가.

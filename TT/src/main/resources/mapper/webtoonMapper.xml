@@ -79,11 +79,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- selectImg -->
-	<select id="selectImg" resultType="string" parameterType="string">
+	<select id="selectImg" resultType="string" parameterType="_int">
 		SELECT FILE_NAME
 		FROM IMAGE
 		WHERE EPISODE_SEQUENCE = #{value}
-		ORDER BY IMAGE_INDEX ASC;
+		ORDER BY IMAGE_INDEX ASC
 	</select>
 	
 	<!-- addSubscription -->

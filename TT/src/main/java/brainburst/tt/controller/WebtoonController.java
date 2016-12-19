@@ -2,6 +2,7 @@ package brainburst.tt.controller;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -236,6 +238,18 @@ public class WebtoonController {
 	 */
 	@RequestMapping("modifyEpisode/{episodeSequence}")
 	public String modifyEpsodePage(HttpServletRequest request, @PathVariable int episodeSequence) {
+		Map<String, Object> map = webtoonService.modifyEpisodePage(episodeSequence);
+		System.out.println("episode sequence : " + episodeSequence);
+		List<String> imageList = (List<String>)map.get("imageList");
+		request.setAttribute("webtoonDTO", (WebtoonDTO)map.get("webtoonDTO"));
+		request.setAttribute("episodeDTO", (EpisodeDTO)map.get("episodeDTO"));
+		request.setAttribute("imageList", imageList);
+		request.setAttribute("thumbnailPath", (String)map.get("thumbnailPath"));
+		request.setAttribute("imageSize", imageList.size());
+		
+		for(String str : (List<String>)map.get("imageList")) {
+			System.out.println("image Path : " + str);
+		}
 		
 		return "webtoon/modifyEpisode";
 	}
