@@ -507,11 +507,11 @@
 					인기 웹툰 보여주는 영역
 				  -->
 				<h5 class="title-text animated" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
-				<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;">
+				<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; margin-left:-5%;">
 					<c:forEach var="item" items="${webtoonList}" varStatus="status">
 						<c:choose>
 							<c:when test="${item.webtoonState=='pause'}">
-							<div class="card col s12 m24 l2 top_card hoverable animated" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
+							<div class="card col s12 m24 l2 top_card hoverable animated" style="margin: -5px 7px 20px 0px !important; width:221px!important;">
 								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important; background-color: black">
 								<span style="color:white; position: absolute; width: 100%; text-align: center; top: 46%; font-size: 25px; background-color: rgba( 0, 0, 0, 0.5 );">휴재중</span>
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' style="opacity: 0.5;">
@@ -544,7 +544,7 @@
 							</div>
 							</c:when>
 							<c:otherwise>
-							<div class="card col s12 m24 l2 top_card hoverable animated" style="width:200px!important;margin: -5px 7px 20px 0px !important;">
+							<div class="card col s12 m24 l2 top_card hoverable animated" style="width:221px!important;margin: -5px 7px 20px 0px !important;">
 								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}" id='gowebtoon'>
