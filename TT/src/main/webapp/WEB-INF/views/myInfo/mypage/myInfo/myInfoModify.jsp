@@ -3,8 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="card-frame-myInfo z-depth-1">
 	<div class="row">
-		<form class="col s12" method="post"
-			action="<c:url value='/user/userUpdate'/>">
+		<form class="col s5" method="post" action="<c:url value='/user/userUpdate'/>" style="margin-left: 328px;font-weight: 800;">
 			<div class="row modify-row">
 				<div class="input-field col s12">
 					<input id="name-myinfo" type="text" class="validate" name="email"
