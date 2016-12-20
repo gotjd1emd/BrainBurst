@@ -13,6 +13,10 @@
 <script>
 
 		$(function() {
+			$(document).ready(function() {
+				$(".scription-a-index").css("color", "#F44336");
+				$(".scription-a-index[name$='_0']").css("color", "#424242");
+			})
 			$("#actionA").click(function(){
 				$.ajax({
 					url : "/controller/webtoon/webtoonLevelR/funding/a",
@@ -39,13 +43,15 @@
 								}
 								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
+								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
 								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
 								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
 							}
 						});
 						htmlcode+="</div>";
 						$("#action").append(htmlcode); 
+						$(".scription-a-index").css("color", "#F44336");
+						$(".scription-a-index[name$='_0']").css("color", "#424242");
 					},
 					error : function() {
 						alert("다시 시도해주세요")
@@ -442,7 +448,7 @@
 									<span id="ss" style="padding-left: 4%;">
 										<a href="#"> ${item.nickname}</a>
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
 										</i>
 									</span>
 								</div>
@@ -510,7 +516,7 @@
 									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
 										</i>
 									</span>
 								</div>
@@ -543,7 +549,7 @@
 									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
 										</i>
 									</span>
 								</div>
