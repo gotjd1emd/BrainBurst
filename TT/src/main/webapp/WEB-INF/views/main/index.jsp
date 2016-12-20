@@ -59,8 +59,31 @@
 					}
 				})
 			})
-			
-			
+			$(document).on("click", "#scription-card-btn", function(){
+				$(this).css("color", "#FF4436");
+				$.ajax({
+					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
+					type : "post",
+					dataType : "json",
+					success : function(result) {
+						$("#subScriptionList").empty();
+							$.each(result, function(index, item) {
+								var htmlcode = "";
+								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+								htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
+								htmlcode +="</div><div>";
+								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+								htmlcode +="</div></a></li>"
+								$("#subScriptionList").append(htmlcode);
+							});
+					},
+					error : function() {
+						alert("이미 구독하였습니다.")
+					}
+				})
+			})
 		})
 	</script>
 </head>
