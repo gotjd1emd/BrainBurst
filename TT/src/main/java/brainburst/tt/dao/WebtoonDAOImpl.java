@@ -125,4 +125,13 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		map.put("webtoonCode", Integer.toString(webtoonCode));
 		return sqlSession.selectOne("webtoonMapper.selectWebtoon", map);
 	}
+
+	@Override
+	public List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("nickname", nickname);
+		map.put("webtoonState", webtoonState);
+		return sqlSession.selectList("webtoonMapper.selectMyWebtoon", map);
+	}
+	
 }

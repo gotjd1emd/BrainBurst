@@ -258,4 +258,15 @@ public class WebtoonController {
 		
 		return "webtoon/modifyEpisode";
 	}
+	
+	@RequestMapping("selectMyWebtoon/{webtoonState}")
+	@ResponseBody
+	public List<WebtoonDTO> selectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		System.out.println("selectMyWebtoon·Î ¿Ô´Ù");
+		List<WebtoonDTO> list = webtoonService.selectMyWebtoon(webtoonState, userDTO.getNickname());
+		System.out.println(list);
+		session.setAttribute("webtoonList", list);
+		return list;
+	}
 }
