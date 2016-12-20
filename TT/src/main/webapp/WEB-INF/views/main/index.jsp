@@ -45,8 +45,11 @@
 								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
 								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
+								htmlcode+="</span></div>"
+								htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
+									htmlcode+="<span>작가 이름</span>"
+									htmlcode+="<span style='float: right;'>100%</span>"
+								htmlcode+="</div></div></div>"
 							}
 						});
 						htmlcode+="</div>";
