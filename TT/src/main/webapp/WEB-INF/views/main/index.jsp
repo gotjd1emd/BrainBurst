@@ -529,22 +529,20 @@
 											</span>
 										</c:otherwise>
 									</c:choose>
-									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important; margin-right: auto">grade
 										</i>
 									</span>
 								</div>
-								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4">${item.webtoonName}
-									<i class="material-icons right">close</i></span>
-									<p>${item.summary}</p>
-								</div>   
+								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
+									<span>작가 이름</span>
+									<span style="float: right;">100%</span>
+								</div> 
 							</div>
 							</c:when>
 							<c:otherwise>
-							<div class="card col s12 m24 l2 top_card hoverable animated" style="width:221px!important;margin: -5px 7px 20px 0px !important;">
+							<div class="card col s12 m24 l2 top_card hoverable animated sticky-action" style="width:221px!important;margin: -5px 7px 20px 0px !important;">
 								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
 									name="${item.webtoonCode}" id='gowebtoon'>
@@ -562,18 +560,16 @@
 											</span>
 										</c:otherwise>
 									</c:choose>
-									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important; margin-right: auto">grade
 										</i>
 									</span>
 								</div>
-								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4">${item.webtoonName}
-									<i class="material-icons right">close</i></span>
-									<p>${item.summary}</p>
-								</div>   
+								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
+									<span>작가 이름</span>
+									<span style="float: right;">100%</span>
+								</div> 
 							</div>
 							</c:otherwise>
 						</c:choose>
