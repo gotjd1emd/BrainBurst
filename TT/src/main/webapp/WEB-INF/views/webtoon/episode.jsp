@@ -18,6 +18,10 @@
 					}
 				})
 			})
+			$(".first-see").on("click", (function () {
+				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
+			})
+			)
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">
@@ -66,7 +70,6 @@
 			</div>
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;">첫회보기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">

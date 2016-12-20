@@ -81,15 +81,17 @@
                   type : "post",
                   dataType : "json",
                   success : function(result) {
-                     $(".collection").empty()
+                     $(".collection").empty();
+                     var num = 1;
                      $.each(result, function(index, item) {
                         var htmlcode = "";
                         htmlcode +="<a class='collection-item avatar search-collection-item' href='#'>"
-                        htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle search-tumbnail' name="+item.webtoonCode+" id='gowebtoon'>"
+                        htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+">"
                         htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
                         htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"
                         htmlcode +="<span href='#!' class='secondary-content text-color-500'><i class='material-icons'>grade</i></span></a>"
                         $(".collection").append(htmlcode); 
+                        num++;
                      });
                   },
                   error : function(err) {
@@ -99,7 +101,10 @@
              }    
          });
          $(document).on("click", ".search-collection-item", function(){
-            $(location).attr('href',"/controller/webtoon/webtoonPage/"+$(".search-tumbnail").attr("name"));
+            $(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).find("img").attr("name"));
+         })
+         $(document).on("click", "#gowebtoon", function(){
+            $(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
          })
       })
    </script>

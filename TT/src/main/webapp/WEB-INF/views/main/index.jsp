@@ -174,7 +174,7 @@
 							<c:otherwise>
 							<div class="card col s12 m24 l3 top_card hoverable animated" style="width:370px!important;margin:-10px 70px 0px -57px !important">
 								<div class="card-image card-image-box waves-effect waves-block waves-light">
-									<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon'>
+									<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' class="search-collection-item">
 								</div>
 								<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
 									<span style="font-size:22px; font-weight:500;">${item.webtoonName}

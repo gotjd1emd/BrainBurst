@@ -33,6 +33,11 @@
 		})
 		)
 		
+		$(".first-see").on("click", (function () {
+			$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
+		})
+		)
+		
 		$("#scription-btn").click(function () {
 			//컬러 바꾸기
 			/*
@@ -118,7 +123,7 @@
 			</div>
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;">첫회보기</a>
+	<a class="waves-effect waves-light btn color-500 first-see" style="float:right; margin-top: -3%;">첫회보기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">
@@ -128,11 +133,11 @@
 			</div>
 		</div>
 		<div id="episode-list" class="episode-list">
-	<c:forEach var="episode" items="${episodeList }">
+	<c:forEach var="episode" items="${episodeList }" varStatus="status">
 		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
-					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
