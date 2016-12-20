@@ -95,12 +95,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES (SUBSCRIPTION_SEQ.NEXTVAL, #{email}, #{webtoonCode})
 	</insert>
 	
+		
+	<!-- 구독해지 -->
+	<delete id="delSubscription" parameterType="map">
+		DELETE FROM SUBSCRIPTION WHERE EMAIL = #{email} AND WEBTOON_CODE = #{webtoonCode}
+	</delete>
+	
 	<!-- addRecommend -->
 	<insert id="addRecommend" parameterType="map">
 		INSERT INTO RECOMMEND (RECOMMEND_SEQUENCE, EMAIL, EPISODE_SEQUENCE) 
 		VALUES (RECOMMEND_SEQ.NEXTVAL, #{email}, #{epicsodeSequence})
 	</insert>
-	
+
 	<!-- addReport -->
 	<insert id="addReport" parameterType="reportDTO">
 		INSERT INTO REPORT (REPORT_SEQUENCE, EMAIL, WEBTOON_CODE, CONTENT, EPISODE_SEQUENCE) 

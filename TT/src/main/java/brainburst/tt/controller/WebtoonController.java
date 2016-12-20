@@ -170,14 +170,15 @@ public class WebtoonController {
 	 * @return 성공여부 1:성공 , 0:실패
 	 * @throws Exception 
 	 */
-	@RequestMapping("subscription/{webtoonCode}")
+	@RequestMapping("subscription/{command}/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") String webtoonCode){
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,
+			@PathVariable("command") String command, @PathVariable("webtoonCode") String webtoonCode){
 		String[] webtoonCodeA = webtoonCode.split("_");
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
 		System.out.println("가저온 email : "+email + "webtoonCode" + webtoonCode);
-		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]));
+		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]), command);
 		System.out.println(scriptionList);
 		if (scriptionList != null) {
 			session.setAttribute("subScriptionList", scriptionList);

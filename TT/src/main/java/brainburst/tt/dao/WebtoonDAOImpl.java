@@ -64,6 +64,14 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
+	public int delSubscription(String email, int webtoonCode) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("webtoonCode", Integer.toString(webtoonCode));
+		return sqlSession.delete("webtoonMapper.delSubscription", map);
+	}
+
+	@Override
 	public int addRecommend(String email, int epicsodeSequence) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);

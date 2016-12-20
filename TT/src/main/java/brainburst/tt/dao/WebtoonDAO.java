@@ -46,6 +46,8 @@ public interface WebtoonDAO {
 	 */
 	int addSubscription(String email ,int webtoonCode);
 	
+	int delSubscription(String email ,int webtoonCode);
+	
 	/**
 	 * 추천테이블에 레코드추가.
 	 * @param email 사용자 email
