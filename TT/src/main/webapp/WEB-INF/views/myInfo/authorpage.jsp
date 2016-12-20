@@ -76,22 +76,37 @@
 		
 		<!-- 완결된 웹툰 tab -->
 		<div id="completed-webtoon" class="col s12 tab-card-info">
-			<div class="fixed-action-btn horizontal click-to-toggle">
-				<a class="btn-floating red publish-webtoon-floating tooltipped"
-					data-position="top" data-delay="50" data-tooltip="유료화 신청"
-					href="#paid-webtoon-modal"><i class="material-icons first-icon">attach_money</i></a>
-			</div>
-			<div class="card-frame-myInfo z-depth-1" id="completedList">
-				<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
-				<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/content.jsp"></jsp:include>
-			</div>
+			<c:choose>
+				<c:when test="${!empty sessionScope.webtoonList}">
+					<div class="fixed-action-btn horizontal click-to-toggle">
+						<a class="btn-floating red publish-webtoon-floating tooltipped"
+							data-position="top" data-delay="50" data-tooltip="유료화 신청"
+							href="#paid-webtoon-modal"><i class="material-icons first-icon">attach_money</i></a>
+					</div>
+					<div class="card-frame-myInfo z-depth-1">
+						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
+						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/content.jsp"></jsp:include>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<!-- 웹툰이 없을 때 뜨는 content -->
+					<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/defaultContent.jsp"></jsp:include>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		
 		<!-- 펀딩웹툰 관리  -->
 		<div id="funding-management" class="col s12 tab-card-info">
-			<div class="card-frame-myInfo z-depth-1">
-				<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/content.jsp"></jsp:include>
-			</div>
+			<c:choose>
+				<c:when test="${!empty sessionScope.webtoonList}">
+					<div class="card-frame-myInfo z-depth-1">
+						<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/content.jsp"></jsp:include>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/defaultContent.jsp"></jsp:include>
+				</c:otherwise>
+			</c:choose>
 		</div>
 
 		<!-- 작가 추가정보 입력 -->
