@@ -81,9 +81,6 @@
 	</div>
 	<div class="title-content-box col s8" style="height: 296px;">
 		<div class="row" style="margin: 0">
-			<div class="col s4 webtoon-title-row">
-				
-			</div>
 			<div class="col s9">
 			<c:choose>
 				<c:when test="${webtoonDTO.webtoonLevel == 'funding'}">
@@ -116,6 +113,7 @@
 				<i id="scription-card-btn" class="material-icons" 
 					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
 				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
+				<div><hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;"></div>
 				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
 		</div>
