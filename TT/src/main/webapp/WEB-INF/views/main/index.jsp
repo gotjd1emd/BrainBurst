@@ -17,14 +17,16 @@
 				$(".scription-a-index").css("color", "#F44336");
 				$(".scription-a-index[name$='_0']").css("color", "#424242");
 			})
-			$("#actionA").click(function(){
+			$("div div ul li a").click(function(){
+				con = "#"+$(this).attr('value');
+				alert(con)
 				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/a",
+					url : "/controller/webtoon/webtoonLevelR/funding/"+$(this).attr('value'),
 					type : "get",
 					dataType : "json",
 					success : function(result) {
-						$("#action").empty();
 						var htmlcode = "";
+						$(con).empty();
 						$.each(result, function(index, item) {
 							if(index==0){
 								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
@@ -49,7 +51,7 @@
 							}
 						});
 						htmlcode+="</div>";
-						$("#action").append(htmlcode); 
+						$(con).append(htmlcode); 
 						$(".scription-a-index").css("color", "#F44336");
 						$(".scription-a-index[name$='_0']").css("color", "#424242");
 					},
@@ -59,368 +61,7 @@
 				})
 			})
 			
-			$("#sfA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/b",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#sf").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#sf").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-
 			
-			$("#fantasyA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/c",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#fantasy").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#fantasy").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#drameA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/d",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#drame").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#drame").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#thrillerA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/e",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#thriller").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#thriller").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#dailyLifeA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/f",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#dailyLife").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#dailyLife").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#gagA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/g",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#gag").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#gag").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#adultA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/h",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#adult").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#adult").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-			
-			$("#etcA").click(function(){
-				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/i",
-					type : "get",
-					dataType : "json",
-					success : function(result) {
-						$("#etc").empty();
-						var htmlcode = "";
-						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
-								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
-								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
-								}
-								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
-								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
-								htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
-								htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
-							}
-						});
-						htmlcode+="</div>";
-						$("#etc").append(htmlcode); 
-						$(".scription-a-index").css("color", "#F44336");
-						$(".scription-a-index[name$='_0']").css("color", "#424242");
-					},
-					error : function() {
-						alert("다시 시도해주세요")
-					}
-				})
-			})
-
-			$(document).on("click", "#scription-card-btn", function(){
-				$(this).css("color", "#FF4436");
-				$.ajax({
-					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
-					type : "post",
-					dataType : "json",
-					success : function(result) {
-						$("#subScriptionList").empty();
-							$.each(result, function(index, item) {
-								var htmlcode = "";
-								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-								htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
-								htmlcode +="</div><div>";
-								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
-								htmlcode +="</div></a></li>"
-								$("#subScriptionList").append(htmlcode);
-							});
-					},
-					error : function() {
-						alert("이미 구독하였습니다.")
-					}
-				})
-			})
 		})
 	</script>
 </head>
@@ -432,15 +73,15 @@
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">
 			<ul class="tabs grey darken-3">
 				<li class="tab col s1 offset-l1"><a href="#top">TOP</a></li>
-				<li class="tab col s1"><a href="#action" id="actionA">액션</a></li>
-				<li class="tab col s1"><a href="#sf" id="sfA">SF</a></li>
-				<li class="tab col s1"><a href="#fantasy" class="tabcss" id="fantasyA">판타지</a></li>
-				<li class="tab col s1"><a href="#drame" class="tabcss" id="drameA">드라마</a></li>
-				<li class="tab col s1"><a href="#thriller" class="tabcss" id="thrillerA">스릴러</a></li>
-				<li class="tab col s1"><a href="#dailyLife" id="dailyLifeA">일상</a></li>
-				<li class="tab col s1"><a href="#gag" id="gagA">개그</a></li>
-				<li class="tab col s1"><a href="#adult" id="adultA">성인</a></li>
-				<li class="tab col s1"><a href="#etc" id="etcA">기타</a></li>
+				<li class="tab col s1"><a href="#a" value="a">액션</a></li>
+				<li class="tab col s1"><a href="#b" value="b">SF</a></li>
+				<li class="tab col s1"><a href="#c" class="tabcss" value="c">판타지</a></li>
+				<li class="tab col s1"><a href="#d" class="tabcss" value="d">드라마</a></li>
+				<li class="tab col s1"><a href="#e" class="tabcss" value="e">스릴러</a></li>
+				<li class="tab col s1"><a href="#f" value="f">일상</a></li>
+				<li class="tab col s1"><a href="#g" value="g">개그</a></li>
+				<li class="tab col s1"><a href="#h" value="h">성인</a></li>
+				<li class="tab col s1"><a href="#i" value="i">기타</a></li>
 			</ul>
 		</div>
 		<!-- 
@@ -580,46 +221,46 @@
 		<!-- 
 			액션카테고리 웹툰 보여주는 영역
 		 -->
-		<div id="action" class="col s12">
+		<div id="a" class="col s12">
 			
 		</div>
 		
 		<!-- sf -->
-		<div id="sf" class="col s12">
+		<div id="b" class="col s12">
 			
 		</div>
 		<!-- drame -->
-		<div id="drame" class="col s12">
+		<div id="c" class="col s12">
 
 		</div>
 		
 		<!-- fantasy -->
-		<div id="fantasy" class="col s12">
+		<div id="d" class="col s12">
 			
 		</div>
 		
 		<!-- thriller -->
-		<div id="thriller" class="col s12">
+		<div id="e" class="col s12">
 			
 		</div>
 		
 		<!-- dailyLife -->
-		<div id="dailyLife" class="col s12">
+		<div id="f" class="col s12">
 			
 		</div>
 		
 		<!-- gag -->
-		<div id="gag" class="col s12">
+		<div id="g" class="col s12">
 			
 		</div>
 		
 		<!-- adult -->
-		<div id="adult" class="col s12">
+		<div id="h" class="col s12">
 			
 		</div>
 		
 		<!-- etc -->
-		<div id="etc" class="col s12">
+		<div id="i" class="col s12">
 			
 		</div>
 	</div>
