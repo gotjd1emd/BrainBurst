@@ -66,15 +66,15 @@
 			})
 			
 			/* 구독 추가 and 삭제  */
-			$(document).on("click", "#scription-card-btn", function(){
+			$(document).on("click", ".scription-a-index", function(){
+            	var name = $(this).attr("name")
 				if ($(this).css("color")=="rgb(66, 66, 66)") {
-					$(this).css("color", "#F44336");
 					$.ajax({
-						url : "/controller/webtoon/subscription/add/"+$(this).attr("name"),
+						url : "/controller/webtoon/subscription/add/"+name,
 						type : "post",
 						dataType : "json",
 						success : function(result) {
-							$(this).css("color", "#FF4436");
+							$(".scription-a-index[name="+name+"]").css("color", "#F44336");
 							$("#subScriptionList").empty();
 								$.each(result, function(index, item) {
 									var level = item.webtoonLevel;
@@ -105,14 +105,14 @@
 							alert("이미 구독하였습니다.")
 						}
 					})
-				} else if ($(this).css("color")=="rgb(244, 67, 54)") {
-					$(this).css("color", "#424242");
+				} else if (
+					$(this).css("color")=="rgb(244, 67, 54)") {
 					$.ajax({
-						url : "/controller/webtoon/subscription/del/"+$(this).attr("name"),
+						url : "/controller/webtoon/subscription/del/"+name,
 						type : "post",
 						dataType : "json",
 						success : function(result) {
-							$(this).css("color", "#FF4436");
+							$(".scription-a-index[name="+name+"]").css("color", "#424242");
 							$("#subScriptionList").empty();
 								$.each(result, function(index, item) {
 									var level = item.webtoonLevel;
