@@ -66,6 +66,7 @@
 			</div>
 		</div>
 	</div>
+	<a class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;">첫회보기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">
@@ -93,7 +94,7 @@
 	</div>
 </div>
 
-<div class="z-depth-3 remote-box grey lighten-1">
+<div class="z-depth-3 remote-box" style="background-color: #424242">
 	<div class="row remote-row">
 		<a href="/controller/webtoon/episodePage/${prevEpisodeSequence}" class="col s4 offset-s4 waves-effect waves-light btn remote-btn color-500"><i class="material-icons">keyboard_arrow_up</i></a>
 	</div>
