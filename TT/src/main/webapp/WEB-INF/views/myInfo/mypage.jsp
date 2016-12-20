@@ -58,7 +58,7 @@
 				<li class="tab col s2"><a href="#THistory" id="getHistory">T내역</a></li>
 			</ul>
 		</div>
-		<div id="myInfoModify" class="col s12 tab-card-info">
+		<div id="myInfoModify" class="col s6 tab-card-info" style="margin-left:310px">
 			<jsp:include
 				page="/WEB-INF/views/myInfo/mypage/myInfo/myInfoModify.jsp"></jsp:include>
 		</div>
