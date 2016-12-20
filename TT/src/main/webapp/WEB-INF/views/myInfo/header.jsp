@@ -72,7 +72,7 @@
 			    }
 			  );
 			
-			$("#search").keypress(function(event) { 
+			$("#search").keypress(function(event) {
 			    if (event.keyCode == 13){
 			    	$('#search-modal').modal('open');
 			    	$(".search-ward").html($("#search").val());
@@ -84,7 +84,7 @@
 							$(".collection").empty()
 							$.each(result, function(index, item) {
 								var htmlcode = "";
-								htmlcode +="<a class='collection-item avatar' href='#'>"
+								htmlcode +="<a class='collection-item avatar search-collection-item' href='#'>"
 								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
 								htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
 								htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"
@@ -98,7 +98,7 @@
 					})
 			    }    
 			});
-			$(document).on("click", "#gowebtoon", function(){
+			$(document).on("click", ".search-collection-item", function(){
 				$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 			})
 		})
@@ -133,7 +133,7 @@
 	<div class="modal-content search-modal-content">
 		<h4 class="search-ward">검색어</h4>
 		<div class="collection">
-			<a class="collection-item avatar" href="#">
+			<a class="collection-item avatar search-collection-item" href="#">
 				<img src="<c:url value='/resources${webtoonDTO.webtoonThumbnail}'/>" alt="" class="circle">
 				<span>Title</span>
 				<p> First Line</p>
