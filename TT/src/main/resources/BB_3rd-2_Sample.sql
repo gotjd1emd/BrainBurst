@@ -105,23 +105,23 @@ values (webtoon_seq.nextval,'따뜻한 달','free','serial','H','green', '재이', 0, 
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'인생','free','serial','I','green', '수정', 0, '인생', '/webtoon/webtoonThumbnail/48.jpg');
+values (webtoon_seq.nextval,'인생','free','pause','I','green', '수정', 0, '인생', '/webtoon/webtoonThumbnail/48.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'의미','free','serial','A','green', '우리', 0, '의미', '/webtoon/webtoonThumbnail/49.jpg');
+values (webtoon_seq.nextval,'의미','free','pause','A','green', '우리', 0, '의미', '/webtoon/webtoonThumbnail/49.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'그리움','free','serial','B','green', '슬기', 0, '그리움', '/webtoon/webtoonThumbnail/50.jpg');
+values (webtoon_seq.nextval,'그리움','free','pause','B','green', '슬기', 0, '그리움', '/webtoon/webtoonThumbnail/50.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'에스키스','free','serial','C','green', '보영', 0, '에스키스', '/webtoon/webtoonThumbnail/51.jpg');
+values (webtoon_seq.nextval,'에스키스','free','pause','C','green', '보영', 0, '에스키스', '/webtoon/webtoonThumbnail/51.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'TEN','free','serial','D','green', '고은', 0, 'TEN', '/webtoon/webtoonThumbnail/52.jpg');
+values (webtoon_seq.nextval,'TEN','free','pause','D','green', '고은', 0, 'TEN', '/webtoon/webtoonThumbnail/52.jpg');
 
 
 
@@ -134,43 +134,43 @@ values (webtoon_seq.nextval,'TEN','free','serial','D','green', '고은', 0, 'TEN',
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'우리사이느은','funding','serial','H','green', '혜리', 1, '우리사이', '/webtoon/webtoonThumbnail/53.jpg');
+values (webtoon_seq.nextval,'우리사이느은','funding','pause','H','green', '혜리', 1, '우리사이', '/webtoon/webtoonThumbnail/53.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'그 끝에 있는 것','funding','serial','B','green', '재이', 1, '끝에', '/webtoon/webtoonThumbnail/54.jpg');
+values (webtoon_seq.nextval,'그 끝에 있는 것','funding','pause','B','green', '재이', 1, '끝에', '/webtoon/webtoonThumbnail/54.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'레바툰','funding','serial','A','green', '고은', 1, '레바', '/webtoon/webtoonThumbnail/55.jpg');
+values (webtoon_seq.nextval,'레바툰','funding','pause','A','green', '고은', 1, '레바', '/webtoon/webtoonThumbnail/55.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'순정 바로미터','funding','serial','B','green', '병재', 1, '바로미터', '/webtoon/webtoonThumbnail/56.jpg');
+values (webtoon_seq.nextval,'순정 바로미터','funding','pause','B','green', '병재', 1, '바로미터', '/webtoon/webtoonThumbnail/56.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'말할 수 없는 자매','funding','serial','C','green', '혜리', 1, '자매', '/webtoon/webtoonThumbnail/57.jpg');
+values (webtoon_seq.nextval,'말할 수 없는 자매','funding','pause','C','green', '혜리', 1, '자매', '/webtoon/webtoonThumbnail/57.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'환관제조일기','funding','serial','D','green', '재이', 1, '환관제조', '/webtoon/webtoonThumbnail/58.jpg');
+values (webtoon_seq.nextval,'환관제조일기','funding','pause','D','green', '재이', 1, '환관제조', '/webtoon/webtoonThumbnail/58.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'월한강천록','funding','serial','E','green', '고은', 1, '월한강', '/webtoon/webtoonThumbnail/59.jpg');
+values (webtoon_seq.nextval,'월한강천록','funding','pause','E','green', '고은', 1, '월한강', '/webtoon/webtoonThumbnail/59.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'애늙은이','funding','serial','F','green', '병재', 1, '애늙', '/webtoon/webtoonThumbnail/60.jpg');
+values (webtoon_seq.nextval,'애늙은이','funding','pause','F','green', '병재', 1, '애늙', '/webtoon/webtoonThumbnail/60.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'최강왕따','funding','serial','G','green', '고은', 1, '최강', '/webtoon/webtoonThumbnail/61.jpg');
+values (webtoon_seq.nextval,'최강왕따','funding','pause','G','green', '고은', 1, '최강', '/webtoon/webtoonThumbnail/61.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'케세라세라','funding','serial','H','green', '민아', 1, '케세라', '/webtoon/webtoonThumbnail/62.jpg');
+values (webtoon_seq.nextval,'케세라세라','funding','pause','H','green', '민아', 1, '케세라', '/webtoon/webtoonThumbnail/62.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
