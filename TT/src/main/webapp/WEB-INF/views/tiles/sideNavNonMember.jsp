@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 
 <script>
 	$(function() {
-		
 		var height = $( window ).height() - 370;
 		$(".scription-box").css("height", height);
 		
@@ -144,16 +144,39 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="item" items="${sessionScope.subScriptionList}">
-							<li id="gowebtoon" name="${item.webtoonCode}"><a class="waves-effect waves-light scription-btn hoverable">
+							<li id="gowebtoon" name="${item.webtoonCode}">
+							<c:choose>
+								<c:when test="${item.webtoonLevel eq 'funding'}">
+								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:blueviolet !important;">
+								</c:when>
+								<c:when test="${item.webtoonLevel eq 'free'}">
+								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:coral !important;">
+								</c:when>
+								<c:otherwise>
+								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:cornflowerblue !important;">
+								</c:otherwise>
+							</c:choose>
 								<div>
 									<img class="circle responsive-img" style="width: 40px; height: 40px;" alt="썸네일" 
 										src="<c:url value='/resources${item.webtoonThumbnail}'/>">
 								</div>
-								<div>
-									<span>${item.webtoonName}</span><br>
-									<span class="author-name">${item.nickname}</span>
+								<div style='margin-left:10px;'>
+								<c:choose>
+									<c:when test="${fn:length(item.webtoonName) <= 7}">
+										<span style='font-size:16px'>
+										${item.webtoonName}
+										</span>
+									</c:when>
+									<c:otherwise>
+										<span style='font-size:16px'>
+										${fn:substring(item.webtoonName,0,5)}...
+										</span>
+									</c:otherwise>
+								</c:choose>
+								<br><span class="author-name" style='font-size:13px'>${item.nickname}</span>
 								</div>
-							</a></li>
+							</a>
+							</li>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>		

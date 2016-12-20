@@ -128,7 +128,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><a href="<c:url value='/webtoon/funding/all'/>">펀딩웹툰</a></li>
          <li><a href="<c:url value='/webtoon/free/all'/>">일반웹툰</a></li>
-         <li><a href="<c:url value='/webtoon/paid/all'/>">완결웹툰</a></li>
+         <li><a href="<c:url value='/webtoon/paid/all'/>">유료웹툰</a></li>
          <li><i class="material-icons icon_search search-btn">search</i></li>
       </ul>
    </div>

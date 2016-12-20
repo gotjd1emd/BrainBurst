@@ -17,6 +17,8 @@
 				$(".scription-a-index").css("color", "#F44336");
 				$(".scription-a-index[name$='_0']").css("color", "#424242");
 			})
+			
+			
 			$("div div ul li a").click(function(){
 				con = "#"+$(this).attr('value');
 				$.ajax({
@@ -62,9 +64,10 @@
 					}
 				})
 			})
+			
+			/* 구독 추가 and 삭제  */
 			$(document).on("click", "#scription-card-btn", function(){
 				if ($(this).css("color")=="rgb(66, 66, 66)") {
-					alert("추가")
 					$(this).css("color", "#F44336");
 					$.ajax({
 						url : "/controller/webtoon/subscription/add/"+$(this).attr("name"),
@@ -74,13 +77,26 @@
 							$(this).css("color", "#FF4436");
 							$("#subScriptionList").empty();
 								$.each(result, function(index, item) {
+									var level = item.webtoonLevel;
+									var webtoonName = item.webtoonName;
 									var htmlcode = "";
-									htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-									htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="<li>";
+									if(item.webtoonLevel == 'funding'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+									}else if(item.webtoonLevel == 'free'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
+									}else if(item.webtoonLevel == 'paid'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
+									}
+									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
 									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
-									htmlcode +="</div><div>";
-									htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-									htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+									htmlcode +="</div><div style='margin-left:10px;'>";
+									if(item.webtoonName.length<=7){
+										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
+									}else{
+										htmlcode+="<span style='font-size:16px'>"+webtoonName.substring(0,5)+"...</span>";
+									}		
+									htmlcode +="<br><span class='author-name' style='font-size:13px'>"+item.nickname+"</span>";		
 									htmlcode +="</div></a></li>"
 									$("#subScriptionList").append(htmlcode);
 								});
@@ -90,7 +106,6 @@
 						}
 					})
 				} else if ($(this).css("color")=="rgb(244, 67, 54)") {
-					alert("삭제")
 					$(this).css("color", "#424242");
 					$.ajax({
 						url : "/controller/webtoon/subscription/del/"+$(this).attr("name"),
@@ -100,13 +115,26 @@
 							$(this).css("color", "#FF4436");
 							$("#subScriptionList").empty();
 								$.each(result, function(index, item) {
+									var level = item.webtoonLevel;
+									var webtoonName = item.webtoonName;
 									var htmlcode = "";
-									htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-									htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
-									htmlcode +="</div><div>";
-									htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-									htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+									htmlcode +="<li>";
+									if(level == 'funding'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+									}else if(level == 'free'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
+									}else{
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
+									}
+									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>";
+									htmlcode +="<div style='margin-left:10px;'>";
+									if(item.webtoonName.length<=7){
+										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
+									}else{
+										htmlcode+="<span style='font-size:16px'>"+webtoonName.substring(0,5)+"...</span>";
+									}
+									htmlcode +="<br><span class='author-name' style='font-size:13px'>"+item.nickname+"</span>";		
 									htmlcode +="</div></a></li>"
 									$("#subScriptionList").append(htmlcode);
 								});
