@@ -15,6 +15,7 @@ import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.UserService;
+import brainburst.tt.service.WebtoonService;
 
 @Controller
 @RequestMapping("user")
@@ -22,6 +23,8 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private WebtoonService webtoonService;
 
 	private UserDTO userDTO;
 	private CashHistoryDTO cashHistoryDTO;
@@ -86,10 +89,13 @@ public class UserController {
 		System.out.println(session.getAttribute("userDTO"));
 		
 		System.out.println("찾을 이메일 : "+userDTO.getEmail());
-		
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null, userDTO.getEmail());
+		session.setAttribute("webtoonList", list);
 		List<WebtoonDTO> subScriptionList = userService.showListSubscription(userDTO.getEmail());
 		session.setAttribute("subScriptionList", subScriptionList);
+		
 		System.out.println(subScriptionList);
+		
 		
 		return "main/index";
 	}
@@ -101,7 +107,8 @@ public class UserController {
 	public String logout(HttpServletRequest request){
 		request.getSession().removeAttribute("userDTO");
 		System.out.println("session정보, userDTO 초기화");
-		
+		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null, null);
+		request.getSession().setAttribute("webtoonList", list);
 		return "main/index";
 	}
 	

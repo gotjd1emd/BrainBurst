@@ -83,8 +83,8 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 	
 	@Override
-	public WebtoonDTO selectWebtoon(int webtoonCode) {
-		return webtoonDAO.selectWebtoon(webtoonCode);
+	public WebtoonDTO selectWebtoon(int webtoonCode, String email) {
+		return webtoonDAO.selectWebtoon(webtoonCode, email);
 	}
 	
 	@Override

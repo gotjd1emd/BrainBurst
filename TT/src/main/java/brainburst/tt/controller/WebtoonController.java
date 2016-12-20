@@ -67,7 +67,7 @@ public class WebtoonController {
 		System.out.println("catogory_code : " + category);
 		System.out.println("webtoonLevel : " + webtoonLevel);
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
-		System.out.println(list.size());
+		System.out.println(list);
 		session.setAttribute("webtoonList", list);
 		return list;
 	}
@@ -100,12 +100,17 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
-		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
 		String nickname = "GUEST";
+		String type = "webtoon/webtoon";
+		String email = null;
 		if (dto!=null) {
 			nickname = dto.getNickname();
+			email = dto.getEmail();
 		}
-		String type = "webtoon/webtoon";
+		
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, email);
+		System.out.println("WebtoonController104(webtoonDTO):"+webtoonDTO);
+		
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
 		if (webtoonService.checkNickname(webtoonCode, nickname)) {
 			type = "webtoon/myWebtoon";
@@ -167,11 +172,12 @@ public class WebtoonController {
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode){
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") String webtoonCode){
+		String[] webtoonCodeA = webtoonCode.split("_");
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
 		System.out.println("가저온 email : "+email + "webtoonCode" + webtoonCode);
-		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, webtoonCode);
+		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]));
 		System.out.println(scriptionList);
 		if (scriptionList != null) {
 			session.setAttribute("subScriptionList", scriptionList);
@@ -225,7 +231,7 @@ public class WebtoonController {
 	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode, 
 			@PathVariable("episodeNumber") int episodeNumber) {
 		
-		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, null);
 
 		request.setAttribute("webtoonDTO", webtoonDTO);
 		request.setAttribute("episodeNumber", episodeNumber);

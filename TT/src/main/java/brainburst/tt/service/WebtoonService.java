@@ -85,7 +85,7 @@ public interface WebtoonService {
 	 * @param webtoonCode
 	 * @return
 	 */
-	WebtoonDTO selectWebtoon(int webtoonCode);
+	WebtoonDTO selectWebtoon(int webtoonCode, String email);
 	
 	/**
 	 * 에피소드 수정페이지로 이동

@@ -21,20 +21,49 @@
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">
-	<div class="row title-box z-depth-1">
+	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
 	</div>
-	<div class="title-content-box">
+	<div class="title-content-box col s8" style="height: 296px;">
 		<div class="row" style="margin: 0">
-			<div class="col s4 webtoon-title-row">
-				
+			<div class="col s9">
+			<c:choose>
+				<c:when test="${webtoonDTO.webtoonLevel == 'funding'}">
+					<c:if test="${webtoonDTO.webtoonState == 'serial'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">펀딩 웹툰  /  연재중</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">펀딩 웹툰  /  완결</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'pause'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  휴재</div>
+					</c:if>
+				</c:when>
+				<c:when test="${webtoonDTO.webtoonLevel == 'free'}">
+					<c:if test="${webtoonDTO.webtoonState == 'serial'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  연재중</div>
+						<hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;">
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'complete'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  완결</div>
+					</c:if>
+					<c:if test="${webtoonDTO.webtoonState == 'pause'}">
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  휴재</div>
+					</c:if>
+				</c:when>
+				<c:when test="${webtoonDTO.webtoonLevel == 'paid'}">
+					<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">유료 웹툰</div>
+					<hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;">
+				</c:when>
+			</c:choose>
+				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
+				<i id="scription-card-btn" class="material-icons" 
+					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
+				<div><hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;"></div>
+				<div style="color:snow;margin-left:4px">${webtoonDTO.summary}</div>
 			</div>
-			<div class="col s8">
-				<p class="">${webtoonDTO.nickname}<p>
-				<p>${webtoonDTO.summary}</p>
-			</div>
-			<i id="scription-btn" class=" small material-icons scription-a-webtoon">grade</i>
 		</div>
 	</div>
 	</div>

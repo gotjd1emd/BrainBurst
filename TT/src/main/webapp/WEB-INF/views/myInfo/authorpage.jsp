@@ -13,19 +13,9 @@
 	$(function() {
 		$('select').material_select();
 		
-		$("#serialWebtoon").click(function(){
-			$.ajax({
-				url : "/controller/user/THistoryList",
-				type : "post",
-				dataType : "json",
-				success : function(result) {
-					
-				},
-				error : function(err) {
-					alert("err");
-				}
-			})
-		})
+		$("img").on("click", (function() {
+			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
+		}));
 	})
 </script>
 </head>
@@ -34,10 +24,9 @@
 	<div class="row tab-frame-myinfo">
 		<div class="col s12 tab-myinfo grey darken-3">
 			<ul class="tabs center z-depth-2 grey darken-3">
-				<li class="tab col s2 offset-l2"><a class="active"
-					href="#publish-webtoon">연재중인 웹툰</a></li>
-				<li class="tab col s2"><a href="#completed-webtoon">완결된 웹툰</a></li>
-				<li class="tab col s2"><a href="#funding-management">펀딩 관리</a></li>
+				<li class="tab col s2 offset-l2"><a class="active" href="#publish-webtoon" id="publishW">연재중인 웹툰</a></li>
+				<li class="tab col s2"><a href="#completed-webtoon" id="completedW">완결된 웹툰</a></li>
+				<li class="tab col s2"><a href="#funding-management" id="fundingW">펀딩 관리</a></li>
 				<li class="tab col s2"><a href="#author-management">작가 관리</a></li>
 			</ul>
 		</div>
@@ -87,37 +76,25 @@
 		
 		<!-- 완결된 웹툰 tab -->
 		<div id="completed-webtoon" class="col s12 tab-card-info">
-			<c:choose>
-				<c:when test="${!empty sessionScope.webtoonList}">
-					<div class="fixed-action-btn horizontal click-to-toggle">
-						<a class="btn-floating red publish-webtoon-floating tooltipped"
-							data-position="top" data-delay="50" data-tooltip="유료화 신청"
-							href="#paid-webtoon-modal"><i class="material-icons first-icon">attach_money</i></a>
-					</div>
-					<div class="card-frame-myInfo z-depth-1">
-						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
-						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/content.jsp"></jsp:include>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<!-- 웹툰이 없을 때 뜨는 content -->
-					<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/defaultContent.jsp"></jsp:include>
-				</c:otherwise>
-			</c:choose>
+			<div class="fixed-action-btn horizontal click-to-toggle">
+				<a class="btn-floating red publish-webtoon-floating tooltipped"
+					data-position="top" data-delay="50" data-tooltip="유료화 신청"
+					href="#paid-webtoon-modal"><i class="material-icons first-icon">attach_money</i></a>
+			</div>
+			<div class="card-frame-myInfo z-depth-1" id="completedList">
+				<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
+				<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/content.jsp"></jsp:include>
+			</div>
 		</div>
+		
+		<!-- 펀딩웹툰 관리  -->
 		<div id="funding-management" class="col s12 tab-card-info">
-			<c:choose>
-				<c:when test="${!empty sessionScope.webtoonList}">
-					<div class="card-frame-myInfo z-depth-1">
-						<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/content.jsp"></jsp:include>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/defaultContent.jsp"></jsp:include>
-				</c:otherwise>
-			</c:choose>
-
+			<div class="card-frame-myInfo z-depth-1">
+				<jsp:include page="/WEB-INF/views/myInfo/authorpage/funding/content.jsp"></jsp:include>
+			</div>
 		</div>
+
+		<!-- 작가 추가정보 입력 -->
 		<div id="author-management" class="col s12 tab-card-info">
 			<div class="card-frame-myInfo z-depth-1 author-management-card">
 				<jsp:include page="/WEB-INF/views/myInfo/authorpage/management/content.jsp"></jsp:include>

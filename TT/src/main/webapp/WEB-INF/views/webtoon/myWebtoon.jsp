@@ -137,22 +137,4 @@
 			</div>
 		</div>
 	</c:forEach>
-	<div class="z-depth-1 episode-box">
-		<a href="<c:url value='/test/modifyEpisode/1234'/>">
-			<div class="row">
-				<div class="episode_thumbnail">
-					<img class="thumbnail"
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfiwDUBe5J0bSSnY_tkixhchUM539CKhd6-WGD1WpCrL37WxEY">
-				</div>
-				<div class="episode_text">
-					<p>2화-고수</p>
-					<p>추천 : 187</p>
-				</div>
-				<div class="episode_chart">
-					<img class="chart"
-						src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
-				</div>
-			</div>
-		</a>
-	</div>
 </div>

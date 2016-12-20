@@ -8,6 +8,10 @@
 <script>
 	<!-- chart script -->
 	  $(function () {
+		  $(document).ready(function() {
+				$("#scription-card-btn").css("color", "#F44336");
+				$("#scription-card-btn[name$='_0']").css("color", "#424242");
+			})
 	    $(".knob").knob({
 	      draw: function () {
 	        // "tron" case
@@ -55,7 +59,7 @@
 							var htmlcode = "";
 							htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
 							htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-							htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+							htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>'>";
 							htmlcode +="</div><div>";
 							htmlcode +="<span>"+item.webtoonName+"</span><br>";		
 							htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
@@ -77,9 +81,6 @@
 	</div>
 	<div class="title-content-box col s8" style="height: 296px;">
 		<div class="row" style="margin: 0">
-			<div class="col s4 webtoon-title-row">
-				
-			</div>
 			<div class="col s9">
 			<c:choose>
 				<c:when test="${webtoonDTO.webtoonLevel == 'funding'}">
@@ -110,8 +111,9 @@
 			</c:choose>
 				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
 				<i id="scription-card-btn" class="material-icons" 
-					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
 				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
+				<div><hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;"></div>
 				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
 		</div>
