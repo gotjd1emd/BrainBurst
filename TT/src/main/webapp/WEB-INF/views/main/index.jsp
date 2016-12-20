@@ -507,7 +507,7 @@
 											</span>
 										</c:otherwise>
 									</c:choose>
-									<i class="material-icons right" style="margin-top:6%!important;">more_vert</i>
+									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
 											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
@@ -530,17 +530,17 @@
 								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 									<c:choose>
 										<c:when test="${fn:length(item.webtoonName) <= 7}">
-											<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+											<span class="card-title grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
 											${item.webtoonName}
 											</span>
 										</c:when>
 										<c:otherwise>
-											<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+											<span class="card-title grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
 											${fn:substring(item.webtoonName,0,5)}...
 											</span>
 										</c:otherwise>
 									</c:choose>
-									<i class="material-icons right" style="margin-top:6%!important;">more_vert</i>
+									<span class="activator"><i class="material-icons right" style="margin-top:6%!important;">more_vert</i></span>
 									<span id="ss" style="padding-left: 4%;">
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
 											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
