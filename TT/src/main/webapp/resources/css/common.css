@@ -653,6 +653,19 @@ a.active{
 	right: 20px;
 }
 
+#toast-container{
+	top: initial;
+	right:initial;
+	bottom:5%;
+	left:50%;
+}
+
+.rounded{
+	border-radius: 5px !important;
+	top:0 !important;
+	bottom: 20px !important;
+}
+
 /* ¹ÝÀÀÇü */
 @media only screen and (max-width: 992px) {
   #content{

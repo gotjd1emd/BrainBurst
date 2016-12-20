@@ -2,7 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<script>
-		$(function() {	
+		$(function() {
+			$(document).ready(function() {
+				$("#scription-card-btn").css("color", "#F44336");
+				$("#scription-card-btn[name$='_0']").css("color", "#424242");
+			})
 			var width = $(".title-box").width()-$(".webtoon-sumbnail-box").width()-50;
 			$(".title-content-box").width(width);
 			var height = $(".title-box").height();
@@ -48,29 +52,59 @@
 			
 			
 			$(document).on("click", "#scription-card-btn", function(){
-				$(this).css("color", "#FF4436");
-				$.ajax({
-					url : "/controller/webtoon/subscription/"+$(this).attr("name"),
-					type : "post",
-					dataType : "json",
-					success : function(result) {
-						$("#subScriptionList").empty();
-							$.each(result, function(index, item) {
-								var htmlcode = "";
-								htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-								htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-								htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
-								htmlcode +="</div><div>";
-								htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-								htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
-								htmlcode +="</div></a></li>"
-								$("#subScriptionList").append(htmlcode);
-							});
-					},
-					error : function() {
-						alert("이미 구독하였습니다.")
-					}
-				})
+				if ($(this).css("color")=="rgb(66, 66, 66)") {
+					alert("추가")
+					$(this).css("color", "#F44336");
+					$.ajax({
+						url : "/controller/webtoon/subscription/add/"+$(this).attr("name"),
+						type : "post",
+						dataType : "json",
+						success : function(result) {
+							$(this).css("color", "#FF4436");
+							$("#subScriptionList").empty();
+								$.each(result, function(index, item) {
+									var htmlcode = "";
+									htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+									htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
+									htmlcode +="</div><div>";
+									htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+									htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+									htmlcode +="</div></a></li>"
+									$("#subScriptionList").append(htmlcode);
+								});
+						},
+						error : function() {
+							alert("이미 구독하였습니다.")
+						}
+					})
+				} else if ($(this).css("color")=="rgb(244, 67, 54)") {
+					alert("삭제")
+					$(this).css("color", "#424242");
+					$.ajax({
+						url : "/controller/webtoon/subscription/del/"+$(this).attr("name"),
+						type : "post",
+						dataType : "json",
+						success : function(result) {
+							$(this).css("color", "#FF4436");
+							$("#subScriptionList").empty();
+								$.each(result, function(index, item) {
+									var htmlcode = "";
+									htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
+									htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
+									htmlcode +="</div><div>";
+									htmlcode +="<span>"+item.webtoonName+"</span><br>";		
+									htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
+									htmlcode +="</div></a></li>"
+									$("#subScriptionList").append(htmlcode);
+								});
+						},
+						error : function() {
+							alert("이미 구독하였습니다.")
+						}
+					})
+				}
 			})
 			
 		})
@@ -90,7 +124,7 @@
 				<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">MY WEBTOON</div>
 				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
 				<i id="scription-card-btn" class="material-icons" 
-					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
 				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
 				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>

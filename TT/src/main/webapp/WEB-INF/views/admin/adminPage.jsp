@@ -186,6 +186,7 @@ var table =
 		
 	})
 </script>
+<input id="header-title" type="hidden" value="관리자페이지">
 <div class="row tab-frame-myinfo">
 	<div class="col s12 tab-admin">
 		<ul class="tabs center z-depth-2" style="background-color:#424242">

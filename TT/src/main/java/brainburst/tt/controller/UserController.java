@@ -38,6 +38,7 @@ public class UserController {
 		return viewFolder+"/"+viewName;
 	}
 	
+	
 	@RequestMapping("{viewFolder}/{viewName}/{fileName}")
 	public String signUpMove(
 			@PathVariable("viewFolder") String viewFolder, 
@@ -71,18 +72,20 @@ public class UserController {
 	 * 		성공시 회원메인으로 이동!		==> "main/memberIndex"
 	 */
 	@RequestMapping("login")
-	public String login(UserDTO userDTO, HttpSession session){
+	public String login(HttpServletRequest request, UserDTO userDTO){
 		System.out.println("email : "+userDTO.getEmail());
 		System.out.println("password : "+userDTO.getPassword());
 
+		HttpSession session = request.getSession();
 		userDTO = userService.login(userDTO);
 		
 		System.out.println(userDTO);
 		
 		if(userDTO==null){
+			request.setAttribute("login", "fail");
 			return "main/index"; //추후 익셉션 로그인 오류 페이지
 		}else if(userDTO.getLevel().equals("휴먼")){
-			return "main/index"; //추후 익셉션 
+			return "main/index"; //추후 익셉션
 		}
 		session.setAttribute("userDTO", userDTO);
 		
@@ -95,7 +98,6 @@ public class UserController {
 		session.setAttribute("subScriptionList", subScriptionList);
 		
 		System.out.println(subScriptionList);
-		
 		
 		return "main/index";
 	}
