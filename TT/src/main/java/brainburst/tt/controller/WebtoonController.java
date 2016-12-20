@@ -100,12 +100,17 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
-		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
 		String nickname = "GUEST";
+		String type = "webtoon/webtoon";
+		String email = null;
 		if (dto!=null) {
 			nickname = dto.getNickname();
+			email = dto.getEmail();
 		}
-		String type = "webtoon/webtoon";
+		
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, email);
+		System.out.println("WebtoonController104(webtoonDTO):"+webtoonDTO);
+		
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
 		if (webtoonService.checkNickname(webtoonCode, nickname)) {
 			type = "webtoon/myWebtoon";
@@ -226,7 +231,7 @@ public class WebtoonController {
 	public String episodeUploadPage(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode, 
 			@PathVariable("episodeNumber") int episodeNumber) {
 		
-		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode);
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, null);
 
 		request.setAttribute("webtoonDTO", webtoonDTO);
 		request.setAttribute("episodeNumber", episodeNumber);

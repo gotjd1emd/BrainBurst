@@ -111,5 +111,5 @@ public interface WebtoonDAO {
 	 * @param webtoonCode
 	 * @return
 	 */
-	WebtoonDTO selectWebtoon(int webtoonCode);
+	WebtoonDTO selectWebtoon(int webtoonCode, String email);
 }

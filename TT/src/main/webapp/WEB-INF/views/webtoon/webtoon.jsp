@@ -59,7 +59,7 @@
 							var htmlcode = "";
 							htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
 							htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-							htmlcode +="src='/resources"+item.webtoonThumbnail+"'>";
+							htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>'>";
 							htmlcode +="</div><div>";
 							htmlcode +="<span>"+item.webtoonName+"</span><br>";		
 							htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
