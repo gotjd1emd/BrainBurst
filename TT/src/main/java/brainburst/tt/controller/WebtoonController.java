@@ -67,7 +67,7 @@ public class WebtoonController {
 		System.out.println("catogory_code : " + category);
 		System.out.println("webtoonLevel : " + webtoonLevel);
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
-		System.out.println(list.size());
+		System.out.println(list);
 		session.setAttribute("webtoonList", list);
 		return list;
 	}
@@ -167,11 +167,12 @@ public class WebtoonController {
 	 */
 	@RequestMapping("subscription/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") int webtoonCode){
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") String webtoonCode){
+		String[] webtoonCodeA = webtoonCode.split("_");
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
 		System.out.println("°¡Àú¿Â email : "+email + "webtoonCode" + webtoonCode);
-		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, webtoonCode);
+		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]));
 		System.out.println(scriptionList);
 		if (scriptionList != null) {
 			session.setAttribute("subScriptionList", scriptionList);
