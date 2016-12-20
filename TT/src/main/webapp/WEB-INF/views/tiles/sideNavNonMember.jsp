@@ -5,6 +5,14 @@
 <script>
 	$(function() {
 		
+		if(${requestScope.login!=null}){
+			Materialize.toast('로그인을 실패하셨습니다. 아이디, 비밀번호를 확인해 주세요', 3000, 'rounded');
+			var width = $("#toast-container").width();
+	    	console.log(width);
+	    	$("#toast-container").css("margin-left", (width*-1)+209);
+	    	  
+		}
+		
 		var height = $( window ).height() - 370;
 		$(".scription-box").css("height", height);
 		
