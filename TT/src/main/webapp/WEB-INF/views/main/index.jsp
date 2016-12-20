@@ -47,9 +47,9 @@
 								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
 								htmlcode+="</span></div>"
 								htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
-									htmlcode+="<span>작가 이름</span>"
-									htmlcode+="<span style='float: right;'>100%</span>"
-								htmlcode+="</div></div></div>"
+								htmlcode+="<span>작가 이름</span>"
+								htmlcode+="<span style='float: right;'>100%</span>"
+								htmlcode+="</div></div>"
 							}
 						});
 						htmlcode+="</div>";
