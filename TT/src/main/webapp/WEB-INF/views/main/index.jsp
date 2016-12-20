@@ -19,7 +19,6 @@
 			})
 			$("div div ul li a").click(function(){
 				con = "#"+$(this).attr('value');
-				alert(con)
 				$.ajax({
 					url : "/controller/webtoon/webtoonLevelR/funding/"+$(this).attr('value'),
 					type : "get",
