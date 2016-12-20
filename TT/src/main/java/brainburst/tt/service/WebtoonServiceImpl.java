@@ -113,4 +113,9 @@ public class WebtoonServiceImpl implements WebtoonService {
 		
 		return map;
 	}
+
+	@Override
+	public List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname) {
+		return webtoonDAO.selectMyWebtoon(webtoonState, nickname);
+	}
 }

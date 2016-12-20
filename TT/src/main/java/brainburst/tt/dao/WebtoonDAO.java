@@ -112,4 +112,12 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode, String email);
+	
+	/**
+	 * 자신의 작품찾기(연재중,완결)
+	 * @param webtoonState
+	 * @param email
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
 }

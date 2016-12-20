@@ -94,4 +94,11 @@ public interface WebtoonService {
 	 */
 	Map<String, Object> modifyEpisodePage(int episodeSequence);
 	
+	/**
+	 * 자신의 작품찾기(연재중,완결)
+	 * @param webtoonState
+	 * @param nickname
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
 }

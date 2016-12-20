@@ -156,4 +156,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE WEBTOON_CODE = #{webtoonCode}
 	</select>
 	
+	<!-- 자신의 작품찾기(연재중,완결) -->
+	<select id="selectMyWebtoon" resultMap="webtoonDTO" parameterType="map">
+      SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME,
+      FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
+      FROM WEBTOON
+      WHERE NICKNAME = #{nickname} AND LOWER(WEBTOON_STATE) = LOWER(#{webtoonState})
+   </select>
+   
+   <!-- 자신의 작품찾기(펀딩) -->
+	<select id="selectMyFundingWebtoon" resultMap="webtoonDTO" parameterType="map">
+      SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME,
+      FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
+      FROM WEBTOON
+      WHERE NICKNAME = #{nickname} AND LOWER(WEBTOON_LEVEL) = LOWER(#{webtoonLevel})
+   </select>
 </mapper>

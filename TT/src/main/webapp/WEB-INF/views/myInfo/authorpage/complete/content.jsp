@@ -4,7 +4,7 @@
 <script>
 	$("#completedW").click(function(){
 		$.ajax({
-			url : "/controller/webtoon/webtoonLevelR/funding/a",
+			url : "/controller/webtoon/selectMyWebtoon/complete",
 			type : "get",
 			dataType : "json",
 			success : function(result) {
