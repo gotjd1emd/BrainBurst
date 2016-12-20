@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<!-- jQuery 2.2.3 -->
-	<script src="<c:url value='/resources/js/jquery-2.2.1.min.js'/>"></script>
 	<!-- SlimScroll 1.3.0 -->
 	<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
 	<!-- jQuery Knob -->
