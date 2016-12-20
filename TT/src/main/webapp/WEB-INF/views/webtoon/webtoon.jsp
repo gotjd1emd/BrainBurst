@@ -8,6 +8,10 @@
 <script>
 	<!-- chart script -->
 	  $(function () {
+		  $(document).ready(function() {
+				$("#scription-card-btn").css("color", "#F44336");
+				$("#scription-card-btn[name$='_0']").css("color", "#424242");
+			})
 	    $(".knob").knob({
 	      draw: function () {
 	        // "tron" case
@@ -110,7 +114,7 @@
 			</c:choose>
 				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
 				<i id="scription-card-btn" class="material-icons" 
-					name="${item.webtoonCode}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
+					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
 				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
 				<div style="color:snow;">${webtoonDTO.summary}</div>
 			</div>
