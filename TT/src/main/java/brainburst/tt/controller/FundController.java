@@ -39,20 +39,11 @@ public class FundController {
 	}
 	
 	/**
-	펀딩활성화(펀딩모집시작)기능
-	보류...생각좀해보자
-	*/
-	@RequestMapping("startfund")
-	public void startfund() {
-		
-	}
-	
-	/**
-	펀딩진행중인 웹툰클릭시 나오는 다이알로그에서 펀딩신청시
-	@price : 입력된 펀딩금액
+	* 펀딩 신청
+	* @price : 입력된 펀딩금액
 	*/
 	@RequestMapping()
-	public void joinfund(int price) {
+	public void joinfund(HttpServletRequest request, int cashPoint, int webtoonCode, int episodeNumber) {
 		String email = null;
 		
 	}

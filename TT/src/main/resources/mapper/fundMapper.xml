@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fundMapper">
+
+	<resultMap type="webtoonDTO" id="webtoonDTO">
+		<id column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="WEBTOON_NAME" property="webtoonName"/>
+		<result column="WEBTOON_LEVEL" property="webtoonLevel"/>
+		<result column="WEBTOON_STATE" property="webtoonState"/>
+		<result column="CATEGORY_CODE" property="categoryCode"/>
+		<result column="PENALTY" property="penalty"/>
+		<result column="NICKNAME" property="nickname"/>
+		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
+		<result column="SUMMARY" property="summary" />
+		<result column="WEBTOON_THUMBNAIL" property="webtoonThumbnail"/>
+		<result column="SEBSCRIPTION_SEQUENCE" property="subscriptionSequence"/>
+	</resultMap>
+	
+	<resultMap type="episodeDTO" id="episodeDTO">
+		<id column="EPISODE_SEQUENCE" property="episodeSequence"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="EPISODE_NUMBER" property="episodeNumber"/>
+		<result column="HITS" property="hits"/>
+		<result column="RECOMMENDATION" property="recommendation"/>
+		<result column="UPLOAD_DATE" property="uploadDate"/>
+		<result column="EPISODE_TITLE" property="episodeTitle"/>
+		<result column="AUTHOR_WORD" property="authorWord"/>
+		<result column="THUMBNAIL" property="thumbnail"/>
+		<result column="FUND_CODE" property="fundCode"/>
+	</resultMap>
+	
+	
+
+</mapper>
