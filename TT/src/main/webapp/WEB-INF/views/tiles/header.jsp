@@ -72,6 +72,8 @@
              }
            );
          
+         
+         /* 검색기능 */
          $("#search").keypress(function(event) { 
              if (event.keyCode == 13){
                 $('#search-modal').modal('open');

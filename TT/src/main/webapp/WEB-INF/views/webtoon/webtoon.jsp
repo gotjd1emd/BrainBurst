@@ -6,12 +6,13 @@
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 <script>
-	<!-- chart script -->
 	  $(function () {
 		  $(document).ready(function() {
 				$("#scription-card-btn").css("color", "#F44336");
 				$("#scription-card-btn[name$='_0']").css("color", "#424242");
 			})
+
+		/* chart script */
 	    $(".knob").knob({
 	      draw: function () {
 	        // "tron" case
@@ -23,9 +24,9 @@
 	              , ea                            // Previous end angle
 	              , eat = sat + a                 // End angle
 	              , r = true;
-	        }
-	      }
-	    });
+	        	}
+	      		}
+	    	});
 	  
 	  /* 일반기능들 */
 		$(".episode-list").find(".row").on("click", (function(){
@@ -163,23 +164,23 @@
 			</div>
 		</div>
 		<div id="episode-list" class="episode-list">
-	<c:forEach var="episode" items="${episodeList }" varStatus="status">
-		<div class="z-depth-1 hoverable radius white">
-			<div class="row radius">
-				<div class="episode_thumbnail">
-					<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
-				</div>
-				<div class="col s5 episode-content">
-					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
-					추천 : ${episode.recommendation}
-				</div>
+		<c:forEach var="episode" items="${episodeList}" varStatus="status">
+			<div class="z-depth-1 hoverable radius white">
+				<div class="row radius">
+					<div class="episode_thumbnail">
+						<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					</div>
+					<div class="col s5 episode-content">
+						No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
+						추천 : ${episode.recommendation}
+					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-	                  <input type="text" class="knob" value="${episode.hits}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
-	                </div>
+						<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+					</div>
 				</div>
+			</div>
+		</c:forEach>
 		</div>
-	</c:forEach>
-	</div>
 	
 	
 	

@@ -10,6 +10,10 @@
 <style>
 
 </style>
+<!-- SlimScroll 1.3.0 -->
+<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
+<!-- jQuery Knob -->
+<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 <script>
 
 		$(function() {
@@ -18,7 +22,23 @@
 				$(".scription-a-index[name$='_0']").css("color", "#424242");
 			})
 			
+			/* 라인차트 */
+			$(".knob").knob({
+		      draw: function () {
+		        // "tron" case
+		        if (this.$.data('skin') == 'tron') {
+	
+		          var a = this.angle(this.cv)  // Angle
+		              , sa = this.startAngle          // Previous start angle
+		              , sat = this.startAngle         // Start angle
+		              , ea                            // Previous end angle
+		              , eat = sat + a                 // End angle
+		              , r = true;
+		        }
+		      }
+			})
 			
+			/* 카테고리별 웹툰 이동 */
 			$("div div ul li a").click(function(){
 				con = "#"+$(this).attr('value');
 				$.ajax({
@@ -39,17 +59,17 @@
 								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
 								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 7) {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
+								if (item.webtoonName.length <= 8) {
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName+"</span>"	
 								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName.substring(0,7)+"...</span>"	
 								}
 								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
 								htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
 								htmlcode+="</span></div>"
 								htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
-								htmlcode+="<span>작가 이름</span>"
+								htmlcode+="<span>"+item.nickname+"</span>"
 								htmlcode+="<span style='float: right;'>100%</span>"
 								htmlcode+="</div></div>"
 							}
@@ -216,9 +236,14 @@
 									</span>
 								</div>
 								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4">${item.webtoonName}
+									<span class="card-title grey-text text-darken-4" 
+									style="color: darksalmon;font-size: 31px;font-weight: 700;margin-left: 33px;">${item.webtoonName}
 									<i class="material-icons right">close</i></span>
-									<p>${item.summary}</p>
+									<p style="color:grey;">${item.summary} ${item.summary} ${item.summary} ${item.summary} ${item.summary}</p>
+									<div style="text-align:center;">
+									<input type="text" class="knob" value="60" 
+									data-width="200" data-height="200" data-fgColor="#f56954" data-readonly="true">
+								</div>
 								</div>   
 							</div>
 							</c:otherwise>
@@ -242,14 +267,14 @@
 								</div>
 								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 									<c:choose>
-										<c:when test="${fn:length(item.webtoonName) <= 7}">
-											<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+										<c:when test="${fn:length(item.webtoonName) <= 8}">
+											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
 											${item.webtoonName}
 											</span>
 										</c:when>
 										<c:otherwise>
-											<span class="card-title activator grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
-											${fn:substring(item.webtoonName,0,5)}...
+											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
+											${fn:substring(item.webtoonName,0,8)}...
 											</span>
 										</c:otherwise>
 									</c:choose>
@@ -260,7 +285,7 @@
 									</span>
 								</div>
 								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
-									<span>작가 이름</span>
+									<span>${item.nickname}</span>
 									<span style="float: right;">100%</span>
 								</div> 
 							</div>
@@ -273,14 +298,14 @@
 								</div>
 								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 									<c:choose>
-										<c:when test="${fn:length(item.webtoonName) <= 7}">
-											<span class="card-title grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
+										<c:when test="${fn:length(item.webtoonName) <= 8}">
+											<span class="card-title grey-text text-darken-4" style="font-size:16px; font-weight:500;">
 											${item.webtoonName}
 											</span>
 										</c:when>
 										<c:otherwise>
-											<span class="card-title grey-text text-darken-4" style="font-size:12.7px; font-weight:500;">
-											${fn:substring(item.webtoonName,0,5)}...
+											<span class="card-title grey-text text-darken-4" style="font-size:16px; font-weight:500;">
+											${fn:substring(item.webtoonName,0,8)}...
 											</span>
 										</c:otherwise>
 									</c:choose>
@@ -291,7 +316,7 @@
 									</span>
 								</div>
 								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
-									<span>작가 이름</span>
+									<span>${item.nickname}</span>
 									<span style="float: right;">100%</span>
 								</div> 
 							</div>

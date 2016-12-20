@@ -2,9 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!-- Modal Structure -->
 
-<!-- 아이디 찾기 Modal Structure -->
+<!-- 펀딩 웹툰 신청 다이얼로그 -->
 <div id="funding-webtoon-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post">
 		<div id="inputDiv">
@@ -15,9 +14,9 @@
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
-				<option value="1">졸라맨의 모험</option>
-				<option value="2">마음의 소리</option>
-				<option value="3">썸툰</option>
+				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+					<option value=status>${item.webtoonName}</option>
+				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
 		<div class="input-field col s12">
@@ -44,7 +43,7 @@
 	</form>
 </div>
 
-<!-- Modal Structure -->
+<!-- 웹툰 상태 처리 다이어로그 -->
 <div id="webtoon-state-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post">
 		<div id="inputDiv">
@@ -55,9 +54,9 @@
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
-				<option value="1">졸라맨의 모험</option>
-				<option value="2">마음의 소리</option>
-				<option value="3">썸툰</option>
+				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+					<option value=status>${item.webtoonName}</option>
+				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
 		<div class="input-field col s12">
@@ -88,7 +87,7 @@
 	</form>
 </div>
 
-<!-- Modal Structure -->
+<!-- 웹툰 수정 하기 버튼 -->
 <div id="webtoon-modify-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post">
 		<div id="inputDiv">
@@ -99,9 +98,9 @@
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
-				<option value="1">졸라맨의 모험</option>
-				<option value="2">마음의 소리</option>
-				<option value="3">썸툰</option>
+				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+					<option value=status>${item.webtoonName}</option>
+				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
 	</div>

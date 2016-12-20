@@ -1,8 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<!-- SlimScroll 1.3.0 -->
+	<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
+	<!-- jQuery Knob -->
+	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 	<script>
+	
+	
 		$(function() {
+			
+			/* chart script */
+		    $(".knob").knob({
+		      draw: function () {
+		        // "tron" case
+		        if (this.$.data('skin') == 'tron') {
+
+		          var a = this.angle(this.cv)  // Angle
+		              , sa = this.startAngle          // Previous start angle
+		              , sat = this.startAngle         // Start angle
+		              , ea                            // Previous end angle
+		              , eat = sat + a                 // End angle
+		              , r = true;
+		        	}
+		      		}
+		    	});
+			
 			$(document).ready(function() {
 				$("#scription-card-btn").css("color", "#F44336");
 				$("#scription-card-btn[name$='_0']").css("color", "#424242");
@@ -151,8 +174,8 @@
 					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}
 				</div>
-				<div class="col s4 episode_chart">
-					<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 				</div>
 			</div>
 		</div>
@@ -163,7 +186,7 @@
 	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
 		<c:forEach var="episode" items="${episodeList }" varStatus="status">
 		<div class="z-depth-1 hoverable radius white">
-			<div class="row radius">
+			<div class="row radius" style="background-color:lightyellow">
 				<div class="episode_thumbnail">
 					<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
@@ -171,8 +194,8 @@
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}
 				</div>
-				<div class="col s4 episode_chart">
-					<img class="chart" src="https://ykyuen.files.wordpress.com/2013/05/chart-js.png">
+				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 				</div>
 			</div>
 		</div>
