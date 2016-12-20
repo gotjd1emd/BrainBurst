@@ -487,7 +487,7 @@
 									<span id="ss" style="padding-left: 4%;">
 										<a href="#"> ${item.nickname}</a>
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}" style="margin-top:1%!important;">grade
+											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
 										</i>
 									</span>
 								</div>
