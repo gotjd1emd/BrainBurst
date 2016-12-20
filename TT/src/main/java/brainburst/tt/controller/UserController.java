@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.junit.experimental.theories.ParametersSuppliedBy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -251,4 +252,14 @@ public class UserController {
 	 * 회원 작가 신청
 	 * */
 	
+	
+	/**
+	 * 이메일 중복 체크
+	 * */
+	@RequestMapping("emailCheck/{email:.+}")
+	@ResponseBody
+	public String emailCheck(@PathVariable("email") String email){
+		int check = userService.emailCheck(email);
+		return check+"";
+	}
 }

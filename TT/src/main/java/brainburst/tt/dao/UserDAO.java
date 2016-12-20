@@ -188,5 +188,4 @@ public interface UserDAO {
 	 * */
 	public UserDTO applyAuthor(String email);
 	
-	
 }

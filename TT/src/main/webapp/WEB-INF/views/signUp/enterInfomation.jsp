@@ -1,6 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+	<script>
+	$(function () {
+		$("#email-signup").keyup(function () {
+			$.ajax({
+				url : "/controller/user/emailCheck/"+$(this).val(),
+				type : "get",
+				dataType : "text",
+				success : function(result) {
+					//result 1일 떄 중복 O, 0일 때 중복 X
+					if(result==1){
+						$("#label-email-check-disabled").text("중복된 이메일이 있습니다.")
+						$("#label-email-check-disabled").css("color", "#F44336");
+					}else{
+						$("#label-email-check-disabled").text("중복된 이메일이 없습니다.")
+						$("#label-email-check-disabled").css("color", "#4CAF50");
+					}
+				},
+				error : function() {
+				}
+			})
+		})
+	})
+	
+	</script>
 	<!-- 진행 순서도(카테고리)를 위한 hidden태그 -->
 	<input id="header-title" type="hidden" value="정보입력">
 	<input type="hidden" name="navCategory" value="2">
@@ -17,10 +41,16 @@
 	<div class="signup_box z-depth-2">
 		 <form method="post" name="enterInfomationForm" action="<c:url value='/user/signedUp'/>">
 			<div class="info-box">
-				<div class="input-field">
-		          <input id="email-signup" type="email" class="validate" name="email" autocomplete=off>
-		          <label for="email-signup">이메일</label>
-		        </div>
+				<div class="row">
+					<div class="input-field col s9">
+			          <input id="email-signup" type="email" class="validate" name="email" autocomplete=off>
+			          <label for="email-signup">이메일</label>
+			        </div>
+			        <div class="input-field col s3">
+			          <input disabled id="email-check-disabled" type="email" class="validate" name="email" autocomplete=off>
+			          <label id="label-email-check-disabled" for="email-check-disabled">이메일을 입력해 주세요</label>
+			        </div>
+				</div>
 		        <div class="input-field">
 		          <input id="name-signup" type="text" class="validate" name="name" autocomplete=off>
 		          <label for="name-signup">이름</label>
