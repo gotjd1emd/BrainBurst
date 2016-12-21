@@ -49,13 +49,8 @@
 						var htmlcode = "";
 						$(con).empty();
 						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
+								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; margin-left:-5%;margin-right:5%'>";
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='margin: -5px 7px 20px 0px !important; width:221px!important;'>"
 								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
 								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
@@ -71,8 +66,7 @@
 								htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
 								htmlcode+="<span>"+item.nickname+"</span>"
 								htmlcode+="<span style='float: right;'>100%</span>"
-								htmlcode+="</div></div>"
-							}
+								htmlcode+="</div></div></div>"
 						});
 						htmlcode+="</div>";
 						$(con).append(htmlcode); 
