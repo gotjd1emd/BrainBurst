@@ -3477,3 +3477,4 @@ insert into subscription (subscription_sequence,email,webtoon_code) values (subs
 
 
 commit;
+

@@ -3,7 +3,6 @@ drop table exchange;
 drop sequence exchange_seq;
 
 drop table recommend;
-drop table fund_time_limit;
 drop table subscription;
 drop table apply_paid;
 drop table pay_history;
