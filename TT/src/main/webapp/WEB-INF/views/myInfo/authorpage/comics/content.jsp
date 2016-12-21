@@ -21,14 +21,13 @@
 					htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
 					htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 					htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-					if (item.webtoonName.length <= 7) {
+					if (item.webtoonName.length <= 9) {
 						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName+"</span>"	
 					} else {
-						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
+						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:12.7px; font-weight:500;'>"+item.webtoonName.substring(0,8)+"...</span>"	
 					}
 					htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 					htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-					htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"' style='margin-top:1%!important;'>grade</i>"
 					htmlcode+="</span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>"+item.webtoonName
 					htmlcode+="<i class='material-icons right'>close</i></span><p>"+item.summary+"</p></div></div>"
 					}
