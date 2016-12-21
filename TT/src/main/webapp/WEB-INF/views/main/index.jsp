@@ -81,7 +81,9 @@
 						$(".scription-a-index[name$='_0']").css("color", "#424242");
 					},
 					error : function() {
-						alert("다시 시도해주세요")
+						Materialize.toast('다시시도 해주세요.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
 					}
 				})
 			})
@@ -123,7 +125,9 @@
 								});
 						},
 						error : function() {
-							alert("로그인후 사용하세요.")
+							Materialize.toast('로그인 후 구독이 가능합니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						}
 					})
 				} else if (
@@ -170,7 +174,9 @@
 								
 						},
 						error : function() {
-							alert("로그인후 사용하세요.")
+							Materialize.toast('로그인 후 구독이 가능합니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						}
 					})
 				}
