@@ -101,6 +101,7 @@ public class AuthorContoller {
 	등록하면 정보값 가지고 웹툰테이블 생성
 	이후 작가페이지의 연재중웹툰탭으로 이동
 	*/
+	@RequestMapping("registerWebtoon")
 	public String addSeries(HttpServletRequest request, WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO) throws Exception {
 		//뷰에서 보내는 웹툰정보
 		List<MultipartFile> images = episodeDTO.getImage();
@@ -146,13 +147,13 @@ public class AuthorContoller {
 	
 	/**
 	작품수정
-	수정후 해당 작품의 웹툰페이지로 이동
 	*/
-	public String updateSeries(HttpServletRequest request) {
-		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
-		int webtoonCode = webtoonDTO.getWebtoonCode();
-		authorService.updateSeries(webtoonDTO);
-		return "webtoonPage/"+webtoonCode;
+	@RequestMapping("modifyWebtoon")
+	public String modifyWebtoon(HttpServletRequest request, WebtoonDTO webtoonDTO) {
+		
+		authorService.modifyWebtoon(webtoonDTO);
+		
+		return "author/authorPage";
 	}
 	
 	/**

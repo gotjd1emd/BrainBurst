@@ -79,4 +79,18 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	int deleteImage(ImageDTO imageDTO);
+	
+	/**
+	 * À¥Å÷ µî·Ï
+	 * @param webtoonDTO
+	 * @return
+	 */
+	int registerWebtoon(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * À¥Å÷ ¼öÁ¤
+	 * @param webtoonDTO
+	 * @return
+	 */
+	int modifyWebtoon(WebtoonDTO webtoonDTO);
 }

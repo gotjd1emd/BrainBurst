@@ -74,4 +74,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteImage" parameterType="imageDTO">
 		DELETE FROM IMAGE WHERE IMAGE_INDEX = #{imageIndex} and EPISODE_SEQUENCE = #{episodeSequence}
 	</delete>
+	
+	<!-- registerWebtoon -->
+	<insert id="registerWebtoon" parameterType="webtoonDTO">
+		INSERT INTO WEBTOON(WEBTOON_CODE, WEBTOON_NAME, WEBTOON_STATE, CATEGORY_CODE, NICKNAME, SUMMARY, WEBTOON_THUMBNAIL) 
+		VALUES(WEBTOON_SEQ.NEXTVAL, #{webtoonName}, 'serial', #{categoryCode}, #{nickname}, #{summary}, #{webtoonThumbnail})
+	</insert>
+	
+	<!-- modifyWebtoon -->
+	<update id="modifyWebtoon" parameterType="webtoonDTO">
+		UPDATE WEBTOON SET WEBTOON_NAME = #{webtoonName}, CATEGORY_CODE = #{categoryCode}, 
+							SUMMARY = #{summary}, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
+		WHERE WEBTOON_CODE = #{webtoonCode}
+	</update>
 </mapper>

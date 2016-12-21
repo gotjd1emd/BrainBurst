@@ -28,6 +28,7 @@ public interface AuthorService {
 	 * 사용자가 작성한 정보로 사용자의 작품을 등록
 	 * @param webtoonDTO 뷰에서 보내온 웹툰정보가 담긴 DTO
 	 * @param episodeDTO 뷰에서 보내온 첫화 정보가 담긴 DTO
+	 * @param List<ImageDTO> 에피소드의 이미지파일이 담긴 DTO
 	 * @return 성공여부 1:성공 0:실패
 	 */
 	int addSeries (WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO, List<ImageDTO> imageList);
@@ -38,7 +39,7 @@ public interface AuthorService {
 	 * @param webtoonDTO 뷰에서 보내온 웹툰정보가 담긴 DTO
 	 * @return 성공여부 1:성공 0:실패
 	 */
-	int updateSeries (WebtoonDTO webtoonDTO);
+	int modifyWebtoon(WebtoonDTO webtoonDTO);
 	
 	/**
 	 * 웹툰상태

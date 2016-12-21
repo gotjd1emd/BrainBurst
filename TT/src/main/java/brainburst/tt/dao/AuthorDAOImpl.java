@@ -74,4 +74,14 @@ public class AuthorDAOImpl implements AuthorDAO {
 	public int deleteImage(ImageDTO imageDTO) {
 		return sqlSession.delete("authorMapper.deleteImage", imageDTO);
 	}
+	
+	@Override
+	public int registerWebtoon(WebtoonDTO webtoonDTO) {
+		return sqlSession.insert("authorMapper.registerWebtoon", webtoonDTO);
+	}
+	
+	@Override
+	public int modifyWebtoon(WebtoonDTO webtoonDTO) {
+		return sqlSession.update("authorMapper.modifyWebtoon", webtoonDTO);
+	}
 }
