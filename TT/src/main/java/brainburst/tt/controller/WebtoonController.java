@@ -102,6 +102,8 @@ public class WebtoonController {
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
+		
+		
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String nickname = "GUEST";
@@ -113,6 +115,12 @@ public class WebtoonController {
 		}
 		
 		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, email);
+		/*
+		 * 웹툰상태가 블라인드면 오류발생
+		 */
+		if (webtoonDTO.getWebtoonState().equals("blind")) {
+			/*나중에 넣는다!*/
+		}
 		System.out.println("WebtoonController104(webtoonDTO):"+webtoonDTO);
 		
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
