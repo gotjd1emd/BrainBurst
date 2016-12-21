@@ -100,7 +100,7 @@ $(document).ready(function() {
 							var htmlcode = "";
 							htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
 							if(item.webtoonLevel == 'funding'){
-								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:#d0425c !important;'>";
 							}else if(item.webtoonLevel == 'free'){
 								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
 							}else if(item.webtoonLevel == 'paid'){
@@ -146,7 +146,7 @@ $(document).ready(function() {
 							var htmlcode = "";
 							htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
 							if(level == 'funding'){
-								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:#d0425c !important;'>";
 							}else if(level == 'free'){
 								htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
 							}else{
