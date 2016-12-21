@@ -64,6 +64,7 @@
 	}
 </script>
 
+<form method="post" action="" encType="multipart/form-data">
 <input id="header-title" type="hidden" value="웹툰 업로드">
 <div class="row" style="margin-top: 20px;">
 	<div class="col s6">
@@ -147,3 +148,4 @@
 	</button>
 	<a class="waves-effect waves-light btn color-500">뒤로가기</a>
 </div>
+</form>
