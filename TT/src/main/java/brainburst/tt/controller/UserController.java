@@ -84,7 +84,7 @@ public class UserController {
 		
 		if(userDTO==null){
 			request.setAttribute("login", "fail");
-			return "main/index"; //추후 익셉션 로그인 오류 페이지
+			return "forward:/"; //추후 익셉션 로그인 오류 페이지
 		}else if(userDTO.getLevel().equals("휴먼")){
 			return "main/index"; //추후 익셉션
 		}
