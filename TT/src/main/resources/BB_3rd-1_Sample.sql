@@ -42,12 +42,15 @@ values ('pedro@hanmail.net','페드로','pedro','01099556644',4300,'독자','페드로',
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
+values ('nayeon@naver.com','나연','nayeon','01093441366',1000,'독자','임나연','여','950922');
+
+insert into user_information 
+(email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
 values ('dahyeon@gmail.com','다현','dahyeon','01088997788',1000,'독자','김다현','남','980528');
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
 values ('girlfriend@hanmail.net','유주','girfriend','01034112211',3000,'독자','최유나','남','971004');
-
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
@@ -134,7 +137,7 @@ values ('I','etc');
 commit;
 
 -- webtoon 타이틀 + 제목 
-select * from webtoon;
+
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
@@ -154,7 +157,7 @@ values (webtoon_seq.nextval,'26년','funding','complete','C','green', '병재', 1, 
 --
 --DELETE FROM EPISODE WHERE EPISODE_SEQUENCE = 1
 --SELECT * FROM EPISODE;
-select * from episode;
+--select * from episode;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -491,168 +494,167 @@ commit;
 ---***********펀딩웹툰 어게인  6회 ~ 회차별 펀드 모금 
 
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,6,'2011-01-01','2011-01-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,7,'2011-01-08','2011-01-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,8,'2011-01-15','2011-01-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,9,'2011-01-22','2011-01-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,10,'2011-01-29','2011-02-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,11);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,11,'2011-02-05','2011-02-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,12);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,12,'2011-02-12','2011-02-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,13);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,13,'2011-02-19','2011-02-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,14);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,14,'2011-02-26','2011-03-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,15);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,15,'2011-03-05','2011-03-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,16);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,16,'2011-03-12','2011-03-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,17);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,17,'2011-03-19','2011-03-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,18);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,18,'2011-03-26','2011-03-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,19);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,19,'2011-03-26','2011-03-31');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,20);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,20,'2011-04-02','2011-04-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,21);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,21,'2011-04-09','2011-04-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,22);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,22,'2011-04-16','2011-04-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,23);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,23,'2011-04-23','2011-04-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,24);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,24,'2011-05-02','2011-05-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,25);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,25,'2011-05-09','2011-05-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,26);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,26,'2011-05-16','2011-05-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,27);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,27,'2011-05-23','2011-05-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,28);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,28,'2011-05-30','2011-06-04');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,29);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,29,'2011-06-06','2011-06-11');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,30);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,30,'2011-06-13','2011-06-18');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,31);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,31,'2011-06-20','2011-06-25');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,32);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,32,'2011-06-27','2011-07-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,33);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,33,'2011-07-04','2011-07-09');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,34);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,34,'2011-07-11','2011-07-16');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,35);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,35,'2011-07-18','2011-07-23');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,36);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,36,'2011-07-25','2011-07-30');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,37);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,37,'2011-08-01','2011-08-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,38);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,38,'2011-08-08','2011-08-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,39);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,39,'2011-08-15','2011-08-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,40);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,40,'2011-08-22','2011-08-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,41);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,41,'2011-08-29','2011-09-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,42);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,42,'2011-09-05','2011-09-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,43);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,43,'2011-09-12','2011-09-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,44);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,44,'2011-09-19','2011-09-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,45);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,45,'2011-09-26','2011-10-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,46);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,46,'2011-10-03','2011-10-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,47);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,47,'2011-10-10','2011-10-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,48);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,48,'2011-10-17','2011-10-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,49);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,49,'2011-10-24','2011-10-29');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,50);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,50,'2011-10-31','2011-11-05');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,51);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,51,'2011-11-07','2011-11-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,52);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,52,'2011-11-14','2011-11-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,53);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,53,'2011-11-21','2011-11-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,54);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,54,'2011-11-28','2011-12-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,55);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,55,'2011-12-05','2011-12-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,56);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,56,'2011-12-12','2011-12-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,57);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,57,'2011-12-19','2011-12-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,58);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,58,'2011-12-26','2011-12-31');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,2,59);
-
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,2,59,'2012-01-02','2011-01-07');
 
 
 --select * from fund;
@@ -1102,379 +1104,378 @@ values(1, 105, '/webtoon/sf/제5화 - 1부 어게인 5화_11.jpg');
 --select * from fund order by fund_code;
 
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,6,'2009-01-01','2009-01-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,7,'2009-01-08','2009-01-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,8,'2009-01-15','2009-01-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,9,'2009-01-22','2009-01-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,10,'2009-01-29','2009-02-03');
 
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,11,'2009-02-05','2009-02-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,11);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,12,'2009-02-12','2009-02-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,12);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,13,'2009-02-19','2009-02-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,13);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,14,'2009-02-26','2009-03-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,14);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,15,'2009-03-05','2009-03-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,15);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,16,'2009-03-12','2009-03-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,16);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,17,'2009-03-19','2009-03-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,17);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,18,'2009-03-26','2009-03-31');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,18);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,19,'2009-04-02','2009-04-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,19);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,20,'2009-04-09','2009-04-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,20);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,21,'2009-04-16','2009-04-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,21);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,22,'2009-04-23','2009-04-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,22);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,23,'2009-04-30','2009-05-05');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,23);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,24,'2009-05-07','2009-05-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,24);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,25,'2009-05-14','2009-05-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,25);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,26,'2009-05-21','2009-05-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,26);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,27,'2009-05-28','2009-06-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,27);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,28,'2009-06-04','2009-06-09');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,28);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,29,'2009-06-11','2009-06-16');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,29);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,30,'2009-06-18','2009-06-23');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,30);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,31,'2009-06-25','2009-06-30');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,31);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,32,'2009-07-02','2009-07-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,32);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,33,'2009-07-09','2009-07-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,33);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,34,'2009-07-16','2009-07-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,34);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,35,'2009-07-23','2009-07-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,35);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,36,'2009-07-30','2009-08-04');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,36);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,37,'2009-08-06','2009-08-11');-------------------    
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,37);
 
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,38,'2009-08-13','2009-08-18');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,38);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,39,'2009-08-20','2009-08-25');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,39);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,40,'2009-08-27','2009-09-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,40);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,41,'2009-09-03','2009-09-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,41);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,42,'2009-09-10','2009-09-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,42);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,43,'2009-09-17','2009-09-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,43);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,44,'2009-09-24','2009-09-29');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,44);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,45,'2009-10-01','2009-10-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,45);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,46,'2009-10-08','2009-10-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,46);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,47,'2009-10-15','2009-10-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,47);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,48,'2009-10-22','2009-10-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,48);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,49,'2009-10-29','2009-11-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,49);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,50,'2009-11-05','2009-11-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,50);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,51,'2009-11-12','2009-11-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,51);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,52,'2009-11-19','2009-11-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,52);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,53,'2009-11-26','2009-12-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,53);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,54,'2009-12-03','2009-12-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,54);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,55,'2009-12-10','2009-12-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,55);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,56,'2009-12-17','2009-12-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,56);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,57,'2009-12-24','2009-12-29');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,57);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,58,'2009-12-31','2010-01-05');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,58);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,59,'2010-01-07','2010-01-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,59);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,60,'2010-01-14','2010-01-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,60);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,61,'2010-01-21','2010-01-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,61);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,62,'2010-01-28','2010-02-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,62);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,63,'2010-02-04','2010-02-09');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,63);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,64,'2010-02-11','2010-02-16');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,64);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,65,'2010-02-18','2010-02-23');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,65);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,66,'2010-02-25','2010-03-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,66);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,67,'2010-03-04','2010-03-09');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,67);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,68,'2010-03-11','2010-03-16');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,68);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,69,'2010-03-18','2010-03-23');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,69);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,70,'2010-03-25','2010-03-30');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,70);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,71,'2010-04-01','2010-04-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,71);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,72,'2010-04-08','2010-04-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,72);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,73,'2010-04-15','2010-04-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,73);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,74,'2010-04-22','2010-04-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,74);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,75,'2010-04-29','2010-05-04');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,75);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,76,'2010-05-06','2010-05-11');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,76);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,77,'2010-05-13','2010-05-18');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,77);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,78,'2010-05-20','2010-05-25');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,78);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,79,'2010-05-27','2010-06-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,79);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,80,'2010-06-03','2010-06-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,80);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,81,'2010-06-10','2010-06-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,81);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,82,'2010-06-17','2010-06-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,82);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,83,'2010-06-24','2010-06-29');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,83);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,84,'2010-07-01','2010-07-06');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,84);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,85,'2010-07-08','2010-07-13');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,85);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,86,'2010-07-15','2010-07-20');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,86);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,87,'2010-07-22','2010-07-27');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,87);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,88,'2010-07-29','2010-08-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,88);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,89,'2010-08-05','2010-08-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,89);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,90,'2010-08-12','2010-08-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,90);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,91,'2010-08-19','2010-08-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,91);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,92,'2010-08-26','2010-08-31');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,92);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,93,'2010-09-02','2010-09-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,93);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,94,'2010-09-09','2010-09-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,94);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,95,'2010-09-16','2010-09-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,95);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,96,'2010-09-23','2010-09-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,96);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,97,'2010-09-30','2010-10-05');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,97);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,98,'2010-10-07','2010-10-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,98);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,99,'2010-10-14','2010-10-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,99);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,100,'2010-10-21','2010-10-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,100);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,101,'2010-10-28','2010-11-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,101);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,102,'2010-11-04','2010-11-09');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,102);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,103,'2010-11-11','2010-11-16');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,103);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,104,'2010-11-18','2010-11-23');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,104);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,105,'2010-11-25','2010-11-30');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,105);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,106,'2010-12-02','2010-12-07');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,106);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,107,'2010-12-09','2010-12-14');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,107);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,108,'2010-12-16','2010-12-21');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,108);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,109,'2010-12-23','2010-12-28');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,109);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,110,'2010-12-30','2011-01-04');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,110);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,111,'2011-01-06','2011-01-11');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,111);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,112,'2010-01-13','2011-01-18');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,112);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,113,'2010-01-20','2011-01-25');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,113);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,114,'2011-01-27','2011-02-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,114);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,115,'2011-02-03','2011-02-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,115);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,116,'2011-02-10','2011-02-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,116);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,117,'2011-02-17','2011-02-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,117);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,118,'2011-02-24','2011-03-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,118);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,119,'2011-03-03','2011-03-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,119);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,120,'2011-03-10','2011-03-15');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,120);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,121,'2011-03-17','2011-03-22');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,121);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,122,'2011-03-24','2011-03-29');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,122);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,123,'2011-03-31','2011-04-05');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,123);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,124,'2011-04-07','2011-04-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,124);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,125,'2011-04-14','2011-04-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,125);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,126,'2011-04-21','2011-04-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,126);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,127,'2011-04-28','2011-05-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,127);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,128,'2011-05-05','2011-05-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,128);
-
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,3,129);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,3,129, '2011-05-12','2011-05-17');
 
 --select * from fund;
 --------------------------------------------------------------------------------------------
@@ -2418,26 +2419,55 @@ insert into webtoon
 values (webtoon_seq.nextval,'바보','funding','complete','D','green', '고은', 1, '바보-?!', '/webtoon/webtoonThumbnail/1.jpg');
 
 
-
+---------------------------------확인 21일 3시 19분 ------------------------------------------------------
   -- drama funding 회차 
- --select  * from fund;
+ --select  * from fund;------끝나는 날짜 넣기
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,4,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,6,'2014-02-05','2014-02-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,4,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,7,'2014-02-12','2014-02-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,4,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,8,'2014-02-19','2014-02-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,4,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,9,'2014-02-26','2014-03-03');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,4,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,10,'2014-03-05','2014-03-10');
 
-select * from fund;
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,11,'2014-03-12','2014-03-17');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,12,'2014-03-19','2014-03-24');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,13,'2014-03-26','2014-03-31');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,14,'2014-04-02','2014-04-07');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,15,'2014-04-09','2014-04-14');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,16,'2014-04-16','2014-04-21');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,17,'2014-04-23','2014-04-28');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,18,'2014-04-30','2014-05-05');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,4,19,'2014-05-07','2014-05-12');
+
+
+
+--select * from fund;
 ---episode 정보
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
@@ -2478,50 +2508,50 @@ values (episode_seq.NEXTVAL, 4, 9, 0, 0, '2014-02-26', '제9화 - 사진', '작가의말
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 1, 0, 0, '2014-01-01', '제1화 - 동네', '작가의말 바브바브', '/webtoon/episodeThumbnail/30.jpg', null);
+values (episode_seq.NEXTVAL, 4, 10, 0, 0, '2014-03-05', '제10화 - 시선', '작가의말 바브바브', '/webtoon/episodeThumbnail/30.jpg', 183);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 2, 0, 0, '2014-01-08', '제2화 - 귀가', '작가의말 바브바브', '/webtoon/episodeThumbnail/31.jpg', null);
+values (episode_seq.NEXTVAL, 4, 11, 0, 0, '2014-03-12', '제11화 - 웃음_1', '작가의말 바브바브', '/webtoon/episodeThumbnail/31.jpg', 184);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 3, 0, 0, '2014-01-15', '제3화 - 별', '작가의말 바브바브', '/webtoon/episodeThumbnail/32.jpg', null);
+values (episode_seq.NEXTVAL, 4, 12, 0, 0, '2014-03-19', '제11화 - 웃음_2', '작가의말 바브바브', '/webtoon/episodeThumbnail/32.jpg', 185);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 4, 0, 0, '2014-01-22', '제4화 - 카페', '작가의말 바브바브', '/webtoon/episodeThumbnail/33.jpg', null);
+values (episode_seq.NEXTVAL, 4, 13, 0, 0, '2014-03-26', '제12화 - 자리', '작가의말 바브바브', '/webtoon/episodeThumbnail/33.jpg', 186);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 5, 0, 0, '2014-01-29', '제5화 - 신발', '작가의말 바브바브', '/webtoon/episodeThumbnail/34.jpg', null);
+values (episode_seq.NEXTVAL, 4, 14, 0, 0, '2014-04-02', '제13화 - 그림자_1', '작가의말 바브바브', '/webtoon/episodeThumbnail/34.jpg', 187);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 6, 0, 0, '2014-02-05', '제6화 - 친구', '작가의말 바브바브', '/webtoon/episodeThumbnail/35.jpg', 179);
+values (episode_seq.NEXTVAL, 4, 15, 0, 0, '2014-04-09', '제13화 - 그림자_2', '작가의말 바브바브', '/webtoon/episodeThumbnail/35.jpg', 188);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 7, 0, 0, '2014-02-12', '제7화 - 토스트', '작가의말 바브바브', '/webtoon/episodeThumbnail/36.jpg', 180);
+values (episode_seq.NEXTVAL, 4, 16, 0, 0, '2014-04-16', '제14화 - 상수', '작가의말 바브바브', '/webtoon/episodeThumbnail/36.jpg', 189);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 8, 0, 0, '2014-02-19', '제8화 - 커피', '작가의말 바브바브', '/webtoon/episodeThumbnail/37.jpg', 181);
+values (episode_seq.NEXTVAL, 4, 17, 0, 0, '2014-04-23', '제15화 - 희영', '작가의말 바브바브', '/webtoon/episodeThumbnail/37.jpg', 190);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 9, 0, 0, '2014-02-26', '제9화 - 사진', '작가의말 바브바브', '/webtoon/episodeThumbnail/38.jpg', 182);
+values (episode_seq.NEXTVAL, 4, 18, 0, 0, '2014-04-30', '제16화  - 첫눈', '작가의말 바브바브', '/webtoon/episodeThumbnail/38.jpg', 191);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 10, 0, 0, '2014-03-05', '제10화 - 시선', '작가의말 바브바브', '/webtoon/episodeThumbnail/39.jpg', 183);
+values (episode_seq.NEXTVAL, 4, 19, 0, 0, '2014-05-07', '제17화 - 거리', '작가의말 바브바브', '/webtoon/episodeThumbnail/39.jpg', 192);
 
 
 --회차별 image  넣기 
-select* from image;
+--select* from image;
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 235, '/webtoon/drama/제1화 - 동네.jpg_13.jpg');
+values(1, 235, '/webtoon/drama/제1화 - 동네.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
 values(1, 236, '/webtoon/drama/제2화 - 귀가.jpg');
@@ -2549,6 +2579,34 @@ values(1, 243, '/webtoon/drama/제9화 - 사진.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
 values(1, 244, '/webtoon/drama/제10화 - 시선.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 245, '/webtoon/drama/제11화 - 웃음_1.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 246, '/webtoon/drama/제11화 - 웃음_2.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 247, '/webtoon/drama/제12화 - 자리.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 248, '/webtoon/drama/제13화 - 그림자_1.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 249, '/webtoon/drama/제13화 - 그림자_2.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 250, '/webtoon/drama/제14화 - 상수.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 251, '/webtoon/drama/제15화 - 희영.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 252, '/webtoon/drama/제16화  - 첫눈.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 253, '/webtoon/drama/제17화 - 거리.jpg');
+
 
 --select * from category;
 
@@ -2605,75 +2663,104 @@ values (episode_seq.NEXTVAL, 5, 9, 0, 0, '2014-02-26', '제2화 - 문이나 잘 잠가_0
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 1, 0, 0, '2014-01-01', '예고편', 'all of your moments', '/webtoon/episodeThumbnail/41.jpg', null);
+values (episode_seq.NEXTVAL, 5, 10, 0, 0, '2014-01-01', '제2화 - 문이나 잘 잠가_03', 'all of your moments', '/webtoon/episodeThumbnail/41.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 2, 0, 0, '2014-01-08', '제1화 - 그러든가_01', 'all of your moments', '/webtoon/episodeThumbnail/42.jpg', null);
+values (episode_seq.NEXTVAL, 5, 11, 0, 0, '2014-01-08', '제2화 - 문이나 잘 잠가_04', 'all of your moments', '/webtoon/episodeThumbnail/42.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 3, 0, 0, '2014-01-15', '제1화 - 그러든가_02','all of your moments',  '/webtoon/episodeThumbnail/43.jpg', null);
+values (episode_seq.NEXTVAL, 5, 12, 0, 0, '2014-01-15', '제2화 - 문이나 잘 잠가_05','all of your moments',  '/webtoon/episodeThumbnail/43.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 4, 0, 0, '2014-01-22', '제1화 - 그러든가_03','all of your moments',  '/webtoon/episodeThumbnail/44.jpg', null);
+values (episode_seq.NEXTVAL, 5, 13, 0, 0, '2014-01-22', '제2화 - 문이나 잘 잠가_06','all of your moments',  '/webtoon/episodeThumbnail/44.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 5, 0, 0, '2014-01-29', '제1화 - 그러든가_04','all of your moments',  '/webtoon/episodeThumbnail/45.jpg', null);
+values (episode_seq.NEXTVAL, 5, 14, 0, 0, '2014-01-29', '제2화 - 문이나 잘 잠가_07','all of your moments',  '/webtoon/episodeThumbnail/45.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 6, 0, 0, '2014-02-05', '제1화 - 그러든가_05', 'all of your moments', '/webtoon/episodeThumbnail/46.jpg', null);
+values (episode_seq.NEXTVAL, 5, 15, 0, 0, '2014-02-05', '제2화 - 문이나 잘 잠가_08', 'all of your moments', '/webtoon/episodeThumbnail/46.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 7, 0, 0, '2014-02-12', '제1화 - 그러든가_06', 'all of your moments', '/webtoon/episodeThumbnail/47.jpg', null);
+values (episode_seq.NEXTVAL, 5, 16, 0, 0, '2014-02-12', '제2화 - 문이나 잘 잠가_09', 'all of your moments', '/webtoon/episodeThumbnail/47.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 8, 0, 0, '2014-02-19', '제2화 - 문이나 잘 잠가_01', 'all of your moments', '/webtoon/episodeThumbnail/48.jpg', null);
+values (episode_seq.NEXTVAL, 5, 17, 0, 0, '2014-02-19', '제2화 - 문이나 잘 잠가_10', 'all of your moments', '/webtoon/episodeThumbnail/48.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 9, 0, 0, '2014-02-26', '제2화 - 문이나 잘 잠가_02', 'all of your moments', '/webtoon/episodeThumbnail/49.jpg', null);
+values (episode_seq.NEXTVAL, 5, 18, 0, 0, '2014-02-26', '제3화 - 가야될 것 같아_01', 'all of your moments', '/webtoon/episodeThumbnail/49.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 5, 10, 0, 0, '2014-03-05', '제2화 - 문이나 잘 잠가_03','all of your moments',  '/webtoon/episodeThumbnail/50.jpg', null);
+values (episode_seq.NEXTVAL, 5, 19, 0, 0, '2014-03-05', '제3화 - 가야될 것 같아_02','all of your moments',  '/webtoon/episodeThumbnail/50.jpg', null);
 
 
 --thriller image  
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 245, '/webtoon/thriller/예고편.jpg');
+values(1, 254, '/webtoon/thriller/예고편.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 246, '/webtoon/thriller/제1화 - 그러든가_01.jpg');
+values(1, 255, '/webtoon/thriller/제1화 - 그러든가_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 247, '/webtoon/thriller/제1화 - 그러든가_02.jpg');
+values(1, 256, '/webtoon/thriller/제1화 - 그러든가_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 248, '/webtoon/thriller/제1화 - 그러든가_03.jpg');
+values(1, 257, '/webtoon/thriller/제1화 - 그러든가_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 249, '/webtoon/thriller/제1화 - 그러든가_04.jpg');
+values(1, 258, '/webtoon/thriller/제1화 - 그러든가_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 250, '/webtoon/thriller/제1화 - 그러든가_05.jpg');
+values(1, 259, '/webtoon/thriller/제1화 - 그러든가_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 251, '/webtoon/thriller/제1화 - 그러든가_06.jpg');
+values(1, 260, '/webtoon/thriller/제1화 - 그러든가_06.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 252, '/webtoon/thriller/제2화 - 문이나 잘 잠가_01.jpg');
+values(1, 261, '/webtoon/thriller/제2화 - 문이나 잘 잠가_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 253, '/webtoon/thriller/제2화 - 문이나 잘 잠가_02.jpg');
+values(1, 262, '/webtoon/thriller/제2화 - 문이나 잘 잠가_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 254, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_03.jpg');
+values(1, 263, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_03.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 264, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_04.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 265, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_05.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 266, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_06.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 267, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_07.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 268, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_08.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 269, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_09.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 270, '/webtoon/fantasy/제2화 - 문이나 잘 잠가_10.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 271, '/webtoon/fantasy/제3화 - 가야될 것 같아_01.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 272, '/webtoon/fantasy/제3화 - 가야될 것 같아_02.jpg');
+
+
 
 --select * from category;
 --select * from user_information;
@@ -2684,24 +2771,28 @@ insert into webtoon
 values (webtoon_seq.nextval,'이웃사람','funding','serial','F','green', '혜리', 1, '이웃사람-?!', '/webtoon/webtoonThumbnail/3.jpg');
 
 
+--select * from fund;
+--'이웃사람' funding --------------------------------------------------------//-------------//-----------------------------------------------------------------------
 
---'이웃사람' funding 
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,6,'2010-04-05','2010-04-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,6,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,7,'2010-04-12','2010-04-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,6,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,8,'2010-04-19','2010-04-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,6,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,9,'2010-04-26','2010-05-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,6,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,10,'2010-05-03','2010-05-08');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,6,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,6,11,'2010-05-10','2010-05-15');
 
+--select* from fund;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -2709,93 +2800,79 @@ values (episode_seq.NEXTVAL, 6, 1, 0, 0, '2010-03-01', '예고편.jpg','이웃 사람_?
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 2, 0, 0, '2010-01-08', '제1화 - 귀가_01','이웃 사람_?',  '/webtoon/episodeThumbnail/52.jpg', null);
-
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 2, 0, 0, '2010-01-08', '제1화 - 귀가_01','이웃 사람_?',  '/webtoon/episodeThumbnail/52.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 6, 2, 0, 0, '2010-03-08', '제1화 - 귀가_01','이웃 사람_?',  '/webtoon/episodeThumbnail/52.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 3, 0, 0, '2010-01-15', '제1화 - 귀가_02','이웃 사람_?',  '/webtoon/episodeThumbnail/53.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 6, 3, 0, 0, '2010-03-15', '제1화 - 귀가_02','이웃 사람_?',  '/webtoon/episodeThumbnail/52.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 4, 0, 0, '2010-01-22', '제1화 - 귀가_03','이웃 사람_?',  '/webtoon/episodeThumbnail/54.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 6, 4, 0, 0, '2010-03-22', '제1화 - 귀가_03','이웃 사람_?',  '/webtoon/episodeThumbnail/53.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 5, 0, 0, '2010-01-29', '제1화 - 귀가_04','이웃 사람_?',  '/webtoon/episodeThumbnail/55.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 6, 5, 0, 0, '2010-03-29', '제1화 - 귀가_04','이웃 사람_?',  '/webtoon/episodeThumbnail/54.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 6, 0, 0, '2010-02-05', '제1화 - 귀가_05','이웃 사람_?',  '/webtoon/episodeThumbnail/56.jpg', 135);
-
-
+values (episode_seq.NEXTVAL, 6, 6, 0, 0, '2010-04-05', '제1화 - 귀가_05','이웃 사람_?',  '/webtoon/episodeThumbnail/55.jpg', 193);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 7, 0, 0, '2010-02-12', '제2화 - 손님_01','이웃 사람_?',  '/webtoon/episodeThumbnail/57.jpg', 136);
-
-
+values (episode_seq.NEXTVAL, 6, 7, 0, 0, '2010-04-12', '제2화 - 손님_01','이웃 사람_?',  '/webtoon/episodeThumbnail/56.jpg', 194);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 8, 0, 0, '2010-02-19', '제2화 - 손님_02','이웃 사람_?',  '/webtoon/episodeThumbnail/58.jpg', 137);
-
-
+values (episode_seq.NEXTVAL, 6, 8, 0, 0, '2010-04-19', '제2화 - 손님_02','이웃 사람_?',  '/webtoon/episodeThumbnail/57.jpg', 195);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 9, 0, 0, '2010-02-26', '제2화 - 손님_03','이웃 사람_?',  '/webtoon/episodeThumbnail/59.jpg', 138);
-
+values (episode_seq.NEXTVAL, 6, 9, 0, 0, '2010-04-26', '제2화 - 손님_03','이웃 사람_?',  '/webtoon/episodeThumbnail/58.jpg', 196);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 10, 0, 0, '2010-03-05', '제2화 - 손님_04','이웃 사람_?',  '/webtoon/episodeThumbnail/60.jpg', 139);
+values (episode_seq.NEXTVAL, 6, 10, 0, 0, '2010-05-03', '제2화 - 손님_04','이웃 사람_?',  '/webtoon/episodeThumbnail/59.jpg', 197);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 6, 11, 0, 0, '2010-05-10', '제2화 - 손님_05','이웃 사람_?',  '/webtoon/episodeThumbnail/60.jpg', 198);
 
 
 
 ---F 'life' 이웃 사람 넣기 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 255, '/webtoon/life/예고편.jpg');
+values(1, 273, '/webtoon/life/예고편.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 256, '/webtoon/life/제1화 - 귀가_01.jpg');
+values(1, 274, '/webtoon/life/제1화 - 귀가_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 257, '/webtoon/life/제1화 - 귀가_02.jpg');
+values(1, 275, '/webtoon/life/제1화 - 귀가_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 258, '/webtoon/life/제1화 - 귀가_03.jpg');
+values(1, 276, '/webtoon/life/제1화 - 귀가_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 259, '/webtoon/life/제1화 - 귀가_04.jpg');
+values(1, 277, '/webtoon/life/제1화 - 귀가_04.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 260, '/webtoon/life/제1화 - 귀가_05.jpg');
+values(1, 278, '/webtoon/life/제1화 - 귀가_05.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 261, '/webtoon/life/제2화 - 손님_01.jpg');
+values(1, 279, '/webtoon/life/제2화 - 손님_01.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 262, '/webtoon/life/제2화 - 손님_02.jpg');
+values(1, 280, '/webtoon/life/제2화 - 손님_02.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 263, '/webtoon/life/제2화 - 손님_03.jpg');
+values(1, 281, '/webtoon/life/제2화 - 손님_03.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 264, '/webtoon/life/제2화 - 손님_04.jpg');
+values(1, 282, '/webtoon/life/제2화 - 손님_04.jpg');
 
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 283, '/webtoon/life/제2화 - 손님_05.jpg');
 
 --select * FROM  user_information;
 ------------G ------------------------------------------------
@@ -2808,116 +2885,107 @@ values (webtoon_seq.nextval,'그대를 사랑합니다','funding','serial','G','green', 
 
 
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,7,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,6,'2010-04-05','2010-04-10');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,7,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,7,'2010-04-12','2010-04-17');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,7,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,8,'2010-04-19','2010-04-24');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,7,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,9,'2010-04-26','2010-05-01');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,7,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,10,'2010-05-03','2010-05-08');
 
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,7,11,'2010-05-10','2010-05-15');
 
 ---------------------------
+--select * from fund;
 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-01', '예고편', '그대여~', '/webtoon/episodeThumbnail/61.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 7, 1, 0, 0, '2010-03-01', '예고편', '그대여~', '/webtoon/episodeThumbnail/61.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-08', '제1화 - 우유_1', '그대여~', '/webtoon/episodeThumbnail/62.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 7, 2, 0, 0, '2010-03-08', '제1화 - 우유_1', '그대여~', '/webtoon/episodeThumbnail/62.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-15', '제1화 - 우유_2', '그대여~', '/webtoon/episodeThumbnail/63.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 7, 3, 0, 0, '2010-03-15', '제1화 - 우유_2', '그대여~', '/webtoon/episodeThumbnail/63.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-22', '제1화 - 우유_3', '그대여~', '/webtoon/episodeThumbnail/64.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 7, 4, 0, 0, '2010-03-22', '제1화 - 우유_3', '그대여~', '/webtoon/episodeThumbnail/64.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-22', '제1화 - 우유_4', '그대여~', '/webtoon/episodeThumbnail/65.jpg', null);
-
-
+values (episode_seq.NEXTVAL, 7, 5, 0, 0, '2010-03-29', '제1화 - 우유_4', '그대여~', '/webtoon/episodeThumbnail/65.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-03-29', '제1화 - 우유_5', '그대여~', '/webtoon/episodeThumbnail/66.jpg', 140);
-
-
+values (episode_seq.NEXTVAL, 7, 6, 0, 0, '2010-04-05', '제1화 - 우유_5', '그대여~', '/webtoon/episodeThumbnail/66.jpg', 199);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-04-05', '제1화 - 우유_6', '그대여~', '/webtoon/episodeThumbnail/1.jpg', 141);
-
-
+values (episode_seq.NEXTVAL, 7, 7, 0, 0, '2010-04-12', '제1화 - 우유_6', '그대여~', '/webtoon/episodeThumbnail/1.jpg', 200);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-04-12', '제2화 - 언덕길_1', '그대여~', '/webtoon/episodeThumbnail/2.jpg', 142);
-
-
-insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
-recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-04-19', '제2화 - 언덕길_2','그대여~',  '/webtoon/episodeThumbnail/3.jpg', 143);
+values (episode_seq.NEXTVAL, 7, 8, 0, 0, '2010-04-19', '제2화 - 언덕길_1', '그대여~', '/webtoon/episodeThumbnail/2.jpg', 201);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-04-26', '제2화 - 언덕길_3', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 144);
+values (episode_seq.NEXTVAL, 7, 9, 0, 0, '2010-04-26', '제2화 - 언덕길_2','그대여~',  '/webtoon/episodeThumbnail/3.jpg', 202);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-04-26', '제2화 - 언덕길_3', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 144);
+values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-05-03', '제2화 - 언덕길_3', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 203);
+
+insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
+recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
+values (episode_seq.NEXTVAL, 7, 11, 0, 0, '2010-05-10', '제2화 - 언덕길_4', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 204);
 
 
 --G 이미지 넣기 
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 265, '/webtoon/gag/예고편.jpg');
+values(1, 284, '/webtoon/gag/예고편.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 266, '/webtoon/gag/제1화 - 우유_1.jpg');
+values(1, 285, '/webtoon/gag/제1화 - 우유_1.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 267, '/webtoon/gag/제1화 - 우유_2.jpg');
+values(1, 286, '/webtoon/gag/제1화 - 우유_2.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 268, '/webtoon/gag/제1화 - 우유_3.jpg');
+values(1, 287, '/webtoon/gag/제1화 - 우유_3.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 269, '/webtoon/gag/제1화 - 우유_4.jpg');
+values(1, 288, '/webtoon/gag/제1화 - 우유_4.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 270, '/webtoon/gag/제1화 - 우유_5.jpg');
+values(1, 289, '/webtoon/gag/제1화 - 우유_5.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 271, '/webtoon/gag/제1화 - 우유_6.jpg');
+values(1, 290, '/webtoon/gag/제1화 - 우유_6.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 272, '/webtoon/gag/제2화 - 언덕길_1.jpg');
+values(1, 291, '/webtoon/gag/제2화 - 언덕길_1.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 273, '/webtoon/gag/제2화 - 언덕길_2.jpg');
+values(1, 292, '/webtoon/gag/제2화 - 언덕길_2.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 274, '/webtoon/gag/제2화 - 언덕길_3.jpg');
+values(1, 293, '/webtoon/gag/제2화 - 언덕길_3.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 294, '/webtoon/gag/제2화 - 언덕길_4.jpg');
 
 --select * from category ;
 
@@ -2932,21 +3000,49 @@ values (webtoon_seq.nextval,'순정 만화','funding','serial','H','green', '혜리', 
 
 --insert 순정만화 funding 회차;
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,8,6);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,6,'2008-03-07','2008-03-12');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,8,7);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,7,'2008-03-14','2008-03-19');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,8,8);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,8,'2008-03-21','2008-03-26');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,8,9);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,9,'2008-03-28','2008-04-02');
 
-insert into fund (fund_code,episode_fund, webtoon_code, episode_number)
-values (fund_seq.nextval,3000,8,10);
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,10,'2008-04-04','2008-04-09');
 
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,11,'2008-04-11','2008-04-16');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,12,'2008-04-18','2008-04-23');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,13,'2008-04-25','2008-04-30');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,14,'2008-05-02','2008-05-07');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,15,'2008-05-09','2008-05-14');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,16,'2008-05-16','2008-05-21');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,17,'2008-05-23','2008-05-28');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,18,'2008-05-30','2008-06-04');
+
+insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
+values (fund_seq.nextval,3000,8,19,'2008-06-06','2008-06-11');
+
+--select * from fund;
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
@@ -2970,59 +3066,59 @@ values (episode_seq.NEXTVAL, 8, 5, 0, 0, '2008-02-29', 'no.5 - same age','어렴풋
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 6, 0, 0, '2008-03-07', 'no.6 - couple', '어렴풋이', '/webtoon/episodeThumbnail/10.jpg', 145);
+values (episode_seq.NEXTVAL, 8, 6, 0, 0, '2008-03-07', 'no.6 - couple', '어렴풋이', '/webtoon/episodeThumbnail/10.jpg', 205);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 7, 0, 0, '2008-03-14', 'no.7 - name', '어렴풋이', '/webtoon/episodeThumbnail/11.jpg', 146);
+values (episode_seq.NEXTVAL, 8, 7, 0, 0, '2008-03-14', 'no.7 - name', '어렴풋이', '/webtoon/episodeThumbnail/11.jpg', 206);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 8, 0, 0, '2008-03-21', 'no.8 - the first snow', '어렴풋이', '/webtoon/episodeThumbnail/12.jpg', 147);
+values (episode_seq.NEXTVAL, 8, 8, 0, 0, '2008-03-21', 'no.8 - the first snow', '어렴풋이', '/webtoon/episodeThumbnail/12.jpg', 207);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 9, 0, 0, '2008-03-28', 'no.9 - cold', '어렴풋이', '/webtoon/episodeThumbnail/13.jpg', 148);
+values (episode_seq.NEXTVAL, 8, 9, 0, 0, '2008-03-28', 'no.9 - cold', '어렴풋이', '/webtoon/episodeThumbnail/13.jpg', 208);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 10, 0, 0, '2008-04-04', 'no.10 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 149);
+values (episode_seq.NEXTVAL, 8, 10, 0, 0, '2008-04-04', 'no.10 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 209);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 2, 0, 0, '2008-02-08', 'no.2 -necktie', '어렴풋이', '/webtoon/episodeThumbnail/6.jpg', null);
+values (episode_seq.NEXTVAL, 8, 11, 0, 0, '2008-04-11', 'no.11 -necktie', '어렴풋이', '/webtoon/episodeThumbnail/6.jpg', 210);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 3, 0, 0, '2008-02-15', 'no.3 - present', '어렴풋이', '/webtoon/episodeThumbnail/7.jpg', null);
+values (episode_seq.NEXTVAL, 8, 12, 0, 0, '2008-04-18', 'no.12 - present', '어렴풋이', '/webtoon/episodeThumbnail/7.jpg', 211);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 4, 0, 0, '2008-02-22', 'no.4 - emotion','어렴풋이',  '/webtoon/episodeThumbnail/8.jpg', null);
+values (episode_seq.NEXTVAL, 8, 13, 0, 0, '2008-04-25', 'no.13 - emotion','어렴풋이',  '/webtoon/episodeThumbnail/8.jpg', 212);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 5, 0, 0, '2008-02-29', 'no.5 - same age','어렴풋이',  '/webtoon/episodeThumbnail/9.jpg', null);
+values (episode_seq.NEXTVAL, 8, 14, 0, 0, '2008-05-02', 'no.14 - same age','어렴풋이',  '/webtoon/episodeThumbnail/9.jpg', 213);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 6, 0, 0, '2008-03-07', 'no.6 - couple', '어렴풋이', '/webtoon/episodeThumbnail/10.jpg', 145);
+values (episode_seq.NEXTVAL, 8, 15, 0, 0, '2008-05-09', 'no.15 - couple', '어렴풋이', '/webtoon/episodeThumbnail/10.jpg', 214);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 7, 0, 0, '2008-03-14', 'no.7 - name', '어렴풋이', '/webtoon/episodeThumbnail/11.jpg', 146);
+values (episode_seq.NEXTVAL, 8, 16, 0, 0, '2008-05-16', 'no.16 - name', '어렴풋이', '/webtoon/episodeThumbnail/11.jpg', 215);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 8, 0, 0, '2008-03-21', 'no.8 - the first snow', '어렴풋이', '/webtoon/episodeThumbnail/12.jpg', 147);
+values (episode_seq.NEXTVAL, 8, 17, 0, 0, '2008-05-23', 'no.17 - the first snow', '어렴풋이', '/webtoon/episodeThumbnail/12.jpg', 216);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 9, 0, 0, '2008-03-28', 'no.9 - cold', '어렴풋이', '/webtoon/episodeThumbnail/13.jpg', 148);
+values (episode_seq.NEXTVAL, 8, 18, 0, 0, '2008-05-30', 'no.18 - cold', '어렴풋이', '/webtoon/episodeThumbnail/13.jpg', 217);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 10, 0, 0, '2008-04-04', 'no.10 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 149);
+values (episode_seq.NEXTVAL, 8, 19, 0, 0, '2008-06-06', 'no.19 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 218);
 
 
 
@@ -3030,35 +3126,61 @@ values (episode_seq.NEXTVAL, 8, 10, 0, 0, '2008-04-04', 'no.10 - two of us','어�
 --8 adult  image 넣기 --
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 275, '/webtoon/adult/no.1 - elevator.jpg');
+values(1, 295, '/webtoon/adult/no.1 - elevator.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 276, '/webtoon/adult/no.2 -necktie.jpg');
+values(1, 296, '/webtoon/adult/no.2 -necktie.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 277, '/webtoon/adult/no.3 - present.jpg');
+values(1, 297, '/webtoon/adult/no.3 - present.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 278, '/webtoon/adult/no.4 - emotion.jpg');
+values(1, 298, '/webtoon/adult/no.4 - emotion.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 279, '/webtoon/adult/no.5 - same age.jpg');
+values(1, 299, '/webtoon/adult/no.5 - same age.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 280, '/webtoon/adult/no.6 - couple.jpg');
+values(1, 300, '/webtoon/adult/no.6 - couple.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 281, '/webtoon/adult/no.7 - name.jpg');
+values(1, 301, '/webtoon/adult/no.7 - name.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 282, '/webtoon/adult/no.8 - the first snow.jpg');
+values(1, 302, '/webtoon/adult/no.8 - the first snow.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 283, '/webtoon/adult/no.9 - cold.jpg');
+values(1, 303, '/webtoon/adult/no.9 - cold.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 284, '/webtoon/adult/no.10 - two of us.jpg');
+values(1, 304, '/webtoon/adult/no.10 - two of us.jpg');
 
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 305, '/webtoon/adult/no.11 - cigarrete.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 306, '/webtoon/adult/no.12 - thinkingOfYou.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 307, '/webtoon/adult/no.13 - allRight.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 308, '/webtoon/adult/no.14 - text.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 309, '/webtoon/adult/no.15 - whiteChristmas.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 310, '/webtoon/adult/no.16 - thesedays.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 311, '/webtoon/adult/no.17 - changes.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 312, '/webtoon/adult/no.18 - worries.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 313, '/webtoon/adult/no.19 - tip.jpg');
 
 
 -- I 기타 일반작가 수정  작품 '타이밍'
@@ -3067,7 +3189,7 @@ values(1, 284, '/webtoon/adult/no.10 - two of us.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
+values (9,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
 
 --
 
@@ -3115,72 +3237,101 @@ values (episode_seq.NEXTVAL, 9, 10, 0, 0, '2008-08-03', '제2화 - 10분_5', '모든 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 2, 0, 0, '2008-06-08', '제1화 - 순간의 틈_1','모든 건 타이밍~',  '/webtoon/episodeThumbnail/16.jpg', null);
+values (episode_seq.NEXTVAL, 9, 11, 0, 0, '2008-08-10', '제3화 - 10초_1','모든 건 타이밍~',  '/webtoon/episodeThumbnail/16.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 3, 0, 0, '2008-06-15', '제1화 - 순간의 틈_2','모든 건 타이밍~',  '/webtoon/episodeThumbnail/17.jpg', null);
+values (episode_seq.NEXTVAL, 9, 12, 0, 0, '2008-08-17', '제3화 - 10초_2','모든 건 타이밍~',  '/webtoon/episodeThumbnail/17.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 4, 0, 0, '2008-06-22', '제1화 - 순간의 틈_3', '모든 건 타이밍~', '/webtoon/episodeThumbnail/18.jpg', null);
+values (episode_seq.NEXTVAL, 9, 13, 0, 0, '2008-08-24', '제3화 - 10초_3', '모든 건 타이밍~', '/webtoon/episodeThumbnail/18.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 5, 0, 0, '2008-06-29', '제1화 - 순간의 틈_4','모든 건 타이밍~',  '/webtoon/episodeThumbnail/19.jpg', null);
+values (episode_seq.NEXTVAL, 9, 14, 0, 0, '2008-08-31', '제3화 - 10초_4','모든 건 타이밍~',  '/webtoon/episodeThumbnail/19.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 6, 0, 0, '2008-07-06', '제2화 - 10분_1','모든 건 타이밍~',  '/webtoon/episodeThumbnail/20.jpg', null);
+values (episode_seq.NEXTVAL, 9, 15, 0, 0, '2008-09-07', '제3화 - 10초_5','모든 건 타이밍~',  '/webtoon/episodeThumbnail/20.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 7, 0, 0, '2008-07-13', '제2화 - 10분_2', '모든 건 타이밍~', '/webtoon/episodeThumbnail/21.jpg', null);
+values (episode_seq.NEXTVAL, 9, 16, 0, 0, '2008-09-14', '제4화 - 9월15일_1', '모든 건 타이밍~', '/webtoon/episodeThumbnail/21.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 8, 0, 0, '2008-07-20', '제2화 - 10분_3','모든 건 타이밍~',  '/webtoon/episodeThumbnail/22.jpg', null);
+values (episode_seq.NEXTVAL, 9, 17, 0, 0, '2008-09-21', '제4화 - 9월15일_2','모든 건 타이밍~',  '/webtoon/episodeThumbnail/22.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 9, 0, 0, '2008-07-27', '제2화 - 10분_4', '모든 건 타이밍~', '/webtoon/episodeThumbnail/23.jpg', null);
+values (episode_seq.NEXTVAL, 9, 18, 0, 0, '2008-09-28', '제4화 - 9월15일_3', '모든 건 타이밍~', '/webtoon/episodeThumbnail/23.jpg', null);
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 9, 10, 0, 0, '2008-08-03', '제2화 - 10분_5', '모든 건 타이밍~', '/webtoon/episodeThumbnail/24.jpg', null);
+values (episode_seq.NEXTVAL, 9, 19, 0, 0, '2008-10-05', '제4화 - 9월15일_4', '모든 건 타이밍~', '/webtoon/episodeThumbnail/24.jpg', null);
 
 
 ---image 넣기 
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 285, '/webtoon/etc/예고편.jpg');
+values(1, 314, '/webtoon/etc/예고편.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 286, '/webtoon/etc/제1화 - 순간의 틈_1.jpg');
+values(1, 315, '/webtoon/etc/제1화 - 순간의 틈_1.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 287, '/webtoon/etc/제1화 - 순간의 틈_2.jpg');
+values(1, 316, '/webtoon/etc/제1화 - 순간의 틈_2.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 288, '/webtoon/etc/제1화 - 순간의 틈_3.jpg');
+values(1, 317, '/webtoon/etc/제1화 - 순간의 틈_3.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 289, '/webtoon/etc/제1화 - 순간의 틈_4.jpg');
+values(1, 318, '/webtoon/etc/제1화 - 순간의 틈_4.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 290, '/webtoon/etc/제2화 - 10분_1.jpg');
+values(1, 319, '/webtoon/etc/제2화 - 10분_1.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 291, '/webtoon/etc/제2화 - 10분_2.jpg');
+values(1, 320, '/webtoon/etc/제2화 - 10분_2.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 292, '/webtoon/etc/제2화 - 10분_3.jpg');
+values(1, 321, '/webtoon/etc/제2화 - 10분_3.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 293, '/webtoon/etc/제2화 - 10분_4.jpg');
+values(1, 322, '/webtoon/etc/제2화 - 10분_4.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
-values(1, 294, '/webtoon/etc/제2화 - 10분_5.jpg');
+values(1, 323, '/webtoon/etc/제2화 - 10분_5.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 324, '/webtoon/etc/제3화 - 10초_1.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 325, '/webtoon/etc/제3화 - 10초_2.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 326, '/webtoon/etc/제3화 - 10초_3.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 327, '/webtoon/etc/제3화 - 10초_4.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 328, '/webtoon/etc/제3화 - 10초_5.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 329, '/webtoon/etc/제4화 - 9월15일_1.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 330, '/webtoon/etc/제4화 - 9월15일_2.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 331, '/webtoon/etc/제4화 - 9월15일_3.jpg');
+
+insert into image(image_index, episode_sequence, file_name) 
+values(1, 332, '/webtoon/etc/제4화 - 9월15일_4.jpg');
+
+
 
 commit;
 

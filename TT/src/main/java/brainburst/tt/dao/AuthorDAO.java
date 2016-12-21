@@ -79,4 +79,25 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	int deleteImage(ImageDTO imageDTO);
+	
+	/**
+	 * 웹툰 등록
+	 * @param webtoonDTO
+	 * @return
+	 */
+	int registerWebtoon(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * 웹툰 수정
+	 * @param webtoonDTO
+	 * @return
+	 */
+	int modifyWebtoon(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * 웹툰 코드에 맞는 웹툰정보 찾기
+	 * @param webtoonCode
+	 * @return
+	 */
+	WebtoonDTO selectWebtoon(int webtoonCode);
 }

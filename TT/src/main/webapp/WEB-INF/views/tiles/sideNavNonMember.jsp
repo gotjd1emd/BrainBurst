@@ -155,7 +155,7 @@
 							<li id="gowebtoon" name="${item.webtoonCode}">
 							<c:choose>
 								<c:when test="${item.webtoonLevel eq 'funding'}">
-								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:blueviolet !important;">
+								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:#d0425c !important;">
 								</c:when>
 								<c:when test="${item.webtoonLevel eq 'free'}">
 								<a class="waves-effect waves-light scription-btn hoverable" style="background-color:coral !important;">

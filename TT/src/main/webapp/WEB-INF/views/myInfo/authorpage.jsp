@@ -36,27 +36,27 @@
 				<c:when test="${!empty sessionScope.webtoonList}">
 					<!-- 플로팅 버튼 -->
 					<div class="fixed-action-btn horizontal click-to-toggle">
-						<a class="btn-floating btn-large red publish-webtoon-floating purple">
+						<a class="btn-floating btn-large red publish-webtoon-floating red">
 							<i class="material-icons first-icon">menu</i>
 						</a>
 						<ul>
 							<!-- 펀딩 웹툰 신청 플로팅 버튼 -->
 							<li><a id="funding-webtoon-floating-btn"
-								class="btn-floating mini-floating tooltipped purple lighten-2"
+								class="btn-floating mini-floating tooltipped red lighten-1"
 								data-position="top" data-delay="50" data-tooltip="펀딩 웹툰 신청"
 								href="#funding-webtoon-modal"><i class="material-icons">data_usage</i></a></li>
 
 							<!-- 웹툰 상태 처리 플로팅 버튼 -->
 							<li><a
-								class="btn-floating mini-floating tooltipped purple lighten-2"
+								class="btn-floating mini-floating tooltipped red lighten-1"
 								data-position="top" data-delay="50" data-tooltip="웹툰 상태 처리"
 								href="#webtoon-state-modal"><i class="material-icons">priority_high</i></a></li>
 							<!-- 웹툰 등록 플로팅 버튼 -->
-							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
+							<li><a class="btn-floating mini-floating tooltipped red lighten-1"
 								data-position="top" data-delay="50" data-tooltip="웹툰 등록"
 								href='/controller/author/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
 								<!-- 웹툰 등록 플로팅 버튼 -->
-							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
+							<li><a class="btn-floating mini-floating tooltipped red lighten-1"
 								data-position="top" data-delay="50" data-tooltip="웹툰 수정"
 								href='#webtoon-modify-modal'><i class="material-icons">autorenew</i></a></li>
 						</ul>

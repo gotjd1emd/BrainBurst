@@ -30,14 +30,23 @@ public class AuthorServiceImpl implements AuthorService {
 
 	@Override
 	public int addSeries(WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO, List<ImageDTO> imageList) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		
+		result = authorDAO.registerWebtoon(webtoonDTO);
+		result = authorDAO.episodeUpload(episodeDTO);
+		int episodeSequence = authorDAO.selectEpisodeSequence(episodeDTO.getWebtoonCode(), episodeDTO.getEpisodeNumber());
+		
+		for(ImageDTO image : imageList) {
+			image.setEpisodeSequence(episodeSequence);
+			result = authorDAO.insertEpisodeImage(image);
+		}
+		
+		return result;
 	}
 
 	@Override
-	public int updateSeries(WebtoonDTO webtoonDTO) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int modifyWebtoon(WebtoonDTO webtoonDTO) {
+		return authorDAO.modifyWebtoon(webtoonDTO);
 	}
 
 	@Override
@@ -89,5 +98,10 @@ public class AuthorServiceImpl implements AuthorService {
 		}
 		
 		return result;
+	}
+	
+	@Override
+	public WebtoonDTO selectWebtoon(int webtoonCode) {
+		return authorDAO.selectWebtoon(webtoonCode);
 	}
 }

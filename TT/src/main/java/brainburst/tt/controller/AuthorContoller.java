@@ -39,7 +39,7 @@ public class AuthorContoller {
 	}
 
 	/**
-	 * 작품상세보기
+	 * 웹툰상세보기
 	 * 작가가 자신의 웹툰보기 페이지에서 상세보기를 누를경우 작품정보를 가지고 해당페이지로 이동.
 	 * @return webtoonDTO는 해당 작품의 정보가 담긴 DTO
 	 */
@@ -97,12 +97,15 @@ public class AuthorContoller {
 	}
 
 	/**
-	작품등록
+	웹툰등록
 	등록하면 정보값 가지고 웹툰테이블 생성
 	이후 작가페이지의 연재중웹툰탭으로 이동
 	*/
+	@RequestMapping("registerWebtoon")
 	public String addSeries(HttpServletRequest request, WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO) throws Exception {
-		//뷰에서 보내는 웹툰정보
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO)session.getAttribute("userDTO");
+		webtoonDTO.setNickname(userDTO.getNickname());
 		List<MultipartFile> images = episodeDTO.getImage();
 		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
 		
@@ -145,14 +148,39 @@ public class AuthorContoller {
 	}
 	
 	/**
-	작품수정
-	수정후 해당 작품의 웹툰페이지로 이동
+	웹툰수정
 	*/
-	public String updateSeries(HttpServletRequest request) {
-		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
-		int webtoonCode = webtoonDTO.getWebtoonCode();
-		authorService.updateSeries(webtoonDTO);
-		return "webtoonPage/"+webtoonCode;
+	@RequestMapping("modifyWebtoon")
+	public String modifyWebtoon(HttpServletRequest request, WebtoonDTO webtoonDTO) throws Exception {
+		MultipartFile webtoonThumbnailFile = webtoonDTO.getWebtoonThumbnailFile();
+
+		String path = request.getSession().getServletContext().getRealPath("/") + "/resources";
+		String dbPath = "/webtoon/webtoonThumbnail/" + webtoonThumbnailFile.getOriginalFilename();
+		
+		if(webtoonThumbnailFile.getSize() == 0) {
+			webtoonDTO.setWebtoonThumbnail(null);
+		}else {
+			webtoonDTO.setWebtoonThumbnail(dbPath);
+			webtoonThumbnailFile.transferTo(new File(path + dbPath));
+		}
+		authorService.modifyWebtoon(webtoonDTO);
+		
+		return "author/authorPage";
+	}
+	
+	/**
+	 * 웹툰 수정페이지로 이동
+	 * @param request
+	 * @param webtoonCode
+	 * @return
+	 */
+	@RequestMapping("modifyWebtoonPage")
+	public String modifyWebtoonPage(HttpServletRequest request, int webtoonCode) {
+		WebtoonDTO webtoonDTO = authorService.selectWebtoon(webtoonCode);
+		
+		request.setAttribute("webtoonDTO", webtoonDTO);
+		
+		return "author/modifyWebtoon";
 	}
 	
 	/**
