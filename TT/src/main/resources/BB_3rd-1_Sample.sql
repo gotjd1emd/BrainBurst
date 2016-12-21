@@ -2616,7 +2616,7 @@ values(1, 253, '/webtoon/drama/제17화 - 거리.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (webtoon_seq.nextval,'당신의 모든 순간','free','serial','D','green', '우리', 0, '작가의 말 - 당신의 모든 순간', '/webtoon/webtoonThumbnail/2.jpg');
+values (webtoon_seq.nextval,'당신의 모든 순간','free','serial','E','green', '우리', 0, '작가의 말 - 당신의 모든 순간', '/webtoon/webtoonThumbnail/2.jpg');
 
 
 
@@ -3188,7 +3188,7 @@ values(1, 313, '/webtoon/adult/no.19 - tip.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (9,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
+values (webtoon_seq.nextval,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
 
 --
 

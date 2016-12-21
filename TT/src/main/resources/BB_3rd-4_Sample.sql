@@ -363,7 +363,7 @@ values(1, 452, '/webtoon/etc/力4拳 - 9岿15老_4.jpg');
 insert into image(image_index, episode_sequence, file_name) 
 values(1, 453, '/webtoon/etc/力4拳 - 9岿15老_4.jpg');
 
- into image(image_index, episode_sequence, file_name) 
+insert into image(image_index, episode_sequence, file_name) 
 values(1, 454, '/webtoon/etc/力4拳 - 9岿15老_4.jpg');
 
 insert into image(image_index, episode_sequence, file_name) 
