@@ -164,11 +164,11 @@
 			</div>
 		</div>
 		<div id="episode-list" class="episode-list">
-		<c:forEach var="episode" items="${episodeList}" varStatus="status">
+		<c:forEach var="episode" items="${episodeList}">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius">
 					<div class="episode_thumbnail">
-						<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+						<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 					</div>
 					<div class="col s5 episode-content">
 						No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>

@@ -184,11 +184,11 @@
 
 <div id="webtoon-info" class="episode-list">
 	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
-		<c:forEach var="episode" items="${episodeList }" varStatus="status">
+		<c:forEach var="episode" items="${episodeList }">
 		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius" style="background-color:lightyellow">
 				<div class="episode_thumbnail">
-					<img id="episode-thumbnail${status.count}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
