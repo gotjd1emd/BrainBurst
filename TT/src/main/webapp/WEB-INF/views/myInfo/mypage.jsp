@@ -11,8 +11,30 @@
 </style>
 <script>
 	$(function(){ 
-		$(".secondary-content :first-child").click(function() {
-			alert($(this).attr("name"));
+		$(document).on("click", ".secondary-content :first-child", function(){
+			$.ajax({
+				url : "/controller/webtoon/subscription/del/"+$(this).attr("name"),
+				type : "post",
+				dataType : "json",
+				success : function(result) {
+					$("#subScriptionList").empty();
+					$.each(result, function(index, item) {
+						var htmlcode = "";
+						htmlcode +="<li class='collection-item avatar scription-collection'>";
+						htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+						htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' alt='' class='circle scription-title-img'>";
+						htmlcode +="<span class='scription-title'>"+item.webtoonName+"</span>";		
+						htmlcode +="<p>"+item.nickname+" <br> Second Line</p> ";		
+						htmlcode +="<a href='#!' class='secondary-content'><i class='material-icons text-color-500' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"'>grade</i></a></li>"	
+						$("#subScriptionList").append(htmlcode);
+					})
+						
+				},
+				error : function() {
+					alert("이미 구독하였습니다.")
+				}
+			})
+			
 		})
 		$("#getHistory").click(function() {
 			$.ajax({
