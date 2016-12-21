@@ -48,16 +48,18 @@
 					success : function(result) {
 						var htmlcode = "";
 						$(con).empty();
+						htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; margin-left:-5%; margin-top:30px;'>"
 						$.each(result, function(index, item) {
-							if(index==0){
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%; margin-top:20px;'>";
-							}else if(index%6==0){
-								htmlcode+="</div>";
-								htmlcode+="<div class='row' style='margin-bottom: 0px; padding-bottom: 0px; padding-right:15%;'>";
-							}else{
-								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='width:200px!important;margin: -5px 7px 20px 0px !important;'>"
-								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
-								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
+								htmlcode+="<div class='card col s12 m24 l2 top_card hoverable animated' style='margin: -5px 7px 20px 0px !important; width:221px!important;'>"
+								if(item.webtoonState == 'pause'){
+									htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='background-color: black'>"
+									htmlcode+="<span style='color:white; position: absolute; width: 100%; text-align: center; top: 46%; font-size: 25px; background-color: rgba( 0, 0, 0, 0.5 );'>휴재중</span>"
+									htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon' style='opacity: 0.5;'>"
+								}else{
+									htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light'>"
+									htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon' class='search-collection-item'>"
+								}
+								htmlcode+="</div>"
 								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
 								if (item.webtoonName.length < 7) {
 									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName+"</span>"	
@@ -72,7 +74,6 @@
 								htmlcode+="<span>"+item.nickname+"</span>"
 								htmlcode+="<span style='float: right;'>100%</span>"
 								htmlcode+="</div></div>"
-							}
 						});
 						htmlcode+="</div>";
 						$(con).append(htmlcode); 
@@ -177,10 +178,10 @@
 			<ul class="tabs grey darken-3">
 				<li class="tab col s1 offset-l1"><a href="#top" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >TOP</a></li>
 				<li class="tab col s1"><a href="#a" value="a" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >액션</a></li>
-				<li class="tab col s1"><a href="#b" value="b" name="${tapType}">SF</a></li>
-				<li class="tab col s1"><a href="#c" class="tabcss" value="c" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >판타지</a></li>
-				<li class="tab col s1"><a href="#d" class="tabcss" value="d" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >드라마</a></li>
-				<li class="tab col s1"><a href="#e" class="tabcss" value="e" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >스릴러</a></li>
+				<li class="tab col s1"><a href="#b" value="b" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >SF</a></li>
+				<li class="tab col s1"><a href="#c" value="c" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >판타지</a></li>
+				<li class="tab col s1"><a href="#d" value="d" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >드라마</a></li>
+				<li class="tab col s1"><a href="#e" value="e" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >스릴러</a></li>
 				<li class="tab col s1"><a href="#f" value="f" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >일상</a></li>
 				<li class="tab col s1"><a href="#g" value="g" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >개그</a></li>
 				<li class="tab col s1"><a href="#h" value="h" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >성인</a></li>
@@ -194,61 +195,36 @@
 				<h4 class="animated title-text" style="font-family:fantasy; margin-bottom:30px;">BEST 3 WEBTOON</h4>
 				<div class="row">
 					<c:forEach var="item" items="${webtoonList}" end="2">
-						<c:choose>
-							<c:when test="${item.webtoonState=='pause'}">
-							<div class="card col s12 m24 l3 top_card hoverable animated" style="width:370px!important;margin:-10px 70px 0px -57px !important;">
-								<div class="card-image card-image-box waves-effect waves-block waves-light" style="background-color: black;">
+						<div class="card col s12 m24 l3 top_card hoverable animated" style="width:370px!important;margin:-10px 70px 0px -57px !important;">
+							<c:choose>
+								<c:when test="${item.webtoonState=='pause'}">
+									<div class="card-image card-image-box waves-effect waves-block waves-light" style="background-color: black;">
 									<span style="color:white; position: absolute; width: 100%; text-align: center; top: 46%; font-size: 25px; background-color: rgba( 0, 0, 0, 0.5 );">휴재중</span>
 									<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' style="opacity: 0.5;">
-								</div>
-								<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
-									<span style="font-size:22px; font-weight:500;">${item.webtoonName}
-									</span>
-									<span class="card-title activator grey-text text-darken-4" ><i class="material-icons right" style="margin-top:3%!important;">more_vert</i></span>
-									<span id="ss" style="padding-left: 4%;">
-										<a href="#"> ${item.nickname}</a>
-										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
-										</i>
-									</span>
-								</div>
-								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4">${item.webtoonName}
-									<i class="material-icons right">close</i></span>
-									<p>${item.summary}</p>
-								</div>   
+								</c:when>
+								<c:otherwise>
+									<div class="card-image card-image-box waves-effect waves-block waves-light">
+									<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' class="search-collection-item">							
+								</c:otherwise>
+							</c:choose>
 							</div>
-							</c:when>
-							<c:otherwise>
-							<div class="card col s12 m24 l3 top_card hoverable animated" style="width:370px!important;margin:-10px 70px 0px -57px !important">
-								<div class="card-image card-image-box waves-effect waves-block waves-light">
-									<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' class="search-collection-item">
-								</div>
-								<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
-									<span style="font-size:22px; font-weight:500;">${item.webtoonName}
-									</span>
-									<span class="card-title activator grey-text text-darken-4" ><i class="material-icons right" style="margin-top:3%!important;">more_vert</i></span>
-									<span id="ss" style="padding-left: 4%;">
-										<a href="#"> ${item.nickname}</a>
-										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
-										</i>
-									</span>
-								</div>
-								<div class="card-reveal">
-									<span class="card-title grey-text text-darken-4" 
-									style="color: darksalmon;font-size: 31px;font-weight: 700;margin-left: 33px;">${item.webtoonName}
-									<i class="material-icons right">close</i></span>
-									<p style="color:grey;">${item.summary} ${item.summary} ${item.summary} ${item.summary} ${item.summary}</p>
-									<div style="text-align:center;">
-									<input type="text" class="knob" value="60" 
-									data-width="200" data-height="200" data-fgColor="#f56954" data-readonly="true">
-								</div>
-								</div>   
+							<div class="card-content" style="margin: 0px;padding: 0px 8px 0px 10px !important;">
+								<span style="font-size:22px; font-weight:500;">${item.webtoonName}
+								</span>
+								<span class="card-title activator grey-text text-darken-4" ><i class="material-icons right" style="margin-top:3%!important;">more_vert</i></span>
+								<span id="ss" style="padding-left: 4%;">
+									<a href="#"> ${item.nickname}</a>
+									<i id="scription-card-btn" class="material-icons scription-a-index" 
+										name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important;">grade
+									</i>
+								</span>
 							</div>
-							</c:otherwise>
-						</c:choose>
-						
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">${item.webtoonName}
+								<i class="material-icons right">close</i></span>
+								<p>${item.summary}</p>
+							</div>   
+						</div>
 					</c:forEach>
 				</div>
 				<hr>
@@ -258,53 +234,28 @@
 				<h5 class="title-text animated" style="font-family:fantasy; margin-bottom:30px;">POPULAR WEBTOON</h5>
 				<div class="row" style="margin-bottom: 0px; padding-bottom: 0px; margin-left:-5%;">
 					<c:forEach var="item" items="${webtoonList}" varStatus="status">
+							<div class="card col s12 m24 l2 top_card hoverable animated" style="margin: -5px 7px 20px 0px !important; width:221px!important;">
 						<c:choose>
 							<c:when test="${item.webtoonState=='pause'}">
-							<div class="card col s12 m24 l2 top_card hoverable animated" style="margin: -5px 7px 20px 0px !important; width:221px!important;">
-								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important; background-color: black">
+								<div class="card-image card-image-box waves-effect waves-block waves-light"style=" background-color: black">
 								<span style="color:white; position: absolute; width: 100%; text-align: center; top: 46%; font-size: 25px; background-color: rgba( 0, 0, 0, 0.5 );">휴재중</span>
 								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' style="opacity: 0.5;">
-								</div>
-								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
-									<c:choose>
-										<c:when test="${fn:length(item.webtoonName) <= 8}">
-											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
-											${item.webtoonName}
-											</span>
-										</c:when>
-										<c:otherwise>
-											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
-											${fn:substring(item.webtoonName,0,8)}...
-											</span>
-										</c:otherwise>
-									</c:choose>
-									<span id="ss" style="padding-left: 4%;">
-										<i id="scription-card-btn" class="material-icons scription-a-index" 
-											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important; margin-right: auto">grade
-										</i>
-									</span>
-								</div>
-								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
-									<span>${item.nickname}</span>
-									<span style="float: right;">100%</span>
-								</div> 
-							</div>
 							</c:when>
 							<c:otherwise>
-							<div class="card col s12 m24 l2 top_card hoverable animated sticky-action" style="width:221px!important;margin: -5px 7px 20px 0px !important;">
-								<div class="card-image card-image-box waves-effect waves-block waves-light"style="padding-bottom:211px!important;">
-								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>"
-									name="${item.webtoonCode}" id='gowebtoon'>
+								<div class="card-image card-image-box waves-effect waves-block waves-light">
+								<img src="<c:url value='/resources${item.webtoonThumbnail}'/>" name="${item.webtoonCode}" id='gowebtoon' class="search-collection-item">							
+							</c:otherwise>
+						</c:choose>
 								</div>
 								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 									<c:choose>
 										<c:when test="${fn:length(item.webtoonName) <= 8}">
-											<span class="card-title grey-text text-darken-4" style="font-size:16px; font-weight:500;">
+											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
 											${item.webtoonName}
 											</span>
 										</c:when>
 										<c:otherwise>
-											<span class="card-title grey-text text-darken-4" style="font-size:16px; font-weight:500;">
+											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
 											${fn:substring(item.webtoonName,0,8)}...
 											</span>
 										</c:otherwise>
@@ -320,8 +271,6 @@
 									<span style="float: right;">100%</span>
 								</div> 
 							</div>
-							</c:otherwise>
-						</c:choose>
 					</c:forEach>
 			</div>
 		</div>
