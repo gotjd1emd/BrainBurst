@@ -15,10 +15,11 @@
 		<span class="signup-text">완료</span>
 	</div>
 	<div class="signup_box z-depth-2">
-		<div class="center" style="height:456px; padding-top: 180px;">
-		<p>축하드립니다.</p>
-		<p>Try make your Throng 홈페이지 가입이 완료되었습니다.</p>
-		<p>완료 버튼을 눌러 로그인을 해주세요!</p>
+		<div class="center" style="height:570px; padding-top: 90px;">
+		<img alt="logo" src="<c:url value='/resources/img/Try make your Throng mark.png'/>" style=" width: 20%;">
+		<p style="font-size: 20px; font-weight: 600;">축하드립니다.</p>
+		<p style="font-size: 17px;">Try make your Throng 홈페이지 가입이 완료되었습니다.</p>
+		<p style="font-size: 17px;">완료 버튼을 눌러 로그인을 해주세요!</p>
 		</div>
 				
 		<a id="btn-next" class="waves-effect waves-light btn-large color-500" href="/controller">완료</a>
