@@ -45,7 +45,7 @@
 
 <!-- 웹툰 상태 처리 다이어로그 -->
 <div id="webtoon-state-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post">
+	<form method="post" action="">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>웹툰 상태 처리</h5>

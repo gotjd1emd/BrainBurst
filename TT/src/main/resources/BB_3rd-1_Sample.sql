@@ -42,10 +42,6 @@ values ('pedro@hanmail.net','페드로','pedro','01099556644',4300,'독자','페드로',
 
 insert into user_information 
 (email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
-values ('nayeon@naver.com','나연','nayeon','01093441366',1000,'독자','임나연','여','950922');
-
-insert into user_information 
-(email,nickname,password,phone,cash_point,user_level,name,gender,birth_date) 
 values ('dahyeon@gmail.com','다현','dahyeon','01088997788',1000,'독자','김다현','남','980528');
 
 insert into user_information 
@@ -3071,7 +3067,7 @@ values(1, 284, '/webtoon/adult/no.10 - two of us.jpg');
 
 insert into webtoon
 (webtoon_code, webtoon_name, webtoon_level, webtoon_state, category_code,penalty,nickname, funding_period, summary, webtoon_thumbnail)
-values (9,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
+values (webtoon_seq.nextval,'타이밍','free','complete','I','green', '혜리', 0, '모든 건 타이밍~', '/webtoon/webtoonThumbnail/5.jpg');
 
 --
 
