@@ -28,6 +28,15 @@ import brainburst.tt.service.AuthorService;
 public class AuthorContoller {
 	@Autowired
 	private AuthorService authorService;
+	
+	@RequestMapping("{viewFolder}/{viewName}")
+	public String pageMove(
+			@PathVariable("viewFolder") String viewFolder, 
+			@PathVariable("viewName") String viewName){
+		
+		System.out.println(viewFolder+"/"+viewName+"로 이동합니다.");
+		return viewFolder+"/"+viewName;
+	}
 
 	/**
 	 * 작품상세보기
@@ -92,11 +101,46 @@ public class AuthorContoller {
 	등록하면 정보값 가지고 웹툰테이블 생성
 	이후 작가페이지의 연재중웹툰탭으로 이동
 	*/
-	public String addSeries(HttpServletRequest request) {
+	public String addSeries(HttpServletRequest request, WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO) throws Exception {
 		//뷰에서 보내는 웹툰정보
-		WebtoonDTO webtoonDTO = (WebtoonDTO) request.getAttribute("dto");
-		EpisodeDTO episodeDTO = (EpisodeDTO) request.getAttribute("dto2");
-		authorService.addSeries(webtoonDTO, episodeDTO);
+		List<MultipartFile> images = episodeDTO.getImage();
+		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
+		
+		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
+		System.out.println("categoryName: " + categoryName);
+		String path = request.getSession().getServletContext().getRealPath("/");
+		String dbPath = "/webtoon/";
+		path += "/resources" + dbPath;
+		
+		if(webtoonDTO.getWebtoonThumbnailFile().getSize() == 0) {
+			webtoonDTO.setWebtoonThumbnail(null);
+		}else {
+			webtoonDTO.setWebtoonThumbnail(dbPath + "webtoonThumbnail/"
+					+ webtoonDTO.getWebtoonThumbnailFile().getOriginalFilename());
+			webtoonDTO.getWebtoonThumbnailFile().transferTo(new File(path + "webtoonThumbnail/"
+					+ webtoonDTO.getWebtoonThumbnailFile().getOriginalFilename()));
+		}
+		
+		if(episodeDTO.getThumbnailFile().getSize() == 0) {
+			episodeDTO.setThumbnail(null);
+		}else {
+			episodeDTO.setThumbnail(dbPath + "episodeThumbnail/"
+						+ episodeDTO.getThumbnailFile().getOriginalFilename());
+			episodeDTO.getThumbnailFile().transferTo(new File(path + "episodeThumbnail/"
+					+ episodeDTO.getThumbnailFile().getOriginalFilename()));
+		}
+		int index = 0;
+		for(int i = 0; i < images.size(); i++) {
+			if(images.get(i).getSize() != 0) {
+				imageList.add(new ImageDTO(index++, -1, dbPath+categoryName+"/"+images.get(i).getOriginalFilename()));
+				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getOriginalFilename()));
+			}
+		}
+
+		System.out.println("image index : " + imageList.size());
+		
+		int result = authorService.addSeries(webtoonDTO, episodeDTO, imageList);
+		
 		return "author/authorPage";
 	}
 	

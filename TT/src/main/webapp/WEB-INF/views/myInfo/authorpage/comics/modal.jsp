@@ -86,7 +86,7 @@
 
 <!-- 웹툰 수정 하기 버튼 -->
 <div id="webtoon-modify-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post">
+	<form method="get" action="<c:url value="/author/webtoonModify"/>">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>웹툰 상태 처리</h5>
