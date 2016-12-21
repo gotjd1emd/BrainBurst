@@ -8,6 +8,48 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
+		
+		//에피소드 제목
+		$("#episode-title").keyup(function (e) {
+			if($(this).val().length >= 20){
+				  $(this).val($(this).val().substring(0, 20));
+			  }
+		})
+		
+		//작가의 말
+		$("#author-word").keyup(function (e) {
+			if($(this).val().length >= 50){
+				  $(this).val($(this).val().substring(0, 50));
+			  }
+		})
+		
+		
+		$("form").submit(function() {
+			if ($("#episode-title").val() == "") { // 에피소드 제목 미입력  검사
+				Materialize.toast('에피소드 제목을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#episode-title").focus();
+				return false;
+			}else if ($("#author-word").val() == "") { // 작가의 말 미입력  검사
+				Materialize.toast('작가의 말을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#author-word").focus();
+				return false;
+			}else if ($("input[name='image[0]']").val() == "") { // 그림 이미지가 비어있을 때  검사
+				Materialize.toast('에피소드 그림 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}else if ($("#thumbnail").val() == "") { // 그림 이미지가 비어있을 때  검사
+				Materialize.toast('에피소드 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}
+		});
+		
 		var count = $("input[type=file]").length - 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);

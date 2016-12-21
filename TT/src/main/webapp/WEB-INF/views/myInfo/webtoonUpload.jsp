@@ -34,12 +34,55 @@
 	          $('#counter').html(content.length + '/100');
 	    });
 		
+		$("form").submit(function() {
+			if ($("#webtoon-name").val() == "") { // 웹툰 제목 미입력  검사
+				Materialize.toast('웹툰 제목을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#webtoon-name").focus();
+				return false;
+			}else if ($("#textarea1").val() == "") { // 줄거리 미입력  검사
+				Materialize.toast('줄거리를 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#textarea1").focus();
+				return false;
+			}else if ($("#episode-title").val() == "") { // 에피소드 제목 미입력  검사
+				Materialize.toast('에피소드 제목을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#episode-title").focus();
+				return false;
+			}else if ($("#author-word").val() == "") { // 작가의 말 미입력  검사
+				Materialize.toast('작가의 말을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#author-word").focus();
+				return false;
+			}else if ($("input[name='image[0]']").val() == "") { // 그림 이미지가 비어있을 때  검사
+				Materialize.toast('에피소드 그림 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}else if ($("#thumbnail").val() == "") { // 그림 이미지가 비어있을 때  검사
+				Materialize.toast('에피소드 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}
+		});
+		
 		$('select').material_select();
 		
 		var count = $("input[type=file]").length - 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
+		});
+		
+		$('#webtoon-thumbnail').on("change", function() {
+			readURL(this);
+			$('#thumbnail-text2').hide();
 		});
 		
 		$('.image-file').on("change", "input[type=file]", function() {
@@ -80,13 +123,21 @@
 			var reader = new FileReader();
 			
 			reader.onload = function(e) {
-				$('.inner').html("<img id='preview-image' src='"+e.target.result+"'/>");
+				console.log(input.getAttribute('id'));
+				if(input.getAttribute('id')=='thumbnail'){
+					$('#inner1').html("<img id='preview-image' src='"+e.target.result+"'/>");
+				}else{
+					$('#inner2').html("<img id='preview-image' src='"+e.target.result+"'/>");
+				}
 			}
 			
 			reader.readAsDataURL(input.files[0]);
 			var fileSize = input.files[0].size/1024;
-			
-			$('#thumbnail-preview').val(fileSize.toFixed(2)+"KB");
+			if(input.getAttribute('id')=='thumbnail'){
+				$('#thumbnail-preview').val(fileSize.toFixed(2)+"KB");
+			}else{
+				$('#thumbnail-preview2').val(fileSize.toFixed(2)+"KB");
+			}
 		}
 	}
 	
@@ -127,7 +178,7 @@
 		<div class="row">
 			<div class="col s4">
 				<div class="preview">
-					<div class="inner">
+					<div id="inner1" class="inner">
 						<p id="thumbnail-text">썸네일 미리보기</p>
 						<img id='preview-image' src='' />
 					</div>
@@ -169,6 +220,31 @@
 				<div class="input-field">
 			<input id="author-word" type="text" class="validate"
 				name="author-word"> <label for="author-word">작가의 말</label>
+		</div>
+		<div class="file-field input-field">
+			<div class="btn color-500">
+				<span>File</span> <input id="webtoon-thumbnail" type="file" name="webtoonThumbnail">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			</div>
+		</div>
+		<!-- 썸네일 -->
+		<div class="row">
+			<div class="col s4">
+				<div class="preview">
+					<div id="inner2" class="inner">
+						<p id="thumbnail-text2">썸네일 미리보기</p>
+						<img id='preview-image2' src='' />
+					</div>
+				</div>
+			</div>
+			<div class="col s8">
+				<p>썸네일 미리보기 이미지입니다.</p>
+				<input id="thumbnail-preview2" type="text" class="validate"
+					name="thumbnail-preview2" readonly> <label
+					for="thumbnail-preview2"></label>
+			</div>
 		</div>
 	</div>
 	<div class="col s6">

@@ -93,7 +93,6 @@
 		        $("input[type='radio']").focus();
 				return false;
 			} 
-			
 		});
 		
 		$("#email-signup").keyup(function () {
