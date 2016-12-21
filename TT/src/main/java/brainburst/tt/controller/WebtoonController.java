@@ -269,8 +269,13 @@ public class WebtoonController {
 	public List<WebtoonDTO> selectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		System.out.println("selectMyWebtoon·Î ¿Ô´Ù");
-		List<WebtoonDTO> list = webtoonService.selectMyWebtoon(webtoonState, userDTO.getNickname());
-		System.out.println(list);
+		List<WebtoonDTO> list = null;
+		if (webtoonState.equals("serial")) {
+			list = webtoonService.selectMyWebtoon(userDTO.getNickname());
+		} else if (webtoonState.equals("complete")) {
+			list = webtoonService.selectMyCompleteWebtoon(userDTO.getNickname());
+		}
+		System.out.println(list.size());
 		session.setAttribute("webtoonList", list);
 		return list;
 	}

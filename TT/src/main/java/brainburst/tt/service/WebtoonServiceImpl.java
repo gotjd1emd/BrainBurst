@@ -123,8 +123,13 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname) {
-		return webtoonDAO.selectMyWebtoon(webtoonState, nickname);
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return webtoonDAO.selectMyWebtoon(nickname);
+	}
+
+	@Override
+	public List<WebtoonDTO> selectMyCompleteWebtoon(String nickname) {
+		return webtoonDAO.selectMyCompleteWebtoon(nickname);
 	}
 
 	@Override
