@@ -64,6 +64,9 @@ public class WebtoonController {
 		if(userDTO != null) {
 			email = userDTO.getEmail();
 		}
+		if(category.equals("all")){
+			category = null;
+		}
 		System.out.println("selectWebtoonByLevelR·Î ¿Ô´Ù");
 		System.out.println("catogory_code : " + category);
 		System.out.println("webtoonLevel : " + webtoonLevel);
