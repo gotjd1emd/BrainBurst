@@ -271,3 +271,5 @@ values (episode_seq.NEXTVAL, 160, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘
 commit;
 
 
+
+
