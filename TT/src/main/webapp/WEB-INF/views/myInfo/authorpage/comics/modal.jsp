@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
 <!-- 펀딩 웹툰 신청 다이얼로그 -->
 <div id="funding-webtoon-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post">
@@ -51,9 +50,9 @@
 				<h5>웹툰 상태 처리</h5>
 			</div>
 			<div class="modal-content modal-content-funding">
-		<div class="input-field col s12">
-			<select name="webtoonCode">
-				<c:forEach var="item" items="${webtoonList}" varStatus="status" >
+		<div class="input-field col s12" >
+			<select name="webtoonCode" id="mylist">
+				<c:forEach var="item" items="${mylist}" varStatus="status" >
 					<option value="${item.webtoonCode}">${item.webtoonName}</option>
 				</c:forEach>
 			</select> <label>상태 변경 할 웹툰 선택</label>

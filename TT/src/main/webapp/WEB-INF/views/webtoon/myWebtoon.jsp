@@ -178,7 +178,11 @@
 				
 			</div>
 			<div class="col s9">
-				<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">MY WEBTOON</div>
+			<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">MY WEBTOON
+			<c:if test="${webtoonDTO.webtoonState == 'blind'}">
+				(BLIND)
+			</c:if>
+			</div>
 				<p style="font-weight: 600;font-size: 35px;">${webtoonDTO.webtoonName}  
 				<i id="scription-card-btn" class="material-icons" 
 					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
