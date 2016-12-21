@@ -111,7 +111,7 @@
 								});
 						},
 						error : function() {
-							alert("이미 구독하였습니다.")
+							alert("로그인후 사용하세요.")
 						}
 					})
 				} else if (
@@ -158,7 +158,7 @@
 								
 						},
 						error : function() {
-							alert("이미 구독하였습니다.")
+							alert("로그인후 사용하세요.")
 						}
 					})
 				}
