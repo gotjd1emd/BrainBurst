@@ -87,4 +87,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 							SUMMARY = #{summary}, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
 		WHERE WEBTOON_CODE = #{webtoonCode}
 	</update>
+	
+	<!-- selectWebtoon -->
+	<select id="selectWebtoon" resultMap="webtoonDTO" parameterType="_int">
+		SELECT WEBTOON_NAME, WEBTOON_CODE, CATEGORY_CODE, SUMMARY, WEBTOON_THUMBNAIL 
+		FROM WEBTOON 
+		WHERE WEBTOON_CODE = #{value}
+	</select>
 </mapper>

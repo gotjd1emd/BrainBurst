@@ -93,4 +93,11 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	int modifyWebtoon(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * 웹툰 코드에 맞는 웹툰정보 찾기
+	 * @param webtoonCode
+	 * @return
+	 */
+	WebtoonDTO selectWebtoon(int webtoonCode);
 }

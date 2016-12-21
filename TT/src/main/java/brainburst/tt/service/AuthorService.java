@@ -76,4 +76,11 @@ public interface AuthorService {
 	 * @return
 	 */
 	int modifyEpisode(EpisodeDTO episodeDTO, Map<String, List<ImageDTO>> imageList);
+	
+	/**
+	 * 웹툰코드에 해당하는 웹툰정보 찾기
+	 * @param webtoonCode
+	 * @return
+	 */
+	WebtoonDTO selectWebtoon(int webtoonCode);
 }
