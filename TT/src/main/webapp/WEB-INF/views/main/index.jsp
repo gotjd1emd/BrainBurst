@@ -100,7 +100,7 @@
 									var level = item.webtoonLevel;
 									var webtoonName = item.webtoonName;
 									var htmlcode = "";
-									htmlcode +="<li>";
+									htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
 									if(item.webtoonLevel == 'funding'){
 										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
 									}else if(item.webtoonLevel == 'free'){
@@ -109,7 +109,7 @@
 										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
 									}
 									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'>";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>'>";
 									htmlcode +="</div><div style='margin-left:10px;'>";
 									if(item.webtoonName.length<=7){
 										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
@@ -138,7 +138,7 @@
 									var level = item.webtoonLevel;
 									var webtoonName = item.webtoonName;
 									var htmlcode = "";
-									htmlcode +="<li>";
+									htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
 									if(level == 'funding'){
 										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
 									}else if(level == 'free'){
@@ -147,7 +147,7 @@
 										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
 									}
 									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' ></div>";
 									htmlcode +="<div style='margin-left:10px;'>";
 									if(item.webtoonName.length<=7){
 										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
