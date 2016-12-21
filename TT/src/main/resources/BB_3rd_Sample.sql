@@ -16,7 +16,7 @@ drop table fund;
 drop table webtoon;
 drop table user_information;
 drop table category;
-
+drop table fund_time_limit;
 --sequence drop
 
 drop sequence webtoon_seq;
