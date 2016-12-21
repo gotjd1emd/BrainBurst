@@ -21,7 +21,7 @@
 					$.each(result, function(index, item) {
 						var htmlcode = "";
 						htmlcode +="<li class='collection-item avatar scription-collection'>";
-						htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+						htmlcode +="<img class='circle scription-title-img'";
 						htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' alt='' class='circle scription-title-img'>";
 						htmlcode +="<span class='scription-title'>"+item.webtoonName+"</span>";		
 						htmlcode +="<p>"+item.nickname+" <br> Second Line</p> ";		
