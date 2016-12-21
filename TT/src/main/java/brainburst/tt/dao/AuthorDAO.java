@@ -100,4 +100,6 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode);
+	
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
 }

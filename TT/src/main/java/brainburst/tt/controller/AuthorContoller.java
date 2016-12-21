@@ -83,6 +83,13 @@ public class AuthorContoller {
 			//이동할 뷰이름 변경
 			viewName = "myInfo/authorpage";
 		}
+		/*
+		 * 웹툰상태변경시 변경가능한 웹툰목록가져오기
+		 * (세션의 webtoonList가 수시로 변하여서 제대로 리스트가 출력되지 않으므로,
+		 * 세션에 mylist로 새로운 목록을 넣어준다.)
+		 */  
+		List<WebtoonDTO> list2 = authorService.selectMyWebtoon(userDTO.getNickname());
+		session.setAttribute("mylist", list2);
 		modelAndView.setViewName(viewName);
 		return modelAndView;
 	}

@@ -89,4 +89,9 @@ public class AuthorDAOImpl implements AuthorDAO {
 	public WebtoonDTO selectWebtoon(int webtoonCode) {
 		return sqlSession.selectOne("authorMapper.selectWebtoon", webtoonCode);
 	}
+	
+	@Override
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return sqlSession.selectList("webtoonMapper.selectMyWebtoon", nickname);
+	}
 }

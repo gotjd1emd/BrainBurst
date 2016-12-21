@@ -104,4 +104,9 @@ public class AuthorServiceImpl implements AuthorService {
 	public WebtoonDTO selectWebtoon(int webtoonCode) {
 		return authorDAO.selectWebtoon(webtoonCode);
 	}
+	
+	@Override
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return authorDAO.selectMyWebtoon(nickname);
+	}
 }

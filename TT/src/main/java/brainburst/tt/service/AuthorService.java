@@ -83,4 +83,6 @@ public interface AuthorService {
 	 * @return
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode);
+	
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
 }
