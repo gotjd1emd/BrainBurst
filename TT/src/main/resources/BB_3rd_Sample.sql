@@ -1,4 +1,6 @@
 --drop table 
+drop table exchange;
+drop sequence exchange_seq;
 
 drop table recommend;
 drop table fund_time_limit;
@@ -48,7 +50,7 @@ CREATE TABLE additional_info
 (
    email                 VARCHAR2(30)  NOT NULL constraint additional_info_email_fk references user_information(email),
    account_password      VARCHAR2(20)  NOT NULL ,
-   bank_name           VARCHAR2(30)  NOT NULL ,
+   bank_name             VARCHAR2(30)  NOT NULL ,
    account_number        VARCHAR2(20)  NOT NULL ,
    identification_card   VARCHAR2(100)  NOT NULL ,
    constraint additional_info_email_pk primary key(email) 
@@ -65,10 +67,10 @@ CREATE TABLE webtoon
    webtoon_code          NUMBER  NOT NULL constraint webtoon_code_pk primary key,
    webtoon_name          VARCHAR2(50)  NOT NULL ,
    webtoon_level         VARCHAR2(10)  default 'free' ,
-   webtoon_state         VARCHAR2(10)  default '연재' ,
+   webtoon_state         VARCHAR2(10)  default 'serial' ,
    category_code         VARCHAR2(10)  NOT NULL constraint webtoon_category_fk references category(category_code) on delete cascade,
    penalty               VARCHAR2(10)  default 'green',
-   nickname               VARCHAR2(30)  NOT NULL constraint webtoon_nickname_fk references user_information(nickname),
+   nickname              VARCHAR2(30)  NOT NULL constraint webtoon_nickname_fk references user_information(nickname),
    funding_period        NUMBER  NULL ,
    summary               VARCHAR2(200)  NULL ,
    webtoon_thumbnail     VARCHAR2(100) NULL 
@@ -94,7 +96,9 @@ CREATE TABLE fund
    fund_code      NUMBER  NOT NULL constraint fund_code_pk primary key ,
    episode_fund   NUMBER  NULL  ,
    webtoon_code   NUMBER  NOT NULL constraint fund_webtoon_code_fk references webtoon(webtoon_code) on delete cascade,
-   episode_number  NUMBER  NULL
+   episode_number NUMBER  NULL,
+   start_date     DATE NOT NULL,
+   due_date       DATE NOT NULL 
 );
 
 CREATE TABLE episode
@@ -108,7 +112,7 @@ CREATE TABLE episode
    episode_title         VARCHAR2(50)  NULL ,
    author_word           VARCHAR2(100)  NULL ,
    thumbnail             VARCHAR2(100)  NULL ,
-   fund_code           NUMBER  NULL constraint episode_fund_code_fk references fund(fund_code) on delete cascade
+   fund_code             NUMBER  NULL constraint episode_fund_code_fk references fund(fund_code) on delete cascade
 );
 
 CREATE TABLE image
@@ -119,13 +123,6 @@ CREATE TABLE image
    constraint image_pk primary key(image_index, episode_sequence)
 );
 
-CREATE TABLE fund_time_limit
-(
-   start_date            DATE  NOT NULL ,
-   due_date              DATE  NOT NULL ,
-   episode_sequence      NUMBER  NOT NULL constraint time_limit_episode_fk references episode(episode_sequence) on delete cascade ,
-   constraint time_limit_episode_pk primary key(episode_sequence)
-);
 
 CREATE TABLE pay_history
 (
@@ -166,8 +163,8 @@ CREATE TABLE cash_history
 CREATE TABLE recommend
 (
    recommend_sequence   NUMBER  NOT NULL constraint recommend_sequence_pk primary key ,
-   episode_sequence   NUMBER  NOT NULL constraint recommend_episode_fk references episode(episode_sequence) on delete cascade,
-   email            VARCHAR2(30)  NOT NULL constraint recommend_email_fk references user_information(email) 
+   episode_sequence     NUMBER  NOT NULL constraint recommend_episode_fk references episode(episode_sequence) on delete cascade,
+   email                VARCHAR2(30)  NOT NULL constraint recommend_email_fk references user_information(email) 
 );
 
 
@@ -217,6 +214,22 @@ create sequence recommend_seq
    increment by 1 
    nocache;
 
+--exchange table sequence 추가 
+   
+ create sequence exchange_seq 
+   start with 1
+   increment by 1 
+   nocache;
+
+--Exchange Table 추가 
+CREATE TABLE exchange (	
+	exchange_sequence  	  NUMBER NOT NULL constraint exchange_sequence_pk primary key,
+	email			            VARCHAR2(30) NULL constraint exchange_email_fk references user_information(email),	
+	cash_point		        VARCHAR2(20) NOT NULL,
+	account_number        VARCHAR2(20) NOT NULL,	
+	identification_card   VARCHAR2(100) NULL
+);
+   
 -- sequence drop(delete )
 
 commit;
