@@ -18,6 +18,7 @@
 		<div class="row accept-terms-box">
 			<div class="accept-terms-1 col right-align">
 				<div class="accept-terms-content-1 left-align" style="overflow: scroll; overflow-x:hidden;">
+					<a href="/controller/test/error">error</a>
 					<h5>제 1장 총칭</h5><br>
 					제 1조 목적<br>
 					본 이용 약관은 레진엔터테인먼트가 운영하는 레진코믹스의 서비스 이용 권한을 부여 받기 위한 조건을 명시하며, 이용자의 권리, 의무 및 책임 사항 규정을 목적으로 합니다. 레진코믹스의 이용자는 본 약관의 규정에 따라 이용해야만 하며 약관에 동의해야 이용 할 수 있습니다.<br>

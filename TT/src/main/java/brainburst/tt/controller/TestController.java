@@ -26,4 +26,10 @@ public class TestController {
 	public String modifyEpisode() {
 		return "webtoon/modifyEpisode";
 	}
+	
+	@RequestMapping("error")
+	public String error(){
+		System.out.println("error ¹ß»ý");
+		return "error/error";
+	}
 }
