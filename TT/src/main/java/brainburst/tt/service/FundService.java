@@ -21,16 +21,9 @@ public interface FundService {
 	int episodeTimeOutCheck(String deadline);
 	
 	/**
-	 * 마감일 하루뒤 펀딩 테이블에 펀딩튜플 추가
+	 * 마감일 하루뒤 펀딩 테이블에 펀딩튜플 추가와 목표미달 웹툰 패널티 추가
 	 * @param today
 	 * @return
 	 */
 	int startFunding(String today);
-	
-	/**
-	 * 목표 펀딩율을 못미칠때
-	 * @param today
-	 * @return
-	 */
-	int addPenalty(String today);
 }

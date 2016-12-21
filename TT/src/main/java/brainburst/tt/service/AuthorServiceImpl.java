@@ -53,7 +53,7 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 	
 	@Override
-	public String selectCategoryName(String webtoonCode) {
+	public String selectCategoryName(int webtoonCode) {
 		return authorDAO.selectCategoryName(webtoonCode);
 	}
 	

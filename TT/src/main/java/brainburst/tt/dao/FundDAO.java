@@ -22,7 +22,7 @@ public interface FundDAO {
 	/**
 	 * 마감일이 지나고도 업로드가 안된 웹툰코드 찾는다. select webtoon_code from episode 
 	 * @param webtoonCode 						where webtoon_code = #{webtoonCode} and 
-	 * @return 									fund_code != (select fund_code from fund where trunc(due_date) + 1 in #{date})
+	 * @return 									fund_code != (select fund_code from fund where trunc(due_date) + 2 in #{date})
 	 */
 	int lateEpisode(int webtoonCode, String date);
 	
@@ -31,7 +31,7 @@ public interface FundDAO {
 	 * @param webtoonCode
 	 * @return update 결과값
 	 */
-	int webtoonPause(int webtoonCode);
+	int webtoonPause(int webtoonCode, String penalty);
 	
 	
 	/**
@@ -62,5 +62,12 @@ public interface FundDAO {
 	 * @param webtoonCode
 	 * @return
 	 */
-	int addPenalty(int webtoonCode);
+	int addPenalty(int webtoonCode, String penalty);
+	
+	/**
+	 * 해당 웹툰의 패널티를 찾는다.
+	 * @param webtoonCode
+	 * @return
+	 */
+	String selectPenalty(int webtoonCode);
 }

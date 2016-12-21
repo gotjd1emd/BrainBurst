@@ -32,6 +32,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
+	<!-- selectFundingWebtoonCode -->
+	<select id="selectFundingWebtoonCode" resultType="int">
+		SELECT WEBTOON_CODE FROM WEBTOON WHERE WEBTOON_LEVEL = 'funding'
+	</select>
 	
+	<!-- lateEpisode -->
+	<select id="lateEpisode" resultType="_int" parameterType="map">
+		SELECT WEBTOON_CODE FROM EPISODE 
+		WHERE WEBTOON_CODE = #{webtoonCode} AND 
+		FUND_CODE != (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	</select>
+	
+	<!-- webtoonPause -->
+	<update id="webtoonPause" parameterType="map">
+		UPDATE WEBTOON SET WEBTOON_STATE = 'pause', PENALTY = #{penalty} WHERE WEBTOON_CODE = #{value}
+	</update>
+	
+	<!-- meetADeadlineWebtoon -->
+	<select id="meetADeadlineWebtoon" resultMap="episodeDTO" parameterType="map">
+		SELECT WEBTOON_CODE, EPISODE_NUMBER FROM EPISODE 
+		WHERE WEBTOON_CODE = #{webtoonCode} AND 
+		FUND_CODE = (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	</select>
 
+	<!-- startFunding -->
+	<insert id="startFunding" parameterType="map">
+		INSERT INTO FUND(FUND_CODE, EPISODE_FUND, WEBTOON_CODE, EPISODE_NUMBER, START_DATE, DUE_DATE) 
+		VALUES(FUND_SEQ.NEXTVAL, 0, #{webtoonCode}, #{episodeNumber}, SYSDATE, SYSDATE+5)
+	</insert>
+	
+	<!-- selectEpisodeFund -->
+	<select id="selectEpisodeFund" resultType="_int" parameterType="map">
+		SELECT EPISODE_FUND FROM FUND WHERE WEBTOON_CODE = #{webtoonCode} AND EPISODE_NUMBER = #{episodeNumber}
+	</select>
+	
+	<!-- addPenalty -->
+	<update id="addPenalty" parameterType="map">
+		UPDATE WEBTOON SET PENALTY = #{penalty} WHERE WEBTOON_CODE
+	</update>
+	
+	<!-- selectPenalty -->
+	<select id="selectPenalty" resultType="string" parameterType="_int">
+		SELECT PENALTY FROM WEBTOON WHERE WEBTOON_CODE = #{value}
+	</select>
 </mapper>

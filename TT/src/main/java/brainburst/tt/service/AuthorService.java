@@ -58,7 +58,7 @@ public interface AuthorService {
 	/**
 	 * Category Name 가져오기
 	 */
-	String selectCategoryName(String webtoonCode);
+	String selectCategoryName(int webtoonCode);
 	
 	/**
 	 * 에피소드 업로드

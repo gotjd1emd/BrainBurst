@@ -37,7 +37,7 @@ public class AuthorDAOImpl implements AuthorDAO {
 	}
 	
 	@Override
-	public String selectCategoryName(String webtoonCode) {
+	public String selectCategoryName(int webtoonCode) {
 		return sqlSession.selectOne("authorMapper.categoryName", webtoonCode);
 	}
 	
@@ -47,7 +47,7 @@ public class AuthorDAOImpl implements AuthorDAO {
 	}
 	
 	@Override
-	public int selectEpisodeSequence(String webtoonCode, int episodeNumber) {
+	public int selectEpisodeSequence(int webtoonCode, int episodeNumber) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("webtoonCode", webtoonCode);
 		map.put("episodeNumber", episodeNumber);

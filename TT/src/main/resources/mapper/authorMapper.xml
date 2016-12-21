@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- selectCategoryName -->
-	<select id="categoryName" resultType="string" parameterType="string">
+	<select id="categoryName" resultType="string" parameterType="_int">
 		SELECT LOWER(CATEGORY_NAME) FROM CATEGORY 
 		WHERE CATEGORY_CODE = (SELECT CATEGORY_CODE FROM WEBTOON 
 								WHERE WEBTOON_CODE = #{value}) 
