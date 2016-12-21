@@ -280,8 +280,6 @@ public class WebtoonController {
 	 * */
 	@RequestMapping("webtoonStateChange")
 	public String webtoonStateChange(WebtoonDTO webtoonDTO){
-		System.out.println(webtoonDTO.getWebtoonLevel());
-		System.out.println(webtoonDTO.getWebtoonCode());
 		webtoonService.webtoonStateChange(webtoonDTO);
 		return "myInfo/authorpage";
 	}

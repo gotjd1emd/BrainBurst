@@ -105,5 +105,5 @@ public interface WebtoonService {
 	/**
 	 * 웹툰 상태 변경
 	 * */
-	List<WebtoonDTO> webtoonStateChange(WebtoonDTO webtoonDTO);
+	int webtoonStateChange(WebtoonDTO webtoonDTO);
 }

@@ -128,8 +128,7 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> webtoonStateChange(WebtoonDTO webtoonDTO) {
-		webtoonDAO.webtoonStateChange(webtoonDTO);
-		return null;
+	public int webtoonStateChange(WebtoonDTO webtoonDTO) {
+		return webtoonDAO.webtoonStateChange(webtoonDTO);
 	}
 }
