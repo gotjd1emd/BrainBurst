@@ -4,7 +4,7 @@
 	<script>
 		$(function() {
 			$("#rmd").click(function() {
-				var episodeSequence = $("input[type=hidden]").val();
+				var episodeSequence = $("#episodeSequence").val();
 				$.ajax({
 					url : "/controller/webtoon/recommandation/"+episodeSequence,
 					type : "get",
@@ -25,6 +25,7 @@
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">
+	<input id="episodeSequence" type="hidden" value="${episodeDTO.episodeSequence}">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
