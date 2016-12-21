@@ -47,6 +47,16 @@
 		        $("#toast-container").css("margin-left", (width*-1)+209);
 		        $("#textarea1").focus();
 				return false;
+			}else if ($("#thumbnail").val() == "") { //웹툰 썸네일이 비어있을 때  검사
+				Materialize.toast('웹툰 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}else if ($(".select-dropdown").val() == "카테고리 선택") { // 카테고리 검사
+				Materialize.toast('카테고리를 선택해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
 			}else if ($("#episode-title").val() == "") { // 에피소드 제목 미입력  검사
 				Materialize.toast('에피소드 제목을 입력해 주세요.', 2000, 'rounded');
 		        var width = $("#toast-container").width();
@@ -59,12 +69,12 @@
 		        $("#toast-container").css("margin-left", (width*-1)+209);
 		        $("#author-word").focus();
 				return false;
-			}else if ($("input[name='image[0]']").val() == "") { // 그림 이미지가 비어있을 때  검사
+			}else if ($("input[name='image[0]']").val() == "") { // 에피소드 그림 이미지가 비어있을 때  검사
 				Materialize.toast('에피소드 그림 이미지를 추가해 주세요.', 2000, 'rounded');
 		        var width = $("#toast-container").width();
 		        $("#toast-container").css("margin-left", (width*-1)+209);
 				return false;
-			}else if ($("#thumbnail").val() == "") { // 그림 이미지가 비어있을 때  검사
+			}else if ($("#thumbnail2").val() == "") { // 에피소드 썸네일 이미지가 비어있을 때  검사
 				Materialize.toast('에피소드 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
 		        var width = $("#toast-container").width();
 		        $("#toast-container").css("margin-left", (width*-1)+209);
@@ -185,7 +195,7 @@
 				</div>
 			</div>
 			<div class="col s8">
-				<p>썸네일 미리보기 이미지입니다.</p>
+				<p>웹툰 썸네일 미리보기 이미지입니다.</p>
 				<input id="thumbnail-preview" type="text" class="validate"
 					name="thumbnail-preview" readonly> <label
 					for="thumbnail-preview"></label>
@@ -217,7 +227,7 @@
 			<input id="episode-title" type="text" class="validate"
 				name="episodeTitle"> <label for="episode-title">에피소드 제목</label>
 		</div>
-				<div class="input-field">
+		<div class="input-field">
 			<input id="author-word" type="text" class="validate"
 				name="author-word"> <label for="author-word">작가의 말</label>
 		</div>
@@ -240,7 +250,7 @@
 				</div>
 			</div>
 			<div class="col s8">
-				<p>썸네일 미리보기 이미지입니다.</p>
+				<p>에피소드 썸네일 미리보기 이미지입니다.</p>
 				<input id="thumbnail-preview2" type="text" class="validate"
 					name="thumbnail-preview2" readonly> <label
 					for="thumbnail-preview2"></label>
