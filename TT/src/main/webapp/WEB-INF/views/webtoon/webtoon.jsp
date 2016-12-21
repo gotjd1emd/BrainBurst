@@ -101,6 +101,13 @@
 						success : function(result) {
 							$("#scription-card-btn").css("color", "#424242");
 							$("#subScriptionList").empty();
+							if (result.length == 0) {
+								var htmlcode = "";
+								htmlcode +="<li><div id='nullscription' class='row a-button-nav'>"
+								htmlcode +="<i class='material-icons none-scription-icon'>book</i>"
+								htmlcode +="<p class='none-scription-text'>구독된 웹툰이 없습니다.</p></div></li>"
+								$("#subScriptionList").append(htmlcode);
+							} else {
 								$.each(result, function(index, item) {
 									var level = item.webtoonLevel;
 									var webtoonName = item.webtoonName;
@@ -125,6 +132,8 @@
 									htmlcode +="</div></a></li>"
 									$("#subScriptionList").append(htmlcode);
 								});
+							}
+								
 						},
 						error : function() {
 							alert("이미 구독하였습니다.")
