@@ -59,10 +59,10 @@
 								htmlcode+="<div class='card-image card-image-box waves-effect waves-block waves-light' style='padding-bottom:211px!important;'>"
 								htmlcode+="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' id='gowebtoon'></div>"
 								htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-								if (item.webtoonName.length <= 8) {
+								if (item.webtoonName.length < 7) {
 									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName+"</span>"	
 								} else {
-									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName.substring(0,7)+"...</span>"	
+									htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName.substring(0,6)+"...</span>"	
 								}
 								htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 								htmlcode+="<span id='ss' style='padding-left: 4%;'>"
