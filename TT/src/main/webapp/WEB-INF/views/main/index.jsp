@@ -175,16 +175,16 @@
 	<div class="row category-row">
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">
 			<ul class="tabs grey darken-3">
-				<li class="tab col s1 offset-l1"><a href="#top" name="${tapType}">TOP</a></li>
-				<li class="tab col s1"><a href="#a" value="a" name="${tapType}">액션</a></li>
+				<li class="tab col s1 offset-l1"><a href="#top" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >TOP</a></li>
+				<li class="tab col s1"><a href="#a" value="a" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >액션</a></li>
 				<li class="tab col s1"><a href="#b" value="b" name="${tapType}">SF</a></li>
-				<li class="tab col s1"><a href="#c" class="tabcss" value="c" name="${tapType}">판타지</a></li>
-				<li class="tab col s1"><a href="#d" class="tabcss" value="d" name="${tapType}">드라마</a></li>
-				<li class="tab col s1"><a href="#e" class="tabcss" value="e" name="${tapType}">스릴러</a></li>
-				<li class="tab col s1"><a href="#f" value="f" name="${tapType}">일상</a></li>
-				<li class="tab col s1"><a href="#g" value="g" name="${tapType}">개그</a></li>
-				<li class="tab col s1"><a href="#h" value="h" name="${tapType}">성인</a></li>
-				<li class="tab col s1"><a href="#i" value="i" name="${tapType}">기타</a></li>
+				<li class="tab col s1"><a href="#c" class="tabcss" value="c" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >판타지</a></li>
+				<li class="tab col s1"><a href="#d" class="tabcss" value="d" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >드라마</a></li>
+				<li class="tab col s1"><a href="#e" class="tabcss" value="e" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >스릴러</a></li>
+				<li class="tab col s1"><a href="#f" value="f" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >일상</a></li>
+				<li class="tab col s1"><a href="#g" value="g" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >개그</a></li>
+				<li class="tab col s1"><a href="#h" value="h" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >성인</a></li>
+				<li class="tab col s1"><a href="#i" value="i" <c:choose> <c:when test="${empty tapType}">name="funding"</c:when><c:otherwise>name="${tapType}"</c:otherwise></c:choose> >기타</a></li>
 			</ul>
 		</div>
 		<!-- 

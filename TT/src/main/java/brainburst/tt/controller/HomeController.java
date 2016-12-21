@@ -33,7 +33,6 @@ public class HomeController {
 		}
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel("funding", null, email);
 		session.setAttribute("webtoonList", list);
-		session.setAttribute("tapType", "funding");
 		return "main/index";
 	}
 }
