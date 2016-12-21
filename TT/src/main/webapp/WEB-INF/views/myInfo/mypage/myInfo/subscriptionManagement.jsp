@@ -14,7 +14,11 @@
 	<ul class="collection subscribe-list" id="subScriptionList">
 		<c:choose>
 				<c:when test="${empty sessionScope.subScriptionList}">
-					구독 목록이 없습니다.
+					<table class="striped"><thead><tr>
+						<td colspan='5'><p align='center'>
+							<b>구독 목록이 없습니다.</b>
+						</p></td>
+					</tr></thead></table>
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="item" items="${subScriptionList}">

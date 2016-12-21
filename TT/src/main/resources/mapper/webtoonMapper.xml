@@ -177,4 +177,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
       FROM WEBTOON
       WHERE NICKNAME = #{nickname} AND LOWER(WEBTOON_LEVEL) = LOWER(#{webtoonLevel})
    </select>
+   
+   <!-- 웹툰 상태 업데이트 -->
+	<update id="webtoonStateChange">
+		UPDATE WEBTOON SET WEBTOON_STATE=#{webtoonState} WHERE webtoon_code=#{webtoonCode}
+	</update>
 </mapper>

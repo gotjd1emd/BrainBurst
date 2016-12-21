@@ -122,4 +122,9 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
+	
+	/**
+	 * 웹툰 상태 변경
+	 * */
+	int webtoonStateChange(WebtoonDTO webtoonDTO);
 }

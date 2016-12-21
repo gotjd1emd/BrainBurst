@@ -261,6 +261,9 @@ public class WebtoonController {
 		return "webtoon/modifyEpisode";
 	}
 	
+	/**
+	 * 카테고리별 웹툰 선택
+	 * */
 	@RequestMapping("selectMyWebtoon/{webtoonState}")
 	@ResponseBody
 	public List<WebtoonDTO> selectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
@@ -270,5 +273,16 @@ public class WebtoonController {
 		System.out.println(list);
 		session.setAttribute("webtoonList", list);
 		return list;
+	}
+	
+	/**
+	 * 웹툰의 상태변경
+	 * */
+	@RequestMapping("webtoonStateChange")
+	public String webtoonStateChange(WebtoonDTO webtoonDTO){
+		System.out.println(webtoonDTO.getWebtoonLevel());
+		System.out.println(webtoonDTO.getWebtoonCode());
+		webtoonService.webtoonStateChange(webtoonDTO);
+		return "myInfo/authorpage";
 	}
 }

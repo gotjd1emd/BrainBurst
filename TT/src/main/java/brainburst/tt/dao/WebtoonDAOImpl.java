@@ -141,5 +141,10 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		map.put("webtoonState", webtoonState);
 		return sqlSession.selectList("webtoonMapper.selectMyWebtoon", map);
 	}
+
+	@Override
+	public int webtoonStateChange(WebtoonDTO webtoonDTO) {
+		return sqlSession.update("webtoonMapper.webtoonStateChange", webtoonDTO);
+	}
 	
 }

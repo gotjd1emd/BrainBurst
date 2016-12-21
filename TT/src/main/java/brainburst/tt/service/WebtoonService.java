@@ -101,4 +101,9 @@ public interface WebtoonService {
 	 * @return
 	 */
 	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
+	
+	/**
+	 * 웹툰 상태 변경
+	 * */
+	List<WebtoonDTO> webtoonStateChange(WebtoonDTO webtoonDTO);
 }

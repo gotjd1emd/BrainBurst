@@ -45,28 +45,26 @@
 
 <!-- 웹툰 상태 처리 다이어로그 -->
 <div id="webtoon-state-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post" action="">
+	<form method="post" action="/controller/webtoon/webtoonStateChange">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>웹툰 상태 처리</h5>
 			</div>
 			<div class="modal-content modal-content-funding">
 		<div class="input-field col s12">
-			<select>
-				<option value="" disabled selected>웹툰 선택</option>
-				<c:forEach var="item" items="${webtoonList}" varStatus="status">
-					<option value=status>${item.webtoonName}</option>
+			<select name="webtoonCode">
+				<c:forEach var="item" items="${webtoonList}" varStatus="status" >
+					<option value="${item.webtoonCode}">${item.webtoonName}</option>
 				</c:forEach>
-			</select> <label>펀딩 신청할 웹툰 선택</label>
+			</select> <label>상태 변경 할 웹툰 선택</label>
 		</div>
 		<div class="input-field col s12">
-			<select>
-				<option value="" disabled selected>상태 선택</option>
-				<option value="1">연재</option>
-				<option value="1">휴재</option>
-				<option value="2">완결</option>
-				<option value="2">블라인드</option>
-			</select> <label>펀딩중 연재할 기간 선택</label>
+			<select name="webtoonState">
+				<option value="serial">연재</option>
+				<option value="pause">휴재</option>
+				<option value="complete">완결</option>
+				<option value="blind">블라인드</option>
+			</select> <label>상태 선택</label>
 		</div>
 		<div class="state-description">
 			<p>연재 : 웹툰을 계속 연재할때 또는 다른 상태에 있다가 다시 연재하고 싶을때</p>
@@ -74,7 +72,6 @@
 			<p>완결 : 스토리상 웹툰이 끝났을 때</p>
 			<p>블라인드 : 웹툰 연재를 완전히 중단할 때</p>
 		</div>
-
 	</div>
 	<div class="modal-footer">
 		<a href="#!"
