@@ -18,21 +18,22 @@
 				dataType : "json",
 				success : function(result) {
 					$("#subScriptionList").empty();
+					if (result.length == 0) {
+						var htmlcode = "";
+						htmlcode+="<table class='striped'><thead><tr>"+
+						"<td colspan='5'><p align='center'>"+
+						"<b>구독 목록이 없습니다.</b>"+
+						"</p></td></tr></thead></table>"
+						$("#subScriptionList").append(htmlcode);
+					}
 					$.each(result, function(index, item) {
 						var htmlcode = "";
-						if(item == null){
-							htmlcode+="<table class="striped"><thead><tr>"+
-											"<td colspan='5'><p align='center'>"+
-									"<b>구독 목록이 없습니다.</b>"+
-								"</p></td></tr></thead></table>"							
-						}else{
-							htmlcode +="<li class='collection-item avatar scription-collection'>";
-							htmlcode +="<img class='circle scription-title-img'";
-							htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' alt='' class='circle scription-title-img'>";
-							htmlcode +="<span class='scription-title'>"+item.webtoonName+"</span>";		
-							htmlcode +="<p>"+item.nickname+" <br> Second Line</p> ";		
-							htmlcode +="<a href='#!' class='secondary-content'><i class='material-icons text-color-500' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"'>grade</i></a></li>"	
-						}
+						htmlcode +="<li class='collection-item avatar scription-collection'>";
+						htmlcode +="<img class='circle scription-title-img'";
+						htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' alt='' class='circle scription-title-img'>";
+						htmlcode +="<span class='scription-title'>"+item.webtoonName+"</span>";		
+						htmlcode +="<p>"+item.nickname+" <br> Second Line</p> ";		
+						htmlcode +="<a href='#!' class='secondary-content'><i class='material-icons text-color-500' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"'>grade</i></a></li>"
 						$("#subScriptionList").append(htmlcode);
 					})
 						
