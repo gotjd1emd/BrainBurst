@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class EpisodeDTO {
 	private int episodeSequence;
-	private String webtoonCode;
+	private int webtoonCode;
 	private int episodeNumber;
 	private int hits;
 	private int recommendation;
@@ -25,7 +25,7 @@ public class EpisodeDTO {
 	public EpisodeDTO() {
 		System.out.println("EpisodeDTO 기본 생성자 호출");
 	}
-	public EpisodeDTO(int episodeSequence, String webtoonCode, int episodeNumber, int hits, int recommendation,
+	public EpisodeDTO(int episodeSequence, int webtoonCode, int episodeNumber, int hits, int recommendation,
 			String uploadDate, String episodeTitle, String authorWord, String thumbnail, int fundCode) {
 		System.out.println("EpisodeDTO 전체 생성자 호출");
 		this.episodeSequence = episodeSequence;
@@ -45,10 +45,10 @@ public class EpisodeDTO {
 	public void setEpisodeSequence(int episodeSequence) {
 		this.episodeSequence = episodeSequence;
 	}
-	public String getWebtoonCode() {
+	public int getWebtoonCode() {
 		return webtoonCode;
 	}
-	public void setWebtoonCode(String webtoonCode) {
+	public void setWebtoonCode(int webtoonCode) {
 		this.webtoonCode = webtoonCode;
 	}
 	public int getEpisodeNumber() {

@@ -121,4 +121,11 @@ public class UserDAOImpl implements UserDAO{
 		System.out.println(email);
 		return email;
 	}
+	
+	//닉네임 체크
+	@Override
+	public String nickNameCheck(String nickname) {
+		return sqlSession.selectOne("checkNickName", nickname);
+	}
+
 }

@@ -46,6 +46,8 @@ public interface WebtoonDAO {
 	 */
 	int addSubscription(String email ,int webtoonCode);
 	
+	int delSubscription(String email ,int webtoonCode);
+	
 	/**
 	 * 추천테이블에 레코드추가.
 	 * @param email 사용자 email
@@ -114,10 +116,23 @@ public interface WebtoonDAO {
 	WebtoonDTO selectWebtoon(int webtoonCode, String email);
 	
 	/**
-	 * 자신의 작품찾기(연재중,완결)
+	 * 자신의 작품찾기(완결)
 	 * @param webtoonState
 	 * @param email
 	 * @return
 	 */
-	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
+	
+	/**
+	 * 자신의 작품찾기(완결)
+	 * @param webtoonState
+	 * @param email
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyCompleteWebtoon(String nickname);
+	
+	/**
+	 * 웹툰 상태 변경
+	 * */
+	int webtoonStateChange(WebtoonDTO webtoonDTO);
 }

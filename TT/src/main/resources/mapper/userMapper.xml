@@ -61,6 +61,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where email = #{email}
 	</select>
 	
+	<!-- checkId -->
+	<select id="checkNickName" resultType="String" parameterType="String">
+		select nickname
+		from user_information
+		where nickname = #{nickname}
+	</select>
+	
 	<!-- signUp -->
 	<insert id="signUp" parameterType="userDTO">
 		insert into user_information (email, nickname, phone, password, name, gender, birth_date) 
@@ -123,9 +130,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- showListSubscription -->
 	<select id="showListSubscription" resultMap="webtoonMap" parameterType="string">
-		select w.webtoon_code, w.webtoon_name, w.nickname, w.webtoon_thumbnail 
+		select w.webtoon_code, w.webtoon_name, w.nickname, w.webtoon_thumbnail, w.webtoon_level, w.webtoon_state 
 		from subscription s join webtoon w 
 		on (s.webtoon_code = w.webtoon_code) 
-		where email=#{email}
+		where email=#{email} order by subscription_sequence desc
 	</select>
 </mapper>

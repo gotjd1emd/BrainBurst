@@ -30,7 +30,7 @@ public interface AuthorService {
 	 * @param episodeDTO 뷰에서 보내온 첫화 정보가 담긴 DTO
 	 * @return 성공여부 1:성공 0:실패
 	 */
-	int addSeries (WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO);
+	int addSeries (WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO, List<ImageDTO> imageList);
 	
 	/**
 	 * 작품수정
@@ -58,7 +58,7 @@ public interface AuthorService {
 	/**
 	 * Category Name 가져오기
 	 */
-	String selectCategoryName(String webtoonCode);
+	String selectCategoryName(int webtoonCode);
 	
 	/**
 	 * 에피소드 업로드

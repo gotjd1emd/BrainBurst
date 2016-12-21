@@ -1,6 +1,7 @@
 package brainburst.tt.dto;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class WebtoonDTO {
@@ -14,6 +15,8 @@ public class WebtoonDTO {
 	private int fundingPeriod;
 	private String summary;
 	private String webtoonThumbnail;
+	
+	private MultipartFile webtoonThumbnailFile;
 	
 	private int subscriptionSequence;
 	public int getSubscriptionSequence() {
@@ -153,7 +156,14 @@ public class WebtoonDTO {
 	public void setWebtoonThumbnail(String webtoonThumbnail) {
 		this.webtoonThumbnail = webtoonThumbnail;
 	}
-
+	
+	public MultipartFile getWebtoonThumbnailFile() {
+		return webtoonThumbnailFile;
+	}
+	
+	public void setWebtoonThumbnailFile(MultipartFile webtoonThumbnailFile) {
+		this.webtoonThumbnailFile = webtoonThumbnailFile;
+	}
 
 	@Override
 	public String toString() {

@@ -11,8 +11,38 @@
 </style>
 <script>
 	$(function(){ 
-		$(".secondary-content :first-child").click(function() {
-			alert($(this).attr("name"));
+		$(document).on("click", ".secondary-content :first-child", function(){
+			$.ajax({
+				url : "/controller/webtoon/subscription/del/"+$(this).attr("name"),
+				type : "post",
+				dataType : "json",
+				success : function(result) {
+					$("#subScriptionList").empty();
+					if (result.length == 0) {
+						var htmlcode = "";
+						htmlcode+="<table class='striped'><thead><tr>"+
+						"<td colspan='5'><p align='center'>"+
+						"<b>구독 목록이 없습니다.</b>"+
+						"</p></td></tr></thead></table>"
+						$("#subScriptionList").append(htmlcode);
+					}
+					$.each(result, function(index, item) {
+						var htmlcode = "";
+						htmlcode +="<li class='collection-item avatar scription-collection'>";
+						htmlcode +="<img class='circle scription-title-img'";
+						htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' name='"+item.webtoonCode+"' alt='' class='circle scription-title-img'>";
+						htmlcode +="<span class='scription-title'>"+item.webtoonName+"</span>";		
+						htmlcode +="<p>"+item.nickname+" <br> Second Line</p> ";		
+						htmlcode +="<a href='#!' class='secondary-content'><i class='material-icons text-color-500' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"'>grade</i></a></li>"
+						$("#subScriptionList").append(htmlcode);
+					})
+						
+				},
+				error : function() {
+					alert("이미 구독하였습니다.")
+				}
+			})
+			
 		})
 		$("#getHistory").click(function() {
 			$.ajax({
@@ -58,7 +88,7 @@
 				<li class="tab col s2"><a href="#THistory" id="getHistory">T내역</a></li>
 			</ul>
 		</div>
-		<div id="myInfoModify" class="col s12 tab-card-info">
+		<div id="myInfoModify" class="col s6 tab-card-info" style="margin-left:310px">
 			<jsp:include
 				page="/WEB-INF/views/myInfo/mypage/myInfo/myInfoModify.jsp"></jsp:include>
 		</div>

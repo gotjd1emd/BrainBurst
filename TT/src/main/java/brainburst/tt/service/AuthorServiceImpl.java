@@ -29,7 +29,7 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 
 	@Override
-	public int addSeries(WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO) {
+	public int addSeries(WebtoonDTO webtoonDTO, EpisodeDTO episodeDTO, List<ImageDTO> imageList) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -53,7 +53,7 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 	
 	@Override
-	public String selectCategoryName(String webtoonCode) {
+	public String selectCategoryName(int webtoonCode) {
 		return authorDAO.selectCategoryName(webtoonCode);
 	}
 	

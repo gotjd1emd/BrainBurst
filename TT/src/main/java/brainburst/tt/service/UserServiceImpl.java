@@ -101,6 +101,28 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
+	@Override
+	public int emailCheck(String email) {
+		int result;
+		UserDTO userDTO = userDAO.checkId(email);
+		if(userDTO == null){
+			result = 0;
+		}else{
+			result = 1;
+		}
+		return result;
+	}
+
+	@Override
+	public int nickNameCheck(String nickname) {
+		int result;
+		String nickName = userDAO.nickNameCheck(nickname);
+		if(nickName==null){
+			result = 0;
+		}else{
+			result = 1;
+		}
+		return result;
+	}
 }

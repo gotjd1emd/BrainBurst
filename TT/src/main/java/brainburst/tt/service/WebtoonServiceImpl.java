@@ -49,11 +49,19 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> addSubscription(String email, int webtoonCode) {
-		if (webtoonDAO.isSubscription(email, webtoonCode)) {
-			webtoonDAO.addSubscription(email, webtoonCode);
+	public List<WebtoonDTO> addSubscription(String email, int webtoonCode, String command) {
+		if (command.equals("add")) {
+			System.out.println("---------------------추가---------------------------");
+			if (webtoonDAO.isSubscription(email, webtoonCode)) {
+				webtoonDAO.addSubscription(email, webtoonCode);
+				return userDAO.showListSubscription(email);
+			}
+		} else if (command.equals("del")) {
+			System.out.println("---------------------삭제---------------------------");
+			webtoonDAO.delSubscription(email, webtoonCode);
 			return userDAO.showListSubscription(email);
 		}
+		
 		return null;
 	}
 	
@@ -115,7 +123,17 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname) {
-		return webtoonDAO.selectMyWebtoon(webtoonState, nickname);
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return webtoonDAO.selectMyWebtoon(nickname);
+	}
+
+	@Override
+	public List<WebtoonDTO> selectMyCompleteWebtoon(String nickname) {
+		return webtoonDAO.selectMyCompleteWebtoon(nickname);
+	}
+
+	@Override
+	public int webtoonStateChange(WebtoonDTO webtoonDTO) {
+		return webtoonDAO.webtoonStateChange(webtoonDTO);
 	}
 }

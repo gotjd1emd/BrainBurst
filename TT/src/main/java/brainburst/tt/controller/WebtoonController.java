@@ -49,6 +49,7 @@ public class WebtoonController {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
 		System.out.println(list);
 		session.setAttribute("webtoonList", list);
+		session.setAttribute("tapType", webtoonLevel);
 		return "main/index";
 	}
 	
@@ -170,14 +171,15 @@ public class WebtoonController {
 	 * @return 성공여부 1:성공 , 0:실패
 	 * @throws Exception 
 	 */
-	@RequestMapping("subscription/{webtoonCode}")
+	@RequestMapping("subscription/{command}/{webtoonCode}")
 	@ResponseBody
-	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,@PathVariable("webtoonCode") String webtoonCode){
+	public List<WebtoonDTO> addSubscription(HttpServletRequest request, HttpSession session ,
+			@PathVariable("command") String command, @PathVariable("webtoonCode") String webtoonCode){
 		String[] webtoonCodeA = webtoonCode.split("_");
 		UserDTO dto = (UserDTO)request.getSession().getAttribute("userDTO");
 		String email = dto.getEmail();
 		System.out.println("가저온 email : "+email + "webtoonCode" + webtoonCode);
-		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]));
+		List<WebtoonDTO> scriptionList = webtoonService.addSubscription(email, Integer.parseInt(webtoonCodeA[0]), command);
 		System.out.println(scriptionList);
 		if (scriptionList != null) {
 			session.setAttribute("subScriptionList", scriptionList);
@@ -259,14 +261,31 @@ public class WebtoonController {
 		return "webtoon/modifyEpisode";
 	}
 	
+	/**
+	 * 카테고리별 웹툰 선택
+	 * */
 	@RequestMapping("selectMyWebtoon/{webtoonState}")
 	@ResponseBody
 	public List<WebtoonDTO> selectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		System.out.println("selectMyWebtoon로 왔다");
-		List<WebtoonDTO> list = webtoonService.selectMyWebtoon(webtoonState, userDTO.getNickname());
-		System.out.println(list);
+		List<WebtoonDTO> list = null;
+		if (webtoonState.equals("serial")) {
+			list = webtoonService.selectMyWebtoon(userDTO.getNickname());
+		} else if (webtoonState.equals("complete")) {
+			list = webtoonService.selectMyCompleteWebtoon(userDTO.getNickname());
+		}
+		System.out.println(list.size());
 		session.setAttribute("webtoonList", list);
 		return list;
+	}
+	
+	/**
+	 * 웹툰의 상태변경
+	 * */
+	@RequestMapping("webtoonStateChange")
+	public String webtoonStateChange(WebtoonDTO webtoonDTO){
+		webtoonService.webtoonStateChange(webtoonDTO);
+		return "myInfo/authorpage";
 	}
 }

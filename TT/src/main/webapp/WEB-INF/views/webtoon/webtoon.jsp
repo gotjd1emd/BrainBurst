@@ -6,12 +6,13 @@
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 <script>
-	<!-- chart script -->
 	  $(function () {
 		  $(document).ready(function() {
 				$("#scription-card-btn").css("color", "#F44336");
 				$("#scription-card-btn[name$='_0']").css("color", "#424242");
 			})
+
+		/* chart script */
 	    $(".knob").knob({
 	      draw: function () {
 	        // "tron" case
@@ -23,13 +24,18 @@
 	              , ea                            // Previous end angle
 	              , eat = sat + a                 // End angle
 	              , r = true;
-	        }
-	      }
-	    });
+	        	}
+	      		}
+	    	});
 	  
 	  /* 일반기능들 */
 		$(".episode-list").find(".row").on("click", (function(){
 			$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
+		})
+		)
+		
+		$(".first-see").on("click", (function () {
+			$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
 		})
 		)
 		
@@ -46,32 +52,95 @@
 			})	
 		})
 		
-		
-		$(document).on("click", "#scription-card-btn", function(){
-			$(this).css("color", "#FF4436");
-			$.ajax({
-				url : "/controller/webtoon/subscription/"+$(this).attr("name"),
-				type : "post",
-				dataType : "json",
-				success : function(result) {
-					$("#subScriptionList").empty();
-						$.each(result, function(index, item) {
-							var htmlcode = "";
-							htmlcode +="<li><a class='waves-effect waves-light scription-btn hoverable'><div>";
-							htmlcode +="<img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
-							htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>'>";
-							htmlcode +="</div><div>";
-							htmlcode +="<span>"+item.webtoonName+"</span><br>";		
-							htmlcode +="<span class='author-name'>"+item.nickname+"</span>";		
-							htmlcode +="</div></a></li>"
-							$("#subScriptionList").append(htmlcode);
-						});
-				},
-				error : function() {
-					alert("이미 구독하였습니다.")
+		/* 구독 추가 and 삭제  */
+			$(document).on("click", "#scription-card-btn", function(){
+            	var name = $(this).attr("name")
+				if ($(this).css("color")=="rgb(66, 66, 66)") {
+					$.ajax({
+						url : "/controller/webtoon/subscription/add/"+name,
+						type : "post",
+						dataType : "json",
+						success : function(result) {
+							$("#scription-card-btn").css("color", "#F44336");
+							$("#subScriptionList").empty();
+								$.each(result, function(index, item) {
+									var level = item.webtoonLevel;
+									var webtoonName = item.webtoonName;
+									var htmlcode = "";
+									htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
+									if(item.webtoonLevel == 'funding'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+									}else if(item.webtoonLevel == 'free'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
+									}else if(item.webtoonLevel == 'paid'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
+									}
+									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>'>";
+									htmlcode +="</div><div style='margin-left:10px;'>";
+									if(item.webtoonName.length<=7){
+										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
+									}else{
+										htmlcode+="<span style='font-size:16px'>"+webtoonName.substring(0,5)+"...</span>";
+									}		
+									htmlcode +="<br><span class='author-name' style='font-size:13px'>"+item.nickname+"</span>";		
+									htmlcode +="</div></a></li>"
+									$("#subScriptionList").append(htmlcode);
+								});
+						},
+						error : function() {
+							alert("로그인후 사용하세요.")
+						}
+					})
+				} else if (
+					$(this).css("color")=="rgb(244, 67, 54)") {
+					$.ajax({
+						url : "/controller/webtoon/subscription/del/"+name,
+						type : "post",
+						dataType : "json",
+						success : function(result) {
+							$("#scription-card-btn").css("color", "#424242");
+							$("#subScriptionList").empty();
+							if (result.length == 0) {
+								var htmlcode = "";
+								htmlcode +="<li><div id='nullscription' class='row a-button-nav'>"
+								htmlcode +="<i class='material-icons none-scription-icon'>book</i>"
+								htmlcode +="<p class='none-scription-text'>구독된 웹툰이 없습니다.</p></div></li>"
+								$("#subScriptionList").append(htmlcode);
+							} else {
+								$.each(result, function(index, item) {
+									var level = item.webtoonLevel;
+									var webtoonName = item.webtoonName;
+									var htmlcode = "";
+									htmlcode +="<li name='"+item.webtoonCode+"' id='gowebtoon'>";
+									if(level == 'funding'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:blueviolet !important;'>";
+									}else if(level == 'free'){
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:coral !important;'>";
+									}else{
+										htmlcode+="<a class='waves-effect waves-light scription-btn hoverable' style='background-color:cornflowerblue !important;'>";
+									}
+									htmlcode +="<div><img class='circle responsive-img' style='width: 40px; height: 40px;' alt='썸네일' ";
+									htmlcode +="src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' ></div>";
+									htmlcode +="<div style='margin-left:10px;'>";
+									if(item.webtoonName.length<=7){
+										htmlcode+="<span style='font-size:16px'>"+webtoonName+"</span>";
+									}else{
+										htmlcode+="<span style='font-size:16px'>"+webtoonName.substring(0,5)+"...</span>";
+									}
+									htmlcode +="<br><span class='author-name' style='font-size:13px'>"+item.nickname+"</span>";		
+									htmlcode +="</div></a></li>"
+									$("#subScriptionList").append(htmlcode);
+								});
+							}
+								
+						},
+						error : function() {
+							alert("로그인후 사용하세요.")
+						}
+					})
 				}
 			})
-		})
 	})
 </script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
@@ -118,7 +187,7 @@
 			</div>
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;">첫회보기</a>
+	<a class="waves-effect waves-light btn color-500 first-see" style="float:right; margin-top: -3%;">첫회보기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">
@@ -128,23 +197,23 @@
 			</div>
 		</div>
 		<div id="episode-list" class="episode-list">
-	<c:forEach var="episode" items="${episodeList }">
-		<div class="z-depth-1 hoverable radius white">
-			<div class="row radius">
-				<div class="episode_thumbnail">
-					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
-				</div>
-				<div class="col s5 episode-content">
-					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
-					추천 : ${episode.recommendation}
-				</div>
+		<c:forEach var="episode" items="${episodeList}">
+			<div class="z-depth-1 hoverable radius white">
+				<div class="row radius">
+					<div class="episode_thumbnail">
+						<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					</div>
+					<div class="col s5 episode-content">
+						No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
+						추천 : ${episode.recommendation}
+					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-	                  <input type="text" class="knob" value="${episode.hits}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
-	                </div>
+						<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+					</div>
 				</div>
+			</div>
+		</c:forEach>
 		</div>
-	</c:forEach>
-	</div>
 	
 	
 	

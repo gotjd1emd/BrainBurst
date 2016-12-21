@@ -54,7 +54,7 @@
 							<!-- 웹툰 등록 플로팅 버튼 -->
 							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="웹툰 등록"
-								href='/controller/user/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
+								href='/controller/author/myInfo/webtoonUpload'><i class="material-icons">publish</i></a></li>
 								<!-- 웹툰 등록 플로팅 버튼 -->
 							<li><a class="btn-floating mini-floating tooltipped purple lighten-2"
 								data-position="top" data-delay="50" data-tooltip="웹툰 수정"

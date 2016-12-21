@@ -49,7 +49,7 @@ public interface WebtoonService {
 	 * 추천하기 테이블에 해당 작품 레코드삽입, 이후 비동기화 통신으로 추천수변경
 	 * @return 성공여부 1:성공 , 0:실패 
 	 */
-	List<WebtoonDTO> addSubscription(String email, int webtoonCode);
+	List<WebtoonDTO> addSubscription(String email, int webtoonCode, String command);
 	
 	/**
 	 * 추천하기
@@ -95,10 +95,23 @@ public interface WebtoonService {
 	Map<String, Object> modifyEpisodePage(int episodeSequence);
 	
 	/**
-	 * 자신의 작품찾기(연재중,완결)
+	 * 자신의 작품찾기(연재중)
 	 * @param webtoonState
 	 * @param nickname
 	 * @return
 	 */
-	List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname);
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
+	
+	/**
+	 * 자신의 작품찾기(완결)
+	 * @param webtoonState
+	 * @param nickname
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyCompleteWebtoon(String nickname);
+	
+	/**
+	 * 웹툰 상태 변경
+	 * */
+	int webtoonStateChange(WebtoonDTO webtoonDTO);
 }

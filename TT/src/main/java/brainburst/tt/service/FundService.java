@@ -11,4 +11,19 @@ public interface FundService {
 	 * @return 해당웹툰 리스트
 	 */
 	List<WebtoonDTO> fundPage(String nickname);
+	
+	/**
+	 * 펀딩웹툰의 에피소드가 마감일 자정까지 업로드 되지 않을경우
+	 * 해당 웹툰의 자동 휴재처리와 패널티 추가
+	 * @param deadline
+	 * @return
+	 */
+	int episodeTimeOutCheck(String deadline);
+	
+	/**
+	 * 마감일 하루뒤 펀딩 테이블에 펀딩튜플 추가와 목표미달 웹툰 패널티 추가
+	 * @param today
+	 * @return
+	 */
+	int startFunding(String today);
 }

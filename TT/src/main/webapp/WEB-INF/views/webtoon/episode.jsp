@@ -4,7 +4,7 @@
 	<script>
 		$(function() {
 			$("#rmd").click(function() {
-				var episodeSequence = $("input[type=hidden]").val();
+				var episodeSequence = $("#episodeSequence").val();
 				$.ajax({
 					url : "/controller/webtoon/recommandation/"+episodeSequence,
 					type : "get",
@@ -18,9 +18,14 @@
 					}
 				})
 			})
+			$(".first-see").on("click", (function () {
+				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
+			})
+			)
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">
+	<input id="episodeSequence" type="hidden" value="${episodeDTO.episodeSequence}">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
@@ -66,7 +71,6 @@
 			</div>
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;">첫회보기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">

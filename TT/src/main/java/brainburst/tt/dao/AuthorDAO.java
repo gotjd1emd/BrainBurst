@@ -35,7 +35,7 @@ public interface AuthorDAO {
 	 * @param webtoonCode
 	 * @return
 	 */
-	String selectCategoryName(String webtoonCode);
+	String selectCategoryName(int webtoonCode);
 	
 	/**
 	 * 에피소드 업로드
@@ -50,7 +50,7 @@ public interface AuthorDAO {
 	 * @param episodeNumber
 	 * @return
 	 */
-	int selectEpisodeSequence(String webtoonCode, int episodeNumber);
+	int selectEpisodeSequence(int webtoonCode, int episodeNumber);
 	
 	/**
 	 * 에피소드 이미지 저장

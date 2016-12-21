@@ -34,7 +34,7 @@
          }
       })
       $(function () {
-         
+    	 
          $('.modal').modal({
             dismissible: true, // Modal can be dismissed by clicking outside of the modal
             opacity: .5, // Opacity of modal background
@@ -72,6 +72,8 @@
              }
            );
          
+         
+         /* 검색기능 */
          $("#search").keypress(function(event) { 
              if (event.keyCode == 13){
                 $('#search-modal').modal('open');
@@ -81,15 +83,17 @@
                   type : "post",
                   dataType : "json",
                   success : function(result) {
-                     $(".collection").empty()
+                     $(".collection").empty();
+                     var num = 1;
                      $.each(result, function(index, item) {
                         var htmlcode = "";
-                        htmlcode +="<a class='collection-item avatar' href='#'>"
-                        htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
+                        htmlcode +="<a class='collection-item avatar search-collection-item' href='#'>"
+                        htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+">"
                         htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
                         htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"
                         htmlcode +="<span href='#!' class='secondary-content text-color-500'><i class='material-icons'>grade</i></span></a>"
                         $(".collection").append(htmlcode); 
+                        num++;
                      });
                   },
                   error : function(err) {
@@ -98,6 +102,9 @@
                })
              }    
          });
+         $(document).on("click", ".search-collection-item", function(){
+            $(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).find("img").attr("name"));
+         })
          $(document).on("click", "#gowebtoon", function(){
             $(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
          })
@@ -123,7 +130,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><a href="<c:url value='/webtoon/funding/all'/>">펀딩웹툰</a></li>
          <li><a href="<c:url value='/webtoon/free/all'/>">일반웹툰</a></li>
-         <li><a href="<c:url value='/webtoon/paid/all'/>">완결웹툰</a></li>
+         <li><a href="<c:url value='/webtoon/paid/all'/>">유료웹툰</a></li>
          <li><i class="material-icons icon_search search-btn">search</i></li>
       </ul>
    </div>
@@ -133,7 +140,7 @@
    <div class="modal-content search-modal-content">
       <h4 class="search-ward">검색어</h4>
       <div class="collection">
-         <a class="collection-item avatar" href="#">
+         <a class="collection-item avatar search-collection-item" href="#">
             <img src="<c:url value='/resources${webtoonDTO.webtoonThumbnail}'/>" alt="" class="circle">
             <span>Title</span>
             <p> First Line</p>

@@ -3,6 +3,39 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script type="text/javascript">
 	$(function() {
+		//웹툰 제목
+		$("#webtoon-name").keyup(function (e) {
+			if($(this).val().length >= 20){
+				  $(this).val($(this).val().substring(0, 20));
+			  }
+		})
+		
+		//에피소드 제목
+		$("#episode-title").keyup(function (e) {
+			if($(this).val().length >= 20){
+				  $(this).val($(this).val().substring(0, 20));
+			  }
+		})
+		
+		//작가의 말
+		$("#author-word").keyup(function (e) {
+			if($(this).val().length >= 50){
+				  $(this).val($(this).val().substring(0, 50));
+			  }
+		})
+		
+		//줄거리 글자수 제한
+		$('#textarea1').keyup(function (e){
+			  if($(this).val().length >= 100){
+				  $(this).val($(this).val().substring(0, 100));
+			  }
+	          var content = $(this).val();
+	          $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
+	          $('#counter').html(content.length + '/100');
+	    });
+		
+		$('select').material_select();
+		
 		var count = $("input[type=file]").length - 1;
 		$('#thumbnail').on("change", function() {
 			readURL(this);
@@ -64,17 +97,19 @@
 	}
 </script>
 
+<form method="post" action="" encType="multipart/form-data">
 <input id="header-title" type="hidden" value="웹툰 업로드">
 <div class="row" style="margin-top: 20px;">
 	<div class="col s6">
 		<div class="input-field">
-			<input id="episode-title" type="text" class="validate"
-				name="episodeTitle"> <label for="episode-title">웹툰
+			<input id="webtoon-name" type="text" class="validate"
+				name="webtoonName"> <label for="webtoon-name">웹툰
 				제목</label>
 		</div>
 		<div class="input-field">
 			<textarea id="textarea1" class="materialize-textarea"></textarea>
 			<label for="textarea1">줄거리</label>
+			<span id="counter">0/100</span>
 		</div>
 	</div>
 	<!-- 썸네일 file 폼 -->
@@ -105,6 +140,23 @@
 					for="thumbnail-preview"></label>
 			</div>
 		</div>
+		
+		<div class="input-field">
+	    <select>
+	      <option value="" disabled selected>카테고리 선택</option>
+	      <option value="A">액션</option>
+	      <option value="B">SF</option>
+	      <option value="C">판타지</option>
+	      <option value="D">드라마</option>
+	      <option value="E">스릴러</option>
+	      <option value="F">일상</option>
+	      <option value="G">개그</option>
+	      <option value="H">성인</option>
+	      <option value="I">기타</option>
+	    </select>
+	    <label>카테고리를 선택해 주세요.</label>
+	  </div>
+	  
 	</div>
 </div>
 <hr>
@@ -147,3 +199,4 @@
 	</button>
 	<a class="waves-effect waves-light btn color-500">뒤로가기</a>
 </div>
+</form>

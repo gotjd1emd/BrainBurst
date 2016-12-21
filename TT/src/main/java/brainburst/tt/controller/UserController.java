@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.junit.experimental.theories.ParametersSuppliedBy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +38,7 @@ public class UserController {
 		System.out.println(viewFolder+"/"+viewName+"로 이동합니다.");
 		return viewFolder+"/"+viewName;
 	}
+	
 	
 	@RequestMapping("{viewFolder}/{viewName}/{fileName}")
 	public String signUpMove(
@@ -71,18 +73,20 @@ public class UserController {
 	 * 		성공시 회원메인으로 이동!		==> "main/memberIndex"
 	 */
 	@RequestMapping("login")
-	public String login(UserDTO userDTO, HttpSession session){
+	public String login(HttpServletRequest request, UserDTO userDTO){
 		System.out.println("email : "+userDTO.getEmail());
 		System.out.println("password : "+userDTO.getPassword());
 
+		HttpSession session = request.getSession();
 		userDTO = userService.login(userDTO);
 		
 		System.out.println(userDTO);
 		
 		if(userDTO==null){
-			return "main/index"; //추후 익셉션 로그인 오류 페이지
+			request.setAttribute("login", "fail");
+			return "forward:/"; //추후 익셉션 로그인 오류 페이지
 		}else if(userDTO.getLevel().equals("휴먼")){
-			return "main/index"; //추후 익셉션 
+			return "main/index"; //추후 익셉션
 		}
 		session.setAttribute("userDTO", userDTO);
 		
@@ -95,7 +99,6 @@ public class UserController {
 		session.setAttribute("subScriptionList", subScriptionList);
 		
 		System.out.println(subScriptionList);
-		
 		
 		return "main/index";
 	}
@@ -249,4 +252,24 @@ public class UserController {
 	 * 회원 작가 신청
 	 * */
 	
+	
+	/**
+	 * 이메일 중복 체크
+	 * */
+	@RequestMapping("emailCheck/{email:.+}")
+	@ResponseBody
+	public String emailCheck(@PathVariable("email") String email){
+		int check = userService.emailCheck(email);
+		return check+"";
+	}
+	
+	/**
+	 * 닉네임 중복 체크
+	 * */
+	@RequestMapping("nickNameCheck/{nickname}")
+	@ResponseBody
+	public String nickNameCheck(@PathVariable("nickname") String nickname){
+		int check = userService.nickNameCheck(nickname);
+		return check+"";
+	}
 }

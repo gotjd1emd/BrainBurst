@@ -949,5 +949,3 @@ INSERT INTO EPISODE (episode_sequence, webtoon_code, episode_number, hits,
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
 values (episode_seq.NEXTVAL, 122, 1, 0, 0, '2016-03-02 ', '예고편', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/1.jpg', null);
 
-
-

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fundMapper">
+
+	<resultMap type="webtoonDTO" id="webtoonDTO">
+		<id column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="WEBTOON_NAME" property="webtoonName"/>
+		<result column="WEBTOON_LEVEL" property="webtoonLevel"/>
+		<result column="WEBTOON_STATE" property="webtoonState"/>
+		<result column="CATEGORY_CODE" property="categoryCode"/>
+		<result column="PENALTY" property="penalty"/>
+		<result column="NICKNAME" property="nickname"/>
+		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
+		<result column="SUMMARY" property="summary" />
+		<result column="WEBTOON_THUMBNAIL" property="webtoonThumbnail"/>
+		<result column="SEBSCRIPTION_SEQUENCE" property="subscriptionSequence"/>
+	</resultMap>
+	
+	<resultMap type="episodeDTO" id="episodeDTO">
+		<id column="EPISODE_SEQUENCE" property="episodeSequence"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="EPISODE_NUMBER" property="episodeNumber"/>
+		<result column="HITS" property="hits"/>
+		<result column="RECOMMENDATION" property="recommendation"/>
+		<result column="UPLOAD_DATE" property="uploadDate"/>
+		<result column="EPISODE_TITLE" property="episodeTitle"/>
+		<result column="AUTHOR_WORD" property="authorWord"/>
+		<result column="THUMBNAIL" property="thumbnail"/>
+		<result column="FUND_CODE" property="fundCode"/>
+	</resultMap>
+	
+	<!-- selectFundingWebtoonCode -->
+	<select id="selectFundingWebtoonCode" resultType="int">
+		SELECT WEBTOON_CODE FROM WEBTOON WHERE WEBTOON_LEVEL = 'funding'
+	</select>
+	
+	<!-- lateEpisode -->
+	<select id="lateEpisode" resultType="_int" parameterType="map">
+		SELECT WEBTOON_CODE FROM EPISODE 
+		WHERE WEBTOON_CODE = #{webtoonCode} AND 
+		FUND_CODE != (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	</select>
+	
+	<!-- webtoonPause -->
+	<update id="webtoonPause" parameterType="map">
+		UPDATE WEBTOON SET WEBTOON_STATE = 'pause', PENALTY = #{penalty} WHERE WEBTOON_CODE = #{value}
+	</update>
+	
+	<!-- meetADeadlineWebtoon -->
+	<select id="meetADeadlineWebtoon" resultMap="episodeDTO" parameterType="map">
+		SELECT WEBTOON_CODE, EPISODE_NUMBER FROM EPISODE 
+		WHERE WEBTOON_CODE = #{webtoonCode} AND 
+		FUND_CODE = (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	</select>
+
+	<!-- startFunding -->
+	<insert id="startFunding" parameterType="map">
+		INSERT INTO FUND(FUND_CODE, EPISODE_FUND, WEBTOON_CODE, EPISODE_NUMBER, START_DATE, DUE_DATE) 
+		VALUES(FUND_SEQ.NEXTVAL, 0, #{webtoonCode}, #{episodeNumber}, SYSDATE, SYSDATE+5)
+	</insert>
+	
+	<!-- selectEpisodeFund -->
+	<select id="selectEpisodeFund" resultType="_int" parameterType="map">
+		SELECT EPISODE_FUND FROM FUND WHERE WEBTOON_CODE = #{webtoonCode} AND EPISODE_NUMBER = #{episodeNumber}
+	</select>
+	
+	<!-- addPenalty -->
+	<update id="addPenalty" parameterType="map">
+		UPDATE WEBTOON SET PENALTY = #{penalty} WHERE WEBTOON_CODE
+	</update>
+	
+	<!-- selectPenalty -->
+	<select id="selectPenalty" resultType="string" parameterType="_int">
+		SELECT PENALTY FROM WEBTOON WHERE WEBTOON_CODE = #{value}
+	</select>
+</mapper>

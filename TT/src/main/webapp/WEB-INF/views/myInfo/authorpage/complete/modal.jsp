@@ -13,9 +13,9 @@
 		<div class="input-field col s12">
 			<select>
 				<option value="" disabled selected>웹툰 선택</option>
-				<option value="1">졸라맨의 모험</option>
-				<option value="2">마음의 소리</option>
-				<option value="3">썸툰</option>
+				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+					<option value=status>${item.webtoonName}</option>
+				</c:forEach>
 			</select> <label>유료화 신청할 펀딩웹툰 선택</label>
 		</div>
 		<div class="paid-webtoon-description">

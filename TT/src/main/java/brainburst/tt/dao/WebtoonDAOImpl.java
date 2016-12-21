@@ -64,6 +64,14 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
+	public int delSubscription(String email, int webtoonCode) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("webtoonCode", Integer.toString(webtoonCode));
+		return sqlSession.delete("webtoonMapper.delSubscription", map);
+	}
+
+	@Override
 	public int addRecommend(String email, int epicsodeSequence) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
@@ -127,11 +135,18 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public List<WebtoonDTO> selectMyWebtoon(String webtoonState, String nickname) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("nickname", nickname);
-		map.put("webtoonState", webtoonState);
-		return sqlSession.selectList("webtoonMapper.selectMyWebtoon", map);
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return sqlSession.selectList("webtoonMapper.selectMyWebtoon", nickname);
+	}
+
+	@Override
+	public List<WebtoonDTO> selectMyCompleteWebtoon(String nickname) {
+		return sqlSession.selectList("webtoonMapper.selectMyCompleteWebtoon", nickname);
+	}
+
+	@Override
+	public int webtoonStateChange(WebtoonDTO webtoonDTO) {
+		return sqlSession.update("webtoonMapper.webtoonStateChange", webtoonDTO);
 	}
 	
 }
