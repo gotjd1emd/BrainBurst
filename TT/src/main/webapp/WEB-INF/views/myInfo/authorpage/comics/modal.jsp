@@ -86,7 +86,7 @@
 
 <!-- 웹툰 수정 하기 버튼 -->
 <div id="webtoon-modify-modal" class="modal modal-fixed-footer modal-top">
-	<form method="get" action="<c:url value="/author/webtoonModify"/>">
+	<form method="get" action="<c:url value="/author/myInfo/webtoonModify"/>">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>웹툰 상태 처리</h5>
@@ -106,7 +106,7 @@
 			class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
 		<button
 			class="modal-action modal-close waves-effect waves-green btn-flat"
-			type="submit" name="action">수정하기</button>
+			type="submit">수정하기</button>
 	</div>
 	</div>
 	</form>
