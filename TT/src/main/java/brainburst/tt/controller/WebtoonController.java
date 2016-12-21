@@ -49,6 +49,7 @@ public class WebtoonController {
 		List<WebtoonDTO> list = webtoonService.selectWebtoonByLevel(webtoonLevel, category, email);
 		System.out.println(list);
 		session.setAttribute("webtoonList", list);
+		session.setAttribute("tapType", webtoonLevel);
 		return "main/index";
 	}
 	

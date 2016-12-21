@@ -42,7 +42,7 @@
 			$("div div ul li a").click(function(){
 				con = "#"+$(this).attr('value');
 				$.ajax({
-					url : "/controller/webtoon/webtoonLevelR/funding/"+$(this).attr('value'),
+					url : "/controller/webtoon/webtoonLevelR/"+$(this).attr('name')+"/"+$(this).attr('value'),
 					type : "get",
 					dataType : "json",
 					success : function(result) {
@@ -175,16 +175,16 @@
 	<div class="row category-row">
 		<div class="col s12 category-tab-index z-depth-1 grey darken-3">
 			<ul class="tabs grey darken-3">
-				<li class="tab col s1 offset-l1"><a href="#top">TOP</a></li>
-				<li class="tab col s1"><a href="#a" value="a">액션</a></li>
-				<li class="tab col s1"><a href="#b" value="b">SF</a></li>
-				<li class="tab col s1"><a href="#c" class="tabcss" value="c">판타지</a></li>
-				<li class="tab col s1"><a href="#d" class="tabcss" value="d">드라마</a></li>
-				<li class="tab col s1"><a href="#e" class="tabcss" value="e">스릴러</a></li>
-				<li class="tab col s1"><a href="#f" value="f">일상</a></li>
-				<li class="tab col s1"><a href="#g" value="g">개그</a></li>
-				<li class="tab col s1"><a href="#h" value="h">성인</a></li>
-				<li class="tab col s1"><a href="#i" value="i">기타</a></li>
+				<li class="tab col s1 offset-l1"><a href="#top" name="${tapType}">TOP</a></li>
+				<li class="tab col s1"><a href="#a" value="a" name="${tapType}">액션</a></li>
+				<li class="tab col s1"><a href="#b" value="b" name="${tapType}">SF</a></li>
+				<li class="tab col s1"><a href="#c" class="tabcss" value="c" name="${tapType}">판타지</a></li>
+				<li class="tab col s1"><a href="#d" class="tabcss" value="d" name="${tapType}">드라마</a></li>
+				<li class="tab col s1"><a href="#e" class="tabcss" value="e" name="${tapType}">스릴러</a></li>
+				<li class="tab col s1"><a href="#f" value="f" name="${tapType}">일상</a></li>
+				<li class="tab col s1"><a href="#g" value="g" name="${tapType}">개그</a></li>
+				<li class="tab col s1"><a href="#h" value="h" name="${tapType}">성인</a></li>
+				<li class="tab col s1"><a href="#i" value="i" name="${tapType}">기타</a></li>
 			</ul>
 		</div>
 		<!-- 
