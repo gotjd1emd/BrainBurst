@@ -113,4 +113,16 @@ public class UserServiceImpl implements UserService{
 		}
 		return result;
 	}
+
+	@Override
+	public int nickNameCheck(String nickname) {
+		int result;
+		String nickName = userDAO.nickNameCheck(nickname);
+		if(nickName==null){
+			result = 0;
+		}else{
+			result = 1;
+		}
+		return result;
+	}
 }

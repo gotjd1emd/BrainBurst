@@ -262,4 +262,14 @@ public class UserController {
 		int check = userService.emailCheck(email);
 		return check+"";
 	}
+	
+	/**
+	 * 닉네임 중복 체크
+	 * */
+	@RequestMapping("nickNameCheck/{nickname}")
+	@ResponseBody
+	public String nickNameCheck(@PathVariable("nickname") String nickname){
+		int check = userService.nickNameCheck(nickname);
+		return check+"";
+	}
 }

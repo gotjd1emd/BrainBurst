@@ -188,4 +188,11 @@ public interface UserDAO {
 	 * */
 	public UserDTO applyAuthor(String email);
 	
+	/**
+	 * 닉네임 체크
+	 * return 타입 : string
+	 * pawrameter Type : String nickName
+	 * sql : 
+	 * */
+	public String nickNameCheck(String nickname);
 }

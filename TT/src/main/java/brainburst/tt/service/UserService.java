@@ -136,4 +136,10 @@ public interface UserService {
 	 * 기능 : 아이디를 체크한다.
 	 * */
 	public int emailCheck(String email);
+	/**
+	 * 닉네임 체크
+	 * return 타입 : int
+	 * pawrameter Type : String nickName
+	 * */
+	public int nickNameCheck(String nickname);
 }
