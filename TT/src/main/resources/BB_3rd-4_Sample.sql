@@ -442,7 +442,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,122,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,122,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,122,10,'2016-04-27','2016-05-02');  
 
 -- webtoon_code 122 episode 추가   
 
@@ -497,7 +497,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,123,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,123,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,123,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -555,7 +555,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,124,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,124,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,124,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 124 episode 추가   
@@ -611,7 +611,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,125,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,125,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,125,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -668,7 +668,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,126,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,126,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,126,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 126 episode 추가   
@@ -725,7 +725,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,127,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,127,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,127,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 127 episode 추가   
@@ -782,7 +782,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,128,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,128,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,128,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -840,7 +840,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,129,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,129,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,129,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -898,7 +898,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,130,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,130,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,130,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 130 episode 추가   
@@ -955,7 +955,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,131,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,131,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,131,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 131 episode 추가   
@@ -1012,7 +1012,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,132,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,132,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,132,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 132 episode 추가    
@@ -1069,7 +1069,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,133,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,133,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,133,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1127,7 +1127,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,134,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,134,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,134,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1185,7 +1185,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,135,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,135,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,135,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1242,7 +1242,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,136,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,136,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,136,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1299,7 +1299,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,137,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,137,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,137,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1356,7 +1356,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,138,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,138,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,138,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1413,7 +1413,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,139,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,139,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,139,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1470,7 +1470,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,140,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,140,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,140,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1527,7 +1527,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,141,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,141,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,141,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1585,7 +1585,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,142,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,142,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,142,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1643,7 +1643,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,143,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,143,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,143,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1700,7 +1700,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,144,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,144,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,144,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1758,7 +1758,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,145,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,145,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,145,10,'2016-04-27','2016-05-02');  
 
 
 -- webtoon_code 145 episode 추가    
@@ -1814,7 +1814,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,146,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,146,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,146,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1871,7 +1871,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,147,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,147,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,147,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1928,7 +1928,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,148,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,148,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,148,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -1985,7 +1985,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,149,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,149,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,149,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2042,7 +2042,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,150,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,150,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,150,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2099,7 +2099,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,151,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,151,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,151,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2156,7 +2156,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,152,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,152,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,152,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2213,7 +2213,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,153,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,153,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,153,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2270,7 +2270,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,154,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,154,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,154,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2327,7 +2327,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,155,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,155,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,155,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2385,7 +2385,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,156,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,156,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,156,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2442,7 +2442,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,157,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,157,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,157,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2499,7 +2499,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,158,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,158,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,158,10,'2016-04-27','2016-05-02');  
 
 
 
@@ -2556,7 +2556,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,159,9,'2016-04-20','2016-04-25');  
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,159,10,'2016-04-27','2016-06-11');  
+values (fund_seq.nextval,3000,159,10,'2016-04-27','2016-05-02');  
 
 
 
