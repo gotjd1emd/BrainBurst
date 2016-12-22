@@ -27,6 +27,12 @@
 				})
 			})
 			
+			$(".first-see").on("click", (function () {
+				alert($("#episode-thumbnail1").attr("name"))
+				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
+			})
+			)
+			
 			$("#rmd").click(function() {
 				var episodeSequence = $("#episodeSequence").val();
 				$.ajax({
@@ -47,10 +53,6 @@
 					}
 				})
 			})
-			$(".first-see").on("click", (function () {
-				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
-			})
-			)
 		})
 	</script>
 	<input id="header-title" type="hidden" value="${episodeDTO.episodeTitle}">

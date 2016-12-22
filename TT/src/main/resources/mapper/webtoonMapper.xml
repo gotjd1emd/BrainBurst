@@ -90,19 +90,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE WEBTOON_CODE = #{value}
 	</select>
 	
-	<!-- selectAllEpisode -->
-	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="string">
-		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE
-		FROM EPISODE
-		WHERE WEBTOON_CODE = #{value}
-		ORDER BY EPISODE_NUMBER DESC
-	</select>
-	
-	<!-- selectFundByFundcode -->
-	<select id="selectFundByFundcode" resultMap="fundDTO" parameterType="int">
-		SELECT EPISODE_FUND, WEBTOON_CODE, EPISODE_NUMBER, STATE_DATE, DUE_DATE FROM FUND WHERE FUND_CODE=#{fundCode}
-	</select>
-	
 	<!-- selectImg -->
 	<select id="selectImg" resultType="string" parameterType="_int">
 		SELECT FILE_NAME
@@ -212,6 +199,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="webtoonStateChange">
 		UPDATE WEBTOON SET WEBTOON_STATE=#{webtoonState} WHERE WEBTOON_CODE=#{webtoonCode}
 	</update>
+		
+	<!-- selectAllEpisode -->
+	<select id="selectAllEpisode" resultMap="episodeDTO" parameterType="string">
+		SELECT EPISODE_SEQUENCE, WEBTOON_CODE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE
+		FROM EPISODE
+		WHERE WEBTOON_CODE = #{value}
+		ORDER BY EPISODE_NUMBER DESC
+	</select>
 	
 	<!-- 펀딩웹툰의 에피소드 가져오기 -->
 	<select id="selectFundingWebtoonEpisode" resultMap="episodeDTO" parameterType="_int">

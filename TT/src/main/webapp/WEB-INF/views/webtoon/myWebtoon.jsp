@@ -6,9 +6,17 @@
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 	<script>
-	
-	
+	var time = 0;
+	var day = 0;
+	var hour = 0;
+	var min = 0;
+	var second = 0;
 		$(function() {
+			var dueDate = new Date($("#dueDate").val());
+		    var currentDate = new Date();
+		    time = (dueDate-currentDate);
+			fundingTimer();
+			var myVar = setInterval(fundingTimer, 1000);
 			
 			/* chart script */
 		    $(".knob").knob({
@@ -56,6 +64,7 @@
 			}));
 			
 			$(".first-see").on("click", (function () {
+				alert($("#episode-thumbnail1").attr("name"))
 				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
 			})
 			)
@@ -165,6 +174,14 @@
 			})
 			
 		})
+		function fundingTimer() {
+	    time = time - 1000;
+	    day = Math.floor(time/1000/24/60/60);
+	    hour = Math.floor(time/1000/60/60 - day*24);
+	    min = Math.floor(time/1000/60 - day*24*60 - hour*60);
+	    second = Math.floor(time/1000 - day*24*60*60 - hour*60*60 - min*60);
+	    $(".period").text(Math.floor(day) + "일 " + hour + "시 " + min + "분 " + second + "초 남았습니다.");
+	}
 	</script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode}">
@@ -201,16 +218,34 @@
 				</ul>
 			</div>
 		</div>
+		<div id="funding-episode" class="episode-list" style="margin-bottom: -60px;">
+		<c:if test="${fundDTO != null }">
+			<div class="z-depth-1 hoverable radius white">
+				<div class="row radius" style="background-color:tomato;color:aliceblue;">
+					<input type="hidden" name="fundCode" value="${fundDTO.fundCode }"/>
+					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
+					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:15px">
+						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
+						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br> 남은 시간 : <span class="period"></span>
+					</div>
+					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+						<input type="text" class="knob" value="20" data-width="90" data-height="90" data-fgColor="rgb(77, 14, 100)" data-readonly="true">
+					</div>
+				</div>
+			</div>
+		</c:if>
+		</div>
 	<div id="episode-list" class="episode-list">
 	<c:forEach var="episode" items="${episodeList }">
 		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius">
 				<div class="episode_thumbnail">
-					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
-					추천 : ${episode.recommendation}
+					추천 : ${episode.recommendation}<br>
+					조회수 : ${episode.hits}
 				</div>
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
 					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
@@ -222,15 +257,16 @@
 
 <div id="webtoon-info" class="episode-list">
 	 <a id="episode-upload" class="btn-floating btn-large waves-effect waves-light red"><i id="episode-upload-icon" class="material-icons">create</i></a>
-		<c:forEach var="episode" items="${episodeList }">
+		<c:forEach var="episode" items="${episodeList}">
 		<div class="z-depth-1 hoverable radius white">
 			<div class="row radius" style="background-color:lightyellow">
 				<div class="episode_thumbnail">
-					<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
+					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
-					추천 : ${episode.recommendation}
+					추천 : ${episode.recommendation}<br>
+					조회수 : ${episode.hits}
 				</div>
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
 					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
