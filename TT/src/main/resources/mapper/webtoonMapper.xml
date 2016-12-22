@@ -39,6 +39,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="WEBTOON_CODE" property="webtoonCode"/>
 	</resultMap>
 	
+	<resultMap type="fundDTO" id="fundDTO">
+	</resultMap>
+	
 	<!-- selectWebtoonByLevel -->
 	<!-- 카테고리코드가 null일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
@@ -79,6 +82,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM EPISODE
 		WHERE WEBTOON_CODE = #{value}
 		ORDER BY EPISODE_NUMBER DESC
+	</select>
+	
+	<!-- selectFundByFundcode -->
+	<select id="selectFundByFundcode" resultMap="fundDTO" parameterType="int">
+		select episode_fund, webtoon_code, episode_number, state_date, due_date from fund where fund_code=#{fundCode}
 	</select>
 	
 	<!-- selectImg -->

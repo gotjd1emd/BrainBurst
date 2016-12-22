@@ -55,7 +55,7 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public List<String> selectImg(int episodeSequence) {
 		return sqlSession.selectList("webtoonMapper.selectImg", episodeSequence);
 	}
-
+	
 	@Override
 	public int addSubscription(String email, int webtoonCode) {
 		Map<String, String> map = new HashMap<String, String>();
