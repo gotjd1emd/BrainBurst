@@ -115,4 +115,11 @@ public interface WebtoonService {
 	 * 웹툰 상태 변경
 	 * */
 	int webtoonStateChange(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * 독자가 펀딩웹툰페이지로 이동
+	 * @param webtoonCode
+	 * @return
+	 */
+	Map<String, Object> fundingEpisodeList(int webtoonCode);
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -104,6 +105,10 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
+		Map<String, Object> map = null;
+		List<EpisodeDTO> list = null;
+		FundDTO fundDTO = null;
+		
 		String nickname = "GUEST";
 		String type = "webtoon/webtoon";
 		String email = null;
@@ -113,24 +118,42 @@ public class WebtoonController {
 		}
 		
 		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, email);
-		/*
-		 * 웹툰상태가 블라인드면 오류발생
-		 */
-		if (webtoonDTO.getWebtoonState().equals("blind")) {
-			/*나중에 넣는다!*/
-		}
-		System.out.println("WebtoonController104(webtoonDTO):"+webtoonDTO);
 		
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
 		if (webtoonService.checkNickname(webtoonCode, nickname)) {
 			type = "webtoon/myWebtoon";
+			//작가용 웹툰페이지 컨트롤러
+			if(webtoonDTO.getWebtoonLevel().equals("funding")) {
+				list = webtoonService.selectAllEpisode(webtoonCode);
+			}else {
+				
+			}
+		}else {
+			//독자용 웹툰페이지 컨트롤러
+			/*
+			 * 웹툰상태가 블라인드면 오류발생
+			 */
+			if (webtoonDTO.getWebtoonState().equals("blind")) {
+				/*나중에 넣는다!*/
+			}
+			
+			if(webtoonDTO.getWebtoonLevel().equals("funding")) {
+				list = webtoonService.selectAllEpisode(webtoonCode);
+			}else {
+				map = webtoonService.fundingEpisodeList(webtoonCode);
+				list = (List<EpisodeDTO>)map.get("episodeList");
+				fundDTO = (FundDTO)map.get("fundDTO");
+			}
 		}
-		List<EpisodeDTO> list = webtoonService.selectAllEpisode(webtoonCode);
+
+		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName(type);
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonDTO", webtoonDTO);
 		session.setAttribute("episodeList", list);
+		modelAndView.addObject("fundDTO", fundDTO);
+		
 		return modelAndView;
 	}
 	

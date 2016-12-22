@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -150,4 +151,13 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		return sqlSession.update("webtoonMapper.webtoonStateChange", webtoonDTO);
 	}
 
+	@Override
+	public List<EpisodeDTO> selectFundingWebtoonEpisode(int webtoonCode) {
+		return sqlSession.selectList("webtoonMapper.selectFundingWebtoonEpisode", webtoonCode);
+	}
+	
+	@Override
+	public FundDTO selectCurrentFundingEpisode(int webtoonCode) {
+		return sqlSession.selectOne("webtoonMapper.selectCurrentFundingEpisode", webtoonCode);
+	}
 }

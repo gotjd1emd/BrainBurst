@@ -4,6 +4,7 @@ import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -136,4 +137,18 @@ public interface WebtoonDAO {
 	 * 웹툰 상태 변경
 	 * */
 	int webtoonStateChange(WebtoonDTO webtoonDTO);
+	
+	/**
+	 * 펀딩 웹툰 에피소드 리스트
+	 * @param webtoonCode
+	 * @return
+	 */
+	List<EpisodeDTO> selectFundingWebtoonEpisode(int webtoonCode);
+	
+	/**
+	 * 펀딩중인 에피소드의 펀딩정보
+	 * @param webtoonCode
+	 * @return
+	 */
+	FundDTO selectCurrentFundingEpisode(int webtoonCode);
 }

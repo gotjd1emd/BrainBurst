@@ -40,12 +40,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<resultMap type="fundDTO" id="fundDTO">
-		<id column="fund_code" property="fundCode"/>
-		<result column="episode_fund" property="episodeFund"/>
-		<result column="webtoon_code" property="webtoonCode"/>
-		<result column="episode_number" property="episodeNumber"/>
-		<result column="start_date" property="startDate"/>
-		<result column="due_date" property="dueDate"/>
+		<id column="FUND_CODE" property="fundCode"/>
+		<result column="EPISODE_FUND" property="episodeFund"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="EPISODE_NUMBER" property="episodeNumber"/>
+		<result column="START_DATE" property="startDate"/>
+		<result column="DUE_DATE" property="dueDate"/>
 	</resultMap>
 	
 	<!-- selectWebtoonByLevel -->
@@ -202,6 +202,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    
    <!-- 웹툰 상태 업데이트 -->
 	<update id="webtoonStateChange">
-		UPDATE WEBTOON SET WEBTOON_STATE=#{webtoonState} WHERE webtoon_code=#{webtoonCode}
+		UPDATE WEBTOON SET WEBTOON_STATE=#{webtoonState} WHERE WEBTOON_CODE=#{webtoonCode}
 	</update>
+	
+	<!-- 펀딩웹툰의 에피소드 가져오기 -->
+	<select id="selectFundingWebtoonEpisode" resultMap="episodeDTO" parameterType="_int">
+		<![CDATA[
+		SELECT EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, 
+			WEBTOON_CODE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE 
+		FROM EPISODE 
+		WHERE (FUND_CODE IS NULL AND WEBTOON_CODE=#{value}) OR 
+			(FUND_CODE IN (SELECT FUND_CODE FROM FUND WHERE WEBTOON_CODE=#{webtoonCode} AND TRUNC(DUE_DATE) < TRUNC(SYSDATE+1))) 
+		ORDER BY EPISODE_NUMBER DESC
+		]]> 
+	</select>
+	
+	<!-- 진행중인 펀드정보가져오기 -->
+	<select id="selectCurrentFundingEpisode" resultMap="fundDTO" parameterType="_int">
+		<![CDATA[
+		SELECT FUND_CODE, EPISODE_NUMBER, EPISODE_FUND, WEBTOON_CODE, START_DATE, DUE_DATE 
+		FROM FUND
+		WHERE WEBTOON_CODE = #{value} AND EPISODE_NUMBER NOT IN (SELECT EPISODE_NUMBER FROM EPISODE WHERE WEBTOON_CODE = #{value})
+		]]>
+	</select>
 </mapper>
