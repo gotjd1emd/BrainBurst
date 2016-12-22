@@ -22,10 +22,14 @@
 				data : webtoonCode,
 				success : function(result) {
 					$("#funding-webtoon-modal").modal('close');
-					$("#funding-webtoon-ok-modal").modal('open');
+					Materialize.toast('펀딩 신청이 완료 되었습니다. 관리자가 승인할 때 까지 기다려 주시길 바랍니다.', 3000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
 				},
 				error : function(err){
-					alert("err : " + err)
+					Materialize.toast('다시 시도해 주세요.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
 				}
 			})
 		})
