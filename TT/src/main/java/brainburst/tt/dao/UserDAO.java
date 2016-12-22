@@ -5,6 +5,7 @@ import java.util.List;
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.PaidApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -207,4 +208,9 @@ public interface UserDAO {
 	 * 신고
 	 * */
 	int report(ReportDTO reportDTO);
+	
+	/**
+	 * 유료화 신청
+	 * */
+	int piadApply(PaidApplyDTO paidApplyDTO);
 }

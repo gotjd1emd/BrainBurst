@@ -10,6 +10,7 @@ import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.PaidApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -136,5 +137,10 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int report(ReportDTO reportDTO) {
 		return userDAO.report(reportDTO);
+	}
+
+	@Override
+	public int paidApply(PaidApplyDTO paidApplyDTO) {
+		return userDAO.piadApply(paidApplyDTO);
 	}
 }

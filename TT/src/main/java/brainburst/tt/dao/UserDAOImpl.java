@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.PaidApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -138,5 +139,10 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public int report(ReportDTO reportDTO) {
 		return sqlSession.insert("userMapper.report", reportDTO);
+	}
+
+	@Override
+	public int piadApply(PaidApplyDTO paidApplyDTO) {
+		return sqlSession.insert("userMapper.paidApply", paidApplyDTO);
 	}
 }

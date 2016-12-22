@@ -145,4 +145,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO REPORT(REPORT_SEQUENCE, CONTENT, EMAIL, WEBTOON_CODE, EPISODE_SEQUENCE)
 		VALUES(REPORT_SEQ.NEXTVAL, #{content}, #{email}, #{webtoonCode}, #{episodeSequence})
 	</insert>
+	
+	<insert id="paidApply" parameterType="paidApplyDTO">
+		INSERT INTO apply_paid(apply_paid_SEQUENCE, EMAIL, WEBTOON_CODE)
+		VALUES(REPORT_SEQ.NEXTVAL, #{email}, #{webtoonCode})
+	</insert>
 </mapper>

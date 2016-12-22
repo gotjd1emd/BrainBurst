@@ -25,7 +25,7 @@
 		});
 		
 		$("#find-apply-btn").click(function(){
-			var selectLength = $("#find-webtoon-select option").length;
+			var selectLength = $("#fund-webtoon-select option").length;
 			var webtoonName = $("#fund-webtoon-select-div div input").val();
 			var webtoonCode;
 			for(i=1; i<=selectLength; i++){
@@ -65,7 +65,7 @@
 			</div>
 			<div class="modal-content modal-content-funding">
 		<div id="fund-webtoon-select-div" class="input-field col s12">
-			<select id="find-webtoon-select">
+			<select id="fund-webtoon-select">
 				<option value="" disabled selected>웹툰 선택</option>
 				<c:forEach var="item" items="${webtoonList}" varStatus="status">
 					<option value="${item.webtoonCode}">${item.webtoonName}</option>

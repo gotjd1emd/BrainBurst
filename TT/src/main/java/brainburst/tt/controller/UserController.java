@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.PaidApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -300,6 +301,20 @@ public class UserController {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		ReportDTO reportDTO = new ReportDTO(content, userDTO.getEmail(), webtoonCode, episodeSequence);
 		userService.report(reportDTO);
+		return "";
+	}
+	
+	/**
+	 * 유료화 신청
+	 * */
+	@RequestMapping("paidApply")
+	@ResponseBody
+	public String paidApply(HttpServletRequest request, int webtoonCode){
+		System.out.println("paid");
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		PaidApplyDTO paidApplyDTO = new PaidApplyDTO(userDTO.getEmail(), webtoonCode);
+		userService.paidApply(paidApplyDTO);
 		return "";
 	}
 }
