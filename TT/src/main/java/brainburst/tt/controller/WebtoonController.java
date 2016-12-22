@@ -304,11 +304,13 @@ public class WebtoonController {
 		List<WebtoonDTO> list = null;
 		if (webtoonState.equals("serial")) {
 			list = webtoonService.selectMyWebtoon(userDTO.getNickname());
+			session.setAttribute("serialWebtoonList", list);
 		} else if (webtoonState.equals("complete")) {
 			list = webtoonService.selectMyCompleteWebtoon(userDTO.getNickname());
+			session.setAttribute("completeWebtoonList", list);
 		}
 		System.out.println(list.size());
-		session.setAttribute("webtoonList", list);
+		
 		return list;
 	}
 	

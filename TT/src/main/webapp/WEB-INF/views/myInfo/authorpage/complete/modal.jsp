@@ -54,11 +54,9 @@
 		<div id="paid-webtoon-select-div" class="input-field col s12">
 			<select id="paid-webtoon-select">
 				<option value="" disabled selected>웹툰 선택</option>
-				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+				<c:forEach var="item" items="${completeWebtoonList}" varStatus="status">
 					<c:if test="${item.webtoonLevel eq 'funding'}">
-						<%-- <c:if test="${item.webtoonState eq 'complete'}"> --%>
-							<option value='${item.webtoonState}'>${item.webtoonName}</option>
-						<%-- </c:if> --%>
+							<option value='${item.webtoonCode}'>${item.webtoonName}</option>
 					</c:if>
 				</c:forEach>
 			</select> <label>유료화 신청할 펀딩웹툰 선택</label>

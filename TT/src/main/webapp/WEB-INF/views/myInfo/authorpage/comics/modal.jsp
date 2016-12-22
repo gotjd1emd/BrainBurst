@@ -67,7 +67,7 @@
 		<div id="fund-webtoon-select-div" class="input-field col s12">
 			<select id="fund-webtoon-select">
 				<option value="" disabled selected>웹툰 선택</option>
-				<c:forEach var="item" items="${webtoonList}" varStatus="status">
+				<c:forEach var="item" items="${serialWebtoonList}" varStatus="status">
 					<option value="${item.webtoonCode}">${item.webtoonName}</option>
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
