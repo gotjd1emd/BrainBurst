@@ -40,6 +40,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<resultMap type="fundDTO" id="fundDTO">
+		<id column="fund_code" property="fundCode"/>
+		<result column="episode_fund" property="episodeFund"/>
+		<result column="webtoon_code" property="webtoonCode"/>
+		<result column="episode_number" property="episodeNumber"/>
+		<result column="start_date" property="startDate"/>
+		<result column="due_date" property="dueDate"/>
 	</resultMap>
 	
 	<!-- selectWebtoonByLevel -->
