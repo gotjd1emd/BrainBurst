@@ -90,8 +90,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- modifyWebtoon -->
 	<update id="modifyWebtoon" parameterType="webtoonDTO">
-		UPDATE WEBTOON SET WEBTOON_NAME = #{webtoonName}, CATEGORY_CODE = #{categoryCode}, 
-							SUMMARY = #{summary}, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
+		UPDATE WEBTOON SET WEBTOON_NAME = #{webtoonName}, CATEGORY_CODE = #{categoryCode}, SUMMARY = #{summary}
+		<if test="webtoonThumbnail != null">
+		, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
+		</if> 
 		WHERE WEBTOON_CODE = #{webtoonCode}
 	</update>
 	

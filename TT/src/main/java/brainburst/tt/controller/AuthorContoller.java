@@ -115,12 +115,8 @@ public class AuthorContoller {
 		webtoonDTO.setNickname(userDTO.getNickname());
 		List<MultipartFile> images = episodeDTO.getImage();
 		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
-		System.out.println("webtoonDTO webtoonCode : " + webtoonDTO.getWebtoonCode());
-		System.out.println("episodeDTO webtoonCode : " + episodeDTO.getWebtoonCode());
-		System.out.println("category : " + webtoonDTO.getCategoryCode());
-		System.out.println("webtoonDTO images size" + images.size());
+		
 		String categoryName = authorService.getCategoryName(webtoonDTO.getCategoryCode());
-		System.out.println("categoryName: " + categoryName);
 		String path = request.getSession().getServletContext().getRealPath("/") + "/resources";
 		
 		if(webtoonDTO.getWebtoonThumbnailFile().getSize() == 0) {
@@ -148,8 +144,6 @@ public class AuthorContoller {
 			}
 		}
 
-		System.out.println("image index : " + imageList.size());
-		
 		int result = authorService.addSeries(webtoonDTO, episodeDTO, imageList);
 		
 		return "redirect:/author/authorPage";
@@ -164,7 +158,7 @@ public class AuthorContoller {
 
 		String path = request.getSession().getServletContext().getRealPath("/") + "/resources";
 		String dbPath = "/webtoon/webtoonThumbnail/" + webtoonThumbnailFile.getOriginalFilename();
-		
+
 		if(webtoonThumbnailFile.getSize() == 0) {
 			webtoonDTO.setWebtoonThumbnail(null);
 		}else {
@@ -173,7 +167,7 @@ public class AuthorContoller {
 		}
 		authorService.modifyWebtoon(webtoonDTO);
 		
-		return "redirect:author/authorPage";
+		return "redirect:/author/authorPage";
 	}
 	
 	/**
@@ -217,7 +211,6 @@ public class AuthorContoller {
 		List<ImageDTO> imageList = new ArrayList<ImageDTO>();
 		
 		String categoryName = authorService.selectCategoryName(episodeDTO.getWebtoonCode());
-		System.out.println("categoryName: " + categoryName);
 		String path = request.getSession().getServletContext().getRealPath("/");
 		String dbPath = "/webtoon/";
 		path += "/resources" + dbPath;
@@ -238,8 +231,6 @@ public class AuthorContoller {
 			}
 		}
 
-		System.out.println("image index : " + imageList.size());
-		
 		authorService.episodeUpload(episodeDTO, imageList);
 		
 		return "redirect:/webtoon/webtoonPage/"+episodeDTO.getWebtoonCode();
