@@ -138,11 +138,11 @@ public class WebtoonController {
 			}
 			
 			if(webtoonDTO.getWebtoonLevel().equals("funding")) {
-				list = webtoonService.selectAllEpisode(webtoonCode);
-			}else {
 				map = webtoonService.fundingEpisodeList(webtoonCode);
 				list = (List<EpisodeDTO>)map.get("episodeList");
 				fundDTO = (FundDTO)map.get("fundDTO");
+			}else {
+				list = webtoonService.selectAllEpisode(webtoonCode);
 			}
 		}
 

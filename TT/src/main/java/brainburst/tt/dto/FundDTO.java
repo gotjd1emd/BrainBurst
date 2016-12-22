@@ -1,5 +1,8 @@
 package brainburst.tt.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FundDTO {
 	private int fundCode;
 	private int episodeFund;
@@ -7,9 +10,9 @@ public class FundDTO {
 	private int episodeNumber;
 	private String startDate;
 	private String dueDate;
-	
-	
 	public FundDTO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	public FundDTO(int fundCode, int episodeFund, int webtoonCode, int episodeNumber, String startDate,
 			String dueDate) {
@@ -54,8 +57,10 @@ public class FundDTO {
 	public String getDueDate() {
 		return dueDate;
 	}
-	public void setEndDate(String dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
 	
+	
+
 }

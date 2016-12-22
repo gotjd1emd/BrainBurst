@@ -201,6 +201,22 @@
 			</div>
 		</div>
 		<div id="episode-list" class="episode-list">
+		<c:if test="${fundDTO != null }">
+			<div class="z-depth-1 hoverable radius white">
+				<div class="row radius">
+					<div class="episode_thumbnail">
+						<img class="thumbnail" name="${fundDTO.fundCode}" >
+					</div>
+					<div class="col s5 episode-content">
+						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span> ${fundDTO.episodeFund} <br><br>
+						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate }
+					</div>
+					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+						<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+					</div>
+				</div>
+			</div>
+		</c:if>
 		<c:forEach var="episode" items="${episodeList}">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius">

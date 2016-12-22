@@ -92,7 +92,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectFundByFundcode -->
 	<select id="selectFundByFundcode" resultMap="fundDTO" parameterType="int">
-		select episode_fund, webtoon_code, episode_number, state_date, due_date from fund where fund_code=#{fundCode}
+		SELECT EPISODE_FUND, WEBTOON_CODE, EPISODE_NUMBER, STATE_DATE, DUE_DATE FROM FUND WHERE FUND_CODE=#{fundCode}
 	</select>
 	
 	<!-- selectImg -->
@@ -212,7 +212,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			WEBTOON_CODE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE 
 		FROM EPISODE 
 		WHERE (FUND_CODE IS NULL AND WEBTOON_CODE=#{value}) OR 
-			(FUND_CODE IN (SELECT FUND_CODE FROM FUND WHERE WEBTOON_CODE=#{webtoonCode} AND TRUNC(DUE_DATE) < TRUNC(SYSDATE+1))) 
+			(FUND_CODE IN (SELECT FUND_CODE FROM FUND WHERE WEBTOON_CODE=#{value} AND TRUNC(DUE_DATE) < TRUNC(SYSDATE+1))) 
 		ORDER BY EPISODE_NUMBER DESC
 		]]> 
 	</select>
@@ -220,9 +220,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 진행중인 펀드정보가져오기 -->
 	<select id="selectCurrentFundingEpisode" resultMap="fundDTO" parameterType="_int">
 		<![CDATA[
-		SELECT FUND_CODE, EPISODE_NUMBER, EPISODE_FUND, WEBTOON_CODE, START_DATE, DUE_DATE 
+		SELECT FUND_CODE, EPISODE_NUMBER, EPISODE_FUND, WEBTOON_CODE, 
+			TO_CHAR(TRUNC(START_DATE), 'YYYY-MM-DD') AS START_DATE, TO_CHAR(TRUNC(DUE_DATE), 'YYYY-MM-DD') AS DUE_DATE 
 		FROM FUND
-		WHERE WEBTOON_CODE = #{value} AND EPISODE_NUMBER NOT IN (SELECT EPISODE_NUMBER FROM EPISODE WHERE WEBTOON_CODE = #{value})
+		WHERE WEBTOON_CODE = #{value} AND (EPISODE_NUMBER NOT IN 
+			(SELECT EPISODE_NUMBER FROM EPISODE WHERE WEBTOON_CODE = #{value}) OR 
+			TRUNC(DUE_DATE) >= TRUNC(SYSDATE)) 
 		]]>
 	</select>
 </mapper>
