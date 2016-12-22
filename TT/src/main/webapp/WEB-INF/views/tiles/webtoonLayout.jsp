@@ -64,18 +64,27 @@
 		</div>
 	</div>
 
-	<!-- modal -->
-	<!-- Modal Structure -->
-	<div id="report-modal" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<h4>신고</h4>
-			<p>A bunch of text</p>
+	<!-- 신고 다이얼로그 -->
+<div id="report-modal" class="modal modal-fixed-footer modal-top">
+	<form method="post" action="/controller/webtoon/funding-apply">
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>웹툰 신고</h5>
+			</div>
+			<div class="modal-content modal-content-funding">
+				<div class="input-field">
+		          <textarea id="report-content" class="materialize-textarea"></textarea>
+		          <label for="report-content">신고 내용</label>
+		          	허위신고 적발시 그에 따른 처벌이 이루어집니다. 
+		        </div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+				<a id="report-modal-btn" class="modal-action modal-close waves-effect waves-green btn-flat">신고</a>
+			</div>
 		</div>
-		<div class="modal-footer">
-			<a href="#!"
-				class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-		</div>
-	</div>
+	</form>
+</div>
 
 	<!-- HTML5 tiles main-->
 	<div id="container">

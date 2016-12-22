@@ -86,36 +86,6 @@
 	</form>
 </div>
 
-<!-- 펀딩 웹툰 신청 완료 다이얼로그 -->
-<div id="funding-webtoon-ok-modal" class="modal modal-fixed-footer modal-top">
-	<div id="inputDiv">
-		<div class="modal-title color-500 white-text z-depth-1">
-			<h5>펀딩 웹툰 신청</h5>
-		</div>
-		<div class="modal-content modal-content-funding">
-			<div>신청 완료</div>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">확인</a>
-		</div>
-	</div>
-</div>
-
-<!-- 펀딩 웹툰 신청 실패 다이얼로그 -->
-<div id="funding-webtoon-fail-modal" class="modal modal-fixed-footer modal-top">
-	<div id="inputDiv">
-		<div class="modal-title color-500 white-text z-depth-1">
-			<h5>펀딩 웹툰 신청</h5>
-		</div>
-		<div class="modal-content modal-content-funding">
-			<div>신청 실패</div>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">확인</a>
-		</div>
-	</div>
-</div>
-
 <!-- 웹툰 상태 처리 다이어로그 -->
 <div id="webtoon-state-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post" action="/controller/webtoon/webtoonStateChange">

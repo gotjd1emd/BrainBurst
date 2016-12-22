@@ -3,6 +3,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<script>
 		$(function() {
+			
+			$("#report-modal-btn").click(function () {
+				
+				var webtoonCode = ${webtoonDTO.webtoonCode};
+				var content = $("#report-content").val();
+				alert(webtoonCode)
+				
+				$.ajax({
+					url : "/contoller/user/report",
+					type : "post",
+					dataType : "text",
+					success : function(result){
+						
+					},
+					error : function(err) {
+						alert("err : " + err);
+					}
+				})
+			})
+			
 			$("#rmd").click(function() {
 				var episodeSequence = $("#episodeSequence").val();
 				$.ajax({
@@ -12,9 +32,14 @@
 					success : function(result) {
 						$("#val01").html("추 천<br>:"+result)
 						$("#val02").html("추천수 : "+result)
+						Materialize.toast('추천 해주셔서 감사합니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
 					},
 					error : function() {
-						alert("추천은 한번만 가능합니다.")
+						Materialize.toast('추천은 한번만 가능합니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
 					}
 				})
 			})
@@ -71,6 +96,7 @@
 			</div>
 		</div>
 	</div>
+	<a id='report-btn' class="waves-effect waves-light btn color-500" style="float:right; margin-top: -3%;" href="#report-modal">신고하기</a>
 	</div>
 		<div class="row tab-row  z-depth-1">
 			<div class="col s12">

@@ -288,4 +288,14 @@ public class UserController {
 		userService.fundApply(fundApplyDTO);
 		return webtoonCode+"";
 	}
+	
+	/**
+	 * ½Å°í
+	 * */
+	@RequestMapping("report")
+	@ResponseBody
+	public String report(HttpServletRequest request){
+		System.out.println("report");
+		return "";
+	}
 }
