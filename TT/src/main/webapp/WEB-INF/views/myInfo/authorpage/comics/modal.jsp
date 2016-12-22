@@ -18,13 +18,6 @@
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
-		<div class="input-field col s12">
-			<select>
-				<option value="" disabled selected>기간 선택</option>
-				<option value="1">1주</option>
-				<option value="2">2주</option>
-			</select> <label>펀딩중 연재할 기간 선택</label>
-		</div>
 		<div class="webtoon-score">"웹툰 이름"작품의 점수 : 99점</div>
 		<div class="webtoon-score-description">
 			- 80점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
