@@ -2,6 +2,36 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<script>
+	$(function () {
+		$("#find-apply-btn").click(function(){
+			var selectLength = $("#find-webtoon-select option").length;
+			var webtoonName = $("#fund-webtoon-select-div div input").val();
+			var webtoonCode;
+			for(i=1; i<=selectLength; i++){
+				var webtoonCodeIndex = $("#find-webtoon-select option:eq("+i+")").html();
+				if(webtoonCodeIndex==webtoonName){
+					webtoonCode = {"webtoonCode": $("#find-webtoon-select option:eq("+i+")").val()};
+				}
+			}
+			
+			$.ajax({
+				url : "/controller/user/fundApply",
+				type : "post",
+				dataType : "text",
+				data : webtoonCode,
+				success : function(result) {
+					$("#funding-webtoon-modal").modal('close');
+					$("#funding-webtoon-ok-modal").modal('open');
+				},
+				error : function(err){
+					alert("err : " + err)
+				}
+			})
+		})
+	})
+</script>
+
 <!-- 펀딩 웹툰 신청 다이얼로그 -->
 <div id="funding-webtoon-modal" class="modal modal-fixed-footer modal-top">
 	<form method="post" action="/controller/webtoon/funding-apply">
@@ -10,11 +40,11 @@
 				<h5>펀딩 웹툰 신청</h5>
 			</div>
 			<div class="modal-content modal-content-funding">
-		<div class="input-field col s12">
-			<select>
+		<div id="fund-webtoon-select-div" class="input-field col s12">
+			<select id="find-webtoon-select">
 				<option value="" disabled selected>웹툰 선택</option>
 				<c:forEach var="item" items="${webtoonList}" varStatus="status">
-					<option value=status>${item.webtoonName}</option>
+					<option value="${item.webtoonCode}">${item.webtoonName}</option>
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
@@ -25,14 +55,41 @@
 	
 	</div>
 	<div class="modal-footer">
-		<a href="#!"
-			class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
-		<button
-			class="modal-action modal-close waves-effect waves-green btn-flat"
-			type="submit" name="action">신청</button>
+		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+		<a id="find-apply-btn" class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="action">신청</a>
 	</div>
 	</div>
 	</form>
+</div>
+
+<!-- 펀딩 웹툰 신청 완료 다이얼로그 -->
+<div id="funding-webtoon-ok-modal" class="modal modal-fixed-footer modal-top">
+	<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+			<h5>펀딩 웹툰 신청</h5>
+		</div>
+		<div class="modal-content modal-content-funding">
+			<div>신청 완료</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">확인</a>
+		</div>
+	</div>
+</div>
+
+<!-- 펀딩 웹툰 신청 실패 다이얼로그 -->
+<div id="funding-webtoon-fail-modal" class="modal modal-fixed-footer modal-top">
+	<div id="inputDiv">
+		<div class="modal-title color-500 white-text z-depth-1">
+			<h5>펀딩 웹툰 신청</h5>
+		</div>
+		<div class="modal-content modal-content-funding">
+			<div>신청 실패</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">확인</a>
+		</div>
+	</div>
 </div>
 
 <!-- 웹툰 상태 처리 다이어로그 -->
@@ -66,11 +123,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="#!"
-			class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
-		<button
-			class="modal-action modal-close waves-effect waves-green btn-flat"
-			type="submit" name="action">적용</button>
+		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+		<button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="action">적용</button>
 	</div>
 	</div>
 	</form>
@@ -94,11 +148,8 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-		<a href="#!"
-			class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
-		<button
-			class="modal-action modal-close waves-effect waves-green btn-flat"
-			type="submit">수정하기</button>
+		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+		<button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit">수정하기</button>
 	</div>
 	</div>
 	</form>

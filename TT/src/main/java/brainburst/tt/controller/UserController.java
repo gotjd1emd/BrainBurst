@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.junit.experimental.theories.ParametersSuppliedBy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -277,10 +278,14 @@ public class UserController {
 	/**
 	 * ÆÝµù ½ÅÃ»
 	 * */
-	@RequestMapping("")
-	public String fundApply(){
-		FundApplyDTO fundApplyDTO = null;
+	@RequestMapping("fundApply")
+	@ResponseBody
+	public String fundApply(HttpServletRequest request, int webtoonCode){
+		int score = 80;
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		FundApplyDTO fundApplyDTO = new FundApplyDTO(userDTO.getEmail(), webtoonCode, score);
 		userService.fundApply(fundApplyDTO);
-		return "";
+		return webtoonCode+"";
 	}
 }

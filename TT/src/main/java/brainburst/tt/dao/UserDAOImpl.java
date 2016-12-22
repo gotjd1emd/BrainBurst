@@ -131,6 +131,6 @@ public class UserDAOImpl implements UserDAO{
 	
 	@Override
 	public int fundApply(FundApplyDTO fundApplyDTO) {
-		return sqlSession.insert("webtoonMapper.fundApply", fundApplyDTO);
+		return sqlSession.insert("userMapper.fundApply", fundApplyDTO);
 	}
 }

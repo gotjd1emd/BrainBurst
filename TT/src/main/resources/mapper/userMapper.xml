@@ -49,90 +49,95 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- Login -->
 	<select id="login" resultMap="userMap" parameterType="userDTO">
-		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_date 
-		from user_information 
-		where email = #{email} and password = #{password}
+		SELECT EMAIL, NICKNAME, PHONE, PASSWORD, CASH_POINT, USER_LEVEL, NAME, GENDER, BIRTH_DATE 
+		FROM USER_INFORMATION 
+		WHERE EMAIL = #{email} AND PASSWORD = #{password}
 	</select>
 	
 	<!-- checkId -->
 	<select id="checkId" resultMap="userMap" parameterType="String">
-		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_date
-		from user_information 
-		where email = #{email}
+		SELECT EMAIL, NICKNAME, PHONE, PASSWORD, CASH_POINT, USER_LEVEL, NAME, GENDER, BIRTH_DATE
+		FROM USER_INFORMATION 
+		WHERE EMAIL = #{email}
 	</select>
 	
 	<!-- checkId -->
 	<select id="checkNickName" resultType="String" parameterType="String">
-		select nickname
-		from user_information
-		where nickname = #{nickname}
+		SELECT NICKNAME
+		FROM USER_INFORMATION
+		WHERE NICKNAME = #{nickname}
 	</select>
 	
 	<!-- signUp -->
 	<insert id="signUp" parameterType="userDTO">
-		insert into user_information (email, nickname, phone, password, name, gender, birth_date) 
-		values ( #{email}, #{nickname}, #{phone}, #{password}, #{name}, #{gender}, #{birthDate} )
+		INSERT INTO USER_INFORMATION (EMAIL, NICKNAME, PHONE, PASSWORD, NAME, GENDER, BIRTH_DATE) 
+		VALUES ( #{email}, #{nickname}, #{phone}, #{password}, #{name}, #{gender}, #{birthDate} )
 	</insert>
 	
 	<!-- userDelete -->
 	<delete id="userDelete" parameterType="String">
-		delete from user_information
-		where email = #{email}
+		DELETE FROM USER_INFORMATION
+		WHERE EMAIL = #{email}
 	</delete>
 	
 	<!-- uesrUpdate -->
 	<update id="userUpdate" parameterType="userDTO">
-		update user_information
-		set phone = #{phone}, password = #{password}
-		where email = #{email}
+		UPDATE USER_INFORMATION
+		SET PHONE = #{phone}, password = #{password}
+		WHERE EMAIL = #{email}
 	</update>
 	
 	<!-- additionalInfo -->
 	<insert id="additionalInfoMap" parameterType="additionalInfoDTO">
-		insert into additional_info 
-		values (#{email}, #{accountPassword}, #{bankName}, #{accountNumber}, #{identificationCard})
+		INSERT INTO ADDITIONAL_INFO 
+		VALUES (#{email}, #{accountPassword}, #{bankName}, #{accountNumber}, #{identificationCard})
 	</insert>
 	
 	<!-- userInfoSelect -->
 	<select id="userInfoSelect" resultMap="userMap" parameterType="String">
-		select email, nickname, phone, password, cash_Point, user_level, name, gender, birth_Date
-		from user_information 
-		where email = #{email}
+		SELECT EMAIL, NICKNAME, PHONE, PASSWORD, CASH_POINT, USER_LEVEL, NAME, GENDER, BIRTH_DATE
+		FROM USER_INFORMATION 
+		WHERE EMAIL = #{email}
 	</select>
 	
 	<!-- cashCharge -->
 	<update id="cashCharge" parameterType="userDTO">
-		update user_information 
-		set cash_point = #{cashPoint}
-		where email = #{email}
+		UPDATE USER_INFORMATION 
+		SET CASH_POINT = #{cashPoint}
+		WHERE EMAIL = #{email}
 	</update>
 	
 	<!-- cashHistoryInsert -->
 	<insert id="cashHistoryInsert" parameterType="cashHistoryDTO">
-		insert into cash_history(cash_history_sequence, account_day, email, cash_point, content, trade_state) 
-		values (cash_history_seq.nextval, sysdate, #{email}, #{cashPoint}, #{content}, #{tradeState})
+		INSERT INTO CASH_HISTORY(CASH_HISTORY_SEQUENCE, ACCOUNT_DAY, EMAIL, CASH_POINT, CONTENT, TRADE_STATE) 
+		VALUES (CASH_HISTORY_SEQ.NEXTVAL, SYSDATE, #{email}, #{cashPoint}, #{content}, #{tradeState})
 	</insert>
 	
 	<!-- THistoryList -->
 	<select id="THistoryList" resultMap="cashHistoryMap" parameterType="String">
-		select account_day, cash_point, content, trade_state from cash_history where email=#{email}
+		SELECT ACCOUNT_DAY, CASH_POINT, CONTENT, TRADE_STATE FROM CASH_HISTORY WHERE EMAIL=#{email}
 	</select>
 	
 	<!-- findEmail -->
 	<select id="findEmail" resultType="string" parameterType="userDTO">
-		select email from user_information where name=#{name} and phone=#{phone}
+		SELECT EMAIL FROM USER_INFORMATION WHERE NAME=#{name} AND PHONE=#{phone}
 	</select>
 	
 	<!-- findPassword -->
 	<select id="findPassword" resultType="string" parameterType="userDTO">
-		select password from user_information where name=#{name} and phone=#{phone} and email=#{email}
+		SELECT PASSWORD FROM USER_INFORMATION WHERE NAME=#{name} AND PHONE=#{phone} AND EMAIL=#{email}
 	</select>
 	
 	<!-- showListSubscription -->
 	<select id="showListSubscription" resultMap="webtoonMap" parameterType="string">
-		select w.webtoon_code, w.webtoon_name, w.nickname, w.webtoon_thumbnail, w.webtoon_level, w.webtoon_state 
-		from subscription s join webtoon w 
-		on (s.webtoon_code = w.webtoon_code) 
-		where email=#{email} order by subscription_sequence desc
+		SELECT W.WEBTOON_CODE, W.WEBTOON_NAME, W.NICKNAME, W.WEBTOON_THUMBNAIL, W.WEBTOON_LEVEL, W.WEBTOON_STATE 
+		FROM SUBSCRIPTION S JOIN WEBTOON W 
+		ON (S.WEBTOON_CODE = W.WEBTOON_CODE) 
+		WHERE EMAIL=#{email} ORDER BY SUBSCRIPTION_SEQUENCE DESC
 	</select>
+	
+	<insert id="fundApply" parameterType="fundApplyDTO">
+		INSERT INTO APPLY_FUND(APPLY_FUND_SEQUENCE, EMAIL, WEBTOON_CODE, SCORE)
+		VALUES(A_F_SEQ.NEXTVAL, #{email}, #{webtoonCode}, #{score})
+	</insert>
 </mapper>

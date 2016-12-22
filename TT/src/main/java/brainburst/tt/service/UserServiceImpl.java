@@ -129,7 +129,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int fundApply(FundApplyDTO fundApplyDTO) {
-		
-		return 0;
+		return userDAO.fundApply(fundApplyDTO);
 	}
 }
