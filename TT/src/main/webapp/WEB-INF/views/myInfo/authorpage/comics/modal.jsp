@@ -4,6 +4,26 @@
 
 <script>
 	$(function () {
+		
+		$("#fund-webtoon-select-div div ul li span").on("click", function () {
+			var webtoonName = $(this).html();
+			$("#fund-webtoon-modal-webtoon-name").html(webtoonName);
+			
+			$.ajax({
+				url : "",
+				type : "get",
+				dataType : "text",
+				success : function(result) {
+					alert(result)
+				},
+				error : function(err){
+					alert("error : "+err)
+				}
+			})
+			
+						
+		});
+		
 		$("#find-apply-btn").click(function(){
 			var selectLength = $("#find-webtoon-select option").length;
 			var webtoonName = $("#fund-webtoon-select-div div input").val();
@@ -52,7 +72,7 @@
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
-		<div class="webtoon-score">"웹툰 이름"작품의 점수 : 99점</div>
+		<div class="webtoon-score">"<span id="fund-webtoon-modal-webtoon-name">웹툰 이름</span>"<br>작품의 점수 : 99점</div>
 		<div class="webtoon-score-description">
 			- 80점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
 		</div>
