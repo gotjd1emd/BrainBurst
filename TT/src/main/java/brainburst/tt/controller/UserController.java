@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.UserService;
@@ -294,8 +295,11 @@ public class UserController {
 	 * */
 	@RequestMapping("report")
 	@ResponseBody
-	public String report(HttpServletRequest request){
-		System.out.println("report");
+	public String report(HttpServletRequest request, int webtoonCode, String content, int episodeSequence){
+		HttpSession session = request.getSession();
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		ReportDTO reportDTO = new ReportDTO(content, userDTO.getEmail(), webtoonCode, episodeSequence);
+		userService.report(reportDTO);
 		return "";
 	}
 }

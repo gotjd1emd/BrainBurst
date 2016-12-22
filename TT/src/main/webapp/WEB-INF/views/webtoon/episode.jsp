@@ -7,13 +7,17 @@
 			$("#report-modal-btn").click(function () {
 				
 				var webtoonCode = ${webtoonDTO.webtoonCode};
+				var episodeSequence = ${episodeDTO.episodeSequence};
 				var content = $("#report-content").val();
 				alert(webtoonCode)
 				
+				var data = {"webtoonCode" : webtoonCode, "content" : content, "episodeSequence" : episodeSequence};
+				
 				$.ajax({
-					url : "/contoller/user/report",
+					url : "/controller/user/report",
 					type : "post",
 					dataType : "text",
+					data : data,
 					success : function(result){
 						
 					},

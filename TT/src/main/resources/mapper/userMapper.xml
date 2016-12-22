@@ -140,4 +140,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO APPLY_FUND(APPLY_FUND_SEQUENCE, EMAIL, WEBTOON_CODE, SCORE)
 		VALUES(A_F_SEQ.NEXTVAL, #{email}, #{webtoonCode}, #{score})
 	</insert>
+	
+	<insert id="report" parameterType="fundApplyDTO">
+		INSERT INTO REPORT(REPORT_SEQUENCE, CONTENT, EMAIL, WEBTOON_CODE, EPISODE_SEQUENCE)
+		VALUES(REPORT_SEQ.NEXTVAL, #{content}, #{email}, #{webtoonCode}, #{episodeSequence})
+	</insert>
 </mapper>
