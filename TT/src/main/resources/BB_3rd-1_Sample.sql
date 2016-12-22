@@ -653,7 +653,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,2,58,'2011-12-26','2011-12-31');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,2,59,'2016-12-22','2012-12-27');
+values (fund_seq.nextval,3000,2,59,'2016-12-22','2016-12-27');
 
 
 --select * from fund;
