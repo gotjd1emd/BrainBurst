@@ -219,25 +219,24 @@
 				</ul>
 			</div>
 		</div>
-		<div id="funding-episode">
+		<div id="funding-episode" class="episode-list" style="margin-bottom: -60px;">
 		<c:if test="${fundDTO != null }">
 			<div class="z-depth-1 hoverable radius white">
-				<div class="row radius">
+				<div class="row radius" style="background-color:tomato;color:aliceblue;">
 					<input type="hidden" name="fundCode" value="${fundDTO.fundCode }"/>
 					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
-					<div class="col s5 funding-episode-content">
+					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:20px">
 						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
 						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate }, 남은 시간 : <span class="period"></span>
 					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+						<input type="text" class="knob" value="20" data-width="90" data-height="90" data-fgColor="rgb(77, 14, 100)" data-readonly="true">
 					</div>
 				</div>
 			</div>
 		</c:if>
 		</div>
 		<div id="episode-list" class="episode-list">
-		
 		<c:forEach var="episode" items="${episodeList}">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius">
