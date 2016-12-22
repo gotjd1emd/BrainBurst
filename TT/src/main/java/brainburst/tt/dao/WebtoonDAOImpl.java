@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -147,6 +148,12 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	@Override
 	public int webtoonStateChange(WebtoonDTO webtoonDTO) {
 		return sqlSession.update("webtoonMapper.webtoonStateChange", webtoonDTO);
+	}
+
+	@Override
+	public int fundApply(FundApplyDTO fundApplyDTO) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

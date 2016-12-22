@@ -4,7 +4,7 @@
 
 <!-- 펀딩 웹툰 신청 다이얼로그 -->
 <div id="funding-webtoon-modal" class="modal modal-fixed-footer modal-top">
-	<form method="post">
+	<form method="post" action="/controller/webtoon/funding-apply">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>펀딩 웹툰 신청</h5>

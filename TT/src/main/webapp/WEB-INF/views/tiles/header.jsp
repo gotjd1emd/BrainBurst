@@ -81,7 +81,8 @@
 						success : function(result) {
 							$('#search-modal').modal('open');
 					    	$(".search-ward").html($("#search").val());
-							$(".collection").empty()
+							$(".collection").empty();
+							$("#notfund-massage-div").empty();
 							$.each(result, function(index, item) {
 								var htmlcode = "";
 								htmlcode +="<a class='collection-item avatar search-collection-item' href='#'>"
@@ -95,7 +96,7 @@
 							if(result==""){
 								var htmlcode = "";
 								htmlcode +="<div style='text-align: center;color: #F66;font-size: 25px;font-weight: 600;margin-top: 10%;'>검색 결과가 없습니다. 다시 검색해 주세요</div>"
-								$("#select-content").append(htmlcode); 
+								$("#notfund-massage-div").append(htmlcode);
 							}
 						},
 						error : function(err) {
@@ -150,6 +151,7 @@
 					<span href="#!" class="secondary-content"><i class="material-icons">grade</i></span>
 				</a>
 			</div>
+			<div id="notfund-massage-div"></div>
 		</div>
 	</div>
 </div>
