@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -127,5 +128,9 @@ public class UserDAOImpl implements UserDAO{
 	public String nickNameCheck(String nickname) {
 		return sqlSession.selectOne("checkNickName", nickname);
 	}
-
+	
+	@Override
+	public int fundApply(FundApplyDTO fundApplyDTO) {
+		return sqlSession.insert("webtoonMapper.fundApply", fundApplyDTO);
+	}
 }

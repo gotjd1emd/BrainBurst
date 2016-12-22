@@ -3,6 +3,7 @@ package brainburst.tt.dao;
 import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 

@@ -63,11 +63,32 @@ $(document).ready(function() {
 					}
 					htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 					htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-					htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1%!important;'>grade</i>"
+					htmlcode+="<a style='font-size:13px'>${item.nickname}</a>"
 					htmlcode+="</span></div>"
 					htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
-					htmlcode+="<span>"+item.nickname+"</span>"
-					htmlcode+="<span style='float: right;'>100%</span>"
+					if(item.webtoonLevel=='funding'){
+						htmlcode+="<div>참여자:"+item.webtoonCode+"명</div>";
+						htmlcode+="<div style='float:right;width:103px;margin-right:7px;'>"
+						htmlcode+="<hr style='border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width:100%;'>"
+						if(item.webtoonCode>='100'){
+							htmlcode+="<hr style='border:solid 10px black;margin-top:-22px;margin-right:-16px;width:100%;'>"
+						}else{
+							htmlcode+="<hr width='"+item.webtoonCode+"' style='border:solid 10px black;margin-top:-22px;margin-right:-16px;'>"											
+						}
+					htmlcode+="	<span style='float:right;margin-right:-12px;color:#d8d8d8;margin-top:-13.4px;'>"+item.webtoonCode+"%</span>"
+					htmlcode+="</div>"
+					}else{
+						htmlcode+="<div>조회수:"+item.webtoonCode+"회</div>";
+						htmlcode+="<div style='float:right;width:103px;margin-right:7px;'>"
+						htmlcode+="<hr style='border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width:100%;'>"
+						if(item.webtoonCode>=100){
+							htmlcode+="<hr width=100 style='border:solid 10px black;margin-top:-22px;margin-right:-16px;width:100%;'>"
+						}else{
+							htmlcode+="<hr width='"+item.webtoonCode+"' style='border:solid 10px black;margin-top:-22px;margin-right:-16px;'>"											
+						}
+					htmlcode+="<span style='float:right;margin-right:-12px;color:#d8d8d8;margin-top:-13.4px;'>"+item.webtoonCode+"%</span>"
+					htmlcode+="</div>"
+					}
 					htmlcode+="</div></div>"
 				});
 				htmlcode+="</div>";
@@ -227,10 +248,22 @@ $(document).ready(function() {
 									</i>
 								</span>
 							</div>
-							<div class="card-reveal">
-								<span class="card-title grey-text text-darken-4">${item.webtoonName}
+							<div class="card-reveal" style="text-align:center">
+								<span class="card-title grey-text text-darken-4">
 								<i class="material-icons right">close</i></span>
-								<p>${item.summary}</p>
+								<div class="col-xs-6 col-md-3 text-center" style="text-align:center;">
+									<div class="row" style="margin-top: 30px;margin-bottom: 9px;font-weight: 800;font-size:22px;">현재 펀딩률</div>
+									<c:choose>
+										<c:when test="${item.webtoonCode>=100}">
+											<input type="text" class="knob" value="100" data-width="200" data-height="200" data-fgColor="#f56954" data-readonly="true">
+										</c:when>
+										<c:otherwise>
+											<input type="text" class="knob" value="${item.webtoonCode}" data-width="200" data-height="200" data-fgColor="#f56954" data-readonly="true">										
+										</c:otherwise>
+									</c:choose>
+									<div style="margin-top:10px">펀딩 시작일 : 2016년 12월 21일</div>
+									<div>남은 시간 : 2일 15시간 30분</div>
+								</div>
 							</div>   
 						</div>
 					</c:forEach>
@@ -257,26 +290,57 @@ $(document).ready(function() {
 								</div>
 								<div class="card-content"style="height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;">
 									<c:choose>
-										<c:when test="${fn:length(item.webtoonName) <= 8}">
+										<c:when test="${fn:length(item.webtoonName)<=7}">
 											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
 											${item.webtoonName}
 											</span>
 										</c:when>
 										<c:otherwise>
 											<span class="card-title activator grey-text text-darken-4" style="font-size:16px; font-weight:500;">
-											${fn:substring(item.webtoonName,0,8)}...
+											${fn:substring(item.webtoonName,0,6)}...
 											</span>
 										</c:otherwise>
 									</c:choose>
 									<span id="ss" style="padding-left: 4%;">
+									<a 	style="font-size:13px"> ${item.nickname}</a>
 										<i id="scription-card-btn" class="material-icons scription-a-index" 
 											name="${item.webtoonCode}_${item.subscriptionSequence}" style="margin-top:1%!important; margin-right: auto">grade
 										</i>
 									</span>
 								</div>
 								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
-									<span>${item.nickname}</span>
-									<span style="float: right;">100%</span>
+								<c:choose>
+									<c:when test="${item.webtoonLevel eq 'funding' }">
+										<div>참여자:${item.webtoonCode}명</div>
+										<div style="float:right;width:103px;margin-right:7px;">
+										<hr style="border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width: 100%;">
+										<c:choose>
+											<c:when test="${item.webtoonCode>=100}">
+												<hr style="border:solid 10px black;margin-top:-22px;margin-right:-16px;width:100%;">
+											</c:when>
+											<c:otherwise>
+												<hr width="${item.webtoonCode}" style="border:solid 10px black;margin-top:-22px;margin-right:-16px;">											
+											</c:otherwise>
+										</c:choose>
+											<span style="float:right;margin-right:-12px;color:#d8d8d8;margin-top:-13.4px;">${item.webtoonCode}%</span>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div>조회수:${item.webtoonCode}회</div>
+										<div style="float:right;width:103px;margin-right:7px;">
+										<hr style="border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width: 100%;">
+										<c:choose>
+											<c:when test="${item.webtoonCode>=100}">
+												<hr style="border:solid 10px black;margin-top:-22px;margin-right:-16px;width:100%;">
+											</c:when>
+											<c:otherwise>
+												<hr width="${item.webtoonCode}" style="border:solid 10px black;margin-top:-22px;margin-right:-16px;">											
+											</c:otherwise>
+										</c:choose>
+											<span style="float:right;margin-right:-12px;color:#d8d8d8;margin-top:-13.4px;">${item.webtoonCode}%</span>
+										</div>
+									</c:otherwise>
+								</c:choose>
 								</div> 
 							</div>
 					</c:forEach>

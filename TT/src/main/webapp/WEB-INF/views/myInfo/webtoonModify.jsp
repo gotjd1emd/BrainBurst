@@ -4,7 +4,14 @@
 <script type="text/javascript">
 	$(function() {
 		
-		
+		//수정하는 웹툰의 카테고리정보
+		var categoryCode = $("#categoryCode").val();
+		for(var i=0; i<10; i++) {
+			
+			if($("option:eq("+i+")").val()==categoryCode) {
+				$("option:eq("+i+")").attr("selected", "selected");
+			}
+		}
 		
 		//웹툰 제목
 		$("#webtoon-name").keyup(function (e) {
@@ -35,11 +42,6 @@
 		        var width = $("#toast-container").width();
 		        $("#toast-container").css("margin-left", (width*-1)+209);
 		        $("#textarea1").focus();
-				return false;
-			}else if ($("#thumbnail").val() == "") { // 그림 이미지가 비어있을 때  검사
-				Materialize.toast('웹툰 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
-		        var width = $("#toast-container").width();
-		        $("#toast-container").css("margin-left", (width*-1)+209);
 				return false;
 			}else if ($(".select-dropdown").val() == "카테고리 선택") { // 카테고리 검사
 				Materialize.toast('카테고리를 선택해 주세요.', 2000, 'rounded');
@@ -87,18 +89,18 @@
 		return fileSize;
 	}
 </script>
-
+<form method="post" action="<c:url value='/author/modifyWebtoon'/>" enctype="multipart/form-data">
 <input id="header-title" type="hidden" value="웹툰 수정">
 <div class="z-depth-1" style="margin:20px; padding: 20px; border-radius: 20px; background-color: white">
-	<form>
 	<div class="row" style="margin-top: 20px;">
 		<div class="col s6">
 			<div class="input-field">
-				<input id="webtoon-name" type="text" class="validate"
-					name="webtoonName"> <label for="webtoon-name">웹툰 제목</label>
+				<input id="webtoon-name" type="text" class="validate" name="webtoonName" value="${webtoonDTO.webtoonName }"> 
+				<label for="webtoon-name">웹툰 제목</label>
+
 			</div>
 			<div class="input-field">
-				<textarea id="textarea1" class="materialize-textarea"></textarea>
+				<textarea id="textarea1" class="materialize-textarea" name="summary">${webtoonDTO.summary }</textarea>
 				<label for="textarea1">줄거리</label>
 				<span id="counter">0/100</span>
 			</div>
@@ -107,10 +109,10 @@
 		<div class="input-field col s6">
 			<div class="file-field input-field">
 				<div class="btn color-500">
-					<span>File</span> <input id="thumbnail" type="file" name="thumbnail">
+					<span>File</span> <input id="thumbnail" type="file" name="webtoonThumbnailFile">
 				</div>
 				<div class="file-path-wrapper">
-					<input class="file-path validate" type="text">
+					<input class="file-path validate" type="text" value="${webtoonDTO.webtoonThumbnail }">
 				</div>
 			</div>
 	
@@ -120,7 +122,7 @@
 					<div class="preview">
 						<div class="inner">
 							<p id="thumbnail-text">썸네일 미리보기</p>
-							<img id='preview-image' src='' />
+							<img id='preview-image' src='<c:url value="/resources"/>${webtoonThumbnailFile }' />
 						</div>
 					</div>
 				</div>
@@ -131,8 +133,9 @@
 						for="thumbnail-preview"></label>
 				</div>
 			</div>
+
 			<div class="input-field" id="category-input">
-			    <select>
+				<select name="categoryCode">
 			      <option value="" disabled selected>카테고리 선택</option>
 			      <option value="A">액션</option>
 			      <option value="B">SF</option>
@@ -149,8 +152,10 @@
 		</div>
 	</div>
 	<div class="webtoon-upload-btn-div" style="margin-bottom: 50px;">
+		<input type="hidden" id="categoryCode" value="${webtoonDTO.categoryCode }"/>
+		<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode }"/>
 		<button class="btn waves-effect waves-light color-500" type="submit" name="action">웹툰 수정</button>
 		<a class="waves-effect waves-light btn color-500" href="/controller/author/authorPage">뒤로가기</a>
 	</div>
-	</form>
 </div>
+</form>

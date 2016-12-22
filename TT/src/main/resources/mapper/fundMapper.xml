@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- selectFundingWebtoonCode -->
 	<select id="selectFundingWebtoonCode" resultType="int">
-		SELECT WEBTOON_CODE FROM WEBTOON WHERE WEBTOON_LEVEL = 'funding'
+		SELECT WEBTOON_CODE FROM WEBTOON WHERE WEBTOON_LEVEL = 'funding' AND WEBTOON_STATE = 'serial'
 	</select>
 	
 	<!-- lateEpisode -->

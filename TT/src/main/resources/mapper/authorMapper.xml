@@ -11,9 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="WEBTOON_STATE" property="webtoonState"/>
 		<result column="CATEGORY_CODE" property="categoryCode"/>
 		<result column="PENALTY" property="penalty"/>
-		<result column="AUTHOR" property="author"/>
+		<result column="NICKNAME" property="nickname"/>
 		<result column="FUNDING_PERIOD" property="fundingPeriod"/>
 		<result column="SUMMARY" property="summary" />
+		<result column="WEBTOON_THUMBNAIL" property="webtoonThumbnail"/>
 	</resultMap>
 	
 	<!-- getMyWebtoon -->
@@ -37,8 +38,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								WHERE WEBTOON_CODE = #{value}) 
 	</select>
 	
+	<!-- categoryName -->
+	<select id="category" resultType="string" parameterType="string">
+		SELECT CATEGORY_NAME FROM CATEGORY
+		WHERE CATEGORY_CODE = #{value}
+	</select>
+	
 	<!-- episodeUpload -->
-	<insert id="episodeUpload" parameterType="webtoonDTO">
+	<insert id="episodeUpload" parameterType="episodeDTO">
 		INSERT INTO EPISODE(EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, WEBTOON_CODE,
 							EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE) 
 		VALUES(EPISODE_SEQ.NEXTVAL, #{episodeNumber}, 0, 0, sysdate, #{webtoonCode}, #{episodeTitle}, #{authorWord},
@@ -83,8 +90,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- modifyWebtoon -->
 	<update id="modifyWebtoon" parameterType="webtoonDTO">
-		UPDATE WEBTOON SET WEBTOON_NAME = #{webtoonName}, CATEGORY_CODE = #{categoryCode}, 
-							SUMMARY = #{summary}, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
+		UPDATE WEBTOON SET WEBTOON_NAME = #{webtoonName}, CATEGORY_CODE = #{categoryCode}, SUMMARY = #{summary}
+		<if test="webtoonThumbnail != null">
+		, WEBTOON_THUMBNAIL = #{webtoonThumbnail} 
+		</if> 
 		WHERE WEBTOON_CODE = #{webtoonCode}
 	</update>
 	
@@ -93,5 +102,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT WEBTOON_NAME, WEBTOON_CODE, CATEGORY_CODE, SUMMARY, WEBTOON_THUMBNAIL 
 		FROM WEBTOON 
 		WHERE WEBTOON_CODE = #{value}
+	</select>
+	
+	<!-- 마지막으로 등록한 자신의 웹툰 코드 -->
+	<select id="maxWebtoonCode" resultType="_int" parameterType="string">
+		SELECT MAX(WEBTOON_CODE) AS WEBTOON_CODE FROM WEBTOON 
+		WHERE NICKNAME = #{value}
 	</select>
 </mapper>

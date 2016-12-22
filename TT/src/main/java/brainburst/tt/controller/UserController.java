@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.CashHistoryDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.UserService;
@@ -271,5 +272,15 @@ public class UserController {
 	public String nickNameCheck(@PathVariable("nickname") String nickname){
 		int check = userService.nickNameCheck(nickname);
 		return check+"";
+	}
+	
+	/**
+	 * ÆÝµù ½ÅÃ»
+	 * */
+	@RequestMapping("")
+	public String fundApply(){
+		FundApplyDTO fundApplyDTO = null;
+		userService.fundApply(fundApplyDTO);
+		return "";
 	}
 }

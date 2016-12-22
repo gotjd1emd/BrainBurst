@@ -101,5 +101,24 @@ public interface AuthorDAO {
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode);
 	
+	/**
+	 * 카테고리 코드로 카테고리 이름 가져오기
+	 * @param categoryCode
+	 * @return
+	 */
+	String getCategoryName(String categoryCode);
+	
+	/**
+	 * 최근 등록한 자신의 웹툰의 웹툰코드
+	 * @param nickname
+	 * @return
+	 */
+	int lastMyWebtoonCode(String nickname);
+
+	/**
+	 * 
+	 * @param nickname
+	 * @return
+	 */
 	List<WebtoonDTO> selectMyWebtoon(String nickname);
 }

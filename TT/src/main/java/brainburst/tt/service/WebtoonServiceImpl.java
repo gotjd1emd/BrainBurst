@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
