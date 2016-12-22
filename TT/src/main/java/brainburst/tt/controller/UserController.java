@@ -279,7 +279,7 @@ public class UserController {
 	 * */
 	@RequestMapping("")
 	public String fundApply(){
-		FundApplyDTO fundApplyDTO;
+		FundApplyDTO fundApplyDTO = null;
 		userService.fundApply(fundApplyDTO);
 		return "";
 	}
