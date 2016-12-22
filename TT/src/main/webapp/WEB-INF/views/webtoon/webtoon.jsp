@@ -89,7 +89,9 @@
 								});
 						},
 						error : function() {
-							alert("로그인후 사용하세요.")
+							Materialize.toast('로그인 후 구독이 가능합니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						}
 					})
 				} else if (
@@ -136,7 +138,9 @@
 								
 						},
 						error : function() {
-							alert("로그인후 사용하세요.")
+							Materialize.toast('로그인 후 사용하세요.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						}
 					})
 				}

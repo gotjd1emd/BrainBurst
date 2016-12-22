@@ -114,4 +114,11 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	int lastMyWebtoonCode(String nickname);
+
+	/**
+	 * 
+	 * @param nickname
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
 }

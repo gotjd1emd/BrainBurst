@@ -90,4 +90,12 @@ public interface AuthorService {
 	 * @return
 	 */
 	String getCategoryName(String categoryCode);
+	
+	/**
+	 * 
+	 * @param nickname
+	 * @return
+	 */
+	List<WebtoonDTO> selectMyWebtoon(String nickname);
+
 }

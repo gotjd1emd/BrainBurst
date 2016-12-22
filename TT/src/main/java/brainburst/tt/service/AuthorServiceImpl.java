@@ -119,4 +119,9 @@ public class AuthorServiceImpl implements AuthorService {
 	public String getCategoryName(String categoryCode) {
 		return authorDAO.getCategoryName(categoryCode);
 	}
+	
+	@Override
+	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
+		return authorDAO.selectMyWebtoon(nickname);
+	}
 }

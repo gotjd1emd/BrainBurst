@@ -64,6 +64,9 @@ public class WebtoonController {
 		if(userDTO != null) {
 			email = userDTO.getEmail();
 		}
+		if(category.equals("all")){
+			category = null;
+		}
 		System.out.println("selectWebtoonByLevelR로 왔다");
 		System.out.println("catogory_code : " + category);
 		System.out.println("webtoonLevel : " + webtoonLevel);
@@ -99,6 +102,8 @@ public class WebtoonController {
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
+		
+		
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String nickname = "GUEST";
@@ -110,6 +115,12 @@ public class WebtoonController {
 		}
 		
 		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, email);
+		/*
+		 * 웹툰상태가 블라인드면 오류발생
+		 */
+		if (webtoonDTO.getWebtoonState().equals("blind")) {
+			/*나중에 넣는다!*/
+		}
 		System.out.println("WebtoonController104(webtoonDTO):"+webtoonDTO);
 		
 		//해당 웹툰이 사용자의 웹툰일경우 작가용 웹툰보기페이지로 이동
@@ -284,8 +295,16 @@ public class WebtoonController {
 	 * 웹툰의 상태변경
 	 * */
 	@RequestMapping("webtoonStateChange")
-	public String webtoonStateChange(WebtoonDTO webtoonDTO){
+	public String webtoonStateChange(WebtoonDTO webtoonDTO, HttpSession session){
 		webtoonService.webtoonStateChange(webtoonDTO);
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		/*
+		 * 웹툰상태변경시 변경가능한 웹툰목록가져오기
+		 * (세션의 webtoonList가 수시로 변하여서 제대로 리스트가 출력되지 않으므로,
+		 * 세션에 mylist로 새로운 목록을 넣어준다.)
+		 */  
+		List<WebtoonDTO> list2 = webtoonService.selectMyWebtoon(userDTO.getNickname());
+		session.setAttribute("mylist", list2);
 		return "myInfo/authorpage";
 	}
 }

@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script type="text/javascript">
 	$(function() {
+		
+		
+		
 		//웹툰 제목
 		$("#webtoon-name").keyup(function (e) {
 			if($(this).val().length >= 20){
@@ -19,6 +22,33 @@
 	          $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
 	          $('#counter').html(content.length + '/100');
 	    });
+		
+		$("form").submit(function() {
+			if ($("#webtoon-name").val() == "") { // 웹툰 제목 미입력  검사
+				Materialize.toast('웹툰 제목을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#webtoon-name").focus();
+				return false;
+			}else if ($("#textarea1").val() == "") { // 줄거리 미입력  검사
+				Materialize.toast('줄거리를 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#textarea1").focus();
+				return false;
+			}else if ($("#thumbnail").val() == "") { // 그림 이미지가 비어있을 때  검사
+				Materialize.toast('웹툰 썸네일 이미지를 추가해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+				return false;
+			}else if ($(".select-dropdown").val() == "카테고리 선택") { // 카테고리 검사
+				Materialize.toast('카테고리를 선택해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#episode-title").focus();
+				return false;
+			}
+		});
 		
 		$('select').material_select();
 		
@@ -63,9 +93,9 @@
 	<div class="row" style="margin-top: 20px;">
 		<div class="col s6">
 			<div class="input-field">
-				<input id="webtoon-name" type="text" class="validate"
-					name="webtoonName" value="${webtoonDTO.webtoonName }"> <label for="webtoon-name">웹툰
-					제목</label>
+				<input id="webtoon-name" type="text" class="validate" name="webtoonName" value="${webtoonDTO.webtoonName }"> 
+				<label for="webtoon-name">웹툰 제목</label>
+
 			</div>
 			<div class="input-field">
 				<textarea id="textarea1" class="materialize-textarea" name="summary">${webtoonDTO.summary }</textarea>
@@ -101,8 +131,9 @@
 						for="thumbnail-preview"></label>
 				</div>
 			</div>
-			<div class="input-field">
-			    <select name="categoryCode">
+
+			<div class="input-field" id="category-input">
+				<select name="categoryCode">
 			      <option value="" disabled selected>카테고리 선택</option>
 			      <option value="A">액션</option>
 			      <option value="B">SF</option>
@@ -120,8 +151,7 @@
 	</div>
 	<div class="webtoon-upload-btn-div" style="margin-bottom: 50px;">
 		<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode }"/>
-		<button class="btn waves-effect waves-light color-500" type="submit" name="action">웹툰 수정
-		</button>
+		<button class="btn waves-effect waves-light color-500" type="submit" name="action">웹툰 수정</button>
 		<a class="waves-effect waves-light btn color-500" href="/controller/author/authorPage">뒤로가기</a>
 	</div>
 </div>
