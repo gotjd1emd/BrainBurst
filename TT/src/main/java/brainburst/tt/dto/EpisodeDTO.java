@@ -17,6 +17,7 @@ public class EpisodeDTO {
 	private String authorWord;
 	private String thumbnail;
 	private int fundCode;
+	private FundDTO fund;
 	
 	private MultipartFile thumbnailFile;
 	//private List<ImageDTO> image;
@@ -114,5 +115,13 @@ public class EpisodeDTO {
 
 	public void setImage(List<MultipartFile> image) {
 		this.image = image;
+	}
+	
+	public FundDTO getFund() {
+		return fund;
+	}
+	
+	public void setFund(FundDTO fund) {
+		this.fund = fund;
 	}
 }

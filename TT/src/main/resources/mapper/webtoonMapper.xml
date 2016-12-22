@@ -30,6 +30,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="AUTHOR_WORD" property="authorWord"/>
 		<result column="THUMBNAIL" property="thumbnail"/>
 		<result column="FUND_CODE" property="fundCode"/>
+		<association property="fund" javaType="fundDTO">
+			<id column="FUND_CODE" property="fundCode"/>
+			<result column="EPISODE_FUND" property="episodeFund"/>
+			<result column="WEBTOON_CODE" property="webtoonCode"/>
+			<result column="EPISODE_NUMBER" property="episodeNumber"/>
+			<result column="START_DATE" property="startDate"/>
+			<result column="DUE_DATE" property="dueDate"/>
+		</association>
 	</resultMap>
 	
 	<resultMap type="reportDTO" id="reportDTO">
@@ -208,12 +216,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 펀딩웹툰의 에피소드 가져오기 -->
 	<select id="selectFundingWebtoonEpisode" resultMap="episodeDTO" parameterType="_int">
 		<![CDATA[
-		SELECT EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, 
-			WEBTOON_CODE, EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE 
-		FROM EPISODE 
-		WHERE (FUND_CODE IS NULL AND WEBTOON_CODE=#{value}) OR 
-			(FUND_CODE IN (SELECT FUND_CODE FROM FUND WHERE WEBTOON_CODE=#{value} AND TRUNC(DUE_DATE) < TRUNC(SYSDATE+1))) 
-		ORDER BY EPISODE_NUMBER DESC
+		SELECT E.EPISODE_SEQUENCE, E.EPISODE_NUMBER, E.HITS, E.RECOMMENDATION, E.UPLOAD_DATE, 
+			E.WEBTOON_CODE, E.EPISODE_TITLE, E.AUTHOR_WORD, E.THUMBNAIL, E.FUND_CODE,
+			F.FUND_CODE, F.EPISODE_NUMBER, F.WEBTOON_CODE, F.EPISODE_FUND
+		FROM EPISODE E LEFT OUTER JOIN FUND F 
+		ON E.FUND_CODE = F.FUND_CODE 
+		ORDER BY E.EPISODE_NUMBER DESC
 		]]> 
 	</select>
 	
