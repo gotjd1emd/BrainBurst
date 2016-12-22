@@ -150,10 +150,4 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 		return sqlSession.update("webtoonMapper.webtoonStateChange", webtoonDTO);
 	}
 
-	@Override
-	public int fundApply(FundApplyDTO fundApplyDTO) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }

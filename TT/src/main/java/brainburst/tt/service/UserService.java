@@ -4,6 +4,7 @@ import java.util.List;
 
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -142,4 +143,9 @@ public interface UserService {
 	 * pawrameter Type : String nickName
 	 * */
 	public int nickNameCheck(String nickname);
+	
+	/**
+	 * ÆÝµù ½ÅÃ»
+	 * */
+	int fundApply(FundApplyDTO fundApplyDTO);
 }

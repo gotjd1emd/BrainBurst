@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 

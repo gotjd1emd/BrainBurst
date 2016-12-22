@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -124,5 +125,11 @@ public class UserServiceImpl implements UserService{
 			result = 1;
 		}
 		return result;
+	}
+
+	@Override
+	public int fundApply(FundApplyDTO fundApplyDTO) {
+		
+		return 0;
 	}
 }

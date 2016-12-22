@@ -136,9 +136,4 @@ public interface WebtoonDAO {
 	 * 웹툰 상태 변경
 	 * */
 	int webtoonStateChange(WebtoonDTO webtoonDTO);
-	
-	/**
-	 * 펀딩 신청
-	 * */
-	int fundApply(FundApplyDTO fundApplyDTO);
 }
