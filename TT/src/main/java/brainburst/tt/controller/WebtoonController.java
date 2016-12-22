@@ -102,8 +102,6 @@ public class WebtoonController {
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
-		
-		
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		String nickname = "GUEST";

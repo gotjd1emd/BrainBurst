@@ -31,12 +31,12 @@
 	  /* 일반기능들 */
 		$(".episode-list").find(".row").on("click", (function(){
 			$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
-		})
+			})
 		)
 		
 		$(".first-see").on("click", (function () {
 			$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
-		})
+			})
 		)
 		
 		$("#scription-btn").click(function () {
