@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.FundDAO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
+@Transactional
 public class FundServiceImpl implements FundService {
 	
 	@Autowired

@@ -83,4 +83,11 @@ public interface AuthorService {
 	 * @return
 	 */
 	WebtoonDTO selectWebtoon(int webtoonCode);
+	
+	/**
+	 * 카테고리 코드로 카테고리 이름 가져오기
+	 * @param categoryCode
+	 * @return
+	 */
+	String getCategoryName(String categoryCode);
 }

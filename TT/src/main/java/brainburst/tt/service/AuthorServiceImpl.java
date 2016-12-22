@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.AuthorDAO;
 import brainburst.tt.dto.EpisodeDTO;
@@ -13,6 +14,7 @@ import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
+@Transactional
 public class AuthorServiceImpl implements AuthorService {
 	@Autowired
 	private AuthorDAO authorDAO;
@@ -33,6 +35,14 @@ public class AuthorServiceImpl implements AuthorService {
 		int result = 0;
 		
 		result = authorDAO.registerWebtoon(webtoonDTO);
+		int webtoonCode = authorDAO.lastMyWebtoonCode(webtoonDTO.getNickname());
+		episodeDTO.setWebtoonCode(webtoonCode);
+		episodeDTO.setEpisodeNumber(1);
+		System.out.println("episode title : " + episodeDTO.getEpisodeTitle());
+		System.out.println("episode webtooncode : " + episodeDTO.getWebtoonCode());
+		System.out.println("author word : " + episodeDTO.getAuthorWord());
+		System.out.println("episode thumbnail : " + episodeDTO.getThumbnail());
+		System.out.println("episode number : " + episodeDTO.getEpisodeNumber());
 		result = authorDAO.episodeUpload(episodeDTO);
 		int episodeSequence = authorDAO.selectEpisodeSequence(episodeDTO.getWebtoonCode(), episodeDTO.getEpisodeNumber());
 		
@@ -103,5 +113,10 @@ public class AuthorServiceImpl implements AuthorService {
 	@Override
 	public WebtoonDTO selectWebtoon(int webtoonCode) {
 		return authorDAO.selectWebtoon(webtoonCode);
+	}
+	
+	@Override
+	public String getCategoryName(String categoryCode) {
+		return authorDAO.getCategoryName(categoryCode);
 	}
 }

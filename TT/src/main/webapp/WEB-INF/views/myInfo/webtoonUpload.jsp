@@ -74,13 +74,13 @@
 		
 		$('select').material_select();
 		
-		var count = $("input[type=file]").length - 1;
-		$('#thumbnail').on("change", function() {
+		var count = $("input[type=file]").length - 2;
+		$('#webtoon-thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text').hide();
 		});
 		
-		$('#webtoon-thumbnail').on("change", function() {
+		$('#thumbnail').on("change", function() {
 			readURL(this);
 			$('#thumbnail-text2').hide();
 		});
@@ -125,18 +125,18 @@
 			reader.onload = function(e) {
 				console.log(input.getAttribute('id'));
 				if(input.getAttribute('id')=='thumbnail'){
-					$('#inner1').html("<img id='preview-image' src='"+e.target.result+"'/>");
-				}else{
 					$('#inner2').html("<img id='preview-image' src='"+e.target.result+"'/>");
+				}else{
+					$('#inner1').html("<img id='preview-image' src='"+e.target.result+"'/>");
 				}
 			}
 			
 			reader.readAsDataURL(input.files[0]);
 			var fileSize = input.files[0].size/1024;
 			if(input.getAttribute('id')=='thumbnail'){
-				$('#thumbnail-preview').val(fileSize.toFixed(2)+"KB");
-			}else{
 				$('#thumbnail-preview2').val(fileSize.toFixed(2)+"KB");
+			}else{
+				$('#thumbnail-preview').val(fileSize.toFixed(2)+"KB");
 			}
 		}
 	}
@@ -148,7 +148,7 @@
 	}
 </script>
 
-<form method="post" action="" encType="multipart/form-data">
+<form method="post" action="<c:url value="/author/registerWebtoon"/>" encType="multipart/form-data">
 <input id="header-title" type="hidden" value="웹툰 업로드">
 <div class="row" style="margin-top: 20px;">
 	<div class="col s6">
@@ -158,7 +158,7 @@
 				제목</label>
 		</div>
 		<div class="input-field">
-			<textarea id="textarea1" class="materialize-textarea"></textarea>
+			<textarea id="textarea1" class="materialize-textarea" name="summary"></textarea>
 			<label for="textarea1">줄거리</label>
 			<span id="counter">0/100</span>
 		</div>
@@ -167,7 +167,7 @@
 	<div class="input-field col s6">
 		<div class="file-field input-field">
 			<div class="btn color-500">
-				<span>File</span> <input id="thumbnail" type="file" name="thumbnail">
+				<span>File</span> <input id="webtoon-thumbnail" type="file" name="webtoonThumbnailFile">
 			</div>
 			<div class="file-path-wrapper">
 				<input class="file-path validate" type="text">
@@ -193,7 +193,7 @@
 		</div>
 		
 		<div class="input-field">
-	    <select>
+	    <select name="categoryCode">
 	      <option value="" disabled selected>카테고리 선택</option>
 	      <option value="A">액션</option>
 	      <option value="B">SF</option>
@@ -219,11 +219,11 @@
 		</div>
 				<div class="input-field">
 			<input id="author-word" type="text" class="validate"
-				name="author-word"> <label for="author-word">작가의 말</label>
+				name="authorWord"> <label for="author-word">작가의 말</label>
 		</div>
 		<div class="file-field input-field">
 			<div class="btn color-500">
-				<span>File</span> <input id="webtoon-thumbnail" type="file" name="webtoonThumbnail">
+				<span>File</span> <input id="thumbnail" type="file" name="thumbnailFile">
 			</div>
 			<div class="file-path-wrapper">
 				<input class="file-path validate" type="text">

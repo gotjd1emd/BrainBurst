@@ -86,17 +86,17 @@
 
 <!-- 웹툰 수정 하기 버튼 -->
 <div id="webtoon-modify-modal" class="modal modal-fixed-footer modal-top">
-	<form method="get" action="<c:url value="/author/myInfo/webtoonModify"/>">
+	<form method="get" action="<c:url value="/author/modifyWebtoonPage"/>">
 		<div id="inputDiv">
 		<div class="modal-title color-500 white-text z-depth-1">
 				<h5>웹툰 상태 처리</h5>
 			</div>
 			<div class="modal-content modal-content-funding">
 		<div class="input-field col s12">
-			<select>
+			<select name="webtoonCode">
 				<option value="" disabled selected>웹툰 선택</option>
 				<c:forEach var="item" items="${webtoonList}" varStatus="status">
-					<option value=status>${item.webtoonName}</option>
+					<option value="${item.webtoonCode }">${item.webtoonName}</option>
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
