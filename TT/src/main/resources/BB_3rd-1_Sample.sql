@@ -653,7 +653,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,2,58,'2011-12-26','2011-12-31');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,2,59,'2012-01-02','2011-01-07');
+values (fund_seq.nextval,3000,2,59,'2016-12-22','2012-12-27');
 
 
 --select * from fund;
@@ -899,7 +899,7 @@ values (episode_seq.NEXTVAL, 2, 58, 0, 0, '2012-01-27', '제5화 - 1부 어게인 5화_
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2012-02-03', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/59.jpg', 54);
+values (episode_seq.NEXTVAL, 2, 59, 0, 0, '2016-12-22', '제5화 - 1부 어게인 5화_11', '작가의말 엘레베이터에서?', '/webtoon/episodeThumbnail/59.jpg', 54);
 
 --select * from episode where webtoon_code=2 order by episode_sequence;
 
@@ -1474,7 +1474,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,3,128,'2011-05-05','2011-05-10');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,3,129, '2011-05-12','2011-05-17');
+values (fund_seq.nextval,3000,3,129, '2016-12-21','2012-12-26');
 
 --select * from fund;
 --------------------------------------------------------------------------------------------
@@ -1994,7 +1994,7 @@ values (episode_seq.NEXTVAL, 3, 128, 0, 0, '2011-07-10', '제28화 마른 잎 다시 살
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 3, 129, 0, 0, '2011-07-17', '제28화 마른 잎 다시 살아나-13', '26년이야', '/webtoon/episodeThumbnail/31.jpg', 178);
+values (episode_seq.NEXTVAL, 3, 129, 0, 0, '2016-12-21', '제28화 마른 잎 다시 살아나-13', '26년이야', '/webtoon/episodeThumbnail/31.jpg', 178);
 
 
 --------table image 
@@ -2419,7 +2419,7 @@ values (webtoon_seq.nextval,'바보','funding','complete','D','green', '고은', 1, 
 
 
 ---------------------------------확인 21일 3시 19분 ------------------------------------------------------
-  -- drama funding 회차 
+ -- drama funding 회차 
  --select  * from fund;------끝나는 날짜 넣기
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
@@ -2462,7 +2462,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,4,18,'2014-04-30','2014-05-05');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,4,19,'2014-05-07','2014-05-12');
+values (fund_seq.nextval,3000,4,19,'2016-12-20','2016-12-25');
 
 
 
@@ -2543,7 +2543,7 @@ values (episode_seq.NEXTVAL, 4, 18, 0, 0, '2014-04-30', '제16화  - 첫눈', '작가�
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 4, 19, 0, 0, '2014-05-07', '제17화 - 거리', '작가의말 바브바브', '/webtoon/episodeThumbnail/39.jpg', 192);
+values (episode_seq.NEXTVAL, 4, 19, 0, 0, '2016-12-20', '제17화 - 거리', '작가의말 바브바브', '/webtoon/episodeThumbnail/39.jpg', 192);
 
 
 --회차별 image  넣기 
@@ -2619,8 +2619,7 @@ insert into webtoon
 values (webtoon_seq.nextval,'당신의 모든 순간','free','serial','E','green', '우리', 0, '작가의 말 - 당신의 모든 순간', '/webtoon/webtoonThumbnail/2.jpg');
 
 
-
-
+sel
 ---episode 정보
 
 
@@ -2789,7 +2788,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,6,10,'2010-05-03','2010-05-08');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,6,11,'2010-05-10','2010-05-15');
+values (fund_seq.nextval,3000,6,11,'2016-12-22','2016-12-27');
 
 --select* from fund;
 
@@ -2835,7 +2834,7 @@ values (episode_seq.NEXTVAL, 6, 10, 0, 0, '2010-05-03', '제2화 - 손님_04','이웃 
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 6, 11, 0, 0, '2010-05-10', '제2화 - 손님_05','이웃 사람_?',  '/webtoon/episodeThumbnail/60.jpg', 198);
+values (episode_seq.NEXTVAL, 6, 11, 0, 0, '2016-12-22', '제2화 - 손님_05','이웃 사람_?',  '/webtoon/episodeThumbnail/60.jpg', 198);
 
 
 
@@ -2900,7 +2899,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,7,10,'2010-05-03','2010-05-08');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,7,11,'2010-05-10','2010-05-15');
+values (fund_seq.nextval,3000,7,11,'2016-12-20','2016-12-25');
 
 ---------------------------
 --select * from fund;
@@ -2948,7 +2947,7 @@ values (episode_seq.NEXTVAL, 7, 10, 0, 0, '2010-05-03', '제2화 - 언덕길_3', '그�
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 7, 11, 0, 0, '2010-05-10', '제2화 - 언덕길_4', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 204);
+values (episode_seq.NEXTVAL, 7, 11, 0, 0, '2016-12-20', '제2화 - 언덕길_4', '그대여~', '/webtoon/episodeThumbnail/4.jpg', 204);
 
 
 --G 이미지 넣기 
@@ -3039,7 +3038,7 @@ insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_da
 values (fund_seq.nextval,3000,8,18,'2008-05-30','2008-06-04');
 
 insert into fund (fund_code,episode_fund, webtoon_code, episode_number, start_date, due_date)
-values (fund_seq.nextval,3000,8,19,'2008-06-06','2008-06-11');
+values (fund_seq.nextval,3000,8,19,'2016-12-21','2016-12-26');
 
 --select * from fund;
 
@@ -3117,7 +3116,7 @@ values (episode_seq.NEXTVAL, 8, 18, 0, 0, '2008-05-30', 'no.18 - cold', '어렴풋�
 
 insert into episode (episode_sequence, webtoon_code, episode_number, hits, 
 recommendation, upload_date, episode_title, author_word, thumbnail, fund_code) 	
-values (episode_seq.NEXTVAL, 8, 19, 0, 0, '2008-06-06', 'no.19 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 218);
+values (episode_seq.NEXTVAL, 8, 19, 0, 0, '2016-12-21', 'no.19 - two of us','어렴풋이',  '/webtoon/episodeThumbnail/14.jpg', 218);
 
 
 
