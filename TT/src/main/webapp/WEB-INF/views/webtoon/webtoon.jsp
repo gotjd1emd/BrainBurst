@@ -6,12 +6,23 @@
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 <script>
+		var time = 0;
+		var day = 0;
+		var hour = 0;
+		var min = 0;
+		var second = 0;
 	  $(function () {
 		  $(document).ready(function() {
 				$("#scription-card-btn").css("color", "#F44336");
 				$("#scription-card-btn[name$='_0']").css("color", "#424242");
 			})
-
+			
+		var dueDate = new Date($("#dueDate").val());
+	    var currentDate = new Date();
+	    time = (dueDate-currentDate);
+		fundingTimer();
+		var myVar = setInterval(fundingTimer, 1000);
+	
 		/* chart script */
 	    $(".knob").knob({
 	      draw: function () {
@@ -146,6 +157,14 @@
 				}
 			})
 	})
+	function fundingTimer() {
+	    time = time - 1000;
+	    day = Math.floor(time/1000/24/60/60);
+	    hour = Math.floor(time/1000/60/60 - day*24);
+	    min = Math.floor(time/1000/60 - day*24*60 - hour*60);
+	    second = Math.floor(time/1000 - day*24*60*60 - hour*60*60 - min*60);
+	    $(".period").text(Math.floor(day) + "일 " + hour + "시 " + min + "분 " + second + "초 남았습니다.");
+	}
 </script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<div class="row title-box">
@@ -200,23 +219,25 @@
 				</ul>
 			</div>
 		</div>
-		<div id="episode-list" class="episode-list">
+		<div id="funding-episode">
 		<c:if test="${fundDTO != null }">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius">
-					<div class="episode_thumbnail">
-						<img class="thumbnail" name="${fundDTO.fundCode}" >
-					</div>
-					<div class="col s5 episode-content">
-						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span> ${fundDTO.episodeFund} <br><br>
-						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate }
+					<input type="hidden" name="fundCode" value="${fundDTO.fundCode }"/>
+					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
+					<div class="col s5 funding-episode-content">
+						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
+						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate }, 남은 시간 : <span class="period"></span>
 					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-						<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 					</div>
 				</div>
 			</div>
 		</c:if>
+		</div>
+		<div id="episode-list" class="episode-list">
+		
 		<c:forEach var="episode" items="${episodeList}">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius">

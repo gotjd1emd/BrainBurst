@@ -22,7 +22,7 @@ public class ApplicationThread extends Thread {
 			t.schedule(episodeDeadlineCheck, date);
 			System.out.println(date);
 			try {
-				sleep(1000*60);
+				sleep(1000*60*60*24);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
