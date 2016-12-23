@@ -9,7 +9,6 @@
 				var webtoonCode = ${webtoonDTO.webtoonCode};
 				var episodeSequence = ${episodeDTO.episodeSequence};
 				var content = $("#report-content").val();
-				alert(webtoonCode)
 				
 				var data = {"webtoonCode" : webtoonCode, "content" : content, "episodeSequence" : episodeSequence};
 				
@@ -19,10 +18,14 @@
 					dataType : "text",
 					data : data,
 					success : function(result){
-						
+						Materialize.toast('신고 접수가 완료되었습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
 					},
 					error : function(err) {
-						alert("err : " + err);
+						Materialize.toast('다시 시도해 주세요.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
 					}
 				})
 			})

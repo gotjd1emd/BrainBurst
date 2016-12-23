@@ -116,6 +116,10 @@
 		$(document).on("click", "#whoru", function(){
 			alert("?!")
 		})
+		
+		$(".scription-btn").on("click", function(){
+			location.href="/controller/webtoon/webtoonPage/"+$(this).closest("li").attr("name");
+		})
 	})
 </script>
 

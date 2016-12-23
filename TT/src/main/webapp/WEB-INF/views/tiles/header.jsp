@@ -85,7 +85,7 @@
 							$("#notfund-massage-div").empty();
 							$.each(result, function(index, item) {
 								var htmlcode = "";
-								htmlcode +="<a class='collection-item avatar search-collection-item' href='#'>"
+								htmlcode +="<a class='collection-item avatar search-collection-item' href='#' name="+item.webtoonCode+">"
 								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
 								htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
 								htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"

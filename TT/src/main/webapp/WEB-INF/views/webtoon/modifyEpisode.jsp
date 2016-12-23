@@ -75,7 +75,9 @@
 				$('div.image-file-size').append(str);
 				count++;
 			}else {
-				alert("이미지 파일은 10개까지 올릴 수 있습니다.");
+				Materialize.toast('이미지 파일은 10개까지 올릴 수 있습니다.', 3000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
 			}
 		});
 		
