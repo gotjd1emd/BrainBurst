@@ -250,7 +250,7 @@
 					</div>
 					<c:if test="${episode.fund != null }">
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-						<input type="text" class="knob" value="${episode.fund.episodeFund }" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+						<input type="text" class="knob" value="20" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 					</div>
 					</c:if>
 				</div>

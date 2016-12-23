@@ -56,14 +56,15 @@ $(document).ready(function() {
 					}
 					htmlcode+="</div>"
 					htmlcode+="<div class='card-content' style='height: 45px!important;margin:0px;padding:0px 4px 0px 10px !important;'>"
-					if (item.webtoonName.length < 7) {
+					if (item.webtoonName.length < 6) {
 						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName+"</span>"	
 					} else {
-						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName.substring(0,6)+"...</span>"	
+						htmlcode+="<span class='card-title activator grey-text text-darken-4' style='font-size:16px; font-weight:500;'>"+item.webtoonName.substring(0,5)+"...</span>"	
 					}
 					htmlcode+="<i class='material-icons right' style='margin-top:6%!important;'>more_vert</i>"
 					htmlcode+="<span id='ss' style='padding-left: 4%;'>"
-					htmlcode+="<a style='font-size:13px'>${item.nickname}</a>"
+					htmlcode+="<a style='font-size:13px'>"+item.nickname+"</a>"
+					htmlcode+="<i id='scription-card-btn' class='material-icons scription-a-index' name='"+item.webtoonCode+"_"+item.subscriptionSequence+"' style='margin-top:1.5%!important;margin-right-22px'>grade</i>"
 					htmlcode+="</span></div>"
 					htmlcode+="<div class='card-action' style='height:10px; line-height:0px; padding: 15px; font-size: 10px'>"
 					if(item.webtoonLevel=='funding'){
@@ -78,7 +79,7 @@ $(document).ready(function() {
 					htmlcode+="	<span style='float:right;margin-right:-12px;color:#d8d8d8;margin-top:-13.4px;'>"+item.webtoonCode+"%</span>"
 					htmlcode+="</div>"
 					}else{
-						htmlcode+="<div>조회수:"+item.webtoonCode+"회</div>";
+						htmlcode+="<div>조회수:"+item.subscriptionCount+"회</div>";
 						htmlcode+="<div style='float:right;width:103px;margin-right:7px;'>"
 						htmlcode+="<hr style='border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width:100%;'>"
 						if(item.webtoonCode>=100){
@@ -310,8 +311,8 @@ $(document).ready(function() {
 								</div>
 								<div class="card-action" style="height:10px; line-height:0px; padding: 15px; font-size: 10px">
 								<c:choose>
-									<c:when test="${item.webtoonLevel eq 'funding' }">
-										<div>참여자:${item.webtoonCode}명</div>
+									<c:when test="${item.webtoonLevel eq 'funding'}">
+										<div>참여자:${item.subscriptionCount}명</div>
 										<div style="float:right;width:103px;margin-right:7px;">
 										<hr style="border:solid 8px gray;margin-top:-9.2px;margin-right:-9px;width: 100%;">
 										<c:choose>

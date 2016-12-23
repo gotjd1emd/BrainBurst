@@ -15,10 +15,21 @@ public class WebtoonDTO {
 	private int fundingPeriod;
 	private String summary;
 	private String webtoonThumbnail;
-	
+	private int subscriptionCount;
 	private MultipartFile webtoonThumbnailFile;
-	
+	private CategoryDTO categoryDTO;
 	private int subscriptionSequence;
+	
+	
+	
+	public int getSubscriptionCount() {
+		return subscriptionCount;
+	}
+	public void setSubscriptionCount(int subscriptionCount) {
+		this.subscriptionCount = subscriptionCount;
+	}
+
+	
 	public int getSubscriptionSequence() {
 		return subscriptionSequence;
 	}
@@ -26,31 +37,16 @@ public class WebtoonDTO {
 		this.subscriptionSequence = subscriptionSequence;
 	}
 
-	private CategoryDTO categoryDTO;
 	
 	public WebtoonDTO() {
 		System.out.println("webtoonDTO 기본 생성자 호출");
 	}
 
-	public WebtoonDTO(int webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
-			String categoryCode, String penalty, String author, int fundingPeriod, String summary) {
-		this.webtoonCode = webtoonCode;
-		this.webtoonName = webtoonName;
-		this.webtoonLevel = webtoonLevel;
-		this.webtoonState = webtoonState;
-		this.categoryCode = categoryCode;
-		this.penalty = penalty;
-		this.nickname = author;
-		this.fundingPeriod = fundingPeriod;
-		this.summary = summary;
-		System.out.println("webtoonDTO 전체 생성자 호출");
-	}
-	
-	
-	
+
 	public WebtoonDTO(int webtoonCode, String webtoonName, String webtoonLevel, String webtoonState,
 			String categoryCode, String penalty, String nickname, int fundingPeriod, String summary,
-			CategoryDTO categoryDTO) {
+			String webtoonThumbnail, int subscriptionCount, MultipartFile webtoonThumbnailFile,
+			int subscriptionSequence, CategoryDTO categoryDTO) {
 		this.webtoonCode = webtoonCode;
 		this.webtoonName = webtoonName;
 		this.webtoonLevel = webtoonLevel;
@@ -60,9 +56,14 @@ public class WebtoonDTO {
 		this.nickname = nickname;
 		this.fundingPeriod = fundingPeriod;
 		this.summary = summary;
+		this.webtoonThumbnail = webtoonThumbnail;
+		this.subscriptionCount = subscriptionCount;
+		this.webtoonThumbnailFile = webtoonThumbnailFile;
+		this.subscriptionSequence = subscriptionSequence;
 		this.categoryDTO = categoryDTO;
 	}
-
+	
+	
 	public String getNickname() {
 		return nickname;
 	}

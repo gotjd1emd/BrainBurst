@@ -4,8 +4,9 @@ public class SubscriptionDTO {
 	private int sequence;
 	private String email;
 	private String webtoonCode;
-	
 	private WebtoonDTO webtoonDTO;
+
+	
 
 	public SubscriptionDTO() {}
 
@@ -16,7 +17,6 @@ public class SubscriptionDTO {
 		this.webtoonDTO = webtoonDTO;
 	}
 
-	
 	public int getSequence() {
 		return sequence;
 	}
