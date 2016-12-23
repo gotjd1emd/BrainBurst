@@ -6,6 +6,23 @@
 <script>
 	$(function() {
 		
+		$("#loginForm").submit(function() {
+			if ($("#email").val() == "") { // 이메일 미입력  검사
+				Materialize.toast('이메일을 입력해 주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#email").focus();
+				return false;
+				
+			}else if($("#password").val() =="") { // 패스워드 미임력 검사
+				Materialize.toast('패스워드를 입력해주세요.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+		        $("#password").focus();
+				return false;
+			}
+		});
+		
 		if(${requestScope.login!=null}){
 	         Materialize.toast('로그인을 실패하셨습니다. 아이디, 비밀번호를 확인해 주세요', 3000, 'rounded');
 	         var width = $("#toast-container").width();
