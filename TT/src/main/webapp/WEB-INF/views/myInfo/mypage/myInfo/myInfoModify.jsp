@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="card-frame-myInfo z-depth-1">
 	<div class="row">
-		<form class="col s6" method="post" action="<c:url value='/user/userUpdate'/>" style="margin-left:146px;font-weight:800;text-align:center;">
+		<form class="col s6" method="post" action="<c:url value='/user/userUpdate'/>" style="margin-left:146px;font-weight:800;">
 			<div class="row modify-row">
 				<div class="input-field col s12">
 					<input id="name-myinfo" type="text" class="validate" name="email"
@@ -28,8 +28,8 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="name-myinfo" type="text" class="validate" name=password
-						placeholder="현재 비밀번호 : ${sessionScope.userDTO.password}" style="text-align:center">
-					<label for="name-myinfo">비밀번호</label>
+						placeholder="변경할 비밀번호를 입력해주세요" style="text-align:center">
+					<label for="name-myinfo"">비밀번호</label>
 				</div>
 			</div>
 			<div class="row">
