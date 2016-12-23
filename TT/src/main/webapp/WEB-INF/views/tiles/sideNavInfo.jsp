@@ -40,5 +40,6 @@
 
 	<li class="center"><a href="<c:url value='/user/myInfo/mypage'/>" class="white-text">마이페이지</a></li>
 	<li class="center"><a href="<c:url value='/author/authorPage'/>" class="white-text">작가페이지</a></li>
+	<li class="center"><a href="<c:url value='/user/util/exchangeApply'/>" class="white-text">환전신청</a></li>
 </ul>
 
