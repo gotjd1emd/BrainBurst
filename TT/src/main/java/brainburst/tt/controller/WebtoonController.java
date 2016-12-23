@@ -348,10 +348,7 @@ public class WebtoonController {
 	
 	@RequestMapping("webtoonScore")
 	@ResponseBody
-	public String webtoonScore(int webtoonCode){
-		System.out.println(webtoonCode);
-		System.out.println(webtoonService.webtoonScore(webtoonCode));
-		
-		return null;
+	public int webtoonScore(int webtoonCode){
+		return webtoonService.webtoonScore(webtoonCode);
 	}
 }

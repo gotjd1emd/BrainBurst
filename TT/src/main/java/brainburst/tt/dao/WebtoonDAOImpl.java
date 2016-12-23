@@ -171,7 +171,12 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	}
 
 	@Override
-	public int webtoonScore(int webtoonCode) {
-		return sqlSession.selectOne("webtoonMapper.fundEpisodeCheck", webtoonCode);
+	public int totalRecommendation(int webtoonCode) {
+		return sqlSession.selectOne("webtoonMapper.totalRecommendation", webtoonCode);
+	}
+	
+	@Override
+	public int totalSubscription(int webtoonCode) {
+		return sqlSession.selectOne("webtoonMapper.totalRecommendation", webtoonCode);
 	}
 }

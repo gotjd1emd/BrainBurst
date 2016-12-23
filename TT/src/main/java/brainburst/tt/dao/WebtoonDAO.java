@@ -166,8 +166,13 @@ public interface WebtoonDAO {
 	int fundEpisodeCheck(int webtoonCode);
 	
 	/**
-	 * À¥Å÷ Á¡¼ö Ãâ·Â
+	 * À¥Å÷ ÃÑ ÃßÃµ ¼ö
 	 * */
-	int webtoonScore(int webtoonCode);
+	int totalRecommendation(int webtoonCode);
+	
+	/**
+	 * À¥Å÷ ±¸µ¶ ¼ö
+	 * */
+	int totalSubscription(int webtoonCode);
 	
 }

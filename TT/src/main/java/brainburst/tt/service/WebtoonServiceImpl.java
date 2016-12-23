@@ -174,6 +174,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 
 	@Override
 	public int webtoonScore(int webtoonCode) {
-		return webtoonDAO.webtoonScore(webtoonCode);
+		int totalSubscription = webtoonDAO.totalSubscription(webtoonCode);
+		int totalRecommendation = webtoonDAO.totalRecommendation(webtoonCode);
+		
+		int score = (int) (totalSubscription*0.7+totalRecommendation*0.3);
+		return score;
 	}
 }

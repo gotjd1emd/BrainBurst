@@ -24,11 +24,18 @@
 				type : "get",
 				dataType : "text",
 				data : webtoonCode,
-				success : function(result) {
-					alert(result)
+				success : function(score) {
+					$("#fund-webtoon-score").html(score);
+					if(score<300){
+						$("#find-apply-btn").attr("disabled", "true");
+					}else{
+						$("#find-apply-btn").removeAttr("disabled");
+					}
 				},
 				error : function(err){
-					alert("error : "+err)
+					Materialize.toast('다시 시도해 주세요.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
 				}
 			})
 		});
@@ -37,7 +44,7 @@
 			var selectLength = $("#fund-webtoon-select option").length;
 			var webtoonName = $("#fund-webtoon-select-div div input").val();
 			var webtoonCode;
-			for(i=1; i<=selectLength; i++){
+			for(i=1; i<=selectLength; i++){ 
 				var webtoonCodeIndex = $("#fund-webtoon-select option:eq("+i+")").html();
 				if(webtoonCodeIndex==webtoonName){
 					webtoonCode = {"webtoonCode": $("#fund-webtoon-select option:eq("+i+")").val()};
@@ -81,7 +88,7 @@
 				</c:forEach>
 			</select> <label>펀딩 신청할 웹툰 선택</label>
 		</div>
-		<div class="webtoon-score">"<span id="fund-webtoon-modal-webtoon-name">웹툰 이름</span>"<br>작품의 점수 : 99점</div>
+		<div class="webtoon-score">"<span id="fund-webtoon-modal-webtoon-name">웹툰 이름</span>"<br>작품의 점수 :<span id="fund-webtoon-score">??</span></div>
 		<div class="webtoon-score-description">
 			- 300점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
 		</div>
@@ -89,7 +96,7 @@
 	</div>
 	<div class="modal-footer">
 		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
-		<a id="find-apply-btn" class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="action">신청</a>
+		<button id="find-apply-btn" class="modal-action modal-close waves-effect waves-green btn-flat">신청</button>
 	</div>
 	</div>
 	</form>
