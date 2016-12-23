@@ -4,7 +4,7 @@
 <script>
 	$(function() {
 		$(document).on("click", ".smove", function(){
-			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this>"img").attr("name"));
+			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
 		})
 		
 		
@@ -23,8 +23,8 @@
 				<c:otherwise>
 					<c:forEach var="item" items="${subScriptionList}">
 						<li class="collection-item avatar scription-collection">
-						<div class="move">
-						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle scription-title-img"  name="${item.webtoonCode}">
+						<div class="move" name="${item.webtoonCode}">
+						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle scription-title-img">
 						 <span class="scription-title">${item.webtoonName}</span>
 							<p>
 								${item.nickname} <br> 구독자 수 : ${item.subscriptionCount}
