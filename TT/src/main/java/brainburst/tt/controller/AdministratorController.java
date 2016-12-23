@@ -45,8 +45,6 @@ public class AdministratorController {
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
-		System.out.println(emailT);
-		
 		int result = administratorService.userSnow(emailT);
 		
 		return result+"";

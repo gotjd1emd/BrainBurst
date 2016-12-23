@@ -21,12 +21,9 @@
 	</tbody>
 </table>
 
-<div class="input-field">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+<div class="input-field" style="margin-top: 30px">
+          <input id="userEmail" type="text" class="validate">
+          <label for="userEmail">유저 이메일</label>
 </div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-</button>
-<a class="waves-effect waves-light btn">button</a>
-<a class="waves-effect waves-light btn">button</a>
+<a class="btn waves-effect waves-light color-A200" id="select-snow">얼리기</a>
+<a class="waves-effect waves-light btn color-A200" id="select-melt">녹이기</a>

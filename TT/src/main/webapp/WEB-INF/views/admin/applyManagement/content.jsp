@@ -28,12 +28,11 @@
 	</tbody>
 </table>
 
+<form action="" method="post">
 <div class="input-field">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input id="user-name" type="text" class="validate" name="userName">
+          <label for="user-name">유저 이름</label>
 </div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
+<button class="btn waves-effect waves-light" type="submit" name="action">얼리기
 </button>
-<a class="waves-effect waves-light btn">button</a>
-<a class="waves-effect waves-light btn">button</a>
+</form>

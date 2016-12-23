@@ -2,51 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script>
-var table = 
-	$.ajax({
-		url : "/controller/admin/userManage",
-		type : "get",
-		dataType : "json",
-		success : function(result) {
-			var htmlcode = "";
-			if(result==null) {
-				htmlcode = "<tr><td colspan='9'><p align='center'><b>"
-							+"등록된 상품이 없습니다.</b></p></td></tr>";
-			}else {
-				$.each(result, function(index, item) {
-					htmlcode += "<tr><td>"
-	            		+item.email+"</td>";
-	            	htmlcode += "<td>"
-		            	+item.nickname+"</td>";
-		            htmlcode += "<td>"
-		            	+item.phone+"</td>";
-		            htmlcode += "<td>"
-			            +item.password+"</td>";
-		            htmlcode += "<td>"
-		            	+item.cashPoint+"</td>";
-		            htmlcode += "<td>"
-		            	+item.level+"</td>";
-		            htmlcode += "<td>"
-		            	+item.name+"</td>";
-		            htmlcode += "<td>"
-		            	+item.gender+"</td>";
-		            htmlcode += "<td>"
-		            	+item.birthDate+"</td>";
-		            if(item.level=='휴먼'){
-			            htmlcode += "<td><input type='button' id='melt' value='녹이기'/></td>";				            	
-		            }else{
-			            htmlcode += "<td><input type='button' id='snow' value='얼리기'/></td>";
-		            }
-		            htmlcode += "</tr>";
-				});
-			}
-			$("tbody").empty();
-			$("#userManageList").append(htmlcode);
-		},
-		error : function(err) {
-			alert("err");
-		}
-	})
 
 	$(function(){
 		
@@ -59,12 +14,61 @@ var table =
 				dataType : "text",
 				success : function(result) {
 					if(result==1){
-						alert("수정완료");
-						window.location.reload();
+						location.href='#userManagement';
+						Materialize.toast(email+'유저를 얼렸습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+				        userManagement();
 					}
 				},
 				error : function(err) {
 					alert("err")
+				}
+			})
+		});
+		
+		$("#select-melt").click(function () {
+			var email = $("#userEmail").val();
+			$.ajax({
+				url : "/controller/admin/userMelt/"+email,
+				type : "post",
+				dataType : "text",
+				success : function(result) {
+					if(result==1){
+						location.href='#userManagement';
+						Materialize.toast(email+'유저를 녹였습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+				        userManagement();
+					}
+				},
+				error : function(err) {
+					Materialize.toast(email+'유저를 녹이는데 실패했습니다.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
+				}
+			})
+		})
+		
+		$("#select-snow").click(function(){
+			var email = $("#userEmail").val();
+			$.ajax({
+				url : "/controller/admin/userSnow/"+email,
+				type : "post",
+				dataType : "text",
+				success : function(result) {
+					if(result==1){
+						location.href='#userManagement';
+						Materialize.toast(email+'유저를 얼렸습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+				        userManagement();
+					}
+				},
+				error : function(err) {
+					Materialize.toast(email+'유저를 얼리는데 실패하였습니다.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
 				}
 			})
 		});
@@ -78,8 +82,11 @@ var table =
 				dataType : "text",
 				success : function(result) {
 					if(result==1){
-						alert("수정완료");
-						window.location.reload();
+						location.href='#userManagement';
+						Materialize.toast(email+'유저를 녹였습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+				        userManagement();
 					}
 				},
 				error : function(err) {
@@ -92,7 +99,7 @@ var table =
 		/* 
 			유저 관리 페이지 ( 유저 전체 출력 )
 		*/
-		$("#userManage").click(function() {
+		function userManagement() {
 			$.ajax({
 				url : "/controller/admin/userManage",
 				type : "get",
@@ -129,7 +136,7 @@ var table =
 				            }else{
 				            	htmlcode += "<td><input type='button'";
 					            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
-					            htmlcode += "style='margin-top: -20%;height: 17%;' id='melt' value='얼리기'/></td>";
+					            htmlcode += "style='margin-top: -20%;height: 17%;' id='snow' value='얼리기'/></td>";
 				            }
 				            htmlcode += "</tr>";
 						});
@@ -141,9 +148,8 @@ var table =
 					alert("err");
 				}
 			})
-		})
-		
-		
+		}
+		userManagement();
 		/* 
 			웹툰 유지 페이지 ( 유저 전체 출력 )
 		*/
