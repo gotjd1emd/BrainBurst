@@ -251,4 +251,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT MAX(EPISODE_NUMBER) FROM FUND 
 		WHERE WEBTOON_CODE = #{value}
 	</select>
+	
+	<!-- 웹툰의 총 추천수 -->
+	<select id="totalRecommendation" resultType="_int" parameterType="_int">
+		SELECT SUM(RECOMMENDATION) FROM EPISODE
+		WHERE WEBTOON_CODE = #{value}
+	</select>
+	
+	<!-- 웹툰의 구독 수 -->
+	<select id="totalSubscription" resultType="_int" parameterType="_int">
+		SELECT COUNT(WEBTOON_CODE) FROM SUBSCRIPTION
+		WHERE WEBTOON_CODE = #{value}
+	</select>
 </mapper>
