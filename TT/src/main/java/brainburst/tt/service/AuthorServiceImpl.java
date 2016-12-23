@@ -92,6 +92,11 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 	
 	@Override
+	public Integer selectFundCode(int webtoonCode) {
+		return authorDAO.selectFundCode(webtoonCode);
+	}
+	
+	@Override
 	public int modifyEpisode(EpisodeDTO episodeDTO, Map<String, List<ImageDTO>> imageList) {
 		int result = 0;
 		result = authorDAO.modifyEpisode(episodeDTO);

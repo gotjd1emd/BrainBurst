@@ -20,8 +20,8 @@
 			
 			//현재 펀딩중인 펀딩율 계산
 			var fundingRate = Math.floor($("#funding-episode").find("input[name=episodeFund]").val()/4);
-			if(fundingRate > 100) {
-				$("#funding-episode").find("input[type=text]").val(100);
+			if(fundingRate > 400) {
+				$("#funding-episode").find("input[type=text]").val(400);
 			}else {
 				$("#funding-episode").find("input[type=text]").val(fundingRate);
 			}
@@ -34,6 +34,7 @@
 			/* chart script */
 		    $(".knob").knob({
 		      draw: function () {
+
 		        // "tron" case
 		        if (this.$.data('skin') == 'tron') {
 
@@ -43,9 +44,39 @@
 		              , ea                            // Previous end angle
 		              , eat = sat + a                 // End angle
 		              , r = true;
-		        	}
-		      		}
-		    	});
+
+		          this.g.lineWidth = this.lineWidth;
+
+		          this.o.cursor
+		          && (sat = eat - 0.3)
+		          && (eat = eat + 0.3);
+
+		          if (this.o.displayPrevious) {
+		            ea = this.startAngle + this.angle(this.value);
+		            this.o.cursor
+		            && (sa = ea - 0.3)
+		            && (ea = ea + 0.3);
+		            this.g.beginPath();
+		            this.g.strokeStyle = this.previousColor;
+		            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+		            this.g.stroke();
+		          }
+
+		          this.g.beginPath();
+		          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+		          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+		          this.g.stroke();
+
+		          this.g.lineWidth = 2;
+		          this.g.beginPath();
+		          this.g.strokeStyle = this.o.fgColor;
+		          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+		          this.g.stroke();
+
+		          return false;
+		        }
+		      }
+		    });
 			
 			$(document).ready(function() {
 				$("#scription-card-btn").css("color", "#F44336");
@@ -93,7 +124,6 @@
 			}));
 			
 			$(".first-see").on("click", (function () {
-				alert($("#episode-thumbnail1").attr("name"))
 				$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
 			})
 			)
@@ -214,8 +244,8 @@
 		function fundRate(episode) {
 			$.each(episode, function(index, item) {
 				var episodeFundRate = Math.floor(item.value/4);
-				if(episodeFundRate > 100) {
-					item.nextElementSibling.value=100;
+				if(episodeFundRate > 400) {
+					item.nextElementSibling.value=400;
 				}else {
 					item.nextElementSibling.value=episodeFundRate;
 				}
@@ -270,7 +300,7 @@
 						남은 시간 : <span class="period"></span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund }] 
 					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-						<input type="text" class="knob" value="20" data-width="90" data-height="90" data-fgColor="rgb(77, 14, 100)" data-readonly="true">
+						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#ffffff">
 					</div>
 				</div>
 			</div>
@@ -283,16 +313,16 @@
 				<div class="episode_thumbnail">
 					<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
-				<div class="col s5 episode-content">
+				<div class="col s7 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}<br>
 					조회수 : ${episode.hits} 
 				</div>
 				<c:if test="${episode.fund.fundCode != 0 }">
-				[목표 T : 400] [현재 T : ${episode.fund.episodeFund }] 
+				<div style="float: left;margin-top: 70px;margin-left: 57px;">[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]</div> 
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund }"/>
-					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund}"/>
+					<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#f56954">
 				</div>
 				</c:if>
 			</div>
@@ -308,16 +338,16 @@
 				<div class="episode_thumbnail">
 					<img class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 				</div>
-				<div class="col s5 episode-content">
+				<div class="col s7 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}<br>
 					조회수 : ${episode.hits} 
 				</div>
 				<c:if test="${episode.fund.fundCode != 0 }">
-				[목표 T : 400] [현재 T : ${episode.fund.episodeFund }] 
+				<div style="float: left;margin-top: 70px;margin-left: 57px;">[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]</div> 
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund }"/>
-					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
+					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund}"/>
+					<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#f56954">
 				</div>
 				</c:if>
 			</div>

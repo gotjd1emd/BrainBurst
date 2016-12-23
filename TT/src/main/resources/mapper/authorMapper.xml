@@ -57,8 +57,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO EPISODE(EPISODE_SEQUENCE, EPISODE_NUMBER, HITS, RECOMMENDATION, UPLOAD_DATE, WEBTOON_CODE,
 							EPISODE_TITLE, AUTHOR_WORD, THUMBNAIL, FUND_CODE) 
 		VALUES(EPISODE_SEQ.NEXTVAL, #{episodeNumber}, 0, 0, sysdate, #{webtoonCode}, #{episodeTitle}, #{authorWord},
-				#{thumbnail}, null)
+				#{thumbnail}, 
+		<if test="fundCode != 0">	
+			#{fundCode})
+		</if>
+		<if test="fundCode == 0">	
+			null)
+		</if>
 	</insert>
+	
+	<!-- 펀딩 에피소드의 펀드코드 가져오기 -->
+	<select id="selectFundCode" resultType="int" parameterType="_int">
+		SELECT MAX(FUND_CODE) FROM FUND
+		WHERE WEBTOON_CODE = #{value}
+	</select>
 	
 	<!-- selectEpisodeSequence -->
 	<select id="episodeSequence" resultType="_int" parameterType="map">

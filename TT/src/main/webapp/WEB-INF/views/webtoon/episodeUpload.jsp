@@ -170,7 +170,7 @@
 						</div>
 					</div>
 					<div class="input-field col s6 image-file-size">
-						<input name="image[0]" type="text" class="validate" 
+						<input id="image[0]" type="text" class="validate" 
 							placeholder="이미지 크기" readonly>
 					</div>
 				</div>

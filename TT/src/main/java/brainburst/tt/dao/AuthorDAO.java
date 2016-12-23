@@ -46,6 +46,13 @@ public interface AuthorDAO {
 	int episodeUpload(EpisodeDTO episodeDTO);
 	
 	/**
+	 * 펀딩 에피소드의 펀드코드 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	Integer selectFundCode(int webtoonCode);
+	
+	/**
 	 * 업로드한 에피소드 시퀀스넘버 가져오기
 	 * @param webtoonCode
 	 * @param episodeNumber

@@ -161,7 +161,7 @@ public class AuthorContoller {
 
 		String path = request.getSession().getServletContext().getRealPath("/") + "/resources";
 		String dbPath = "/webtoon/webtoonThumbnail/" + webtoonThumbnailFile.getOriginalFilename();
-
+		
 		if(webtoonThumbnailFile.getSize() == 0) {
 			webtoonDTO.setWebtoonThumbnail(null);
 		}else {
@@ -188,7 +188,7 @@ public class AuthorContoller {
 			String[] path = webtoonDTO.getWebtoonThumbnail().split("/");
 			webtoonDTO.setWebtoonThumbnail(path[path.length-1]);
 		}
-		
+
 		request.setAttribute("webtoonDTO", webtoonDTO);
 		request.setAttribute("webtoonThumbnailFile", webtoonThumbnailPath);
 		
@@ -232,6 +232,12 @@ public class AuthorContoller {
 				imageList.add(new ImageDTO(index++, -1, dbPath+categoryName+"/"+images.get(i).getOriginalFilename()));
 				images.get(i).transferTo(new File(path+categoryName+"/"+images.get(i).getOriginalFilename()));
 			}
+		}
+		
+		Integer fundCode = authorService.selectFundCode(episodeDTO.getWebtoonCode());
+		
+		if(fundCode != null) {
+			episodeDTO.setFundCode(fundCode);
 		}
 
 		authorService.episodeUpload(episodeDTO, imageList);

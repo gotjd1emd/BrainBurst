@@ -71,6 +71,13 @@ public interface AuthorService {
 	int episodeUpload(EpisodeDTO episodeDTO, List<ImageDTO> imageList);
 	
 	/**
+	 * 펀딩 에피소드의 펀드코드 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	Integer selectFundCode(int webtoonCode);
+	
+	/**
 	 * 에피소드 수정
 	 * @param episodeDTO
 	 * @param imageList

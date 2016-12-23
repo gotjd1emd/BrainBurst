@@ -48,6 +48,11 @@ public class AuthorDAOImpl implements AuthorDAO {
 	}
 	
 	@Override
+	public Integer selectFundCode(int webtoonCode) {
+		return sqlSession.selectOne("authorMapper.selectFundCode", webtoonCode);
+	}
+	
+	@Override
 	public int selectEpisodeSequence(int webtoonCode, int episodeNumber) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("webtoonCode", webtoonCode);
