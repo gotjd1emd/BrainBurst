@@ -319,4 +319,23 @@ public class UserController {
 		userService.paidApply(paidApplyDTO);
 		return "";
 	}
+	
+	@RequestMapping("cashUpdate")
+	public String cashUpdate(HttpServletRequest request, int exchangeT, int afterT){
+		System.out.println("exchangeT : " + exchangeT);
+		System.out.println("afterT : " + afterT);
+		UserDTO userDTO = (UserDTO) request.getSession().getAttribute("userDTO");
+		userDTO.setCashPoint(afterT);
+		String email = userDTO.getEmail();
+		cashHistoryDTO = new CashHistoryDTO();
+		cashHistoryDTO.setEmail(email);
+		cashHistoryDTO.setCashPoint(exchangeT);
+		cashHistoryDTO.setContent("-"+exchangeT+"T");
+		cashHistoryDTO.setTradeState("È¯Àü");
+		System.out.println("cashHistoryDTO setting OK");
+		
+		userService.CashCharge(userDTO, cashHistoryDTO);
+		
+		return "main/index";
+	}
 }

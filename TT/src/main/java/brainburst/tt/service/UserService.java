@@ -160,4 +160,5 @@ public interface UserService {
 	 * 유료화 신청
 	 * */
 	int paidApply(PaidApplyDTO paidApplyDTO);
+	
 }
