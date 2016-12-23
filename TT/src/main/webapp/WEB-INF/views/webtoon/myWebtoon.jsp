@@ -20,7 +20,6 @@
 			
 			//현재 펀딩중인 펀딩율 계산
 			var fundingRate = Math.floor($("#funding-episode").find("input[name=episodeFund]").val()/4);
-			alert(fundingRate);
 			if(fundingRate > 100) {
 				$("#funding-episode").find("input[type=text]").val(100);
 			}else {
@@ -74,7 +73,23 @@
 			/*에피소드 업로드*/
 			$("#episode-upload").on("click", (function() {
 				var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text()*1+1;
-				$(location).attr('href',"/controller/webtoon/episodeUploadPage/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber);
+				$.ajax({
+					url : "/controller/webtoon/episodeUploadCheck/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber,
+					type : "post", 
+					dataType : "text",
+					success : function(result) {
+						if(result==0) {
+							Materialize.toast('이번주 에피소드가 이미 업로드 되어있습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}else {
+							$(location).attr('href',"/controller/webtoon/episodeUploadPage/"+$("input[name=webtoonCode]").val()+"/"+episodeNumber);
+						}
+					},
+					error : function() {
+						alert(err);
+					}
+				});
 			}));
 			
 			$(".first-see").on("click", (function () {

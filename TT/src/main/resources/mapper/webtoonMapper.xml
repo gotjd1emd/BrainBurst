@@ -247,7 +247,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 현재 펀딩에피소드 업로드 체크 -->
-	<select id="fundEpisodeCheck" resultMap="_int" parameterType="_int">
+	<select id="fundEpisodeCheck" resultType="_int" parameterType="_int">
 		SELECT MAX(EPISODE_NUMBER) FROM FUND 
 		WHERE WEBTOON_CODE = #{value}
 	</select>

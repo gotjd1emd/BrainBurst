@@ -242,21 +242,29 @@ public class WebtoonController {
 		return Integer.toString(i);
 	}
 	
+	/**
+	 * 펀딩웹툰 에피소드 업로드 확인
+	 * @param request
+	 * @param webtoonCode
+	 * @param episodeNumber
+	 * @return
+	 */
 	@RequestMapping("episodeUploadCheck/{webtoonCode}/{episodeNumber}")
+	@ResponseBody
 	public String currentFundingEpisode(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode,
 			@PathVariable("episodeNumber") int episodeNumber) {
 		
 		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, null);
-		String result = "0";
-		
+		String result = "1";
+
 		if(webtoonDTO.getWebtoonLevel().equals("funding")) {
 			int fundingEpisodeNumber = webtoonService.fundEpisodeCheck(webtoonCode);
 			
-			if(episodeNumber < fundingEpisodeNumber) {
-				//펀딩중인 에피소드 업로드가 되어있음
+			if((episodeNumber-1) < fundingEpisodeNumber) {
+				//펀딩중인 에피소드 업로드가 안되있음
 				result = "1";
 			}else {
-				//펀딩중인 에피소드 업로드가 안되있음
+				//펀딩중인 에피소드 업로드가 되어있음
 				result = "0";
 			}
 		}
