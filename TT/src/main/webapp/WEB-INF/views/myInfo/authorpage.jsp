@@ -64,8 +64,8 @@
 					<!-- floating button div tag close -->
 					<div class="card-frame-myInfo z-depth-1">
 						<!-- Modal -->
-						<jsp:include page="/WEB-INF/views/myInfo/authorpage/comics/modal.jsp"></jsp:include>
 						<jsp:include page="/WEB-INF/views/myInfo/authorpage/comics/content.jsp"></jsp:include>
+						<jsp:include page="/WEB-INF/views/myInfo/authorpage/comics/modal.jsp"></jsp:include>
 					</div>
 				</c:when>
 				<c:otherwise>
@@ -84,8 +84,8 @@
 							href="#paid-webtoon-modal"><i class="material-icons first-icon">attach_money</i></a>
 					</div>
 					<div class="card-frame-myInfo z-depth-1">
-						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
 						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/content.jsp"></jsp:include>
+						<jsp:include page="/WEB-INF/views/myInfo/authorpage/complete/modal.jsp"></jsp:include>
 					</div>
 				</c:when>
 				<c:otherwise>

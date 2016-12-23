@@ -345,4 +345,13 @@ public class WebtoonController {
 		session.setAttribute("mylist", list2);
 		return "myInfo/authorpage";
 	}
+	
+	@RequestMapping("webtoonScore")
+	@ResponseBody
+	public String webtoonScore(int webtoonCode){
+		System.out.println(webtoonCode);
+		System.out.println(webtoonService.webtoonScore(webtoonCode));
+		
+		return null;
+	}
 }

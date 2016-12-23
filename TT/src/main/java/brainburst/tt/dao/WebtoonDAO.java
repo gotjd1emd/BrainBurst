@@ -164,4 +164,10 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	int fundEpisodeCheck(int webtoonCode);
+	
+	/**
+	 * 웹툰 점수 출력
+	 * */
+	int webtoonScore(int webtoonCode);
+	
 }

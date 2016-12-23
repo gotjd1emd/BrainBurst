@@ -6,13 +6,24 @@
 	$(function () {
 		
 		$("#fund-webtoon-select-div div ul li span").on("click", function () {
+			var selectLength = $("#fund-webtoon-select option").length;
 			var webtoonName = $(this).html();
+			console.log(webtoonName);
+			var webtoonCode;
+			for(i=1; i<=selectLength; i++){
+				var webtoonCodeIndex = $("#fund-webtoon-select option:eq("+i+")").html();
+				console.log("webtoonCodeIndex : " + webtoonCodeIndex);
+				if(webtoonCodeIndex==webtoonName){
+					webtoonCode = {"webtoonCode": $("#fund-webtoon-select option:eq("+i+")").val()};
+				}
+			}
 			$("#fund-webtoon-modal-webtoon-name").html(webtoonName);
 			
 			$.ajax({
-				url : "",
+				url : "/controller/webtoon/webtoonScore",
 				type : "get",
 				dataType : "text",
+				data : webtoonCode,
 				success : function(result) {
 					alert(result)
 				},
@@ -20,8 +31,6 @@
 					alert("error : "+err)
 				}
 			})
-			
-						
 		});
 		
 		$("#find-apply-btn").click(function(){
@@ -29,9 +38,9 @@
 			var webtoonName = $("#fund-webtoon-select-div div input").val();
 			var webtoonCode;
 			for(i=1; i<=selectLength; i++){
-				var webtoonCodeIndex = $("#find-webtoon-select option:eq("+i+")").html();
+				var webtoonCodeIndex = $("#fund-webtoon-select option:eq("+i+")").html();
 				if(webtoonCodeIndex==webtoonName){
-					webtoonCode = {"webtoonCode": $("#find-webtoon-select option:eq("+i+")").val()};
+					webtoonCode = {"webtoonCode": $("#fund-webtoon-select option:eq("+i+")").val()};
 				}
 			}
 			
@@ -74,7 +83,7 @@
 		</div>
 		<div class="webtoon-score">"<span id="fund-webtoon-modal-webtoon-name">웹툰 이름</span>"<br>작품의 점수 : 99점</div>
 		<div class="webtoon-score-description">
-			- 80점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
+			- 300점 이상만 신청 가능합니다<br> - 작가의 추가정보를 입력해주세요.(펀딩을 위한 계좌번호 등등..)
 		</div>
 	
 	</div>

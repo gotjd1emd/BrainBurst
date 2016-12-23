@@ -171,4 +171,9 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public int fundEpisodeCheck(int webtoonCode) {
 		return webtoonDAO.fundEpisodeCheck(webtoonCode);
 	}
+
+	@Override
+	public int webtoonScore(int webtoonCode) {
+		return webtoonDAO.webtoonScore(webtoonCode);
+	}
 }
