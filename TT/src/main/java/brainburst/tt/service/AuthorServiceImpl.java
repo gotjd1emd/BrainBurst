@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.AuthorDAO;
+import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
@@ -123,5 +124,25 @@ public class AuthorServiceImpl implements AuthorService {
 	@Override
 	public List<WebtoonDTO> selectMyWebtoon(String nickname) {
 		return authorDAO.selectMyWebtoon(nickname);
+	}
+
+	@Override
+	public int additionalInfo(AdditionalInfoDTO additionalInfo) {
+		int result=0;
+		AdditionalInfoDTO selectedAdditionalInfoDTO = authorDAO.selectAdditionalInfo(additionalInfo.getEmail());
+		
+		if(selectedAdditionalInfoDTO==null){
+			result = authorDAO.insertAdditionalInfo(additionalInfo);
+		}else{
+			result = authorDAO.updateadditionalInfo(additionalInfo);
+		}
+		
+		return result;
+	}
+
+	@Override
+	public AdditionalInfoDTO selectAdditionalInfo(String email) {
+		AdditionalInfoDTO additionalInfoDTO=authorDAO.selectAdditionalInfo(email);
+		return additionalInfoDTO;
 	}
 }

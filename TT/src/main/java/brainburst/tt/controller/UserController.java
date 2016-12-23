@@ -2,6 +2,7 @@ package brainburst.tt.controller;
 
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.PaidApplyDTO;

@@ -17,6 +17,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="WEBTOON_THUMBNAIL" property="webtoonThumbnail"/>
 	</resultMap>
 	
+	<resultMap type="additionalInfoDTO" id="additionalInfoDTO">
+		<id column="EMAIL" property="email"/>
+		<result column="ACCOUNT_PASSWORD" property="accountPassword"/>
+		<result column="ACCOUNT_NUMBER" property="accountNumber"/>
+		<result column="IDENTIFICATION_CARD" property="identificationCard"/>
+		<result column="BANK_NAME" property="bankName"/>
+	</resultMap>
+	
 	<!-- getMyWebtoon -->
 	<select id="getMyWebtoon" resultMap="webtoonDTO" parameterType="map">
 		SELECT WEBTOON_CODE, WEBTOON_NAME, WEBTOON_LEVEL, WEBTOON_STATE, CATEGORY_CODE, PENALTY, NICKNAME, FUNDING_PERIOD, SUMMARY, WEBTOON_THUMBNAIL
@@ -109,4 +117,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT MAX(WEBTOON_CODE) AS WEBTOON_CODE FROM WEBTOON 
 		WHERE NICKNAME = #{value}
 	</select>
+	
+	<!-- 작가 추가정보 검색 -->
+	<select id="emailSelectAdditionalInfo" resultMap="additionalInfoDTO" parameterType="String">
+		SELECT EMAIL, ACCOUNT_NUMBER, ACCOUNT_PASSWORD, IDENTIFICATION_CARD, BANK_NAME
+		FROM ADDITIONAL_INFO
+		WHERE EMAIL=#{value}
+	</select>
+	
+	<!-- 작가 추가정보 추가 -->
+	<insert id="insertAdditionalInfo" parameterType="additionalInfoDTO">
+		INSERT INTO ADDITIONAL_INFO(EMAIL, ACCOUNT_NUMBER, ACCOUNT_PASSWORD, IDENTIFICATION_CARD, BANK_NAME)
+		VALUES(#{email}, #{accountNumber}, #{accountPassword}, #{identificationCard}, #{bankName})
+	</insert>
+	
+	<!-- 작가 추가정보 수정 -->
+	<update id="updateAdditionalInfo" parameterType="additionalInfoDTO">
+		update ADDITIONAL_INFO SET 
+		ACCOUNT_NUMBER = #{accountNumber},
+		ACCOUNT_PASSWORD = #{accountPassword},
+		<if test="identificationCard != null">
+		IDENTIFICATION_CARD = #{identificationCard},
+		</if>
+		BANK_NAME = #{bankName}
+		WHERE EMAIL = #{email}
+	</update>
 </mapper>

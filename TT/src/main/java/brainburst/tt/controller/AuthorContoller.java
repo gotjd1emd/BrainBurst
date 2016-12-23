@@ -1,6 +1,7 @@
 package brainburst.tt.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,9 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
@@ -319,5 +322,46 @@ public class AuthorContoller {
 		List<WebtoonDTO> list = authorService.getSerialWebtoon(userDTO.getNickname());
 		session.setAttribute("webtoonList", list);
 		return "myInfo/authorpage";
+	}
+	/**
+	 * 작가 추가정보 입력
+	 * @throws IOException 
+	 * @throws IllegalStateException 
+	 * */
+	@RequestMapping("additionalInfo")
+	@ResponseBody
+	public String additionalInfo(HttpServletRequest request, AdditionalInfoDTO additionalInfoDTO) throws IllegalStateException, IOException{
+		HttpSession session = request.getSession();
+		String path = session.getServletContext().getRealPath("/") + "/resources";
+		
+		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
+		additionalInfoDTO.setEmail(userDTO.getEmail());
+		
+		if(additionalInfoDTO.getFile().getSize()==0){
+			additionalInfoDTO.setIdentificationCard(null);
+		}else{
+			additionalInfoDTO.setIdentificationCard("/webtoon/idEntificationCard/"
+					+ additionalInfoDTO.getFile().getOriginalFilename());
+			additionalInfoDTO.getFile().transferTo(new File(path + "/webtoon/idEntificationCard/"
+					+ additionalInfoDTO.getFile().getOriginalFilename()));
+		}
+		
+		int result = authorService.additionalInfo(additionalInfoDTO);
+		
+		return "";
+		
+	}
+	/**
+	 * 작가 추가 정보 출력
+	 * */
+	@RequestMapping("selectAdditionalInfo")
+	@ResponseBody
+	public AdditionalInfoDTO selectAdditionalInfo(HttpServletRequest request){
+		
+		UserDTO userDTO = (UserDTO) request.getSession().getAttribute("userDTO");
+		AdditionalInfoDTO additionalInfoDTO = authorService.selectAdditionalInfo(userDTO.getEmail());
+		String identificationCard[] = additionalInfoDTO.getIdentificationCard().split("/");
+		additionalInfoDTO.setIdentificationCard(identificationCard[identificationCard.length-1]);
+		return additionalInfoDTO;
 	}
 }

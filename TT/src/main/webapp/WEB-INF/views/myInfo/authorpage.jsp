@@ -27,7 +27,7 @@
 				<li class="tab col s2 offset-l2"><a class="active" href="#publish-webtoon" id="publishW">연재중인 웹툰</a></li>
 				<li class="tab col s2"><a href="#completed-webtoon" id="completedW">완결된 웹툰</a></li>
 				<li class="tab col s2"><a href="#funding-management" id="fundingW">펀딩 관리</a></li>
-				<li class="tab col s2"><a href="#author-management">작가 관리</a></li>
+				<li class="tab col s2"><a href="#author-management" id="authorW">작가 관리</a></li>
 			</ul>
 		</div>
 		<!-- 연재중 웹툰 tab -->

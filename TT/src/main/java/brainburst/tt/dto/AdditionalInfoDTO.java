@@ -1,6 +1,7 @@
 package brainburst.tt.dto;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class AdditionalInfoDTO {
@@ -9,6 +10,7 @@ public class AdditionalInfoDTO {
 	private String bankName;
 	private String accountNumber;
 	private String identificationCard;
+	private MultipartFile file;
 	
 	public AdditionalInfoDTO() {
 		System.out.println("AdditionalInfoDTO 기본생성자 호출");
@@ -61,6 +63,14 @@ public class AdditionalInfoDTO {
 
 	public void setIdentificationCard(String identificationCard) {
 		this.identificationCard = identificationCard;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 
 }

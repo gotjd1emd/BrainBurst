@@ -2,6 +2,7 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
+import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
@@ -121,4 +122,19 @@ public interface AuthorDAO {
 	 * @return
 	 */
 	List<WebtoonDTO> selectMyWebtoon(String nickname);
+	
+	/**
+	 * 작가 추가정보 검색
+	 * */
+	AdditionalInfoDTO selectAdditionalInfo(String email);
+	
+	/**
+	 * 작가 추가정보 추가
+	 * */
+	int insertAdditionalInfo(AdditionalInfoDTO additionalInfoDTO);
+	
+	/**
+	 * 작가 추가정보 수정
+	 * */
+	int updateadditionalInfo(AdditionalInfoDTO additionalInfoDTO);
 }

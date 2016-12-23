@@ -3,6 +3,7 @@ package brainburst.tt.service;
 import java.util.List;
 import java.util.Map;
 
+import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.ImageDTO;
 import brainburst.tt.dto.UserDTO;
@@ -97,5 +98,14 @@ public interface AuthorService {
 	 * @return
 	 */
 	List<WebtoonDTO> selectMyWebtoon(String nickname);
-
+	
+	/**
+	 * 작가 추가 정보 입력 및 수정
+	 * */
+	int additionalInfo(AdditionalInfoDTO additionalInfo);
+	
+	/**
+	 * 작가 추가 정보 출력
+	 * */
+	AdditionalInfoDTO selectAdditionalInfo(String email);
 }
