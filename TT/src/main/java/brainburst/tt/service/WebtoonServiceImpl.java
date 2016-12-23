@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
-import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -144,6 +143,18 @@ public class WebtoonServiceImpl implements WebtoonService {
 		List<EpisodeDTO> episodeList = webtoonDAO.selectFundingWebtoonEpisode(webtoonCode);
 		FundDTO fundDTO = webtoonDAO.selectCurrentFundingEpisode(webtoonCode);
 
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("episodeList", episodeList);
+		map.put("fundDTO", fundDTO);
+		
+		return map;
+	}
+	
+	@Override
+	public Map<String, Object> myFundingEpisodeList(int webtoonCode) {
+		List<EpisodeDTO> episodeList = webtoonDAO.selectMyFundingEpisodeList(webtoonCode);
+		FundDTO fundDTO = webtoonDAO.selectCurrentFundingEpisode(webtoonCode);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("episodeList", episodeList);
 		map.put("fundDTO", fundDTO);

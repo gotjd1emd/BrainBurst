@@ -3,7 +3,6 @@ package brainburst.tt.dao;
 import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
-import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -151,4 +150,11 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	FundDTO selectCurrentFundingEpisode(int webtoonCode);
+	
+	/**
+	 * 작가의 펀딩중인 웹툰의 에피소드 목록
+	 * @param webtoonCode
+	 * @return
+	 */
+	List<EpisodeDTO> selectMyFundingEpisodeList(int webtoonCode);
 }

@@ -18,6 +18,20 @@
 			fundingTimer();
 			var myVar = setInterval(fundingTimer, 1000);
 			
+			//현재 펀딩중인 펀딩율 계산
+			var fundingRate = Math.floor($("#funding-episode").find("input[name=episodeFund]").val()/4);
+			alert(fundingRate);
+			if(fundingRate > 100) {
+				$("#funding-episode").find("input[type=text]").val(100);
+			}else {
+				$("#funding-episode").find("input[type=text]").val(fundingRate);
+			}
+			//에피소드마다 들어온 펀딩율
+			var episodeList = $("#episode-list").find("input[name=episodeFund]");
+			var episodeInfo = $("#webtoon-info").find("input[name=episodeFund]");
+			fundRate(episodeList);
+			fundRate(episodeInfo);
+			
 			/* chart script */
 		    $(".knob").knob({
 		      draw: function () {
@@ -181,7 +195,17 @@
 	    min = Math.floor(time/1000/60 - day*24*60 - hour*60);
 	    second = Math.floor(time/1000 - day*24*60*60 - hour*60*60 - min*60);
 	    $(".period").text(Math.floor(day) + "일 " + hour + "시 " + min + "분 " + second + "초 남았습니다.");
-	}
+		}
+		function fundRate(episode) {
+			$.each(episode, function(index, item) {
+				var episodeFundRate = Math.floor(item.value/4);
+				if(episodeFundRate > 100) {
+					item.nextElementSibling.value=100;
+				}else {
+					item.nextElementSibling.value=episodeFundRate;
+				}
+			});
+		}
 	</script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
 	<input type="hidden" name="webtoonCode" value="${webtoonDTO.webtoonCode}">
@@ -222,11 +246,13 @@
 		<c:if test="${fundDTO != null }">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius" style="background-color:tomato;color:aliceblue;">
+					<input type="hidden" name="episodeFund" value="${fundDTO.episodeFund }"/>
 					<input type="hidden" name="fundCode" value="${fundDTO.fundCode }"/>
 					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
 					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:15px">
-						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
-						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br> 남은 시간 : <span class="period"></span>
+						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화 펀딩 진행중  <br><br>
+						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br> 
+						남은 시간 : <span class="period"></span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund }] 
 					</div>
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
 						<input type="text" class="knob" value="20" data-width="90" data-height="90" data-fgColor="rgb(77, 14, 100)" data-readonly="true">
@@ -245,11 +271,15 @@
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber }</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}<br>
-					조회수 : ${episode.hits}
+					조회수 : ${episode.hits} 
 				</div>
+				<c:if test="${episode.fund.fundCode != 0 }">
+				[목표 T : 400] [현재 T : ${episode.fund.episodeFund }] 
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund }"/>
 					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 				</div>
+				</c:if>
 			</div>
 		</div>
 	</c:forEach>
@@ -266,11 +296,15 @@
 				<div class="col s5 episode-content">
 					No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
 					추천 : ${episode.recommendation}<br>
-					조회수 : ${episode.hits}
+					조회수 : ${episode.hits} 
 				</div>
+				<c:if test="${episode.fund.fundCode != 0 }">
+				[목표 T : 400] [현재 T : ${episode.fund.episodeFund }] 
 				<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+					<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund }"/>
 					<input type="text" class="knob" value="60" data-width="90" data-height="90" data-fgColor="#f56954" data-readonly="true">
 				</div>
+				</c:if>
 			</div>
 		</div>
 	</c:forEach>

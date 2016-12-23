@@ -124,9 +124,11 @@ public class WebtoonController {
 			type = "webtoon/myWebtoon";
 			//작가용 웹툰페이지 컨트롤러
 			if(webtoonDTO.getWebtoonLevel().equals("funding")) {
-				list = webtoonService.selectAllEpisode(webtoonCode);
+				map = webtoonService.myFundingEpisodeList(webtoonCode);
+				list = (List<EpisodeDTO>)map.get("episodeList");
+				fundDTO = (FundDTO)map.get("fundDTO");
 			}else {
-				
+				list = webtoonService.selectAllEpisode(webtoonCode);
 			}
 		}else {
 			//독자용 웹툰페이지 컨트롤러
