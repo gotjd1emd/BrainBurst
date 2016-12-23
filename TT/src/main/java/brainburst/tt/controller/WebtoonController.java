@@ -240,25 +240,6 @@ public class WebtoonController {
 	}
 
 	/**
-	 * 신고
-	 * 신고버튼클릭하면 request에 있는 epicsode_sequence와 webtoonCode, session에 있는 사용자 email이용
-	 * 신고 테이블에 해당 레코드 삽입
-	 * @content : 신고내용
-	 * @return 성공여부 1:성공 , 0:실패 
-	 */
-	public void addReport(HttpServletRequest request, String content) {
-		HttpSession session = request.getSession();
-		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
-		String email = dto.getEmail();
-		int episodeSequence = (Integer) request.getAttribute("episodeSequence");
-		int webtoonCode = (Integer) request.getAttribute("webtoonCode");
-		ReportDTO reportDTO = new ReportDTO(content, email, webtoonCode, episodeSequence);
-		if (webtoonService.addReport(reportDTO) > 0) {
-			//성공했을때 무언가...?
-		}
-	}
-	
-	/**
 	 * 에피소드업로드 페이지 이동
 	 */
 	@RequestMapping("episodeUploadPage/{webtoonCode}/{episodeNumber}")

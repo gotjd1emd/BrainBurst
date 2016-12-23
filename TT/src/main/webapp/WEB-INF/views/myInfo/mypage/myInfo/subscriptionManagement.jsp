@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script>
 	$(function() {
-		$(document).on("click", ".scription-title-img", function(){
-			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this).attr("name"));
+		$(document).on("click", ".smove", function(){
+			$(location).attr('href',"/controller/webtoon/webtoonPage/"+$(this>"img").attr("name"));
 		})
 		
 		
@@ -23,11 +23,14 @@
 				<c:otherwise>
 					<c:forEach var="item" items="${subScriptionList}">
 						<li class="collection-item avatar scription-collection">
+						<div class="move">
 						<img src='<c:url value='/resources${item.webtoonThumbnail}'/>' alt="" class="circle scription-title-img"  name="${item.webtoonCode}">
 						 <span class="scription-title">${item.webtoonName}</span>
 							<p>
-								${item.nickname} <br> Second Line
-							</p> <a href="#!" class="secondary-content"><i class="material-icons text-color-500" name="${item.webtoonCode}_${item.subscriptionSequence}">grade</i></a>
+								${item.nickname} <br> 구독자 수 : ${item.subscriptionCount}
+							</p> 
+						</div>
+							<a href="#!" class="secondary-content"><i class="material-icons text-color-500" name="${item.webtoonCode}_${item.subscriptionSequence}">grade</i></a>
 						</li>
 					</c:forEach>
 				</c:otherwise>
