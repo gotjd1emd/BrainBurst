@@ -5,6 +5,7 @@ import java.util.Map;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -129,4 +130,18 @@ public interface WebtoonService {
 	 * @return
 	 */
 	Map<String, Object> myFundingEpisodeList(int webtoonCode);
+	
+	/**
+	 * 현재 펀딩진행중인 에피소드 펀드 정보
+	 * @param webtoonCode
+	 * @return
+	 */
+	FundDTO selectCurrentFundingEpisode(int webtoonCode);
+	
+	/**
+	 * 펀딩작가의 에피소드 업로드 확인
+	 * @param webtoonCode
+	 * @return
+	 */
+	int fundEpisodeCheck(int webtoonCode);
 }

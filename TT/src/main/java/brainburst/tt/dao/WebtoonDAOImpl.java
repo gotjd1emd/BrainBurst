@@ -164,4 +164,9 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	public List<EpisodeDTO> selectMyFundingEpisodeList(int webtoonCode) {
 		return sqlSession.selectList("webtoonMapper.selectMyFundingEpisodeList", webtoonCode);
 	}
+	
+	@Override
+	public int fundEpisodeCheck(int webtoonCode) {
+		return sqlSession.selectOne("webtoonMapper.fundEpisodeCheck", webtoonCode);
+	}
 }

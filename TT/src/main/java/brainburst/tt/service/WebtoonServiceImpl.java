@@ -161,4 +161,14 @@ public class WebtoonServiceImpl implements WebtoonService {
 		
 		return map;
 	}
+	
+	@Override
+	public FundDTO selectCurrentFundingEpisode(int webtoonCode) {
+		return webtoonDAO.selectCurrentFundingEpisode(webtoonCode);
+	}
+	
+	@Override
+	public int fundEpisodeCheck(int webtoonCode) {
+		return webtoonDAO.fundEpisodeCheck(webtoonCode);
+	}
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import brainburst.tt.dao.FundDAOImpl;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.ReportDTO;
@@ -239,6 +240,29 @@ public class WebtoonController {
 			throw new Exception();
 		}
 		return Integer.toString(i);
+	}
+	
+	@RequestMapping("episodeUploadCheck/{webtoonCode}/{episodeNumber}")
+	public String currentFundingEpisode(HttpServletRequest request, @PathVariable("webtoonCode") int webtoonCode,
+			@PathVariable("episodeNumber") int episodeNumber) {
+		
+		WebtoonDTO webtoonDTO = webtoonService.selectWebtoon(webtoonCode, null);
+		String result = "0";
+		
+		if(webtoonDTO.getWebtoonLevel().equals("funding")) {
+			int fundingEpisodeNumber = webtoonService.fundEpisodeCheck(webtoonCode);
+			
+			if(episodeNumber < fundingEpisodeNumber) {
+				//펀딩중인 에피소드 업로드가 되어있음
+				result = "1";
+			}else {
+				//펀딩중인 에피소드 업로드가 안되있음
+				result = "0";
+			}
+		}
+		
+		
+		return result;
 	}
 
 	/**

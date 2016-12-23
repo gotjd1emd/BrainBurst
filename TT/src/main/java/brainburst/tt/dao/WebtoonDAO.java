@@ -157,4 +157,11 @@ public interface WebtoonDAO {
 	 * @return
 	 */
 	List<EpisodeDTO> selectMyFundingEpisodeList(int webtoonCode);
+	
+	/**
+	 * 펀딩작가의 에피소드 업로드 확인
+	 * @param webtoonCode
+	 * @return
+	 */
+	int fundEpisodeCheck(int webtoonCode);
 }
