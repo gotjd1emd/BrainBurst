@@ -11,6 +11,7 @@
 			<th data-field="penalty">경고상태</th>
 			<th data-field="author">작가명</th>
 			<th data-field="fundingPeriod">펀딩주기</th>
+			<th>웹툰 처리</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -28,3 +29,11 @@
 </button>
 <a class="waves-effect waves-light btn">button</a>
 <a class="waves-effect waves-light btn">button</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>

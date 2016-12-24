@@ -4,7 +4,7 @@
 <script>
 
 	$(function(){
-		
+		$('.dropdown-button').on("dropdown", 'open')
 		/*유저 휴먼 처리*/
 		$(document).on("click", "#snow", function(){
 			var email = $(this).parents().parents().children().first().text();
@@ -108,7 +108,7 @@
 					var htmlcode = "";
 					if(result==null) {
 						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
-									+"등록된 상품이 없습니다.</b></p></td></tr>";
+									+"가입된 유저가 없습니다.</b></p></td></tr>";
 					}else {
 						$.each(result, function(index, item) {
 							htmlcode += "<tr><td>"
@@ -141,19 +141,70 @@
 				            htmlcode += "</tr>";
 						});
 					}
-					$("tbody").empty();
-					$("#userManageList").append(htmlcode);
+					$("#userManageList tbody").html(htmlcode);
 				},
 				error : function(err) {
 					alert("err");
 				}
 			})
 		}
+		
+		/* 웹툰 관리 페이지 ( 웹툰 전체 출력 )*/
+		function webtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							htmlcode += "<tr><td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            	 
+				            if(item.level=='블라인드'){
+				            	htmlcode += "<td>";
+					            htmlcode += "<input type='button'class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
+					            htmlcode += "style='margin-top: -20%;height: 17%;' id='snow' value='얼리기'/>";      
+					            htmlcode += "</td>";
+				            }else{
+				            	htmlcode += "<td>";
+					            htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+webtoonCode+"'/>"
+					            htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>Filled in</label>";      
+					            htmlcode += "</td>";
+				            }
+				            htmlcode += "</tr>";
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
 		userManagement();
+		webtoonManagement();
 		/* 
 			웹툰 유지 페이지 ( 유저 전체 출력 )
 		*/
-		$("#webtoonManage").click(function() {
+		/* function userManagement() {
 			$.ajax({
 				url : "/controller/admin/webtoonManage",
 				type : "get",
@@ -188,8 +239,7 @@
 					alert("err");
 				}
 			})
-		})
-		
+		} */
 	})
 </script>
 <input id="header-title" type="hidden" value="관리자페이지">
@@ -218,4 +268,11 @@
 	<div id="reportManagement" class="col s12 tab-card-info">
 		<jsp:include page="/WEB-INF/views/admin/reportManagement/content.jsp"></jsp:include>
 	</div>
+	 <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
 </div>
