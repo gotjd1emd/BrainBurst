@@ -30,4 +30,6 @@ public interface AdministratorService {
 	 * ∞Ë¡§ ≥Ï¿Ã±‚
 	 * */
 	public int userMelt(String email);
+	
+	public int webtoonBlind(int webtoonCode);
 }

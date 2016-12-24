@@ -43,4 +43,9 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return administratorDAO.userMelt(email);
 	}
 
+	@Override
+	public int webtoonBlind(int webtoonCode) {
+		return 0;
+	}
+
 }

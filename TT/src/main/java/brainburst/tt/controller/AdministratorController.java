@@ -62,4 +62,11 @@ public class AdministratorController {
 		
 		return result+"";
 	}
+	
+	@RequestMapping("webtoonBlind")
+	@ResponseBody
+	public String webtoonBlind(@PathVariable("webtoonCode") int webtoonCode){
+		System.out.println(webtoonCode);
+		return "";
+	}
 }

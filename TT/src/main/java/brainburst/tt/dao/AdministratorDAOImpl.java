@@ -36,5 +36,5 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	public int userMelt(String email) {
 		System.out.println("userMeltDAO¿‘¥œ¥Ÿ");
 		return sqlSession.update("adminMapper.userMelt", email);
-	} 	
+	}
 }

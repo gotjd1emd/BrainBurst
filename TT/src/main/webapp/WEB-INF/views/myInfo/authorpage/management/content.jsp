@@ -38,7 +38,6 @@ $(function () {
 	        $("#toast-container").css("margin-left", (width*-1)+209);
 	        $("#accound-password-check").focus();
 			return false;
-			
 		}
 	});
 	

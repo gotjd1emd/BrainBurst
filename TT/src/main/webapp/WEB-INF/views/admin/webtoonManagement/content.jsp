@@ -19,21 +19,12 @@
 	</tbody>
 </table>
 
-<div class="input-field">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+<div class="input-field" style="margin-top: 20px;">
+          <input placeholder="웹툰 코드를 적어주세요." id="webtoon-code-field" type="text" class="validate" >
+          <label for="webtoon-code-field">웹툰 코드</label>
 </div>
 
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-</button>
-<a class="waves-effect waves-light btn">button</a>
-<a class="waves-effect waves-light btn">button</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
+<a class="waves-effect waves-light btn color-500" id="webtoon-blind">블라인드</a>
+<a class="waves-effect waves-light btn color-500" id="webtoon-blind">블라인드 해제</a>
+<a class="waves-effect waves-light btn color-500" id="webtoon-fund">펀딩으로</a>
+<a class="waves-effect waves-light btn color-500" id="webtoon-normal">일반으로</a>
