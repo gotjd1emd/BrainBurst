@@ -18,12 +18,12 @@ public interface FundService {
 	 * @param deadline
 	 * @return
 	 */
-	int episodeTimeOutCheck(String deadline);
+	int episodeTimeOutCheck();
 	
 	/**
 	 * 마감일 하루뒤 펀딩 테이블에 펀딩튜플 추가와 목표미달 웹툰 패널티 추가
 	 * @param today
 	 * @return
 	 */
-	int startFunding(String today);
+	int startFunding();
 }

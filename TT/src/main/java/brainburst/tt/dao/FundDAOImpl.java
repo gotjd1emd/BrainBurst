@@ -24,17 +24,8 @@ public class FundDAOImpl implements FundDAO {
 	}
 
 	@Override
-	public List<Integer> selectFundingWebtoonCode() {
-		return sqlSession.selectList("fundMapper.selectFundingWebtoonCode");
-	}
-
-	@Override
-	public int lateEpisode(int webtoonCode, String date) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("webtoonCode", webtoonCode);
-		map.put("date", date);
-		
-		return sqlSession.selectOne("fundMapper.lateEpisode", map);
+	public List<Integer> lateEpisode() {
+		return sqlSession.selectList("fundMapper.lateEpisode");
 	}
 
 	@Override
@@ -47,12 +38,8 @@ public class FundDAOImpl implements FundDAO {
 	}
 
 	@Override
-	public EpisodeDTO meetADeadlineWebtoon(int webtoonCode, String date) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("webtoonCode", webtoonCode);
-		map.put("date", date);
-		
-		return sqlSession.selectOne("fundMapper.meetADeadlineWebtoon", map);
+	public List<EpisodeDTO> meetADeadlineWebtoon() {
+		return sqlSession.selectList("fundMapper.meetADeadlineWebtoon");
 	}
 
 	@Override
@@ -65,12 +52,8 @@ public class FundDAOImpl implements FundDAO {
 	}
 
 	@Override
-	public int selectEpisodeFund(int webtoonCode, int episodeNumber) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("webtoonCode", webtoonCode);
-		map.put("episodeNumber", episodeNumber);
-		
-		return sqlSession.selectOne("fundMapper.selectEpisodeFund", map);
+	public int selectEpisodeFund(int fundCode) {
+		return sqlSession.selectOne("fundMapper.selectEpisodeFund", fundCode);
 	}
 
 	@Override

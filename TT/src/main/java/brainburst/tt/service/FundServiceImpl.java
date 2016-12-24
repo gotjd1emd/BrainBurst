@@ -24,14 +24,12 @@ public class FundServiceImpl implements FundService {
 	}
 
 	@Override
-	public int episodeTimeOutCheck(String deadline) {
-		List<Integer> fundWebtoonCode = fundDAO.selectFundingWebtoonCode();
-		int lateWebtoonCode = 0;
+	public int episodeTimeOutCheck() {
+		List<Integer> lateWebtoonCodeList = fundDAO.lateEpisode();
 		String currentPenalty = "";
 		int result = 0;
 		
-		for(int webtoonCode : fundWebtoonCode) {
-			lateWebtoonCode = fundDAO.lateEpisode(webtoonCode, deadline);
+		for(int lateWebtoonCode : lateWebtoonCodeList) {
 			currentPenalty = fundDAO.selectPenalty(lateWebtoonCode);
 			
 			if(currentPenalty.equals("green")) {
@@ -41,7 +39,7 @@ public class FundServiceImpl implements FundService {
 			}else {
 				currentPenalty = "red";
 			}
-			
+			System.out.println("¸¶°¨ ¸ø¸ÂÃá À¥Å÷ ÄÚµå : " + lateWebtoonCode);
 			result = fundDAO.webtoonPause(lateWebtoonCode, currentPenalty);
 		}
 		
@@ -49,16 +47,14 @@ public class FundServiceImpl implements FundService {
 	}
 
 	@Override
-	public int startFunding(String today) {
-		List<Integer> fundWebtoonCode = fundDAO.selectFundingWebtoonCode();
-		EpisodeDTO serialWebtoonEpisode = null;
+	public int startFunding() {
+		List<EpisodeDTO> serialWebtoonEpisodee = fundDAO.meetADeadlineWebtoon();
 		String currentPenalty = "";
 		int episodeFund = 0;
 		int result = 0;
 		
-		for(int webtoonCode : fundWebtoonCode) {
-			serialWebtoonEpisode = fundDAO.meetADeadlineWebtoon(webtoonCode, today);
-			currentPenalty = fundDAO.selectPenalty(serialWebtoonEpisode.getWebtoonCode());
+		for(EpisodeDTO episode : serialWebtoonEpisodee) {
+			currentPenalty = fundDAO.selectPenalty(episode.getWebtoonCode());
 			
 			if(currentPenalty.equals("green")) {
 				currentPenalty = "yellow";
@@ -68,14 +64,13 @@ public class FundServiceImpl implements FundService {
 				currentPenalty = "red";
 			}
 			
-			result = fundDAO.startFunding(serialWebtoonEpisode.getWebtoonCode(), 
-						serialWebtoonEpisode.getEpisodeNumber()+1);
+			result = fundDAO.startFunding(episode.getWebtoonCode(), 
+						episode.getEpisodeNumber()+1);
 			
-			episodeFund = fundDAO.selectEpisodeFund(serialWebtoonEpisode.getWebtoonCode(), 
-							serialWebtoonEpisode.getEpisodeNumber()+1);
-			
+			episodeFund = fundDAO.selectEpisodeFund(episode.getFundCode());
+			System.out.println("¸¶°¨ÀÏÀ» ¸ÂÃá À¥Å÷ ÄÚµå : " + episode.getWebtoonCode());
 			if(episodeFund < 400) {
-				result = fundDAO.addPenalty(serialWebtoonEpisode.getWebtoonCode(), currentPenalty);
+				result = fundDAO.addPenalty(episode.getWebtoonCode(), currentPenalty);
 			}
 		}
 		

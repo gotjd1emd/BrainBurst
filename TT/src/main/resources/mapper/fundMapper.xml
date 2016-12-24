@@ -32,28 +32,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
-	<!-- selectFundingWebtoonCode -->
-	<select id="selectFundingWebtoonCode" resultType="int">
-		SELECT WEBTOON_CODE FROM WEBTOON WHERE WEBTOON_LEVEL = 'funding' AND WEBTOON_STATE = 'serial'
-	</select>
-	
 	<!-- lateEpisode -->
-	<select id="lateEpisode" resultType="_int" parameterType="map">
-		SELECT WEBTOON_CODE FROM EPISODE 
-		WHERE WEBTOON_CODE = #{webtoonCode} AND 
-		FUND_CODE != (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	<select id="lateEpisode" resultType="_int">
+		SELECT F.WEBTOON_CODE FROM FUND F
+		WHERE TRUNC(F.DUE_DATE + 2) = TRUNC(SYSDATE) AND
+		F.EPISODE_NUMBER NOT IN (SELECT MAX(E.EPISODE_NUMBER) FROM EPISODE E
+			WHERE F.WEBTOON_CODE = E.WEBTOON_CODE)
 	</select>
 	
 	<!-- webtoonPause -->
 	<update id="webtoonPause" parameterType="map">
-		UPDATE WEBTOON SET WEBTOON_STATE = 'pause', PENALTY = #{penalty} WHERE WEBTOON_CODE = #{value}
+		UPDATE WEBTOON SET WEBTOON_STATE = 'pause', PENALTY = #{penalty} WHERE WEBTOON_CODE = #{webtoonCode}
 	</update>
 	
 	<!-- meetADeadlineWebtoon -->
-	<select id="meetADeadlineWebtoon" resultMap="episodeDTO" parameterType="map">
-		SELECT WEBTOON_CODE, EPISODE_NUMBER FROM EPISODE 
-		WHERE WEBTOON_CODE = #{webtoonCode} AND 
-		FUND_CODE = (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE) + 2 IN #{date})
+	<select id="meetADeadlineWebtoon" resultMap="episodeDTO">
+		SELECT WEBTOON_CODE, EPISODE_NUMBER, FUND_CODE FROM EPISODE 
+		WHERE FUND_CODE IN (SELECT FUND_CODE FROM FUND WHERE TRUNC(DUE_DATE + 2) IN TRUNC(SYSDATE))
 	</select>
 
 	<!-- startFunding -->
@@ -63,13 +58,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- selectEpisodeFund -->
-	<select id="selectEpisodeFund" resultType="_int" parameterType="map">
-		SELECT EPISODE_FUND FROM FUND WHERE WEBTOON_CODE = #{webtoonCode} AND EPISODE_NUMBER = #{episodeNumber}
+	<select id="selectEpisodeFund" resultType="_int" parameterType="_int">
+		SELECT EPISODE_FUND FROM FUND WHERE FUND_CODE = #{value}
 	</select>
 	
 	<!-- addPenalty -->
 	<update id="addPenalty" parameterType="map">
-		UPDATE WEBTOON SET PENALTY = #{penalty} WHERE WEBTOON_CODE
+		UPDATE WEBTOON SET PENALTY = #{penalty} WHERE WEBTOON_CODE = #{webtoonCode}
 	</update>
 	
 	<!-- selectPenalty -->

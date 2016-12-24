@@ -16,10 +16,10 @@ public class ApplicationThread extends Thread {
 			Date date = new Date();
 			String today = (date.getYear()+1900) + "/" + (date.getMonth()+1) + "/" + date.getDate();
 			
-			Timer t = new Timer(true);
-			TimerTask episodeDeadlineCheck = new EpisodeUploadDeadline(today);
-			//new Date(today + date.getHours() + ":" + date.getMinutes() + ":00")
-			t.schedule(episodeDeadlineCheck, date);
+			//Timer t = new Timer(true);
+			//TimerTask episodeDeadlineCheck = new EpisodeUploadDeadline();
+			
+			//t.schedule(episodeDeadlineCheck, new Date("2016/12/23 21:00:00"));
 			System.out.println(date);
 			try {
 				sleep(1000*60*60*24);

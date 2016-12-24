@@ -14,17 +14,11 @@ public interface FundDAO {
 	List<WebtoonDTO> fundPage(String nickname);
 	
 	/**
-	 * 펀딩웹툰들의 웹툰코드를 찾는다.
-	 * @return
+	 * 마감일이 지나고도 업로드가 안된 웹툰코드 찾는다. 
+	 * @param webtoonCode 						
+	 * @return 
 	 */
-	List<Integer> selectFundingWebtoonCode();
-	
-	/**
-	 * 마감일이 지나고도 업로드가 안된 웹툰코드 찾는다. select webtoon_code from episode 
-	 * @param webtoonCode 						where webtoon_code = #{webtoonCode} and 
-	 * @return 									fund_code != (select fund_code from fund where trunc(due_date) + 2 in #{date})
-	 */
-	int lateEpisode(int webtoonCode, String date);
+	List<Integer> lateEpisode();
 	
 	/**
 	 * 업로드가 늦은 웹툰을 휴재시키고 패널티를 추가한다.
@@ -35,11 +29,11 @@ public interface FundDAO {
 	
 	
 	/**
-	 * 마감일 안에 에피소드를 업로드한 펀딩웹툰 찾기 select webtoon_code, episode_number from episode 
-	 * @param webtoonCode 					where webtoon_code = #{webtoonCode} and 
-	 * @return 								fund_code = (select fund_code from fund where trunc(due_date) + 2 in #{date})
+	 * 마감일 안에 에피소드를 업로드한 펀딩웹툰 찾기 
+	 * @param webtoonCode 
+	 * @return 
 	 */
-	EpisodeDTO meetADeadlineWebtoon(int webtoonCode, String date);
+	List<EpisodeDTO> meetADeadlineWebtoon();
 	
 	/**
 	 * 다음 에피소드 펀딩 시작
@@ -55,7 +49,7 @@ public interface FundDAO {
 	 * @param episodeNumber
 	 * @return episodeFund
 	 */
-	int selectEpisodeFund(int webtoonCode, int episodeNumber);
+	int selectEpisodeFund(int fundCode);
 	
 	/**
 	 * 패널티를 추가한다.

@@ -31,8 +31,8 @@ public class ApplicationListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent arg0)  { 
     	System.out.println("applicationListener Ω√¿€");
-    	ApplicationThread thread = new ApplicationThread();
-    	thread.start();
+    	//ApplicationThread thread = new ApplicationThread();
+    	//thread.start();
     }
 	
 }
