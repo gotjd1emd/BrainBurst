@@ -31,5 +31,14 @@ public interface AdministratorService {
 	 * */
 	public int userMelt(String email);
 	
-	public int webtoonBlind(int webtoonCode);
+	/**
+	 * À¥Å÷ »óÅÂ update
+	 * */
+	
+	public int webtoonState(int webtoonCode, String state);
+	
+	/**
+	 * À¥Å÷ level update
+	 * */
+	public int webtoonLevel(int webtoonCode, String level);
 }

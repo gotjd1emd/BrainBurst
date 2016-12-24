@@ -35,4 +35,14 @@ public interface AdministratorDAO {
 	 * userMelt«œ±‚
 	 * */
 	public int userMelt(String email);
+	
+	/**
+	 * webtoon State update
+	 * */
+	public int webtoonState(int webtoonCode, String state);
+	
+	/**
+	 * webtoon Level update
+	 * */
+	public int webtoonLevel(int webtoonCode, String level);
 }

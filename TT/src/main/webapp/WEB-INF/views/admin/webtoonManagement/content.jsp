@@ -25,6 +25,6 @@
 </div>
 
 <a class="waves-effect waves-light btn color-500" id="webtoon-blind">블라인드</a>
-<a class="waves-effect waves-light btn color-500" id="webtoon-blind">블라인드 해제</a>
+<a class="waves-effect waves-light btn color-500" id="webtoon-serial">블라인드 해제</a>
 <a class="waves-effect waves-light btn color-500" id="webtoon-fund">펀딩으로</a>
-<a class="waves-effect waves-light btn color-500" id="webtoon-normal">일반으로</a>
+<a class="waves-effect waves-light btn color-500" id="webtoon-free">일반으로</a>

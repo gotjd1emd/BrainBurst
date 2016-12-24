@@ -25,7 +25,6 @@ public class AdministratorController {
 		System.out.println("adminController 왔다!");
 		List<UserDTO> userList = administratorService.userManage();
 		
-		System.out.println(userList);
 		return userList;
 	}
 	
@@ -35,7 +34,6 @@ public class AdministratorController {
 		System.out.println("webtoonManage 왔다");
 		List<WebtoonDTO> webtoonList = administratorService.webtoonManage();
 		
-		System.out.println("webtoonList : "+webtoonList.size());
 		return webtoonList;
 	}
 	
@@ -56,17 +54,24 @@ public class AdministratorController {
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
-		System.out.println(emailT);
-		
 		int result = administratorService.userMelt(emailT);
 		
 		return result+"";
 	}
 	
-	@RequestMapping("webtoonBlind")
+	@RequestMapping("webtoonState")
 	@ResponseBody
-	public String webtoonBlind(@PathVariable("webtoonCode") int webtoonCode){
-		System.out.println(webtoonCode);
+	public String webtoonState(int webtoonCode, String state){
+		int result = administratorService.webtoonState(webtoonCode, state);
+		System.out.println(result);
+		return "";
+	}
+	
+	@RequestMapping("webtoonLevel")
+	@ResponseBody
+	public String webtoonLevel(int webtoonCode, String level){
+		int result = administratorService.webtoonLevel(webtoonCode, level);
+		System.out.println(result);
 		return "";
 	}
 }

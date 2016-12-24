@@ -60,4 +60,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		set user_level = '독자'
 		where email = #{email}
 	</update>
+	<!-- webtoonState -->
+	<update id="webtoonState" parameterType="hashMap">
+		update webtoon
+		set webtoon_state = #{state}
+		where webtoon_code = #{webtoonCode}
+	</update>
+	<!-- webtoonLevel -->
+	<update id="webtoonLevel" parameterType="hashMap">
+		update webtoon
+		set webtoon_level = #{level}
+		where webtoon_code = #{webtoonCode}
+	</update>
 </mapper>

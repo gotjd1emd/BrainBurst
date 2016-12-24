@@ -8,21 +8,108 @@
 		$("#webtoon-blind").click(function () {
 			for(var i=1; i <= $("input[type='checkbox']").length; i++){
 				if($("#filled-in-box"+i).prop("checked")){
-					int webtoonCode = $("#filled-in-box"+i).attr(name);
+					var webtoonCode = $("#filled-in-box"+i).attr("name");
+					var webtoonInfo = {"webtoonCode":webtoonCode, "state":"blind"};
 					$.ajax({
-						url : "/controller/admin/webtoonBlind",
+						url : "/controller/admin/webtoonState",
 						type: "post",
 						dataType:"text",
-						data:webtoonCode,
+						data: webtoonInfo,
 						success : function (result) {
-							alert(webtoonCode);
+							Materialize.toast('웹툰을 블라인드 상태로 변경했습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						},
 						error : function (err) {
-							
+							Materialize.toast('블라인드 상태 처리 실패', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
 						}
 					})
 				}
 			}
+			location.href='#webtoonManagement';
+			webtoonManagement();
+		})
+		
+		$("#webtoon-serial").click(function () {
+			for(var i=1; i <= $("input[type='checkbox']").length; i++){
+				if($("#filled-in-box"+i).prop("checked")){
+					var webtoonCode = $("#filled-in-box"+i).attr("name");
+					var webtoonInfo = {"webtoonCode":webtoonCode, "state":"serial"};
+					$.ajax({
+						url : "/controller/admin/webtoonState",
+						type: "post",
+						dataType:"text",
+						data: webtoonInfo,
+						success : function (result) {
+							Materialize.toast('웹툰을 연재 상태로 변경했습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						},
+						error : function (err) {
+							Materialize.toast('연재 상태 처리 실패', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}
+					})
+				}
+			}
+			location.href='#webtoonManagement';
+			webtoonManagement();
+		})
+		
+		$("#webtoon-fund").click(function () {
+			for(var i=1; i <= $("input[type='checkbox']").length; i++){
+				if($("#filled-in-box"+i).prop("checked")){
+					var webtoonCode = $("#filled-in-box"+i).attr("name");
+					var webtoonInfo = {"webtoonCode":webtoonCode, "level":"funding"};
+					$.ajax({
+						url : "/controller/admin/webtoonLevel",
+						type: "post",
+						dataType:"text",
+						data: webtoonInfo,
+						success : function (result) {
+							Materialize.toast('웹툰을 펀딩 레벨로 변경했습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						},
+						error : function (err) {
+							Materialize.toast('펀딩 레벨 처리 실패', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}
+					})
+				}
+			}
+			location.href='#webtoonManagement';
+			webtoonManagement();
+		})
+		$("#webtoon-free").click(function () {
+			for(var i=1; i <= $("input[type='checkbox']").length; i++){
+				if($("#filled-in-box"+i).prop("checked")){
+					var webtoonCode = $("#filled-in-box"+i).attr("name");
+					var webtoonInfo = {"webtoonCode":webtoonCode, "level":"free"};
+					$.ajax({
+						url : "/controller/admin/webtoonLevel",
+						type: "post",
+						dataType:"text",
+						data: webtoonInfo,
+						success : function (result) {
+							Materialize.toast('웹툰을 일반 레벨로 변경했습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						},
+						error : function (err) {
+							Materialize.toast('펀딩 레벨 처리 실패', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}
+					})
+				}
+			}
+			location.href='#webtoonManagement';
+			webtoonManagement();
 		})
 		
 		$('.dropdown-button').on("dropdown", 'open')
@@ -200,6 +287,7 @@
 				            htmlcode += "<td>";
 					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
 					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
 					        htmlcode += "</td>";
 				            htmlcode += "</tr>";
 						});

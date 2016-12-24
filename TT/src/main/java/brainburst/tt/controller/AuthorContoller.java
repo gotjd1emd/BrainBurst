@@ -346,9 +346,9 @@ public class AuthorContoller {
 		if(additionalInfoDTO.getFile().getSize()==0){
 			additionalInfoDTO.setIdentificationCard(null);
 		}else{
-			additionalInfoDTO.setIdentificationCard("/webtoon/idEntificationCard/"
+			additionalInfoDTO.setIdentificationCard("/webtoon/IdentificationCard/"
 					+ additionalInfoDTO.getFile().getOriginalFilename());
-			additionalInfoDTO.getFile().transferTo(new File(path + "/webtoon/idEntificationCard/"
+			additionalInfoDTO.getFile().transferTo(new File(path + "/webtoon/IdentificationCard/"
 					+ additionalInfoDTO.getFile().getOriginalFilename()));
 		}
 		

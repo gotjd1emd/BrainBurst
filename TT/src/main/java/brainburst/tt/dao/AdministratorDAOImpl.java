@@ -1,5 +1,6 @@
 package brainburst.tt.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -36,5 +37,21 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	public int userMelt(String email) {
 		System.out.println("userMeltDAO¿‘¥œ¥Ÿ");
 		return sqlSession.update("adminMapper.userMelt", email);
+	}
+
+	@Override
+	public int webtoonState(int webtoonCode, String state) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("webtoonCode", webtoonCode);
+		map.put("state", state);
+		return sqlSession.update("adminMapper.webtoonState", map);
+	}
+
+	@Override
+	public int webtoonLevel(int webtoonCode, String level) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("webtoonCode", webtoonCode);
+		map.put("level", level);
+		return sqlSession.update("adminMapper.webtoonLevel", map);
 	}
 }

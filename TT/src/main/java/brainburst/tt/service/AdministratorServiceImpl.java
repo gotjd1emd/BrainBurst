@@ -44,8 +44,13 @@ public class AdministratorServiceImpl implements AdministratorService{
 	}
 
 	@Override
-	public int webtoonBlind(int webtoonCode) {
-		return 0;
+	public int webtoonState(int webtoonCode, String state) {
+		return administratorDAO.webtoonState(webtoonCode, state);
+	}
+
+	@Override
+	public int webtoonLevel(int webtoonCode, String level) {
+		return administratorDAO.webtoonLevel(webtoonCode, level);
 	}
 
 }
