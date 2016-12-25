@@ -98,9 +98,31 @@
 	  
 	  /* 에피소드 보기 */
 		$(".episode-list").find(".row").on("click", (function(){
-			var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text();
-			alert(episodeNumber);
-			$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
+			var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span:eq(0)").text();
+			var clickEpisodeNumber = $(this).find('span:eq(0)').text();
+			var episodeSequence = $(this).find('img').attr("name");
+			if(episodeNumber == clickEpisodeNumber) {
+				$.ajax({
+					url : "/controller/webtoon/fundCheck/",
+					type : "post", 
+					data : {"email" : $("#fund-check").val() },
+					dataType : "text",
+					success : function(result) {
+						if(result=="false") {
+							Materialize.toast('이 에피소드 펀딩에 참여하지 않으셨습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}else if(result=="true"){
+							$(location).attr('href',"/controller/webtoon/episodePage/"+episodeSequence);
+						}
+					},
+					error : function() {
+						alert(err);
+					}
+				});
+			}else {
+				$(location).attr('href',"/controller/webtoon/episodePage/"+episodeSequence);
+			}
 			
 		}));
 		

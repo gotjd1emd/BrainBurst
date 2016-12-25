@@ -337,7 +337,7 @@ public class WebtoonController {
 	 * 웹툰의 상태변경
 	 * */
 	@RequestMapping("webtoonStateChange")
-	public String webtoonStateChange(WebtoonDTO webtoonDTO, HttpSession session){
+	public String webtoonStateChange(HttpServletRequest request, WebtoonDTO webtoonDTO, HttpSession session){
 		webtoonService.webtoonStateChange(webtoonDTO);
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		/*
@@ -352,7 +352,21 @@ public class WebtoonController {
 	
 	@RequestMapping("webtoonScore")
 	@ResponseBody
-	public int webtoonScore(int webtoonCode){
+	public int webtoonScore(HttpServletRequest request, int webtoonCode){
 		return webtoonService.webtoonScore(webtoonCode);
+	}
+	
+	@RequestMapping("fundCheck")
+	@ResponseBody
+	public String fundCheck(HttpServletRequest request, String email) {
+		UserDTO userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
+		String result = "false";
+		System.out.println("펀딩 체크 아이디 : " + email);
+		if(userDTO != null) {
+			if(userDTO.getEmail().equals(email)) {
+				result = "true";
+			}
+		}
+		return result;
 	}
 }
