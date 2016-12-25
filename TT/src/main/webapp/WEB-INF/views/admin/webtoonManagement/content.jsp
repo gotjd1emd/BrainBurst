@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div class="center" style="margin-top: 20px; margin-bottom: 10px;">
+<a class="waves-effect waves-light btn color-500" id="print-all">모든 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-serial">연재 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-complete">완결 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-pause">휴재 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-blind">블라인드 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-free">일반 웹툰</a>
+<a class="waves-effect waves-light btn color-500" id="print-funding">펀딩 웹툰</a>
+</div>
 <table class="striped" id="webtoonManageList">
 	<thead>
 		<tr>

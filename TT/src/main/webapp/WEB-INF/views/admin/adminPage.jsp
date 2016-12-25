@@ -5,6 +5,34 @@
 
 	$(function(){
 		
+		$("#print-all").click(function () {
+			allWebtoonManagement();
+		})
+		
+		$("#print-serial").click(function () {
+			serialWebtoonManagement();
+		})
+		
+		$("#print-complete").click(function () {
+			completeWebtoonManagement();
+		})
+		
+		$("#print-pause").click(function () {
+			pauseWebtoonManagement()
+		})
+		
+		$("#print-blind").click(function () {
+			blindWebtoonManagement()
+		})
+		
+		$("#print-free").click(function () {
+			freeWebtoonManagement()
+		})
+		
+		$("#print-funding").click(function () {
+			fundingWebtoonManagement()
+		})
+		
 		$("#webtoon-blind").click(function () {
 			for(var i=1; i <= $("input[type='checkbox']").length; i++){
 				if($("#filled-in-box"+i).prop("checked")){
@@ -335,7 +363,7 @@
 		}
 		
 		/* 웹툰 관리 페이지 ( 웹툰 전체 출력 )*/
-		function webtoonManagement(){
+		function allWebtoonManagement(){
 			$.ajax({
 				url : "/controller/admin/webtoonManage",
 				type : "get",
@@ -369,6 +397,288 @@
 					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
 					        htmlcode += "</td>";
 				            htmlcode += "</tr>";
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 연재 웹툰 출력 )*/
+		function serialWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonState=='serial'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 완결 웹툰 출력 )*/
+		function completeWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonState=='complete'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 블라인드 웹툰 출력 )*/
+		function blindWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonState=='blind'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 일반 웹툰 출력 )*/
+		function freeWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonLevel=='free'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 펀딩 웹툰 출력 )*/
+		function fundingWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonLevel=='funding'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
+						});
+					}
+					$("#webtoonManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
+		/* 웹툰 관리 페이지 ( 완결 휴재 출력 )*/
+		function pauseWebtoonManagement(){
+			$.ajax({
+				url : "/controller/admin/webtoonManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"등록된 웹툰이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							if(item.webtoonState=='pause'){
+							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
+			            		+item.webtoonName+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonLevel+"</td>";
+				            htmlcode += "<td>"
+				            	+item.webtoonState+"</td>";
+				            htmlcode += "<td>"
+					            +item.categoryCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.penalty+"</td>";
+				            htmlcode += "<td>"
+				            	+item.nickname+"</td>";
+				            htmlcode += "<td>"
+				            	+item.summary+"</td>";
+				            htmlcode += "<td>";
+					        htmlcode += "<input type='checkbox' class='filled-in' id='filled-in-box"+item.webtoonCode+"' name='"+item.webtoonCode+"'/>"
+					        htmlcode += "<label for='filled-in-box"+item.webtoonCode+"'>선택</label>"; 
+					        htmlcode += "<input type='hidden' id='webtoonName"+item.webtoonCode+"' value='"+item.webtoonName+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+							}
 						});
 					}
 					$("#webtoonManageList tbody").html(htmlcode);
@@ -456,7 +766,7 @@
 		}
 		
 		userManagement();
-		webtoonManagement();
+		allWebtoonManagement();
 		applyFundManagement();
 		reportManagement();
 	})
