@@ -34,16 +34,6 @@ public class FundController {
 	}
 	
 	/**
-	펀딩웹툰탭의 작품을 눌렀을때,
-	해당 작품의 에피소드목록과 에피소드마다 펀딩정도를 가지고 하단에 비동기화통신으로 뿌려줌
-	*/
-	@RequestMapping("{webtoonCode}")
-	public List<EpisodeDTO> showEpisodes(@PathVariable("webtoonCode") String webtoonCode) {
-		List<EpisodeDTO> list = null;
-		return list;
-	}
-	
-	/**
 	* 펀딩 참여
 	* @price : 입력된 펀딩금액
 	*/

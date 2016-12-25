@@ -33,7 +33,7 @@ public class AuthorContoller {
 	private AuthorService authorService;
 	
 	@RequestMapping("{viewFolder}/{viewName}")
-	public String pageMove(
+	public String pageMove(HttpServletRequest request,
 			@PathVariable("viewFolder") String viewFolder, 
 			@PathVariable("viewName") String viewName){
 		

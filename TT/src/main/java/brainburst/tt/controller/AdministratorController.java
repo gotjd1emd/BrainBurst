@@ -2,6 +2,8 @@ package brainburst.tt.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +25,7 @@ public class AdministratorController {
 	
 	@RequestMapping("userManage")
 	@ResponseBody
-	public List<UserDTO> userManage(){
+	public List<UserDTO> userManage(HttpServletRequest request){
 		System.out.println("adminController 왔다!");
 		List<UserDTO> userList = administratorService.userManage();
 		
@@ -32,7 +34,7 @@ public class AdministratorController {
 	
 	@RequestMapping("webtoonManage")
 	@ResponseBody
-	public List<WebtoonDTO> webtoonManage(){
+	public List<WebtoonDTO> webtoonManage(HttpServletRequest request){
 		System.out.println("webtoonManage 왔다");
 		List<WebtoonDTO> webtoonList = administratorService.webtoonManage();
 		
@@ -41,7 +43,7 @@ public class AdministratorController {
 	
 	@RequestMapping("applyFundManage")
 	@ResponseBody
-	public List<FundApplyDTO> fundApplyManage(){
+	public List<FundApplyDTO> fundApplyManage(HttpServletRequest request){
 		System.out.println("applyFundManage");
 		List<FundApplyDTO> fundApplyList = administratorService.fundApplyManage();
 		return fundApplyList;
@@ -49,7 +51,7 @@ public class AdministratorController {
 	
 	@RequestMapping("reportManage")
 	@ResponseBody
-	public List<ReportDTO> reportManage(){
+	public List<ReportDTO> reportManage(HttpServletRequest request){
 		System.out.println("reportManage");
 		List<ReportDTO> reportList = administratorService.reportManage();
 		return reportList;
@@ -57,7 +59,7 @@ public class AdministratorController {
 	
 	@RequestMapping("userSnow/{email:.+}")
 	@ResponseBody
-	public String userSnow(
+	public String userSnow(HttpServletRequest request,
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
@@ -68,7 +70,7 @@ public class AdministratorController {
 	
 	@RequestMapping("userMelt/{email:.+}")
 	@ResponseBody
-	public String userMelt(
+	public String userMelt(HttpServletRequest request,
 		@PathVariable("email") String email){ 
 		String emailT =  email.trim();
 		
@@ -79,7 +81,7 @@ public class AdministratorController {
 	
 	@RequestMapping("webtoonState")
 	@ResponseBody
-	public String webtoonState(int webtoonCode, String state){
+	public String webtoonState(HttpServletRequest request, int webtoonCode, String state){
 		int result = administratorService.webtoonState(webtoonCode, state);
 		System.out.println(result);
 		return "";
@@ -87,7 +89,7 @@ public class AdministratorController {
 	
 	@RequestMapping("webtoonLevel")
 	@ResponseBody
-	public String webtoonLevel(int webtoonCode, String level){
+	public String webtoonLevel(HttpServletRequest request, int webtoonCode, String level){
 		int result = administratorService.webtoonLevel(webtoonCode, level);
 		System.out.println(result);
 		return "";
@@ -95,7 +97,7 @@ public class AdministratorController {
 	
 	@RequestMapping("userLevel")
 	@ResponseBody
-	public String userLevel(String email, String level){
+	public String userLevel(HttpServletRequest request, String email, String level){
 		int result = administratorService.userLevel(email, level);
 		System.out.println(result);
 		return "";
@@ -103,7 +105,7 @@ public class AdministratorController {
 	
 	@RequestMapping("applyDelete")
 	@ResponseBody
-	public String applyDelete(int webtoonCode){
+	public String applyDelete(HttpServletRequest request, int webtoonCode){
 		int result = administratorService.applyDelete(webtoonCode);
 		System.out.println(result);
 		return "";
@@ -111,7 +113,7 @@ public class AdministratorController {
 	
 	@RequestMapping("reportDelete")
 	@ResponseBody
-	public String reportDelete(int reportSequence){
+	public String reportDelete(HttpServletRequest request, int reportSequence){
 		int result = administratorService.reportDelete(reportSequence);
 		System.out.println(result);
 		return "";

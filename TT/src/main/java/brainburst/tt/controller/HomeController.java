@@ -23,7 +23,7 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping("/")
-	public String home(HttpSession session) {
+	public String noneHome(HttpSession session) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		String email = null;
 		if (userDTO!=null) {

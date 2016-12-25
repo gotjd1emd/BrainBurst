@@ -4,13 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 @Component
 //@Aspect
 public class SessionCheckAdvice {
 	
-	//@Around("execution(public * brainburst.tt.controller.*.*(..))")
+	//@Around("!execution(public * brainburst.tt.controller.*.none*(..))")
 	public Object around(ProceedingJoinPoint point) throws Throwable {
 		//session check
 		Object methodParam[] = point.getArgs();

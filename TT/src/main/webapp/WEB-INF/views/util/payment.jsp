@@ -61,7 +61,7 @@
 	        <tbody>
 	          <tr>
 	            <td>
-				<input name="tPayment" type="radio" id="t20" value="20"/>
+				<input name="tPayment" type="radio" id="t20" value="20" checked="checked"/>
 				<label for="t20">20T</label>
 				</td>
 	            <td>5,000원</td>

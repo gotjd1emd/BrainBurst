@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import brainburst.tt.dao.FundDAOImpl;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.PayHistoryDTO;
-import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.WebtoonService;
@@ -37,7 +35,7 @@ public class WebtoonController {
 	 * @return 검색된 결과 
 	 */
 	@RequestMapping("{webtoonLevel}/{category}")
-	public String selectWebtoonByLevel(HttpSession session, 
+	public String noneSelectWebtoonByLevel(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
@@ -58,7 +56,7 @@ public class WebtoonController {
 	
 	@RequestMapping("webtoonLevelR/{webtoonLevel}/{category}")
 	@ResponseBody
-	public List<WebtoonDTO> selectWebtoonByLevelR(HttpSession session, 
+	public List<WebtoonDTO> noneSelectWebtoonByLevelR(HttpSession session, 
 			@PathVariable("webtoonLevel") String webtoonLevel, 
 			@PathVariable("category") String category) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
@@ -86,7 +84,7 @@ public class WebtoonController {
 	 */
 	@RequestMapping("search/{keyword}")
 	@ResponseBody
-	public List<WebtoonDTO> searchByKeyword(HttpSession session, @PathVariable("keyword") String keyword) {
+	public List<WebtoonDTO> noneSearchByKeyword(HttpSession session, @PathVariable("keyword") String keyword) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		String email = null;
 		if(userDTO != null) {
@@ -104,7 +102,7 @@ public class WebtoonController {
 	 * @return 사용자의 웹툰여부판단후 해당페이지로 검색된결과리턴
 	 */
 	@RequestMapping("webtoonPage/{webtoonCode}")
-	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
+	public ModelAndView noneSelectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
 		ModelAndView modelAndView = new ModelAndView();
@@ -170,7 +168,7 @@ public class WebtoonController {
 	 * @return 해당에피소드의 이미지배열
 	 */
 	@RequestMapping("episodePage/{episodeSequence}")
-	public ModelAndView selectImg(HttpServletRequest request, @PathVariable("episodeSequence") int episodeSequence) {
+	public ModelAndView noneSelectImg(HttpServletRequest request, @PathVariable("episodeSequence") int episodeSequence) {
 		WebtoonDTO webtoonDTO = webtoonService.selecltWebtoonByCode(episodeSequence);
 		EpisodeDTO episodeDTO = webtoonService.selectNumsBySequence(episodeSequence);
 		List<String> list = webtoonService.selectImg(episodeSequence);
@@ -317,7 +315,7 @@ public class WebtoonController {
 	 * */
 	@RequestMapping("selectMyWebtoon/{webtoonState}")
 	@ResponseBody
-	public List<WebtoonDTO> selectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
+	public List<WebtoonDTO> noneSelectMyWebtoon(HttpSession session, @PathVariable("webtoonState") String webtoonState) {
 		UserDTO userDTO = (UserDTO) session.getAttribute("userDTO");
 		System.out.println("selectMyWebtoon로 왔다");
 		List<WebtoonDTO> list = null;

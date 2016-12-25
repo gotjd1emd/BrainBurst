@@ -2,19 +2,15 @@ package brainburst.tt.controller;
 
 import java.util.List;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.junit.experimental.theories.ParametersSuppliedBy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import brainburst.tt.dto.AdditionalInfoDTO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.PaidApplyDTO;
@@ -37,7 +33,7 @@ public class UserController {
 	private CashHistoryDTO cashHistoryDTO;
 
 	@RequestMapping("{viewFolder}/{viewName}")
-	public String signUpMove(
+	public String noneSignUpMove(
 			@PathVariable("viewFolder") String viewFolder, 
 			@PathVariable("viewName") String viewName){
 		
@@ -47,7 +43,7 @@ public class UserController {
 	
 	
 	@RequestMapping("{viewFolder}/{viewName}/{fileName}")
-	public String signUpMove(
+	public String noneSignUpMove(
 			@PathVariable("viewFolder") String viewFolder, 
 			@PathVariable("viewName") String viewName,
 			@PathVariable("fileName") String fileName){
@@ -62,7 +58,7 @@ public class UserController {
 	 * parameter Type : email, password, session
 	 */
 	@RequestMapping("signedUp")
-	public String signUp(UserDTO userDTO){
+	public String noneSignUp(UserDTO userDTO){
 		if(userService.signUp(userDTO)==1){
 			String url="signUp/signedUp";
 			return url;
@@ -79,9 +75,7 @@ public class UserController {
 	 * 		성공시 회원메인으로 이동!		==> "main/memberIndex"
 	 */
 	@RequestMapping("login")
-	public String login(HttpServletRequest request, UserDTO userDTO){
-		System.out.println("email : "+userDTO.getEmail());
-		System.out.println("password : "+userDTO.getPassword());
+	public String noneLogin(HttpServletRequest request, UserDTO userDTO) throws Exception {
 
 		HttpSession session = request.getSession();
 		userDTO = userService.login(userDTO);
@@ -89,10 +83,11 @@ public class UserController {
 		System.out.println(userDTO);
 		
 		if(userDTO==null){
-			request.setAttribute("login", "fail");
-			return "forward:/"; //추후 익셉션 로그인 오류 페이지
+			request.setAttribute("errorMsg", "이메일 패스워드를 확인하세요.");
+			throw new Exception();
 		}else if(userDTO.getLevel().equals("휴먼")){
-			return "main/index"; //추후 익셉션
+			request.setAttribute("errorMsg", "휴먼 계정입니다.");
+			throw new Exception();
 		}
 		session.setAttribute("userDTO", userDTO);
 		
@@ -105,6 +100,12 @@ public class UserController {
 		session.setAttribute("subScriptionList", subScriptionList);
 		
 		System.out.println(subScriptionList);
+		
+		return "redirect:loginResult";
+	}
+	
+	@RequestMapping("loginResult")
+	public String noneLoginResult() {
 		
 		return "main/index";
 	}
@@ -144,7 +145,7 @@ public class UserController {
 	 * parameterType : void
 	 * */
 	@RequestMapping("userUpdate")
-	public String userUpdate(UserDTO userDTO, HttpSession session, HttpServletRequest request){
+	public String userUpdate(HttpServletRequest request, UserDTO userDTO, HttpSession session){
 		if(userDTO.getPassword()==""||userDTO.getPhone()==""){
 			System.out.println("변경값 없으므로 수정 취소");
 			return "myInfo/mypage";
@@ -165,23 +166,13 @@ public class UserController {
 	}
 	
 	/**
-	 * 추가정보입력
-	 * return 타입 : void
-	 * parameterType : void
-	 * */
-	@RequestMapping("userAdditionalInfo")
-	public void userAdditionalInfo(){
-		
-	}
-	
-	/**
 	 * 회원 T 충전 + 내역 업데이트
 	 * session에서 현재 T값을 가져와서 충전량과 합산
 	 * DTO에 저장 후 DB업데이트
 	 * session값 update
 	 * */
 	@RequestMapping("cashCharge")
-	public String CashCharge(int tPayment, HttpServletRequest request, HttpSession session) {
+	public String CashCharge(HttpServletRequest request, int tPayment, HttpSession session) {
 		System.out.println("충전 T량 : "+tPayment);
 		
 		userDTO = (UserDTO)request.getSession().getAttribute("userDTO");
@@ -232,7 +223,7 @@ public class UserController {
 	 * */
 	@RequestMapping("findEmail")
 	@ResponseBody
-	public String findEmail(UserDTO userDTO){
+	public String noneFindEmail(UserDTO userDTO){
 		System.out.println("findEmail 컨트롤로 이동");
 		System.out.println(userDTO);
 		String email = userService.findEmail(userDTO);
@@ -245,26 +236,20 @@ public class UserController {
 	 * */
 	@RequestMapping("findPassword")
 	@ResponseBody
-	public String findPassword(UserDTO userDTO){
+	public String noneFindPassword(UserDTO userDTO){
 		System.out.println("findEmail 컨트롤로 이동");
 		System.out.println(userDTO);
 		String email = userService.findPassword(userDTO);
 		System.out.println(email);
 		return email;
 	}
-
-	
-	/**
-	 * 회원 작가 신청
-	 * */
-	
-	
+ 
 	/**
 	 * 이메일 중복 체크
 	 * */
 	@RequestMapping("emailCheck/{email:.+}")
 	@ResponseBody
-	public String emailCheck(@PathVariable("email") String email){
+	public String noneEmailCheck(@PathVariable("email") String email){
 		int check = userService.emailCheck(email);
 		return check+"";
 	}
@@ -274,7 +259,7 @@ public class UserController {
 	 * */
 	@RequestMapping("nickNameCheck/{nickname}")
 	@ResponseBody
-	public String nickNameCheck(@PathVariable("nickname") String nickname){
+	public String noneNickNameCheck(@PathVariable("nickname") String nickname){
 		int check = userService.nickNameCheck(nickname);
 		return check+"";
 	}
