@@ -12,6 +12,7 @@ import brainburst.tt.dao.UserDAO;
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
+import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -139,13 +140,20 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 	
 	@Override
-	public Map<String, Object> fundingEpisodeList(int webtoonCode) {
+	public Map<String, Object> fundingEpisodeList(int webtoonCode, String email) {
 		List<EpisodeDTO> episodeList = webtoonDAO.selectFundingWebtoonEpisode(webtoonCode);
 		FundDTO fundDTO = webtoonDAO.selectCurrentFundingEpisode(webtoonCode);
-
+		PayHistoryDTO payHistoryDTO = null;
+		System.out.println("email : " + email);
+		System.out.println("fundCode : " + episodeList.get(0).getFund().getFundCode());
+		if(email != null) {
+			payHistoryDTO = webtoonDAO.fundingCheck(email, episodeList.get(0).getFund().getFundCode());
+		}
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("episodeList", episodeList);
 		map.put("fundDTO", fundDTO);
+		map.put("payHistoryDTO", payHistoryDTO);
 		
 		return map;
 	}

@@ -57,6 +57,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="DUE_DATE" property="dueDate"/>
 	</resultMap>
 	
+	<resultMap type="payHistoryDTO" id="payHistoryDTO">
+		<id column="FUND_CODE" property="fundCode"/>
+		<result column="EMAIL" property="email"/>
+		<result column="CASH_POINT" property="cashPoint"/>
+		<result column="PAYMENT_DATE" property="paymentDate"/>
+		<result column="PAYMENT_ITEM" property="paymentItem"/>
+	</resultMap>
+	
 	<!-- selectWebtoonByLevel -->
 	<!-- 카테고리코드가 null일경우 웹툰상태값으로만 검색한다. -->
 	<select id="selectWebtoonByLevel" resultMap="webtoonDTO" parameterType="map">
@@ -263,4 +271,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT COUNT(WEBTOON_CODE) FROM SUBSCRIPTION
 		WHERE WEBTOON_CODE = #{value}
 	</select>
+	
+	<!-- 에피소드의 펀딩 참여확인 -->
+	<select id="fundingCheck" resultMap="payHistoryDTO" parameterType="map">
+		SELECT EMAIL, FUND_CODE, CASH_POINT, PAYMENT_DATE, PAYMENT_ITEM
+		FROM PAY_HISTORY
+		WHERE EMAIL = #{email} AND FUND_CODE = #{fundCode}
+	</select>
+	
 </mapper>

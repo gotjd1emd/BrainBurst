@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import brainburst.tt.dao.FundDAOImpl;
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
+import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -106,9 +107,11 @@ public class WebtoonController {
 	public ModelAndView selectAllEpisode(HttpServletRequest requset, @PathVariable("webtoonCode") int webtoonCode) {
 		HttpSession session = requset.getSession();
 		UserDTO dto = (UserDTO) session.getAttribute("userDTO");
+		ModelAndView modelAndView = new ModelAndView();
 		Map<String, Object> map = null;
 		List<EpisodeDTO> list = null;
 		FundDTO fundDTO = null;
+		PayHistoryDTO payHistoryDTO = null;
 		
 		String nickname = "GUEST";
 		String type = "webtoon/webtoon";
@@ -141,16 +144,17 @@ public class WebtoonController {
 			}
 			
 			if(webtoonDTO.getWebtoonLevel().equals("funding")) {
-				map = webtoonService.fundingEpisodeList(webtoonCode);
+				map = webtoonService.fundingEpisodeList(webtoonCode, email);
 				list = (List<EpisodeDTO>)map.get("episodeList");
 				fundDTO = (FundDTO)map.get("fundDTO");
+				payHistoryDTO = (PayHistoryDTO)map.get("payHistoryDTO");
+				modelAndView.addObject("payHistoryDTO", payHistoryDTO);
+				
 			}else {
 				list = webtoonService.selectAllEpisode(webtoonCode);
 			}
 		}
 
-		
-		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName(type);
 		//페이지이동할때 자주 사용하는 정보 미리 request영역에 저장.
 		modelAndView.addObject("webtoonDTO", webtoonDTO);

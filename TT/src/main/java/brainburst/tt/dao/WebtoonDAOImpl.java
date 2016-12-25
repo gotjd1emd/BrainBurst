@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
+import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -178,5 +179,14 @@ public class WebtoonDAOImpl implements WebtoonDAO {
 	@Override
 	public int totalSubscription(int webtoonCode) {
 		return sqlSession.selectOne("webtoonMapper.totalRecommendation", webtoonCode);
+	}
+	
+	@Override
+	public PayHistoryDTO fundingCheck(String email, int fundCode) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("email", email);
+		map.put("fundCode", fundCode);
+		
+		return sqlSession.selectOne("webtoonMapper.fundingCheck", map);
 	}
 }

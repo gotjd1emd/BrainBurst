@@ -40,6 +40,16 @@
 				item.nextElementSibling.value=episodeFundRate;
 			}
 		});
+		
+		//최신 에피소드 펀딩유무 체크
+		var webtoonLevel = $("#webtoon-level").val();
+		if(webtoonLevel == 'funding') {
+			var fundCheck = $("#fund-check").val();
+			if(fundCheck == "") {
+				$("#episode-list").find(".row:eq(0)").find("span:eq(1)")
+				.html("<i class='large material-icons'>lock_outline</i>");
+			}
+		}
 		$(".knob").knob({
 		      draw: function () {
 
@@ -86,16 +96,18 @@
 		      }
 		    });
 	  
-	  /* 일반기능들 */
+	  /* 에피소드 보기 */
 		$(".episode-list").find(".row").on("click", (function(){
+			var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span").text();
+			alert(episodeNumber);
 			$(location).attr('href',"/controller/webtoon/episodePage/"+$(this).find('img').attr("name"));
-			})
-		)
+			
+		}));
 		
 		$(".first-see").on("click", (function () {
 			$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
-			})
-		)
+		
+		}));
 		
 		$("#scription-btn").click(function () {
 			//컬러 바꾸기
@@ -214,6 +226,8 @@
 	}
 </script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
+	<input id="webtoon-level" type="hidden" value="${webtoonDTO.webtoonLevel }">
+	<input id="fund-check" type="hidden" value="${payHistoryDTO.email }">
 	<div class="row title-box">
 	<div class="col s3 webtoon-sumbnail-box">
 		<img src="<c:url value='/resources/'/>${webtoonDTO.webtoonThumbnail}">
@@ -230,7 +244,7 @@
 						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">펀딩 웹툰  /  완결</div>
 					</c:if>
 					<c:if test="${webtoonDTO.webtoonState == 'pause'}">
-						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">일반 웹툰  /  휴재</div>
+						<div style="color: aquamarine;margin-bottom:-41px;margin-top:25px;">펀딩 웹툰  /  휴재</div>
 					</c:if>
 				</c:when>
 				<c:when test="${webtoonDTO.webtoonLevel == 'free'}">
@@ -253,7 +267,7 @@
 					name="${webtoonDTO.webtoonCode}_${webtoonDTO.subscriptionSequence}" style="margin-left:7px;margin-top:7px;position:absolute;font-size:27px;">grade</i></p>
 				<div style="color: coral;font-size: 20px;margin-top:-28px;margin-bottom:45px;">${webtoonDTO.nickname}</div>
 				<div><hr style="margin-top: -45px;border: dashed 1px;color: orangered;width: 569px;"></div>
-				<div style="color:snow;">${webtoonDTO.summary}</div>
+				<div style="color:snow;">${webtoonDTO.summary}${payHistoryDTO.email }</div>
 			</div>
 		</div>
 	</div>
@@ -275,7 +289,7 @@
 					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
 					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:15px">
 						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
-						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br> 
+						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br>
 						남은 시간 : <span class="period"></span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund}] 
 					</div>	
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
@@ -298,7 +312,9 @@
 						조회수 : ${episode.hits} 
 					</div>
 					<c:if test="${episode.fund.fundCode != 0 }">
-					<div style="float: left;margin-top: 70px;margin-left: 57px;">[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]</div> 
+					<div style="float: left;margin-top: 70px;margin-left: 57px;">
+						<span></span>[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]
+					</div> 
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
 						<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund}"/>
 						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#f56954">

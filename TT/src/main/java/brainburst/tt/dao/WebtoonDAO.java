@@ -4,6 +4,7 @@ import java.util.List;
 
 import brainburst.tt.dto.EpisodeDTO;
 import brainburst.tt.dto.FundDTO;
+import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -174,5 +175,13 @@ public interface WebtoonDAO {
 	 * 웹툰 구독 수
 	 * */
 	int totalSubscription(int webtoonCode);
+	
+	/**
+	 * 해당 에피소드의 펀딩체크
+	 * @param email
+	 * @param fundCode
+	 * @return
+	 */
+	PayHistoryDTO fundingCheck(String email, int fundCode);
 	
 }

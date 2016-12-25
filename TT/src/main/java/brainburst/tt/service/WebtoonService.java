@@ -122,7 +122,7 @@ public interface WebtoonService {
 	 * @param webtoonCode
 	 * @return
 	 */
-	Map<String, Object> fundingEpisodeList(int webtoonCode);
+	Map<String, Object> fundingEpisodeList(int webtoonCode, String email);
 	
 	/**
 	 * 작가가 펀딩웹툰페이지로 이동

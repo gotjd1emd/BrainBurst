@@ -126,11 +126,11 @@ CREATE TABLE image
 CREATE TABLE pay_history
 (
    email                 VARCHAR2(30)  NOT NULL constraint pay_history_email_fk references user_information(email),
-   episode_sequence      NUMBER  NOT NULL constraint pay_history_episode_fk references episode(episode_sequence) on delete cascade ,
+   fund_code             NUMBER  NOT NULL constraint pay_history_fund_code_fk references fund(fund_code) on delete cascade,
    cash_point            NUMBER  NULL ,
    payment_date          DATE  NULL ,
    payment_item          VARCHAR2(50)  NULL ,
-   constraint pay_history_pk primary key(email, episode_sequence)
+   constraint pay_history_pk primary key(email, fund_code)
 );
 
 CREATE TABLE report
