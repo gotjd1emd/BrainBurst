@@ -11,7 +11,7 @@
 			<th data-field="categoryName">장르</th>
 			<th data-field="penalty">경고상태</th>
 			<th data-field="author">작가명</th>
-			<th data-field="fundingPeriod">펀딩주기</th>
+			<th data-field="content">줄거리</th>
 			<th>웹툰 처리</th>
 		</tr>
 	</thead>
