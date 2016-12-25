@@ -353,13 +353,14 @@
 					<input type="hidden" name="episodeFund" value="${fundDTO.episodeFund}"/>
 					<input type="hidden" name="fundCode" value="${fundDTO.fundCode }"/>
 					<input type="hidden" id="dueDate" value="${fundDTO.dueDate }"/>
-					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:15px">
+					<div class="col s10 funding-episode-content" style="text-align:center;padding-top:15px;height:155px">
 						No.<span name='episodeNumber'>${fundDTO.episodeNumber}</span>화   <br><br>
 						시작일 : ${fundDTO.startDate}, 마감일 : ${fundDTO.dueDate },<br>
-						남은 시간 : <span class="period"></span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund}] 
+						남은 시간 : <span class="period"></span>
+						<p>[목표 T : 400]&nbsp;&nbsp;&nbsp;&nbsp;[현재 T : ${fundDTO.episodeFund}]</p>
 					</div>	
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
-						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#ffffff">
+						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="120" data-height="120" data-fgColor="#ffffff">
 					</div>
 				</div>
 			</div>
@@ -378,13 +379,13 @@
 						조회수 : ${episode.hits} 
 					</div>
 					<c:if test="${episode.fund.fundCode != 0 }">
-					<div style="float: left;margin-top: 15px;margin-left:-26px;" class="col s6">
+					<div style="float: left;margin-top: 15px;margin-left:-40px;" class="col s6">
 						<span></span>
-						<div style="float:right;margin-top:60px;">[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]</div>
+						<div style="float:right;margin-top:63px;">[목표 T : 400]&nbsp;&nbsp;&nbsp;&nbsp;[현재 T : ${episode.fund.episodeFund}]</div>
 					</div> 
-					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
+					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:10px;">
 						<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund}"/>
-						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="90" data-height="90" data-fgColor="#f56954">
+						<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" data-thickness="0.2" data-width="100" data-height="100" data-fgColor="#f56954">
 					</div>
 					</c:if>
 				</div>
