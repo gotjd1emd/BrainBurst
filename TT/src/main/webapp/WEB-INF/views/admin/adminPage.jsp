@@ -203,6 +203,45 @@
 			})
 		});
 		
+		/*펀딩 신청 받기*/
+		$(document).on("click", "#apply", function(){
+			var email = $(this).parents().parents().children().first().text();
+			var webtoonCode = $(this).parents().parents().children().first().next().text();
+			var userData = {"email":email, "level":"펀딩작가"}
+			var webtoonData = {"webtoonCode": webtoonCode, "level": "funding"};
+			
+			$.ajax({
+				url : "/controller/admin/userLevel",
+				type:"post",
+				dataType : "text",
+				data : userData,
+				success : function (result) {
+			        userManagement();
+				},
+				error : function (err) {
+					alert("err")
+				}
+			})
+			
+			 $.ajax({
+				url : "/controller/admin/webtoonLevel",
+				type : "post",
+				dataType : "text",
+				data : webtoonData,
+				success : function(result) {
+						location.href='#applyManagement';
+						Materialize.toast('펀딩 신청을 성공적으로 처리했습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+				        applyFundManagement();
+				        webtoonManagement();
+				},
+				error : function(err) {
+					alert("err")
+				}
+			}) 
+		});
+		
 		
 		/* 
 			유저 관리 페이지 ( 유저 전체 출력 )
@@ -271,6 +310,8 @@
 					}else {
 						$.each(result, function(index, item) {
 							htmlcode += "<tr><td>"
+			            		+item.webtoonCode+"</td>";
+							htmlcode += "<td>"
 			            		+item.webtoonName+"</td>";
 			            	htmlcode += "<td>"
 				            	+item.webtoonLevel+"</td>";
@@ -300,8 +341,45 @@
 			})
 		}
 		
+		/* 신청 관리 페이지 ( 신청 전체 출력 )*/
+		function applyFundManagement(){
+			$.ajax({
+				url : "/controller/admin/applyFundManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"신청 목록이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							htmlcode += "<tr><td>"
+			            		+item.email+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.webtoonCode+"</td>";
+				            htmlcode += "<td>"
+				            	+item.score+"</td>";
+				            htmlcode += "<td>";
+				            htmlcode += "<td><input type='button'";
+				            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
+				            htmlcode += "style='margin-top: -5%;height: 17%;' id='apply' value='신청받기'/></td>";
+					        htmlcode += "<input type='hidden' id=applyFund"+item.webtoonCode+"' value='"+item.webtoonCode+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+						});
+					}
+					$("#applyFundManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
 		userManagement();
 		webtoonManagement();
+		applyFundManagement();
 	})
 </script>
 <input id="header-title" type="hidden" value="관리자페이지">

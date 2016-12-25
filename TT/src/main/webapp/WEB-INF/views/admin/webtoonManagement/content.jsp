@@ -4,6 +4,7 @@
 <table class="striped" id="webtoonManageList">
 	<thead>
 		<tr>
+			<th data-field="webtoonCode">웹툰코드</th>
 			<th data-field="webtoonName">웹툰이름</th>
 			<th data-field="webtoonLevel">작품등급</th>
 			<th data-field="webtoonState">연재상태</th>

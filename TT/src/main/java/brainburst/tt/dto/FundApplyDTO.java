@@ -2,14 +2,16 @@ package brainburst.tt.dto;
 
 public class FundApplyDTO {
 	
+	private int applyFundSequence;
 	private String email;
 	private int webtoonCode;
 	private int score;
 	
-	public FundApplyDTO(String email, int webtoonCode, int score) {
+	public FundApplyDTO(int applyFundSequence, String email, int webtoonCode, int score) {
 		this.email = email;
 		this.webtoonCode = webtoonCode;
 		this.score = score;
+		this.applyFundSequence = applyFundSequence;
 	}
 
 	public FundApplyDTO() {
@@ -37,6 +39,14 @@ public class FundApplyDTO {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public int getApplyFundSequence() {
+		return applyFundSequence;
+	}
+
+	public void setApplyFundSequence(int applyFundSequence) {
+		this.applyFundSequence = applyFundSequence;
 	}
 	
 }

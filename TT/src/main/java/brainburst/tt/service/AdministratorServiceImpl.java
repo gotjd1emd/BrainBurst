@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.AdministratorDAO;
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -51,6 +52,16 @@ public class AdministratorServiceImpl implements AdministratorService{
 	@Override
 	public int webtoonLevel(int webtoonCode, String level) {
 		return administratorDAO.webtoonLevel(webtoonCode, level);
+	}
+
+	@Override
+	public List<FundApplyDTO> fundApplyManage() {
+		return administratorDAO.fundApplyManage();
+	}
+
+	@Override
+	public int userLevel(String email, String level) {
+		return administratorDAO.userLevel(email, level);
 	}
 
 }

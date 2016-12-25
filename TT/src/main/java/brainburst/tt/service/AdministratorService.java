@@ -2,6 +2,7 @@ package brainburst.tt.service;
 
 import java.util.List;
 
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -41,4 +42,14 @@ public interface AdministratorService {
 	 * 웹툰 level update
 	 * */
 	public int webtoonLevel(int webtoonCode, String level);
+	
+	/**
+	 * 유저 level update
+	 * */
+	public int userLevel(String email, String level);
+	
+	/**
+	 * 펀딩신청 리스트 출력
+	 * */
+	public List<FundApplyDTO> fundApplyManage();
 }

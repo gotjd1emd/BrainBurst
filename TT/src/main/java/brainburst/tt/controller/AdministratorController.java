@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AdministratorService;
@@ -35,6 +36,14 @@ public class AdministratorController {
 		List<WebtoonDTO> webtoonList = administratorService.webtoonManage();
 		
 		return webtoonList;
+	}
+	
+	@RequestMapping("applyFundManage")
+	@ResponseBody
+	public List<FundApplyDTO> fundApplyManage(){
+		System.out.println("applyFundManage");
+		List<FundApplyDTO> fundApplyList = administratorService.fundApplyManage();
+		return fundApplyList;
 	}
 	
 	@RequestMapping("userSnow/{email:.+}")
@@ -71,6 +80,14 @@ public class AdministratorController {
 	@ResponseBody
 	public String webtoonLevel(int webtoonCode, String level){
 		int result = administratorService.webtoonLevel(webtoonCode, level);
+		System.out.println(result);
+		return "";
+	}
+	
+	@RequestMapping("userLevel")
+	@ResponseBody
+	public String userLevel(String email, String level){
+		int result = administratorService.userLevel(email, level);
 		System.out.println(result);
 		return "";
 	}

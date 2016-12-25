@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -53,5 +54,18 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 		map.put("webtoonCode", webtoonCode);
 		map.put("level", level);
 		return sqlSession.update("adminMapper.webtoonLevel", map);
+	}
+
+	@Override
+	public List<FundApplyDTO> fundApplyManage() {
+		return sqlSession.selectList("adminMapper.fundApplyManage");
+	}
+
+	@Override
+	public int userLevel(String email, String level) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("email", email);
+		map.put("level", level);
+		return sqlSession.update("adminMapper.userLevel", map);
 	}
 }

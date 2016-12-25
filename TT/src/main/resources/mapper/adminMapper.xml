@@ -34,6 +34,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<result column="category_Name" property="categoryName"/>
 		</association>
 	</resultMap>
+	
+	<resultMap type="fundApplyDTO" id="fundApplyMap">
+		<id column="apply_fund_sequence" property="applyFundSequence"/>
+		<result column="email" property="email"/>
+		<result column="webtoon_code" property="webtoonCode"/>
+		<result column="score" property="score"/>
+	</resultMap>
 
 	<!-- userManage -->
 	<select id="userManage" resultMap="userMap">
@@ -45,6 +52,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT w.WEBTOON_CODE, w.WEBTOON_NAME, w.WEBTOON_LEVEL, w.WEBTOON_STATE, c.category_code, c.CATEGORY_name, w.PENALTY, w.NICKNAME, w.FUNDING_PERIOD, w.SUMMARY 
 		FROM WEBTOON w join category c 
 		ON (w.category_code = c.category_code)
+	</select>
+	
+	<!-- webtoonManage -->
+	<select id="fundApplyManage" resultMap="fundApplyMap">
+		select apply_fund_sequence, email, webtoon_code, score from apply_fund 
 	</select>
 	
 	<!-- userSnow -->
@@ -71,5 +83,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update webtoon
 		set webtoon_level = #{level}
 		where webtoon_code = #{webtoonCode}
+	</update>
+	
+	<!-- webtoonLevel -->
+	<update id="userLevel" parameterType="hashMap">
+		update user_information
+		set user_level = #{level}
+		where email = #{email}
 	</update>
 </mapper>

@@ -2,6 +2,7 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
+import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -45,4 +46,12 @@ public interface AdministratorDAO {
 	 * webtoon Level update
 	 * */
 	public int webtoonLevel(int webtoonCode, String level);
+	
+	/**
+	 * 펀딩신청 리스트 출력
+	 * */
+	public List<FundApplyDTO> fundApplyManage();
+
+
+	public int userLevel(String email, String level);
 }
