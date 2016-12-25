@@ -64,4 +64,9 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return administratorDAO.userLevel(email, level);
 	}
 
+	@Override
+	public int applyDelete(int webtoonCode) {
+		return administratorDAO.applyDelete(webtoonCode);
+	}
+
 }

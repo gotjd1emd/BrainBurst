@@ -91,4 +91,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		set user_level = #{level}
 		where email = #{email}
 	</update>
+	
+	<!-- applyDelete -->
+	<delete id="applyDelete" parameterType="int">
+		delete from apply_fund
+		where webtoon_code = #{webtoonCode}
+	</delete>
 </mapper>

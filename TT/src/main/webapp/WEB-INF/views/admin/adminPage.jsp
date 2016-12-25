@@ -209,7 +209,9 @@
 			var webtoonCode = $(this).parents().parents().children().first().next().text();
 			var userData = {"email":email, "level":"펀딩작가"}
 			var webtoonData = {"webtoonCode": webtoonCode, "level": "funding"};
+			var webtoonCodeData = {"webtoonCode" : webtoonCode}
 			
+			/*펀딩 신청 받기*/
 			$.ajax({
 				url : "/controller/admin/userLevel",
 				type:"post",
@@ -223,6 +225,7 @@
 				}
 			})
 			
+			/*웹툰 레벨 올리기*/
 			 $.ajax({
 				url : "/controller/admin/webtoonLevel",
 				type : "post",
@@ -230,6 +233,19 @@
 				data : webtoonData,
 				success : function(result) {
 						location.href='#applyManagement';
+						/*신청 성공시 삭제*/
+						$.ajax({
+							url : "/controller/admin/applyDelete",
+							type:"post",
+							dataType : "text",
+							data : webtoonCodeData,
+							success : function (result) {
+								applyFundManagement();
+							},
+							error : function (err) {
+								alert("err")
+							}
+						})
 						Materialize.toast('펀딩 신청을 성공적으로 처리했습니다.', 2000, 'rounded');
 				        var width = $("#toast-container").width();
 				        $("#toast-container").css("margin-left", (width*-1)+209);
@@ -240,6 +256,8 @@
 					alert("err")
 				}
 			}) 
+			
+			
 		});
 		
 		

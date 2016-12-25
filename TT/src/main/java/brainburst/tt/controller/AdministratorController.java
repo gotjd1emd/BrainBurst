@@ -91,4 +91,12 @@ public class AdministratorController {
 		System.out.println(result);
 		return "";
 	}
+	
+	@RequestMapping("applyDelete")
+	@ResponseBody
+	public String applyDelete(int webtoonCode){
+		int result = administratorService.applyDelete(webtoonCode);
+		System.out.println(result);
+		return "";
+	}
 }

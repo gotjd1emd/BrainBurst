@@ -68,4 +68,9 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 		map.put("level", level);
 		return sqlSession.update("adminMapper.userLevel", map);
 	}
+
+	@Override
+	public int applyDelete(int webtoonCode) {
+		return sqlSession.delete("adminMapper.applyDelete", webtoonCode);
+	}
 }
