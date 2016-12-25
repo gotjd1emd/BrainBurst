@@ -260,6 +260,26 @@
 			
 		});
 		
+		/*신고 삭제*/
+		$(document).on("click", "#report", function(){
+			var reportSequence = $(this).parents().parents().children().first().text();
+			var data = {"reportSequence": reportSequence};
+			$.ajax({
+				url : "/controller/admin/reportDelete",
+				type:"post",
+				dataType : "text",
+				data : data,
+				success : function (result) {
+					Materialize.toast('신고 삭제가 완료되었습니다.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
+					reportManagement();
+				},
+				error : function (err) {
+					alert("err")
+				}
+			})
+		});
 		
 		/* 
 			유저 관리 페이지 ( 유저 전체 출력 )
@@ -416,18 +436,18 @@
 				            	+item.email+"</td>";
 				            htmlcode += "<td>"
 					      		+item.webtoonCode+"</td>";
-					        htmlcode += "<td>"
-						    	+item.episodeSequence+"</td>";
+					        htmlcode += "<td><a href='/controller/webtoon/episodePage/"+item.episodeSequence+"'>"
+						    	+item.episodeSequence+"</a></td>";
 				            htmlcode += "<td>";
 				            htmlcode += "<td><input type='button'";
 				            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
-				            htmlcode += "style='margin-top: -5%;height: 17%;' id='apply' value='신고처리'/></td>";
-					        htmlcode += "<input type='hidden' id=applyFund"+item.webtoonCode+"' value='"+item.webtoonCode+"'/>"
+				            htmlcode += "style='margin-top: -5%;height: 17%;' id='report' value='신고처리'/></td>";
+					        htmlcode += "<input type='hidden' id=report"+item.webtoonCode+"' value='"+item.webtoonCode+"'/>"
 					        htmlcode += "</td>";
 				            htmlcode += "</tr>";
 						});
 					}
-					$("#applyFundManageList tbody").html(htmlcode);
+					$("#reportManagementList tbody").html(htmlcode);
 				},
 				error : function(err) {
 					alert("err");

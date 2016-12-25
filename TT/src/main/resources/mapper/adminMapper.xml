@@ -47,10 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="content" property="content"/>
 		<result column="email" property="email"/>
 		<result column="webtoon_code" property="webtoonCode"/>
-		<result column="episodeSequence" property="episodeSequence"/>
+		<result column="episode_sequence" property="episodeSequence"/>
 	</resultMap>
-	
-	
 
 	<!-- userManage -->
 	<select id="userManage" resultMap="userMap">
@@ -112,4 +110,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from apply_fund
 		where webtoon_code = #{webtoonCode}
 	</delete>
+	
+	<!-- reportDelete -->
+	<delete id="reportDelete" parameterType="int">
+		delete from report
+		where report_sequence = #{reportSequence}
+	</delete>
+	
 </mapper>

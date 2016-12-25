@@ -63,4 +63,6 @@ public interface AdministratorService {
 	 * 펀딩신청 삭제
 	 * */
 	public int applyDelete(int webtoonCode);
+	
+	public int reportDelete(int reportSequence);
 }

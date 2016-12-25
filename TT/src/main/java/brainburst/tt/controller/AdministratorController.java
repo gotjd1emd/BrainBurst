@@ -108,4 +108,12 @@ public class AdministratorController {
 		System.out.println(result);
 		return "";
 	}
+	
+	@RequestMapping("reportDelete")
+	@ResponseBody
+	public String reportDelete(int reportSequence){
+		int result = administratorService.reportDelete(reportSequence);
+		System.out.println(result);
+		return "";
+	}
 }

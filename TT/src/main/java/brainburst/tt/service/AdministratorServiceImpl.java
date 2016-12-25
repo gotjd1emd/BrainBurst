@@ -75,4 +75,9 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return administratorDAO.reportManage();
 	}
 
+	@Override
+	public int reportDelete(int reportSequence) {
+		return administratorDAO.reportDelete(reportSequence);
+	}
+
 }

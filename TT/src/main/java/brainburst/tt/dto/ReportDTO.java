@@ -9,6 +9,7 @@ public class ReportDTO {
 	private String email;
 	private int webtoonCode;
 	private int episodeSequence;
+	
 	public int getReportSequence() {
 		return reportSequence;
 	}
@@ -33,10 +34,11 @@ public class ReportDTO {
 	public void setWebtoonCode(int webtoonCode) {
 		this.webtoonCode = webtoonCode;
 	}
-	public int getEpisode_sequence() {
+	
+	public int getEpisodeSequence() {
 		return episodeSequence;
 	}
-	public void setEpisode_sequence(int episodeSequence) {
+	public void setEpisodeSequence(int episodeSequence) {
 		this.episodeSequence = episodeSequence;
 	}
 	public ReportDTO(String content, String email, int webtoonCode, int episodeSequence) {

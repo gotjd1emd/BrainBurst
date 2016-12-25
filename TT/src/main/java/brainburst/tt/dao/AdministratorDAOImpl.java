@@ -79,4 +79,9 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	public List<ReportDTO> reportManage() {
 		return sqlSession.selectList("adminMapper.reportManage");
 	}
+
+	@Override
+	public int reportDelete(int reportSequence) {
+		return sqlSession.delete("adminMapper.reportDelete", reportSequence);
+	}
 }

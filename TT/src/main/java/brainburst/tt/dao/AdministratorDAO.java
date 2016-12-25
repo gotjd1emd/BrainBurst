@@ -61,4 +61,6 @@ public interface AdministratorDAO {
 	public int userLevel(String email, String level);
 	
 	public int applyDelete(int webtoonCode);
+	
+	public int reportDelete(int reportSequence);
 }
