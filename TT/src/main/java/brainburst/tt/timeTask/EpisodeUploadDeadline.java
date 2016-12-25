@@ -27,7 +27,7 @@ public class EpisodeUploadDeadline  {
 		result = fundService.startFunding();
 		System.out.println("startFunding result : " + result);
 	}*/
-	@Scheduled(cron="0 48 15 * * *")
+	@Scheduled(cron="0 35 1 * * *")
 	public void scheduleRun() {
 		System.out.println("EpisodeUploadDeadline 시작 ");
 		//마감일 종일 에피소드 업로드 못하면 휴재상태로 변경 and 패널티

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -27,7 +28,7 @@ public class FundDAOImpl implements FundDAO {
 	}
 
 	@Override
-	public List<Integer> lateEpisode() {
+	public List<FundDTO> lateEpisode() {
 		return sqlSession.selectList("fundMapper.lateEpisode");
 	}
 
@@ -100,5 +101,15 @@ public class FundDAOImpl implements FundDAO {
 	@Override
 	public int addPayHistoryCashPoint(PayHistoryDTO payHistoryDTO) {
 		return sqlSession.update("fundMapper.addPayHistoryCashPoint", payHistoryDTO);
+	}
+	
+	@Override
+	public UserDTO selectFundUserEmail(int webtoonCode) {
+		return sqlSession.selectOne("fundMapper.selectFundUserEmail", webtoonCode);
+	}
+	
+	@Override
+	public String selectWebtoonName(int webtoonCode) {
+		return sqlSession.selectOne("fundMapper.selectWebtoonName", webtoonCode);
 	}
 }

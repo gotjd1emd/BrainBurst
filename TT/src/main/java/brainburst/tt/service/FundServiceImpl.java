@@ -10,6 +10,7 @@ import brainburst.tt.dao.FundDAO;
 import brainburst.tt.dao.WebtoonDAO;
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -31,12 +32,15 @@ public class FundServiceImpl implements FundService {
 
 	@Override
 	public int episodeTimeOutCheck() {
-		List<Integer> lateWebtoonCodeList = fundDAO.lateEpisode();
+		List<FundDTO> lateWebtoonList = fundDAO.lateEpisode();
+		UserDTO userDTO = null;
+		CashHistoryDTO cashHistoryDTO = new CashHistoryDTO();
+		String webtoonName = "";
 		String currentPenalty = "";
 		int result = 0;
 		
-		for(int lateWebtoonCode : lateWebtoonCodeList) {
-			currentPenalty = fundDAO.selectPenalty(lateWebtoonCode);
+		for(FundDTO lateWebtoon : lateWebtoonList) {
+			currentPenalty = fundDAO.selectPenalty(lateWebtoon.getWebtoonCode());
 			
 			if(currentPenalty.equals("green")) {
 				currentPenalty = "yellow";
@@ -45,8 +49,20 @@ public class FundServiceImpl implements FundService {
 			}else {
 				currentPenalty = "red";
 			}
-			System.out.println("¸¶°¨ ¸ø¸ÂÃá À¥Å÷ ÄÚµå : " + lateWebtoonCode);
-			result = fundDAO.webtoonPause(lateWebtoonCode, currentPenalty);
+			System.out.println("episode fund : " + lateWebtoon.getEpisodeFund());
+			webtoonName = fundDAO.selectWebtoonName(lateWebtoon.getWebtoonCode());
+			userDTO = fundDAO.selectFundUserEmail(lateWebtoon.getWebtoonCode()); 
+			userDTO.setCashPoint(userDTO.getCashPoint()+lateWebtoon.getEpisodeFund());
+			cashHistoryDTO.setCashPoint(lateWebtoon.getEpisodeFund());
+			cashHistoryDTO.setEmail(userDTO.getEmail());
+			cashHistoryDTO.setTradeState("ÆÝµå");
+			cashHistoryDTO.setContent(webtoonName + " " + lateWebtoon.getEpisodeNumber() + "È­ ÆÝµå°á°ú");
+			
+			fundDAO.insertCashHistory(cashHistoryDTO);
+			fundDAO.updateUserCashPoint(userDTO);
+			
+			System.out.println("¸¶°¨ ¸ø¸ÂÃá À¥Å÷ ÄÚµå : " + lateWebtoon.getWebtoonCode());
+			result = fundDAO.webtoonPause(lateWebtoon.getWebtoonCode(), currentPenalty);
 		}
 		
 		return result;
@@ -54,12 +70,15 @@ public class FundServiceImpl implements FundService {
 
 	@Override
 	public int startFunding() {
-		List<EpisodeDTO> serialWebtoonEpisodee = fundDAO.meetADeadlineWebtoon();
+		List<EpisodeDTO> serialWebtoonEpisode = fundDAO.meetADeadlineWebtoon();
+		UserDTO userDTO = null;
+		CashHistoryDTO cashHistoryDTO = new CashHistoryDTO();
 		String currentPenalty = "";
+		String webtoonName = "";
 		int episodeFund = 0;
 		int result = 0;
 		
-		for(EpisodeDTO episode : serialWebtoonEpisodee) {
+		for(EpisodeDTO episode : serialWebtoonEpisode) {
 			currentPenalty = fundDAO.selectPenalty(episode.getWebtoonCode());
 			
 			if(currentPenalty.equals("green")) {
@@ -74,6 +93,17 @@ public class FundServiceImpl implements FundService {
 						episode.getEpisodeNumber()+1);
 			
 			episodeFund = fundDAO.selectEpisodeFund(episode.getFundCode());
+			webtoonName = fundDAO.selectWebtoonName(episode.getWebtoonCode());
+			userDTO = fundDAO.selectFundUserEmail(episode.getWebtoonCode()); 
+			userDTO.setCashPoint(userDTO.getCashPoint()+episodeFund);
+			cashHistoryDTO.setCashPoint(episodeFund);
+			cashHistoryDTO.setEmail(userDTO.getEmail());
+			cashHistoryDTO.setTradeState("ÆÝµå");
+			cashHistoryDTO.setContent(webtoonName + " " + episode.getEpisodeNumber() + "È­ ÆÝµå°á°ú");
+			
+			fundDAO.insertCashHistory(cashHistoryDTO);
+			fundDAO.updateUserCashPoint(userDTO);
+			
 			System.out.println("¸¶°¨ÀÏÀ» ¸ÂÃá À¥Å÷ ÄÚµå : " + episode.getWebtoonCode());
 			if(episodeFund < 400) {
 				result = fundDAO.addPenalty(episode.getWebtoonCode(), currentPenalty);

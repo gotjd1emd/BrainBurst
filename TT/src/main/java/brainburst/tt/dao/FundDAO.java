@@ -4,6 +4,7 @@ import java.util.List;
 
 import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.FundDTO;
 import brainburst.tt.dto.PayHistoryDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
@@ -21,7 +22,7 @@ public interface FundDAO {
 	 * @param webtoonCode 						
 	 * @return 
 	 */
-	List<Integer> lateEpisode();
+	List<FundDTO> lateEpisode();
 	
 	/**
 	 * 업로드가 늦은 웹툰을 휴재시키고 패널티를 추가한다.
@@ -105,4 +106,17 @@ public interface FundDAO {
 	 */
 	int addPayHistoryCashPoint(PayHistoryDTO payHistoryDTO);
 	
+	/**
+	 * 해당 웹툰의 유저정보
+	 * @param webtoonCode
+	 * @return
+	 */
+	UserDTO selectFundUserEmail(int webtoonCode);
+	
+	/**
+	 * 웹툰이름 가져오기
+	 * @param webtoonCode
+	 * @return
+	 */
+	String selectWebtoonName(int webtoonCode);
 }

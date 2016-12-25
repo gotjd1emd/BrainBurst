@@ -32,6 +32,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
+	<resultMap type="fundDTO" id="fundDTO">
+		<id column="FUND_CODE" property="fundCode"/>
+		<result column="EPISODE_FUND" property="episodeFund"/>
+		<result column="WEBTOON_CODE" property="webtoonCode"/>
+		<result column="EPISODE_NUMBER" property="episodeNumber"/>
+		<result column="START_DATE" property="startDate"/>
+		<result column="DUE_DATE" property="dueDate"/>
+	</resultMap>
+	
 	<resultMap type="payHistoryDTO" id="payHistoryDTO">
 		<id column="FUND_CODE" property="fundCode"/>
 		<result column="EMAIL" property="email"/>
@@ -40,9 +49,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="PAYMENT_ITEM" property="paymentItem"/>
 	</resultMap>
 	
+	<resultMap type="userDTO" id="userMap">
+		<id column="EMAIL" property="email"/>
+		<result column="NICKNAME" property="nickname"/>
+		<result column="PHONE" property="phone"/>
+		<result column="PASSWORD" property="password"/>
+		<result column="CASH_POINT" property="cashPoint"/>
+		<result column="USER_LEVEL" property="level"/>
+		<result column="NAME" property="name"/>
+		<result column="GENDER" property="gender"/>
+		<result column="BIRTH_DATE" property="birthDate" />
+	</resultMap>
+	
 	<!-- lateEpisode -->
-	<select id="lateEpisode" resultType="_int">
-		SELECT F.WEBTOON_CODE FROM FUND F
+	<select id="lateEpisode" resultMap="fundDTO">
+		SELECT F.WEBTOON_CODE, F.FUND_CODE, F.EPISODE_FUND, F.EPISODE_NUMBER FROM FUND F
 		WHERE TRUNC(F.DUE_DATE + 2) = TRUNC(SYSDATE) AND
 		F.EPISODE_NUMBER NOT IN (SELECT MAX(E.EPISODE_NUMBER) FROM EPISODE E
 			WHERE F.WEBTOON_CODE = E.WEBTOON_CODE)
@@ -109,4 +130,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE EMAIL = #{email} AND FUND_CODE = #{fundCode}
 	</update>
 	
+	<!-- selectFundUserEmail -->
+	<select id="selectFundUserEmail" resultMap="userMap" parameterType="_int">
+		SELECT EMAIL, NICKNAME, PHONE, CASH_POINT, USER_LEVEL, NAME, GENDER, BIRTH_DATE
+		FROM USER_INFORMATION
+		WHERE NICKNAME IN (SELECT NICKNAME FROM WEBTOON WHERE WEBTOON_CODE = #{value})
+	</select>
+	
+	<!-- selectWebtoonName -->
+	<select id="selectWebtoonName" resultType="string" parameterType="_int">
+		SELECT WEBTOON_NAME FROM WEBTOON WHERE WEBTOON_CODE = #{value}
+	</select>
 </mapper>
