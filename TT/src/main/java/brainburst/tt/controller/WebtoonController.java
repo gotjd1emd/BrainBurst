@@ -350,12 +350,24 @@ public class WebtoonController {
 		return "myInfo/authorpage";
 	}
 	
+	/**
+	 * 웹툰의 점수
+	 * @param request
+	 * @param webtoonCode
+	 * @return
+	 */
 	@RequestMapping("webtoonScore")
 	@ResponseBody
 	public int webtoonScore(HttpServletRequest request, int webtoonCode){
 		return webtoonService.webtoonScore(webtoonCode);
 	}
 	
+	/**
+	 * 펀딩 참여유무 체크
+	 * @param request
+	 * @param email
+	 * @return
+	 */
 	@RequestMapping("fundCheck")
 	@ResponseBody
 	public String fundCheck(HttpServletRequest request, String email) {

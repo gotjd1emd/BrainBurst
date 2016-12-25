@@ -2,7 +2,10 @@ package brainburst.tt.dao;
 
 import java.util.List;
 
+import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.PayHistoryDTO;
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface FundDAO {
@@ -64,4 +67,42 @@ public interface FundDAO {
 	 * @return
 	 */
 	String selectPenalty(int webtoonCode);
+	
+	/**
+	 * 유저의 캐시포인트를 갱신한다.
+	 * @param email
+	 * @param cashPoint
+	 * @return
+	 */
+	int updateUserCashPoint(UserDTO userDTO);
+	
+	/**
+	 * 유저의 캐시 사용내역을 추가한다.
+	 * @param cashHistoryDTO
+	 * @return
+	 */
+	int insertCashHistory(CashHistoryDTO cashHistoryDTO);
+	
+	/**
+	 * 펀딩중인 에피소드의 펀딩량을 갱신한다.
+	 * @param fundCode
+	 * @param cashPoint
+	 * @return
+	 */
+	int updateEpisodeFund(int fundCode, int cashPoint);
+	
+	/**
+	 * 펀딩 진행중인 에피소드의 펀딩 내역을 추가한다.
+	 * @param payHistoryDTO
+	 * @return
+	 */
+	int insertPayHistory(PayHistoryDTO payHistoryDTO);
+	
+	/**
+	 * 펀딩 내역의 캐시포인트를 갱신한다.
+	 * @param payHistoryDTO
+	 * @return
+	 */
+	int addPayHistoryCashPoint(PayHistoryDTO payHistoryDTO);
+	
 }

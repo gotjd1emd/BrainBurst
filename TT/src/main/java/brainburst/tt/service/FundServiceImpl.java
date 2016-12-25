@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.FundDAO;
+import brainburst.tt.dao.WebtoonDAO;
+import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.PayHistoryDTO;
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Service
@@ -16,6 +20,8 @@ public class FundServiceImpl implements FundService {
 	
 	@Autowired
 	private FundDAO fundDAO;
+	@Autowired
+	private WebtoonDAO webtoonDAO;
 
 	@Override
 	public List<WebtoonDTO> fundPage(String nickname) {
@@ -77,4 +83,25 @@ public class FundServiceImpl implements FundService {
 		return result;
 	}
 
+	@Override
+	public int joinFund(UserDTO userDTO, int cashPoint, int fundCode, String content) {
+		userDTO.setCashPoint(userDTO.getCashPoint()-cashPoint);
+		CashHistoryDTO cashHistoryDTO = new CashHistoryDTO(userDTO.getEmail(), null, cashPoint, content, "ÆÝµù");
+		PayHistoryDTO payHistoryDTO = new PayHistoryDTO(userDTO.getEmail(), fundCode, cashPoint, null, content);
+		int result = 0;
+		
+		result = fundDAO.updateUserCashPoint(userDTO);
+		result = fundDAO.insertCashHistory(cashHistoryDTO);
+		result = fundDAO.updateEpisodeFund(fundCode, cashPoint);
+		
+		PayHistoryDTO fundCheck = webtoonDAO.fundingCheck(userDTO.getEmail(), fundCode);
+		
+		if(fundCheck == null) {
+			result = fundDAO.insertPayHistory(payHistoryDTO);
+		}else {
+			result = fundDAO.addPayHistoryCashPoint(payHistoryDTO);
+		}
+		
+		return result;
+	}
 }

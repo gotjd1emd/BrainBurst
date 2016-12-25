@@ -8,7 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import brainburst.tt.dto.CashHistoryDTO;
 import brainburst.tt.dto.EpisodeDTO;
+import brainburst.tt.dto.PayHistoryDTO;
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 @Repository
@@ -68,5 +71,34 @@ public class FundDAOImpl implements FundDAO {
 	@Override
 	public String selectPenalty(int webtoonCode) {
 		return sqlSession.selectOne("fundMapper.selectPenalty", webtoonCode);
+	}
+	
+	@Override
+	public int updateUserCashPoint(UserDTO userDTO) {
+		return sqlSession.update("fundMapper.updateUserCashPoint", userDTO);
+	}
+	
+	@Override
+	public int insertCashHistory(CashHistoryDTO cashHistoryDTO) {
+		return sqlSession.insert("fundMapper.insertCashHistory", cashHistoryDTO);
+	}
+	
+	@Override
+	public int updateEpisodeFund(int fundCode, int cashPoint) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("fundCode", fundCode);
+		map.put("cashPoint", cashPoint);
+		
+		return sqlSession.update("fundMapper.updateEpisodeFund", map);
+	}
+	
+	@Override
+	public int insertPayHistory(PayHistoryDTO payHistoryDTO) {
+		return sqlSession.insert("fundMapper.insertPayHistory", payHistoryDTO);
+	}
+	
+	@Override
+	public int addPayHistoryCashPoint(PayHistoryDTO payHistoryDTO) {
+		return sqlSession.update("fundMapper.addPayHistoryCashPoint", payHistoryDTO);
 	}
 }

@@ -2,6 +2,7 @@ package brainburst.tt.service;
 
 import java.util.List;
 
+import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
 public interface FundService {
@@ -26,4 +27,14 @@ public interface FundService {
 	 * @return
 	 */
 	int startFunding();
+	
+	/**
+	 * ÆÝµù Âü¿© 
+	 * @param email
+	 * @param cashPoint
+	 * @param fundCode
+	 * @param content
+	 * @return
+	 */
+	int joinFund(UserDTO userDTO, int cashPoint, int fundCode, String content);
 }

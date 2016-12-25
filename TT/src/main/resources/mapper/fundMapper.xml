@@ -32,6 +32,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="FUND_CODE" property="fundCode"/>
 	</resultMap>
 	
+	<resultMap type="payHistoryDTO" id="payHistoryDTO">
+		<id column="FUND_CODE" property="fundCode"/>
+		<result column="EMAIL" property="email"/>
+		<result column="CASH_POINT" property="cashPoint"/>
+		<result column="PAYMENT_DATE" property="paymentDate"/>
+		<result column="PAYMENT_ITEM" property="paymentItem"/>
+	</resultMap>
+	
 	<!-- lateEpisode -->
 	<select id="lateEpisode" resultType="_int">
 		SELECT F.WEBTOON_CODE FROM FUND F
@@ -71,4 +79,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectPenalty" resultType="string" parameterType="_int">
 		SELECT PENALTY FROM WEBTOON WHERE WEBTOON_CODE = #{value}
 	</select>
+	
+	<!-- updateUserCashPoint -->
+	<update id="updateUserCashPoint" parameterType="userDTO">
+		UPDATE USER_INFORMATION SET CASH_POINT = #{cashPoint}
+		WHERE EMAIL = #{email}
+	</update>
+	
+	<!-- insertCashHistory -->
+	<insert id="insertCashHistory" parameterType="cashHistoryDTO">
+		INSERT INTO CASH_HISTORY(CASH_HISTORY_SEQUENCE, EMAIL, ACCOUNT_DAY, CASH_POINT, CONTENT, TRADE_STATE)
+		VALUES(CASH_HISTORY_SEQ.NEXTVAL, #{email}, SYSDATE, #{cashPoint}, #{content}, #{tradeState})
+	</insert>
+	
+	<!-- updateEpisodeFund -->
+	<update id="updateEpisodeFund" parameterType="map">
+		UPDATE FUND SET EPISODE_FUND = EPISODE_FUND + #{cashPoint} WHERE FUND_CODE = #{fundCode} 
+	</update>
+	
+	<!-- insertPayHistory -->
+	<insert id="insertPayHistory" parameterType="payHistoryDTO">
+		INSERT INTO PAY_HISTORY(EMAIL, FUND_CODE, CASH_POINT, PAYMENT_DATE, PAYMENT_ITEM)
+		VALUES(#{email}, #{fundCode}, #{cashPoint}, SYSDATE, #{paymentItem})
+	</insert>
+	
+	<!-- addPayHistoryCashPoint -->
+	<update id="addPayHistoryCashPoint" parameterType="payHistoryDTO">
+		UPDATE PAY_HISTORY SET CASH_POINT = CASH_POIN + #{cashPoint}
+		WHERE EMAIL = #{email} AND FUND_CODE = #{fundCode}
+	</update>
+	
 </mapper>

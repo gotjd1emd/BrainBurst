@@ -41,6 +41,49 @@
 			}
 		});
 		
+		//펀딩참여창
+		$(".funding-episode").find(".row").on("click", function() {
+			var nickname = "${sessionScope.userDTO.nickname}";
+			if(nickname == "") {
+				Materialize.toast('로그인 후 펀딩이 가능합니다.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+			}else {
+				$("#funding-modal").modal("open");
+			}
+		});
+		
+		//펀딩참여
+		$("#funding").click(function() {
+			var webtoonName = $("#header-title").val();
+			var episodeNumber = $("#funding-episode").find("span[name=episodeNumber]").text();
+			var content = webtoonName + episodeNumber + "화 펀딩 참여";
+			var fundCode = $("input[name=fundCode]").val();
+			var fundingT = $("#fundingT").val();
+			alert("펀딩참여");
+			$.ajax({
+				url : "/controller/fund/joinFund",
+				type : "post",
+				data : {"cashPoint":fundingT, "fundCode":fundCode, "content":content},
+				dataType : "text",
+				success : function(result) {
+					alert(result);
+					if(result == "fail") {
+						Materialize.toast('펀딩 참여가 실패했습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+					}else {
+						Materialize.toast('펀딩 참여에 성공하였습니다.', 2000, 'rounded');
+				        var width = $("#toast-container").width();
+				        $("#toast-container").css("margin-left", (width*-1)+209);
+					}
+				},
+				error : function(err) {
+					console.log(err);
+				}
+			});
+		});
+		
 		//최신 에피소드 펀딩유무 체크
 		var webtoonLevel = $("#webtoon-level").val();
 		if(webtoonLevel == 'funding') {
@@ -101,7 +144,7 @@
 			var episodeNumber = $("#episode-list").find(".row:eq(0)").find("span:eq(0)").text();
 			var clickEpisodeNumber = $(this).find('span:eq(0)').text();
 			var episodeSequence = $(this).find('img').attr("name");
-			if(episodeNumber == clickEpisodeNumber) {
+			if(episodeNumber == clickEpisodeNumber && webtoonLevel=="funding") {
 				$.ajax({
 					url : "/controller/webtoon/fundCheck/",
 					type : "post", 
@@ -126,6 +169,7 @@
 			
 		}));
 		
+	  	//첫회보기
 		$(".first-see").on("click", (function () {
 			$(location).attr('href','/controller/webtoon/episodePage/'+$("#episode-thumbnail1").attr("name"))
 		
@@ -302,7 +346,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="funding-episode" style="padding:20px;margin:20px;margin-bottom: -60px;">
+		<div id="funding-episode" class="funding-episode" style="padding:20px;margin:20px;margin-bottom: -60px;">
 		<c:if test="${fundDTO != null }">
 			<div class="z-depth-1 hoverable radius white">
 				<div class="row radius" style="background-color:tomato;color:aliceblue;">

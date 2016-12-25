@@ -31,7 +31,12 @@
 				$("category_mobile").css('display', 'block');
 				$("category_mobile").addClass("zoomOut");
 			});
-		})
+		});
+		var currentT = "${sessionScope.userDTO.cashPoint}";
+		$("#fundingT").keyup(function () {
+			var afterT =currentT - $("#fundingT").val();
+			$("#afterT").text(afterT);
+		});
 	})
 </script>
 </head>
@@ -54,13 +59,42 @@
 	<!-- modal -->
 	<!-- Modal Structure -->
 	<div id="funding-modal" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<h4>펀딩</h4>
-			<p>A bunch of text</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#!"
-				class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+		<div id="inputDiv">
+			<div class="modal-title color-500 white-text z-depth-1">
+				<h5>펀딩 참여</h5>
+			</div>
+			<div class="modal-content">
+				<div class="row" style="margin-top:20px;">
+					<div class="col s6" style="margin-top:150px;">
+						<div class="input-field">
+		          			<input id="fundingT" type="text" class="validate" name="fundingT">
+		          			<label for="fundingT">펀딩 금액(단위 : T)</label>
+	        			</div>
+	        			<div>보유 T : <span id="afterT">${sessionScope.userDTO.cashPoint}</span></div>
+		          		<div><p class="flow-text period" style="color:#f56954;"></p></div>
+	        		</div>
+	        		<div class="col s6">
+	        			<div class="col-xs-6 col-md-3 text-center" 
+	        			style="text-align: right;padding-right:15px;padding-top:16px;">
+							<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" 
+							data-thickness="0.2" data-width="360" data-height="360" data-fgColor="#f56954">
+							<span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund}]</span>
+						</div>
+						
+	        		</div>
+				</div>
+				<div id="select-payment-content-form" class="center">
+		  		<div class="accept-terms-box">
+			  		<input type="checkbox" class="filled-in" id="filled-in-box"/>
+	     			<label for="filled-in-box">위 사항을 모두 확인하였으며 펀딩진행에 동의합니다.</label>
+     		 	</div>
+		  </div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">취소</a>
+				<a href="#!" id="funding"
+					class="modal-action modal-close waves-effect waves-green btn-flat ">펀딩참여</a>
+			</div>
 		</div>
 	</div>
 

@@ -320,10 +320,20 @@ public class UserController {
 		return "";
 	}
 	
+	/**
+	 * 환전 신청
+	 * @param request
+	 * @param exchangeT
+	 * @param afterT
+	 * @return
+	 */
 	@RequestMapping("cashUpdate")
-	public String cashUpdate(HttpServletRequest request, int exchangeT, int afterT){
+	public String cashUpdate(HttpServletRequest request, int exchangeT, int afterT) throws Exception{
 		System.out.println("exchangeT : " + exchangeT);
 		System.out.println("afterT : " + afterT);
+		if(afterT < 0) {
+			throw new Exception("환전 가능한 금액을 초과하였습니다.");
+		}
 		UserDTO userDTO = (UserDTO) request.getSession().getAttribute("userDTO");
 		userDTO.setCashPoint(afterT);
 		String email = userDTO.getEmail();
