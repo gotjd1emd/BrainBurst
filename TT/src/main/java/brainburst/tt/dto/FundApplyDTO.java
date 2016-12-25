@@ -7,6 +7,13 @@ public class FundApplyDTO {
 	private int webtoonCode;
 	private int score;
 	
+	public FundApplyDTO(String email, int webtoonCode, int score) {
+		this.email = email;
+		this.webtoonCode = webtoonCode;
+		this.score = score;
+		this.applyFundSequence = applyFundSequence;
+	}	
+	
 	public FundApplyDTO(int applyFundSequence, String email, int webtoonCode, int score) {
 		this.email = email;
 		this.webtoonCode = webtoonCode;
