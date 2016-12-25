@@ -1,6 +1,7 @@
 package brainburst.tt.service;
 
 import java.util.List;
+import java.util.Map;
 
 import brainburst.tt.dto.FundApplyDTO;
 import brainburst.tt.dto.ReportDTO;
@@ -64,5 +65,16 @@ public interface AdministratorService {
 	 * */
 	public int applyDelete(int webtoonCode);
 	
+	/**
+	 * 신고목록 삭제
+	 * @param reportSequence
+	 * @return
+	 */
 	public int reportDelete(int reportSequence);
+	
+	/**
+	 * 유저 수
+	 * @return
+	 */
+	public List<Integer> userCount();
 }

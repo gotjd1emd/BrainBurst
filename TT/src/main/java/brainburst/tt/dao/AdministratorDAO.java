@@ -57,10 +57,47 @@ public interface AdministratorDAO {
 	 * 신고 리스트 출력
 	 * */
 	public List<ReportDTO> reportManage();
-
+	
+	/**
+	 * 유저레벨
+	 * @param email
+	 * @param level
+	 * @return
+	 */
 	public int userLevel(String email, String level);
 	
+	/**
+	 * 신청 지우기
+	 * @param webtoonCode
+	 * @return
+	 */
 	public int applyDelete(int webtoonCode);
 	
+	/**
+	 * 신고목록 지우기
+	 * @param reportSequence
+	 * @return
+	 */
 	public int reportDelete(int reportSequence);
+	
+	/**
+	 * 유저 레벨별 수 구하기
+	 * @param column
+	 * @param value
+	 * @return
+	 */
+	public int userLevelCount(String userLevel);
+	
+	/**
+	 * 성별 수 구하기
+	 * @param gender
+	 * @return
+	 */
+	int genderCount(String gender);
+	
+	/**
+	 * 총 유저수
+	 * @return
+	 */
+	int userCount();
 }

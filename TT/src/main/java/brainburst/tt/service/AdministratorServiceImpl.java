@@ -1,5 +1,6 @@
 package brainburst.tt.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,4 +81,21 @@ public class AdministratorServiceImpl implements AdministratorService{
 		return administratorDAO.reportDelete(reportSequence);
 	}
 
+	@Override
+	public List<Integer> userCount() {
+		List<Integer> userCount = new ArrayList<Integer>();
+		String[] userLevel = {"독자", "작가", "펀딩작가"};
+		String[] gender = {"남", "여"};
+		for(int i = 0; i < 6; i++) {
+			if(i<3) {
+				userCount.add(administratorDAO.userLevelCount(userLevel[i]));
+			}else if(i<5) {
+				userCount.add(administratorDAO.genderCount(gender[i-3]));
+			}else {
+				userCount.add(administratorDAO.userCount());
+			}
+		}
+		
+		return userCount;
+	}
 }

@@ -117,4 +117,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where report_sequence = #{reportSequence}
 	</delete>
 	
+	<!-- userLevelCount -->
+	<select id="userLevelCount" resultType="_int" parameterType="string">
+		SELECT COUNT(EMAIL) FROM USER_INFORMATION
+		WHERE USER_LEVEL = #{value}
+	</select>
+	
+	<!-- genderCount -->
+	<select id="genderCount" resultType="_int" parameterType="string">
+		SELECT COUNT(EMAIL) FROM USER_INFORMATION
+		WHERE GENDER = #{value}
+	</select>
+	
+	<!-- userCount -->
+	<select id="userCount" resultType="_int">
+		SELECT COUNT(EMAIL) FROM USER_INFORMATION
+	</select>
+	
 </mapper>

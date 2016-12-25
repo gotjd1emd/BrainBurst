@@ -2,6 +2,7 @@ package brainburst.tt.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,5 +84,20 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	@Override
 	public int reportDelete(int reportSequence) {
 		return sqlSession.delete("adminMapper.reportDelete", reportSequence);
+	}
+	
+	@Override
+	public int userLevelCount(String userLevel) {
+		return sqlSession.selectOne("adminMapper.userLevelCount", userLevel);
+	}
+	
+	@Override
+	public int genderCount(String gender) {
+		return sqlSession.selectOne("adminMapper.genderCount", gender);
+	}
+	
+	@Override
+	public int userCount() {
+		return sqlSession.selectOne("adminMapper.userCount");
 	}
 }

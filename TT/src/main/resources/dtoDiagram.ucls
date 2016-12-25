@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.10" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="brainburst.tt.dto.ReportDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/ReportDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="188" x="21" y="-24"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="brainburst.tt.dto.CashHistoryDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/CashHistoryDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="143" y="555"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="brainburst.tt.dto.CategoryDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/CategoryDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="967" y="403"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="brainburst.tt.dto.PayHistoryDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/PayHistoryDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="133" y="932"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="brainburst.tt.dto.ImageDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/ImageDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="971" y="647"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="brainburst.tt.dto.FundDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/FundDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2054" y="512"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="brainburst.tt.dto.SubscriptionDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/SubscriptionDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="964" y="134"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="brainburst.tt.dto.UserDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/UserDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1402" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="brainburst.tt.dto.FundApplyDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/FundApplyDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1327" y="763"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="brainburst.tt.dto.WebtoonDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/WebtoonDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="552" y="430"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="brainburst.tt.dto.EpisodeDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/EpisodeDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1745" y="377"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="brainburst.tt.dto.AdditionalInfoDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/AdditionalInfoDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2322" y="185"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="brainburst.tt.dto.PaidApplyDTO" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/dto/PaidApplyDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2049" y="94"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="brainburst.tt.timeTask.EpisodeUploadDeadline" project="TT" 
+    file="/TT/src/main/java/brainburst/tt/timeTask/EpisodeUploadDeadline.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2266" y="487"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="15">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="16" name="categoryDTO"/>      
+      <multiplicity id="17" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="18">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="19" name="fund"/>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="21">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="22" name="webtoonDTO"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -1,6 +1,8 @@
 package brainburst.tt.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -117,5 +119,14 @@ public class AdministratorController {
 		int result = administratorService.reportDelete(reportSequence);
 		System.out.println(result);
 		return "";
+	}
+	
+	@RequestMapping("account")
+	@ResponseBody
+	public Map<String, Object> account(HttpServletRequest request) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<Integer> userCount = administratorService.userCount();
+		map.put("userCount", userCount);
+		return map;
 	}
 }

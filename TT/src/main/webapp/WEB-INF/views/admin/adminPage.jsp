@@ -775,15 +775,11 @@
 <div class="row tab-frame-myinfo">
 	<div class="col s12 tab-admin">
 		<ul class="tabs center z-depth-2" style="background-color:#424242">
-			<li class="tab col offset-l1 s2"><a href="#accounting" id="accountingShow">회계</a></li>
-			<li class="tab col s2"><a href="#userManagement" id="userManage">유저 관리</a></li>
-			<li class="tab col s2"><a href="#webtoonManagement" id="webtoonManage">웹툰 관리</a></li>
-			<li class="tab col s2"><a href="#applyManagement">신청 관리</a></li>
-			<li class="tab col s2"><a href="#reportManagement">신고 관리</a></li>
+			<li class="tab col s3"><a href="#userManagement" id="userManage">유저 관리</a></li>
+			<li class="tab col s3"><a href="#webtoonManagement" id="webtoonManage">웹툰 관리</a></li>
+			<li class="tab col s3"><a href="#applyManagement">신청 관리</a></li>
+			<li class="tab col s3"><a href="#reportManagement">신고 관리</a></li>
 		</ul>
-	</div>
-	<div id="accounting" class="col s12 tab-card-info">
-		<jsp:include page="/WEB-INF/views/admin/accounting/content.jsp"></jsp:include>
 	</div>
 	<div id="userManagement" class="col s12 tab-card-info">
 		<jsp:include page="/WEB-INF/views/admin/userManagement/content.jsp"></jsp:include>
