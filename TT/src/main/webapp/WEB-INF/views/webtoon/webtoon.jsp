@@ -372,14 +372,15 @@
 					<div class="episode_thumbnail">
 						<img id="episode-thumbnail${episode.episodeNumber}" class="thumbnail" name="${episode.episodeSequence}" src="<c:url value='/resources/'/>${episode.thumbnail}">
 					</div>
-					<div class="col s7 episode-content">
+					<div class="col s5 episode-content" style="float:left;margin-right:-100px">
 						No.<span name='episodeNumber'>${episode.episodeNumber}</span> ${episode.episodeTitle} <br><br>
 						추천 : ${episode.recommendation}<br>
 						조회수 : ${episode.hits} 
 					</div>
 					<c:if test="${episode.fund.fundCode != 0 }">
-					<div style="float: left;margin-top: 70px;margin-left: 57px;">
-						<span></span>[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]
+					<div style="float: left;margin-top: 15px;margin-left:-26px;" class="col s6">
+						<span></span>
+						<div style="float:right;margin-top:60px;">[목표 T : 400] [현재 T : ${episode.fund.episodeFund}]</div>
 					</div> 
 					<div class="col-xs-6 col-md-3 text-center" style="text-align: right;padding-right:15px;padding-top:16px;">
 						<input type="hidden" name="episodeFund" value="${episode.fund.episodeFund}"/>
