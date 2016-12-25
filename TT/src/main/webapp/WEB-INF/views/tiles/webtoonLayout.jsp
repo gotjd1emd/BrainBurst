@@ -77,7 +77,7 @@
 	        			<div class="col-xs-6 col-md-3 text-center" 
 	        			style="text-align: right;padding-right:15px;padding-top:16px;">
 							<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" 
-							data-thickness="0.2" data-width="360" data-height="360" data-fgColor="#f56954">
+							data-thickness="0.2" data-width="300" data-height="300" data-fgColor="#f56954">
 							<span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund}]</span>
 						</div>
 						
