@@ -89,7 +89,7 @@
 								htmlcode +="<img src='<c:url value='/resources"+item.webtoonThumbnail+"'/>' alt='' class='circle' name="+item.webtoonCode+" id='gowebtoon'>"
 								htmlcode +="<span class='text-color-500'>"+item.webtoonName+"</span>"
 								htmlcode +="<p class='text-color-400'>"+item.nickname+"</p>"
-								htmlcode +="<span href='#!' class='secondary-content text-color-500'><i class='material-icons'>grade</i></span></a>"
+								htmlcode +="<span href='#!' class='secondary-content text-color-500'></span></a>"
 								$(".collection").append(htmlcode); 
 							});
 							console.log(result)
