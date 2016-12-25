@@ -395,9 +395,50 @@
 			})
 		}
 		
+		/* 신고 관리 페이지 ( 신고 전체 출력 )*/
+		function reportManagement(){
+			$.ajax({
+				url : "/controller/admin/reportManage",
+				type : "get",
+				dataType : "json",
+				success : function(result) {
+					var htmlcode = "";
+					if(result==null) {
+						htmlcode = "<tr><td colspan='9'><p align='center'><b>"
+									+"신고 목록이 없습니다.</b></p></td></tr>";
+					}else {
+						$.each(result, function(index, item) {
+							htmlcode += "<tr><td>"
+			            		+item.reportSequence+"</td>";
+			            	htmlcode += "<td>"
+				            	+item.content+"</td>";
+				            htmlcode += "<td>"
+				            	+item.email+"</td>";
+				            htmlcode += "<td>"
+					      		+item.webtoonCode+"</td>";
+					        htmlcode += "<td>"
+						    	+item.episodeSequence+"</td>";
+				            htmlcode += "<td>";
+				            htmlcode += "<td><input type='button'";
+				            htmlcode += "class='snbtn waves-effect waves-light col s8 color-300 z-depth-1 hoverable'"
+				            htmlcode += "style='margin-top: -5%;height: 17%;' id='apply' value='신고처리'/></td>";
+					        htmlcode += "<input type='hidden' id=applyFund"+item.webtoonCode+"' value='"+item.webtoonCode+"'/>"
+					        htmlcode += "</td>";
+				            htmlcode += "</tr>";
+						});
+					}
+					$("#applyFundManageList tbody").html(htmlcode);
+				},
+				error : function(err) {
+					alert("err");
+				}
+			})
+		}
+		
 		userManagement();
 		webtoonManagement();
 		applyFundManagement();
+		reportManagement();
 	})
 </script>
 <input id="header-title" type="hidden" value="관리자페이지">

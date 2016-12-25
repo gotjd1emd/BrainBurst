@@ -3,6 +3,7 @@ package brainburst.tt.dao;
 import java.util.List;
 
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -51,7 +52,11 @@ public interface AdministratorDAO {
 	 * 펀딩신청 리스트 출력
 	 * */
 	public List<FundApplyDTO> fundApplyManage();
-
+	
+	/**
+	 * 신고 리스트 출력
+	 * */
+	public List<ReportDTO> reportManage();
 
 	public int userLevel(String email, String level);
 	

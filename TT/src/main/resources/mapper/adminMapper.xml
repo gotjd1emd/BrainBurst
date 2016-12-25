@@ -41,6 +41,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="webtoon_code" property="webtoonCode"/>
 		<result column="score" property="score"/>
 	</resultMap>
+	
+	<resultMap type="reportDTO" id="reportMap">
+		<id column="report_sequence" property="reportSequence"/>
+		<result column="content" property="content"/>
+		<result column="email" property="email"/>
+		<result column="webtoon_code" property="webtoonCode"/>
+		<result column="episodeSequence" property="episodeSequence"/>
+	</resultMap>
+	
+	
 
 	<!-- userManage -->
 	<select id="userManage" resultMap="userMap">
@@ -54,9 +64,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ON (w.category_code = c.category_code)
 	</select>
 	
-	<!-- webtoonManage -->
+	<!-- fundApply Manage -->
 	<select id="fundApplyManage" resultMap="fundApplyMap">
 		select apply_fund_sequence, email, webtoon_code, score from apply_fund 
+	</select>
+	
+	<!-- reportMange -->
+	<select id="reportManage" resultMap="reportMap">
+		select report_sequence, content, email, webtoon_code, episode_sequence from report 
 	</select>
 	
 	<!-- userSnow -->

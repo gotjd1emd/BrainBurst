@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import brainburst.tt.dao.AdministratorDAO;
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -67,6 +68,11 @@ public class AdministratorServiceImpl implements AdministratorService{
 	@Override
 	public int applyDelete(int webtoonCode) {
 		return administratorDAO.applyDelete(webtoonCode);
+	}
+
+	@Override
+	public List<ReportDTO> reportManage() {
+		return administratorDAO.reportManage();
 	}
 
 }

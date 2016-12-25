@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 
@@ -72,5 +73,10 @@ public class AdministratorDAOImpl implements AdministratorDAO {
 	@Override
 	public int applyDelete(int webtoonCode) {
 		return sqlSession.delete("adminMapper.applyDelete", webtoonCode);
+	}
+
+	@Override
+	public List<ReportDTO> reportManage() {
+		return sqlSession.selectList("adminMapper.reportManage");
 	}
 }

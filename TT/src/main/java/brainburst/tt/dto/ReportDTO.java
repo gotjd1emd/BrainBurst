@@ -46,6 +46,14 @@ public class ReportDTO {
 		this.webtoonCode = webtoonCode;
 		this.episodeSequence = episodeSequence;
 	}
+	public ReportDTO(int reportSequence,String content, String email, int webtoonCode, int episodeSequence) {
+		super();
+		this.reportSequence = reportSequence;
+		this.content = content;
+		this.email = email;
+		this.webtoonCode = webtoonCode;
+		this.episodeSequence = episodeSequence;
+	}
 	public ReportDTO() {
 		System.out.println("ReportDTO扁夯 积己磊 积己凳.");
 	}

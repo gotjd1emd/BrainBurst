@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import brainburst.tt.dto.FundApplyDTO;
+import brainburst.tt.dto.ReportDTO;
 import brainburst.tt.dto.UserDTO;
 import brainburst.tt.dto.WebtoonDTO;
 import brainburst.tt.service.AdministratorService;
@@ -44,6 +45,14 @@ public class AdministratorController {
 		System.out.println("applyFundManage");
 		List<FundApplyDTO> fundApplyList = administratorService.fundApplyManage();
 		return fundApplyList;
+	}
+	
+	@RequestMapping("reportManage")
+	@ResponseBody
+	public List<ReportDTO> reportManage(){
+		System.out.println("reportManage");
+		List<ReportDTO> reportList = administratorService.reportManage();
+		return reportList;
 	}
 	
 	@RequestMapping("userSnow/{email:.+}")
