@@ -55,7 +55,7 @@
 		
 		//펀딩참여
 		$("#funding").click(function() {
-			if($(".period").text()=="펀딩 기간이 마감되었습니다.") {
+			if(time < 0) {
 				Materialize.toast('펀딩이 마감되었습니다.', 2000, 'rounded');
 		        var width = $("#toast-container").width();
 		        $("#toast-container").css("margin-left", (width*-1)+209);
@@ -65,14 +65,12 @@
 				var content = webtoonName + episodeNumber + "화 펀딩 참여";
 				var fundCode = $("input[name=fundCode]").val();
 				var fundingT = $("#fundingT").val();
-				alert("펀딩참여");
 				$.ajax({
 					url : "/controller/fund/joinFund",
 					type : "post",
 					data : {"cashPoint":fundingT, "fundCode":fundCode, "content":content},
 					dataType : "text",
 					success : function(result) {
-						alert(result);
 						if(result == "fail") {
 							Materialize.toast('펀딩 참여가 실패했습니다.', 2000, 'rounded');
 					        var width = $("#toast-container").width();
