@@ -139,8 +139,8 @@
 		<p class="flow-text" id="val02">추천수 : ${episodeDTO.recommendation}</p>
 	</div>
 	<div class="center">
-		<button class="btn waves-effect waves-light" type="submit"
-			name="action" id="rmd">추천 하기</button>
+		<button class="btn waves-effect waves-light" type="button"
+			id="rmd">추천 하기</button>
 		<input type="hidden" value="${episodeDTO.episodeSequence}">
 	</div>
 </div>
