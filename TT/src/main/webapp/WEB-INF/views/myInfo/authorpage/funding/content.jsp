@@ -4,7 +4,7 @@
 <script>
 	$(document).ready(function(){
 		$.ajax({
-			url : "/controller/webtoon/selectWebtoonByLevel/all",
+			url : "/controller/webtoon/selectWebtoonByLevel/funding",
 			type : "get",
 			dataType : "json",
 			success : function(result) {
