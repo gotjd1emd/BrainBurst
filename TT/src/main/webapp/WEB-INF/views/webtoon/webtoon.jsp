@@ -55,33 +55,39 @@
 		
 		//펀딩참여
 		$("#funding").click(function() {
-			var webtoonName = $("#header-title").val();
-			var episodeNumber = $("#funding-episode").find("span[name=episodeNumber]").text();
-			var content = webtoonName + episodeNumber + "화 펀딩 참여";
-			var fundCode = $("input[name=fundCode]").val();
-			var fundingT = $("#fundingT").val();
-			alert("펀딩참여");
-			$.ajax({
-				url : "/controller/fund/joinFund",
-				type : "post",
-				data : {"cashPoint":fundingT, "fundCode":fundCode, "content":content},
-				dataType : "text",
-				success : function(result) {
-					alert(result);
-					if(result == "fail") {
-						Materialize.toast('펀딩 참여가 실패했습니다.', 2000, 'rounded');
-				        var width = $("#toast-container").width();
-				        $("#toast-container").css("margin-left", (width*-1)+209);
-					}else {
-						Materialize.toast('펀딩 참여에 성공하였습니다.', 2000, 'rounded');
-				        var width = $("#toast-container").width();
-				        $("#toast-container").css("margin-left", (width*-1)+209);
+			if($(".period").text()=="펀딩 기간이 마감되었습니다.") {
+				Materialize.toast('펀딩이 마감되었습니다.', 2000, 'rounded');
+		        var width = $("#toast-container").width();
+		        $("#toast-container").css("margin-left", (width*-1)+209);
+			}else {
+				var webtoonName = $("#header-title").val();
+				var episodeNumber = $("#funding-episode").find("span[name=episodeNumber]").text();
+				var content = webtoonName + episodeNumber + "화 펀딩 참여";
+				var fundCode = $("input[name=fundCode]").val();
+				var fundingT = $("#fundingT").val();
+				alert("펀딩참여");
+				$.ajax({
+					url : "/controller/fund/joinFund",
+					type : "post",
+					data : {"cashPoint":fundingT, "fundCode":fundCode, "content":content},
+					dataType : "text",
+					success : function(result) {
+						alert(result);
+						if(result == "fail") {
+							Materialize.toast('펀딩 참여가 실패했습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}else {
+							Materialize.toast('펀딩 참여에 성공하였습니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}
+					},
+					error : function(err) {
+						console.log(err);
 					}
-				},
-				error : function(err) {
-					console.log(err);
-				}
-			});
+				});
+			}
 		});
 		
 		//최신 에피소드 펀딩유무 체크
@@ -288,7 +294,11 @@
 	    hour = Math.floor(time/1000/60/60 - day*24);
 	    min = Math.floor(time/1000/60 - day*24*60 - hour*60);
 	    second = Math.floor(time/1000 - day*24*60*60 - hour*60*60 - min*60);
-	    $(".period").text(Math.floor(day) + "일 " + hour + "시 " + min + "분 " + second + "초 남았습니다.");
+	    if(time < 0) {
+	    	$(".period").text("펀딩 기간이 마감되었습니다.");
+	    }else {
+	    	$(".period").text(Math.floor(day) + "일 " + hour + "시 " + min + "분 " + second + "초 남았습니다.");
+	    }
 	}
 </script>
 	<input id="header-title" type="hidden" value="${webtoonDTO.webtoonName}">
