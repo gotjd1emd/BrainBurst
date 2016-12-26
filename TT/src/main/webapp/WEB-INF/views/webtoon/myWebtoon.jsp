@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<!-- SlimScroll 1.3.0 -->
-	<script src="<c:url value='/resources/js/jquery.slimscroll.min.js'/>"></script>
 	<!-- jQuery Knob -->
 	<script src="<c:url value='/resources/js/jquery.knob.js'/>"></script>
 	<script>
@@ -34,8 +32,6 @@
 			/* chart script */
 		    $(".knob").knob({
 		      draw: function () {
-
-		        // "tron" case
 		        if (this.$.data('skin') == 'tron') {
 
 		          var a = this.angle(this.cv)  // Angle
@@ -46,21 +42,6 @@
 		              , r = true;
 
 		          this.g.lineWidth = this.lineWidth;
-
-		          this.o.cursor
-		          && (sat = eat - 0.3)
-		          && (eat = eat + 0.3);
-
-		          if (this.o.displayPrevious) {
-		            ea = this.startAngle + this.angle(this.value);
-		            this.o.cursor
-		            && (sa = ea - 0.3)
-		            && (ea = ea + 0.3);
-		            this.g.beginPath();
-		            this.g.strokeStyle = this.previousColor;
-		            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
-		            this.g.stroke();
-		          }
 
 		          this.g.beginPath();
 		          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;

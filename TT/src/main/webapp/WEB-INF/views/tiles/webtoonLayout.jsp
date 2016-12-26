@@ -75,10 +75,19 @@
 	        		</div>
 	        		<div class="col s6">
 	        			<div class="col-xs-6 col-md-3 text-center" 
-	        			style="text-align: right;padding-right:15px;padding-top:16px;">
-							<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" 
-							data-thickness="0.2" data-width="300" data-height="300" data-fgColor="#f56954">
-							<span>[목표 T : 400] [현재 T : ${fundDTO.episodeFund}]</span>
+	        			style="text-align:right;padding-top:-10px;">
+	        			<c:choose>
+	      					<c:when test="${fundDTO.episodeFund>=400}">
+								<input type="text" class="knob" value="400" data-skin="tron" 
+								data-thickness="0.2" data-width="300" data-height="300" data-fgColor="#f56954">
+								<span style="float:right;margin-right:42px">[목표 T : 400]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[현재 T : ${fundDTO.episodeFund}]</span>
+	      					</c:when>  			
+	      					<c:otherwise>
+								<input type="text" class="knob" value="${fundDTO.episodeFund}" data-skin="tron" 
+								data-thickness="0.2" data-width="300" data-height="300" data-fgColor="#f56954">
+								<span style="float:right;margin-right:42px">[목표 T : 400]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[현재 T : ${fundDTO.episodeFund}]</span>
+	      					</c:otherwise>
+	        			</c:choose>
 						</div>
 						
 	        		</div>
