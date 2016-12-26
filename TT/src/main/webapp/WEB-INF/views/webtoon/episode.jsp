@@ -38,16 +38,27 @@
 			
 			$("#rmd").click(function() {
 				var episodeSequence = $("#episodeSequence").val();
+				if(${userDTO.email==null}){
+					Materialize.toast('로그인을 해주세요.', 2000, 'rounded');
+			        var width = $("#toast-container").width();
+			        $("#toast-container").css("margin-left", (width*-1)+209);
+				}else{
 				$.ajax({
 					url : "/controller/webtoon/recommandation/"+episodeSequence,
 					type : "get",
 					dataType : "text",
 					success : function(result) {
-						$("#val01").html("추 천<br>:"+result)
-						$("#val02").html("추천수 : "+result)
-						Materialize.toast('추천 해주셔서 감사합니다.', 2000, 'rounded');
-				        var width = $("#toast-container").width();
-				        $("#toast-container").css("margin-left", (width*-1)+209);
+						if(result<0){
+							Materialize.toast('추천은 한번만 가능합니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}else{
+							$("#val01").html("추 천<br>:"+result)
+							$("#val02").html("추천수 : "+result)
+							Materialize.toast('추천 해주셔서 감사합니다.', 2000, 'rounded');
+					        var width = $("#toast-container").width();
+					        $("#toast-container").css("margin-left", (width*-1)+209);
+						}
 					},
 					error : function() {
 						Materialize.toast('추천은 한번만 가능합니다.', 2000, 'rounded');
@@ -55,6 +66,7 @@
 				        $("#toast-container").css("margin-left", (width*-1)+209);
 					}
 				})
+			}
 			})
 		})
 	</script>
