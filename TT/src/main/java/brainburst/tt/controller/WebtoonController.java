@@ -239,7 +239,7 @@ public class WebtoonController {
 		String email = dto.getEmail();
 		int i = webtoonService.addRecommend(email, episodeSequence);
 		if (i<0) {
-			throw new Exception();
+			return Integer.toString(i);
 		}
 		return Integer.toString(i);
 	}
