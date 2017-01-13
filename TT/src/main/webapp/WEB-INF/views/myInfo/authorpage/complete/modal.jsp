@@ -5,11 +5,6 @@
 
 <script>
 	$(function () {
-		
-		/* $("#paid-webtoon-select-div div ul li span").on("click", function () {
-			var webtoonName = $(this).html();	
-		}); */
-		
 		$("#paid-apply-btn").click(function(){
 			var selectLength = $("#paid-webtoon-select option").length;
 			var webtoonName = $("#paid-webtoon-select-div div input").val();

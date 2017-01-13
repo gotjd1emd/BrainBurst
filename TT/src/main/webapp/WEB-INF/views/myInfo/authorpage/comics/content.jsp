@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<script>
-	$(document).ready(function(){
+	$("#publishW").ready(function(){
 		$.ajax({
 			url : "/controller/webtoon/selectMyWebtoon/serial",
 			type : "get",

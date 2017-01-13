@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script>
+ $("#fundingW").on("click",function(){
+	alert("기능 줘야된다.")	
+ })
+</script>
+
+
 	<div class="row">
 		<div class="row">
-			<div class="input-field col s6" id="webtoonNameList">
+			<div class="input-field col s6" id="webtoonName">
 			    <select id="webtoonNameList">
 			      <option value="" disabled selected>웹툰 선택</option>
 			    </select>
